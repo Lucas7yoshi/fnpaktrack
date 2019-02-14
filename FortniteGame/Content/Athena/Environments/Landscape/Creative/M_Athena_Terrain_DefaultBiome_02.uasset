@@ -23,10 +23,10 @@ Name table:
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Grass_01
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Gravel_01
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Gravel_01_Mudver
+	/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Road_01
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_RoadGravel
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Rock_01
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Utilities/LayerHeightBlend
-	/Game/Athena/Environments/Landscape/MPC/MPC_Landscape
 	/Game/Athena/Environments/Materials/WorldAlignedNormalContrast
 	/Script/CoreUObject
 	/Script/Engine
@@ -43,11 +43,9 @@ Name table:
 	CachedQualityLevelsUsed
 	CheapContrast
 	Class
-	Collection
 	CreateThirdOrthogonalVector
 	CustomRotator
 	Default__Material
-	Default__MaterialExpressionCollectionParameter
 	Default__MaterialExpressionLandscapeGrassOutput
 	Default__MaterialExpressionLandscapeLayerCoords
 	Default__MaterialExpressionLandscapeLayerSample
@@ -74,7 +72,6 @@ Name table:
 	Gravel Contrast
 	Gravel Height
 	Gravel_MudTint
-	GravelTint
 	Guid
 	HeightLerp
 	Input
@@ -89,7 +86,6 @@ Name table:
 	Material
 	MaterialAttributes
 	MaterialAttributesInput
-	MaterialExpressionCollectionParameter
 	MaterialExpressionLandscapeGrassOutput
 	MaterialExpressionLandscapeLayerCoords
 	MaterialExpressionLandscapeLayerSample
@@ -101,19 +97,16 @@ Name table:
 	MaterialFunction
 	MaterialFunctionInfo
 	MaterialFunctionInfos
-	MaterialParameterCollection
-	MaterialParameterCollectionInfo
-	MaterialParameterCollectionInfos
 	MatLayerBlend_OverrideOpacity
 	MF_Athena_Forest_01
 	MF_Athena_Grass_01
 	MF_Athena_Gravel_01
 	MF_Athena_Gravel_01_Mudver
+	MF_Athena_Road_01
 	MF_Athena_RoadGravel
 	MF_Athena_Rock_01
 	MF_Landscape_GrassDistanceBlend
 	MF_TerrainDistanceFade
-	MPC_Landscape
 	Mud
 	Mud Heightblend Contrast
 	Mud Heightblend Multiplier
@@ -123,11 +116,14 @@ Name table:
 	None
 	ObjectProperty
 	Package
-	ParameterCollection
-	ParameterId
 	ParameterName
 	PreviewWeight
+	Road
+	Road_Contrast
 	RoadGravelHeight
+	RoadLayerPow
+	RoadMudEdgeBoost
+	RoadMudEdgeOffset
 	RockMultiply Z Multiply
 	SafeNormalize
 	StateId
@@ -137,30 +133,23 @@ Name table:
 	WorldAlignedNormals_HighQuality
 	WorldAlignedTexture
 Serialized exports:
-	M_Athena_Terrain_DefaultBiome_02 (0-0-0-0): size 119771 (cls: M_Athena_Terrain_DefaultBiome_02>Material>/Script/Engine):
+	M_Athena_Terrain_DefaultBiome_02 (0-0-0-0): size 127461 (cls: M_Athena_Terrain_DefaultBiome_02>Material>/Script/Engine):
 		Tag array:
 			MaterialAttributes(StructProperty)=System.Byte[] 
 			Expressions(ArrayProperty)=[object] (inner: ObjectProperty)
 			MaterialFunctionInfos(ArrayProperty)=[object] (inner: StructProperty)
-			MaterialParameterCollectionInfos(ArrayProperty)=[object] (inner: StructProperty)
 			bUseMaterialAttributes(BoolProperty)=True 
-			StateId(StructProperty)=Guid: 3596799095-1197648347-3400760500-3821506775 
+			StateId(StructProperty)=Guid: 3759437313-1177718232-3133901726-347530095 
 			CachedQualityLevelsUsed(ArrayProperty)=[object] (inner: BoolProperty)
-	MaterialExpressionCollectionParameter_2 (0-0-0-0): size 168 (cls: MaterialExpressionCollectionParameter_2>MaterialExpressionCollectionParameter>/Script/Engine):
-		Tag array:
-			Collection(ObjectProperty)=MPC_Landscape=/Game/Athena/Environments/Landscape/MPC/MPC_Landscape 
-			ParameterName(NameProperty)=GravelTint 
-			ParameterId(StructProperty)=Guid: 2522247394-1274142190-1261651842-232090485 
-			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionLandscapeGrassOutput_1 (0-0-0-0): size 604 (cls: MaterialExpressionLandscapeGrassOutput_1>MaterialExpressionLandscapeGrassOutput>/Script/Landscape):
 		Tag array:
 			GrassTypes(ArrayProperty)=[object] (inner: StructProperty)
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionLandscapeLayerCoords_0 (0-0-0-0): size 70 (cls: MaterialExpressionLandscapeLayerCoords_0>MaterialExpressionLandscapeLayerCoords>/Script/Landscape):
+	MaterialExpressionLandscapeLayerCoords_2 (0-0-0-0): size 70 (cls: MaterialExpressionLandscapeLayerCoords_2>MaterialExpressionLandscapeLayerCoords>/Script/Landscape):
 		Tag array:
 			MappingScale(FloatProperty)=4 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionLandscapeLayerCoords_1 (0-0-0-0): size 70 (cls: MaterialExpressionLandscapeLayerCoords_1>MaterialExpressionLandscapeLayerCoords>/Script/Landscape):
+	MaterialExpressionLandscapeLayerCoords_3 (0-0-0-0): size 70 (cls: MaterialExpressionLandscapeLayerCoords_3>MaterialExpressionLandscapeLayerCoords>/Script/Landscape):
 		Tag array:
 			MappingScale(FloatProperty)=4 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
@@ -168,21 +157,43 @@ Serialized exports:
 		Tag array:
 			MappingScale(FloatProperty)=4 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionLandscapeLayerSample_10 (0-0-0-0): size 139 (cls: MaterialExpressionLandscapeLayerSample_10>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
+	MaterialExpressionLandscapeLayerCoords_5 (0-0-0-0): size 70 (cls: MaterialExpressionLandscapeLayerCoords_5>MaterialExpressionLandscapeLayerCoords>/Script/Landscape):
 		Tag array:
-			ParameterName(NameProperty)=Mud 
-			ExpressionGUID(StructProperty)=Guid: 214754325-1227715587-3615527320-1747414986 
+			MappingScale(FloatProperty)=4 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionLandscapeLayerSample_11 (0-0-0-0): size 139 (cls: MaterialExpressionLandscapeLayerSample_11>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
+	MaterialExpressionLandscapeLayerSample_0 (0-0-0-0): size 139 (cls: MaterialExpressionLandscapeLayerSample_0>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
 		Tag array:
 			ParameterName(NameProperty)=Gravel 
-			ExpressionGUID(StructProperty)=Guid: 3241013214-1145734493-430894764-2639701457 
+			ExpressionGUID(StructProperty)=Guid: 3360754858-1310674578-976371072-2166756773 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionLandscapeLayerSample_1 (0-0-0-0): size 168 (cls: MaterialExpressionLandscapeLayerSample_1>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
+		Tag array:
+			ParameterName(NameProperty)=Road 
+			PreviewWeight(FloatProperty)=1 
+			ExpressionGUID(StructProperty)=Guid: 3553257135-1144234844-1014920843-3748520931 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionLandscapeLayerSample_26 (0-0-0-0): size 168 (cls: MaterialExpressionLandscapeLayerSample_26>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
 		Tag array:
 			ParameterName(NameProperty)=Forest 
 			PreviewWeight(FloatProperty)=1 
 			ExpressionGUID(StructProperty)=Guid: 1295733032-1232495167-3757100928-378291397 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionLandscapeLayerSample_27 (0-0-0-0): size 139 (cls: MaterialExpressionLandscapeLayerSample_27>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
+		Tag array:
+			ParameterName(NameProperty)=Mud 
+			ExpressionGUID(StructProperty)=Guid: 512928462-1191046262-2743065757-421082147 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionLandscapeLayerSample_3 (0-0-0-0): size 168 (cls: MaterialExpressionLandscapeLayerSample_3>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
+		Tag array:
+			ParameterName(NameProperty)=Road 
+			PreviewWeight(FloatProperty)=1 
+			ExpressionGUID(StructProperty)=Guid: 838783888-1186631396-2427389626-3863318514 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionLandscapeLayerSample_30 (0-0-0-0): size 168 (cls: MaterialExpressionLandscapeLayerSample_30>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
+		Tag array:
+			ParameterName(NameProperty)=Road 
+			PreviewWeight(FloatProperty)=1 
+			ExpressionGUID(StructProperty)=Guid: 3295852801-1105635050-351776940-2113870178 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionLandscapeLayerSample_6 (0-0-0-0): size 168 (cls: MaterialExpressionLandscapeLayerSample_6>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
 		Tag array:
@@ -215,19 +226,19 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=MF_Athena_Grass_01=/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Grass_01 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionMaterialFunctionCall_10 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_10>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+	MaterialExpressionMaterialFunctionCall_108 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_108>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=MF_Athena_Gravel_01_Mudver=/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Gravel_01_Mudver 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionMaterialFunctionCall_11 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_11>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+	MaterialExpressionMaterialFunctionCall_121 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_121>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
-			MaterialFunction(ObjectProperty)=MF_Athena_Gravel_01=/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Gravel_01 
+			MaterialFunction(ObjectProperty)=MF_Athena_Road_01=/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Road_01 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionMaterialFunctionCall_12 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_12>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+	MaterialExpressionMaterialFunctionCall_14 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_14>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=LayerHeightBlend=/Game/Athena/Environments/Landscape/MaterialFunctions/Utilities/LayerHeightBlend 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionMaterialFunctionCall_13 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_13>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+	MaterialExpressionMaterialFunctionCall_15 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_15>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=MatLayerBlend_OverrideOpacity=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_OverrideOpacity 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
@@ -235,17 +246,25 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=LayerHeightBlend=/Game/Athena/Environments/Landscape/MaterialFunctions/Utilities/LayerHeightBlend 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionMaterialFunctionCall_3 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_3>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=LayerHeightBlend=/Game/Athena/Environments/Landscape/MaterialFunctions/Utilities/LayerHeightBlend 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionMaterialFunctionCall_4 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_4>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=LayerHeightBlend=/Game/Athena/Environments/Landscape/MaterialFunctions/Utilities/LayerHeightBlend 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionMaterialFunctionCall_5 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_5>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=LayerHeightBlend=/Game/Athena/Environments/Landscape/MaterialFunctions/Utilities/LayerHeightBlend 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionMaterialFunctionCall_6 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_6>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=MF_Athena_Gravel_01=/Game/Athena/Environments/Landscape/MaterialFunctions/Standard/MF_Athena_Gravel_01 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionMaterialFunctionCall_7 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_7>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=AlphaOffset=/Engine/Functions/Engine_MaterialFunctions01/Opacity/AlphaOffset 
-			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionMaterialFunctionCall_8 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_8>MaterialExpressionMaterialFunctionCall>/Script/Engine):
-		Tag array:
-			MaterialFunction(ObjectProperty)=LayerHeightBlend=/Game/Athena/Environments/Landscape/MaterialFunctions/Utilities/LayerHeightBlend 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionMaterialFunctionCall_9 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_9>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
@@ -257,35 +276,41 @@ Serialized exports:
 			ParameterName(NameProperty)=GrassRock Height Blend Mult 
 			ExpressionGUID(StructProperty)=Guid: 222345672-1103540719-742302848-627041700 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionScalarParameter_11 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_11>MaterialExpressionScalarParameter>/Script/Engine):
+	MaterialExpressionScalarParameter_1 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_1>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			DefaultValue(FloatProperty)=0.5 
-			ParameterName(NameProperty)=Mud Heightblend Contrast 
-			ExpressionGUID(StructProperty)=Guid: 1073918341-1267557897-3518377142-416633737 
+			DefaultValue(FloatProperty)=2 
+			ParameterName(NameProperty)=RoadLayerPow 
+			ExpressionGUID(StructProperty)=Guid: 1941162621-1175258158-1470727567-2050430228 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionScalarParameter_12 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_12>MaterialExpressionScalarParameter>/Script/Engine):
+	MaterialExpressionScalarParameter_10 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_10>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			DefaultValue(FloatProperty)=1 
-			ParameterName(NameProperty)=Gravel Contrast 
-			ExpressionGUID(StructProperty)=Guid: 3113186637-1196211494-766392710-1438038158 
+			DefaultValue(FloatProperty)=0.7 
+			ParameterName(NameProperty)=RoadMudEdgeOffset 
+			ExpressionGUID(StructProperty)=Guid: 1793488497-1194586992-4069341619-1059443399 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionScalarParameter_13 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_13>MaterialExpressionScalarParameter>/Script/Engine):
+	MaterialExpressionScalarParameter_15 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_15>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=2 
 			ParameterName(NameProperty)=Gravel Height 
-			ExpressionGUID(StructProperty)=Guid: 3665486673-1082236109-1233477267-1354441935 
+			ExpressionGUID(StructProperty)=Guid: 3474451134-1250938105-4256608398-2485680259 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionScalarParameter_14 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_14>MaterialExpressionScalarParameter>/Script/Engine):
+	MaterialExpressionScalarParameter_16 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_16>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=0.25 
 			ParameterName(NameProperty)=RoadGravelHeight 
-			ExpressionGUID(StructProperty)=Guid: 955233730-1180164521-737834373-2809756548 
+			ExpressionGUID(StructProperty)=Guid: 1754412809-1076538335-67439279-89117215 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionScalarParameter_2 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_2>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=0.85 
 			ParameterName(NameProperty)=LS Grass Threshold 
 			ExpressionGUID(StructProperty)=Guid: 2655178638-1097473672-4016411064-965718710 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionScalarParameter_24 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_24>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=5 
+			ParameterName(NameProperty)=Road_Contrast 
+			ExpressionGUID(StructProperty)=Guid: 1393143037-1214065349-4236554923-720571519 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionScalarParameter_3 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_3>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -299,11 +324,23 @@ Serialized exports:
 			ParameterName(NameProperty)=Forest Heightblend Contrast 
 			ExpressionGUID(StructProperty)=Guid: 500102056-1075833592-2359668148-2661183659 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionScalarParameter_8 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_8>MaterialExpressionScalarParameter>/Script/Engine):
+	MaterialExpressionScalarParameter_5 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_5>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=1 
 			ParameterName(NameProperty)=Mud Heightblend Multiplier 
-			ExpressionGUID(StructProperty)=Guid: 3335117109-1130214212-4259889816-2175593833 
+			ExpressionGUID(StructProperty)=Guid: 910073205-1151708666-1605121459-3997595870 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionScalarParameter_6 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_6>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=0.5 
+			ParameterName(NameProperty)=Mud Heightblend Contrast 
+			ExpressionGUID(StructProperty)=Guid: 2119604628-1124315453-1794778557-1927964585 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionScalarParameter_7 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_7>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=1 
+			ParameterName(NameProperty)=Gravel Contrast 
+			ExpressionGUID(StructProperty)=Guid: 4115264719-1083535697-4192513197-1679646762 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
 	MaterialExpressionScalarParameter_87 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_87>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -317,9 +354,15 @@ Serialized exports:
 			ParameterName(NameProperty)=GrassRock Contrast 
 			ExpressionGUID(StructProperty)=Guid: 2031384447-1277323397-4201213571-327248618 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
-	MaterialExpressionVectorParameter_1 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_1>MaterialExpressionVectorParameter>/Script/Engine):
+	MaterialExpressionScalarParameter_9 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_9>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=2 
+			ParameterName(NameProperty)=RoadMudEdgeBoost 
+			ExpressionGUID(StructProperty)=Guid: 3735174463-1282716553-1420690570-3916505025 
+			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 
+	MaterialExpressionVectorParameter_0 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_0>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(StructProperty)=UE4.FLinearColor 
 			ParameterName(NameProperty)=Gravel_MudTint 
-			ExpressionGUID(StructProperty)=Guid: 1451731376-1228588838-3306393776-414698338 
+			ExpressionGUID(StructProperty)=Guid: 2887422740-1337178989-3469024675-2925907657 
 			Material(ObjectProperty)=M_Athena_Terrain_DefaultBiome_02= 

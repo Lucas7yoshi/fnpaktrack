@@ -4,10 +4,12 @@ Name table:
 	/Script/Engine
 	/Script/FortniteGame
 	AutoBrakeSpeed
+	AutoFlipCooldown
 	AutoSprintDelay
 	bCanDestroyProps
 	bDriverCanDamageVehicle
 	bJumpForceWorldVertical
+	bJumpInstantlyFullCharge
 	BlendOutExtraSpeedTurnInPlaceKmH
 	BlueprintGeneratedClass
 	BoolProperty
@@ -17,8 +19,9 @@ Name table:
 	BoostTopSpeedMultiplier
 	BrakeForce
 	bShouldDriverHaveReticle
+	bShouldServerRunReducedSprings
 	BumpForce
-	bVehicleCameraLeftAnalogSteering
+	bUseLookAheadTraceInAir
 	bVehicleCameraSteering
 	ByteProperty
 	CameraSpaceForwardDistanceOverride
@@ -27,7 +30,9 @@ Name table:
 	CorrectionalYawDamp
 	CorrectionalYawMinVelocitySq
 	CorrectionalYawStiff
+	CorrectOrientationAngularCoefficient
 	CorrectOrientationCenterOfMassOffset
+	CorrectOrientationLinearCoefficient
 	Default__BlueprintGeneratedClass
 	Default__FortAthenaJackalVehicleConfigs
 	Default__VehicleConfigsJackal_C
@@ -48,20 +53,25 @@ Name table:
 	ImpactDamagePerImpulse
 	InPlaceForwardPushForce
 	InPlaceRotationStrength
+	IntProperty
 	InWaterTopSpeedMutliplier
+	JumpChargeLossRate
 	JumpChargeRate
 	JumpRequiredVerticalAngle
 	LateralFriction
 	MaxAntigravityInclineAngle
 	MaxDriveInclineAngle
+	MaxDriveTiltAngle
 	MaxEmptyDragSpeed
 	MaxFallDamage
 	MaxFallDamageHeight
+	MaxForwardSpeedForTurnInPlaceDrag
 	MaxForwardSpeedToSwapReverseControls
 	MaxForwardVelAccelLean
 	MaxImpactDamage
 	MaxImpactDamageReduction
 	MaxJumpForce
+	MaxReducedSpringsPerTick
 	MaxRestSpeed
 	MaxReverseVelAccelLean
 	MaxSpeedAIDamage
@@ -72,8 +82,10 @@ Name table:
 	MaxSpeedToDamage
 	MaxSteerForAccelLean
 	MinAngularSpeedToWake
+	MinBudgetForReducedSpring
 	MinFallDamage
 	MinFallDamageHeight
+	MinForwardAlphaForLeftAnalogTurn
 	MinJumpChargeToActivate
 	MinJumpForce
 	MinLinearSpeedToWake
@@ -97,7 +109,6 @@ Name table:
 	PlayerFallDamageMultiplier
 	PlayerImpactDamageMultiplier
 	SharpTurnLateralFrictionRuntimeMultiplier
-	SharpTurnMinForwardAlpha
 	SMSleepCounter
 	SpringCollisionChannel
 	SpringDampMultiplier
@@ -111,6 +122,8 @@ Name table:
 	TorsionRollDamp
 	TorsionRollStiff
 	TorsionRollStrength
+	TurnInPlaceDrag2CoefficientMultiplier
+	TurnInPlaceDragCoefficientMultiplier
 	TurnInPlaceSpeed
 	TurnRateExponent
 	Vector
@@ -123,6 +136,7 @@ Name table:
 	VehicleAutoAirPitchStrength
 	VehicleAutoAirRollStrength
 	VehicleAutoAirYawStrength
+	VehicleCameraLeftAnalogMultiplier
 	VehicleConfigsJackal_C
 	VehicleEjectCooldown
 	VehicleErrorPerAngleDegrees
@@ -146,7 +160,7 @@ Name table:
 	YawLeanStrength
 Serialized exports:
 	VehicleConfigsJackal_C (0-0-0-0): size 76 (cls: VehicleConfigsJackal_C>BlueprintGeneratedClass>/Script/Engine)
-	Default__VehicleConfigsJackal_C (0-0-0-0): size 3601 (cls: Default__VehicleConfigsJackal_C>VehicleConfigsJackal_C):
+	Default__VehicleConfigsJackal_C (0-0-0-0): size 3972 (cls: Default__VehicleConfigsJackal_C>VehicleConfigsJackal_C):
 		Tag array:
 			BoostTopSpeedMultiplier(FloatProperty)=2.3 
 			BoostTopSpeedForceMultiplier(FloatProperty)=3 
@@ -159,9 +173,10 @@ Serialized exports:
 			TurnInPlaceSpeed(FloatProperty)=100000 
 			MaxSpeedForTurnInPlaceKmH(FloatProperty)=22 
 			BlendOutExtraSpeedTurnInPlaceKmH(FloatProperty)=35 
-			MinJumpForce(FloatProperty)=650 
-			MaxJumpForce(FloatProperty)=650 
-			JumpChargeRate(FloatProperty)=1 
+			MinJumpForce(FloatProperty)=500 
+			MaxJumpForce(FloatProperty)=1200 
+			JumpChargeRate(FloatProperty)=0.5 
+			JumpChargeLossRate(FloatProperty)=0.2 
 			MinJumpChargeToActivate(FloatProperty)=0 
 			JumpRequiredVerticalAngle(FloatProperty)=85 
 			EmptyDragCoefficient(FloatProperty)=10 
@@ -169,7 +184,7 @@ Serialized exports:
 			MaxEmptyDragSpeed(FloatProperty)=30 
 			MinRightInputForSharpTurn(FloatProperty)=0.2 
 			SharpTurnLateralFrictionRuntimeMultiplier(FloatProperty)=3 
-			SharpTurnMinForwardAlpha(FloatProperty)=0.4 
+			MinForwardAlphaForLeftAnalogTurn(FloatProperty)=0.5 
 			EmptyLateralFrictionRuntimeMultiplier(FloatProperty)=0.5 
 			BumpForce(FloatProperty)=750 
 			InPlaceForwardPushForce(FloatProperty)=700 
@@ -183,7 +198,13 @@ Serialized exports:
 			CorrectionalYawStiff(FloatProperty)=50 
 			CorrectionalYawDamp(FloatProperty)=15 
 			bJumpForceWorldVertical(BoolProperty)=False 
+			bJumpInstantlyFullCharge(BoolProperty)=False 
 			TurnRateExponent(FloatProperty)=10 
+			bUseLookAheadTraceInAir(BoolProperty)=False 
+			AutoFlipCooldown(FloatProperty)=0.02 
+			MaxForwardSpeedForTurnInPlaceDrag(FloatProperty)=7 
+			TurnInPlaceDragCoefficientMultiplier(FloatProperty)=10 
+			TurnInPlaceDrag2CoefficientMultiplier(FloatProperty)=2 
 			VehicleErrorPerDistanceCentimeters(FloatProperty)=0.05 
 			VehicleErrorPerDistanceCentimetersPerSecond(FloatProperty)=1 
 			VehicleErrorPerAngleDegrees(FloatProperty)=0.05 
@@ -218,11 +239,12 @@ Serialized exports:
 			ImpactDamagePerImpulse(FloatProperty)=0.06 
 			MaxImpactDamageReduction(FloatProperty)=2 
 			PlayerImpactDamageMultiplier(FloatProperty)=0.05 
-			VehicleEjectCooldown(FloatProperty)=0.2 
+			VehicleEjectCooldown(FloatProperty)=2 
 			VehicleFlipCooldown(FloatProperty)=0.3 
 			CameraSpaceForwardDistanceOverride(FloatProperty)=-400 
 			MinSpringHitNormal(FloatProperty)=1 
 			VehicleLeftAnalogSteeringDeadZone(FloatProperty)=0.1 
+			VehicleCameraLeftAnalogMultiplier(FloatProperty)=0.4 
 			InWaterTopSpeedMutliplier(FloatProperty)=1 
 			VehicleLookAheadInAirLength(FloatProperty)=650 
 			VehicleLookAheadMinNormal(FloatProperty)=0.5 
@@ -236,6 +258,7 @@ Serialized exports:
 			MinAngularSpeedToWake(FloatProperty)=0.5 
 			MaxDriveInclineAngle(FloatProperty)=55 
 			MaxAntigravityInclineAngle(FloatProperty)=55 
+			MaxDriveTiltAngle(FloatProperty)=80 
 			SpringDampMultiplier(FloatProperty)=1.5 
 			PitchAngularDrag(FloatProperty)=1.5 
 			VehicleAnalogReverse(FloatProperty)=0.5 
@@ -260,14 +283,18 @@ Serialized exports:
 			YawLeanCooldown(FloatProperty)=500 
 			GroundCheckSweepRadius(FloatProperty)=45 
 			SMSleepCounter(FloatProperty)=1 
-			CorrectOrientationCenterOfMassOffset(StructProperty)=Vector(0,0,-20) 
+			CorrectOrientationCenterOfMassOffset(StructProperty)=Vector(0,0,30) 
+			CorrectOrientationLinearCoefficient(FloatProperty)=200 
+			CorrectOrientationAngularCoefficient(FloatProperty)=500 
 			SpringCollisionChannel(ByteProperty)=ECC_PhysicsBody 
 			bVehicleCameraSteering(BoolProperty)=True 
-			bVehicleCameraLeftAnalogSteering(BoolProperty)=False 
 			bShouldDriverHaveReticle(BoolProperty)=True 
 			PawnLaunchForwardVelocityScale(FloatProperty)=1 
 			PawnLaunchMaxSpeed(FloatProperty)=500 
 			DestructionTraceAheadMinSpeed(FloatProperty)=5 
 			bCanDestroyProps(BoolProperty)=False 
+			MinBudgetForReducedSpring(IntProperty)=1 
+			bShouldServerRunReducedSprings(BoolProperty)=True 
+			MaxReducedSpringsPerTick(IntProperty)=1 
 			HoldToExitTime(FloatProperty)=0.3 
 			bDriverCanDamageVehicle(BoolProperty)=False 

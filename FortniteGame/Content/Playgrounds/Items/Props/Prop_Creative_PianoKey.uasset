@@ -4,8 +4,9 @@ Name table:
 	/Game/Athena/Items/QuestInteractables/BigPiano/Materials/MI_PianoKey_White
 	/Game/Athena/Items/QuestInteractables/BigPiano/Meshes/SM_big_piano_key_white
 	/Game/Athena/Sounds/Quests/BigPiano/New_Wavs/Piano_Note_Parent
-	/Game/Athena/Sounds/Quests/BigPiano/New_Wavs/Piano_Note_Parent_Mobile
 	/Game/Playgrounds/Items/Props/Prop_Creative_PianoKey
+	/Game/Sounds/Creative/Toys/Keyboard/Synth/CM_Keyboard_Piano_01_Cue
+	/Game/Sounds/Creative/Toys/Keyboard/Synth/CM_Keyboard_Piano_01_Mobile_Cue
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
@@ -75,6 +76,8 @@ Name table:
 	CanCharacterStepUpOn
 	Channel
 	Class
+	CM_Keyboard_Piano_01_Cue
+	CM_Keyboard_Piano_01_Mobile_Cue
 	CollisionEnabled
 	CollisionProfileName
 	CollisionResponse
@@ -101,11 +104,13 @@ Name table:
 	Default__ByteProperty
 	Default__ComponentDelegateBinding
 	Default__CurveLinearColor
+	Default__DelegateProperty
 	Default__FloatProperty
 	Default__FortKismetLibrary
 	Default__Function
 	Default__IntProperty
 	Default__KismetSystemLibrary
+	Default__MulticastDelegateProperty
 	Default__ObjectProperty
 	Default__Prop_Creative_PianoKey_C
 	Default__SceneComponent
@@ -118,6 +123,7 @@ Name table:
 	DefaultSceneRoot_GEN_VARIABLE
 	DefaultSceneRootNode
 	Delay
+	DelegateProperty
 	DelegatePropertyName
 	DirectionPropertyName
 	Divide_IntInt
@@ -151,6 +157,7 @@ Name table:
 	FCC_Trace_WeaponCapsule
 	FCC_Trace_WeaponMulti
 	FCC_Trace_WeaponPawnAndWorldMulti
+	FCC_Trace_WeaponWorldMulti
 	FinishedFunctionName
 	FloatCurves
 	FloatProperty
@@ -185,6 +192,7 @@ Name table:
 	K2Node_ComponentBoundEvent_OtherComp
 	K2Node_ComponentBoundEvent_OverlappedComponent
 	K2Node_ComponentBoundEvent_SweepResult
+	K2Node_CreateDelegate_OutputDelegate
 	K2Node_Event_Damage
 	K2Node_Event_DamageCauser
 	K2Node_Event_DamageTags
@@ -195,6 +203,9 @@ Name table:
 	K2Node_Event_Momentum
 	K2Node_Select_Default
 	K2Node_SwitchInteger_CmpSuccess
+	KeyPressed
+	KeyPressedDispatcher
+	KeyPressedDispatcher__DelegateSignature
 	Keys
 	KeysIndex
 	KismetMathLibrary
@@ -219,11 +230,13 @@ Name table:
 	MI_PianoKey_White
 	Mobility
 	Momentum
+	MulticastDelegateProperty
 	Multiply_IntFloat
 	NameProperty
 	NetUpdateFrequency
 	None
 	NotEqual_IntInt
+	NoVehicleDamage
 	NumReplicatedProperties
 	Object
 	ObjectProperty
@@ -241,14 +254,15 @@ Name table:
 	ParentComponentOrVariableName
 	Pawn
 	Percent_IntInt
+	PhysicsBody
 	Piano_Note_Parent
-	Piano_Note_Parent_Mobile
 	Play
 	PlayFromStart
 	PointerToUberGraphFrame
 	PrimitiveComponent
 	Prop_Creative_PianoKey_C
 	PropertyName
+	ReceiveBeginPlay
 	ReceiveEndPlay
 	RelativeLocation
 	RelativeScale3D
@@ -284,6 +298,7 @@ Name table:
 	SweepResult
 	Switch to Constant Material
 	Switch to Dyamic Material
+	Tags
 	Temp_bool_Has_Been_Initd_Variable
 	Temp_bool_IsClosed_Variable
 	Temp_bool_Variable
@@ -315,23 +330,24 @@ Name table:
 	VariableName
 	Vector
 	Vehicle
+	Visibility
 	WorldDynamic
 	WorldStatic
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Prop_Creative_PianoKey_C (0-0-0-0): size 589 (cls: Prop_Creative_PianoKey_C>BlueprintGeneratedClass>/Script/Engine):
+	Prop_Creative_PianoKey_C (0-0-0-0): size 641 (cls: Prop_Creative_PianoKey_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=2 
 			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			Timelines(ArrayProperty)=[object] (inner: ObjectProperty)
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=Prop_Creative_PianoKey_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Prop_Creative_PianoKey=Prop_Creative_PianoKey_C 
-	Default__Prop_Creative_PianoKey_C (0-0-0-0): size 732 (cls: Default__Prop_Creative_PianoKey_C>Prop_Creative_PianoKey_C):
+	Default__Prop_Creative_PianoKey_C (0-0-0-0): size 777 (cls: Default__Prop_Creative_PianoKey_C>Prop_Creative_PianoKey_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			Timeline_0_GlowIntensity_0EBB70B1423A995C77C9018794C7CEF1(StructProperty)=UE4.FLinearColor 
-			Sound Mobile(ObjectProperty)=Piano_Note_Parent_Mobile=/Game/Athena/Sounds/Quests/BigPiano/New_Wavs/Piano_Note_Parent_Mobile 
-			Sound Default(ObjectProperty)=Piano_Note_Parent=/Game/Athena/Sounds/Quests/BigPiano/New_Wavs/Piano_Note_Parent 
+			Sound Mobile(ObjectProperty)=CM_Keyboard_Piano_01_Mobile_Cue=/Game/Sounds/Creative/Toys/Keyboard/Synth/CM_Keyboard_Piano_01_Mobile_Cue 
+			Sound Default(ObjectProperty)=CM_Keyboard_Piano_01_Cue=/Game/Sounds/Creative/Toys/Keyboard/Synth/CM_Keyboard_Piano_01_Cue 
 			Body Material Default(ObjectProperty)=MI_PianoKey_White=/Game/Athena/Items/QuestInteractables/BigPiano/Materials/MI_PianoKey_White 
 			Body Material Alternate(ObjectProperty)=MI_PianoKey_Black=/Game/Athena/Items/QuestInteractables/BigPiano/Materials/MI_PianoKey_Black 
 			Text Color Default(StructProperty)=UE4.FLinearColor 
@@ -348,6 +364,7 @@ Serialized exports:
 			StaticGameplayTags(StructProperty)=GameplayTagContainer:Building.Type.Prop 
 			NetUpdateFrequency(FloatProperty)=100 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Default__Prop_Creative_PianoKey_C 
+			Tags(ArrayProperty)=NoVehicleDamage (inner: NameProperty)
 	Audio_GEN_VARIABLE (0-0-0-0): size 189 (cls: Audio_GEN_VARIABLE>AudioComponent>/Script/Engine):
 		Tag array:
 			Sound(ObjectProperty)=Piano_Note_Parent=/Game/Athena/Sounds/Quests/BigPiano/New_Wavs/Piano_Note_Parent 
@@ -355,8 +372,11 @@ Serialized exports:
 			RelativeScale3D(StructProperty)=Vector(1.7,1.197604,1.137931) 
 			bAutoActivate(BoolProperty)=False 
 	Mesh (0-0-0-0): size 36 (cls: Mesh>ObjectProperty>/Script/CoreUObject)
+	KeyPressedDispatcher__DelegateSignature (0-0-0-0): size 43 (cls: KeyPressedDispatcher__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_Prop_Creative_PianoKey (0-0-0-0): size 1029 (cls: ExecuteUbergraph_Prop_Creative_PianoKey>Function>/Script/CoreUObject)
+	ExecuteUbergraph_Prop_Creative_PianoKey (0-0-0-0): size 1070 (cls: ExecuteUbergraph_Prop_Creative_PianoKey>Function>/Script/CoreUObject)
+	KeyPressed (0-0-0-0): size 54 (cls: KeyPressed>Function>/Script/CoreUObject)
+	ReceiveBeginPlay (0-0-0-0): size 54 (cls: ReceiveBeginPlay>Function>/Script/CoreUObject)
 	EndPlayReason (0-0-0-0): size 36 (cls: EndPlayReason>ByteProperty>/Script/CoreUObject)
 	ReceiveEndPlay (0-0-0-0): size 68 (cls: ReceiveEndPlay>Function>/Script/CoreUObject)
 	Switch to Constant Material (0-0-0-0): size 54 (cls: Switch to Constant Material>Function>/Script/CoreUObject)
@@ -402,13 +422,13 @@ Serialized exports:
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsMobileGame_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsMobileGame_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
-	Audio Trigger_GEN_VARIABLE (0-0-0-0): size 970 (cls: Audio Trigger_GEN_VARIABLE>BoxComponent>/Script/Engine):
+	Audio Trigger_GEN_VARIABLE (0-0-0-0): size 1380 (cls: Audio Trigger_GEN_VARIABLE>BoxComponent>/Script/Engine):
 		Tag array:
-			BoxExtent(StructProperty)=Vector(90,20,10) 
+			BoxExtent(StructProperty)=Vector(90,20,20) 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
 			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,12) 
+			RelativeLocation(StructProperty)=Vector(0,0,30) 
 			Mobility(ByteProperty)=EComponentMobility::Static 
 	K2Node_Event_EndPlayReason (0-0-0-0): size 36 (cls: K2Node_Event_EndPlayReason>ByteProperty>/Script/CoreUObject)
 	Timeline_0__Direction_0EBB70B1423A995C77C9018794C7CEF1 (0-0-0-0): size 36 (cls: Timeline_0__Direction_0EBB70B1423A995C77C9018794C7CEF1>ByteProperty>/Script/CoreUObject)
@@ -421,6 +441,7 @@ Serialized exports:
 			FloatCurves(StructProperty)=System.Byte[] 
 			FloatCurves(StructProperty)=System.Byte[] 
 			FloatCurves(StructProperty)=System.Byte[] 
+	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	K2Node_Event_Damage (0-0-0-0): size 32 (cls: K2Node_Event_Damage>FloatProperty>/Script/CoreUObject)
 	CallFunc_Multiply_IntFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_IntFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_Multiply_IntFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Multiply_IntFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
@@ -430,6 +451,7 @@ Serialized exports:
 	Index (0-0-0-0): size 32 (cls: Index>IntProperty>/Script/CoreUObject)
 	CallFunc_Divide_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Percent_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Percent_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
+	KeyPressedDispatcher (0-0-0-0): size 36 (cls: KeyPressedDispatcher>MulticastDelegateProperty>/Script/CoreUObject)
 	Audio (0-0-0-0): size 36 (cls: Audio>ObjectProperty>/Script/CoreUObject)
 	Audio Trigger (0-0-0-0): size 36 (cls: Audio Trigger>ObjectProperty>/Script/CoreUObject)
 	OtherActor (0-0-0-0): size 36 (cls: OtherActor>ObjectProperty>/Script/CoreUObject)

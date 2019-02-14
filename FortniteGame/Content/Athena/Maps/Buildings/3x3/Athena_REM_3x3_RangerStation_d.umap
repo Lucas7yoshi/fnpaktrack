@@ -20,6 +20,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Floor/Boardwalk_Floor
 	/Game/Building/ActorBlueprints/Prop/Chair_Kitchen02
 	/Game/Building/ActorBlueprints/Prop/JackStraw
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Picnic_Table
 	/Game/Building/ActorBlueprints/Prop/Prop_Rocks_08
 	/Game/Building/ActorBlueprints/Prop/Tree_04
@@ -145,6 +146,7 @@ Name table:
 	Default__LODActor
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Picnic_Table_C
 	Default__Prop_Rocks_08_C
 	Default__Roof_Dock_1Unit_C
@@ -210,6 +212,8 @@ Name table:
 	LCD_Shrub_04
 	LCD_Shrub_05
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -230,6 +234,9 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MinCullDistance
 	MinCullObjectSize
 	MinDrawDistance
@@ -255,6 +262,7 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NoCollision
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	NODE_AddStaticMeshComponent-1
 	None
@@ -267,11 +275,14 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	Picnic_Table
 	Picnic_Table_C
 	PointLightComponent
+	PrimitiveComponent
 	Prop_Rocks_08
 	Prop_Rocks_08_C
 	PropertySetObject
@@ -292,6 +303,7 @@ Name table:
 	S_Chest_SmokeSheet_GEN_VARIABLE
 	S_Elevation_Ground_Z_High
 	SceneComponent
+	SimpleMemberReference
 	SM_Athena_REM_3x3_RangerStation_d_1_Boardwalk_Floor
 	SM_Boardwalk_Stair44
 	SM_Boardwalk_Stair44_C
@@ -300,6 +312,7 @@ Name table:
 	SM_Boardwalk_Stairs_C
 	SoftClassPath
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	StaticMesh
 	StaticMeshComponent
@@ -328,6 +341,7 @@ Name table:
 	Tree_04_C
 	Tree_Log
 	Tree_StumpSet02_C
+	UCSModifiedProperties
 	Vector
 	Visibility
 	WarehouseShelves_03
@@ -634,7 +648,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=141 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1364.801,-339.6761,-1.644716)) Max(Vector(327.234,1374.953,29.48604)),17665) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1364.801,-339.6761,-1.644716)) Max(Vector(327.234,1374.953,29.48604)),17921) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=141 
@@ -770,6 +784,20 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RangerStation_d 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RangerStation_d 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RangerStation_d 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 147 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1168,20 +1196,24 @@ Serialized exports:
 			TheTimeline(StructProperty)=System.Byte[] 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
-	Tree_04_2 (0-0-0-0): size 193 (cls: Tree_04_2>Tree_04_C>/Game/Building/ActorBlueprints/Prop/Tree_04):
+	Tree_04_2 (0-0-0-0): size 263 (cls: Tree_04_2>Tree_04_C>/Game/Building/ActorBlueprints/Prop/Tree_04):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_REM_3x3_RangerStation_d 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RangerStation_d 
 			MyGuid(StructProperty)=Guid: 3174429423-1123604017-954569882-665926565 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RangerStation_d 
-	Tree_Log_6 (0-0-0-0): size 193 (cls: Tree_Log_6>Tree_StumpSet02_C>/Game/Building/ActorBlueprints/Prop/Tree_StumpSet02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6 (0-0-0-0): size 263 (cls: Tree_Log_6>Tree_StumpSet02_C>/Game/Building/ActorBlueprints/Prop/Tree_StumpSet02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_REM_3x3_RangerStation_d 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RangerStation_d 
 			MyGuid(StructProperty)=Guid: 17880228-1106535896-2866025633-2557623597 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RangerStation_d 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	WarehouseShelves_03_5 (0-0-0-0): size 222 (cls: WarehouseShelves_03_5>WarehouseShelves_03_C>/Game/Building/ActorBlueprints/Prop/WarehouseShelves_03):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RangerStation_d 

@@ -54,6 +54,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/GuardRail_1b
 	/Game/Building/ActorBlueprints/Prop/Palm_Tree_06
 	/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Picnic_Table
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01c
 	/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02
@@ -142,6 +143,7 @@ Name table:
 	bEnableAutoLODGeneration
 	bEnableDensityScaling
 	bEnableNavigationSystem
+	bGenerateOverlapEvents
 	bHasPerInstanceHitProxies
 	Billboard
 	bInterpolateWhenSubStepping
@@ -303,6 +305,7 @@ Name table:
 	Default__NavigationSystemModuleConfig
 	Default__Palm_Tree_06_C
 	Default__Palm_Tree_06c_C
+	Default__Parent_Tree_C
 	Default__Picnic_Table_C
 	Default__Prop_Boxes_01c_C
 	Default__Prop_Desert_Cactus_02_C
@@ -439,6 +442,8 @@ Name table:
 	Key
 	Large Ambient Blow_GEN_VARIABLE
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -505,6 +510,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -553,6 +559,7 @@ Name table:
 	Palm_Tree_06c_C
 	ParamType
 	Parent
+	Parent_Tree_C
 	ParticleSysParam
 	ParticleSystem
 	ParticleSystemComponent
@@ -657,6 +664,7 @@ Name table:
 	SoftClassPath
 	SoftObjectProperty
 	SpawnRateScale
+	SphereComponent
 	SplineMeshComponent
 	SplineMeshComponent0
 	SplineMeshParams
@@ -1106,7 +1114,7 @@ Serialized exports:
 	BuildingFoundation5x75 (0-0-0-0): size 287 (cls: BuildingFoundation5x75>BuildingFoundation5x5>/Script/FortniteGame):
 		Tag array:
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-2304,-256.0003,-40)) Max(Vector(256.0002,2304,-8)),39681) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-2304,-256.0003,-40)) Max(Vector(256.0002,2304,-8)),41729) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2127298703-1282275129-3304127409-1860170497 
 			DataVersion(IntProperty)=1 
@@ -1661,7 +1669,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),39681) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),41729) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3709427010-1299600355-4061949622-2319281943 
 			DataVersion(IntProperty)=1 
@@ -1670,7 +1678,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),39681) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),41729) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1166707832-1169812494-2581104257-2269194848 
 			DataVersion(IntProperty)=1 
@@ -1679,7 +1687,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),39681) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),41729) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3344597067-1249602326-3723827625-2073113884 
 			DataVersion(IntProperty)=1 
@@ -1701,152 +1709,192 @@ Serialized exports:
 		Tag array:
 			bAutoSpawnMissingNavData(BoolProperty)=True 
 			NavigationSystemClass(StructProperty)=UE4.FSoftObjectPath 
-	Palm_Tree_06b10 (0-0-0-0): size 193 (cls: Palm_Tree_06b10>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+	Palm_Tree_06b10 (0-0-0-0): size 263 (cls: Palm_Tree_06b10>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 611088564-1321611558-3914006916-1284259298 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06b3_2 (0-0-0-0): size 193 (cls: Palm_Tree_06b3_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b3_2 (0-0-0-0): size 263 (cls: Palm_Tree_06b3_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 4177946259-1167064194-1791470778-297573152 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06b4_6 (0-0-0-0): size 193 (cls: Palm_Tree_06b4_6>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b4_6 (0-0-0-0): size 263 (cls: Palm_Tree_06b4_6>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3477547119-1324448089-3331936400-26491877 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06b5 (0-0-0-0): size 193 (cls: Palm_Tree_06b5>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b5 (0-0-0-0): size 263 (cls: Palm_Tree_06b5>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 345812940-1256504217-3334521523-2496304932 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06b6_10 (0-0-0-0): size 193 (cls: Palm_Tree_06b6_10>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b6_10 (0-0-0-0): size 263 (cls: Palm_Tree_06b6_10>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1369602491-1110836255-3033557403-1693431454 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06b7_13 (0-0-0-0): size 193 (cls: Palm_Tree_06b7_13>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b7_13 (0-0-0-0): size 263 (cls: Palm_Tree_06b7_13>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1152050492-1315042172-3303856830-2010536770 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06b8_16 (0-0-0-0): size 193 (cls: Palm_Tree_06b8_16>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b8_16 (0-0-0-0): size 263 (cls: Palm_Tree_06b8_16>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2179192743-1281136929-3458797241-1049786609 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06b9_19 (0-0-0-0): size 193 (cls: Palm_Tree_06b9_19>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b9_19 (0-0-0-0): size 263 (cls: Palm_Tree_06b9_19>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 4151698032-1306782209-2401270667-373707097 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_10 (0-0-0-0): size 193 (cls: Palm_Tree_10>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_10 (0-0-0-0): size 263 (cls: Palm_Tree_10>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1177322775-1162939953-2762878651-4205304272 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Tree_10_Palm_18 (0-0-0-0): size 219 (cls: Tree_10_Palm_18>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_10_Palm_18 (0-0-0-0): size 289 (cls: Tree_10_Palm_18>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3536310736-1124611569-1621394831-3228122972 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Tree_10_Palm_19 (0-0-0-0): size 219 (cls: Tree_10_Palm_19>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_10_Palm_19 (0-0-0-0): size 289 (cls: Tree_10_Palm_19>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3392767941-1112659171-932786572-2746325857 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Tree_10_Palm_21 (0-0-0-0): size 219 (cls: Tree_10_Palm_21>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_10_Palm_21 (0-0-0-0): size 289 (cls: Tree_10_Palm_21>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 697663090-1077591329-2529523888-1810135167 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Tree_10_Palm_22 (0-0-0-0): size 219 (cls: Tree_10_Palm_22>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_10_Palm_22 (0-0-0-0): size 289 (cls: Tree_10_Palm_22>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3510301094-1263755716-3199569066-2204928917 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Tree_10_Palm_23 (0-0-0-0): size 219 (cls: Tree_10_Palm_23>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_10_Palm_23 (0-0-0-0): size 289 (cls: Tree_10_Palm_23>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1282969672-1202963607-3612872347-2000174563 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Tree_10_Palm_24 (0-0-0-0): size 219 (cls: Tree_10_Palm_24>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_10_Palm_24 (0-0-0-0): size 289 (cls: Tree_10_Palm_24>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3647080288-1294606843-1493964217-3629259168 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06c2_2 (0-0-0-0): size 193 (cls: Palm_Tree_06c2_2>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c2_2 (0-0-0-0): size 263 (cls: Palm_Tree_06c2_2>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1019342900-1194144104-2116509855-3847852364 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06c3_5 (0-0-0-0): size 193 (cls: Palm_Tree_06c3_5>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c3_5 (0-0-0-0): size 263 (cls: Palm_Tree_06c3_5>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 966019162-1299889720-45598860-3473915564 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06c4 (0-0-0-0): size 193 (cls: Palm_Tree_06c4>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c4 (0-0-0-0): size 263 (cls: Palm_Tree_06c4>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3851871050-1268399623-1111739035-2349713772 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06c5_9 (0-0-0-0): size 193 (cls: Palm_Tree_06c5_9>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c5_9 (0-0-0-0): size 263 (cls: Palm_Tree_06c5_9>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1661739234-1338708823-3554241712-2442300568 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Palm_Tree_06c6_12 (0-0-0-0): size 193 (cls: Palm_Tree_06c6_12>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c6_12 (0-0-0-0): size 263 (cls: Palm_Tree_06c6_12>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2775410741-1158021335-2960464317-3264759869 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	ParticleSystemComponent0 (0-0-0-0): size 2045 (cls: ParticleSystemComponent0>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Desert_Dust=/Game/Effects/Fort_Effects/Effects/Environment/Desert/Dust/P_Desert_Dust 
@@ -2052,490 +2100,628 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=7161.264 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_10 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_10>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+	Prop_Desert_Cactus_10 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_10>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2719001307-1266338669-1012675724-1721887389 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_11 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_11>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_11 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_11>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3386348369-1182253425-1570387901-2107640280 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_110 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_110>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_110 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_110>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 363506387-1103882747-3272967865-3804403288 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_112 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_112>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_112 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_112>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3929485275-1235658156-3870411140-1277877511 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_118 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_118>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_118 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_118>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 4101273498-1295751774-3919750071-2873383401 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_119 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_119>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_119 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_119>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 160840636-1169829731-759177387-3503925089 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_12 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_12>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_12 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_12>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2791618092-1341146839-1029804172-378979777 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_120 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_120>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_120 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_120>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2167517753-1203497831-252577159-593447178 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_121 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_121>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_121 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_121>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3301245267-1094831613-3945824154-466634998 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_125 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_125>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_125 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_125>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1909116746-1252322808-2256176566-656040943 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_126 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_126>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_126 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_126>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 683462756-1170035706-3450166182-3291931703 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_127 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_127>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_127 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_127>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 17547142-1218953898-354231691-936835189 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_14 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_14>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_14 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_14>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3930690101-1085787061-3389088703-2294818834 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_149 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_149>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_149 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_149>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1040018626-1286783011-3645626241-2185445795 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_15 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_15>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_15 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_15>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 4106158616-1189263418-743883705-4184991136 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_150 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_150>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_150 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_150>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2557766973-1212583352-3054549686-3408355854 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_151 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_151>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_151 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_151>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1625517894-1240821760-4039042452-655918959 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_152 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_152>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_152 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_152>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1536724534-1304459918-3548105886-4102029329 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_153 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_153>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_153 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_153>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 965096724-1324564259-3948673157-797871279 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_154 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_154>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_154 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_154>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 4289333353-1232918406-3516724156-3221916483 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_158 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_158>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_158 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_158>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 843122631-1164294018-2240422070-2749133817 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_18 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_18>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_18 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_18>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1729749055-1261946435-1112777139-4214406463 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_2 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_2>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_2 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_2>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 119621401-1326926709-539621258-3922467209 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_21 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_21>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_21 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_21>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 815581950-1133367583-3790707340-4138744149 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_24 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_24>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_24 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_24>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 889450226-1327533766-3425905053-3589895881 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_27 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_27>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_27 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_27>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1460431127-1126953429-1433780359-2996334605 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_3 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_3>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_3 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_3>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1777126364-1088273085-1553287557-919316215 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_30 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_30>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_30 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_30>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2908015277-1215669188-1918255770-3450895870 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_33 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_33>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_33 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_33>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2560183903-1301040294-3691480493-2516648484 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_5 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_5>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_5 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_5>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2353459413-1249982622-4089526959-224031544 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_6 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_6>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_6 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_6>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2095287766-1207254187-655615641-223962575 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_8 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_8>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_8 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_8>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2810925938-1266058576-2844414114-2359004426 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_9 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_9>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_9 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_9>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 55995376-1166529577-2790481317-3074996951 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_124 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_124>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_124 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_124>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3668023502-1240639463-4222037131-554648085 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_138 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_138>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_138 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_138>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 53572784-1254658300-2708368264-2855596865 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_139 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_139>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_139 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_139>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 928667304-1262105936-1160939413-2435061782 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_140 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_140>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_140 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_140>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3407191827-1285854208-1745833407-3048451481 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_141 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_141>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_141 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_141>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1479607254-1080581780-1250097327-1143731212 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_Cactus_142 (0-0-0-0): size 219 (cls: Prop_Desert_Cactus_142>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_142 (0-0-0-0): size 289 (cls: Prop_Desert_Cactus_142>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 547480382-1332253479-3907742638-1551692330 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_10 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_10>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_10 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_10>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 736832061-1222883859-2278880401-3545152238 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_100 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_100>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_100 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_100>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2367775947-1309726583-2112574848-3568771539 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_101 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_101>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_101 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_101>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3111006423-1115087900-3294504841-3890073569 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_105 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_105>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_105 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_105>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3938183144-1303493735-2658936501-1317587482 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_109 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_109>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_109 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_109>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1895839555-1102768194-1113238914-2428207204 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_11 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_11>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_11 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_11>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2210413971-1314245760-1604125623-2965233529 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_110 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_110>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_110 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_110>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1016162899-1241600003-1808370352-3570565309 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_115 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_115>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_115 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_115>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2226555236-1127393297-3752277686-1476100774 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_116 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_116>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_116 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_116>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 732889533-1180811369-2434833069-1797531566 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_117 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_117>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_117 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_117>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2494727808-1297468070-4099882376-433503203 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_118 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_118>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_118 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_118>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 4278694284-1112188785-3947125422-3655383614 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_12 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_12>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_12 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_12>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1973406380-1248334083-3990067129-2506594216 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_120 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_120>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_120 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_120>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2306365124-1285246526-162820274-1706489474 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_121 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_121>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_121 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_121>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 4097091711-1270794400-3021131409-2607928811 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_122 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_122>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_122 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_122>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2411684014-1219716723-3478759567-3130706462 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_123 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_123>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_123 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_123>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2869629104-1191930334-2454194075-406359078 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_124 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_124>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_124 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_124>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2800125413-1217420188-4045225865-1438845266 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_127 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_127>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_127 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_127>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2243828738-1225677421-471169413-3889314238 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_128 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_128>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_128 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_128>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 1840030178-1287453591-2494327202-2393749008 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_13 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_13>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_13 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_13>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 393410871-1251627311-2870153139-1133526816 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_16 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_16>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_16 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_16>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 4179972702-1329642166-2209883292-1787369238 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_18 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_18>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_18 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_18>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 469123820-1088209215-1069434259-4107900776 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_3 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_3>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_3 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_3>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 273614019-1128932742-2546413243-1227489808 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_4 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_4>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_4 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_4>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 642651066-1233902835-178494394-1727420751 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_5 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_5>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_5 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_5>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3727920786-1266383311-1008141982-1061036938 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_6 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_6>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_6 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_6>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2549540907-1309248276-533889452-935924149 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_85 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_85>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_85 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_85>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3105561316-1276474523-259164294-3121193653 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_9 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_9>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_9 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_9>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 417873711-1109345335-4191105188-1999198593 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_98 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_98>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_98 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_98>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 2772297736-1243038367-1511262893-1545001518 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
-	Prop_Desert_JoshuaTree_99 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_99>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_99 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_99>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X1Y5 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			MyGuid(StructProperty)=Guid: 3833648223-1293328689-21470372-468527283 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Prop_Desert_LargeRock_14 (0-0-0-0): size 193 (cls: Prop_Desert_LargeRock_14>Prop_Desert_LargeRock_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_LargeRock_01):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
@@ -2916,6 +3102,629 @@ Serialized exports:
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	RootComponent0 (0-0-0-0): size 12 (cls: RootComponent0>SceneComponent>/Script/Engine)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SplineMeshComponent0 (0-0-0-0): size 1723 (cls: SplineMeshComponent0>SplineMeshComponent>/Script/Engine):
 		Tag array:
 			SplineParams(StructProperty)=System.Byte[] 
@@ -3117,7 +3926,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 381951802-1269279329-1921409167-1843102897 
+			LightGuid(StructProperty)=Guid: 1875509200-1309581783-4032626563-1873941780 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(110.3238,-175.1279,80.37219) 
@@ -3126,7 +3935,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 449448217-1106385890-1533865902-1019588291 
+			LightGuid(StructProperty)=Guid: 3334220542-1284563164-3300704657-2205364898 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-111.3296,-173.5735,80.37219) 
@@ -3135,7 +3944,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2252347426-1323798764-2257415839-1684440039 
+			LightGuid(StructProperty)=Guid: 1925882397-1283942160-2524479899-4095193166 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(415.6628,88.82123,118.415) 
@@ -3143,7 +3952,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4037923541-1127702475-123405724-2902848216 
+			LightGuid(StructProperty)=Guid: 1942040691-1215299976-4069262742-2892451943 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(415.6626,-86.89703,118.4152) 
@@ -3151,7 +3960,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 296317728-1214495163-3880165820-939962395 
+			LightGuid(StructProperty)=Guid: 2354320826-1213849631-3674917771-2358102374 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-406.5486,-78.87012,128.026) 
@@ -3160,7 +3969,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3962577498-1330656545-3870008742-332085268 
+			LightGuid(StructProperty)=Guid: 2146403579-1118686261-3787550885-2692381693 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-406.5499,78.88498,128.026) 
@@ -3169,7 +3978,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4097193442-1107049738-1804534962-125776852 
+			LightGuid(StructProperty)=Guid: 828789272-1313326768-3522247330-207474366 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-531.1008,100.506,103.6691) 
@@ -3178,7 +3987,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3930838812-1148702140-2923194006-1509713105 
+			LightGuid(StructProperty)=Guid: 1327941286-1249138972-827443384-3512914315 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-531.1009,-101.0349,103.6691) 
@@ -3187,7 +3996,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2969616401-1260568049-2947796150-2362558515 
+			LightGuid(StructProperty)=Guid: 3474017398-1199948918-2386736789-3894083548 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(153.3906,-94.4897,74.11691) 
@@ -3195,7 +4004,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 778193001-1084349194-1803670679-2796086033 
+			LightGuid(StructProperty)=Guid: 2612455959-1302608249-1931175068-2520418455 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(153.3909,96.76527,74.11686) 
@@ -3203,7 +4012,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2055236424-1228796540-3457509306-830926640 
+			LightGuid(StructProperty)=Guid: 2320707609-1109805663-10302113-1699261194 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(58.81476,221.7083,50.95148) 
@@ -3212,7 +4021,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3925968824-1226137804-2976134026-3479735508 
+			LightGuid(StructProperty)=Guid: 3806235801-1315669007-1357332133-3900153047 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-58.40166,221.7081,50.9515) 
@@ -3221,7 +4030,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 899501379-1091079693-2637713072-495010385 
+			LightGuid(StructProperty)=Guid: 577198639-1106986115-4204955780-2819469998 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-66.47818,-235.5285,68.65253) 
@@ -3230,7 +4039,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2829102109-1291792786-416488594-3018368358 
+			LightGuid(StructProperty)=Guid: 30922425-1326534627-3291066273-653976846 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(67.92641,-235.4014,68.65252) 
@@ -3239,7 +4048,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4164156356-1336998021-2889395877-3463317404 
+			LightGuid(StructProperty)=Guid: 2739278708-1157560976-77853335-2056950831 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-41.72056,232.2492,62.0178) 
@@ -3248,7 +4057,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 473249539-1324158644-3739744157-3224066255 
+			LightGuid(StructProperty)=Guid: 371002140-1299592989-4058525833-1897187168 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(82.81457,232.2493,62.01788) 
@@ -3257,7 +4066,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3997510924-1083184969-3929189528-1153967791 
+			LightGuid(StructProperty)=Guid: 501773565-1109107547-2933576328-1916119227 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-37.75929,-276.7986,70.67442) 
@@ -3266,7 +4075,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3558847596-1248732906-329904269-563998979 
+			LightGuid(StructProperty)=Guid: 1818501434-1134905178-1280590013-3195309453 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(81.13199,-276.7987,70.67449) 
@@ -3275,7 +4084,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2165008182-1193742659-417205889-4251717118 
+			LightGuid(StructProperty)=Guid: 1184115350-1140375933-3328678028-1448015665 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-41.72074,232.2495,62.01782) 
@@ -3284,7 +4093,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 192785532-1163600897-1149981342-2497401057 
+			LightGuid(StructProperty)=Guid: 1072859285-1199585336-2930826667-765068074 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(82.81516,232.249,62.01782) 
@@ -3293,7 +4102,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 158699240-1110620034-695267986-2749100038 
+			LightGuid(StructProperty)=Guid: 1964628538-1135705968-3269514112-4146522419 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(-37.7598,-276.7982,70.67456) 
@@ -3302,7 +4111,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 572676463-1207516205-2857772710-1539344130 
+			LightGuid(StructProperty)=Guid: 2675315896-1201063011-1141328276-523446280 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			RelativeLocation(StructProperty)=Vector(81.1318,-276.799,70.67456) 
@@ -4680,10 +5489,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X1Y5 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 230 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 256 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=9628.729 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			BodyInstance(StructProperty)=System.Byte[] 
 			RelativeLocation(StructProperty)=Vector(12154,-1036,-3456) 
 	StaticMeshComponent0 (0-0-0-0): size 324 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):

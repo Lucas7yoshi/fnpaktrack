@@ -63,6 +63,7 @@ Name table:
 	BattlePassVB
 	bClassRequiresNativeTick
 	bCookedWidgetTree
+	bFlipForRightToLeftFlowDirection
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
 	bIsVariable
@@ -177,6 +178,8 @@ Name table:
 	Default__WidgetTree
 	DividerText
 	DrawAs
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	Engine
 	EntryPoint
@@ -205,6 +208,7 @@ Name table:
 	ExtraContentArea
 	ExtraContentArea2
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontMaterial
 	FontObject
@@ -508,11 +512,11 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=CommonBorder_0=WidgetArchetype 
 			Content(ObjectProperty)=Overlay_0=WidgetArchetype 
-	BorderSlot_1 (0-0-0-0): size 243 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
+	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=BorderSeasonHeader=WidgetArchetype 
-			Content(ObjectProperty)=SizeBox_2=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 	BorderSlot_2 (0-0-0-0): size 284 (cls: BorderSlot_2>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -525,38 +529,44 @@ Serialized exports:
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
-	CommonBorder_0 (0-0-0-0): size 349 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
+	CommonBorder_0 (0-0-0-0): size 375 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_Right_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_Right_DkBlue 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
-	CommonBorder_2 (0-0-0-0): size 431 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
+	CommonBorder_2 (0-0-0-0): size 457 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_Right_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_Right_DkBlue 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
-	TrackerCB (0-0-0-0): size 375 (cls: TrackerCB>CommonBorder>/Script/CommonUI):
+	TrackerCB (0-0-0-0): size 442 (cls: TrackerCB>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Pass_Lobby_Purchasable_C=/Game/UI/Foundation/Border/Border_Pass_Lobby_Purchasable 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	UpsellCB (0-0-0-0): size 375 (cls: UpsellCB>CommonBorder>/Script/CommonUI):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	UpsellCB (0-0-0-0): size 442 (cls: UpsellCB>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Pass_Lobby_Purchasable_C=/Game/UI/Foundation/Border/Border_Pass_Lobby_Purchasable 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	CommonBorder_0 (0-0-0-0): size 677 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
 		Tag array:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
@@ -708,14 +718,13 @@ Serialized exports:
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	SeasonNameLabel (0-0-0-0): size 731 (cls: SeasonNameLabel>CommonTextBlock>/Script/CommonUI):
+	SeasonNameLabel (0-0-0-0): size 617 (cls: SeasonNameLabel>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Header-M-S_C=/Game/UI/Foundation/Text/TextStyle-Header-M-S 
 			Text(TextProperty)=SEASON 1 (224221A54A726A7D690CEE906DE128C7) 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
 			bIsVariable(BoolProperty)=True 
 	MiniReward1Info (0-0-0-0): size 125 (cls: MiniReward1Info>DailyQuestRewardInfo_C>/Game/Athena/UI/DailyQuests/DailyQuestRewardInfo):
 		Tag array:
@@ -765,17 +774,20 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	HorizontalBox_0 (0-0-0-0): size 90 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+	HorizontalBox_0 (0-0-0-0): size 131 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
-	HorizontalBox_2 (0-0-0-0): size 90 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_2 (0-0-0-0): size 131 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
-	HorizontalBox_0 (0-0-0-0): size 57 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_0 (0-0-0-0): size 98 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -784,27 +796,31 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	HorizontalBox_3 (0-0-0-0): size 82 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
+	HorizontalBox_3 (0-0-0-0): size 123 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
-	HorizontalBox_7 (0-0-0-0): size 86 (cls: HorizontalBox_7>HorizontalBox>/Script/UMG):
+			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_7 (0-0-0-0): size 127 (cls: HorizontalBox_7>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=PanelSlot_0=WidgetArchetype 
-	MiniReward1HB (0-0-0-0): size 112 (cls: MiniReward1HB>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	MiniReward1HB (0-0-0-0): size 153 (cls: MiniReward1HB>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=PanelSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	RewardListWidget (0-0-0-0): size 38 (cls: RewardListWidget>HorizontalBox>/Script/UMG):
 		Tag array:
 			bIsVariable(BoolProperty)=True 
-	MiniReward2HB (0-0-0-0): size 112 (cls: MiniReward2HB>HorizontalBox>/Script/UMG):
+	MiniReward2HB (0-0-0-0): size 153 (cls: MiniReward2HB>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=PanelSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	RewardListWidget (0-0-0-0): size 38 (cls: RewardListWidget>HorizontalBox>/Script/UMG):
 		Tag array:
 			bIsVariable(BoolProperty)=True 
@@ -883,16 +899,17 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_2=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 312 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_0 (0-0-0-0): size 353 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Size(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 325 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=PlayerBanner=WidgetArchetype 
@@ -923,10 +940,9 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=TotalContentSlot=WidgetArchetype 
-	HorizontalBoxSlot_3 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_3 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=CommonBorder_3=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
@@ -975,9 +991,10 @@ Serialized exports:
 			Brush(StructProperty)=System.Byte[] 
 			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
-	BattlePassImage (0-0-0-0): size 225 (cls: BattlePassImage>Image>/Script/UMG):
+	BattlePassImage (0-0-0-0): size 251 (cls: BattlePassImage>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 			Clipping(EnumProperty)=EWidgetClipping::ClipToBounds 
 	Image_1 (0-0-0-0): size 218 (cls: Image_1>Image>/Script/UMG):
@@ -986,10 +1003,11 @@ Serialized exports:
 			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
-	Image_2 (0-0-0-0): size 316 (cls: Image_2>Image>/Script/UMG):
+	Image_2 (0-0-0-0): size 342 (cls: Image_2>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
 			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
 			Clipping(EnumProperty)=EWidgetClipping::ClipToBounds 
@@ -1013,9 +1031,10 @@ Serialized exports:
 			Brush(StructProperty)=System.Byte[] 
 			Slot(ObjectProperty)=LoadGuardSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
-	XpBar (0-0-0-0): size 184 (cls: XpBar>Image>/Script/UMG):
+	XpBar (0-0-0-0): size 210 (cls: XpBar>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	Image_2 (0-0-0-0): size 316 (cls: Image_2>Image>/Script/UMG):
 		Tag array:
@@ -1193,12 +1212,13 @@ Serialized exports:
 			SeasonNameLabel(ObjectProperty)=SeasonNameLabel=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
-	PlayerBanner (0-0-0-0): size 125 (cls: PlayerBanner>PlayerRankEmblem_C>/Game/Athena/UI/Progression/PlayerRankEmblem):
+	PlayerBanner (0-0-0-0): size 166 (cls: PlayerBanner>PlayerRankEmblem_C>/Game/Athena/UI/Progression/PlayerRankEmblem):
 		Tag array:
 			PlayerBanner(ObjectProperty)=PlayerBanner=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	ScaleBox_2 (0-0-0-0): size 164 (cls: ScaleBox_2>ScaleBox>/Script/UMG):
 		Tag array:
 			Stretch(ByteProperty)=EStretch::None 
@@ -1290,12 +1310,6 @@ Serialized exports:
 			HeightOverride(FloatProperty)=40 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	SizeBox_2 (0-0-0-0): size 137 (cls: SizeBox_2>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_HeightOverride(BoolProperty)=True 
-			HeightOverride(FloatProperty)=48 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=BorderSlot_1=WidgetArchetype 
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_0=WidgetArchetype 
@@ -1336,10 +1350,6 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=SizeBox_4=WidgetArchetype 
 			Content(ObjectProperty)=ExtraContentArea=WidgetArchetype 
-	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SizeBox_2=WidgetArchetype 
-			Content(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 	K2Node_Event_Result (0-0-0-0): size 36 (cls: K2Node_Event_Result>StructProperty>/Script/CoreUObject)
 	CallFunc_GetNextSeasonChaseReward_Reward (0-0-0-0): size 36 (cls: CallFunc_GetNextSeasonChaseReward_Reward>StructProperty>/Script/CoreUObject)
 	CallFunc_GetNextSeasonReward_Reward (0-0-0-0): size 36 (cls: CallFunc_GetNextSeasonReward_Reward>StructProperty>/Script/CoreUObject)
@@ -1377,15 +1387,13 @@ Serialized exports:
 	VerticalBox_1 (0-0-0-0): size 61 (cls: VerticalBox_1>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-	VerticalBoxSlot_3 (0-0-0-0): size 226 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_3 (0-0-0-0): size 185 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=BattlePassName=WidgetArchetype 
-	VerticalBoxSlot_4 (0-0-0-0): size 111 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_4 (0-0-0-0): size 70 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=TierText=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 70 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
@@ -1397,15 +1405,13 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=UpsellCB=WidgetArchetype 
-	VerticalBoxSlot_3 (0-0-0-0): size 226 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_3 (0-0-0-0): size 185 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VerticalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
-	VerticalBoxSlot_4 (0-0-0-0): size 111 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_4 (0-0-0-0): size 70 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VerticalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_1=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 111 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):

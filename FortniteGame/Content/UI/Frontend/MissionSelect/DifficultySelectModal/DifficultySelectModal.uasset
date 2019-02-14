@@ -81,6 +81,7 @@ Name table:
 	bAllowTemplate
 	bConsumePointerInput
 	bCookedWidgetTree
+	bFlipForRightToLeftFlowDirection
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
 	Bindings
@@ -347,6 +348,8 @@ Name table:
 	DynamicPropertyPath
 	EBindingKind
 	EBindingKind::Function
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortItemType
 	EFortItemType::AccountItem
 	EHorizontalAlignment
@@ -384,6 +387,7 @@ Name table:
 	FindNextRecommendedDifficultyIndex
 	FindPreviousRecommendedDifficultyIndex
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	Format
@@ -1231,12 +1235,13 @@ Serialized exports:
 			BrushColor(StructProperty)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	CommonBorder_3 (0-0-0-0): size 653 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
+	CommonBorder_3 (0-0-0-0): size 679 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_DkBlue 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Padding(StructProperty)=System.Byte[] 
 			Background(StructProperty)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 	Border_Small (0-0-0-0): size 538 (cls: Border_Small>CommonBorder>/Script/CommonUI):
@@ -2728,30 +2733,36 @@ Serialized exports:
 		Tag array:
 			EmptyItemType(EnumProperty)=EFortItemType::AccountItem 
 			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	DifficultyBox (0-0-0-0): size 120 (cls: DifficultyBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2794,26 +2805,30 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox_0 (0-0-0-0): size 82 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_0 (0-0-0-0): size 123 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_1 (0-0-0-0): size 127 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_2 (0-0-0-0): size 82 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
-	HorizontalBox_3 (0-0-0-0): size 86 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
+	HorizontalBox_3 (0-0-0-0): size 127 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 77 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2862,10 +2877,11 @@ Serialized exports:
 	HorizontalBox_0 (0-0-0-0): size 77 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-	SkullContainer (0-0-0-0): size 95 (cls: SkullContainer>HorizontalBox>/Script/UMG):
+	SkullContainer (0-0-0-0): size 136 (cls: SkullContainer>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=True 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_0 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 

@@ -22,6 +22,7 @@ Name table:
 	/Game/UI/SocialPanel/Art/Materials/M_UI_SocialToggleShine
 	/Game/UI/SocialPanel/Art/Materials/M_UI_SocialUserDarkPanel
 	/Game/UI/SocialPanel/Art/Materials/M_UI_SocialUserItemBorder_UserListItem
+	/Game/UI/SocialPanel/Art/Materials/M_UI_SocialWeGameAddFriend
 	/Game/UI/SocialPanel/Art/Materials/M_UI_UserHover_Inst
 	/Game/UI/SocialPanel/Art/Textures/T_UI_Icon_AddFriends
 	/Game/UI/SocialPanel/Art/Textures/T_UI_Icon_FriendLink
@@ -37,6 +38,7 @@ Name table:
 	/Game/UI/SocialPanel/SocialPanelTab
 	/Game/UI/SocialPanel/SocialPanelView_UserLists
 	/Game/UI/SocialPanel/SocialPanelView_UserLists.WidgetArchetype
+	/Game/UI/SocialPanel/SocialPanelWeGameFriendButton
 	/Game/UI/SocialPanel/SocialStyles
 	/Game/UI/SocialPanel/UserActionMenu
 	/Game/UI/SocialPanel/UserListEntry_XS
@@ -54,6 +56,7 @@ Name table:
 	ActionMenuClass
 	ActiveEntities
 	ActiveSequences
+	ActiveWidget
 	ActiveWidgetIndex
 	AddFriendsGhostBorder
 	AddFriendsOvr
@@ -80,12 +83,15 @@ Name table:
 	BigBang
 	BigBangCount
 	BindingName
-	bIsFriendsListTab
 	bIsRootWidget
 	bIsVariable
 	Black
 	BlendType
+	BlueprintComponentDelegateBinding
 	BlueprintGeneratedClass
+	BndEvt__Button_AddWeGameFriends_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
+	BndEvt__Button_AddWeGameFriends_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature
+	BndEvt__Switcher_UserLists_K2Node_ComponentBoundEvent_0_OnActiveWidgetChanged__DelegateSignature
 	Bold
 	BooleanAND
 	BoolProperty
@@ -112,9 +118,10 @@ Name table:
 	Burbank
 	Burbank-Black
 	BurbankSmall
-	Button_AddFriendsList
+	Button
+	Button_AddWeGameFriends
+	Button_AddWeGameFriends_OLD
 	Button_FriendSearch
-	Button_FriendsList
 	ButtonStyle-TextOnlyBase_Empty_C
 	bValidTemplate
 	ByteProperty
@@ -122,9 +129,7 @@ Name table:
 	CallFunc_EqualEqual_KeyKey_ReturnValue
 	CallFunc_GetKey_ReturnValue
 	CallFunc_Handled_ReturnValue
-	CallFunc_IsValid_ReturnValue
 	CallFunc_Not_PreBool_ReturnValue
-	CallFunc_NotEqual_ObjectObject_ReturnValue
 	CallFunc_PlayAnimation_ReturnValue
 	CallFunc_PlayAnimation_ReturnValue1
 	CallFunc_PlayAnimation_ReturnValue2
@@ -144,6 +149,9 @@ Name table:
 	CommonTextBlock
 	CommonWidgetSwitcher
 	CompletionMode
+	ComponentDelegateBinding
+	ComponentDelegateBindings
+	ComponentPropertyName
 	Content
 	CopyConfirmedSB
 	CountText
@@ -161,6 +169,7 @@ Name table:
 	Default__CommonBorder
 	Default__CommonTextBlock
 	Default__CommonWidgetSwitcher
+	Default__ComponentDelegateBinding
 	Default__EditableText
 	Default__FortPlayerBanner
 	Default__FortSocialPanelView_UserLists
@@ -172,7 +181,6 @@ Name table:
 	Default__InviteListEntry_FriendInvite_XS_C
 	Default__InviteListEntry_PartyInvite_XS1_C
 	Default__KismetInputLibrary
-	Default__KismetSystemLibrary
 	Default__LocalUserEntry_C
 	Default__MenuAnchor
 	Default__MovieScene
@@ -195,6 +203,7 @@ Name table:
 	Default__SocialPanel_FriendSearchButton_C
 	Default__SocialPanelTab_C
 	Default__SocialPanelView_UserLists_C
+	Default__SocialPanelWeGameFriendButton_C
 	Default__SocialUserTreeView
 	Default__Spacer
 	Default__StructProperty
@@ -216,11 +225,14 @@ Name table:
 	Default__WidgetSwitcherSlot
 	Default__WidgetTree
 	DefaultValue
+	DelegatePropertyName
 	Denominator
 	DesiredSize
+	DisplayLabel
 	DisplayRate
 	Down
 	DrawAs
+	DynamicBindingObjects
 	EaseIn
 	EaseInFunction
 	EaseOut
@@ -303,12 +315,14 @@ Name table:
 	FontObject
 	FontOutlineSettings
 	ForcedTime
+	ForegroundColor
 	FortPlayerBanner
 	FortSocialPanelView_UserLists
 	FrameNumber
 	FrameRate
 	Function
 	FunctionName
+	FunctionNameToBind
 	Gamepad_FaceButton_Left
 	GenericAccept
 	GenericPreview
@@ -345,20 +359,18 @@ Name table:
 	InviteListEntry_FriendInvite_XS_C
 	InviteListEntry_PartyInvite_XS1_C
 	InviteTintColor
-	IsValid
 	Justification
-	K2Node_DynamicCast_AsSocial_Panel_Tab
-	K2Node_DynamicCast_bSuccess
-	K2Node_Event_PanelIndex
+	K2Node_ComponentBoundEvent_ActiveWidget
+	K2Node_ComponentBoundEvent_ActiveWidgetIndex
+	K2Node_ComponentBoundEvent_Button
+	K2Node_ComponentBoundEvent_Button1
 	K2Node_Select1_Default
 	K2Node_Select2_Default
-	K2Node_Select3_Default
 	K2Node_Select_Default
 	Key
 	KeyEvent
 	KismetInputLibrary
 	KismetMathLibrary
-	KismetSystemLibrary
 	LastTrackIdentifier
 	LeaveTangent
 	LeaveTangentWeight
@@ -366,7 +378,6 @@ Name table:
 	LeftsideHB
 	LeftsideVB
 	LinearColor
-	LocalUserEntry
 	LocalUserEntry_C
 	LocalUserEntryBorder
 	LocalUserStatusSB
@@ -382,6 +393,7 @@ Name table:
 	M_UI_SocialToggleShine
 	M_UI_SocialUserDarkPanel
 	M_UI_SocialUserItemBorder_UserListItem
+	M_UI_SocialWeGameAddFriend
 	M_UI_UserHover_Inst
 	MapProperty
 	Margin
@@ -452,7 +464,6 @@ Name table:
 	NormalBangWrapper
 	NormalBangWrapper_C
 	Not_PreBool
-	NotEqual_ObjectObject
 	NotifyFunctionName
 	NotoSans
 	NotoSans-Bold
@@ -465,11 +476,13 @@ Name table:
 	ObjectBindings
 	ObjectGuid
 	ObjectProperty
+	OnActiveWidgetChanged
+	OnButtonHovered
+	OnButtonUnhovered
 	OnKeyDown
 	OnKeyUp
 	OnlineStatus
 	OnlineStatusPanel_C
-	OnSocialPanelTabChanged
 	Open
 	Open_0_INST
 	Open_INST
@@ -479,7 +492,6 @@ Name table:
 	OverlaySlot
 	Package
 	Padding
-	PanelIndex
 	PanelTabHighlight
 	ParameterCurve
 	ParameterName
@@ -490,8 +502,6 @@ Name table:
 	PlayAnimation
 	PlaybackRange
 	PlayerBanner
-	PlaySelected
-	PlayUnselected
 	PointerToUberGraphFrame
 	Possessables
 	PossessedObjectClass
@@ -567,7 +577,10 @@ Name table:
 	SocialPanel_FriendSearchButton_C
 	SocialPanelTab_C
 	SocialPanelView_UserLists_C
+	SocialPanelWeGameFriendButton_C
 	SocialStyles
+	SocialTab_AddFriends
+	SocialTab_Friends
 	SocialUserTreeView
 	SoftObjectProperty
 	SortedSegments
@@ -581,6 +594,7 @@ Name table:
 	SubTemplateSerialNumbers
 	SuperBang
 	Switcher_CopyState
+	Switcher_UserLists
 	SwitcherTransition
 	SwitcherTransition_INST
 	T-Bang-Replacement
@@ -589,6 +603,7 @@ Name table:
 	T_UI_Icon_LocalUserSettings
 	T_UI_Icon_MyFriends
 	T_UI_Icon_TreeArrow
+	TabIcon
 	TabName
 	TabToggleSB
 	Tags
@@ -602,7 +617,6 @@ Name table:
 	Temp_int_Variable
 	Temp_int_Variable1
 	Temp_int_Variable2
-	Temp_int_Variable3
 	Temp_struct_Variable
 	Temp_struct_Variable1
 	TemplateAsset
@@ -625,7 +639,6 @@ Name table:
 	TextStyle-Header-M-Yellow_C
 	TextStyleSet
 	Texture2D
-	Texture_TabIcon
 	Thickness
 	TickResolution
 	Times
@@ -645,8 +658,6 @@ Name table:
 	TransitionDuration
 	TransitionType
 	Translation
-	TreeView_AddFriends
-	TreeView_FriendsLists
 	TriggeringInputAction
 	TutorialBorder
 	TypefaceFontName
@@ -658,10 +669,13 @@ Name table:
 	Unhandled
 	Up
 	UserActionMenu_C
+	UserEntry_LocalPlayer
 	UserEntryWidgetClass
 	UserListEntry_XS_C
 	UserListHeaderEntry_C
 	UserTextInfoVB
+	UserTree_AddFriends
+	UserTree_FriendsLists
 	UserWidget
 	UseSmallVersion
 	VAlign_Bottom
@@ -680,6 +694,8 @@ Name table:
 	VerticalBoxSlot
 	VirtualKeyboardDismissAction
 	Visibility
+	WeGameButtonHovered
+	WeGameButtonHovered_INST
 	Widget
 	WidgetAnimation
 	WidgetAnimationBinding
@@ -691,7 +707,6 @@ Name table:
 	WidgetNavigationData
 	WidgetStyle
 	WidgetSwitcher
-	WidgetSwitcher_UserLists
 	WidgetSwitcherSlot
 	WidgetTransform
 	WidgetTree
@@ -699,7 +714,7 @@ Name table:
 	WrapTextAt
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	SocialPanelView_UserLists_C (0-0-0-0): size 434 (cls: SocialPanelView_UserLists_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	SocialPanelView_UserLists_C (0-0-0-0): size 515 (cls: SocialPanelView_UserLists_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -707,6 +722,7 @@ Serialized exports:
 			bClassRequiresNativeTick(BoolProperty)=True 
 			Animations(ArrayProperty)=[object] (inner: ObjectProperty)
 			TemplateAsset(SoftObjectProperty)=/Game/UI/SocialPanel/SocialPanelView_UserLists.WidgetArchetype 
+			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_SocialPanelView_UserLists=SocialPanelView_UserLists_C 
 	Default__SocialPanelView_UserLists_C (0-0-0-0): size 174 (cls: Default__SocialPanelView_UserLists_C>SocialPanelView_UserLists_C):
 		Tag array:
@@ -715,14 +731,15 @@ Serialized exports:
 			bHasScriptImplementedPaint(BoolProperty)=False 
 			RenderTransformPivot(StructProperty)=Vector2D(0,0.16) 
 	bSwitchingFriendsButton (0-0-0-0): size 34 (cls: bSwitchingFriendsButton>BoolProperty>/Script/CoreUObject)
-	SwitcherTransition (0-0-0-0): size 36 (cls: SwitcherTransition>ObjectProperty>/Script/CoreUObject)
+	WeGameButtonHovered (0-0-0-0): size 36 (cls: WeGameButtonHovered>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_SocialPanelView_UserLists (0-0-0-0): size 781 (cls: ExecuteUbergraph_SocialPanelView_UserLists>Function>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_NotEqual_ObjectObject_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_NotEqual_ObjectObject_ReturnValue>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
-	PanelIndex (0-0-0-0): size 32 (cls: PanelIndex>IntProperty>/Script/CoreUObject)
-	OnSocialPanelTabChanged (0-0-0-0): size 68 (cls: OnSocialPanelTabChanged>Function>/Script/CoreUObject)
+	ExecuteUbergraph_SocialPanelView_UserLists (0-0-0-0): size 550 (cls: ExecuteUbergraph_SocialPanelView_UserLists>Function>/Script/CoreUObject)
+	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
+	BndEvt__Button_AddWeGameFriends_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__Button_AddWeGameFriends_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
+	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
+	BndEvt__Button_AddWeGameFriends_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__Button_AddWeGameFriends_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
+	ActiveWidget (0-0-0-0): size 36 (cls: ActiveWidget>ObjectProperty>/Script/CoreUObject)
+	BndEvt__Switcher_UserLists_K2Node_ComponentBoundEvent_0_OnActiveWidgetChanged__DelegateSignature (0-0-0-0): size 82 (cls: BndEvt__Switcher_UserLists_K2Node_ComponentBoundEvent_0_OnActiveWidgetChanged__DelegateSignature>Function>/Script/CoreUObject)
 	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
 	OnKeyDown (0-0-0-0): size 325 (cls: OnKeyDown>Function>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -741,6 +758,12 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Background(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+	EntryBorder (0-0-0-0): size 353 (cls: EntryBorder>Border>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	AnimatedInputBorder (0-0-0-0): size 525 (cls: AnimatedInputBorder>Border>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -779,26 +802,11 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_4=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
-	Border_OnlineStatusIndicator (0-0-0-0): size 346 (cls: Border_OnlineStatusIndicator>Border>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-	LocalUserEntryBorder (0-0-0-0): size 501 (cls: LocalUserEntryBorder>Border>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	MyFriendsGhostBorder (0-0-0-0): size 300 (cls: MyFriendsGhostBorder>Border>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
 	NavStopBorder (0-0-0-0): size 423 (cls: NavStopBorder>Border>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -828,11 +836,31 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	Border_OnlineStatusIndicator (0-0-0-0): size 346 (cls: Border_OnlineStatusIndicator>Border>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	LocalUserEntryBorder (0-0-0-0): size 501 (cls: LocalUserEntryBorder>Border>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=Border_18=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_1=WidgetArchetype 
+	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=EntryBorder=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 	BorderSlot_2 (0-0-0-0): size 243 (cls: BorderSlot_2>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -863,18 +891,8 @@ Serialized exports:
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			Parent(ObjectProperty)=Border_OnlineStatusIndicator=WidgetArchetype 
-			Content(ObjectProperty)=Spacer_0=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Parent(ObjectProperty)=LocalUserEntryBorder=WidgetArchetype 
-			Content(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=NavStopBorder=WidgetArchetype 
-			Content(ObjectProperty)=WidgetSwitcher_UserLists=WidgetArchetype 
+			Content(ObjectProperty)=Switcher_UserLists=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 214 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -895,8 +913,18 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=EntryBorder=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
-	K2Node_Select1_Default (0-0-0-0): size 36 (cls: K2Node_Select1_Default>ByteProperty>/Script/CoreUObject)
-	K2Node_Select3_Default (0-0-0-0): size 36 (cls: K2Node_Select3_Default>ByteProperty>/Script/CoreUObject)
+	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=Border_OnlineStatusIndicator=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_0=WidgetArchetype 
+	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=LocalUserEntryBorder=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
+	K2Node_Select2_Default (0-0-0-0): size 36 (cls: K2Node_Select2_Default>ByteProperty>/Script/CoreUObject)
+	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>ByteProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 36 (cls: Temp_byte_Variable>ByteProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 36 (cls: Temp_byte_Variable1>ByteProperty>/Script/CoreUObject)
 	Temp_byte_Variable2 (0-0-0-0): size 36 (cls: Temp_byte_Variable2>ByteProperty>/Script/CoreUObject)
@@ -917,162 +945,201 @@ Serialized exports:
 	InputActionWidget (0-0-0-0): size 227 (cls: InputActionWidget>CommonActionWidget>/Script/CommonUI):
 		Tag array:
 			InputActionDataRow(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
+			Slot(ObjectProperty)=HorizontalBoxSlot_4=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	InputActionWidget (0-0-0-0): size 227 (cls: InputActionWidget>CommonActionWidget>/Script/CommonUI):
 		Tag array:
 			InputActionDataRow(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=HorizontalBoxSlot_4=WidgetArchetype 
+			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
-	Border_Count (0-0-0-0): size 583 (cls: Border_Count>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_6=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	Border_NoCount (0-0-0-0): size 583 (cls: Border_NoCount>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	Border_Small (0-0-0-0): size 538 (cls: Border_Small>CommonBorder>/Script/CommonUI):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_0 (0-0-0-0): size 717 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slot(ObjectProperty)=OverlaySlot_13=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_1 (0-0-0-0): size 538 (cls: CommonBorder_1>CommonBorder>/Script/CommonUI):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_2 (0-0-0-0): size 762 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_3 (0-0-0-0): size 762 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slot(ObjectProperty)=OverlaySlot_10=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_4 (0-0-0-0): size 717 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slot(ObjectProperty)=OverlaySlot_13=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	TutorialBorder (0-0-0-0): size 638 (cls: TutorialBorder>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
-	Border_Count (0-0-0-0): size 583 (cls: Border_Count>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_6=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	Border_NoCount (0-0-0-0): size 583 (cls: Border_NoCount>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	Border_Small (0-0-0-0): size 538 (cls: Border_Small>CommonBorder>/Script/CommonUI):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_0 (0-0-0-0): size 717 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slot(ObjectProperty)=OverlaySlot_13=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_1 (0-0-0-0): size 538 (cls: CommonBorder_1>CommonBorder>/Script/CommonUI):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_2 (0-0-0-0): size 762 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_3 (0-0-0-0): size 762 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slot(ObjectProperty)=OverlaySlot_10=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	CommonBorder_4 (0-0-0-0): size 717 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
-			Slot(ObjectProperty)=OverlaySlot_13=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
-	TutorialBorder (0-0-0-0): size 638 (cls: TutorialBorder>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	Border_ScreenTarget (0-0-0-0): size 255 (cls: Border_ScreenTarget>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+	Border_Count (0-0-0-0): size 583 (cls: Border_Count>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_6=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	Border_NoCount (0-0-0-0): size 583 (cls: Border_NoCount>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	Border_Small (0-0-0-0): size 538 (cls: Border_Small>CommonBorder>/Script/CommonUI):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_0 (0-0-0-0): size 717 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_13=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_1 (0-0-0-0): size 538 (cls: CommonBorder_1>CommonBorder>/Script/CommonUI):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_2 (0-0-0-0): size 762 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_3 (0-0-0-0): size 762 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_10=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_4 (0-0-0-0): size 717 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_13=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	TutorialBorder (0-0-0-0): size 638 (cls: TutorialBorder>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
+	Border_Count (0-0-0-0): size 583 (cls: Border_Count>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_6=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	Border_NoCount (0-0-0-0): size 583 (cls: Border_NoCount>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	Border_Small (0-0-0-0): size 538 (cls: Border_Small>CommonBorder>/Script/CommonUI):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_0 (0-0-0-0): size 717 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_13=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_1 (0-0-0-0): size 538 (cls: CommonBorder_1>CommonBorder>/Script/CommonUI):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_2 (0-0-0-0): size 762 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_3 (0-0-0-0): size 762 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=Border-Bang_C=/Game/UI/Foundation/Border/Border-Bang 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_10=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	CommonBorder_4 (0-0-0-0): size 717 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			BrushColor(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_13=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	TutorialBorder (0-0-0-0): size 638 (cls: TutorialBorder>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
+	Text_LinkPrompt (0-0-0-0): size 438 (cls: Text_LinkPrompt>CommonTextBlock>/Script/CommonUI):
+		Tag array:
+			Text(TextProperty)=Add In WeGame (3054415C47729053AF4975BA3ECEC06B) 
+			ColorAndOpacity(StructProperty)=System.Byte[] 
+			Font(StructProperty)=System.Byte[] 
+			Justification(ByteProperty)=ETextJustify::Center 
+			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Text_UserName (0-0-0-0): size 396 (cls: Text_UserName>CommonTextBlock>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=TextStyle-Base_C=/Game/UI/Foundation/Text/TextStyle-Base 
+			ScrollStyle(ObjectProperty)=TextScrollStyle-NoFade_C=/Game/UI/Foundation/Text/TextScrollStyle-NoFade 
+			Text(TextProperty)=SEND FRIEND REQUEST (8AEDF8FD4E6221B31C7005AF58A79D79) 
+			Font(StructProperty)=System.Byte[] 
+			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Text_CopyConfirmed (0-0-0-0): size 432 (cls: Text_CopyConfirmed>CommonTextBlock>/Script/CommonUI):
+		Tag array:
+			Text(TextProperty)=COPIED TO CLIPBOARD (57F0042E4E4FC0D0FBE1D2AAFC87F258) 
+			ColorAndOpacity(StructProperty)=System.Byte[] 
+			Font(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_3=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Text_FriendLinkInstructions (0-0-0-0): size 470 (cls: Text_FriendLinkInstructions>CommonTextBlock>/Script/CommonUI):
+		Tag array:
+			ScrollStyle(ObjectProperty)=TextScrollStyle-NoFade_C=/Game/UI/Foundation/Text/TextScrollStyle-NoFade 
+			Text(TextProperty)=SHARE TO CONNECT WITH OTHERS (CEC3BA9B4451BD98BDB5168337D7F9C7) 
+			ColorAndOpacity(StructProperty)=System.Byte[] 
+			Font(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Text_LinkPrompt (0-0-0-0): size 429 (cls: Text_LinkPrompt>CommonTextBlock>/Script/CommonUI):
+		Tag array:
+			Text(TextProperty)=COPY FRIEND LINK (D0E6DAB64536F179FF8E40B8477B2685) 
+			ColorAndOpacity(StructProperty)=System.Byte[] 
+			Font(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
 	CommonTextBlock_0 (0-0-0-0): size 656 (cls: CommonTextBlock_0>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS-B-Black_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-B-Black 
@@ -1119,15 +1186,6 @@ Serialized exports:
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			RenderOpacity(FloatProperty)=0.5 
-	Text_UserName (0-0-0-0): size 396 (cls: Text_UserName>CommonTextBlock>/Script/CommonUI):
-		Tag array:
-			Style(ObjectProperty)=TextStyle-Base_C=/Game/UI/Foundation/Text/TextStyle-Base 
-			ScrollStyle(ObjectProperty)=TextScrollStyle-NoFade_C=/Game/UI/Foundation/Text/TextScrollStyle-NoFade 
-			Text(TextProperty)=SEND FRIEND REQUEST (8AEDF8FD4E6221B31C7005AF58A79D79) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
 	CommonTextBlock_0 (0-0-0-0): size 656 (cls: CommonTextBlock_0>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS-B-Black_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-B-Black 
@@ -1198,34 +1256,12 @@ Serialized exports:
 			Font(StructProperty)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_6=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	Text_CopyConfirmed (0-0-0-0): size 432 (cls: Text_CopyConfirmed>CommonTextBlock>/Script/CommonUI):
-		Tag array:
-			Text(TextProperty)=COPIED TO CLIPBOARD (57F0042E4E4FC0D0FBE1D2AAFC87F258) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_3=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-	Text_FriendLinkInstructions (0-0-0-0): size 470 (cls: Text_FriendLinkInstructions>CommonTextBlock>/Script/CommonUI):
-		Tag array:
-			ScrollStyle(ObjectProperty)=TextScrollStyle-NoFade_C=/Game/UI/Foundation/Text/TextScrollStyle-NoFade 
-			Text(TextProperty)=SHARE TO CONNECT WITH OTHERS (CEC3BA9B4451BD98BDB5168337D7F9C7) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-	Text_LinkPrompt (0-0-0-0): size 429 (cls: Text_LinkPrompt>CommonTextBlock>/Script/CommonUI):
-		Tag array:
-			Text(TextProperty)=COPY FRIEND LINK (D0E6DAB64536F179FF8E40B8477B2685) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
 	Switcher_CopyState (0-0-0-0): size 115 (cls: Switcher_CopyState>CommonWidgetSwitcher>/Script/CommonUI):
 		Tag array:
 			TransitionDuration(FloatProperty)=0.125 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
-	WidgetSwitcher_UserLists (0-0-0-0): size 256 (cls: WidgetSwitcher_UserLists>CommonWidgetSwitcher>/Script/CommonUI):
+	Switcher_UserLists (0-0-0-0): size 256 (cls: Switcher_UserLists>CommonWidgetSwitcher>/Script/CommonUI):
 		Tag array:
 			TransitionType(EnumProperty)=ECommonSwitcherTransition::Horizontal 
 			TransitionCurveType(EnumProperty)=ETransitionCurve::Linear 
@@ -1234,6 +1270,9 @@ Serialized exports:
 			ActiveWidgetIndex(IntProperty)=1 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+	ComponentDelegateBinding_0 (0-0-0-0): size 419 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
+		Tag array:
+			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
 	EditableText_AddFriend (0-0-0-0): size 675 (cls: EditableText_AddFriend>EditableText>/Script/UMG):
 		Tag array:
 			HintText(TextProperty)=ENTER DISPLAY NAME OR EMAIL (2CAD89204D93A4BC0BA30FB02EC996AE) 
@@ -1245,10 +1284,10 @@ Serialized exports:
 			DesiredSize(StructProperty)=Vector2D(20,24) 
 			bShowBorder(BoolProperty)=False 
 			Slot(ObjectProperty)=HorizontalBoxSlot_4=WidgetArchetype 
-	LeftsideHB (0-0-0-0): size 90 (cls: LeftsideHB>HorizontalBox>/Script/UMG):
+	HorizontalBox_2 (0-0-0-0): size 82 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1257,14 +1296,26 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
-	LeftsideHB (0-0-0-0): size 90 (cls: LeftsideHB>HorizontalBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+	HorizontalBox_2 (0-0-0-0): size 86 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+	HorizontalBox_6 (0-0-0-0): size 90 (cls: HorizontalBox_6>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
+	LeftsideHB (0-0-0-0): size 90 (cls: LeftsideHB>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+	LeftsideHB (0-0-0-0): size 90 (cls: LeftsideHB>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 	HorizontalBox (0-0-0-0): size 86 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1277,29 +1328,11 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	HorizontalBox_2 (0-0-0-0): size 86 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
+	HorizontalBoxSlot_2 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox_6 (0-0-0-0): size 90 (cls: HorizontalBox_6>HorizontalBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=LeftsideHB=WidgetArchetype 
-			Content(ObjectProperty)=Image_TabIcon=WidgetArchetype 
-	HorizontalBoxSlot_1 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Bottom 
-			Parent(ObjectProperty)=LeftsideHB=WidgetArchetype 
-			Content(ObjectProperty)=Text_Number=WidgetArchetype 
-	HorizontalBoxSlot_2 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=LeftsideHB=WidgetArchetype 
-			Content(ObjectProperty)=Spacer_0=WidgetArchetype 
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
+			Content(ObjectProperty)=Text_LinkPrompt=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
@@ -1310,6 +1343,48 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
+			Content(ObjectProperty)=HoverBubble=WidgetArchetype 
+	HorizontalBoxSlot_0 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=HorizontalBox_6=WidgetArchetype 
+			Content(ObjectProperty)=IconSpacingSB=WidgetArchetype 
+	HorizontalBoxSlot_2 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=HorizontalBox_6=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_7=WidgetArchetype 
+	HorizontalBoxSlot_4 (0-0-0-0): size 267 (cls: HorizontalBoxSlot_4>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=HorizontalBox_6=WidgetArchetype 
+			Content(ObjectProperty)=InputActionWidget=WidgetArchetype 
+	HorizontalBoxSlot_0 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
+			Content(ObjectProperty)=SocialTab_Friends=WidgetArchetype 
+	HorizontalBoxSlot_1 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
+			Content(ObjectProperty)=SocialTab_AddFriends=WidgetArchetype 
+	HorizontalBoxSlot_0 (0-0-0-0): size 295 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Size(StructProperty)=System.Byte[] 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
+			Content(ObjectProperty)=Switcher_CopyState=WidgetArchetype 
+	HorizontalBoxSlot_2 (0-0-0-0): size 111 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=HoverBubble=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
@@ -1344,18 +1419,21 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=LeftsideHB=WidgetArchetype 
 			Content(ObjectProperty)=Spacer_0=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_0 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
-			Content(ObjectProperty)=Button_FriendsList=WidgetArchetype 
-	HorizontalBoxSlot_1 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+			Parent(ObjectProperty)=LeftsideHB=WidgetArchetype 
+			Content(ObjectProperty)=Image_TabIcon=WidgetArchetype 
+	HorizontalBoxSlot_1 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
-			Content(ObjectProperty)=Button_AddFriendsList=WidgetArchetype 
+			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Bottom 
+			Parent(ObjectProperty)=LeftsideHB=WidgetArchetype 
+			Content(ObjectProperty)=Text_Number=WidgetArchetype 
+	HorizontalBoxSlot_2 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=LeftsideHB=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_0=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 324 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1400,88 +1478,12 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_4=WidgetArchetype 
 			Content(ObjectProperty)=Text_UserName=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 295 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
-			Content(ObjectProperty)=Switcher_CopyState=WidgetArchetype 
-	HorizontalBoxSlot_2 (0-0-0-0): size 111 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
-			Content(ObjectProperty)=HoverBubble=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=HorizontalBox_6=WidgetArchetype 
-			Content(ObjectProperty)=IconSpacingSB=WidgetArchetype 
-	HorizontalBoxSlot_2 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
-		Tag array:
-			Size(StructProperty)=System.Byte[] 
-			Parent(ObjectProperty)=HorizontalBox_6=WidgetArchetype 
-			Content(ObjectProperty)=Spacer_7=WidgetArchetype 
-	HorizontalBoxSlot_4 (0-0-0-0): size 267 (cls: HorizontalBoxSlot_4>HorizontalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=HorizontalBox_6=WidgetArchetype 
-			Content(ObjectProperty)=InputActionWidget=WidgetArchetype 
-	Image_TabIcon (0-0-0-0): size 384 (cls: Image_TabIcon>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			RenderOpacity(FloatProperty)=0.5 
-	Image_2 (0-0-0-0): size 194 (cls: Image_2>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
-			bIsVariable(BoolProperty)=False 
-			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
-	No-Count (0-0-0-0): size 306 (cls: No-Count>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	No-Count-1 (0-0-0-0): size 306 (cls: No-Count-1>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
 	SharingIcon (0-0-0-0): size 254 (cls: SharingIcon>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
 			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 			RenderOpacity(FloatProperty)=0.5 
-	Image_TabIcon (0-0-0-0): size 384 (cls: Image_TabIcon>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			RenderOpacity(FloatProperty)=0.5 
-	Image_2 (0-0-0-0): size 194 (cls: Image_2>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
-			bIsVariable(BoolProperty)=False 
-			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
-	No-Count (0-0-0-0): size 306 (cls: No-Count>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	No-Count-1 (0-0-0-0): size 306 (cls: No-Count-1>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
-	SettingsIcon (0-0-0-0): size 254 (cls: SettingsIcon>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
-			RenderOpacity(FloatProperty)=0.3 
 	NoFriendsArrow (0-0-0-0): size 516 (cls: NoFriendsArrow>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -1509,12 +1511,58 @@ Serialized exports:
 			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 			RenderOpacity(FloatProperty)=0.5 
-	K2Node_Event_PanelIndex (0-0-0-0): size 32 (cls: K2Node_Event_PanelIndex>IntProperty>/Script/CoreUObject)
+	Image_TabIcon (0-0-0-0): size 384 (cls: Image_TabIcon>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			RenderOpacity(FloatProperty)=0.5 
+	Image_2 (0-0-0-0): size 194 (cls: Image_2>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=False 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	No-Count (0-0-0-0): size 306 (cls: No-Count>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+	No-Count-1 (0-0-0-0): size 306 (cls: No-Count-1>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
+	Image_TabIcon (0-0-0-0): size 384 (cls: Image_TabIcon>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			RenderOpacity(FloatProperty)=0.5 
+	Image_2 (0-0-0-0): size 194 (cls: Image_2>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=False 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	No-Count (0-0-0-0): size 306 (cls: No-Count>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+	No-Count-1 (0-0-0-0): size 306 (cls: No-Count-1>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_2=WidgetArchetype 
+	SettingsIcon (0-0-0-0): size 254 (cls: SettingsIcon>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+			RenderOpacity(FloatProperty)=0.3 
+	ActiveWidgetIndex (0-0-0-0): size 32 (cls: ActiveWidgetIndex>IntProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_ActiveWidgetIndex (0-0-0-0): size 32 (cls: K2Node_ComponentBoundEvent_ActiveWidgetIndex>IntProperty>/Script/CoreUObject)
 	Temp_int_Variable (0-0-0-0): size 32 (cls: Temp_int_Variable>IntProperty>/Script/CoreUObject)
 	Temp_int_Variable1 (0-0-0-0): size 32 (cls: Temp_int_Variable1>IntProperty>/Script/CoreUObject)
 	Temp_int_Variable2 (0-0-0-0): size 32 (cls: Temp_int_Variable2>IntProperty>/Script/CoreUObject)
-	Temp_int_Variable3 (0-0-0-0): size 32 (cls: Temp_int_Variable3>IntProperty>/Script/CoreUObject)
-	LocalUserEntry (0-0-0-0): size 604 (cls: LocalUserEntry>LocalUserEntry_C>/Game/UI/SocialPanel/LocalUserEntry):
+	UserEntry_LocalPlayer (0-0-0-0): size 604 (cls: UserEntry_LocalPlayer>LocalUserEntry_C>/Game/UI/SocialPanel/LocalUserEntry):
 		Tag array:
 			Border_OnlineStatusIndicator(ObjectProperty)=Border_OnlineStatusIndicator=WidgetArchetype 
 			LocalUserEntryBorder(ObjectProperty)=LocalUserEntryBorder=WidgetArchetype 
@@ -1538,17 +1586,17 @@ Serialized exports:
 			MenuClass(ObjectProperty)=UserActionMenu_C=/Game/UI/SocialPanel/UserActionMenu 
 			Placement(ByteProperty)=MenuPlacement_RightLeftCenter 
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+	MenuAnchor_Actions (0-0-0-0): size 111 (cls: MenuAnchor_Actions>MenuAnchor>/Script/UMG):
+		Tag array:
+			MenuClass(ObjectProperty)=UserActionMenu_C=/Game/UI/SocialPanel/UserActionMenu 
+			Placement(ByteProperty)=MenuPlacement_RightLeftCenter 
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
 	MenuAnchor_OnlineStatusPanel (0-0-0-0): size 225 (cls: MenuAnchor_OnlineStatusPanel>MenuAnchor>/Script/UMG):
 		Tag array:
 			MenuClass(ObjectProperty)=OnlineStatusPanel_C=/Game/UI/SocialPanel/OnlineStatusPanel 
 			Placement(ByteProperty)=MenuPlacement_MenuRight 
 			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
 			RenderTransform(StructProperty)=System.Byte[] 
-	MenuAnchor_Actions (0-0-0-0): size 111 (cls: MenuAnchor_Actions>MenuAnchor>/Script/UMG):
-		Tag array:
-			MenuClass(ObjectProperty)=UserActionMenu_C=/Game/UI/SocialPanel/UserActionMenu 
-			Placement(ByteProperty)=MenuPlacement_RightLeftCenter 
-			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
 	MenuAnchorItemOpen (0-0-0-0): size 222 (cls: MenuAnchorItemOpen>MovieScene>/Script/MovieScene):
 		Tag array:
 			PlaybackRange(StructProperty)=System.Byte[] 
@@ -1581,7 +1629,7 @@ Serialized exports:
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
 			PlaybackRange(StructProperty)=System.Byte[] 
 			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1281057387-1306410911-3972878495-1344803418 
+			Signature(StructProperty)=Guid: 551543677-1187997148-1079791764-4048747516 
 	ToggleTabHighlight (0-0-0-0): size 806 (cls: ToggleTabHighlight>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
@@ -1596,6 +1644,11 @@ Serialized exports:
 			PlaybackRange(StructProperty)=System.Byte[] 
 			DisplayRate(StructProperty)=System.Byte[] 
 			Signature(StructProperty)=Guid: 3861595142-1256233941-39154063-1877353428 
+	WeGameButtonHovered (0-0-0-0): size 222 (cls: WeGameButtonHovered>MovieScene>/Script/MovieScene):
+		Tag array:
+			PlaybackRange(StructProperty)=System.Byte[] 
+			DisplayRate(StructProperty)=System.Byte[] 
+			Signature(StructProperty)=Guid: 781551370-1211394006-441760388-1669037180 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 5211 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
 			Translation(StructProperty)=System.Byte[] 
@@ -1895,8 +1948,9 @@ Serialized exports:
 	CallFunc_PlayAnimation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_PlayAnimation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_PlayAnimation_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue2>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsSocial_Panel_Tab (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsSocial_Panel_Tab>ObjectProperty>/Script/CoreUObject)
-	K2Node_Select2_Default (0-0-0-0): size 36 (cls: K2Node_Select2_Default>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_ActiveWidget (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_ActiveWidget>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_Button (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_Button1 (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button1>ObjectProperty>/Script/CoreUObject)
 	MenuAnchorItemOpen (0-0-0-0): size 36 (cls: MenuAnchorItemOpen>ObjectProperty>/Script/CoreUObject)
 	NoFriendsArrowBounce (0-0-0-0): size 36 (cls: NoFriendsArrowBounce>ObjectProperty>/Script/CoreUObject)
 	Open (0-0-0-0): size 36 (cls: Open>ObjectProperty>/Script/CoreUObject)
@@ -1905,12 +1959,33 @@ Serialized exports:
 	RichTextBlock_0 (0-0-0-0): size 36 (cls: RichTextBlock_0>ObjectProperty>/Script/CoreUObject)
 	Shine (0-0-0-0): size 36 (cls: Shine>ObjectProperty>/Script/CoreUObject)
 	SocialPanel_FriendLinkButton (0-0-0-0): size 36 (cls: SocialPanel_FriendLinkButton>ObjectProperty>/Script/CoreUObject)
+	SwitcherTransition (0-0-0-0): size 36 (cls: SwitcherTransition>ObjectProperty>/Script/CoreUObject)
 	ToggleTabHighlight (0-0-0-0): size 36 (cls: ToggleTabHighlight>ObjectProperty>/Script/CoreUObject)
 	ToggleTabShine (0-0-0-0): size 36 (cls: ToggleTabShine>ObjectProperty>/Script/CoreUObject)
 	AddFriendsOvr (0-0-0-0): size 86 (cls: AddFriendsOvr>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
+	Overlay_4 (0-0-0-0): size 86 (cls: Overlay_4>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+	MyFriendsOvr (0-0-0-0): size 86 (cls: MyFriendsOvr>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
+	Overlay_0 (0-0-0-0): size 86 (cls: Overlay_0>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
+	Overlay_3 (0-0-0-0): size 90 (cls: Overlay_3>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+	Overlay_4 (0-0-0-0): size 86 (cls: Overlay_4>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	FlashingBang (0-0-0-0): size 200 (cls: FlashingBang>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1938,10 +2013,6 @@ Serialized exports:
 	Overlay_0 (0-0-0-0): size 57 (cls: Overlay_0>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-	Overlay_4 (0-0-0-0): size 86 (cls: Overlay_4>Overlay>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	FlashingBang (0-0-0-0): size 200 (cls: FlashingBang>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1973,22 +2044,6 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	MyFriendsOvr (0-0-0-0): size 86 (cls: MyFriendsOvr>Overlay>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
-	Overlay_0 (0-0-0-0): size 86 (cls: Overlay_0>Overlay>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	Overlay_3 (0-0-0-0): size 90 (cls: Overlay_3>Overlay>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	Overlay_4 (0-0-0-0): size 86 (cls: Overlay_4>Overlay>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
@@ -2001,6 +2056,69 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=AddFriendsOvr=WidgetArchetype 
 			Content(ObjectProperty)=AddFriendsGhostBorder=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_4=WidgetArchetype 
+			Content(ObjectProperty)=AnimatedInputBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=Overlay_4=WidgetArchetype 
+			Content(ObjectProperty)=MenuAnchor_Actions=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=MyFriendsOvr=WidgetArchetype 
+			Content(ObjectProperty)=UserTree_FriendsLists=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=MyFriendsOvr=WidgetArchetype 
+			Content(ObjectProperty)=MyFriendsGhostBorder=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 70 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=RightsideIcon=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 111 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=NoFriendsArrow=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
+			Content(ObjectProperty)=InputActionWidget=WidgetArchetype 
+	OverlaySlot_5 (0-0-0-0): size 152 (cls: OverlaySlot_5>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
+			Content(ObjectProperty)=Shine=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_4=WidgetArchetype 
+			Content(ObjectProperty)=AnimatedInputBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=Overlay_4=WidgetArchetype 
+			Content(ObjectProperty)=MenuAnchor_Actions=WidgetArchetype 
 	OverlaySlot_0 (0-0-0-0): size 70 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=FlashingBang=WidgetArchetype 
@@ -2116,18 +2234,6 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
 			Content(ObjectProperty)=NormalBangWrapper_0=WidgetArchetype 
-	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Fill 
-			Parent(ObjectProperty)=Overlay_4=WidgetArchetype 
-			Content(ObjectProperty)=AnimatedInputBorder=WidgetArchetype 
-	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=Overlay_4=WidgetArchetype 
-			Content(ObjectProperty)=MenuAnchor_Actions=WidgetArchetype 
 	OverlaySlot_0 (0-0-0-0): size 70 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=FlashingBang=WidgetArchetype 
@@ -2260,57 +2366,6 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
 			Content(ObjectProperty)=SettingsIconSB=WidgetArchetype 
-	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Fill 
-			VerticalAlignment(ByteProperty)=VAlign_Fill 
-			Parent(ObjectProperty)=MyFriendsOvr=WidgetArchetype 
-			Content(ObjectProperty)=TreeView_FriendsLists=WidgetArchetype 
-	OverlaySlot_2 (0-0-0-0): size 152 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Fill 
-			VerticalAlignment(ByteProperty)=VAlign_Fill 
-			Parent(ObjectProperty)=MyFriendsOvr=WidgetArchetype 
-			Content(ObjectProperty)=MyFriendsGhostBorder=WidgetArchetype 
-	OverlaySlot_0 (0-0-0-0): size 70 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
-			Content(ObjectProperty)=RightsideIcon=WidgetArchetype 
-	OverlaySlot_1 (0-0-0-0): size 111 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
-			Content(ObjectProperty)=NoFriendsArrow=WidgetArchetype 
-	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Fill 
-			VerticalAlignment(ByteProperty)=VAlign_Fill 
-			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
-			Content(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
-	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
-			Content(ObjectProperty)=InputActionWidget=WidgetArchetype 
-	OverlaySlot_5 (0-0-0-0): size 152 (cls: OverlaySlot_5>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Fill 
-			VerticalAlignment(ByteProperty)=VAlign_Fill 
-			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
-			Content(ObjectProperty)=Shine=WidgetArchetype 
-	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Fill 
-			Parent(ObjectProperty)=Overlay_4=WidgetArchetype 
-			Content(ObjectProperty)=AnimatedInputBorder=WidgetArchetype 
-	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=Overlay_4=WidgetArchetype 
-			Content(ObjectProperty)=MenuAnchor_Actions=WidgetArchetype 
 	RichTextBlock_0 (0-0-0-0): size 416 (cls: RichTextBlock_0>RichTextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=NO FRIENDS YET?
@@ -2322,76 +2377,6 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			WrapTextAt(FloatProperty)=448 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 			RenderTransform(StructProperty)=System.Byte[] 
-	BangBox (0-0-0-0): size 108 (cls: BangBox>SizeBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-	BigBang (0-0-0-0): size 280 (cls: BigBang>SizeBox>/Script/UMG):
-		Tag array:
-			HeightOverride(FloatProperty)=45 
-			MinDesiredWidth(FloatProperty)=25 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			bIsVariable(BoolProperty)=True 
-	BigBangCount (0-0-0-0): size 222 (cls: BigBangCount>SizeBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_2=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			bIsVariable(BoolProperty)=True 
-	SizeBox_1 (0-0-0-0): size 192 (cls: SizeBox_1>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_HeightOverride(BoolProperty)=True 
-			bOverride_MinDesiredWidth(BoolProperty)=True 
-			HeightOverride(FloatProperty)=45 
-			MinDesiredWidth(FloatProperty)=25 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
-	SizeBox_2 (0-0-0-0): size 192 (cls: SizeBox_2>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_HeightOverride(BoolProperty)=True 
-			bOverride_MinDesiredWidth(BoolProperty)=True 
-			HeightOverride(FloatProperty)=45 
-			MinDesiredWidth(FloatProperty)=25 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_8=WidgetArchetype 
-	SizeBox_3 (0-0-0-0): size 192 (cls: SizeBox_3>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_WidthOverride(BoolProperty)=True 
-			bOverride_HeightOverride(BoolProperty)=True 
-			WidthOverride(FloatProperty)=24 
-			HeightOverride(FloatProperty)=24 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_11=WidgetArchetype 
-	SizeBox_4 (0-0-0-0): size 192 (cls: SizeBox_4>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_WidthOverride(BoolProperty)=True 
-			bOverride_HeightOverride(BoolProperty)=True 
-			WidthOverride(FloatProperty)=24 
-			HeightOverride(FloatProperty)=24 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_11=WidgetArchetype 
-	SmallBang (0-0-0-0): size 222 (cls: SmallBang>SizeBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_4=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			bIsVariable(BoolProperty)=True 
-	SmallBangCount (0-0-0-0): size 222 (cls: SmallBangCount>SizeBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			bIsVariable(BoolProperty)=True 
-	SuperBang (0-0-0-0): size 166 (cls: SuperBang>SizeBox>/Script/UMG):
-		Tag array:
-			HeightOverride(FloatProperty)=45 
-			MinDesiredWidth(FloatProperty)=25 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_3=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
 	HoverBubble (0-0-0-0): size 137 (cls: HoverBubble>SizeBox>/Script/UMG):
 		Tag array:
 			bOverride_MinDesiredWidth(BoolProperty)=True 
@@ -2426,109 +2411,6 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			bOverride_HeightOverride(BoolProperty)=True 
 			HeightOverride(FloatProperty)=72 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-	BangBox (0-0-0-0): size 108 (cls: BangBox>SizeBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-	BigBang (0-0-0-0): size 280 (cls: BigBang>SizeBox>/Script/UMG):
-		Tag array:
-			HeightOverride(FloatProperty)=45 
-			MinDesiredWidth(FloatProperty)=25 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			bIsVariable(BoolProperty)=True 
-	BigBangCount (0-0-0-0): size 222 (cls: BigBangCount>SizeBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_2=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			bIsVariable(BoolProperty)=True 
-	SizeBox_1 (0-0-0-0): size 192 (cls: SizeBox_1>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_HeightOverride(BoolProperty)=True 
-			bOverride_MinDesiredWidth(BoolProperty)=True 
-			HeightOverride(FloatProperty)=45 
-			MinDesiredWidth(FloatProperty)=25 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
-	SizeBox_2 (0-0-0-0): size 192 (cls: SizeBox_2>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_HeightOverride(BoolProperty)=True 
-			bOverride_MinDesiredWidth(BoolProperty)=True 
-			HeightOverride(FloatProperty)=45 
-			MinDesiredWidth(FloatProperty)=25 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_8=WidgetArchetype 
-	SizeBox_3 (0-0-0-0): size 192 (cls: SizeBox_3>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_WidthOverride(BoolProperty)=True 
-			bOverride_HeightOverride(BoolProperty)=True 
-			WidthOverride(FloatProperty)=24 
-			HeightOverride(FloatProperty)=24 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_11=WidgetArchetype 
-	SizeBox_4 (0-0-0-0): size 192 (cls: SizeBox_4>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_WidthOverride(BoolProperty)=True 
-			bOverride_HeightOverride(BoolProperty)=True 
-			WidthOverride(FloatProperty)=24 
-			HeightOverride(FloatProperty)=24 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_11=WidgetArchetype 
-	SmallBang (0-0-0-0): size 222 (cls: SmallBang>SizeBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_4=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			bIsVariable(BoolProperty)=True 
-	SmallBangCount (0-0-0-0): size 222 (cls: SmallBangCount>SizeBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			bIsVariable(BoolProperty)=True 
-	SuperBang (0-0-0-0): size 166 (cls: SuperBang>SizeBox>/Script/UMG):
-		Tag array:
-			HeightOverride(FloatProperty)=45 
-			MinDesiredWidth(FloatProperty)=25 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=WidgetSwitcherSlot_3=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-	LocalUserStatusSB (0-0-0-0): size 163 (cls: LocalUserStatusSB>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_HeightOverride(BoolProperty)=True 
-			HeightOverride(FloatProperty)=16 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-			bIsVariable(BoolProperty)=True 
-	SettingsIconSB (0-0-0-0): size 192 (cls: SettingsIconSB>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_WidthOverride(BoolProperty)=True 
-			bOverride_HeightOverride(BoolProperty)=True 
-			WidthOverride(FloatProperty)=72 
-			HeightOverride(FloatProperty)=72 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_6=WidgetArchetype 
-	SizeBox_0 (0-0-0-0): size 108 (cls: SizeBox_0>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_HeightOverride(BoolProperty)=True 
-			HeightOverride(FloatProperty)=72 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-	SizeBox_2 (0-0-0-0): size 166 (cls: SizeBox_2>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_MinDesiredHeight(BoolProperty)=True 
-			HeightOverride(FloatProperty)=24 
-			MinDesiredHeight(FloatProperty)=24 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	SizeBox_3 (0-0-0-0): size 137 (cls: SizeBox_3>SizeBox>/Script/UMG):
-		Tag array:
-			bOverride_MinDesiredWidth(BoolProperty)=True 
-			MinDesiredWidth(FloatProperty)=104 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=HorizontalBoxSlot_3=WidgetArchetype 
 	CopyConfirmedSB (0-0-0-0): size 137 (cls: CopyConfirmedSB>SizeBox>/Script/UMG):
 		Tag array:
 			bOverride_HeightOverride(BoolProperty)=True 
@@ -2568,56 +2450,185 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			MinDesiredHeight(FloatProperty)=16 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
+	BangBox (0-0-0-0): size 108 (cls: BangBox>SizeBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	BigBang (0-0-0-0): size 280 (cls: BigBang>SizeBox>/Script/UMG):
+		Tag array:
+			HeightOverride(FloatProperty)=45 
+			MinDesiredWidth(FloatProperty)=25 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			bIsVariable(BoolProperty)=True 
+	BigBangCount (0-0-0-0): size 222 (cls: BigBangCount>SizeBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_2=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			bIsVariable(BoolProperty)=True 
+	SizeBox_1 (0-0-0-0): size 192 (cls: SizeBox_1>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_HeightOverride(BoolProperty)=True 
+			bOverride_MinDesiredWidth(BoolProperty)=True 
+			HeightOverride(FloatProperty)=45 
+			MinDesiredWidth(FloatProperty)=25 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
+	SizeBox_2 (0-0-0-0): size 192 (cls: SizeBox_2>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_HeightOverride(BoolProperty)=True 
+			bOverride_MinDesiredWidth(BoolProperty)=True 
+			HeightOverride(FloatProperty)=45 
+			MinDesiredWidth(FloatProperty)=25 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_8=WidgetArchetype 
+	SizeBox_3 (0-0-0-0): size 192 (cls: SizeBox_3>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_WidthOverride(BoolProperty)=True 
+			bOverride_HeightOverride(BoolProperty)=True 
+			WidthOverride(FloatProperty)=24 
+			HeightOverride(FloatProperty)=24 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_11=WidgetArchetype 
+	SizeBox_4 (0-0-0-0): size 192 (cls: SizeBox_4>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_WidthOverride(BoolProperty)=True 
+			bOverride_HeightOverride(BoolProperty)=True 
+			WidthOverride(FloatProperty)=24 
+			HeightOverride(FloatProperty)=24 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_11=WidgetArchetype 
+	SmallBang (0-0-0-0): size 222 (cls: SmallBang>SizeBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_4=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			bIsVariable(BoolProperty)=True 
+	SmallBangCount (0-0-0-0): size 222 (cls: SmallBangCount>SizeBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			bIsVariable(BoolProperty)=True 
+	SuperBang (0-0-0-0): size 166 (cls: SuperBang>SizeBox>/Script/UMG):
+		Tag array:
+			HeightOverride(FloatProperty)=45 
+			MinDesiredWidth(FloatProperty)=25 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_3=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	BangBox (0-0-0-0): size 108 (cls: BangBox>SizeBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	BigBang (0-0-0-0): size 280 (cls: BigBang>SizeBox>/Script/UMG):
+		Tag array:
+			HeightOverride(FloatProperty)=45 
+			MinDesiredWidth(FloatProperty)=25 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			bIsVariable(BoolProperty)=True 
+	BigBangCount (0-0-0-0): size 222 (cls: BigBangCount>SizeBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_2=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			bIsVariable(BoolProperty)=True 
+	SizeBox_1 (0-0-0-0): size 192 (cls: SizeBox_1>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_HeightOverride(BoolProperty)=True 
+			bOverride_MinDesiredWidth(BoolProperty)=True 
+			HeightOverride(FloatProperty)=45 
+			MinDesiredWidth(FloatProperty)=25 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
+	SizeBox_2 (0-0-0-0): size 192 (cls: SizeBox_2>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_HeightOverride(BoolProperty)=True 
+			bOverride_MinDesiredWidth(BoolProperty)=True 
+			HeightOverride(FloatProperty)=45 
+			MinDesiredWidth(FloatProperty)=25 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_8=WidgetArchetype 
+	SizeBox_3 (0-0-0-0): size 192 (cls: SizeBox_3>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_WidthOverride(BoolProperty)=True 
+			bOverride_HeightOverride(BoolProperty)=True 
+			WidthOverride(FloatProperty)=24 
+			HeightOverride(FloatProperty)=24 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_11=WidgetArchetype 
+	SizeBox_4 (0-0-0-0): size 192 (cls: SizeBox_4>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_WidthOverride(BoolProperty)=True 
+			bOverride_HeightOverride(BoolProperty)=True 
+			WidthOverride(FloatProperty)=24 
+			HeightOverride(FloatProperty)=24 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_11=WidgetArchetype 
+	SmallBang (0-0-0-0): size 222 (cls: SmallBang>SizeBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_4=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			bIsVariable(BoolProperty)=True 
+	SmallBangCount (0-0-0-0): size 222 (cls: SmallBangCount>SizeBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			bIsVariable(BoolProperty)=True 
+	SuperBang (0-0-0-0): size 166 (cls: SuperBang>SizeBox>/Script/UMG):
+		Tag array:
+			HeightOverride(FloatProperty)=45 
+			MinDesiredWidth(FloatProperty)=25 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=WidgetSwitcherSlot_3=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
 	TabToggleSB (0-0-0-0): size 137 (cls: TabToggleSB>SizeBox>/Script/UMG):
 		Tag array:
 			bOverride_HeightOverride(BoolProperty)=True 
 			HeightOverride(FloatProperty)=96 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_6=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+	LocalUserStatusSB (0-0-0-0): size 163 (cls: LocalUserStatusSB>SizeBox>/Script/UMG):
 		Tag array:
-			Parent(ObjectProperty)=BangBox=WidgetArchetype 
-			Content(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
+			bOverride_HeightOverride(BoolProperty)=True 
+			HeightOverride(FloatProperty)=16 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	SettingsIconSB (0-0-0-0): size 192 (cls: SettingsIconSB>SizeBox>/Script/UMG):
 		Tag array:
-			Parent(ObjectProperty)=BigBang=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_1=WidgetArchetype 
-	SizeBoxSlot_3 (0-0-0-0): size 70 (cls: SizeBoxSlot_3>SizeBoxSlot>/Script/UMG):
+			bOverride_WidthOverride(BoolProperty)=True 
+			bOverride_HeightOverride(BoolProperty)=True 
+			WidthOverride(FloatProperty)=72 
+			HeightOverride(FloatProperty)=72 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_6=WidgetArchetype 
+	SizeBox_0 (0-0-0-0): size 108 (cls: SizeBox_0>SizeBox>/Script/UMG):
 		Tag array:
-			Parent(ObjectProperty)=BigBangCount=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_2=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 152 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+			bOverride_HeightOverride(BoolProperty)=True 
+			HeightOverride(FloatProperty)=72 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+	SizeBox_2 (0-0-0-0): size 166 (cls: SizeBox_2>SizeBox>/Script/UMG):
 		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
-			Content(ObjectProperty)=No-Count=WidgetArchetype 
-	SizeBoxSlot_5 (0-0-0-0): size 70 (cls: SizeBoxSlot_5>SizeBoxSlot>/Script/UMG):
+			bOverride_MinDesiredHeight(BoolProperty)=True 
+			HeightOverride(FloatProperty)=24 
+			MinDesiredHeight(FloatProperty)=24 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+	SizeBox_3 (0-0-0-0): size 137 (cls: SizeBox_3>SizeBox>/Script/UMG):
 		Tag array:
-			Parent(ObjectProperty)=SizeBox_2=WidgetArchetype 
-			Content(ObjectProperty)=CountText=WidgetArchetype 
-	SizeBoxSlot_2 (0-0-0-0): size 152 (cls: SizeBoxSlot_2>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=SizeBox_3=WidgetArchetype 
-			Content(ObjectProperty)=No-Count-1=WidgetArchetype 
-	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SizeBox_4=WidgetArchetype 
-			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
-	SizeBoxSlot_4 (0-0-0-0): size 70 (cls: SizeBoxSlot_4>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SmallBang=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_3=WidgetArchetype 
-	SizeBoxSlot_4 (0-0-0-0): size 70 (cls: SizeBoxSlot_4>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SmallBangCount=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_4=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SuperBang=WidgetArchetype 
-			Content(ObjectProperty)=FlashingBang=WidgetArchetype 
+			bOverride_MinDesiredWidth(BoolProperty)=True 
+			MinDesiredWidth(FloatProperty)=104 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=HorizontalBoxSlot_3=WidgetArchetype 
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=HoverBubble=WidgetArchetype 
@@ -2645,73 +2656,6 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=SizeBox_FriendSearch=WidgetArchetype 
 			Content(ObjectProperty)=EntryBorder=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=BangBox=WidgetArchetype 
-			Content(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=BigBang=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_1=WidgetArchetype 
-	SizeBoxSlot_3 (0-0-0-0): size 70 (cls: SizeBoxSlot_3>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=BigBangCount=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_2=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 152 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
-			Content(ObjectProperty)=No-Count=WidgetArchetype 
-	SizeBoxSlot_5 (0-0-0-0): size 70 (cls: SizeBoxSlot_5>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SizeBox_2=WidgetArchetype 
-			Content(ObjectProperty)=CountText=WidgetArchetype 
-	SizeBoxSlot_2 (0-0-0-0): size 152 (cls: SizeBoxSlot_2>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=SizeBox_3=WidgetArchetype 
-			Content(ObjectProperty)=No-Count-1=WidgetArchetype 
-	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SizeBox_4=WidgetArchetype 
-			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
-	SizeBoxSlot_4 (0-0-0-0): size 70 (cls: SizeBoxSlot_4>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SmallBang=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_3=WidgetArchetype 
-	SizeBoxSlot_4 (0-0-0-0): size 70 (cls: SizeBoxSlot_4>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SmallBangCount=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_4=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SuperBang=WidgetArchetype 
-			Content(ObjectProperty)=FlashingBang=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=LocalUserStatusSB=WidgetArchetype 
-			Content(ObjectProperty)=HorizontalBox=WidgetArchetype 
-	SizeBoxSlot_1 (0-0-0-0): size 152 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=SettingsIconSB=WidgetArchetype 
-			Content(ObjectProperty)=SettingsIcon=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 185 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Parent(ObjectProperty)=SizeBox_0=WidgetArchetype 
-			Content(ObjectProperty)=LocalUserEntryBorder=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SizeBox_2=WidgetArchetype 
-			Content(ObjectProperty)=HorizontalBox_4=WidgetArchetype 
-	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=SizeBox_3=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_0=WidgetArchetype 
 	SizeBoxSlot_3 (0-0-0-0): size 156 (cls: SizeBoxSlot_3>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -2747,8 +2691,119 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			Content(ObjectProperty)=Text_FriendLinkInstructions=WidgetArchetype 
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
+			Parent(ObjectProperty)=BangBox=WidgetArchetype 
+			Content(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=BigBang=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_1=WidgetArchetype 
+	SizeBoxSlot_3 (0-0-0-0): size 70 (cls: SizeBoxSlot_3>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=BigBangCount=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_2=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 152 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
+			Content(ObjectProperty)=No-Count=WidgetArchetype 
+	SizeBoxSlot_5 (0-0-0-0): size 70 (cls: SizeBoxSlot_5>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SizeBox_2=WidgetArchetype 
+			Content(ObjectProperty)=CountText=WidgetArchetype 
+	SizeBoxSlot_2 (0-0-0-0): size 152 (cls: SizeBoxSlot_2>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=SizeBox_3=WidgetArchetype 
+			Content(ObjectProperty)=No-Count-1=WidgetArchetype 
+	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SizeBox_4=WidgetArchetype 
+			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
+	SizeBoxSlot_4 (0-0-0-0): size 70 (cls: SizeBoxSlot_4>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SmallBang=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_3=WidgetArchetype 
+	SizeBoxSlot_4 (0-0-0-0): size 70 (cls: SizeBoxSlot_4>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SmallBangCount=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_4=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SuperBang=WidgetArchetype 
+			Content(ObjectProperty)=FlashingBang=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=BangBox=WidgetArchetype 
+			Content(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=BigBang=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_1=WidgetArchetype 
+	SizeBoxSlot_3 (0-0-0-0): size 70 (cls: SizeBoxSlot_3>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=BigBangCount=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_2=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 152 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
+			Content(ObjectProperty)=No-Count=WidgetArchetype 
+	SizeBoxSlot_5 (0-0-0-0): size 70 (cls: SizeBoxSlot_5>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SizeBox_2=WidgetArchetype 
+			Content(ObjectProperty)=CountText=WidgetArchetype 
+	SizeBoxSlot_2 (0-0-0-0): size 152 (cls: SizeBoxSlot_2>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=SizeBox_3=WidgetArchetype 
+			Content(ObjectProperty)=No-Count-1=WidgetArchetype 
+	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SizeBox_4=WidgetArchetype 
+			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
+	SizeBoxSlot_4 (0-0-0-0): size 70 (cls: SizeBoxSlot_4>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SmallBang=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_3=WidgetArchetype 
+	SizeBoxSlot_4 (0-0-0-0): size 70 (cls: SizeBoxSlot_4>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SmallBangCount=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_4=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SuperBang=WidgetArchetype 
+			Content(ObjectProperty)=FlashingBang=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
 			Parent(ObjectProperty)=TabToggleSB=WidgetArchetype 
 			Content(ObjectProperty)=PanelTabHighlight=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=LocalUserStatusSB=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox=WidgetArchetype 
+	SizeBoxSlot_1 (0-0-0-0): size 152 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=SettingsIconSB=WidgetArchetype 
+			Content(ObjectProperty)=SettingsIcon=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 185 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=SizeBox_0=WidgetArchetype 
+			Content(ObjectProperty)=LocalUserEntryBorder=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SizeBox_2=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox_4=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SizeBox_3=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_0=WidgetArchetype 
 	SocialPanel_FriendLinkButton (0-0-0-0): size 410 (cls: SocialPanel_FriendLinkButton>SocialPanel_FriendLinkButton_C>/Game/UI/SocialPanel/SocialPanel_FriendLinkButton):
 		Tag array:
 			MenuAnchor_Actions(ObjectProperty)=MenuAnchor_Actions=WidgetArchetype 
@@ -2763,8 +2818,8 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			InputActionWidget(ObjectProperty)=InputActionWidget=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
-			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	Button_FriendSearch (0-0-0-0): size 299 (cls: Button_FriendSearch>SocialPanel_FriendSearchButton_C>/Game/UI/SocialPanel/SocialPanel_FriendSearchButton):
+			Slot(ObjectProperty)=VerticalBoxSlot_4=WidgetArchetype 
+	Button_FriendSearch (0-0-0-0): size 462 (cls: Button_FriendSearch>SocialPanel_FriendSearchButton_C>/Game/UI/SocialPanel/SocialPanel_FriendSearchButton):
 		Tag array:
 			ClickCapture(ObjectProperty)=ClickCapture=WidgetArchetype 
 			MenuAnchor_Actions(ObjectProperty)=MenuAnchor_Actions=WidgetArchetype 
@@ -2773,10 +2828,11 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			EditableText_AddFriend(ObjectProperty)=EditableText_AddFriend=WidgetArchetype 
 			Style(ObjectProperty)=ButtonStyle-TextOnlyBase_Empty_C=/Game/UI/Foundation/Buttons/ButtonStyles/ButtonStyle-TextOnlyBase_Empty 
 			InputActionWidget(ObjectProperty)=InputActionWidget=WidgetArchetype 
+			ForegroundColor(StructProperty)=System.Byte[] 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_5=WidgetArchetype 
-	Button_AddFriendsList (0-0-0-0): size 503 (cls: Button_AddFriendsList>SocialPanelTab_C>/Game/UI/SocialPanel/SocialPanelTab):
+	SocialTab_AddFriends (0-0-0-0): size 503 (cls: SocialTab_AddFriends>SocialPanelTab_C>/Game/UI/SocialPanel/SocialPanelTab):
 		Tag array:
 			NormalBangWrapper_0(ObjectProperty)=NormalBangWrapper_0=WidgetArchetype 
 			TabName(TextProperty)=ADD FRIENDS (BECE17CE42F9507EBDCEC5BD369A3E6D) 
@@ -2789,11 +2845,10 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
-	Button_FriendsList (0-0-0-0): size 471 (cls: Button_FriendsList>SocialPanelTab_C>/Game/UI/SocialPanel/SocialPanelTab):
+	SocialTab_Friends (0-0-0-0): size 445 (cls: SocialTab_Friends>SocialPanelTab_C>/Game/UI/SocialPanel/SocialPanelTab):
 		Tag array:
 			NormalBangWrapper_0(ObjectProperty)=NormalBangWrapper_0=WidgetArchetype 
-			bIsFriendsListTab(BoolProperty)=True 
-			Texture_TabIcon(ObjectProperty)=T_UI_Icon_MyFriends_64=/Game/UI/SocialPanel/Art/Textures/T_UI_Icon_MyFriends_64 
+			TabIcon(ObjectProperty)=T_UI_Icon_MyFriends_64=/Game/UI/SocialPanel/Art/Textures/T_UI_Icon_MyFriends_64 
 			InviteTintColor(StructProperty)=System.Byte[] 
 			Image_TabIcon(ObjectProperty)=Image_TabIcon=WidgetArchetype 
 			Text_TabName(ObjectProperty)=Text_TabName=WidgetArchetype 
@@ -2803,22 +2858,29 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
-	WidgetArchetype (0-0-0-0): size 386 (cls: WidgetArchetype>SocialPanelView_UserLists_C):
+	WidgetArchetype (0-0-0-0): size 415 (cls: WidgetArchetype>SocialPanelView_UserLists_C):
 		Tag array:
 			PanelTabHighlight(ObjectProperty)=PanelTabHighlight=WidgetArchetype 
 			RichTextBlock_0(ObjectProperty)=RichTextBlock_0=WidgetArchetype 
 			Shine(ObjectProperty)=Shine=WidgetArchetype 
 			SocialPanel_FriendLinkButton(ObjectProperty)=SocialPanel_FriendLinkButton=WidgetArchetype 
-			LocalUserEntry(ObjectProperty)=LocalUserEntry=WidgetArchetype 
-			WidgetSwitcher_UserLists(ObjectProperty)=WidgetSwitcher_UserLists=WidgetArchetype 
-			Button_AddFriendsList(ObjectProperty)=Button_AddFriendsList=WidgetArchetype 
-			Button_FriendsList(ObjectProperty)=Button_FriendsList=WidgetArchetype 
-			TreeView_FriendsLists(ObjectProperty)=TreeView_FriendsLists=WidgetArchetype 
-			TreeView_AddFriends(ObjectProperty)=TreeView_AddFriends=WidgetArchetype 
+			UserEntry_LocalPlayer(ObjectProperty)=UserEntry_LocalPlayer=WidgetArchetype 
 			Button_FriendSearch(ObjectProperty)=Button_FriendSearch=WidgetArchetype 
+			Switcher_UserLists(ObjectProperty)=Switcher_UserLists=WidgetArchetype 
+			SocialTab_AddFriends(ObjectProperty)=SocialTab_AddFriends=WidgetArchetype 
+			SocialTab_Friends(ObjectProperty)=SocialTab_Friends=WidgetArchetype 
+			UserTree_FriendsLists(ObjectProperty)=UserTree_FriendsLists=WidgetArchetype 
+			UserTree_AddFriends(ObjectProperty)=UserTree_AddFriends=WidgetArchetype 
+			Button_AddWeGameFriends(ObjectProperty)=Button_AddWeGameFriends=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
-	TreeView_AddFriends (0-0-0-0): size 186 (cls: TreeView_AddFriends>SocialUserTreeView>/Script/SocialUMG):
+	Button_AddWeGameFriends (0-0-0-0): size 125 (cls: Button_AddWeGameFriends>SocialPanelWeGameFriendButton_C>/Game/UI/SocialPanel/SocialPanelWeGameFriendButton):
+		Tag array:
+			Text_LinkPrompt(ObjectProperty)=Text_LinkPrompt=WidgetArchetype 
+			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
+			bCookedWidgetTree(BoolProperty)=True 
+			Slot(ObjectProperty)=VerticalBoxSlot_13=WidgetArchetype 
+	UserTree_AddFriends (0-0-0-0): size 186 (cls: UserTree_AddFriends>SocialUserTreeView>/Script/SocialUMG):
 		Tag array:
 			UserEntryWidgetClass(ObjectProperty)=UserListEntry_XS_C=/Game/UI/SocialPanel/UserListEntry_XS 
 			InviteEntryWidgetClass(ObjectProperty)=InviteListEntry_FriendInvite_XS_C=/Game/UI/SocialPanel/InviteListEntry_FriendInvite_XS 
@@ -2826,7 +2888,7 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			EntrySpacing(FloatProperty)=4 
 			EntryWidgetClass(ObjectProperty)=UserListHeaderEntry_C=/Game/UI/SocialPanel/UserListHeaderEntry 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	TreeView_FriendsLists (0-0-0-0): size 186 (cls: TreeView_FriendsLists>SocialUserTreeView>/Script/SocialUMG):
+	UserTree_FriendsLists (0-0-0-0): size 186 (cls: UserTree_FriendsLists>SocialUserTreeView>/Script/SocialUMG):
 		Tag array:
 			UserEntryWidgetClass(ObjectProperty)=UserListEntry_XS_C=/Game/UI/SocialPanel/UserListEntry_XS 
 			InviteEntryWidgetClass(ObjectProperty)=InviteListEntry_PartyInvite_XS1_C=/Game/UI/SocialPanel/InviteListEntry_PartyInvite_XS1 
@@ -2834,7 +2896,7 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			EntrySpacing(FloatProperty)=4 
 			EntryWidgetClass(ObjectProperty)=UserListHeaderEntry_C=/Game/UI/SocialPanel/UserListHeaderEntry 
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
-	Spacer_0 (0-0-0-0): size 98 (cls: Spacer_0>Spacer>/Script/UMG):
+	Spacer_7 (0-0-0-0): size 98 (cls: Spacer_7>Spacer>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=Vector2D(8,8) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
@@ -2846,6 +2908,14 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 		Tag array:
 			Size(StructProperty)=Vector2D(8,8) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
+	Spacer_0 (0-0-0-0): size 98 (cls: Spacer_0>Spacer>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=Vector2D(8,8) 
+			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
+	Spacer_0 (0-0-0-0): size 98 (cls: Spacer_0>Spacer>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=Vector2D(8,8) 
+			Slot(ObjectProperty)=BorderSlot_1=WidgetArchetype 
 	PartyLeaderSpacer (0-0-0-0): size 98 (cls: PartyLeaderSpacer>Spacer>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=Vector2D(8,8) 
@@ -2854,15 +2924,7 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 		Tag array:
 			Size(StructProperty)=Vector2D(8,8) 
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	Spacer_7 (0-0-0-0): size 98 (cls: Spacer_7>Spacer>/Script/UMG):
-		Tag array:
-			Size(StructProperty)=Vector2D(8,8) 
-			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
-	Spacer_0 (0-0-0-0): size 98 (cls: Spacer_0>Spacer>/Script/UMG):
-		Tag array:
-			Size(StructProperty)=Vector2D(8,8) 
-			Slot(ObjectProperty)=BorderSlot_1=WidgetArchetype 
-	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>StructProperty>/Script/CoreUObject)
+	K2Node_Select1_Default (0-0-0-0): size 36 (cls: K2Node_Select1_Default>StructProperty>/Script/CoreUObject)
 	Temp_struct_Variable (0-0-0-0): size 36 (cls: Temp_struct_Variable>StructProperty>/Script/CoreUObject)
 	Temp_struct_Variable1 (0-0-0-0): size 36 (cls: Temp_struct_Variable1>StructProperty>/Script/CoreUObject)
 	CallFunc_GetKey_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetKey_ReturnValue>StructProperty>/Script/CoreUObject)
@@ -2875,22 +2937,10 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 	CallFunc_Unhandled_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Unhandled_ReturnValue>StructProperty>/Script/CoreUObject)
 	InKeyEvent (0-0-0-0): size 36 (cls: InKeyEvent>StructProperty>/Script/CoreUObject)
 	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>StructProperty>/Script/CoreUObject)
-	LeftsideVB (0-0-0-0): size 86 (cls: LeftsideVB>VerticalBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	TextPromptVB (0-0-0-0): size 86 (cls: TextPromptVB>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	LeftsideVB (0-0-0-0): size 86 (cls: LeftsideVB>VerticalBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
-	UserTextInfoVB (0-0-0-0): size 86 (cls: UserTextInfoVB>VerticalBox>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 	NoFriends (0-0-0-0): size 86 (cls: NoFriends>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2899,7 +2949,19 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
-	VBox_AddFriends (0-0-0-0): size 90 (cls: VBox_AddFriends>VerticalBox>/Script/UMG):
+	LeftsideVB (0-0-0-0): size 86 (cls: LeftsideVB>VerticalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+	LeftsideVB (0-0-0-0): size 86 (cls: LeftsideVB>VerticalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+	UserTextInfoVB (0-0-0-0): size 86 (cls: UserTextInfoVB>VerticalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
+	VBox_AddFriends (0-0-0-0): size 94 (cls: VBox_AddFriends>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
@@ -2907,17 +2969,6 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	VerticalBoxSlot_0 (0-0-0-0): size 197 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Parent(ObjectProperty)=LeftsideVB=WidgetArchetype 
-			Content(ObjectProperty)=LeftsideHB=WidgetArchetype 
-	VerticalBoxSlot_2 (0-0-0-0): size 111 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Parent(ObjectProperty)=LeftsideVB=WidgetArchetype 
-			Content(ObjectProperty)=Text_TabName=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 70 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=TextPromptVB=WidgetArchetype 
@@ -2927,28 +2978,6 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=TextPromptVB=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
-	VerticalBoxSlot_0 (0-0-0-0): size 197 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Parent(ObjectProperty)=LeftsideVB=WidgetArchetype 
-			Content(ObjectProperty)=LeftsideHB=WidgetArchetype 
-	VerticalBoxSlot_2 (0-0-0-0): size 111 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Parent(ObjectProperty)=LeftsideVB=WidgetArchetype 
-			Content(ObjectProperty)=Text_TabName=WidgetArchetype 
-	VerticalBoxSlot_0 (0-0-0-0): size 111 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
-			Parent(ObjectProperty)=UserTextInfoVB=WidgetArchetype 
-			Content(ObjectProperty)=SizeBox_2=WidgetArchetype 
-	VerticalBoxSlot_1 (0-0-0-0): size 226 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
-			Parent(ObjectProperty)=UserTextInfoVB=WidgetArchetype 
-			Content(ObjectProperty)=LocalUserStatusSB=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 197 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -2972,16 +3001,54 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VB_Prompt=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_2=WidgetArchetype 
-	VerticalBoxSlot_0 (0-0-0-0): size 156 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_0 (0-0-0-0): size 197 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			Parent(ObjectProperty)=VBox_AddFriends=WidgetArchetype 
-			Content(ObjectProperty)=SocialPanel_FriendLinkButton=WidgetArchetype 
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Parent(ObjectProperty)=LeftsideVB=WidgetArchetype 
+			Content(ObjectProperty)=LeftsideHB=WidgetArchetype 
+	VerticalBoxSlot_2 (0-0-0-0): size 111 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Parent(ObjectProperty)=LeftsideVB=WidgetArchetype 
+			Content(ObjectProperty)=Text_TabName=WidgetArchetype 
+	VerticalBoxSlot_0 (0-0-0-0): size 197 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Parent(ObjectProperty)=LeftsideVB=WidgetArchetype 
+			Content(ObjectProperty)=LeftsideHB=WidgetArchetype 
+	VerticalBoxSlot_2 (0-0-0-0): size 111 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Parent(ObjectProperty)=LeftsideVB=WidgetArchetype 
+			Content(ObjectProperty)=Text_TabName=WidgetArchetype 
+	VerticalBoxSlot_0 (0-0-0-0): size 111 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
+			Parent(ObjectProperty)=UserTextInfoVB=WidgetArchetype 
+			Content(ObjectProperty)=SizeBox_2=WidgetArchetype 
+	VerticalBoxSlot_1 (0-0-0-0): size 226 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
+			Parent(ObjectProperty)=UserTextInfoVB=WidgetArchetype 
+			Content(ObjectProperty)=LocalUserStatusSB=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 168 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VBox_AddFriends=WidgetArchetype 
-			Content(ObjectProperty)=TreeView_AddFriends=WidgetArchetype 
+			Content(ObjectProperty)=UserTree_AddFriends=WidgetArchetype 
+	VerticalBoxSlot_13 (0-0-0-0): size 185 (cls: VerticalBoxSlot_13>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=VBox_AddFriends=WidgetArchetype 
+			Content(ObjectProperty)=Button_AddWeGameFriends=WidgetArchetype 
+	VerticalBoxSlot_4 (0-0-0-0): size 156 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=VBox_AddFriends=WidgetArchetype 
+			Content(ObjectProperty)=SocialPanel_FriendLinkButton=WidgetArchetype 
 	VerticalBoxSlot_5 (0-0-0-0): size 156 (cls: VerticalBoxSlot_5>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -2996,7 +3063,7 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
-			Content(ObjectProperty)=LocalUserEntry=WidgetArchetype 
+			Content(ObjectProperty)=UserEntry_LocalPlayer=WidgetArchetype 
 	VerticalBoxSlot_4 (0-0-0-0): size 197 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -3035,7 +3102,7 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			MovieScene(ObjectProperty)=SwitcherTransition=SocialPanelView_UserLists_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2944830245-1288059317-4236259728-147473060 
+			Signature(StructProperty)=Guid: 403399935-1195394285-3728061099-1838461492 
 	ToggleTabHighlight_INST (0-0-0-0): size 5475 (cls: ToggleTabHighlight_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=ToggleTabHighlight=SocialPanelView_UserLists_C 
@@ -3048,6 +3115,12 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
 			Signature(StructProperty)=Guid: 1166819403-1294151028-1139449790-3828781461 
+	WeGameButtonHovered_INST (0-0-0-0): size 1101 (cls: WeGameButtonHovered_INST>WidgetAnimation>/Script/UMG):
+		Tag array:
+			MovieScene(ObjectProperty)=WeGameButtonHovered=SocialPanelView_UserLists_C 
+			DisplayLabel(StrProperty)=WeGameButtonHovered 
+			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
+			Signature(StructProperty)=Guid: 3265243180-1139229977-2844215481-1356019883 
 	WidgetNavigation_0 (0-0-0-0): size 600 (cls: WidgetNavigation_0>WidgetNavigation>/Script/UMG):
 		Tag array:
 			Up(StructProperty)=System.Byte[] 
@@ -3064,66 +3137,6 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	WidgetSwitcherSlot_0 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_0>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Top 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=BigBang=WidgetArchetype 
-	WidgetSwitcherSlot_1 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_1>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=SmallBangCount=WidgetArchetype 
-	WidgetSwitcherSlot_2 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_2>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Top 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=BigBangCount=WidgetArchetype 
-	WidgetSwitcherSlot_3 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_3>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Top 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=SuperBang=WidgetArchetype 
-	WidgetSwitcherSlot_4 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_4>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=SmallBang=WidgetArchetype 
-	WidgetSwitcherSlot_0 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_0>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Top 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=BigBang=WidgetArchetype 
-	WidgetSwitcherSlot_1 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_1>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=SmallBangCount=WidgetArchetype 
-	WidgetSwitcherSlot_2 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_2>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Top 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=BigBangCount=WidgetArchetype 
-	WidgetSwitcherSlot_3 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_3>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Right 
-			VerticalAlignment(ByteProperty)=VAlign_Top 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=SuperBang=WidgetArchetype 
-	WidgetSwitcherSlot_4 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_4>WidgetSwitcherSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
-			Content(ObjectProperty)=SmallBang=WidgetArchetype 
 	WidgetSwitcherSlot_0 (0-0-0-0): size 70 (cls: WidgetSwitcherSlot_0>WidgetSwitcherSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=Switcher_CopyState=WidgetArchetype 
@@ -3133,40 +3146,103 @@ AND FILL OUT YOUR SQUAD. (353E00F344A7D5B9A42303B691E0547B)
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=Switcher_CopyState=WidgetArchetype 
 			Content(ObjectProperty)=CopyConfirmedSB=WidgetArchetype 
+	WidgetSwitcherSlot_0 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_0>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=BigBang=WidgetArchetype 
+	WidgetSwitcherSlot_1 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_1>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=SmallBangCount=WidgetArchetype 
+	WidgetSwitcherSlot_2 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_2>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=BigBangCount=WidgetArchetype 
+	WidgetSwitcherSlot_3 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_3>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=SuperBang=WidgetArchetype 
+	WidgetSwitcherSlot_4 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_4>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=SmallBang=WidgetArchetype 
+	WidgetSwitcherSlot_0 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_0>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=BigBang=WidgetArchetype 
+	WidgetSwitcherSlot_1 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_1>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=SmallBangCount=WidgetArchetype 
+	WidgetSwitcherSlot_2 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_2>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=BigBangCount=WidgetArchetype 
+	WidgetSwitcherSlot_3 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_3>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=SuperBang=WidgetArchetype 
+	WidgetSwitcherSlot_4 (0-0-0-0): size 152 (cls: WidgetSwitcherSlot_4>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=ModeSwitcher=WidgetArchetype 
+			Content(ObjectProperty)=SmallBang=WidgetArchetype 
 	WidgetSwitcherSlot_0 (0-0-0-0): size 70 (cls: WidgetSwitcherSlot_0>WidgetSwitcherSlot>/Script/UMG):
 		Tag array:
-			Parent(ObjectProperty)=WidgetSwitcher_UserLists=WidgetArchetype 
+			Parent(ObjectProperty)=Switcher_UserLists=WidgetArchetype 
 			Content(ObjectProperty)=MyFriendsOvr=WidgetArchetype 
 	WidgetSwitcherSlot_1 (0-0-0-0): size 70 (cls: WidgetSwitcherSlot_1>WidgetSwitcherSlot>/Script/UMG):
 		Tag array:
-			Parent(ObjectProperty)=WidgetSwitcher_UserLists=WidgetArchetype 
+			Parent(ObjectProperty)=Switcher_UserLists=WidgetArchetype 
 			Content(ObjectProperty)=AddFriendsOvr=WidgetArchetype 
 	WidgetSwitcherSlot_2 (0-0-0-0): size 111 (cls: WidgetSwitcherSlot_2>WidgetSwitcherSlot>/Script/UMG):
 		Tag array:
 			VerticalAlignment(ByteProperty)=VAlign_Top 
-			Parent(ObjectProperty)=WidgetSwitcher_UserLists=WidgetArchetype 
+			Parent(ObjectProperty)=Switcher_UserLists=WidgetArchetype 
 			Content(ObjectProperty)=NoFriends=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=Border_18=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
-			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
-	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
-		Tag array:
-			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
+			RootWidget(ObjectProperty)=EntryBorder=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=SizeBox_FriendSearch=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
-			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
-	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
-		Tag array:
-			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
-	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
-		Tag array:
 			RootWidget(ObjectProperty)=SizeBox_0=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=SizeBox_0=WidgetArchetype 

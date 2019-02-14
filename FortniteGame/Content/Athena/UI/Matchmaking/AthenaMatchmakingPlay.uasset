@@ -140,6 +140,7 @@ Name table:
 	CommonBorder
 	CommonBorder_DetailsBG
 	CommonBorder_HighlightBorder
+	CommonBorder_InnerContent
 	CommonBorder_InnerHighlight
 	CommonBorder_TopContainer
 	CommonButton
@@ -256,6 +257,8 @@ Name table:
 	Easing
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortLobbyType
 	EFortMatchmakingViolatorStyle
 	EHorizontalAlignment
@@ -301,6 +304,7 @@ Name table:
 	FillSettingText
 	Flags
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	ForcedTime
@@ -346,6 +350,7 @@ Name table:
 	IconSpacer
 	IconTextButton_C
 	Image
+	Image_BGFillColor
 	Image_HighlightTail
 	Image_InnerTriangle
 	Image_PlaylistTile
@@ -547,6 +552,7 @@ Name table:
 	RCIM_Cubic
 	RCTM_Auto
 	RCTWM_WeightedNone
+	RenderOpacity
 	RenderTransform
 	RenderTransformPivot
 	ResourceObject
@@ -856,11 +862,6 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=NewModeBorder=WidgetArchetype 
 			Content(ObjectProperty)=NewModeText=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 214 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Parent(ObjectProperty)=CommonBorder_0=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_3=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -871,6 +872,11 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_HighlightBorder=WidgetArchetype 
 			Content(ObjectProperty)=CommonBorder_InnerHighlight=WidgetArchetype 
+	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=CommonBorder_InnerContent=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_3=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -948,12 +954,6 @@ Serialized exports:
 			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
-	CommonBorder_0 (0-0-0-0): size 583 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	CommonBorder_DetailsBG (0-0-0-0): size 444 (cls: CommonBorder_DetailsBG>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -969,6 +969,12 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
+	CommonBorder_InnerContent (0-0-0-0): size 571 (cls: CommonBorder_InnerContent>CommonBorder>/Script/CommonUI):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Background(StructProperty)=System.Byte[] 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	CommonBorder_InnerHighlight (0-0-0-0): size 726 (cls: CommonBorder_InnerHighlight>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1170,14 +1176,16 @@ Serialized exports:
 	HorizontalBox_1 (0-0-0-0): size 41 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1215,10 +1223,11 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_0 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1512,6 +1521,10 @@ Serialized exports:
 			RenderTransform(StructProperty)=System.Byte[] 
 			bIsVariable(BoolProperty)=False 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	Image_BGFillColor (0-0-0-0): size 70 (cls: Image_BGFillColor>Image>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
+			RenderOpacity(FloatProperty)=0 
 	Image_HighlightTail (0-0-0-0): size 365 (cls: Image_HighlightTail>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -1630,7 +1643,7 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	Overlay_3 (0-0-0-0): size 94 (cls: Overlay_3>Overlay>/Script/UMG):
+	Overlay_3 (0-0-0-0): size 98 (cls: Overlay_3>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
@@ -1732,7 +1745,7 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=Overlay_1=WidgetArchetype 
-			Content(ObjectProperty)=CommonBorder_0=WidgetArchetype 
+			Content(ObjectProperty)=CommonBorder_InnerContent=WidgetArchetype 
 	OverlaySlot_5 (0-0-0-0): size 152 (cls: OverlaySlot_5>OverlaySlot>/Script/UMG):
 		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
@@ -1752,6 +1765,12 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Bottom 
 			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
 			Content(ObjectProperty)=OverlayTail=WidgetArchetype 
+	OverlaySlot_2 (0-0-0-0): size 152 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
+			Content(ObjectProperty)=Image_BGFillColor=WidgetArchetype 
 	OverlaySlot_3 (0-0-0-0): size 152 (cls: OverlaySlot_3>OverlaySlot>/Script/UMG):
 		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
@@ -1815,13 +1834,14 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=ScaleBox_1=WidgetArchetype 
 			Content(ObjectProperty)=Image_PlaylistTile=WidgetArchetype 
-	ShowdownLobbyViolator (0-0-0-0): size 357 (cls: ShowdownLobbyViolator>ShowdownLobbyViolator_C>/Game/UI/Frontend/Showdown/ShowdownLobbyViolator):
+	ShowdownLobbyViolator (0-0-0-0): size 386 (cls: ShowdownLobbyViolator>ShowdownLobbyViolator_C>/Game/UI/Frontend/Showdown/ShowdownLobbyViolator):
 		Tag array:
 			CommonBorder_DetailsBG(ObjectProperty)=CommonBorder_DetailsBG=WidgetArchetype 
 			CommonBorder_HighlightBorder(ObjectProperty)=CommonBorder_HighlightBorder=WidgetArchetype 
 			CommonBorder_TopContainer(ObjectProperty)=CommonBorder_TopContainer=WidgetArchetype 
 			CommonTextBlock_TimeRemainingDesc(ObjectProperty)=CommonTextBlock_TimeRemainingDesc=WidgetArchetype 
 			CommonWidgetSwitcher_Status(ObjectProperty)=CommonWidgetSwitcher_Status=WidgetArchetype 
+			Image_BGFillColor(ObjectProperty)=Image_BGFillColor=WidgetArchetype 
 			Image_InnerTriangle(ObjectProperty)=Image_InnerTriangle=WidgetArchetype 
 			Text_ShowdownTitle(ObjectProperty)=Text_ShowdownTitle=WidgetArchetype 
 			Text_TimeRemaining(ObjectProperty)=Text_TimeRemaining=WidgetArchetype 

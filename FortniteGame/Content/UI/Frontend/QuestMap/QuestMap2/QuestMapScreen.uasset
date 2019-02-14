@@ -147,6 +147,7 @@ Name table:
 	bCookedWidgetTree
 	bEnteringQuestLog
 	bExpanded
+	bFlipForRightToLeftFlowDirection
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
 	BigBang
@@ -277,6 +278,7 @@ Name table:
 	CallFunc_ShowQuestLog_Passthrough
 	CallFunc_ShowSimpleConfirmationDialog_NUI_ReturnValue
 	CallFunc_SlotAsOverlaySlot_ReturnValue
+	CalloutImage
 	CampaignDetailsPanel
 	CannyValleyQuest_LaunchTheRocket
 	CanvasPanel
@@ -456,6 +458,9 @@ Name table:
 	Down
 	DrawAs
 	DynamicBindingObjects
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
+	EFlowDirectionPreference::LeftToRight
 	EFortBangType
 	EFortBangType::QuestsButton
 	EFortDialogResult
@@ -500,6 +505,7 @@ Name table:
 	EUINavigationRule
 	EUINavigationRule::Stop
 	EventCalloutDescription
+	EventCalloutImage
 	EventCalloutTitle
 	EventDataTable
 	EventDetailsPanel
@@ -516,6 +522,7 @@ Name table:
 	ExpandAll
 	FlashingBang
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	FontOutlineSettings
@@ -668,7 +675,6 @@ Name table:
 	LeftSideImage
 	Less_IntInt
 	LinearColor
-	LineHeightPercentage
 	ListView
 	Locked
 	M-Border-Bang
@@ -764,8 +770,8 @@ Name table:
 	PanelButton_C
 	PanelSlot
 	Parent
-	Passthrough
 	PassThrough
+	Passthrough
 	PendingAccountMergeNotification
 	PendingAccountMergeNotification_C
 	Percentage
@@ -860,6 +866,7 @@ Name table:
 	SetActiveWidgetIndex
 	SetBangStateBP
 	SetBeyondCutoffQuest
+	SetCalloutImage
 	SetDetailsScrollWidget
 	SetFindCurrentActionVisibility
 	SetFrontEndCamera
@@ -1056,7 +1063,7 @@ Serialized exports:
 	ActiveQuests (0-0-0-0): size 36 (cls: ActiveQuests>ArrayProperty>/Script/CoreUObject)
 	ActiveHeader (0-0-0-0): size 36 (cls: ActiveHeader>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_QuestMapScreen (0-0-0-0): size 2841 (cls: ExecuteUbergraph_QuestMapScreen>Function>/Script/CoreUObject)
+	ExecuteUbergraph_QuestMapScreen (0-0-0-0): size 2870 (cls: ExecuteUbergraph_QuestMapScreen>Function>/Script/CoreUObject)
 	CallFunc_GetAllActorsOfClass_OutActors (0-0-0-0): size 36 (cls: CallFunc_GetAllActorsOfClass_OutActors>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetAllActorsOfClass_OutActors (0-0-0-0): size 36 (cls: CallFunc_GetAllActorsOfClass_OutActors>ArrayProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_ActiveEventFlags (0-0-0-0): size 32 (cls: K2Node_CustomEvent_ActiveEventFlags>StrProperty>/Script/CoreUObject)
@@ -1260,7 +1267,7 @@ Serialized exports:
 			Background(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
-	BorderHeader (0-0-0-0): size 365 (cls: BorderHeader>Border>/Script/UMG):
+	BorderHeader (0-0-0-0): size 394 (cls: BorderHeader>Border>/Script/UMG):
 		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
@@ -1347,7 +1354,7 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=BorderFutureQuest=WidgetArchetype 
 			Content(ObjectProperty)=InactiveQuestName=WidgetArchetype 
-	BorderSlot_1 (0-0-0-0): size 214 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
+	BorderSlot_1 (0-0-0-0): size 243 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=BorderHeader=WidgetArchetype 
@@ -1362,9 +1369,10 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_1=WidgetArchetype 
 			Content(ObjectProperty)=NotOwnedQuestTextHeader=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+	BorderSlot_0 (0-0-0-0): size 284 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=CommonBorder_4=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_2=WidgetArchetype 
 	BorderSlot_1 (0-0-0-0): size 243 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
@@ -1392,9 +1400,10 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_1=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_7=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+	BorderSlot_0 (0-0-0-0): size 284 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=CommonBorder_2=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_2=WidgetArchetype 
 	BorderSlot_1 (0-0-0-0): size 243 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
@@ -1426,7 +1435,7 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=BorderBody=WidgetArchetype 
 			Content(ObjectProperty)=BodyText=WidgetArchetype 
-	BorderSlot_2 (0-0-0-0): size 267 (cls: BorderSlot_2>BorderSlot>/Script/UMG):
+	BorderSlot_2 (0-0-0-0): size 296 (cls: BorderSlot_2>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
@@ -1656,7 +1665,7 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_5=WidgetArchetype 
-	BorderHeader (0-0-0-0): size 703 (cls: BorderHeader>CommonBorder>/Script/CommonUI):
+	BorderHeader (0-0-0-0): size 732 (cls: BorderHeader>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Solid_DkBlue_C=/Game/UI/Foundation/Border/Border_Solid_DkBlue 
 			Padding(StructProperty)=System.Byte[] 
@@ -1678,11 +1687,13 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	CommonBorder_4 (0-0-0-0): size 349 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
+	CommonBorder_4 (0-0-0-0): size 416 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_DkBlue 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	CommonBorder_6 (0-0-0-0): size 320 (cls: CommonBorder_6>CommonBorder>/Script/CommonUI):
@@ -1717,11 +1728,13 @@ Serialized exports:
 			BrushColor(StructProperty)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	CommonBorder_2 (0-0-0-0): size 349 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
+	CommonBorder_2 (0-0-0-0): size 416 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_DkBlue 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	Divider (0-0-0-0): size 349 (cls: Divider>CommonBorder>/Script/CommonUI):
@@ -1781,22 +1794,24 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-	CommonBorder_1 (0-0-0-0): size 431 (cls: CommonBorder_1>CommonBorder>/Script/CommonUI):
+	CommonBorder_1 (0-0-0-0): size 457 (cls: CommonBorder_1>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_DkBlue 
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
-	CommonBorder_4 (0-0-0-0): size 431 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
+	CommonBorder_4 (0-0-0-0): size 457 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_DkBlue 
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	CommonBorder_7 (0-0-0-0): size 504 (cls: CommonBorder_7>CommonBorder>/Script/CommonUI):
@@ -1921,7 +1936,7 @@ Serialized exports:
 	FutureTaskList (0-0-0-0): size 111 (cls: FutureTaskList>CommonListView>/Script/CommonUI):
 		Tag array:
 			EntryWidgetClass(ObjectProperty)=JournalQuestProgressBar_C=/Game/UI/Foundation/Quests/JournalQuestProgressBar 
-			Slot(ObjectProperty)=VerticalBoxSlot_6=WidgetArchetype 
+			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	TaskList (0-0-0-0): size 152 (cls: TaskList>CommonListView>/Script/CommonUI):
 		Tag array:
@@ -1963,7 +1978,7 @@ Serialized exports:
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	InactiveQuestName (0-0-0-0): size 380 (cls: InactiveQuestName>CommonTextBlock>/Script/CommonUI):
+	InactiveQuestName (0-0-0-0): size 421 (cls: InactiveQuestName>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS-B_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-B 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
@@ -1971,6 +1986,7 @@ Serialized exports:
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	CommonTextBlock_2 (0-0-0-0): size 480 (cls: CommonTextBlock_2>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS-B-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-B-70pc 
@@ -1997,7 +2013,7 @@ Serialized exports:
 			Slot(ObjectProperty)=VerticalBoxSlot_16=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
-	QuestDescriptionText (0-0-0-0): size 536 (cls: QuestDescriptionText>CommonTextBlock>/Script/CommonUI):
+	QuestDescriptionText (0-0-0-0): size 577 (cls: QuestDescriptionText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-70pc 
 			Text(TextProperty)=Description (7765E9F34C36FAFF4EF1F6AAB484C3A8) 
@@ -2007,6 +2023,7 @@ Serialized exports:
 			AutoWrapText(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	QuestLocation (0-0-0-0): size 342 (cls: QuestLocation>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
@@ -2015,10 +2032,9 @@ Serialized exports:
 			Slot(ObjectProperty)=VerticalBoxSlot_15=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
-	QuestTitle (0-0-0-0): size 417 (cls: QuestTitle>CommonTextBlock>/Script/CommonUI):
+	QuestTitle (0-0-0-0): size 388 (cls: QuestTitle>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-B_C=/Game/UI/Foundation/Text/TextStyle-Base-S-B 
-			ScrollStyle(ObjectProperty)=TextScrollStyle-Base_C=/Game/UI/Foundation/Text/TextScrollStyle-Base 
 			Text(TextProperty)=Quest Title (59AEA01F4A0F99C79849B1B6F46EE66D) 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
@@ -2058,14 +2074,12 @@ Serialized exports:
 			WrapTextAt(FloatProperty)=490 
 			Slot(ObjectProperty)=BorderSlot_3=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	TitleText (0-0-0-0): size 584 (cls: TitleText>CommonTextBlock>/Script/CommonUI):
+	TitleText (0-0-0-0): size 469 (cls: TitleText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			ScrollStyle(ObjectProperty)=TextScrollStyle-Base_C=/Game/UI/Foundation/Text/TextScrollStyle-Base 
 			Text(TextProperty)=Test Emergency Notice Title (F260ABEF4EFBE112B3ADF19026A53BF6) 
 			ColorAndOpacity(StructProperty)=System.Byte[] 
 			Font(StructProperty)=System.Byte[] 
-			Margin(StructProperty)=System.Byte[] 
-			LineHeightPercentage(FloatProperty)=0.75 
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	CommonTextBlock_1 (0-0-0-0): size 578 (cls: CommonTextBlock_1>CommonTextBlock>/Script/CommonUI):
@@ -2237,7 +2251,7 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Visible 
-	TextPage (0-0-0-0): size 616 (cls: TextPage>CommonTextBlock>/Script/CommonUI):
+	TextPage (0-0-0-0): size 502 (cls: TextPage>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=X/Y (85F708474625F7B2666548AEFDDDC808) 
@@ -2245,7 +2259,6 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
 			bIsVariable(BoolProperty)=True 
 	CenterButtonTextWidget (0-0-0-0): size 453 (cls: CenterButtonTextWidget>CommonTextBlock>/Script/CommonUI):
 		Tag array:
@@ -2358,50 +2371,59 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox_13 (0-0-0-0): size 86 (cls: HorizontalBox_13>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_13 (0-0-0-0): size 127 (cls: HorizontalBox_13>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	HorizontalBox_2 (0-0-0-0): size 82 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_2 (0-0-0-0): size 123 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_10=WidgetArchetype 
-	HorizontalBox_2 (0-0-0-0): size 82 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_2 (0-0-0-0): size 123 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_10=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 82 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox_0 (0-0-0-0): size 82 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+	HorizontalBox_0 (0-0-0-0): size 123 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_13 (0-0-0-0): size 82 (cls: HorizontalBox_13>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox_3 (0-0-0-0): size 86 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
+	HorizontalBox_3 (0-0-0-0): size 127 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	HorizontalBox_4 (0-0-0-0): size 82 (cls: HorizontalBox_4>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_4 (0-0-0-0): size 123 (cls: HorizontalBox_4>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	HorizontalBox_8 (0-0-0-0): size 86 (cls: HorizontalBox_8>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_8 (0-0-0-0): size 127 (cls: HorizontalBox_8>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_22=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 115 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2411,22 +2433,25 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=ScaleBoxSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_0 (0-0-0-0): size 127 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	HorizontalBox_4 (0-0-0-0): size 86 (cls: HorizontalBox_4>HorizontalBox>/Script/UMG):
+	HorizontalBox_4 (0-0-0-0): size 127 (cls: HorizontalBox_4>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::LeftToRight 
 	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2435,14 +2460,16 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_0 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -2476,24 +2503,30 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			Content(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 	HorizontalBoxSlot_7 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_7>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_13=WidgetArchetype 
 			Content(ObjectProperty)=QuestIcon-Fill=WidgetArchetype 
-	HorizontalBoxSlot_1 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_1 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=CommonBorder_4=WidgetArchetype 
-	HorizontalBoxSlot_1 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_1 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=CommonBorder_2=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=Overlay_1=WidgetArchetype 
-	HorizontalBoxSlot_1 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_1 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=CommonBorder_1=WidgetArchetype 
 	HorizontalBoxSlot_3 (0-0-0-0): size 341 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
@@ -2515,8 +2548,10 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=QuestIcon-Fill=WidgetArchetype 
-	HorizontalBoxSlot_1 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_1 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_4=WidgetArchetype 
 			Content(ObjectProperty)=CommonBorder_4=WidgetArchetype 
 	HorizontalBoxSlot_7 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_7>HorizontalBoxSlot>/Script/UMG):
@@ -2976,6 +3011,12 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 			RenderTransformPivot(StructProperty)=Vector2D(0.5,1) 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
+	CalloutImage (0-0-0-0): size 225 (cls: CalloutImage>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+			RenderTransformPivot(StructProperty)=Vector2D(0,1) 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	Image-Hittest (0-0-0-0): size 384 (cls: Image-Hittest>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -2983,12 +3024,6 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			RenderTransform(StructProperty)=System.Byte[] 
 			RenderTransformPivot(StructProperty)=Vector2D(0.5,1) 
 			RenderOpacity(FloatProperty)=0 
-	Image_0 (0-0-0-0): size 225 (cls: Image_0>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-			RenderTransformPivot(StructProperty)=Vector2D(0,1) 
-			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	LeftSideImage (0-0-0-0): size 196 (cls: LeftSideImage>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -3791,10 +3826,10 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	QuestEvent-Callout (0-0-0-0): size 299 (cls: QuestEvent-Callout>QuestEvent-Callout_C>/Game/UI/Frontend/Campaign/QuestEvent-Callout):
 		Tag array:
+			CalloutImage(ObjectProperty)=CalloutImage=WidgetArchetype 
 			CommonActionWidget-Controller(ObjectProperty)=CommonActionWidget-Controller=WidgetArchetype 
 			CommonTextBlock-BodyCopy(ObjectProperty)=CommonTextBlock-BodyCopy=WidgetArchetype 
 			CommonTextBlock-Header(ObjectProperty)=CommonTextBlock-Header=WidgetArchetype 
-			Image_0(ObjectProperty)=Image_0=WidgetArchetype 
 			Image-Hittest(ObjectProperty)=Image-Hittest=WidgetArchetype 
 			Overlay-Art(ObjectProperty)=Overlay-Art=WidgetArchetype 
 			SwitchQuestMap(ObjectProperty)=SwitchQuestMap=WidgetArchetype 
@@ -4251,7 +4286,7 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_0=WidgetArchetype 
-			Content(ObjectProperty)=Image_0=WidgetArchetype 
+			Content(ObjectProperty)=CalloutImage=WidgetArchetype 
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
@@ -4395,7 +4430,7 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			bIsVariable(BoolProperty)=True 
 	CallFunc_Format_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Format_ReturnValue>TextProperty>/Script/CoreUObject)
 	CallFunc_GetDisplayName_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetDisplayName_ReturnValue>TextProperty>/Script/CoreUObject)
-	FutureObjectiveProgressBarGroup (0-0-0-0): size 157 (cls: FutureObjectiveProgressBarGroup>VerticalBox>/Script/UMG):
+	FutureObjectiveProgressBarGroup (0-0-0-0): size 153 (cls: FutureObjectiveProgressBarGroup>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_4=WidgetArchetype 
@@ -4423,7 +4458,7 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	ObjectiveProgressBarGroup (0-0-0-0): size 112 (cls: ObjectiveProgressBarGroup>VerticalBox>/Script/UMG):
+	ObjectiveProgressBarGroup (0-0-0-0): size 116 (cls: ObjectiveProgressBarGroup>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_17=WidgetArchetype 
@@ -4529,11 +4564,6 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=FutureObjectiveProgressBarGroup=WidgetArchetype 
 			Content(ObjectProperty)=Image_3=WidgetArchetype 
-	VerticalBoxSlot_6 (0-0-0-0): size 168 (cls: VerticalBoxSlot_6>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			Size(StructProperty)=System.Byte[] 
-			Parent(ObjectProperty)=FutureObjectiveProgressBarGroup=WidgetArchetype 
-			Content(ObjectProperty)=FutureTaskList=WidgetArchetype 
 	VerticalBoxSlot_9 (0-0-0-0): size 243 (cls: VerticalBoxSlot_9>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -4590,6 +4620,11 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 		Tag array:
 			Parent(ObjectProperty)=ObjectiveProgressBarGroup=WidgetArchetype 
 			Content(ObjectProperty)=TaskList=WidgetArchetype 
+	VerticalBoxSlot_1 (0-0-0-0): size 168 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=ObjectiveProgressBarGroup=WidgetArchetype 
+			Content(ObjectProperty)=FutureTaskList=WidgetArchetype 
 	VerticalBoxSlot_4 (0-0-0-0): size 168 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
@@ -4624,14 +4659,16 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 		Tag array:
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=BorderFutureQuest=WidgetArchetype 
-	VerticalBoxSlot_14 (0-0-0-0): size 156 (cls: VerticalBoxSlot_14>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_14 (0-0-0-0): size 226 (cls: VerticalBoxSlot_14>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=QuestTitle=WidgetArchetype 
-	VerticalBoxSlot_15 (0-0-0-0): size 156 (cls: VerticalBoxSlot_15>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_15 (0-0-0-0): size 254 (cls: VerticalBoxSlot_15>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
+			Size(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=QuestLocation=WidgetArchetype 
 	VerticalBoxSlot_16 (0-0-0-0): size 70 (cls: VerticalBoxSlot_16>VerticalBoxSlot>/Script/UMG):
@@ -4647,9 +4684,10 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 		Tag array:
 			Parent(ObjectProperty)=VerticalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_13=WidgetArchetype 
-	VerticalBoxSlot_2 (0-0-0-0): size 185 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_2 (0-0-0-0): size 283 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
+			Size(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=QuestDescriptionText=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 70 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
@@ -4810,8 +4848,9 @@ three lines long (AAC6EEEB42DB987A79BB13955B3DF3F5)
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
-	VerticalBoxSlot_1 (0-0-0-0): size 111 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_1 (0-0-0-0): size 152 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
 		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=VerticalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=TextPage=WidgetArchetype 

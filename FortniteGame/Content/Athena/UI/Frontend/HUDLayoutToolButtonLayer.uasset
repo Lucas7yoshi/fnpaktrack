@@ -7,16 +7,19 @@ Name table:
 	/Game/Athena/HUD/Bacchus/Button_CreativeDelete
 	/Game/Athena/HUD/Bacchus/Button_CreativeGrabOrDuplicate
 	/Game/Athena/HUD/Bacchus/Button_CreativeGrabOrLetGo
+	/Game/Athena/HUD/Bacchus/Button_CreativeGrow
 	/Game/Athena/HUD/Bacchus/Button_CreativePull
 	/Game/Athena/HUD/Bacchus/Button_CreativePush
 	/Game/Athena/HUD/Bacchus/Button_CreativeRotate
 	/Game/Athena/HUD/Bacchus/Button_CreativeRotateCounterClockwise
+	/Game/Athena/HUD/Bacchus/Button_CreativeShrink
 	/Game/Athena/HUD/Bacchus/Button_CreativeSnapLocation
 	/Game/Athena/HUD/Bacchus/Button_CreativeToggleCollision
 	/Game/Athena/HUD/Bacchus/Button_CreativeToggleGravity
 	/Game/Athena/HUD/Bacchus/Button_Crouch
 	/Game/Athena/HUD/Bacchus/Button_CycleWeapon
 	/Game/Athena/HUD/Bacchus/Button_EditReset
+	/Game/Athena/HUD/Bacchus/Button_EditTargeted
 	/Game/Athena/HUD/Bacchus/Button_EmoteMenu
 	/Game/Athena/HUD/Bacchus/Button_Horn
 	/Game/Athena/HUD/Bacchus/Button_Inventory
@@ -27,6 +30,7 @@ Name table:
 	/Game/Athena/HUD/Bacchus/Button_Rotate
 	/Game/Athena/HUD/Bacchus/Button_SecondaryAbility
 	/Game/Athena/HUD/Bacchus/Button_Shoot
+	/Game/Athena/HUD/Bacchus/Button_Use
 	/Game/Athena/HUD/Bacchus/Button_VehicleExit
 	/Game/Athena/HUD/Bacchus/Button_Zoom
 	/Game/Athena/HUD/Bacchus/HamburgerButton
@@ -115,16 +119,19 @@ Name table:
 	Button_CreativeDelete_C
 	Button_CreativeGrabOrDuplicate_C
 	Button_CreativeGrabOrLetGo_C
+	Button_CreativeGrow_C
 	Button_CreativePull_C
 	Button_CreativePush_C
 	Button_CreativeRotate_C
 	Button_CreativeRotateCounterClockwise_C
+	Button_CreativeShrink_C
 	Button_CreativeSnapLocation_C
 	Button_CreativeToggleCollision_C
 	Button_CreativeToggleGravity_C
 	Button_Crouch_C
 	Button_CycleWeapon_C
 	Button_EditReset_C
+	Button_EditTargeted_C
 	Button_EmoteMenu_C
 	Button_Horn_C
 	Button_Inventory_C
@@ -135,6 +142,7 @@ Name table:
 	Button_Rotate_C
 	Button_SecondaryAbility_C
 	Button_Shoot_C
+	Button_Use_C
 	Button_VehicleExit_C
 	Button_Zoom_C
 	ButtonDrawerImage
@@ -176,16 +184,19 @@ Name table:
 	Default__Button_CreativeDelete_C
 	Default__Button_CreativeGrabOrDuplicate_C
 	Default__Button_CreativeGrabOrLetGo_C
+	Default__Button_CreativeGrow_C
 	Default__Button_CreativePull_C
 	Default__Button_CreativePush_C
 	Default__Button_CreativeRotate_C
 	Default__Button_CreativeRotateCounterClockwise_C
+	Default__Button_CreativeShrink_C
 	Default__Button_CreativeSnapLocation_C
 	Default__Button_CreativeToggleCollision_C
 	Default__Button_CreativeToggleGravity_C
 	Default__Button_Crouch_C
 	Default__Button_CycleWeapon_C
 	Default__Button_EditReset_C
+	Default__Button_EditTargeted_C
 	Default__Button_EmoteMenu_C
 	Default__Button_Horn_C
 	Default__Button_Inventory_C
@@ -196,6 +207,7 @@ Name table:
 	Default__Button_Rotate_C
 	Default__Button_SecondaryAbility_C
 	Default__Button_Shoot_C
+	Default__Button_Use_C
 	Default__Button_VehicleExit_C
 	Default__Button_Zoom_C
 	Default__CanvasPanel
@@ -460,10 +472,12 @@ Name table:
 	Placement_Cycle
 	Placement_Edit
 	Placement_EditReset
+	Placement_EditTargeted
 	Placement_Emote
 	Placement_Generic_C
 	Placement_GrabDuplicate
 	Placement_GrabPlace
+	Placement_Grow
 	Placement_Hamburger
 	Placement_Healthbar
 	Placement_Honk
@@ -485,7 +499,9 @@ Name table:
 	Placement_Resources
 	Placement_Rotate
 	Placement_Shoot
+	Placement_Shrink
 	Placement_SquadList
+	Placement_Target
 	Placement_ToggleGravity
 	Placement_Use
 	Placement_VehicleExit
@@ -620,7 +636,7 @@ Name table:
 	WidthOverride
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	HUDLayoutToolButtonLayer_C (0-0-0-0): size 675 (cls: HUDLayoutToolButtonLayer_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	HUDLayoutToolButtonLayer_C (0-0-0-0): size 691 (cls: HUDLayoutToolButtonLayer_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -1264,7 +1280,55 @@ Serialized exports:
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Hidden 
-	CanvasPanel_Build (0-0-0-0): size 124 (cls: CanvasPanel_Build>CanvasPanel>/Script/UMG):
+	DisplayScaleBorder (0-0-0-0): size 587 (cls: DisplayScaleBorder>Border>/Script/UMG):
+		Tag array:
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
+	SelectionBorder (0-0-0-0): size 465 (cls: SelectionBorder>Border>/Script/UMG):
+		Tag array:
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
+	DisplayScaleBorder (0-0-0-0): size 587 (cls: DisplayScaleBorder>Border>/Script/UMG):
+		Tag array:
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
+	SelectionBorder (0-0-0-0): size 465 (cls: SelectionBorder>Border>/Script/UMG):
+		Tag array:
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
+	DisplayScaleBorder (0-0-0-0): size 587 (cls: DisplayScaleBorder>Border>/Script/UMG):
+		Tag array:
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
+	SelectionBorder (0-0-0-0): size 465 (cls: SelectionBorder>Border>/Script/UMG):
+		Tag array:
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
+	DisplayScaleBorder (0-0-0-0): size 587 (cls: DisplayScaleBorder>Border>/Script/UMG):
+		Tag array:
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
+	SelectionBorder (0-0-0-0): size 465 (cls: SelectionBorder>Border>/Script/UMG):
+		Tag array:
+			Background(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
+	CanvasPanel_Build (0-0-0-0): size 128 (cls: CanvasPanel_Build>CanvasPanel>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
@@ -1274,7 +1338,7 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	CanvasPanel_Persistent (0-0-0-0): size 288 (cls: CanvasPanel_Persistent>CanvasPanel>/Script/UMG):
+	CanvasPanel_Persistent (0-0-0-0): size 300 (cls: CanvasPanel_Persistent>CanvasPanel>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
@@ -1303,6 +1367,12 @@ Serialized exports:
 			bAutoSize(BoolProperty)=True 
 			Parent(ObjectProperty)=CanvasPanel_Build=WidgetArchetype 
 			Content(ObjectProperty)=Placement_Materials=WidgetArchetype 
+	CanvasPanelSlot_4 (0-0-0-0): size 496 (cls: CanvasPanelSlot_4>CanvasPanelSlot>/Script/UMG):
+		Tag array:
+			LayoutData(StructProperty)=System.Byte[] 
+			bAutoSize(BoolProperty)=True 
+			Parent(ObjectProperty)=CanvasPanel_Build=WidgetArchetype 
+			Content(ObjectProperty)=Placement_Use=WidgetArchetype 
 	CanvasPanelSlot_5 (0-0-0-0): size 325 (cls: CanvasPanelSlot_5>CanvasPanelSlot>/Script/UMG):
 		Tag array:
 			LayoutData(StructProperty)=System.Byte[] 
@@ -1404,7 +1474,7 @@ Serialized exports:
 			LayoutData(StructProperty)=System.Byte[] 
 			bAutoSize(BoolProperty)=True 
 			Parent(ObjectProperty)=CanvasPanel_Persistent=WidgetArchetype 
-			Content(ObjectProperty)=Placement_Use=WidgetArchetype 
+			Content(ObjectProperty)=Placement_Target=WidgetArchetype 
 	CanvasPanelSlot_20 (0-0-0-0): size 525 (cls: CanvasPanelSlot_20>CanvasPanelSlot>/Script/UMG):
 		Tag array:
 			LayoutData(StructProperty)=System.Byte[] 
@@ -1494,7 +1564,7 @@ Serialized exports:
 			bAutoSize(BoolProperty)=True 
 			Parent(ObjectProperty)=CanvasPanel_Persistent=WidgetArchetype 
 			Content(ObjectProperty)=Placement_KillFeed=WidgetArchetype 
-	CanvasPanelSlot_34 (0-0-0-0): size 325 (cls: CanvasPanelSlot_34>CanvasPanelSlot>/Script/UMG):
+	CanvasPanelSlot_34 (0-0-0-0): size 383 (cls: CanvasPanelSlot_34>CanvasPanelSlot>/Script/UMG):
 		Tag array:
 			LayoutData(StructProperty)=System.Byte[] 
 			bAutoSize(BoolProperty)=True 
@@ -1524,7 +1594,7 @@ Serialized exports:
 			bAutoSize(BoolProperty)=True 
 			Parent(ObjectProperty)=CanvasPanel_Persistent=WidgetArchetype 
 			Content(ObjectProperty)=Placement_CreativeRotate1=WidgetArchetype 
-	CanvasPanelSlot_39 (0-0-0-0): size 325 (cls: CanvasPanelSlot_39>CanvasPanelSlot>/Script/UMG):
+	CanvasPanelSlot_39 (0-0-0-0): size 383 (cls: CanvasPanelSlot_39>CanvasPanelSlot>/Script/UMG):
 		Tag array:
 			LayoutData(StructProperty)=System.Byte[] 
 			bAutoSize(BoolProperty)=True 
@@ -1572,12 +1642,30 @@ Serialized exports:
 			bAutoSize(BoolProperty)=True 
 			Parent(ObjectProperty)=CanvasPanel_Persistent=WidgetArchetype 
 			Content(ObjectProperty)=Placement_VehicleExit=WidgetArchetype 
+	CanvasPanelSlot_48 (0-0-0-0): size 383 (cls: CanvasPanelSlot_48>CanvasPanelSlot>/Script/UMG):
+		Tag array:
+			LayoutData(StructProperty)=System.Byte[] 
+			bAutoSize(BoolProperty)=True 
+			Parent(ObjectProperty)=CanvasPanel_Persistent=WidgetArchetype 
+			Content(ObjectProperty)=Placement_EditTargeted=WidgetArchetype 
+	CanvasPanelSlot_49 (0-0-0-0): size 496 (cls: CanvasPanelSlot_49>CanvasPanelSlot>/Script/UMG):
+		Tag array:
+			LayoutData(StructProperty)=System.Byte[] 
+			bAutoSize(BoolProperty)=True 
+			Parent(ObjectProperty)=CanvasPanel_Persistent=WidgetArchetype 
+			Content(ObjectProperty)=Placement_Grow=WidgetArchetype 
 	CanvasPanelSlot_5 (0-0-0-0): size 383 (cls: CanvasPanelSlot_5>CanvasPanelSlot>/Script/UMG):
 		Tag array:
 			LayoutData(StructProperty)=System.Byte[] 
 			bAutoSize(BoolProperty)=True 
 			Parent(ObjectProperty)=CanvasPanel_Persistent=WidgetArchetype 
 			Content(ObjectProperty)=Placement_AutoRunZone=WidgetArchetype 
+	CanvasPanelSlot_50 (0-0-0-0): size 496 (cls: CanvasPanelSlot_50>CanvasPanelSlot>/Script/UMG):
+		Tag array:
+			LayoutData(StructProperty)=System.Byte[] 
+			bAutoSize(BoolProperty)=True 
+			Parent(ObjectProperty)=CanvasPanel_Persistent=WidgetArchetype 
+			Content(ObjectProperty)=Placement_Shrink=WidgetArchetype 
 	CanvasPanelSlot_6 (0-0-0-0): size 268 (cls: CanvasPanelSlot_6>CanvasPanelSlot>/Script/UMG):
 		Tag array:
 			LayoutData(StructProperty)=System.Byte[] 
@@ -1651,7 +1739,7 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=ExtraButtonBox=WidgetArchetype 
 			Content(ObjectProperty)=Image_UpArrow2=WidgetArchetype 
-	WidgetArchetype (0-0-0-0): size 1923 (cls: WidgetArchetype>HUDLayoutToolButtonLayer_C):
+	WidgetArchetype (0-0-0-0): size 2039 (cls: WidgetArchetype>HUDLayoutToolButtonLayer_C):
 		Tag array:
 			ButtonDrawerImage(ObjectProperty)=ButtonDrawerImage=WidgetArchetype 
 			ButtonLayerBorder(ObjectProperty)=ButtonLayerBorder=WidgetArchetype 
@@ -1672,9 +1760,11 @@ Serialized exports:
 			Placement_Cycle(ObjectProperty)=Placement_Cycle=WidgetArchetype 
 			Placement_Edit(ObjectProperty)=Placement_Edit=WidgetArchetype 
 			Placement_EditReset(ObjectProperty)=Placement_EditReset=WidgetArchetype 
+			Placement_EditTargeted(ObjectProperty)=Placement_EditTargeted=WidgetArchetype 
 			Placement_Emote(ObjectProperty)=Placement_Emote=WidgetArchetype 
 			Placement_GrabDuplicate(ObjectProperty)=Placement_GrabDuplicate=WidgetArchetype 
 			Placement_GrabPlace(ObjectProperty)=Placement_GrabPlace=WidgetArchetype 
+			Placement_Grow(ObjectProperty)=Placement_Grow=WidgetArchetype 
 			Placement_Hamburger(ObjectProperty)=Placement_Hamburger=WidgetArchetype 
 			Placement_Healthbar(ObjectProperty)=Placement_Healthbar=WidgetArchetype 
 			Placement_Honk(ObjectProperty)=Placement_Honk=WidgetArchetype 
@@ -1696,7 +1786,9 @@ Serialized exports:
 			Placement_Resources(ObjectProperty)=Placement_Resources=WidgetArchetype 
 			Placement_Rotate(ObjectProperty)=Placement_Rotate=WidgetArchetype 
 			Placement_Shoot(ObjectProperty)=Placement_Shoot=WidgetArchetype 
+			Placement_Shrink(ObjectProperty)=Placement_Shrink=WidgetArchetype 
 			Placement_SquadList(ObjectProperty)=Placement_SquadList=WidgetArchetype 
+			Placement_Target(ObjectProperty)=Placement_Target=WidgetArchetype 
 			Placement_ToggleGravity(ObjectProperty)=Placement_ToggleGravity=WidgetArchetype 
 			Placement_Use(ObjectProperty)=Placement_Use=WidgetArchetype 
 			Placement_VehicleExit(ObjectProperty)=Placement_VehicleExit=WidgetArchetype 
@@ -1884,9 +1976,11 @@ Serialized exports:
 	Placement_Cycle (0-0-0-0): size 36 (cls: Placement_Cycle>ObjectProperty>/Script/CoreUObject)
 	Placement_Edit (0-0-0-0): size 36 (cls: Placement_Edit>ObjectProperty>/Script/CoreUObject)
 	Placement_EditReset (0-0-0-0): size 36 (cls: Placement_EditReset>ObjectProperty>/Script/CoreUObject)
+	Placement_EditTargeted (0-0-0-0): size 36 (cls: Placement_EditTargeted>ObjectProperty>/Script/CoreUObject)
 	Placement_Emote (0-0-0-0): size 36 (cls: Placement_Emote>ObjectProperty>/Script/CoreUObject)
 	Placement_GrabDuplicate (0-0-0-0): size 36 (cls: Placement_GrabDuplicate>ObjectProperty>/Script/CoreUObject)
 	Placement_GrabPlace (0-0-0-0): size 36 (cls: Placement_GrabPlace>ObjectProperty>/Script/CoreUObject)
+	Placement_Grow (0-0-0-0): size 36 (cls: Placement_Grow>ObjectProperty>/Script/CoreUObject)
 	Placement_Hamburger (0-0-0-0): size 36 (cls: Placement_Hamburger>ObjectProperty>/Script/CoreUObject)
 	Placement_Healthbar (0-0-0-0): size 36 (cls: Placement_Healthbar>ObjectProperty>/Script/CoreUObject)
 	Placement_Honk (0-0-0-0): size 36 (cls: Placement_Honk>ObjectProperty>/Script/CoreUObject)
@@ -1908,7 +2002,9 @@ Serialized exports:
 	Placement_Resources (0-0-0-0): size 36 (cls: Placement_Resources>ObjectProperty>/Script/CoreUObject)
 	Placement_Rotate (0-0-0-0): size 36 (cls: Placement_Rotate>ObjectProperty>/Script/CoreUObject)
 	Placement_Shoot (0-0-0-0): size 36 (cls: Placement_Shoot>ObjectProperty>/Script/CoreUObject)
+	Placement_Shrink (0-0-0-0): size 36 (cls: Placement_Shrink>ObjectProperty>/Script/CoreUObject)
 	Placement_SquadList (0-0-0-0): size 36 (cls: Placement_SquadList>ObjectProperty>/Script/CoreUObject)
+	Placement_Target (0-0-0-0): size 36 (cls: Placement_Target>ObjectProperty>/Script/CoreUObject)
 	Placement_ToggleGravity (0-0-0-0): size 36 (cls: Placement_ToggleGravity>ObjectProperty>/Script/CoreUObject)
 	Placement_Use (0-0-0-0): size 36 (cls: Placement_Use>ObjectProperty>/Script/CoreUObject)
 	Placement_VehicleExit (0-0-0-0): size 36 (cls: Placement_VehicleExit>ObjectProperty>/Script/CoreUObject)
@@ -1933,6 +2029,54 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+	MainOverlay (0-0-0-0): size 108 (cls: MainOverlay>Overlay>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	Overlay_0 (0-0-0-0): size 57 (cls: Overlay_0>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+	Overlay_2 (0-0-0-0): size 86 (cls: Overlay_2>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
+	MainOverlay (0-0-0-0): size 108 (cls: MainOverlay>Overlay>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	Overlay_0 (0-0-0-0): size 57 (cls: Overlay_0>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+	Overlay_2 (0-0-0-0): size 86 (cls: Overlay_2>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
+	MainOverlay (0-0-0-0): size 108 (cls: MainOverlay>Overlay>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	Overlay_0 (0-0-0-0): size 57 (cls: Overlay_0>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+	Overlay_2 (0-0-0-0): size 86 (cls: Overlay_2>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
+	MainOverlay (0-0-0-0): size 108 (cls: MainOverlay>Overlay>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
+	Overlay_0 (0-0-0-0): size 57 (cls: Overlay_0>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+	Overlay_2 (0-0-0-0): size 86 (cls: Overlay_2>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
 	MainOverlay (0-0-0-0): size 108 (cls: MainOverlay>Overlay>/Script/UMG):
 		Tag array:
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
@@ -3847,6 +3991,102 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
 			Content(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=MainOverlay=WidgetArchetype 
+	OverlaySlot_2 (0-0-0-0): size 152 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_2=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
+			Content(ObjectProperty)=SelectionBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
+			Content(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=MainOverlay=WidgetArchetype 
+	OverlaySlot_2 (0-0-0-0): size 152 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_2=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
+			Content(ObjectProperty)=SelectionBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
+			Content(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=MainOverlay=WidgetArchetype 
+	OverlaySlot_2 (0-0-0-0): size 152 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_2=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
+			Content(ObjectProperty)=SelectionBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
+			Content(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=MainOverlay=WidgetArchetype 
+	OverlaySlot_2 (0-0-0-0): size 152 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_2=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
+			Content(ObjectProperty)=SelectionBorder=WidgetArchetype 
+	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
+			Content(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
 	Placement_ADS (0-0-0-0): size 241 (cls: Placement_ADS>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
 		Tag array:
 			HUDElementClass(ObjectProperty)=Button_Zoom_C=/Game/Athena/HUD/Bacchus/Button_Zoom 
@@ -3980,6 +4220,16 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=CanvasPanelSlot_5=WidgetArchetype 
+	Placement_EditTargeted (0-0-0-0): size 241 (cls: Placement_EditTargeted>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
+		Tag array:
+			HUDElementClass(ObjectProperty)=Button_EditTargeted_C=/Game/Athena/HUD/Bacchus/Button_EditTargeted 
+			SelectionBorder(ObjectProperty)=SelectionBorder=WidgetArchetype 
+			DisplayScaleBorder(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
+			MainOverlay(ObjectProperty)=MainOverlay=WidgetArchetype 
+			Property_0(FloatProperty)=160 
+			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
+			bCookedWidgetTree(BoolProperty)=True 
+			Slot(ObjectProperty)=CanvasPanelSlot_48=WidgetArchetype 
 	Placement_Emote (0-0-0-0): size 212 (cls: Placement_Emote>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
 		Tag array:
 			HUDElementClass(ObjectProperty)=Button_EmoteMenu_C=/Game/Athena/HUD/Bacchus/Button_EmoteMenu 
@@ -4011,6 +4261,17 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=CanvasPanelSlot_35=WidgetArchetype 
+	Placement_Grow (0-0-0-0): size 267 (cls: Placement_Grow>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
+		Tag array:
+			HUDElementClass(ObjectProperty)=Button_CreativeGrow_C=/Game/Athena/HUD/Bacchus/Button_CreativeGrow 
+			SelectionBorder(ObjectProperty)=SelectionBorder=WidgetArchetype 
+			DisplayScaleBorder(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
+			MainOverlay(ObjectProperty)=MainOverlay=WidgetArchetype 
+			bCanEditVisibilityOverride(BoolProperty)=False 
+			Property_0(FloatProperty)=160 
+			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
+			bCookedWidgetTree(BoolProperty)=True 
+			Slot(ObjectProperty)=CanvasPanelSlot_49=WidgetArchetype 
 	Placement_Hamburger (0-0-0-0): size 212 (cls: Placement_Hamburger>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
 		Tag array:
 			HUDElementClass(ObjectProperty)=HamburgerButton_C=/Game/Athena/HUD/Bacchus/HamburgerButton 
@@ -4222,6 +4483,17 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=CanvasPanelSlot_10=WidgetArchetype 
+	Placement_Shrink (0-0-0-0): size 267 (cls: Placement_Shrink>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
+		Tag array:
+			HUDElementClass(ObjectProperty)=Button_CreativeShrink_C=/Game/Athena/HUD/Bacchus/Button_CreativeShrink 
+			SelectionBorder(ObjectProperty)=SelectionBorder=WidgetArchetype 
+			DisplayScaleBorder(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
+			MainOverlay(ObjectProperty)=MainOverlay=WidgetArchetype 
+			bCanEditVisibilityOverride(BoolProperty)=False 
+			Property_0(FloatProperty)=160 
+			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
+			bCookedWidgetTree(BoolProperty)=True 
+			Slot(ObjectProperty)=CanvasPanelSlot_50=WidgetArchetype 
 	Placement_SquadList (0-0-0-0): size 302 (cls: Placement_SquadList>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
 		Tag array:
 			HUDElementClass(ObjectProperty)=ProxySquadList_C=/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/ProxySquadList 
@@ -4232,6 +4504,16 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=CanvasPanelSlot_19=WidgetArchetype 
+	Placement_Target (0-0-0-0): size 241 (cls: Placement_Target>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
+		Tag array:
+			HUDElementClass(ObjectProperty)=Button_SecondaryAbility_C=/Game/Athena/HUD/Bacchus/Button_SecondaryAbility 
+			SelectionBorder(ObjectProperty)=SelectionBorder=WidgetArchetype 
+			DisplayScaleBorder(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
+			MainOverlay(ObjectProperty)=MainOverlay=WidgetArchetype 
+			Property_0(FloatProperty)=160 
+			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
+			bCookedWidgetTree(BoolProperty)=True 
+			Slot(ObjectProperty)=CanvasPanelSlot_2=WidgetArchetype 
 	Placement_ToggleGravity (0-0-0-0): size 238 (cls: Placement_ToggleGravity>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
 		Tag array:
 			HUDElementClass(ObjectProperty)=Button_CreativeToggleGravity_C=/Game/Athena/HUD/Bacchus/Button_CreativeToggleGravity 
@@ -4244,14 +4526,14 @@ Serialized exports:
 			Slot(ObjectProperty)=CanvasPanelSlot_43=WidgetArchetype 
 	Placement_Use (0-0-0-0): size 241 (cls: Placement_Use>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
 		Tag array:
-			HUDElementClass(ObjectProperty)=Button_SecondaryAbility_C=/Game/Athena/HUD/Bacchus/Button_SecondaryAbility 
+			HUDElementClass(ObjectProperty)=Button_Use_C=/Game/Athena/HUD/Bacchus/Button_Use 
 			SelectionBorder(ObjectProperty)=SelectionBorder=WidgetArchetype 
 			DisplayScaleBorder(ObjectProperty)=DisplayScaleBorder=WidgetArchetype 
 			MainOverlay(ObjectProperty)=MainOverlay=WidgetArchetype 
 			Property_0(FloatProperty)=160 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
-			Slot(ObjectProperty)=CanvasPanelSlot_2=WidgetArchetype 
+			Slot(ObjectProperty)=CanvasPanelSlot_4=WidgetArchetype 
 	Placement_VehicleExit (0-0-0-0): size 267 (cls: Placement_VehicleExit>Placement_Generic_C>/Game/Athena/HUD/Bacchus/HUDLayoutToolWidgets/Placement_Generic):
 		Tag array:
 			HUDElementClass(ObjectProperty)=Button_VehicleExit_C=/Game/Athena/HUD/Bacchus/Button_VehicleExit 
@@ -4429,6 +4711,18 @@ Serialized exports:
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=InternalSizeBox=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 

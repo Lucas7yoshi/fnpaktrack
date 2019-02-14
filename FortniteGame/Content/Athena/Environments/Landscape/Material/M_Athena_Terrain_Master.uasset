@@ -33,6 +33,7 @@ Name table:
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Arid/MF_Athena_Arid_Rock
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Arid/MF_Athena_Arid_Sand
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Arid/MF_Athena_AridGrass
+	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_ColorTest
 	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_Material_BaseMultiply
 	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_SedimentGradient
 	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_WorldHeightGrad
@@ -170,6 +171,7 @@ Name table:
 	LayerNotUsed
 	Layers
 	LayerUsed
+	LB_HeightBlend
 	LB_WeightBlend
 	LinearGradient
 	M_Athena_Terrain_Master
@@ -219,6 +221,7 @@ Name table:
 	MF_Athena_Arid_Rock
 	MF_Athena_Arid_Sand
 	MF_Athena_AridGrass
+	MF_Athena_ColorTest
 	MF_Athena_Forest_01
 	MF_Athena_Grass_01
 	MF_Athena_Holiday_SnowFall
@@ -282,20 +285,21 @@ Name table:
 	Texture2D
 	Transform3x3Matrix
 	UseAridRockBlend
+	UseColorTest
 	Vector
 	Winter_Gravel_Tint
 	WorldAlignedNormalContrast
 	WorldAlignedNormals_HighQuality
 	WorldAlignedTexture
 Serialized exports:
-	M_Athena_Terrain_Master (0-0-0-0): size 135971 (cls: M_Athena_Terrain_Master>Material>/Script/Engine):
+	M_Athena_Terrain_Master (0-0-0-0): size 134121 (cls: M_Athena_Terrain_Master>Material>/Script/Engine):
 		Tag array:
 			MaterialAttributes(StructProperty)=System.Byte[] 
 			Expressions(ArrayProperty)=[object] (inner: ObjectProperty)
 			MaterialFunctionInfos(ArrayProperty)=[object] (inner: StructProperty)
 			MaterialParameterCollectionInfos(ArrayProperty)=[object] (inner: StructProperty)
 			bUseMaterialAttributes(BoolProperty)=True 
-			StateId(StructProperty)=Guid: 2003918541-1101346561-4187547321-3017579813 
+			StateId(StructProperty)=Guid: 2948254781-1274961211-631552171-2589722121 
 			CachedQualityLevelsUsed(ArrayProperty)=[object] (inner: BoolProperty)
 	MaterialExpressionCollectionParameter_0 (0-0-0-0): size 168 (cls: MaterialExpressionCollectionParameter_0>MaterialExpressionCollectionParameter>/Script/Engine):
 		Tag array:
@@ -778,6 +782,11 @@ Serialized exports:
 			PreviewWeight(FloatProperty)=1 
 			ExpressionGUID(StructProperty)=Guid: 2149070979-1168148543-400491663-254824067 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
+	MaterialExpressionLandscapeLayerSample_48 (0-0-0-0): size 139 (cls: MaterialExpressionLandscapeLayerSample_48>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
+		Tag array:
+			ParameterName(NameProperty)=Road 
+			ExpressionGUID(StructProperty)=Guid: 3828372241-1272375803-2452634516-2163691330 
+			Material(ObjectProperty)=M_Athena_Terrain_Master= 
 	MaterialExpressionLandscapeLayerSample_49 (0-0-0-0): size 139 (cls: MaterialExpressionLandscapeLayerSample_49>MaterialExpressionLandscapeLayerSample>/Script/Landscape):
 		Tag array:
 			ParameterName(NameProperty)=Road 
@@ -974,6 +983,10 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=HeightLerp=/Engine/Functions/Engine_MaterialFunctions02/Texturing/HeightLerp 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
+	MaterialExpressionMaterialFunctionCall_11 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_11>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=MatLayerBlend_Standard=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Standard 
+			Material(ObjectProperty)=M_Athena_Terrain_Master= 
 	MaterialExpressionMaterialFunctionCall_111 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_111>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=HeightLerp=/Engine/Functions/Engine_MaterialFunctions02/Texturing/HeightLerp 
@@ -1138,6 +1151,10 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=MF_Athena_IceRock_01=/Game/Athena/Environments/Landscape/MaterialFunctions/Snow/MF_Athena_IceRock_01 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
+	MaterialExpressionMaterialFunctionCall_44 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_44>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=MF_Athena_ColorTest=/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_ColorTest 
+			Material(ObjectProperty)=M_Athena_Terrain_Master= 
 	MaterialExpressionMaterialFunctionCall_45 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_45>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=MatLayerBlend_Standard=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Standard 
@@ -1246,11 +1263,10 @@ Serialized exports:
 			ParameterName(NameProperty)=RockEdgeDesat 
 			ExpressionGUID(StructProperty)=Guid: 2621963367-1191121931-1939777159-1977743456 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
-	MaterialExpressionStaticSwitchParameter_0 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_0>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+	MaterialExpressionStaticSwitchParameter_0 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_0>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
 			A(StructProperty)=System.Byte[] 
 			B(StructProperty)=System.Byte[] 
-			DefaultValue(BoolProperty)=True 
 			ParameterName(NameProperty)=Enable_HolidaySnow 
 			ExpressionGUID(StructProperty)=Guid: 496770195-1295961213-4092718484-1064157937 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
@@ -1275,11 +1291,10 @@ Serialized exports:
 			ParameterName(NameProperty)=EnableQuickColorRender 
 			ExpressionGUID(StructProperty)=Guid: 4110080102-1077651655-531953568-4024581469 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
-	MaterialExpressionStaticSwitchParameter_4 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_4>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+	MaterialExpressionStaticSwitchParameter_4 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_4>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
 			A(StructProperty)=System.Byte[] 
 			B(StructProperty)=System.Byte[] 
-			DefaultValue(BoolProperty)=True 
 			ParameterName(NameProperty)=Enable_HolidaySnow 
 			ExpressionGUID(StructProperty)=Guid: 4120093810-1173000042-3245919623-1259303463 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
@@ -1289,6 +1304,13 @@ Serialized exports:
 			B(StructProperty)=System.Byte[] 
 			ParameterName(NameProperty)=EnableQuickColorRender 
 			ExpressionGUID(StructProperty)=Guid: 890267071-1158429904-2230389900-2804120309 
+			Material(ObjectProperty)=M_Athena_Terrain_Master= 
+	MaterialExpressionStaticSwitchParameter_6 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_6>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+		Tag array:
+			A(StructProperty)=System.Byte[] 
+			B(StructProperty)=System.Byte[] 
+			ParameterName(NameProperty)=UseColorTest 
+			ExpressionGUID(StructProperty)=Guid: 3105763480-1102920376-2624564100-991359831 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
 	MaterialExpressionStaticSwitchParameter_7 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_7>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
@@ -1318,6 +1340,13 @@ Serialized exports:
 			SamplerType(ByteProperty)=SAMPLERTYPE_Normal 
 			Material(ObjectProperty)=M_Athena_Terrain_Master= 
 	MaterialExpressionTextureSample_11 (0-0-0-0): size 241 (cls: MaterialExpressionTextureSample_11>MaterialExpressionTextureSample>/Script/Engine):
+		Tag array:
+			Coordinates(StructProperty)=System.Byte[] 
+			SamplerSource(ByteProperty)=SSM_Wrap_WorldGroupSettings 
+			Texture(ObjectProperty)=T_Athena_Terrain_Topo_Mask=/Game/Athena/Environments/Landscape/Textures/T_Athena_Terrain_Topo_Mask 
+			SamplerType(ByteProperty)=SAMPLERTYPE_LinearColor 
+			Material(ObjectProperty)=M_Athena_Terrain_Master= 
+	MaterialExpressionTextureSample_2 (0-0-0-0): size 241 (cls: MaterialExpressionTextureSample_2>MaterialExpressionTextureSample>/Script/Engine):
 		Tag array:
 			Coordinates(StructProperty)=System.Byte[] 
 			SamplerSource(ByteProperty)=SSM_Wrap_WorldGroupSettings 

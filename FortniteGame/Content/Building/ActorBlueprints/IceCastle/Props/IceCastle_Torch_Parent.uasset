@@ -3,13 +3,17 @@ Name table:
 	/Game/Athena/Items/Traps/Campfire/Effects/P_Athena_IceKing_Torch
 	/Game/Balance/DataTables/ResourceRates
 	/Game/Building/ActorBlueprints/IceCastle/Props/IceCastle_Torch_Parent
+	/Game/Effects/Fort_Effects/World/Destruction/Base_Effects/P_General_Deco_Destruction_Tiny
 	/Game/Environments/Props/Winter/Meshes/S_Castle_WallTorch
 	/Game/Packages/Fortress_Transylvania/Test_Assets/Blueprints/ArtificialLights/Transylvania_LightMaster
 	/Game/Sounds/Trans_AmbientLoops/Fire/Fire_Torch_Cue
 	/Script/CoreUObject
 	/Script/Engine
+	/Script/FortniteGame
+	/Script/GameplayAbilities
 	/Script/GameplayTags
 	1
+	Actor
 	ActorComponentTickFunction
 	AllNodes
 	ArrayProperty
@@ -32,6 +36,7 @@ Name table:
 	BoxComponent
 	bStartWithTickEnabled
 	Building.Type.Prop
+	BuildingActor
 	BuildingAttachmentType
 	BuildingResourceAmountOverride
 	ByteProperty
@@ -59,13 +64,19 @@ Name table:
 	CreateDynamicMaterialInstance
 	CurveTable
 	CurveTableRowHandle
+	Damage
+	DamageCauser
+	DamageTags
 	Deactivate
+	DeathParticles
 	Default__AudioComponent
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
+	Default__FloatProperty
 	Default__Function
 	Default__IceCastle_Torch_Parent_C
 	Default__InheritableComponentHandler
+	Default__IntProperty
 	Default__KismetSystemLibrary
 	Default__ObjectProperty
 	Default__ParticleSystemComponent
@@ -79,28 +90,43 @@ Name table:
 	DefaultSceneRootNode
 	Destroyed
 	EBuildingAttachmentType
+	EffectContext
 	EFortResourceType
 	EFortResourceType::Metal
 	EmbersColor
 	ENavigationObstacleOverride
 	ENavigationObstacleOverride::ForceEnabled
+	EntryPoint
 	EnumProperty
+	ExecuteUbergraph_IceCastle_Torch_Parent
 	Fire_Torch_Cue
 	FlamesColor
 	FloatProperty
 	FortAttributeInitializationKey
+	FortPawn
 	Function
 	Game
+	GameplayEffectContextHandle
 	GameplayTag
 	GameplayTagContainer
 	Guid
+	HitInfo
+	HitResult
 	IceCastle_Torch_Parent_C
 	IndirectLightingIntensity
 	InheritableComponentHandler
+	InstigatedBy
 	Intensity
 	InternalVariableName
 	IntProperty
 	IsDedicatedServer
+	K2Node_Event_Damage
+	K2Node_Event_DamageCauser
+	K2Node_Event_DamageTags
+	K2Node_Event_EffectContext
+	K2Node_Event_HitInfo
+	K2Node_Event_InstigatedBy
+	K2Node_Event_Momentum
 	KismetMathLibrary
 	KismetSystemLibrary
 	LightColor
@@ -109,22 +135,26 @@ Name table:
 	MaterialInstanceConstant
 	MaterialInstanceDynamic
 	MI_Fire_Campfire_Mesh_IceKing
+	Momentum
 	NameProperty
 	NavigationObstacleOverride
 	None
 	NumReplicatedProperties
 	Object
 	ObjectProperty
+	OnDeathPlayEffects
 	OnRep_Destroyed
 	OverrideMaterials
 	OwnerClass
 	P_Athena_IceKing_Torch
+	P_General_Deco_Destruction_Tiny
 	P_Torch_Fire_01
 	P_Torch_Fire_01_GEN_VARIABLE
 	Package
 	ParentComponentOrVariableName
 	ParticleSystem
 	ParticleSystemComponent
+	PointerToUberGraphFrame
 	PointLight
 	PointLight_GEN_VARIABLE
 	PointLightComponent
@@ -160,22 +190,23 @@ Name table:
 	TorchAudio
 	TorchAudio_GEN_VARIABLE
 	Transylvania_LightMaster_C
+	UberGraphFrame
+	UberGraphFunction
 	UserConstructionScript
 	VariableGuid
 	Vector
 	VolumetricScatteringIntensity
 Serialized exports:
-	P_Torch_Fire_01 (0-0-0-0): size 36 (cls: P_Torch_Fire_01>ObjectProperty>/Script/CoreUObject)
-	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
-	UserConstructionScript (0-0-0-0): size 387 (cls: UserConstructionScript>Function>/Script/CoreUObject)
-	OnRep_Destroyed (0-0-0-0): size 101 (cls: OnRep_Destroyed>Function>/Script/CoreUObject)
-	IceCastle_Torch_Parent_C (0-0-0-0): size 227 (cls: IceCastle_Torch_Parent_C>BlueprintGeneratedClass>/Script/Engine):
+	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
+	IceCastle_Torch_Parent_C (0-0-0-0): size 292 (cls: IceCastle_Torch_Parent_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=1 
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=IceCastle_Torch_Parent_C 
 			InheritableComponentHandler(ObjectProperty)=InheritableComponentHandler=IceCastle_Torch_Parent_C 
-	Default__IceCastle_Torch_Parent_C (0-0-0-0): size 966 (cls: Default__IceCastle_Torch_Parent_C>IceCastle_Torch_Parent_C):
+			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_IceCastle_Torch_Parent=IceCastle_Torch_Parent_C 
+	Default__IceCastle_Torch_Parent_C (0-0-0-0): size 1052 (cls: Default__IceCastle_Torch_Parent_C>IceCastle_Torch_Parent_C):
 		Tag array:
+			UberGraphFrame(StructProperty)=System.Byte[] 
 			CoreColor_A(StructProperty)=UE4.FLinearColor 
 			CoreColor_B(StructProperty)=UE4.FLinearColor 
 			FlamesColor(StructProperty)=UE4.FLinearColor 
@@ -185,6 +216,7 @@ Serialized exports:
 			ResourceType(ByteProperty)=EFortResourceType::Metal 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Default__IceCastle_Torch_Parent_C 
 			BuildingResourceAmountOverride(StructProperty)=System.Byte[] 
+			DeathParticles(ObjectProperty)=P_General_Deco_Destruction_Tiny=/Game/Effects/Fort_Effects/World/Destruction/Base_Effects/P_General_Deco_Destruction_Tiny 
 			BuildingAttachmentType(ByteProperty)=ATTACH_Wall 
 			AttributeInitKeys(StructProperty)=System.Byte[] 
 			AttributeInitKeys(StructProperty)=System.Byte[] 
@@ -198,9 +230,22 @@ Serialized exports:
 			RelativeLocation(StructProperty)=Vector(-0.0003490448,48,32) 
 			RelativeRotation(StructProperty)=Rotator(0,90.00041,0) 
 	Destroyed (0-0-0-0): size 34 (cls: Destroyed>BoolProperty>/Script/CoreUObject)
+	P_Torch_Fire_01 (0-0-0-0): size 36 (cls: P_Torch_Fire_01>ObjectProperty>/Script/CoreUObject)
+	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
+	ExecuteUbergraph_IceCastle_Torch_Parent (0-0-0-0): size 105 (cls: ExecuteUbergraph_IceCastle_Torch_Parent>Function>/Script/CoreUObject)
+	Damage (0-0-0-0): size 32 (cls: Damage>FloatProperty>/Script/CoreUObject)
+	OnDeathPlayEffects (0-0-0-0): size 152 (cls: OnDeathPlayEffects>Function>/Script/CoreUObject)
+	UserConstructionScript (0-0-0-0): size 387 (cls: UserConstructionScript>Function>/Script/CoreUObject)
+	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
+	K2Node_Event_Damage (0-0-0-0): size 32 (cls: K2Node_Event_Damage>FloatProperty>/Script/CoreUObject)
+	OnRep_Destroyed (0-0-0-0): size 77 (cls: OnRep_Destroyed>Function>/Script/CoreUObject)
 	InheritableComponentHandler (0-0-0-0): size 517 (cls: InheritableComponentHandler>InheritableComponentHandler>/Script/Engine):
 		Tag array:
 			Records(ArrayProperty)=[object] (inner: StructProperty)
+	K2Node_Event_DamageCauser (0-0-0-0): size 36 (cls: K2Node_Event_DamageCauser>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_InstigatedBy (0-0-0-0): size 36 (cls: K2Node_Event_InstigatedBy>ObjectProperty>/Script/CoreUObject)
+	DamageCauser (0-0-0-0): size 36 (cls: DamageCauser>ObjectProperty>/Script/CoreUObject)
+	InstigatedBy (0-0-0-0): size 36 (cls: InstigatedBy>ObjectProperty>/Script/CoreUObject)
 	TorchAudio (0-0-0-0): size 36 (cls: TorchAudio>ObjectProperty>/Script/CoreUObject)
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_CreateDynamicMaterialInstance_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	P_Torch_Fire_01_GEN_VARIABLE (0-0-0-0): size 214 (cls: P_Torch_Fire_01_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
@@ -258,8 +303,16 @@ Serialized exports:
 	CoreColor_A (0-0-0-0): size 36 (cls: CoreColor_A>StructProperty>/Script/CoreUObject)
 	CoreColor_B (0-0-0-0): size 36 (cls: CoreColor_B>StructProperty>/Script/CoreUObject)
 	EmbersColor (0-0-0-0): size 36 (cls: EmbersColor>StructProperty>/Script/CoreUObject)
+	K2Node_Event_DamageTags (0-0-0-0): size 36 (cls: K2Node_Event_DamageTags>StructProperty>/Script/CoreUObject)
+	K2Node_Event_EffectContext (0-0-0-0): size 36 (cls: K2Node_Event_EffectContext>StructProperty>/Script/CoreUObject)
+	K2Node_Event_HitInfo (0-0-0-0): size 36 (cls: K2Node_Event_HitInfo>StructProperty>/Script/CoreUObject)
+	K2Node_Event_Momentum (0-0-0-0): size 36 (cls: K2Node_Event_Momentum>StructProperty>/Script/CoreUObject)
 	FlamesColor (0-0-0-0): size 36 (cls: FlamesColor>StructProperty>/Script/CoreUObject)
 	LightColor (0-0-0-0): size 36 (cls: LightColor>StructProperty>/Script/CoreUObject)
+	DamageTags (0-0-0-0): size 36 (cls: DamageTags>StructProperty>/Script/CoreUObject)
+	EffectContext (0-0-0-0): size 36 (cls: EffectContext>StructProperty>/Script/CoreUObject)
+	HitInfo (0-0-0-0): size 36 (cls: HitInfo>StructProperty>/Script/CoreUObject)
+	Momentum (0-0-0-0): size 36 (cls: Momentum>StructProperty>/Script/CoreUObject)
 	CallFunc_Conv_LinearColorToVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Conv_LinearColorToVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Conv_LinearColorToVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_Conv_LinearColorToVector_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_Conv_LinearColorToVector_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_Conv_LinearColorToVector_ReturnValue2>StructProperty>/Script/CoreUObject)

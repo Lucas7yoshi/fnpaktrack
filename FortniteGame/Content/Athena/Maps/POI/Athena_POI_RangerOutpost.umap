@@ -83,6 +83,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/deleteme2
 	/Game/Building/ActorBlueprints/Prop/Mansion_DeerHead
 	/Game/Building/ActorBlueprints/Prop/Outdoor_Grill
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_ArcheryTarget
 	/Game/Building/ActorBlueprints/Prop/Prop_ArcheryTarget_01
 	/Game/Building/ActorBlueprints/Prop/Prop_OWL_ClothingRack
@@ -153,6 +154,7 @@ Name table:
 	/Game/Building/TextureData/WallOuter/MI_Farm_Set_Natural
 	/Game/Building/TextureData/WallOuter/MI_Farm_Set_WoodMines
 	/Game/Building/TextureData/WallOuter/Siding
+	/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base
 	/Game/Environments/Foliage/FoliageType/GrassFoliageType_Athena
 	/Game/Environments/Props/Ranger/Meshes/SM_Prop_Ranger_Lightpost_alternate
 	/Game/Environments/Sets/Barn/Materials/M_Fort_Farm_Barn
@@ -251,6 +253,7 @@ Name table:
 	76927B120C6645ACB9200E7FB8896AC3_EEC95DFE48F570E90988E68C055F5155_DD477D99_76B2292B_B1BEA744_ProxyLODMeshReduction
 	76927B120C6645ACB9200E7FB8896AC3_F2B88B7A48A297873D7DBFAC7E37CE4A_DD477D99_76B2292B_3D7BE345_ProxyLODMeshReduction
 	Actor
+	ActorComponent
 	ActorComponentTickFunction
 	AggGeom
 	AlarmLightMultiplier
@@ -258,6 +261,7 @@ Name table:
 	Array
 	ArrayProperty
 	ArrowComponent
+	Association
 	Athena_GameMode_C
 	Athena_POI_RangerOutpost
 	Athena_POI_RangerOutpost_0_HLOD
@@ -324,8 +328,11 @@ Name table:
 	bAffectDynamicIndirectLighting
 	Barriers_Wood02
 	Barriers_Wood02_C
+	Base Mesh
+	Base Mesh_GEN_VARIABLE
 	BaseMaterial
 	battlepass_dance_athena_location_09
+	bAutoActivate
 	bAutoSpawnMissingNavData
 	bAutoWeld
 	bCanBeInCluster
@@ -341,6 +348,7 @@ Name table:
 	bGenerateNonMirroredCollision
 	bHasPerInstanceHitProxies
 	bHidden
+	bHiddenInGame
 	bInterpolateWhenSubStepping
 	BlockingVolume
 	BlockingVolume53
@@ -418,6 +426,7 @@ Name table:
 	BuildingTextureData
 	BuiltInstanceBounds
 	bUseAsOccluder
+	bVisible
 	ByteProperty
 	CachedMaxDrawDistance
 	CacheMeshExtendedBounds
@@ -559,9 +568,11 @@ Name table:
 	Default__LogCabin_wall_Door_Window_C
 	Default__LogCabin_Wall_Window_Left_C
 	Default__Mansion_DeerHead_C
+	Default__MaterialInstanceDynamic
 	Default__Model
 	Default__NavigationSystemModuleConfig
 	Default__Outdoor_Grill_C
+	Default__Parent_Tree_C
 	Default__Poultry_Drumstick_C
 	Default__Poultry_Feathers_C
 	Default__Prop_ArcheryTarget_01_C
@@ -653,6 +664,7 @@ Name table:
 	EFortResourceType::Metal
 	EFortResourceType::Wood
 	ElemBox
+	EMaterialParameterAssociation
 	EndTickGroup
 	Engine
 	EnumProperty
@@ -663,6 +675,7 @@ Name table:
 	ETimelineLengthMode
 	EventFunc
 	Events
+	ExpressionGUID
 	Farm_Roof1_Peak
 	Farm_Roof1_Peak_C
 	Fence_Rural_Broken
@@ -678,6 +691,7 @@ Name table:
 	FloatCurve
 	FloatProperty
 	FloatPropertyName
+	Foam Color
 	FoamColor
 	FoliageInstancedStaticMeshComponent
 	FoliageType_InstancedStaticMesh
@@ -695,6 +709,7 @@ Name table:
 	FortStaticMeshActor
 	FortWorldSettings
 	GeomSelection
+	GlobalParameter
 	GrassFoliageType_Athena
 	Guid
 	HasExecutedConstuctionScript
@@ -706,8 +721,8 @@ Name table:
 	hlight2 - impact bounce light location
 	HLight2SocketLocation
 	HLODProxy
-	HoboPile_B
 	Hobopile_B
+	HoboPile_B
 	IND_ForemanOffice_Chair
 	Index
 	InstanceCountToRender
@@ -730,6 +745,8 @@ Name table:
 	LCD_Shrub_05
 	LCD_Shrub_20
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -740,6 +757,7 @@ Name table:
 	LevelBuildDataId
 	LevelScriptActor
 	LightGuid
+	LinearColor
 	Living_EasyChair
 	Living_Fireplace
 	Living_Fireplace_01
@@ -768,6 +786,7 @@ Name table:
 	M_FORT_Logcabin_Walls
 	M_StoreFront_Facade
 	M_Terrain_Z_Forest_Athena
+	M_WaterFall_Base
 	Mansion_DeerHead
 	Mansion_DeerHead2
 	Mansion_DeerHead3
@@ -775,6 +794,8 @@ Name table:
 	MassInKgOverride
 	Material
 	MaterialInstanceConstant
+	MaterialInstanceDynamic
+	MaterialParameterInfo
 	MaxAngularVelocity
 	MaxCullDistance
 	MaxCullObjectSize
@@ -821,6 +842,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -848,7 +870,11 @@ Name table:
 	P_Loot_Effect_Vending
 	P_Loot_Effect_Vending_GEN_VARIABLE
 	Package
+	ParameterInfo
+	ParameterValue
 	ParamType
+	Parent
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSysParam
 	ParticleSystemComponent
@@ -1337,6 +1363,7 @@ Name table:
 	Sound
 	SoundCue
 	SpawnCollisionHandlingMethod
+	SphereComponent
 	SphereRadius
 	SpotLight
 	SpotLight_GEN_VARIABLE
@@ -1348,8 +1375,8 @@ Name table:
 	Storage_CardboardBoxes
 	Storage_CardboardBoxes_01
 	Storage_CardboardBoxes_02
-	Storage_Crate01a_side
 	Storage_Crate01a_Side
+	Storage_Crate01a_side
 	Storage_Crate02
 	Storage_Crate04
 	Storage_Crate2a_side
@@ -1454,6 +1481,8 @@ Name table:
 	Use_SplashFX_Height_01
 	Vector
 	Vector_Low
+	VectorParameterValue
+	VectorParameterValues
 	VendingMachine_Ambient
 	VendingMachine_Ambient_GEN_VARIABLE
 	VendWobble
@@ -2821,741 +2850,951 @@ Serialized exports:
 			Scene(ObjectProperty)=Scene=Athena_POI_RangerOutpost 
 			RootComponent(ObjectProperty)=Scene=Athena_POI_RangerOutpost 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	Tree_21_23 (0-0-0-0): size 193 (cls: Tree_21_23>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+	Tree_21_23 (0-0-0-0): size 263 (cls: Tree_21_23>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2644959615-1127686791-3483900545-2790301860 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__29 (0-0-0-0): size 193 (cls: Tree__29>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__29 (0-0-0-0): size 263 (cls: Tree__29>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2455235580-1172162057-2046767533-3447528615 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_01_6 (0-0-0-0): size 193 (cls: Tree_Oak_01_6>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_01_6 (0-0-0-0): size 263 (cls: Tree_Oak_01_6>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3619329029-1185482756-2382377091-296528484 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_02_4 (0-0-0-0): size 193 (cls: Tree_Oak_02_4>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_02_4 (0-0-0-0): size 263 (cls: Tree_Oak_02_4>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 647005549-1107757445-745312942-443195697 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_06_2 (0-0-0-0): size 193 (cls: Tree_Oak_06_2>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_06_2 (0-0-0-0): size 263 (cls: Tree_Oak_06_2>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3348130658-1330169796-2282149292-4288225070 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_31 (0-0-0-0): size 193 (cls: Tree_Oak_31>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_31 (0-0-0-0): size 263 (cls: Tree_Oak_31>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3656009483-1313920602-3816720828-2654422528 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_37 (0-0-0-0): size 193 (cls: Tree_Oak_37>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_37 (0-0-0-0): size 263 (cls: Tree_Oak_37>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3327026068-1156498217-670861227-2242439006 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_38 (0-0-0-0): size 193 (cls: Tree_Oak_38>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_38 (0-0-0-0): size 263 (cls: Tree_Oak_38>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2173372721-1328212972-7988118-3790767674 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_39 (0-0-0-0): size 193 (cls: Tree_Oak_39>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_39 (0-0-0-0): size 263 (cls: Tree_Oak_39>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3821269207-1214886468-42026389-1684331455 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_41 (0-0-0-0): size 193 (cls: Tree_Oak_41>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_41 (0-0-0-0): size 263 (cls: Tree_Oak_41>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2544754189-1248079706-3118363796-4231453847 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_42 (0-0-0-0): size 193 (cls: Tree_Oak_42>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_42 (0-0-0-0): size 263 (cls: Tree_Oak_42>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1898151056-1200580565-3716479138-3370504671 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_43 (0-0-0-0): size 193 (cls: Tree_Oak_43>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_43 (0-0-0-0): size 263 (cls: Tree_Oak_43>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2321943117-1326876138-44144039-2690572834 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_44 (0-0-0-0): size 193 (cls: Tree_Oak_44>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_44 (0-0-0-0): size 263 (cls: Tree_Oak_44>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3703433275-1140632599-3617736374-3056465883 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_45 (0-0-0-0): size 193 (cls: Tree_Oak_45>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_45 (0-0-0-0): size 263 (cls: Tree_Oak_45>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 196845064-1237156859-2387318676-3149704537 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_46 (0-0-0-0): size 193 (cls: Tree_Oak_46>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_46 (0-0-0-0): size 263 (cls: Tree_Oak_46>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 306553880-1087848369-2700780449-1845836414 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_47 (0-0-0-0): size 193 (cls: Tree_Oak_47>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_47 (0-0-0-0): size 263 (cls: Tree_Oak_47>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2273659563-1192827777-2746338959-520244419 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_48 (0-0-0-0): size 193 (cls: Tree_Oak_48>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_48 (0-0-0-0): size 263 (cls: Tree_Oak_48>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 543091723-1317355112-2989649315-457044832 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_49 (0-0-0-0): size 193 (cls: Tree_Oak_49>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_49 (0-0-0-0): size 263 (cls: Tree_Oak_49>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 4277268005-1238769161-3783671701-1293967152 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_50 (0-0-0-0): size 193 (cls: Tree_Oak_50>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_50 (0-0-0-0): size 263 (cls: Tree_Oak_50>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 32872092-1094704416-2374197667-3675504396 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_52 (0-0-0-0): size 193 (cls: Tree_Oak_52>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_52 (0-0-0-0): size 263 (cls: Tree_Oak_52>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3540950575-1268905164-1355902101-1782132291 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_53 (0-0-0-0): size 193 (cls: Tree_Oak_53>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_53 (0-0-0-0): size 263 (cls: Tree_Oak_53>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3891060940-1154483357-2406734751-3124021501 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_54 (0-0-0-0): size 193 (cls: Tree_Oak_54>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_54 (0-0-0-0): size 263 (cls: Tree_Oak_54>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 94580938-1282907311-3504454303-3033560536 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_55 (0-0-0-0): size 193 (cls: Tree_Oak_55>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_55 (0-0-0-0): size 263 (cls: Tree_Oak_55>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3430132055-1155702450-3585530297-3658968954 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_56 (0-0-0-0): size 193 (cls: Tree_Oak_56>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_56 (0-0-0-0): size 263 (cls: Tree_Oak_56>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2789313473-1174122418-1327847055-2817596047 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_57 (0-0-0-0): size 193 (cls: Tree_Oak_57>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_57 (0-0-0-0): size 263 (cls: Tree_Oak_57>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1115712446-1249582128-2835824306-3189429906 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_58 (0-0-0-0): size 193 (cls: Tree_Oak_58>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_58 (0-0-0-0): size 263 (cls: Tree_Oak_58>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3924212885-1154021738-3991114660-4195851741 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_59 (0-0-0-0): size 193 (cls: Tree_Oak_59>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_59 (0-0-0-0): size 263 (cls: Tree_Oak_59>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 669060900-1337380703-3568674193-4094840695 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_60 (0-0-0-0): size 193 (cls: Tree_Oak_60>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_60 (0-0-0-0): size 263 (cls: Tree_Oak_60>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3190253149-1194223948-566808705-2018212911 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_61 (0-0-0-0): size 193 (cls: Tree_Oak_61>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_61 (0-0-0-0): size 263 (cls: Tree_Oak_61>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3034407286-1310226090-712503695-1596076642 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Oak_62 (0-0-0-0): size 193 (cls: Tree_Oak_62>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Oak_62 (0-0-0-0): size 263 (cls: Tree_Oak_62>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1090838276-1214399239-1704072078-1750603875 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_06_3 (0-0-0-0): size 193 (cls: Tree_06_3>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_06_3 (0-0-0-0): size 263 (cls: Tree_06_3>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 69739447-1123459540-4066961549-1532378560 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_109 (0-0-0-0): size 193 (cls: Tree_109>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_109 (0-0-0-0): size 263 (cls: Tree_109>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1609061239-1146461682-940084891-12632354 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_114 (0-0-0-0): size 193 (cls: Tree_114>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_114 (0-0-0-0): size 263 (cls: Tree_114>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 969802427-1276119523-1225361552-3566080923 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_124 (0-0-0-0): size 193 (cls: Tree_124>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_124 (0-0-0-0): size 263 (cls: Tree_124>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2243669513-1242791001-1192787346-2119772321 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_127 (0-0-0-0): size 193 (cls: Tree_127>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_127 (0-0-0-0): size 263 (cls: Tree_127>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 269916296-1211521477-3970854805-1442044154 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_131 (0-0-0-0): size 193 (cls: Tree_131>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_131 (0-0-0-0): size 263 (cls: Tree_131>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2834073950-1174908739-1949537703-394070921 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_138 (0-0-0-0): size 193 (cls: Tree_138>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_138 (0-0-0-0): size 263 (cls: Tree_138>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1625755935-1141855015-2506796708-1222377598 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_141 (0-0-0-0): size 193 (cls: Tree_141>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_141 (0-0-0-0): size 263 (cls: Tree_141>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3330916938-1113914599-1797856145-4191531774 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_147 (0-0-0-0): size 193 (cls: Tree_147>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_147 (0-0-0-0): size 263 (cls: Tree_147>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 795577897-1261245350-544977325-948773489 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_17 (0-0-0-0): size 193 (cls: Tree_17>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_17 (0-0-0-0): size 263 (cls: Tree_17>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2978459874-1231416518-1522760330-2661909872 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_6 (0-0-0-0): size 193 (cls: Tree_6>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_6 (0-0-0-0): size 263 (cls: Tree_6>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3292883030-1111384666-1848463263-3499211921 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_92 (0-0-0-0): size 193 (cls: Tree_92>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_92 (0-0-0-0): size 263 (cls: Tree_92>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2781128949-1135185079-3024761731-2941852634 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_96 (0-0-0-0): size 193 (cls: Tree_96>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_96 (0-0-0-0): size 263 (cls: Tree_96>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 859315354-1103480122-265852595-2609858076 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_08_2 (0-0-0-0): size 193 (cls: Tree_08_2>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_08_2 (0-0-0-0): size 263 (cls: Tree_08_2>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 931253086-1223394769-1765759369-832075035 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_106 (0-0-0-0): size 193 (cls: Tree_106>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_106 (0-0-0-0): size 263 (cls: Tree_106>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2055289870-1099778603-3229672324-4168267520 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_134 (0-0-0-0): size 193 (cls: Tree_134>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_134 (0-0-0-0): size 263 (cls: Tree_134>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1272841010-1156911791-771839922-3071967610 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_143 (0-0-0-0): size 193 (cls: Tree_143>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_143 (0-0-0-0): size 263 (cls: Tree_143>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1033069659-1184065184-2778372014-1632501054 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_144 (0-0-0-0): size 193 (cls: Tree_144>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_144 (0-0-0-0): size 263 (cls: Tree_144>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 31018586-1104472864-2168422560-3832977557 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_5 (0-0-0-0): size 193 (cls: Tree_5>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_5 (0-0-0-0): size 263 (cls: Tree_5>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2491429980-1281588450-3050232479-4179815778 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_98 (0-0-0-0): size 193 (cls: Tree_98>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_98 (0-0-0-0): size 263 (cls: Tree_98>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2956916389-1328778657-149599931-338132705 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_09_2 (0-0-0-0): size 193 (cls: Tree_09_2>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_09_2 (0-0-0-0): size 263 (cls: Tree_09_2>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 4086965541-1132007724-1792934059-2582562092 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_09_4 (0-0-0-0): size 193 (cls: Tree_09_4>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_09_4 (0-0-0-0): size 263 (cls: Tree_09_4>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 410933037-1203463679-1875217820-1914626533 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_100 (0-0-0-0): size 193 (cls: Tree_100>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_100 (0-0-0-0): size 263 (cls: Tree_100>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2950248778-1133676806-457080750-3682138575 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_111 (0-0-0-0): size 193 (cls: Tree_111>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_111 (0-0-0-0): size 263 (cls: Tree_111>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 739836658-1326626903-3542857360-2716976261 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_119 (0-0-0-0): size 193 (cls: Tree_119>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_119 (0-0-0-0): size 263 (cls: Tree_119>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2742834007-1095530365-3183070635-610193095 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_128 (0-0-0-0): size 193 (cls: Tree_128>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_128 (0-0-0-0): size 263 (cls: Tree_128>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1519844911-1301199686-712289452-1417886401 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_129 (0-0-0-0): size 193 (cls: Tree_129>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_129 (0-0-0-0): size 263 (cls: Tree_129>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3036124822-1104143599-3875212454-922559413 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_132 (0-0-0-0): size 193 (cls: Tree_132>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_132 (0-0-0-0): size 263 (cls: Tree_132>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3522463872-1212945716-175705995-371591246 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_136 (0-0-0-0): size 193 (cls: Tree_136>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_136 (0-0-0-0): size 263 (cls: Tree_136>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2560713830-1164059885-2167549067-629659406 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_18 (0-0-0-0): size 193 (cls: Tree_18>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_18 (0-0-0-0): size 263 (cls: Tree_18>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1630778056-1320351252-322865843-1303825263 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_27 (0-0-0-0): size 193 (cls: Tree_27>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_27 (0-0-0-0): size 263 (cls: Tree_27>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2520520826-1185898805-4174405021-1837677109 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_93 (0-0-0-0): size 193 (cls: Tree_93>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_93 (0-0-0-0): size 263 (cls: Tree_93>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1467820921-1085171525-618289030-4142716313 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_23_small_5 (0-0-0-0): size 193 (cls: Tree_23_small_5>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_23_small_5 (0-0-0-0): size 263 (cls: Tree_23_small_5>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2918130210-1192614992-1959580331-4272382091 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__20 (0-0-0-0): size 193 (cls: Tree__20>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__20 (0-0-0-0): size 263 (cls: Tree__20>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1815339865-1340770844-2974447793-11443305 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__21 (0-0-0-0): size 193 (cls: Tree__21>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__21 (0-0-0-0): size 263 (cls: Tree__21>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2980622745-1280304727-2439005612-4012320118 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__26 (0-0-0-0): size 193 (cls: Tree__26>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__26 (0-0-0-0): size 263 (cls: Tree__26>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3931953591-1280509245-1985112234-427388593 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__28 (0-0-0-0): size 193 (cls: Tree__28>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__28 (0-0-0-0): size 263 (cls: Tree__28>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 751691446-1273516869-2374725025-3083298264 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__2_4 (0-0-0-0): size 193 (cls: Tree__2_4>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__2_4 (0-0-0-0): size 263 (cls: Tree__2_4>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1576464256-1172371724-1842232229-838284253 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__2_5 (0-0-0-0): size 193 (cls: Tree__2_5>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__2_5 (0-0-0-0): size 263 (cls: Tree__2_5>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2541899229-1092439979-327725736-1594636798 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__3 (0-0-0-0): size 193 (cls: Tree__3>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__3 (0-0-0-0): size 263 (cls: Tree__3>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 612351665-1293577049-3768287373-4114628660 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__30 (0-0-0-0): size 193 (cls: Tree__30>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__30 (0-0-0-0): size 263 (cls: Tree__30>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 430149761-1090811004-236760452-1762439877 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__31 (0-0-0-0): size 193 (cls: Tree__31>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__31 (0-0-0-0): size 263 (cls: Tree__31>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 751702711-1298234784-2963008640-3776388148 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__32 (0-0-0-0): size 193 (cls: Tree__32>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__32 (0-0-0-0): size 263 (cls: Tree__32>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1147673974-1099961683-4213867702-903584248 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__5 (0-0-0-0): size 193 (cls: Tree__5>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__5 (0-0-0-0): size 263 (cls: Tree__5>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1904885388-1145584662-3165638287-1297092676 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__6 (0-0-0-0): size 193 (cls: Tree__6>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__6 (0-0-0-0): size 263 (cls: Tree__6>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3602449242-1109870863-1720093577-3690939412 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__7 (0-0-0-0): size 193 (cls: Tree__7>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__7 (0-0-0-0): size 263 (cls: Tree__7>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1504895824-1264167962-2146718601-2714622233 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree__8 (0-0-0-0): size 193 (cls: Tree__8>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__8 (0-0-0-0): size 263 (cls: Tree__8>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3682394889-1107812322-2648905398-1045923265 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Athena_Tree_Pine_2 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_2>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_2 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_2>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 291376410-1222913622-1270358693-3649855051 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_03_10 (0-0-0-0): size 193 (cls: Tree_03_10>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_03_10 (0-0-0-0): size 263 (cls: Tree_03_10>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1940114136-1228682273-523185579-1204433952 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_03_2 (0-0-0-0): size 193 (cls: Tree_03_2>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_03_2 (0-0-0-0): size 263 (cls: Tree_03_2>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 594892171-1244124646-1237499275-1374568384 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_03_4 (0-0-0-0): size 193 (cls: Tree_03_4>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_03_4 (0-0-0-0): size 263 (cls: Tree_03_4>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1678003594-1078002653-2749135783-385317048 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_10 (0-0-0-0): size 193 (cls: Tree_10>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_10 (0-0-0-0): size 263 (cls: Tree_10>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1872118755-1233877697-2028959625-4132309817 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_101 (0-0-0-0): size 193 (cls: Tree_101>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_101 (0-0-0-0): size 263 (cls: Tree_101>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3025314325-1114950892-2012477071-2877184795 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_103 (0-0-0-0): size 193 (cls: Tree_103>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_103 (0-0-0-0): size 263 (cls: Tree_103>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2738659816-1178719726-3661002899-3337428470 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_107 (0-0-0-0): size 193 (cls: Tree_107>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_107 (0-0-0-0): size 263 (cls: Tree_107>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3800462697-1211042126-241863856-196599654 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_110 (0-0-0-0): size 193 (cls: Tree_110>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_110 (0-0-0-0): size 263 (cls: Tree_110>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 4134528714-1312649401-1555290754-1196201991 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_113 (0-0-0-0): size 193 (cls: Tree_113>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_113 (0-0-0-0): size 263 (cls: Tree_113>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2137452958-1324416541-3532419213-1200333606 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_121 (0-0-0-0): size 193 (cls: Tree_121>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_121 (0-0-0-0): size 263 (cls: Tree_121>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 998340606-1206737270-459804293-1994624356 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_123 (0-0-0-0): size 193 (cls: Tree_123>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_123 (0-0-0-0): size 263 (cls: Tree_123>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 754289892-1245794207-1832273546-2030628830 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_125 (0-0-0-0): size 193 (cls: Tree_125>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_125 (0-0-0-0): size 263 (cls: Tree_125>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 698110875-1210971499-3541540003-1327271037 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_130 (0-0-0-0): size 193 (cls: Tree_130>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_130 (0-0-0-0): size 263 (cls: Tree_130>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3191085440-1190195411-412902571-4086156648 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_135 (0-0-0-0): size 193 (cls: Tree_135>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_135 (0-0-0-0): size 263 (cls: Tree_135>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 108317575-1161160557-28685999-4163826279 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_140 (0-0-0-0): size 193 (cls: Tree_140>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_140 (0-0-0-0): size 263 (cls: Tree_140>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1116366692-1261980127-1949467039-2404778639 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_142 (0-0-0-0): size 193 (cls: Tree_142>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_142 (0-0-0-0): size 263 (cls: Tree_142>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2284009734-1097769715-3377711785-3261004842 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_145 (0-0-0-0): size 193 (cls: Tree_145>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_145 (0-0-0-0): size 263 (cls: Tree_145>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2487854178-1164823177-2670309783-2731197571 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_19 (0-0-0-0): size 193 (cls: Tree_19>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_19 (0-0-0-0): size 263 (cls: Tree_19>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3761714072-1216992742-1577872286-3191361382 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_20 (0-0-0-0): size 193 (cls: Tree_20>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_20 (0-0-0-0): size 263 (cls: Tree_20>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 174403075-1272307380-3512462510-3632312839 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_21 (0-0-0-0): size 193 (cls: Tree_21>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_21 (0-0-0-0): size 263 (cls: Tree_21>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1097188179-1255803774-511929217-4193735143 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_22 (0-0-0-0): size 193 (cls: Tree_22>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_22 (0-0-0-0): size 263 (cls: Tree_22>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 400012371-1244308130-686530738-4139305995 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_23 (0-0-0-0): size 193 (cls: Tree_23>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_23 (0-0-0-0): size 263 (cls: Tree_23>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 3873941504-1262934873-1490785941-1000140005 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_28 (0-0-0-0): size 193 (cls: Tree_28>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_28 (0-0-0-0): size 263 (cls: Tree_28>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2395394960-1337581280-1876954507-1215837561 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_9 (0-0-0-0): size 193 (cls: Tree_9>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_9 (0-0-0-0): size 263 (cls: Tree_9>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 529159330-1095701421-270670253-1225966724 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_95 (0-0-0-0): size 193 (cls: Tree_95>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_95 (0-0-0-0): size 263 (cls: Tree_95>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 1547306629-1154772755-1547270792-3104752534 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_97 (0-0-0-0): size 193 (cls: Tree_97>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_97 (0-0-0-0): size 263 (cls: Tree_97>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2839316132-1160469404-1058999458-444714112 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_99 (0-0-0-0): size 193 (cls: Tree_99>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_99 (0-0-0-0): size 263 (cls: Tree_99>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 443408456-1298216131-2090361279-661308740 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	VendingMachine_Ambient (0-0-0-0): size 108 (cls: VendingMachine_Ambient>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=DefaultSceneRoot=Athena_POI_RangerOutpost 
@@ -4706,8 +4945,9 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	S_Stream_2W_Cliff_05L_a (0-0-0-0): size 411 (cls: S_Stream_2W_Cliff_05L_a>BP_Waterfall_C>/Game/Packages/DS_Fortnite_Terrain_NoLOD/Blueprints/BP_Waterfall):
+	S_Stream_2W_Cliff_05L_a (0-0-0-0): size 444 (cls: S_Stream_2W_Cliff_05L_a>BP_Waterfall_C>/Game/Packages/DS_Fortnite_Terrain_NoLOD/Blueprints/BP_Waterfall):
 		Tag array:
+			Base Mesh(ObjectProperty)=Base Mesh=Athena_POI_RangerOutpost 
 			WaterFall_Base_Sound_L(ObjectProperty)=WaterFall_Base_Sound_L=Athena_POI_RangerOutpost 
 			WaterFall_Base_Sound_R(ObjectProperty)=WaterFall_Base_Sound_R=Athena_POI_RangerOutpost 
 			WaterFallVFX(ObjectProperty)=WaterFallVFX=Athena_POI_RangerOutpost 
@@ -5050,7 +5290,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=14049 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-7516.083,-9311.239,-790.8471)) Max(Vector(7514.857,9562.98,1186.122)),20481) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-7516.083,-9311.239,-790.8471)) Max(Vector(7514.857,9562.98,1186.122)),22273) 
 			bEnableDensityScaling(BoolProperty)=True 
 			OcclusionLayerNumNodes(IntProperty)=16 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
@@ -7618,6 +7858,10 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=8020.436 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+	MaterialInstanceDynamic_0 (0-0-0-0): size 425 (cls: MaterialInstanceDynamic_0>MaterialInstanceDynamic>/Script/Engine):
+		Tag array:
+			Parent(ObjectProperty)=M_WaterFall_Base=/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base 
+			VectorParameterValues(ArrayProperty)=[object] (inner: StructProperty)
 	Model_9 (0-0-0-0): size 1674 (cls: Model_9>Model>/Script/Engine)
 	Model_4 (0-0-0-0): size 118 (cls: Model_4>Model>/Script/Engine)
 	Model_0 (0-0-0-0): size 1674 (cls: Model_0>Model>/Script/Engine)
@@ -7668,12 +7912,13 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	WaterFallVFX (0-0-0-0): size 984 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
+	WaterFallVFX (0-0-0-0): size 1145 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			InstanceParameters(ArrayProperty)=[object] (inner: StructProperty)
 			AttachParent(ObjectProperty)=StaticMesh1=Athena_POI_RangerOutpost 
 			RelativeLocation(StructProperty)=Vector(512,-99.99989,-426) 
 			bNetAddressable(BoolProperty)=True 
+			bAutoActivate(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	Effect (0-0-0-0): size 137 (cls: Effect>ParticleSystemComponent>/Script/Engine):
@@ -9156,6 +9401,764 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=8771.264 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=8771.266 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SpotLight (0-0-0-0): size 231 (cls: SpotLight>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=11709.88 
@@ -16222,6 +17225,16 @@ Serialized exports:
 			RelativeRotation(StructProperty)=Rotator(0,89.99968,0) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 			bCanEverAffectNavigation(BoolProperty)=True 
+	Base Mesh (0-0-0-0): size 892 (cls: Base Mesh>StaticMeshComponent>/Script/Engine):
+		Tag array:
+			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
+			AttachParent(ObjectProperty)=StaticMesh1=Athena_POI_RangerOutpost 
+			RelativeLocation(StructProperty)=Vector(512,-99.99989,-426) 
+			bVisible(BoolProperty)=False 
+			bHiddenInGame(BoolProperty)=True 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	CollisionMesh1 (0-0-0-0): size 194 (cls: CollisionMesh1>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OnComponentBeginOverlap(MulticastDelegateProperty)=[object] 
@@ -20364,27 +21377,33 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=19982.03 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Log_3 (0-0-0-0): size 193 (cls: Tree_Log_3>Tree_Log_1_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_1):
+	Tree_Log_3 (0-0-0-0): size 263 (cls: Tree_Log_3>Tree_Log_1_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2994046112-1303119441-2810705799-670282894 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Log_20 (0-0-0-0): size 193 (cls: Tree_Log_20>Tree_Log_3_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_20 (0-0-0-0): size 263 (cls: Tree_Log_20>Tree_Log_3_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2460368389-1245295374-913674113-1174253949 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=8771.264 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
-	Tree_Log_21 (0-0-0-0): size 193 (cls: Tree_Log_21>Tree_Log_3_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_21 (0-0-0-0): size 263 (cls: Tree_Log_21>Tree_Log_3_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_RangerOutpost 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
 			MyGuid(StructProperty)=Guid: 2117748856-1092033208-1576538528-1260294812 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=8771.266 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	WarehouseShelves_01_2 (0-0-0-0): size 193 (cls: WarehouseShelves_01_2>WarehouseShelves_01_C>/Game/Building/ActorBlueprints/Prop/WarehouseShelves_01):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_RangerOutpost 

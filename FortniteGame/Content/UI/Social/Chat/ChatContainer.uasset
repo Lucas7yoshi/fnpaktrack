@@ -37,6 +37,7 @@ Name table:
 	ArrayProperty
 	ArriveTangent
 	ArriveTangentWeight
+	AutoCompleteStyle
 	Background
 	bAllowTemplate
 	bChatShouldBeOpen
@@ -100,10 +101,13 @@ Name table:
 	Chat
 	ChatChannelTab_C
 	ChatContainer_C
+	ChatEditableText_MessageEntry
 	ChatList_Messages
 	ChatMessageEntry_C
 	ChildTemplates
 	Class
+	ColorAndOpacity
+	ColorUseRule
 	CommonActionWidget
 	CommonBorder
 	CommonBorderBackground
@@ -139,7 +143,6 @@ Name table:
 	Default__ComponentDelegateBinding
 	Default__DelegateProperty
 	Default__DynamicEntryBox
-	Default__EditableText
 	Default__EnumProperty
 	Default__FloatProperty
 	Default__FortChatContainer
@@ -166,6 +169,7 @@ Name table:
 	Default__ScrollBoxSlot
 	Default__SizeBox
 	Default__SizeBoxSlot
+	Default__SocialChatEditableText
 	Default__SocialChatMessageList
 	Default__StructProperty
 	Default__TextScrollStyle-Base_C
@@ -196,11 +200,11 @@ Name table:
 	EaseOut
 	EaseOutFunction
 	Easing
-	EditableText
-	EditableText_MessageEntry
 	EditableTextStyle
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortKeybindForcedHoldStatus
 	EFortKeybindForcedHoldStatus::ForcedHold
 	EHorizontalAlignment
@@ -226,6 +230,8 @@ Name table:
 	ESlateBrushDrawType
 	ESlateBrushDrawType::Image
 	ESlateBrushDrawType::NoDrawType
+	ESlateColorStylingMode
+	ESlateColorStylingMode::UseColor_Foreground
 	ESlateSizeRule
 	ESlateSizeRule::Fill
 	ESlateVisibility
@@ -252,6 +258,7 @@ Name table:
 	FloatCurve
 	FloatFunction
 	FloatProperty
+	FlowDirectionPreference
 	FocusEditableText
 	Font
 	FontObject
@@ -475,6 +482,7 @@ Name table:
 	Slots
 	SlotWidgetName
 	SocialChatContainer
+	SocialChatEditableText
 	SocialChatMessageList
 	SoftObjectProperty
 	SortedSegments
@@ -503,6 +511,7 @@ Name table:
 	TemplateLedger
 	TemplateSerialNumber
 	Text
+	TextBlockStyle
 	TextProperty
 	TextScrollStyle-Base_C
 	TextStyle-MediumButton_C
@@ -547,7 +556,6 @@ Name table:
 	WidgetName
 	WidgetNavigation
 	WidgetNavigationData
-	WidgetStyle
 	WidgetSwitcher
 	WidgetSwitcherSlot
 	WidgetTree
@@ -628,12 +636,12 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=ContentBorder=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 226 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+	BorderSlot_1 (0-0-0-0): size 226 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=CommonBorder_1=WidgetArchetype 
-			Content(ObjectProperty)=EditableText_MessageEntry=WidgetArchetype 
+			Content(ObjectProperty)=ChatEditableText_MessageEntry=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -666,7 +674,7 @@ Serialized exports:
 			Switcher_SendButton(ObjectProperty)=Switcher_SendButton=WidgetArchetype 
 			MenuAnchor_MessageActions(ObjectProperty)=MenuAnchor_MessageActions=WidgetArchetype 
 			ChatList_Messages(ObjectProperty)=ChatList_Messages=WidgetArchetype 
-			EditableText_MessageEntry(ObjectProperty)=EditableText_MessageEntry=WidgetArchetype 
+			ChatEditableText_MessageEntry(ObjectProperty)=ChatEditableText_MessageEntry=WidgetArchetype 
 			Button_SendMessage(ObjectProperty)=Button_SendMessage=WidgetArchetype 
 			EntryBox_JoinedChannels(ObjectProperty)=EntryBox_JoinedChannels=WidgetArchetype 
 			ScrollBox_Channels(ObjectProperty)=ScrollBox_Channels=WidgetArchetype 
@@ -731,10 +739,6 @@ Serialized exports:
 		Tag array:
 			EntryWidgetClass(ObjectProperty)=ChatChannelTab_C=/Game/UI/Social/Chat/ChatChannelTab 
 			Slot(ObjectProperty)=ScrollBoxSlot_0=WidgetArchetype 
-	EditableText_MessageEntry (0-0-0-0): size 246 (cls: EditableText_MessageEntry>EditableText>/Script/UMG):
-		Tag array:
-			WidgetStyle(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
@@ -743,14 +747,16 @@ Serialized exports:
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
 	K2Node_Event_InDeltaTime (0-0-0-0): size 32 (cls: K2Node_Event_InDeltaTime>FloatProperty>/Script/CoreUObject)
 	InDeltaTime (0-0-0-0): size 32 (cls: InDeltaTime>FloatProperty>/Script/CoreUObject)
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HBox_Messages (0-0-0-0): size 149 (cls: HBox_Messages>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1064,12 +1070,16 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=SizeBox_ConsoleButtonSpaceProvider=WidgetArchetype 
 			Content(ObjectProperty)=CursorModeSwitcher=WidgetArchetype 
-	ChatList_Messages (0-0-0-0): size 137 (cls: ChatList_Messages>SocialChatMessageList>/Script/SocialUMG):
+	ChatEditableText_MessageEntry (0-0-0-0): size 549 (cls: ChatEditableText_MessageEntry>SocialChatEditableText>/Script/SocialUMG):
+		Tag array:
+			EditableTextStyle(StructProperty)=System.Byte[] 
+			AutoCompleteStyle(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=BorderSlot_1=WidgetArchetype 
+	ChatList_Messages (0-0-0-0): size 96 (cls: ChatList_Messages>SocialChatMessageList>/Script/SocialUMG):
 		Tag array:
 			bIsFocusable(BoolProperty)=False 
 			EntryWidgetClass(ObjectProperty)=ChatMessageEntry_C=/Game/UI/Social/Chat/ChatMessageEntry 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
 	K2Node_Event_MyGeometry (0-0-0-0): size 36 (cls: K2Node_Event_MyGeometry>StructProperty>/Script/CoreUObject)
 	CallFunc_GetKey_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetKey_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Handled_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Handled_ReturnValue>StructProperty>/Script/CoreUObject)

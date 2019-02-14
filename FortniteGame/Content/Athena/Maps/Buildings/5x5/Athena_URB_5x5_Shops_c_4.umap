@@ -73,6 +73,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/IND_DamControl_03
 	/Game/Building/ActorBlueprints/Prop/Lab_Light
 	/Game/Building/ActorBlueprints/Prop/Microfiche
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/PipeKit01
 	/Game/Building/ActorBlueprints/Prop/PipeKit05
 	/Game/Building/ActorBlueprints/Prop/Planter_Round
@@ -152,8 +153,8 @@ Name table:
 	/Script/FortniteGame
 	/Script/FortniteGame.FortNavSystem
 	/Script/NavigationSystem
-	76927B120C6645ACB9200E7FB8896AC3_3EC66E344FB8F40E3B928C98F46F202C_9022AAE5_36D64577_6CC783ED_ProxyLODMeshReduction
-	76927B120C6645ACB9200E7FB8896AC3_DC6126C948590A16C81B1F97743049B7_1ED9897A_36D64577_F8CEB3DA_ProxyLODMeshReduction
+	76927B120C6645ACB9200E7FB8896AC3_A09DF05242121AB99742C08AC522D156_9022AAE5_36D64577_0B86776C_ProxyLODMeshReduction
+	76927B120C6645ACB9200E7FB8896AC3_CA0AD2CB4944F64232F4FAB9DF31A751_1ED9897A_36D64577_37F61BFF_ProxyLODMeshReduction
 	AlarmLightMultiplier
 	ArcticBase_Satellite_Dish
 	ArcticBase_Satellite_Dish2
@@ -488,6 +489,7 @@ Name table:
 	Default__Movieset_Light1_C
 	Default__Movieset_Light2_C
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__PipeKit01_C
 	Default__PipeKit05_C
 	Default__Planter_Round_C
@@ -622,6 +624,8 @@ Name table:
 	Lab_Light2
 	Lab_Light_C
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -712,6 +716,7 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -725,6 +730,7 @@ Name table:
 	OnComponentBeginOverlap
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_1007__38D6C920
@@ -908,6 +914,7 @@ Name table:
 	SM_ParkingGarage_Floor_C
 	SoftClassPath
 	Spawn_Location
+	SphereComponent
 	SpotLight
 	SpotLight_GEN_VARIABLE
 	SpotLightComponent
@@ -1666,7 +1673,7 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=2800 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
-	Athena_URB_5x5_Shops_c_4_C_1 (0-0-0-0): size 12 (cls: Athena_URB_5x5_Shops_c_4_C_1>Athena_URB_5x5_Shops_c_4_C)
+	Athena_URB_5x5_Shops_c_4_C_0 (0-0-0-0): size 12 (cls: Athena_URB_5x5_Shops_c_4_C_0>Athena_URB_5x5_Shops_c_4_C)
 	Loot_Audio (0-0-0-0): size 108 (cls: Loot_Audio>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=Effect_Loot=Athena_URB_5x5_Shops_c_4 
@@ -1808,14 +1815,14 @@ Serialized exports:
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-920.2937,1032.023,1500.366) 
-			RelativeScale3D(StructProperty)=Vector(2797.421,2915.377,3235.699) 
+			RelativeLocation(StructProperty)=Vector(-821.4418,866.259,1358.022) 
+			RelativeScale3D(StructProperty)=Vector(2997.269,3246.904,3520.387) 
 	BoxComponent0 (0-0-0-0): size 275 (cls: BoxComponent0>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-920.2937,1032.023,1500.366) 
-			RelativeScale3D(StructProperty)=Vector(2797.421,2915.377,3235.699) 
+			RelativeLocation(StructProperty)=Vector(-821.4418,866.259,1358.022) 
+			RelativeScale3D(StructProperty)=Vector(2997.269,3246.904,3520.387) 
 	BrickSimple_AAA_SolidWall2 (0-0-0-0): size 321 (cls: BrickSimple_AAA_SolidWall2>BrickSimple_AAA_SolidWall_C>/Game/Building/ActorBlueprints/Wall/BrickSimple_AAA_SolidWall):
 		Tag array:
 			TextureData(ObjectProperty)=House_Interior_01=/Game/Building/TextureData/WallInner/House_Interior_01 
@@ -2380,7 +2387,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_FORT_Brick_Simple=/Game/Packages/Fortress_Brick_Simple/SM/Materials/MI_FORT_Brick_Simple 
 			MyGuid(StructProperty)=Guid: 3612546602-1163792932-3292661908-4034581346 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	BrickSimple_DoorWayCenter5 (0-0-0-0): size 321 (cls: BrickSimple_DoorWayCenter5>BrickSimple_DoorWayCenter03_C>/Game/Building/ActorBlueprints/Wall/BrickSimple_DoorWayCenter03):
 		Tag array:
@@ -2391,7 +2398,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_FORT_Brick_Simple=/Game/Packages/Fortress_Brick_Simple/SM/Materials/MI_FORT_Brick_Simple 
 			MyGuid(StructProperty)=Guid: 606101254-1076897678-3802024864-2293643100 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	BrickSimple_DoorWayCenter7 (0-0-0-0): size 321 (cls: BrickSimple_DoorWayCenter7>BrickSimple_DoorWayCenter03_C>/Game/Building/ActorBlueprints/Wall/BrickSimple_DoorWayCenter03):
 		Tag array:
@@ -2402,7 +2409,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_FORT_Brick_Simple=/Game/Packages/Fortress_Brick_Simple/SM/Materials/MI_FORT_Brick_Simple 
 			MyGuid(StructProperty)=Guid: 4028159830-1299425207-2526474374-3153016578 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	BrickSimple_DoorWayCenter9 (0-0-0-0): size 321 (cls: BrickSimple_DoorWayCenter9>BrickSimple_DoorWayCenter03_C>/Game/Building/ActorBlueprints/Wall/BrickSimple_DoorWayCenter03):
 		Tag array:
@@ -2413,7 +2420,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_FORT_Brick_Simple=/Game/Packages/Fortress_Brick_Simple/SM/Materials/MI_FORT_Brick_Simple 
 			MyGuid(StructProperty)=Guid: 4241113263-1101001182-4011000504-1816087817 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	BrickSimple_DoorWayCenter6 (0-0-0-0): size 321 (cls: BrickSimple_DoorWayCenter6>BrickSimple_DoorWaySide_INT_C>/Game/Building/ActorBlueprints/Wall/BrickSimple_DoorWaySide_INT):
 		Tag array:
@@ -2424,7 +2431,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_FORT_Brick_Simple=/Game/Packages/Fortress_Brick_Simple/SM/Materials/MI_FORT_Brick_Simple 
 			MyGuid(StructProperty)=Guid: 4103122025-1165406059-3561802645-1366067390 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.91 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	BrickSimple_DoorWayCenter8 (0-0-0-0): size 321 (cls: BrickSimple_DoorWayCenter8>BrickSimple_DoorWaySide_INT_C>/Game/Building/ActorBlueprints/Wall/BrickSimple_DoorWaySide_INT):
 		Tag array:
@@ -2435,7 +2442,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_FORT_Brick_Simple=/Game/Packages/Fortress_Brick_Simple/SM/Materials/MI_FORT_Brick_Simple 
 			MyGuid(StructProperty)=Guid: 1718396993-1342099852-3864776323-3217813341 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.91 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_10 (0-0-0-0): size 306 (cls: Construction_Wall_Solid_10>BrickSimple_DoorWaySide_INT_C>/Game/Building/ActorBlueprints/Wall/BrickSimple_DoorWaySide_INT):
 		Tag array:
@@ -3226,7 +3233,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 1200837867-1313598497-2040893855-1361808814 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_21 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_21>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3236,7 +3243,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 1890845753-1317406558-1481700743-1765457041 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_25 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_25>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3246,7 +3253,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 4210755439-1246279893-3934101166-349858176 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_27 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_27>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3256,7 +3263,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 1474550928-1335215391-3364941705-569238231 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_32 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_32>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3266,7 +3273,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 3596682803-1073896936-649751196-3393008152 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_425 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_425>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3276,7 +3283,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 1677476990-1293181229-2580079498-3179885915 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_426 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_426>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3296,7 +3303,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 485641706-1092388080-2333919912-957667494 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_432 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_432>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3306,7 +3313,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 1807546264-1128689041-3291731898-3297130905 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_433 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_433>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3316,7 +3323,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 887088830-1187906046-3538860704-717833204 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_441 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_441>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3336,7 +3343,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 1912688425-1222972590-3027731362-2080087229 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_444 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_444>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3346,7 +3353,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 2462733704-1284636017-4143684026-370368535 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_445 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_445>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3356,7 +3363,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 2992160030-1246735286-191431338-975482827 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_451 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_451>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3366,7 +3373,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 4273858646-1154302719-1963987088-2249865365 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_453 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_453>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3386,7 +3393,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 2620978144-1281178552-1261908404-2105669328 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_462 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_462>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3406,7 +3413,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 1605067850-1328507752-1408814737-1186659409 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_468 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_468>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3436,7 +3443,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 1693333694-1094863462-1564679583-4057077187 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_472 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_472>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3446,7 +3453,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 2613774761-1269797998-4124995986-3100234509 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_473 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_473>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3456,7 +3463,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 2156841897-1279573917-1204560271-3355580048 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_474 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_474>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3466,7 +3473,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=MI_Factory_Brick_1=/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick_1 
 			MyGuid(StructProperty)=Guid: 3484959312-1085008031-902289824-4046814608 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22870.9 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_475 (0-0-0-0): size 280 (cls: Construction_Wall_Solid_475>Factory_Wall_3_C>/Game/Building/ActorBlueprints/Wall/Factory_Wall_3):
 		Tag array:
@@ -3638,7 +3645,7 @@ Serialized exports:
 		Tag array:
 			Model(ObjectProperty)=Model_9=Athena_URB_5x5_Shops_c_4 
 			NumTextureStreamingUnbuiltComponents(IntProperty)=56 
-			LevelScriptActor(ObjectProperty)=Athena_URB_5x5_Shops_c_4_C_1=Athena_URB_5x5_Shops_c_4 
+			LevelScriptActor(ObjectProperty)=Athena_URB_5x5_Shops_c_4_C_0=Athena_URB_5x5_Shops_c_4 
 			LevelBuildDataId(StructProperty)=Guid: 3827805007-1112545288-2111499406-1487610994 
 			bTextureStreamingRotationChanged(BoolProperty)=True 
 			WorldSettings(ObjectProperty)=FortWorldSettings_9=Athena_URB_5x5_Shops_c_4 
@@ -3648,21 +3655,21 @@ Serialized exports:
 	LevelBounds_4 (0-0-0-0): size 41 (cls: LevelBounds_4>LevelBounds>/Script/Engine):
 		Tag array:
 			RootComponent(ObjectProperty)=BoxComponent0=Athena_URB_5x5_Shops_c_4 
-	LODActor_2 (0-0-0-0): size 1229 (cls: LODActor_2>LODActor>/Script/Engine):
+	LODActor_0 (0-0-0-0): size 1361 (cls: LODActor_0>LODActor>/Script/Engine):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			Proxy(ObjectProperty)=[object] 
-			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_3EC66E344FB8F40E3B928C98F46F202C_9022AAE5_36D64577_6CC783ED_ProxyLODMeshReduction 
+			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_A09DF05242121AB99742C08AC522D156_9022AAE5_36D64577_0B86776C_ProxyLODMeshReduction 
 			LODDrawDistance(FloatProperty)=40000 
 			LODLevel(IntProperty)=1 
 			SubActors(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedNumHLODLevels(ByteProperty)=[object] 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
-	LODActor_3 (0-0-0-0): size 325 (cls: LODActor_3>LODActor>/Script/Engine):
+	LODActor_1 (0-0-0-0): size 325 (cls: LODActor_1>LODActor>/Script/Engine):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			Proxy(ObjectProperty)=Athena_URB_5x5_Shops_c_4_1_HLOD=/Game/Athena/Maps/Buildings/5x5/HLOD/Athena_URB_5x5_Shops_c_4_1_HLOD 
-			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_DC6126C948590A16C81B1F97743049B7_1ED9897A_36D64577_F8CEB3DA_ProxyLODMeshReduction 
+			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_CA0AD2CB4944F64232F4FAB9DF31A751_1ED9897A_36D64577_37F61BFF_ProxyLODMeshReduction 
 			LODDrawDistance(FloatProperty)=35000 
 			LODLevel(IntProperty)=2 
 			SubActors(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -4323,7 +4330,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=M_StoreFront_Facade=/Game/Packages/DS_Fortnite_Walls/Materials/M_StoreFront_Facade 
 			MyGuid(StructProperty)=Guid: 3316052714-1320806709-3975580053-966553400 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22923.66 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_361 (0-0-0-0): size 309 (cls: Construction_Wall_Solid_361>S_StoreFront_Glass_F_C>/Game/Building/ActorBlueprints/Wall/S_StoreFront_Glass_F):
 		Tag array:
@@ -4334,7 +4341,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=M_StoreFront_Facade=/Game/Packages/DS_Fortnite_Walls/Materials/M_StoreFront_Facade 
 			MyGuid(StructProperty)=Guid: 1381460797-1324147317-3583380623-2885760495 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22923.66 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_366 (0-0-0-0): size 309 (cls: Construction_Wall_Solid_366>S_StoreFront_Glass_F_C>/Game/Building/ActorBlueprints/Wall/S_StoreFront_Glass_F):
 		Tag array:
@@ -4345,7 +4352,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=M_StoreFront_Facade=/Game/Packages/DS_Fortnite_Walls/Materials/M_StoreFront_Facade 
 			MyGuid(StructProperty)=Guid: 228839556-1172105374-1262624940-338385201 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22923.66 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_368 (0-0-0-0): size 309 (cls: Construction_Wall_Solid_368>S_StoreFront_Glass_F_C>/Game/Building/ActorBlueprints/Wall/S_StoreFront_Glass_F):
 		Tag array:
@@ -4356,7 +4363,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=M_StoreFront_Facade=/Game/Packages/DS_Fortnite_Walls/Materials/M_StoreFront_Facade 
 			MyGuid(StructProperty)=Guid: 1832780140-1259849622-1357743262-1372165368 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22923.67 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_369 (0-0-0-0): size 309 (cls: Construction_Wall_Solid_369>S_StoreFront_Glass_F_C>/Game/Building/ActorBlueprints/Wall/S_StoreFront_Glass_F):
 		Tag array:
@@ -4367,7 +4374,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=M_StoreFront_Facade=/Game/Packages/DS_Fortnite_Walls/Materials/M_StoreFront_Facade 
 			MyGuid(StructProperty)=Guid: 2261918385-1141472987-3229827208-959577097 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22923.66 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_370 (0-0-0-0): size 309 (cls: Construction_Wall_Solid_370>S_StoreFront_Glass_F_C>/Game/Building/ActorBlueprints/Wall/S_StoreFront_Glass_F):
 		Tag array:
@@ -4378,7 +4385,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=M_StoreFront_Facade=/Game/Packages/DS_Fortnite_Walls/Materials/M_StoreFront_Facade 
 			MyGuid(StructProperty)=Guid: 2638362916-1311420421-2439163317-3466181701 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22923.67 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_371 (0-0-0-0): size 309 (cls: Construction_Wall_Solid_371>S_StoreFront_Glass_F_C>/Game/Building/ActorBlueprints/Wall/S_StoreFront_Glass_F):
 		Tag array:
@@ -4389,7 +4396,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=M_StoreFront_Facade=/Game/Packages/DS_Fortnite_Walls/Materials/M_StoreFront_Facade 
 			MyGuid(StructProperty)=Guid: 4286310088-1140397345-3921446547-2421326706 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22923.67 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_378 (0-0-0-0): size 309 (cls: Construction_Wall_Solid_378>S_StoreFront_Glass_F_C>/Game/Building/ActorBlueprints/Wall/S_StoreFront_Glass_F):
 		Tag array:
@@ -4411,7 +4418,7 @@ Serialized exports:
 			BaseMaterial(ObjectProperty)=M_StoreFront_Facade=/Game/Packages/DS_Fortnite_Walls/Materials/M_StoreFront_Facade 
 			MyGuid(StructProperty)=Guid: 1742691836-1240790700-3175739549-3920552721 
 			DataVersion(IntProperty)=1 
-			CullDistance(FloatProperty)=22923.66 
+			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 	Construction_Wall_Solid_8 (0-0-0-0): size 309 (cls: Construction_Wall_Solid_8>S_StoreFront_Glass_F_C>/Game/Building/ActorBlueprints/Wall/S_StoreFront_Glass_F):
 		Tag array:
@@ -5162,6 +5169,13 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SpotLight (0-0-0-0): size 260 (cls: SpotLight>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=13214.99 
@@ -5974,37 +5988,37 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-256,1536,0) 
 			RelativeRotation(StructProperty)=Rotator(0,89.99999,0) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-256,1536,384) 
 			RelativeRotation(StructProperty)=Rotator(0,89.99999,0) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.91 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-512,1280,384) 
 			RelativeRotation(StructProperty)=Rotator(0,180.0002,0) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-511.9999,1792,768) 
 			RelativeRotation(StructProperty)=Rotator(0,180,0) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.91 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-512,1792,1536) 
 			RelativeRotation(StructProperty)=Rotator(0,180,0) 
 	StaticMeshComponent0 (0-0-0-0): size 147 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1024,1280,1536) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
@@ -6321,14 +6335,14 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-256,2048,768) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99996,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-256.0039,2048,0) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99996,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6363,14 +6377,14 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-256,2048,384) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99996,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-511.9844,2303.98,384) 
 			RelativeRotation(StructProperty)=Rotator(0,9.220754E-05,-2.605511E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6391,7 +6405,7 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-255.9805,2048,1152) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99996,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6412,7 +6426,7 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22923.66 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-255.9766,1536.004,1152) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99998,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1.5,1) 
@@ -6426,7 +6440,7 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22923.66 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1792,1535.98,768.0002) 
 			RelativeRotation(StructProperty)=Rotator(0,89.99998,-1.021606E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1.5,1) 
@@ -6440,35 +6454,35 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22923.66 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1791.973,1535.98,384) 
 			RelativeRotation(StructProperty)=Rotator(0,89.99998,-1.021606E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1.5,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22923.67 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1024,768,1536) 
 			RelativeRotation(StructProperty)=Rotator(0,179.9999,-5.21102E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1.5,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22923.66 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-256,1536,768) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99998,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1.5,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22923.67 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1024,767.9961,768) 
 			RelativeRotation(StructProperty)=Rotator(0,179.9999,-5.21102E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1.5,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22923.67 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1023.977,767.9805,384) 
 			RelativeRotation(StructProperty)=Rotator(0,179.9999,-5.21102E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1.5,1) 
@@ -6504,7 +6518,7 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22923.66 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1791.977,1536.004,1536) 
 			RelativeRotation(StructProperty)=Rotator(0,89.99998,-1.021606E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1.5,1) 
@@ -6517,7 +6531,7 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-511.9922,767.9844,0) 
 			RelativeRotation(StructProperty)=Rotator(0,-180,-2.084408E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6530,21 +6544,21 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-511.9805,767.9688,384) 
 			RelativeRotation(StructProperty)=Rotator(0,-180,-2.084408E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(256,1536,384) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99996,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(256,1536,0) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99996,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6571,21 +6585,21 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-511.9727,2303.984,0) 
 			RelativeRotation(StructProperty)=Rotator(0,9.220754E-05,-2.605511E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-511.9805,2303.992,1152) 
 			RelativeRotation(StructProperty)=Rotator(0,9.220754E-05,-2.605511E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-511.9844,2303.98,767.9999) 
 			RelativeRotation(StructProperty)=Rotator(0,9.220754E-05,-2.605511E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6598,7 +6612,7 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1536,767.9961,1152) 
 			RelativeRotation(StructProperty)=Rotator(0,-180,-5.211019E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6630,7 +6644,7 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1792,1536,0) 
 			RelativeRotation(StructProperty)=Rotator(0,89.99995,-9.692393E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6658,7 +6672,7 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-1792,1023.996,1152) 
 			RelativeRotation(StructProperty)=Rotator(0,89.99995,-9.692393E-11) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -6686,28 +6700,28 @@ Serialized exports:
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-768,1023.973,768.0002) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99996,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-767.9766,1023.996,1152) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99996,3.450219E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-512,1279.973,768.0002) 
 			RelativeRotation(StructProperty)=Rotator(0,-180,-2.084408E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			CachedMaxDrawDistance(FloatProperty)=22870.9 
+			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			RelativeLocation(StructProperty)=Vector(-511.9766,1279.996,1152) 
 			RelativeRotation(StructProperty)=Rotator(0,-180,-2.084408E-10) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -8912,13 +8926,15 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=16635.13 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
-	Tree_24a_2 (0-0-0-0): size 193 (cls: Tree_24a_2>Tree_24a_C>/Game/Building/ActorBlueprints/Prop/Tree_24a):
+	Tree_24a_2 (0-0-0-0): size 263 (cls: Tree_24a_2>Tree_24a_C>/Game/Building/ActorBlueprints/Prop/Tree_24a):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_URB_5x5_Shops_c_4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
 			MyGuid(StructProperty)=Guid: 3534214178-1075005358-3024214969-3981926376 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	WarehouseShelves_03_2 (0-0-0-0): size 222 (cls: WarehouseShelves_03_2>WarehouseShelves_03_C>/Game/Building/ActorBlueprints/Prop/WarehouseShelves_03):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_URB_5x5_Shops_c_4 

@@ -38,7 +38,6 @@ Name table:
 	/Script/MovieSceneTracks
 	/Script/SlateCore
 	/Script/UMG
-	AbandonMinigameHelper
 	AcceptButton
 	ActiveEntities
 	ActiveSequences
@@ -121,6 +120,7 @@ Name table:
 	CallFunc_GetCurrentMinigame_Minigame
 	CallFunc_GetDisplayedEntryWidgets_ReturnValue
 	CallFunc_GetLocalFortPlayerControllers_ReturnValue
+	CallFunc_GetOwningPlayer_ReturnValue
 	CallFunc_GetPlayerController_ReturnValue
 	CallFunc_GetRuntimeOptions_ReturnValue
 	CallFunc_GetUIManagerWidget_ReturnValue
@@ -256,6 +256,8 @@ Name table:
 	Easing
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortMinigameState
 	EHorizontalAlignment
 	EInputPriority
@@ -265,6 +267,7 @@ Name table:
 	EMovieSceneCompletionMode
 	EMovieSceneCompletionMode::KeepState
 	EndButtonClicked
+	EndGame
 	EndGameButton
 	EndGameButton2
 	Engine
@@ -307,6 +310,7 @@ Name table:
 	FloatCurve
 	FloatFunction
 	FloatProperty
+	FlowDirectionPreference
 	FocusEvent
 	Font
 	FontObject
@@ -342,6 +346,7 @@ Name table:
 	GetCurrentMinigame
 	GetDisplayedEntryWidgets
 	GetLocalFortPlayerControllers
+	GetOwningPlayer
 	GetPlayerController
 	GetRuntimeOptions
 	GetUIManagerWidget
@@ -390,12 +395,10 @@ Name table:
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena
 	K2Node_DynamicCast_AsMinigame_Settings_Machine
 	K2Node_DynamicCast_AsMinigame_Settings_Machine1
-	K2Node_DynamicCast_AsMinigame_Settings_Machine2
 	K2Node_DynamicCast_bSuccess
 	K2Node_DynamicCast_bSuccess1
 	K2Node_DynamicCast_bSuccess2
 	K2Node_DynamicCast_bSuccess3
-	K2Node_DynamicCast_bSuccess4
 	K2Node_Event_bUsingGamepad
 	K2Node_Select_Default
 	Key
@@ -430,6 +433,7 @@ Name table:
 	MaxDesiredHeight
 	MetaData
 	MinDesiredHeight
+	Minigame
 	MinigameButtons
 	MinigameButtons_C
 	MinigameSettingsMachine_C
@@ -582,6 +586,7 @@ Name table:
 	Segments
 	SequenceID
 	SequenceSignature
+	ServerEndMinigame
 	ServerStartMinigame
 	SetActiveWidgetIndex
 	SetCursorModeLocked
@@ -702,7 +707,7 @@ Name table:
 	WrapTextAt
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	CreativeMinigameGameKnobsModal_C (0-0-0-0): size 703 (cls: CreativeMinigameGameKnobsModal_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	CreativeMinigameGameKnobsModal_C (0-0-0-0): size 723 (cls: CreativeMinigameGameKnobsModal_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -726,7 +731,7 @@ Serialized exports:
 	Out (0-0-0-0): size 36 (cls: Out>ObjectProperty>/Script/CoreUObject)
 	OnClose__DelegateSignature (0-0-0-0): size 43 (cls: OnClose__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_CreativeMinigameGameKnobsModal (0-0-0-0): size 2596 (cls: ExecuteUbergraph_CreativeMinigameGameKnobsModal>Function>/Script/CoreUObject)
+	ExecuteUbergraph_CreativeMinigameGameKnobsModal (0-0-0-0): size 2531 (cls: ExecuteUbergraph_CreativeMinigameGameKnobsModal>Function>/Script/CoreUObject)
 	CallFunc_GetDisplayedEntryWidgets_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetDisplayedEntryWidgets_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetDisplayedEntryWidgets_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetDisplayedEntryWidgets_ReturnValue>ArrayProperty>/Script/CoreUObject)
 	CallFunc_GetLocalFortPlayerControllers_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLocalFortPlayerControllers_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -743,23 +748,6 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=BackgroundBlur_0=WidgetArchetype 
 			Content(ObjectProperty)=ModalContent=WidgetArchetype 
-	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsAnimationPlaying_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsAnimationPlaying_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsMobileGame_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsMobileGame_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
-	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume (0-0-0-0): size 34 (cls: CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume>BoolProperty>/Script/CoreUObject)
-	CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume1 (0-0-0-0): size 34 (cls: CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume1>BoolProperty>/Script/CoreUObject)
-	CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume2 (0-0-0-0): size 34 (cls: CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume2>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess3 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess3>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess4 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess4>BoolProperty>/Script/CoreUObject)
-	K2Node_Event_bUsingGamepad (0-0-0-0): size 34 (cls: K2Node_Event_bUsingGamepad>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	HandleNoOptionsLoaded (0-0-0-0): size 54 (cls: HandleNoOptionsLoaded>Function>/Script/CoreUObject)
 	UpdateStartEndButtons (0-0-0-0): size 54 (cls: UpdateStartEndButtons>Function>/Script/CoreUObject)
 	BndEvt__MinigameButtons_K2Node_ComponentBoundEvent_5_EndButtonClicked__DelegateSignature (0-0-0-0): size 54 (cls: BndEvt__MinigameButtons_K2Node_ComponentBoundEvent_5_EndButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
@@ -784,10 +772,29 @@ Serialized exports:
 	OnTouchStarted (0-0-0-0): size 251 (cls: OnTouchStarted>Function>/Script/CoreUObject)
 	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
 	OnFocusReceived (0-0-0-0): size 282 (cls: OnFocusReceived>Function>/Script/CoreUObject)
+	bInReadOnlyVolume (0-0-0-0): size 34 (cls: bInReadOnlyVolume>BoolProperty>/Script/CoreUObject)
+	Player in Read Only Volume? (0-0-0-0): size 191 (cls: Player in Read Only Volume?>Function>/Script/CoreUObject)
+	Minigame (0-0-0-0): size 36 (cls: Minigame>ObjectProperty>/Script/CoreUObject)
+	EndGame (0-0-0-0): size 147 (cls: EndGame>Function>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsAnimationPlaying_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsAnimationPlaying_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsMobileGame_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsMobileGame_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume (0-0-0-0): size 34 (cls: CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume>BoolProperty>/Script/CoreUObject)
+	CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume1 (0-0-0-0): size 34 (cls: CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume1>BoolProperty>/Script/CoreUObject)
+	CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume2 (0-0-0-0): size 34 (cls: CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume2>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess3 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess3>BoolProperty>/Script/CoreUObject)
+	K2Node_Event_bUsingGamepad (0-0-0-0): size 34 (cls: K2Node_Event_bUsingGamepad>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume (0-0-0-0): size 34 (cls: CallFunc_Player_in_Read_Only_Volume__bInReadOnlyVolume>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsUnderLocation_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsUnderLocation_ReturnValue>BoolProperty>/Script/CoreUObject)
-	Player in Read Only Volume? (0-0-0-0): size 191 (cls: Player in Read Only Volume?>Function>/Script/CoreUObject)
-	bInReadOnlyVolume (0-0-0-0): size 34 (cls: bInReadOnlyVolume>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsPlayerInReadOnlyVolume_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsPlayerInReadOnlyVolume_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	ContentBorder (0-0-0-0): size 350 (cls: ContentBorder>Border>/Script/UMG):
@@ -1030,7 +1037,7 @@ Serialized exports:
 	ComponentDelegateBinding_0 (0-0-0-0): size 526 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
 		Tag array:
 			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
-	WidgetArchetype (0-0-0-0): size 386 (cls: WidgetArchetype>CreativeMinigameGameKnobsModal_C):
+	WidgetArchetype (0-0-0-0): size 415 (cls: WidgetArchetype>CreativeMinigameGameKnobsModal_C):
 		Tag array:
 			ConfirmSelectionShine(ObjectProperty)=ConfirmSelectionShine=WidgetArchetype 
 			MinigameButtons(ObjectProperty)=MinigameButtons=WidgetArchetype 
@@ -1038,6 +1045,7 @@ Serialized exports:
 			ModalOverlay(ObjectProperty)=ModalOverlay=WidgetArchetype 
 			OptionDisplayName(ObjectProperty)=OptionDisplayName=WidgetArchetype 
 			WidgetSwitcher_0(ObjectProperty)=WidgetSwitcher_0=WidgetArchetype 
+			WidgetSwitcher_1(ObjectProperty)=WidgetSwitcher_1=WidgetArchetype 
 			OptionsList(ObjectProperty)=OptionsList=WidgetArchetype 
 			AcceptButton(ObjectProperty)=AcceptButton=WidgetArchetype 
 			CancelButton(ObjectProperty)=CancelButton=WidgetArchetype 
@@ -1051,14 +1059,16 @@ Serialized exports:
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 127 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1068,26 +1078,31 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_0 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1617,6 +1632,8 @@ Serialized exports:
 		Tag array:
 			Slot(ObjectProperty)=HorizontalBoxSlot_3=WidgetArchetype 
 	ConfirmSelectionShine (0-0-0-0): size 36 (cls: ConfirmSelectionShine>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetOwningPlayer_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetOwningPlayer_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Controller_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller_Athena>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item1 (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -1633,7 +1650,6 @@ Serialized exports:
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller_Athena>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsMinigame_Settings_Machine (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsMinigame_Settings_Machine>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsMinigame_Settings_Machine1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsMinigame_Settings_Machine1>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsMinigame_Settings_Machine2 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsMinigame_Settings_Machine2>ObjectProperty>/Script/CoreUObject)
 	In (0-0-0-0): size 36 (cls: In>ObjectProperty>/Script/CoreUObject)
 	MinigameButtons (0-0-0-0): size 36 (cls: MinigameButtons>ObjectProperty>/Script/CoreUObject)
 	ModalContent (0-0-0-0): size 36 (cls: ModalContent>ObjectProperty>/Script/CoreUObject)
@@ -1643,6 +1659,7 @@ Serialized exports:
 	CallFunc_GetPlayerController_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetPlayerController_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsAthena_Player_Controller (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsAthena_Player_Controller>ObjectProperty>/Script/CoreUObject)
 	WidgetSwitcher_0 (0-0-0-0): size 36 (cls: WidgetSwitcher_0>ObjectProperty>/Script/CoreUObject)
+	WidgetSwitcher_1 (0-0-0-0): size 36 (cls: WidgetSwitcher_1>ObjectProperty>/Script/CoreUObject)
 	Overlay_0 (0-0-0-0): size 53 (cls: Overlay_0>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1720,7 +1737,7 @@ Serialized exports:
 			MinDesiredHeight(FloatProperty)=720 
 			MaxDesiredHeight(FloatProperty)=350 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
 	ModalSize (0-0-0-0): size 166 (cls: ModalSize>SizeBox>/Script/UMG):
 		Tag array:
 			bOverride_WidthOverride(BoolProperty)=True 
@@ -1766,7 +1783,7 @@ Serialized exports:
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_2=WidgetArchetype 
-			Content(ObjectProperty)=ListSizeBox=WidgetArchetype 
+			Content(ObjectProperty)=WidgetSwitcher_1=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 312 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1821,10 +1838,14 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
-	WidgetSwitcher_0 (0-0-0-0): size 86 (cls: WidgetSwitcher_0>WidgetSwitcher>/Script/UMG):
+	WidgetSwitcher_0 (0-0-0-0): size 82 (cls: WidgetSwitcher_0>WidgetSwitcher>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+	WidgetSwitcher_1 (0-0-0-0): size 86 (cls: WidgetSwitcher_1>WidgetSwitcher>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 	WidgetSwitcherSlot_0 (0-0-0-0): size 70 (cls: WidgetSwitcherSlot_0>WidgetSwitcherSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=ButtonSwitcher=WidgetArchetype 
@@ -1837,10 +1858,14 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=WidgetSwitcher_0=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_1=WidgetArchetype 
+	WidgetSwitcherSlot_0 (0-0-0-0): size 70 (cls: WidgetSwitcherSlot_0>WidgetSwitcherSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=WidgetSwitcher_1=WidgetArchetype 
+			Content(ObjectProperty)=ListSizeBox=WidgetArchetype 
 	WidgetSwitcherSlot_1 (0-0-0-0): size 111 (cls: WidgetSwitcherSlot_1>WidgetSwitcherSlot>/Script/UMG):
 		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Parent(ObjectProperty)=WidgetSwitcher_0=WidgetArchetype 
+			Parent(ObjectProperty)=WidgetSwitcher_1=WidgetArchetype 
 			Content(ObjectProperty)=OptionDisplayName=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:

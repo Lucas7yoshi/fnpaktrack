@@ -16,7 +16,10 @@ Name table:
 	/Game/Sounds/Creative/Gadgets/MoveTool/MoveTool_Push_Cue
 	/Game/Sounds/Creative/Gadgets/MoveTool/MoveTool_Raise_01_Cue
 	/Game/Sounds/Creative/Gadgets/MoveTool/MoveTool_Rotate_Cue
+	/Game/Sounds/Creative/Gadgets/MoveTool/MoveTool_ScalingDown_Cue
+	/Game/Sounds/Creative/Gadgets/MoveTool/MoveTool_ScalingUp_Cue
 	/Game/Sounds/Creative/Gadgets/MoveTool/MoveTool_SelectedLoop_01_Cue
+	/Game/Sounds/Fort_Test_Sounds/Tones/2k_test_tone_looping_Cue
 	/Game/UI/Fort_HUD/HUD_Xhair_Dot
 	/Game/UI/Foundation/Textures/Banner/Bucket/T-Banners-Icons-TrashCan-L
 	/Game/UI/Foundation/Textures/Banner/Founders/T-Banners-Icons-Atom-L
@@ -43,7 +46,9 @@ Name table:
 	/Script/Engine
 	/Script/FortniteGame
 	/Script/FortniteUI
+	/Script/GameplayTags
 	/Script/UMG
+	2k_test_tone_looping_Cue
 	A
 	Abs
 	ActiveMovementMode
@@ -79,6 +84,7 @@ Name table:
 	bAllowGravity
 	bAllowTargeting
 	BaseActor
+	bAutoActivate
 	bCanInteract
 	BeamColorHigh_Delete
 	BeamColorHigh_Invalid
@@ -133,6 +139,7 @@ Name table:
 	CallFunc_Array_Length_ReturnValue1
 	CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue
 	CallFunc_BooleanAND_ReturnValue
+	CallFunc_BooleanAND_ReturnValue1
 	CallFunc_BooleanNOR_ReturnValue
 	CallFunc_BooleanOR_ReturnValue
 	CallFunc_BooleanOR_ReturnValue1
@@ -189,7 +196,6 @@ Name table:
 	CallFunc_GetStaticMeshCenterAndRadius_SphericalRadius
 	CallFunc_GetTimelineLength_ReturnValue
 	CallFunc_GetTransform_ReturnValue
-	CallFunc_GetTransform_ReturnValue1
 	CallFunc_GetUpVector_ReturnValue
 	CallFunc_GetVolumeManager_OutIsValid
 	CallFunc_GetVolumeManager_OutVolumeManager
@@ -218,7 +224,16 @@ Name table:
 	CallFunc_IsLocallyControlled_ReturnValue
 	CallFunc_IsMobileGame_ReturnValue
 	CallFunc_IsPlaying_ReturnValue
+	CallFunc_IsPlaying_ReturnValue1
+	CallFunc_IsPlaying_ReturnValue2
+	CallFunc_IsPlaying_ReturnValue3
+	CallFunc_IsPlaying_ReturnValue4
 	CallFunc_IsRunningOnOwningClient_ReturnValue
+	CallFunc_IsRunningOnOwningClient_ReturnValue1
+	CallFunc_IsRunningOnOwningClient_ReturnValue2
+	CallFunc_IsRunningOnOwningClient_ReturnValue3
+	CallFunc_IsRunningOnOwningClient_ReturnValue4
+	CallFunc_IsRunningOnOwningClient_ReturnValue5
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
 	CallFunc_IsValid_ReturnValue2
@@ -227,12 +242,12 @@ Name table:
 	CallFunc_IsValid_ReturnValue5
 	CallFunc_IsValid_ReturnValue6
 	CallFunc_IsValid_ReturnValue7
-	CallFunc_IsValid_ReturnValue8
 	CallFunc_K2_GetActorLocation_ReturnValue
 	CallFunc_K2_GetActorLocation_ReturnValue1
 	CallFunc_K2_GetComponentLocation_ReturnValue
 	CallFunc_K2_GetComponentToWorld_ReturnValue
 	CallFunc_K2_GetPawn_ReturnValue
+	CallFunc_K2_SetTimerDelegate_ReturnValue
 	CallFunc_K2_SetWorldRotation_SweepHitResult
 	CallFunc_K2_SetWorldTransform_SweepHitResult
 	CallFunc_Less_IntInt_ReturnValue
@@ -282,6 +297,7 @@ Name table:
 	CookedComponentInstancingData
 	Create
 	CreateDynamicMaterialInstance
+	Creative.MoveTool.Activated
 	Creative_Flying_AnimBlueprint_C
 	CreativeInteraction
 	CreativeInteraction_Delete
@@ -390,6 +406,7 @@ Name table:
 	ETimelineDirection
 	EVolumeValidityResult
 	ExecuteUbergraph_B_CreativeMoveTool_Athena
+	FadeOut
 	FClamp
 	FindTransitionPlayPosition
 	FinishedFunctionName
@@ -427,6 +444,8 @@ Name table:
 	G
 	GA_Athena_Instance_PlaysetGrenadeWithTrajectory_C
 	GameplayStatics
+	GameplayTag
+	GameplayTagContainer
 	GetActorForwardVector
 	GetBuildingMeshComponent
 	GetBuildPreviewMarker
@@ -460,7 +479,10 @@ Name table:
 	GridSnapIndex
 	GridSnapRatios
 	Guid
+	Handle
+	Handle Scale Up Modifier
 	HandleDropToFloorPressed
+	HandleExitHeldDownLongEnough
 	HandlePlaysetSelected
 	HandlePrecisionModeHeldDownLongEnough
 	HandlePrecisionModePressed
@@ -469,6 +491,10 @@ Name table:
 	HandlePushPressed
 	HandleResetRotationHeldDownLongEnough
 	HandleRotateSwitchAxisPressed
+	HandleScaleDownPressed
+	HandleScaleDownReleased
+	HandleScaleUpPressed
+	HandleScaleUpReleased
 	HasPlayedPrecisionReleaseSound
 	Highlighted
 	HighlightPostProcess
@@ -497,17 +523,20 @@ Name table:
 	ItemListClass
 	ItemListPanelData
 	ItemListTable
+	K2_ClearAndInvalidateTimerHandle
 	K2_DestroyActor
 	K2_GetActorLocation
 	K2_GetComponentLocation
 	K2_GetComponentToWorld
 	K2_GetPawn
 	K2_OnUnEquip
+	K2_SetTimerDelegate
 	K2_SetWorldRotation
 	K2_SetWorldTransform
 	K2Node_ClassDynamicCast_AsPlayset_Inventory
 	K2Node_ClassDynamicCast_bSuccess
 	K2Node_CreateDelegate_OutputDelegate
+	K2Node_CreateDelegate_OutputDelegate1
 	K2Node_CustomEvent_ActorToCreatePreivewFor
 	K2Node_CustomEvent_BlueprintPreviewActor
 	K2Node_CustomEvent_CreativeInteraction
@@ -601,6 +630,10 @@ Name table:
 	MeshComponents
 	MeshComponents_16_2F81DBEE4A54236C4AA0F8AD425D5CEA
 	MissionBlueprintFunctionLibrary_C
+	Move Tool Scale Down
+	Move Tool Scale Down_GEN_VARIABLE
+	Move Tool Scale Up
+	Move Tool Scale Up_GEN_VARIABLE
 	MoveTool_Axis_Cue
 	MoveTool_Copy_01_Cue
 	MoveTool_Highlight_01_Cue
@@ -609,7 +642,10 @@ Name table:
 	MoveTool_Push_Cue
 	MoveTool_Raise_01_Cue
 	MoveTool_Rotate_Cue
+	MoveTool_ScalingDown_Cue
+	MoveTool_ScalingUp_Cue
 	MoveTool_SelectedLoop_01_Cue
+	MoveToolActivatedTags
 	MoveToolInputComponent
 	MoveToolLoopingSoundComponent
 	MoveToolLoopingSoundComponent_GEN_VARIABLE
@@ -620,6 +656,7 @@ Name table:
 	Multiply_LinearColorFloat
 	NameProperty
 	NewHoveredComponents
+	NewVar
 	NoCollision
 	NODE_AddSkeletalMeshComponent-0
 	NODE_AddStaticMeshComponent-0
@@ -636,7 +673,6 @@ Name table:
 	ObjectType
 	OnAllowGravityToggleChanged
 	OnAssetClassLoaded__DelegateSignature
-	OnGridPlacedWorldTransform
 	OnHandleOpenPlaysetInventory
 	OnHoverChanged
 	OnHoverChangedCanInteract
@@ -712,6 +748,7 @@ Name table:
 	Rotation
 	RotationOffset
 	Rotator
+	Scale Up Modifier Audio
 	Scale3D
 	ScaleMeshLightRays
 	SceneComponent
@@ -766,6 +803,7 @@ Name table:
 	Sm_CreativeMoveTool_Lightbeam_GEN_VARIABLE
 	SoftClassProperty
 	SoftObjectProperty
+	Sound
 	Sound To Play
 	SoundBase
 	SoundCue
@@ -830,6 +868,8 @@ Name table:
 	TimelineLength
 	Timelines
 	TimelineTemplate
+	TimerDynamicDelegate__DelegateSignature
+	TimerHandle
 	TimestampPayload
 	TODMPPEnabled
 	TrackName
@@ -849,9 +889,11 @@ Name table:
 	TTFloatTrack
 	UberGraphFrame
 	UberGraphFunction
+	UInt64Property
 	UnderlyingType
 	UnholsterWeapon
 	UnhoveredComponents
+	UniformScaleModifier
 	UpdateBuildingPieceLocationAndRadius
 	UpdateBuildingPreviewTransform
 	UpdateFunctionName
@@ -888,14 +930,14 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	B_CreativeMoveTool_Athena_C (0-0-0-0): size 1414 (cls: B_CreativeMoveTool_Athena_C>BlueprintGeneratedClass>/Script/Engine):
+	B_CreativeMoveTool_Athena_C (0-0-0-0): size 1526 (cls: B_CreativeMoveTool_Athena_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=6 
 			bHasCookedComponentInstancingData(BoolProperty)=True 
 			Timelines(ArrayProperty)=[object] (inner: ObjectProperty)
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=B_CreativeMoveTool_Athena_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_CreativeMoveTool_Athena=B_CreativeMoveTool_Athena_C 
-	Default__B_CreativeMoveTool_Athena_C (0-0-0-0): size 2769 (cls: Default__B_CreativeMoveTool_Athena_C>B_CreativeMoveTool_Athena_C):
+	Default__B_CreativeMoveTool_Athena_C (0-0-0-0): size 2949 (cls: Default__B_CreativeMoveTool_Athena_C>B_CreativeMoveTool_Athena_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			TransitionLengthIn(FloatProperty)=0.175 
@@ -932,7 +974,10 @@ Serialized exports:
 			BeamColorLow_Delete(StructProperty)=UE4.FLinearColor 
 			BeamColorHigh_Delete(StructProperty)=UE4.FLinearColor 
 			PreviousLocation(StructProperty)=Vector(0,0,0) 
+			NewVar_0(ObjectProperty)=2k_test_tone_looping_Cue=/Game/Sounds/Fort_Test_Sounds/Tones/2k_test_tone_looping_Cue 
+			Handle Scale Up Modifier(StructProperty)=System.Byte[] 
 			AnimBPOverride(ObjectProperty)=Creative_Flying_AnimBlueprint_C=/Game/Weapons/Prototype/ObjectMover/Blueprints/Creative_Flying_AnimBlueprint 
+			MoveToolActivatedTags(StructProperty)=GameplayTagContainer:Creative.MoveTool.Activated 
 			ReticleImage(ObjectProperty)=HUD_Xhair_Dot=/Game/UI/Fort_HUD/HUD_Xhair_Dot 
 			ReticleDefaultColor(StructProperty)=System.Byte[] 
 			CameraBase3PClass(ObjectProperty)=Athena_PlayerCameraModeCreative_C=/Game/Blueprints/Camera/Athena/Athena_PlayerCameraModeCreative 
@@ -950,11 +995,11 @@ Serialized exports:
 			WeaponPawnAnimSet(ObjectProperty)=CreativeTool_AnimAsset=/Game/Animation/Game/MainPlayer/AnimAssets/CreativeTool_AnimAsset 
 			PrimaryActorTick(StructProperty)=System.Byte[] 
 			RootComponent(ObjectProperty)=WeaponMesh0=Default__B_CreativeMoveTool_Athena_C 
-	MoveToolLoopingSoundComponent (0-0-0-0): size 36 (cls: MoveToolLoopingSoundComponent>ObjectProperty>/Script/CoreUObject)
+	Move Tool Scale Down (0-0-0-0): size 36 (cls: Move Tool Scale Down>ObjectProperty>/Script/CoreUObject)
 	AllowGravity (0-0-0-0): size 34 (cls: AllowGravity>BoolProperty>/Script/CoreUObject)
 	GravityToggleChanged__DelegateSignature (0-0-0-0): size 47 (cls: GravityToggleChanged__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_B_CreativeMoveTool_Athena (0-0-0-0): size 5661 (cls: ExecuteUbergraph_B_CreativeMoveTool_Athena>Function>/Script/CoreUObject)
+	ExecuteUbergraph_B_CreativeMoveTool_Athena (0-0-0-0): size 6389 (cls: ExecuteUbergraph_B_CreativeMoveTool_Athena>Function>/Script/CoreUObject)
 	CallFunc_GetComponentsByClass_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetComponentsByClass_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetComponentsByClass_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetComponentsByClass_ReturnValue>ArrayProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_MeshComponents (0-0-0-0): size 36 (cls: K2Node_CustomEvent_MeshComponents>ObjectProperty>/Script/CoreUObject)
@@ -1027,6 +1072,12 @@ Serialized exports:
 	Previews (0-0-0-0): size 36 (cls: Previews>ArrayProperty>/Script/CoreUObject)
 	SelectedMeshComponents (0-0-0-0): size 36 (cls: SelectedMeshComponents>ObjectProperty>/Script/CoreUObject)
 	SelectedMeshComponents (0-0-0-0): size 36 (cls: SelectedMeshComponents>ArrayProperty>/Script/CoreUObject)
+	Scale Up Modifier Audio (0-0-0-0): size 54 (cls: Scale Up Modifier Audio>Function>/Script/CoreUObject)
+	HandleScaleDownReleased (0-0-0-0): size 54 (cls: HandleScaleDownReleased>Function>/Script/CoreUObject)
+	HandleScaleUpReleased (0-0-0-0): size 54 (cls: HandleScaleUpReleased>Function>/Script/CoreUObject)
+	HandleScaleDownPressed (0-0-0-0): size 54 (cls: HandleScaleDownPressed>Function>/Script/CoreUObject)
+	HandleScaleUpPressed (0-0-0-0): size 54 (cls: HandleScaleUpPressed>Function>/Script/CoreUObject)
+	HandleExitHeldDownLongEnough (0-0-0-0): size 54 (cls: HandleExitHeldDownLongEnough>Function>/Script/CoreUObject)
 	HandlePrecisionModeHeldDownLongEnough (0-0-0-0): size 54 (cls: HandlePrecisionModeHeldDownLongEnough>Function>/Script/CoreUObject)
 	HandlePrecisionModeReleased (0-0-0-0): size 54 (cls: HandlePrecisionModeReleased>Function>/Script/CoreUObject)
 	HandleResetRotationHeldDownLongEnough (0-0-0-0): size 54 (cls: HandleResetRotationHeldDownLongEnough>Function>/Script/CoreUObject)
@@ -1055,6 +1106,14 @@ Serialized exports:
 	SetupPhoneMaterialStates (0-0-0-0): size 1459 (cls: SetupPhoneMaterialStates>Function>/Script/CoreUObject)
 	MeshComponents (0-0-0-0): size 36 (cls: MeshComponents>ObjectProperty>/Script/CoreUObject)
 	MeshComponents (0-0-0-0): size 36 (cls: MeshComponents>ArrayProperty>/Script/CoreUObject)
+	Move Tool Scale Down_GEN_VARIABLE (0-0-0-0): size 67 (cls: Move Tool Scale Down_GEN_VARIABLE>AudioComponent>/Script/Engine):
+		Tag array:
+			Sound(ObjectProperty)=MoveTool_ScalingDown_Cue=/Game/Sounds/Creative/Gadgets/MoveTool/MoveTool_ScalingDown_Cue 
+			bAutoActivate(BoolProperty)=False 
+	Move Tool Scale Up_GEN_VARIABLE (0-0-0-0): size 67 (cls: Move Tool Scale Up_GEN_VARIABLE>AudioComponent>/Script/Engine):
+		Tag array:
+			Sound(ObjectProperty)=MoveTool_ScalingUp_Cue=/Game/Sounds/Creative/Gadgets/MoveTool/MoveTool_ScalingUp_Cue 
+			bAutoActivate(BoolProperty)=False 
 	MoveToolLoopingSoundComponent_GEN_VARIABLE (0-0-0-0): size 12 (cls: MoveToolLoopingSoundComponent_GEN_VARIABLE>AudioComponent>/Script/Engine)
 	MoveToolSoundComponet_GEN_VARIABLE (0-0-0-0): size 12 (cls: MoveToolSoundComponet_GEN_VARIABLE>AudioComponent>/Script/Engine)
 	Degraded (0-0-0-0): size 12 (cls: Degraded>AudioComponent>/Script/Engine)
@@ -1072,6 +1131,8 @@ Serialized exports:
 	CallFunc_LessEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LessEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	BuildingPieceSelected (0-0-0-0): size 34 (cls: BuildingPieceSelected>BoolProperty>/Script/CoreUObject)
 	CanPostProcessBeEnabledOnCurrentPlatform (0-0-0-0): size 34 (cls: CanPostProcessBeEnabledOnCurrentPlatform>BoolProperty>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanNOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanNOR_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue1>BoolProperty>/Script/CoreUObject)
@@ -1079,6 +1140,7 @@ Serialized exports:
 	CallFunc_EqualEqual_ByteByte_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_ByteByte_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_ByteByte_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue3>BoolProperty>/Script/CoreUObject)
+	CallFunc_GreaterEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GreaterEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_Bool (0-0-0-0): size 34 (cls: CallFunc_IsBuildingPiece_Bool>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_Bool1 (0-0-0-0): size 34 (cls: CallFunc_IsBuildingPiece_Bool1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_Bool2 (0-0-0-0): size 34 (cls: CallFunc_IsBuildingPiece_Bool2>BoolProperty>/Script/CoreUObject)
@@ -1094,7 +1156,16 @@ Serialized exports:
 	CallFunc_IsLocallyControlled_Result1 (0-0-0-0): size 34 (cls: CallFunc_IsLocallyControlled_Result1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsMobileGame_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsMobileGame_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsPlaying_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsPlaying_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsPlaying_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsPlaying_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsPlaying_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsPlaying_ReturnValue2>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsPlaying_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_IsPlaying_ReturnValue3>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsPlaying_ReturnValue4 (0-0-0-0): size 34 (cls: CallFunc_IsPlaying_ReturnValue4>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsRunningOnOwningClient_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsRunningOnOwningClient_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsRunningOnOwningClient_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue2>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsRunningOnOwningClient_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue3>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsRunningOnOwningClient_ReturnValue4 (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue4>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsRunningOnOwningClient_ReturnValue5 (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue5>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue2>BoolProperty>/Script/CoreUObject)
@@ -1103,9 +1174,9 @@ Serialized exports:
 	CallFunc_IsValid_ReturnValue5 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue5>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue6 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue6>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue7 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue7>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue8 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue8>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_LessEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LessEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_ClassDynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_ClassDynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bAllowGravity (0-0-0-0): size 34 (cls: K2Node_Event_bAllowGravity>BoolProperty>/Script/CoreUObject)
@@ -1231,6 +1302,7 @@ Serialized exports:
 		Tag array:
 			FloatCurve(StructProperty)=System.Byte[] 
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	CallFunc_GetVolumeManager_OutIsValid (0-0-0-0): size 40 (cls: CallFunc_GetVolumeManager_OutIsValid>EnumProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_X (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X>FloatProperty>/Script/CoreUObject)
@@ -1367,7 +1439,10 @@ Serialized exports:
 	LevelTODM (0-0-0-0): size 36 (cls: LevelTODM>ObjectProperty>/Script/CoreUObject)
 	LevelTODMBasePostProcessMaterial (0-0-0-0): size 36 (cls: LevelTODMBasePostProcessMaterial>ObjectProperty>/Script/CoreUObject)
 	LightbeamMID (0-0-0-0): size 36 (cls: LightbeamMID>ObjectProperty>/Script/CoreUObject)
+	Move Tool Scale Up (0-0-0-0): size 36 (cls: Move Tool Scale Up>ObjectProperty>/Script/CoreUObject)
+	MoveToolLoopingSoundComponent (0-0-0-0): size 36 (cls: MoveToolLoopingSoundComponent>ObjectProperty>/Script/CoreUObject)
 	MoveToolSoundComponet (0-0-0-0): size 36 (cls: MoveToolSoundComponet>ObjectProperty>/Script/CoreUObject)
+	NewVar_0 (0-0-0-0): size 36 (cls: NewVar_0>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Create_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Create_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetController_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetController_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller_Athena>ObjectProperty>/Script/CoreUObject)
@@ -1410,6 +1485,15 @@ Serialized exports:
 			CookedComponentInstancingData(StructProperty)=System.Byte[] 
 			VariableGuid(StructProperty)=Guid: 494643669-1318124860-4050627744-3457030632 
 			InternalVariableName(NameProperty)=CreativeInteraction_MoveObjectsFreely 
+	SCS_Node_10 (0-0-0-0): size 594 (cls: SCS_Node_10>SCS_Node>/Script/Engine):
+		Tag array:
+			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
+			ComponentTemplate(ObjectProperty)=Move Tool Scale Down_GEN_VARIABLE=B_CreativeMoveTool_Athena_C 
+			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			ParentComponentOrVariableName(NameProperty)=WeaponMesh0 
+			bIsParentComponentNative(BoolProperty)=True 
+			VariableGuid(StructProperty)=Guid: 697747610-1260639398-902055852-3206661722 
+			InternalVariableName(NameProperty)=Move Tool Scale Down 
 	SCS_Node_2 (0-0-0-0): size 251 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=CreativeInteraction_MoveBuildingsOnGrid_C=/Game/Weapons/Prototype/ObjectMover/Blueprints/ObjectInteractionBehaviors/MoveBuildingsOnGrid/CreativeInteraction_MoveBuildingsOnGrid 
@@ -1467,7 +1551,16 @@ Serialized exports:
 			bIsParentComponentNative(BoolProperty)=True 
 			VariableGuid(StructProperty)=Guid: 609241848-1317970985-3534628528-1841758498 
 			InternalVariableName(NameProperty)=MoveToolLoopingSoundComponent 
-	SimpleConstructionScript_0 (0-0-0-0): size 179 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
+	SCS_Node_9 (0-0-0-0): size 594 (cls: SCS_Node_9>SCS_Node>/Script/Engine):
+		Tag array:
+			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
+			ComponentTemplate(ObjectProperty)=Move Tool Scale Up_GEN_VARIABLE=B_CreativeMoveTool_Athena_C 
+			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			ParentComponentOrVariableName(NameProperty)=WeaponMesh0 
+			bIsParentComponentNative(BoolProperty)=True 
+			VariableGuid(StructProperty)=Guid: 1296818915-1152295711-3541503156-4218713283 
+			InternalVariableName(NameProperty)=Move Tool Scale Up 
+	SimpleConstructionScript_0 (0-0-0-0): size 195 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
 			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1497,10 +1590,10 @@ Serialized exports:
 	EmptyTransform (0-0-0-0): size 36 (cls: EmptyTransform>StructProperty>/Script/CoreUObject)
 	CallFunc_GetStaticMeshCenterAndRadius_CenterWS (0-0-0-0): size 36 (cls: CallFunc_GetStaticMeshCenterAndRadius_CenterWS>StructProperty>/Script/CoreUObject)
 	CallFunc_GetTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetTransform_ReturnValue>StructProperty>/Script/CoreUObject)
-	CallFunc_GetTransform_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetTransform_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetComponentToWorld_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentToWorld_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_SetTimerDelegate_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_SetTimerDelegate_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetWorldTransform_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetWorldTransform_SweepHitResult>StructProperty>/Script/CoreUObject)
 	CallFunc_LinearColorLerp_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_LinearColorLerp_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_LinearColorLerp_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_LinearColorLerp_ReturnValue1>StructProperty>/Script/CoreUObject)
@@ -1528,6 +1621,7 @@ Serialized exports:
 	CallFunc_K2_GetComponentToWorld_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentToWorld_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_TransformLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_TransformLocation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CenterWS (0-0-0-0): size 36 (cls: CenterWS>StructProperty>/Script/CoreUObject)
+	Handle Scale Up Modifier (0-0-0-0): size 36 (cls: Handle Scale Up Modifier>StructProperty>/Script/CoreUObject)
 	CallFunc_GetStaticMeshCenterAndRadius_CenterWS (0-0-0-0): size 36 (cls: CallFunc_GetStaticMeshCenterAndRadius_CenterWS>StructProperty>/Script/CoreUObject)
 	PhoneMaterialState (0-0-0-0): size 36 (cls: PhoneMaterialState>StructProperty>/Script/CoreUObject)
 	PreviousColor (0-0-0-0): size 36 (cls: PreviousColor>StructProperty>/Script/CoreUObject)

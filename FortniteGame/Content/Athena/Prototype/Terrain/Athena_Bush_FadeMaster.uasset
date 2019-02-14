@@ -21,6 +21,8 @@ Name table:
 	/Engine/Functions/Engine_MaterialFunctions02/Texturing/ScreenAlignedUVs
 	/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components
 	/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components
+	/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat4Components
+	/Engine/Functions/Engine_MaterialFunctions02/Utility/CameraDirectionVector
 	/Engine/Functions/Engine_MaterialFunctions02/Utility/DebugFloat3Values
 	/Engine/Functions/Engine_MaterialFunctions02/Utility/DebugScalarValues
 	/Engine/Functions/Engine_MaterialFunctions02/Utility/VectorLength
@@ -30,6 +32,7 @@ Name table:
 	/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Emissive
 	/Game/Athena/Prototype/Terrain/Athena_Bush_FadeMaster
 	/Game/Athena/Prototype/Terrain/Textures/T_Athena_Bush_Mask
+	/Game/Effects/Fort_Effects/Materials/_Functions/Color_Time_of_Day
 	/Game/Environments/Props/Shrubs/Textures/Shrub_05_N
 	/Game/Environments/Props/Trees/Textures/Tree_02_D
 	/Game/Environments/Props/Trees/Textures/Tree_02_M
@@ -69,20 +72,34 @@ Name table:
 	Bounce Mask Radius XYZ
 	BreakOutFloat2Components
 	BreakOutFloat3Components
+	BreakOutFloat4Components
 	bUsedWithInstancedStaticMeshes
 	bUsedWithMeshParticles
+	BushFadeCameraOffset
+	BushFadeCenterZ
+	BushFadeOffsetdistance
+	BushFadeOpacity
+	BushFadeRadius
 	ByteProperty
 	CachedQualityLevelsUsed
 	CameraDepthFade
+	CameraDirectionVector
+	CameraTranslucentPush
 	CheapContrast
 	Class
 	Code_DeformationCenter
 	Code_DeformationVector
 	Code_DestructionAmount
 	Code_HitAnimation
+	Color_Day
+	Color_Evening
+	Color_Morning
+	Color_Night
+	Color_Time_of_Day
 	ColorMaterialInput
 	ComponentPivotLocation
 	ComputeMipLevel
+	ContrastTranslucentLerp
 	Coordinates
 	CustomRotator
 	Debug Mask Location
@@ -135,6 +152,7 @@ Name table:
 	Input
 	Inputs
 	IsParticleShader?
+	IsTranslucentMaterial
 	Leaf Animation Time
 	Leaf Storm Animation Speed
 	LeafAnimationAmount
@@ -186,6 +204,7 @@ Name table:
 	ObjectLocalToWorldData
 	ObjectProperty
 	ObjectScale
+	Opacity
 	Opacity Mask
 	Opacity Mask Channel
 	OpacityMaskClipValue
@@ -243,6 +262,8 @@ Name table:
 	Texture2D
 	TextureCropping
 	Textures
+	TranslucentFadeDistance
+	TranslucentFadeoffset
 	Tree_02_D
 	Tree_02_M
 	Tree_21_M
@@ -260,7 +281,7 @@ Name table:
 	WSDamageRadius
 	WSDeformationCenter
 Serialized exports:
-	Athena_Bush_FadeMaster (0-0-0-0): size 299668 (cls: Athena_Bush_FadeMaster>Material>/Script/Engine):
+	Athena_Bush_FadeMaster (0-0-0-0): size 301191 (cls: Athena_Bush_FadeMaster>Material>/Script/Engine):
 		Tag array:
 			Metallic(StructProperty)=System.Byte[] 
 			Specular(StructProperty)=System.Byte[] 
@@ -276,7 +297,7 @@ Serialized exports:
 			Expressions(ArrayProperty)=[object] (inner: ObjectProperty)
 			MaterialFunctionInfos(ArrayProperty)=[object] (inner: StructProperty)
 			MaterialParameterCollectionInfos(ArrayProperty)=[object] (inner: StructProperty)
-			StateId(StructProperty)=Guid: 3907562852-1234988193-2905179065-1497671338 
+			StateId(StructProperty)=Guid: 2267174980-1291608119-116145057-272941398 
 			CachedQualityLevelsUsed(ArrayProperty)=[object] (inner: BoolProperty)
 	MaterialExpressionFeatureLevelSwitch_2 (0-0-0-0): size 308 (cls: MaterialExpressionFeatureLevelSwitch_2>MaterialExpressionFeatureLevelSwitch>/Script/Engine):
 		Tag array:
@@ -308,6 +329,10 @@ Serialized exports:
 			Inputs(StructProperty)=System.Byte[] 
 			Inputs(StructProperty)=System.Byte[] 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionMaterialFunctionCall_0 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_0>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=HeightLerp=/Engine/Functions/Engine_MaterialFunctions02/Texturing/HeightLerp 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionMaterialFunctionCall_1 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_1>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=DEPRECATED_BaseShaderFunction=/Game/Packages/Fortress_SharedMaterials/Base_Material_Functions/DEPRECATED_BaseShaderFunction 
@@ -320,6 +345,10 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=BreakOutFloat2Components=/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionMaterialFunctionCall_14 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_14>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=CameraDirectionVector=/Engine/Functions/Engine_MaterialFunctions02/Utility/CameraDirectionVector 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionMaterialFunctionCall_15 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_15>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=ScreenAlignedUVs=/Engine/Functions/Engine_MaterialFunctions02/Texturing/ScreenAlignedUVs 
@@ -331,6 +360,10 @@ Serialized exports:
 	MaterialExpressionMaterialFunctionCall_19 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_19>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=SphereGradient-2D=/Engine/Functions/Engine_MaterialFunctions01/Gradient/SphereGradient-2D 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionMaterialFunctionCall_2 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_2>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=Color_Time_of_Day=/Game/Effects/Fort_Effects/Materials/_Functions/Color_Time_of_Day 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionMaterialFunctionCall_3 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_3>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
@@ -369,6 +402,12 @@ Serialized exports:
 			Default(StructProperty)=System.Byte[] 
 			Inputs(StructProperty)=System.Byte[] 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_0 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_0>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=0.380953 
+			ParameterName(NameProperty)=Opacity 
+			ExpressionGUID(StructProperty)=Guid: 4213850053-1131555753-1986189237-3623354828 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_1 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_1>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=0.8 
@@ -385,6 +424,12 @@ Serialized exports:
 			DefaultValue(FloatProperty)=13.08625 
 			ParameterName(NameProperty)=SnowDiffuseContrast2 
 			ExpressionGUID(StructProperty)=Guid: 180870025-1324345518-1632467847-477181173 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_11 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_11>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=0.15 
+			ParameterName(NameProperty)=ContrastTranslucentLerp 
+			ExpressionGUID(StructProperty)=Guid: 567067356-1259851027-3595181476-1764840389 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_12 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_12>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -414,16 +459,34 @@ Serialized exports:
 			ParameterName(NameProperty)=WSDamageRadius 
 			ExpressionGUID(StructProperty)=Guid: 3181386096-1111282121-1950047372-1345513996 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_17 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_17>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=20 
+			ParameterName(NameProperty)=BushFadeCenterZ 
+			ExpressionGUID(StructProperty)=Guid: 2578594394-1167990444-6038408-2757572751 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_18 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_18>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			ParameterName(NameProperty)=Code_DestructionAmount 
 			ExpressionGUID(StructProperty)=Guid: 3274483525-1286709484-3163553938-3853596809 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_19 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_19>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=1 
+			ParameterName(NameProperty)=BushFadeOpacity 
+			ExpressionGUID(StructProperty)=Guid: 2492376720-1173713227-1705107132-3830264725 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_2 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_2>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=0.25 
 			ParameterName(NameProperty)=Amount Of SubSurface Scattering 
 			ExpressionGUID(StructProperty)=Guid: 3038564353-1341914794-3265992368-1012037624 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_20 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_20>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=-35 
+			ParameterName(NameProperty)=BushFadeOffsetdistance 
+			ExpressionGUID(StructProperty)=Guid: 1167473836-1168678267-4093869709-372345447 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_21 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_21>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -452,6 +515,12 @@ Serialized exports:
 			ParameterName(NameProperty)=Leaf Animation Time 
 			ExpressionGUID(StructProperty)=Guid: 1655377725-1229369083-994890654-4228313735 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_26 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_26>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=100 
+			ParameterName(NameProperty)=BushFadeRadius 
+			ExpressionGUID(StructProperty)=Guid: 1424980625-1330306423-454740922-3760126301 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_27 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_27>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=-0.0001 
@@ -463,6 +532,12 @@ Serialized exports:
 			DefaultValue(FloatProperty)=1 
 			ParameterName(NameProperty)=SpecRoughnessMax 
 			ExpressionGUID(StructProperty)=Guid: 1828115124-1320564039-2913437356-3288575896 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_29 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_29>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=50 
+			ParameterName(NameProperty)=TranslucentFadeoffset 
+			ExpressionGUID(StructProperty)=Guid: 567525850-1232593576-1286130335-33892727 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_3 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_3>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -476,6 +551,23 @@ Serialized exports:
 			ParameterName(NameProperty)=LeafFlowGrad 
 			ExpressionGUID(StructProperty)=Guid: 1409534075-1341448190-723479432-2515770669 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_31 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_31>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			ParameterName(NameProperty)=BushFadeCameraOffset 
+			ExpressionGUID(StructProperty)=Guid: 1469083954-1321220956-1212577924-3887322767 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_32 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_32>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=50 
+			ParameterName(NameProperty)=TranslucentFadeDistance 
+			ExpressionGUID(StructProperty)=Guid: 3080026086-1200548760-4114000553-2269404722 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionScalarParameter_33 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_33>MaterialExpressionScalarParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(FloatProperty)=80 
+			ParameterName(NameProperty)=CameraTranslucentPush 
+			ExpressionGUID(StructProperty)=Guid: 2285048041-1330328606-251324078-3841998902 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_35 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_35>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=1 
@@ -487,11 +579,6 @@ Serialized exports:
 			DefaultValue(FloatProperty)=10 
 			ParameterName(NameProperty)=Ambient Motion Amount When the Directional Wind is engaged 
 			ExpressionGUID(StructProperty)=Guid: 3652328837-1199920173-1191488166-2523056599 
-			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
-	MaterialExpressionScalarParameter_37 (0-0-0-0): size 135 (cls: MaterialExpressionScalarParameter_37>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(FloatProperty)=130 
-			ExpressionGUID(StructProperty)=Guid: 1769079750-1200226176-3789171600-2716672874 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionScalarParameter_38 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_38>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -723,12 +810,26 @@ Serialized exports:
 			ParameterName(NameProperty)=Mask Bounce Around a Point 
 			ExpressionGUID(StructProperty)=Guid: 3702980074-1303377188-3960007590-1358836357 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionStaticSwitchParameter_4 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_4>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+		Tag array:
+			A(StructProperty)=System.Byte[] 
+			B(StructProperty)=System.Byte[] 
+			ParameterName(NameProperty)=IsTranslucentMaterial 
+			ExpressionGUID(StructProperty)=Guid: 3514982744-1226728228-2909002146-2350370570 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionStaticSwitchParameter_5 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_5>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
 			A(StructProperty)=System.Byte[] 
 			B(StructProperty)=System.Byte[] 
 			ParameterName(NameProperty)=DebugGrowth 
 			ExpressionGUID(StructProperty)=Guid: 4152928266-1094475427-2716890810-2540878395 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionStaticSwitchParameter_6 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_6>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+		Tag array:
+			A(StructProperty)=System.Byte[] 
+			B(StructProperty)=System.Byte[] 
+			ParameterName(NameProperty)=IsTranslucentMaterial 
+			ExpressionGUID(StructProperty)=Guid: 771422354-1159124576-3722362248-1869689782 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionStaticSwitchParameter_9 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_9>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
@@ -796,6 +897,12 @@ Serialized exports:
 			ParameterName(NameProperty)=SSS Color 
 			ExpressionGUID(StructProperty)=Guid: 3346960225-1229738665-2673897128-2952860471 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionVectorParameter_1 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_1>MaterialExpressionVectorParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(StructProperty)=UE4.FLinearColor 
+			ParameterName(NameProperty)=Color_Evening 
+			ExpressionGUID(StructProperty)=Guid: 2476650676-1089577611-1348594596-1177979225 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionVectorParameter_10 (0-0-0-0): size 139 (cls: MaterialExpressionVectorParameter_10>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:
 			ParameterName(NameProperty)=Code_DeformationCenter 
@@ -806,6 +913,12 @@ Serialized exports:
 			DefaultValue(StructProperty)=UE4.FLinearColor 
 			ParameterName(NameProperty)=Local position of bounce mask 
 			ExpressionGUID(StructProperty)=Guid: 2162277802-1253517232-2192415659-3457220121 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionVectorParameter_2 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_2>MaterialExpressionVectorParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(StructProperty)=UE4.FLinearColor 
+			ParameterName(NameProperty)=Color_Day 
+			ExpressionGUID(StructProperty)=Guid: 1076706450-1215789785-2167820441-1596249374 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionVectorParameter_3 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_3>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:
@@ -830,10 +943,22 @@ Serialized exports:
 			ParameterName(NameProperty)=Code_DeformationVector 
 			ExpressionGUID(StructProperty)=Guid: 2440989668-1276659142-3722244500-1798628127 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionVectorParameter_5 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_5>MaterialExpressionVectorParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(StructProperty)=UE4.FLinearColor 
+			ParameterName(NameProperty)=Color_Night 
+			ExpressionGUID(StructProperty)=Guid: 3841674530-1075018638-2919288500-393673649 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionVectorParameter_6 (0-0-0-0): size 139 (cls: MaterialExpressionVectorParameter_6>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:
 			ParameterName(NameProperty)=WSDeformationCenter 
 			ExpressionGUID(StructProperty)=Guid: 1514836962-1287934991-3868080277-1892326101 
+			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
+	MaterialExpressionVectorParameter_7 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_7>MaterialExpressionVectorParameter>/Script/Engine):
+		Tag array:
+			DefaultValue(StructProperty)=UE4.FLinearColor 
+			ParameterName(NameProperty)=Color_Morning 
+			ExpressionGUID(StructProperty)=Guid: 684577229-1091676791-3974187449-3813631900 
 			Material(ObjectProperty)=Athena_Bush_FadeMaster= 
 	MaterialExpressionVectorParameter_8 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_8>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:

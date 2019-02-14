@@ -628,6 +628,7 @@ Name table:
 	EFortQuestObjectiveStatEvent::KillContribution
 	EFortQuestObjectiveStatEvent::OpenCardPack
 	EFortQuestObjectiveStatEvent::RevivePlayer
+	EFortQuestObjectiveStatEvent::SlotHeroInLoadout
 	EFortQuestObjectiveStatEvent::SlotInCollection
 	EFortQuestObjectiveStatEvent::TeamInteract
 	EFortQuestObjectiveStatEvent::TimeElapsed
@@ -656,6 +657,9 @@ Name table:
 	hbonboarding_recruithero
 	hbonboarding_watchoutpostunlock
 	hbonboarding_watchsatellitecine
+	HeroLoadout_UX_01_Intro_Hidden
+	HeroLoadout_UX_02_FirstSupportSlot_Hidden
+	HeroLoadout_UX_03_FirstLeaderSlot_Hidden
 	hordequest_buildbase
 	hordequest_progression_canny
 	hordequest_progression_canny_5_repeatable
@@ -841,9 +845,13 @@ Name table:
 	kill_husk_chromehusky
 	kill_husk_coal_lobbers
 	kill_husk_commando
+	kill_husk_commando_3_diff2
+	kill_husk_commando_3_diff3
 	kill_husk_commando_assault
 	kill_husk_commando_fraggrenade
 	kill_husk_constructor
+	kill_husk_constructor_3_diff2
+	kill_husk_constructor_3_diff3
 	kill_husk_content_level
 	kill_husk_difficulty_PvE01
 	kill_husk_ele_fire
@@ -874,7 +882,11 @@ Name table:
 	kill_husk_melee
 	kill_husk_metalcorrosion_pve02
 	kill_husk_ninja
+	kill_husk_ninja_3_diff2
+	kill_husk_ninja_3_diff3
 	kill_husk_outlander
+	kill_husk_outlander_3_diff2
+	kill_husk_outlander_3_diff3
 	kill_husk_pistol
 	kill_husk_pumpkinhead
 	kill_husk_quickened
@@ -996,6 +1008,22 @@ Name table:
 	lovequest_2018_reactive_rescuesummer
 	lovequest_2018_reactive_song
 	lovequest_2018_reactive_teddybears
+	lovequest_2019_fetch_boxes
+	lovequest_2019_fetch_chests
+	lovequest_2019_fetch_decanters
+	lovequest_2019_fetch_phones
+	lovequest_2019_fetch_sensors
+	lovequest_2019_fetch_teddys
+	lovequest_2019_fetch_telescopes
+	lovequest_2019_fetch_vhs
+	lovequest_2019_gathercollect_containers
+	lovequest_2019_gathercollect_mailboxes
+	lovequest_2019_gathercollect_mushrooms
+	lovequest_2019_gathercollect_newspapers
+	lovequest_2019_gathercollect_officestuff
+	lovequest_2019_hidden_watchvideo
+	lovequest_2019_killcollect_lovelobbers
+	lovequest_2019_landmark_trebuchet
 	newmissionintro_rtdredux
 	None
 	ObjectiveStatTable
@@ -1329,7 +1357,7 @@ Name table:
 	winterquest_2107_reactive_gather_trafficlight
 	winterquest_2107_reactive_presents_hidden
 Serialized exports:
-	ObjectiveStatTable (0-0-0-0): size 418786 (cls: ObjectiveStatTable>DataTable>/Script/Engine):
+	ObjectiveStatTable (0-0-0-0): size 426212 (cls: ObjectiveStatTable>DataTable>/Script/Engine):
 		DataTable:
 			ability_base:
 				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Ability
@@ -6987,6 +7015,30 @@ Serialized exports:
 				Condition(StrProperty)=
 				TemplateId(StrProperty)=
 				AlternateTemplateIds(ArrayProperty)=[object]
+			HeroLoadout_UX_01_Intro_Hidden:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::SlotHeroInLoadout
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=CampaignHeroLoadout
+				AlternateTemplateIds(ArrayProperty)=[object]
+			HeroLoadout_UX_02_FirstSupportSlot_Hidden:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::SlotHeroInLoadout
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Loadout.FollowerSlot1 != Unassigned
+				TemplateId(StrProperty)=CampaignHeroLoadout
+				AlternateTemplateIds(ArrayProperty)=[object]
+			HeroLoadout_UX_03_FirstLeaderSlot_Hidden:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::SlotHeroInLoadout
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Loadout.LeaderSlot != Unassigned
+				TemplateId(StrProperty)=CampaignHeroLoadout
+				AlternateTemplateIds(ArrayProperty)=[object]
 			hordequest_buildbase:
 				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Build
 				TargetTags(StrProperty)=
@@ -8683,6 +8735,22 @@ Serialized exports:
 				Condition(StrProperty)=
 				TemplateId(StrProperty)=
 				AlternateTemplateIds(ArrayProperty)=[object]
+			kill_husk_commando_3_diff2:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
+				TargetTags(StrProperty)=NPC.CharacterType.Husk
+				SourceTags(StrProperty)=Class.IsCommando
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Zone.Difficulty >=24
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			kill_husk_commando_3_diff3:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
+				TargetTags(StrProperty)=NPC.CharacterType.Husk
+				SourceTags(StrProperty)=Class.IsCommando
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Zone.Difficulty >=26
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
 			kill_husk_commando_assault:
 				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
 				TargetTags(StrProperty)=NPC.CharacterType.Husk
@@ -8705,6 +8773,22 @@ Serialized exports:
 				SourceTags(StrProperty)=Class.IsConstructor
 				ContextTags(StrProperty)=
 				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			kill_husk_constructor_3_diff2:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
+				TargetTags(StrProperty)=NPC.CharacterType.Husk
+				SourceTags(StrProperty)=Class.IsConstructor
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Zone.Difficulty >=24
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			kill_husk_constructor_3_diff3:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
+				TargetTags(StrProperty)=NPC.CharacterType.Husk
+				SourceTags(StrProperty)=Class.IsConstructor
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Zone.Difficulty >=26
 				TemplateId(StrProperty)=
 				AlternateTemplateIds(ArrayProperty)=[object]
 			kill_husk_content_level_30:
@@ -8947,12 +9031,44 @@ Serialized exports:
 				Condition(StrProperty)=
 				TemplateId(StrProperty)=
 				AlternateTemplateIds(ArrayProperty)=[object]
+			kill_husk_ninja_3_diff2:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
+				TargetTags(StrProperty)=NPC.CharacterType.Husk
+				SourceTags(StrProperty)=Class.IsNinja
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Zone.Difficulty >=24
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			kill_husk_ninja_3_diff3:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
+				TargetTags(StrProperty)=NPC.CharacterType.Husk
+				SourceTags(StrProperty)=Class.IsNinja
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Zone.Difficulty >=26
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
 			kill_husk_outlander:
 				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
 				TargetTags(StrProperty)=NPC.CharacterType.Husk
 				SourceTags(StrProperty)=Class.IsOutlander
 				ContextTags(StrProperty)=
 				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			kill_husk_outlander_3_diff2:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
+				TargetTags(StrProperty)=NPC.CharacterType.Husk
+				SourceTags(StrProperty)=Class.IsOutlander
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Zone.Difficulty >=24
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			kill_husk_outlander_3_diff3:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::KillContribution
+				TargetTags(StrProperty)=NPC.CharacterType.Husk
+				SourceTags(StrProperty)=Class.IsOutlander
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=Zone.Difficulty >=26
 				TemplateId(StrProperty)=
 				AlternateTemplateIds(ArrayProperty)=[object]
 			kill_husk_pistol:
@@ -9950,6 +10066,134 @@ Serialized exports:
 			lovequest_2018_reactive_teddybears:
 				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
 				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_fetch_boxes:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_fetch_chests:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_fetch_decanters:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_fetch_phones:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_fetch_sensors:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_fetch_teddys:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_fetch_telescopes:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_fetch_vhs:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_gathercollect_containers:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_gathercollect_mailboxes:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_gathercollect_mushrooms:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_gathercollect_newspapers:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_gathercollect_officestuff:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_hidden_watchvideo:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Client
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_killcollect_lovelobbers:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Custom
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Theater.MainProgression
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			lovequest_2019_landmark_trebuchet:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Complete
+				TargetTags(StrProperty)=Stat.Mission.Primary.Landmark.LoveStorm
 				SourceTags(StrProperty)=
 				ContextTags(StrProperty)=
 				Condition(StrProperty)=
@@ -12731,6 +12975,142 @@ Serialized exports:
 				Condition(StrProperty)=
 				TemplateId(StrProperty)=
 				AlternateTemplateIds(ArrayProperty)=[object]
+			WinterQuest_2018_EndgameWave30_Completion:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::WaveComplete
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.NonChallenge
+				Condition(StrProperty)=Mission.Wave = 30 && Zone.Difficulty >= 50
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_01_major:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week01
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_01_minor:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week01
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_02_major:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week02
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_02_minor:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week02
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_03_major:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::WaveComplete
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week03
+				Condition(StrProperty)=Mission.Wave = 6
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_03_minor:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::WaveComplete
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week03
+				Condition(StrProperty)=Mission.Wave = 6
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_04_major:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week04
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_04_minor:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week04
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_05_major:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week05
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_05_minor:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week05
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_06_major:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week06
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_06_minor:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week06
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_07_major:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week07
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_07_minor:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week07
+				Condition(StrProperty)=Mission.TimeElapsed >= 1800
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_08_major:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::WaveComplete
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week08
+				Condition(StrProperty)=Mission.Wave = 6
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_challenge_08_minor:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::WaveComplete
+				TargetTags(StrProperty)=
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless.Week08
+				Condition(StrProperty)=Mission.Wave = 6
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
 			winterquest_2018_frostnite_collect_bluglo:
 				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TeamInteract
 				TargetTags(StrProperty)=Building.Type.Gameplay.BluGlo
@@ -12746,6 +13126,22 @@ Serialized exports:
 				ContextTags(StrProperty)=Stat.Theater.Endless
 				Condition(StrProperty)=Item.Rarity >= Sturdy
 				TemplateId(StrProperty)=Trap
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_explorezone:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Complete
+				TargetTags(StrProperty)=Stat.Mission.Secondary.ExplorationMission
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
+				AlternateTemplateIds(ArrayProperty)=[object]
+			winterquest_2018_frostnite_fill_heater:
+				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TeamInteract
+				TargetTags(StrProperty)=Endless.HeaterGenerator
+				SourceTags(StrProperty)=
+				ContextTags(StrProperty)=Stat.Theater.Endless
+				Condition(StrProperty)=
+				TemplateId(StrProperty)=
 				AlternateTemplateIds(ArrayProperty)=[object]
 			winterquest_2018_frostnite_interact_safe:
 				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TeamInteract
@@ -12937,157 +13333,5 @@ Serialized exports:
 				SourceTags(StrProperty)=
 				ContextTags(StrProperty)=
 				Condition(StrProperty)=
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_fill_heater:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TeamInteract
-				TargetTags(StrProperty)=Endless.HeaterGenerator
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless
-				Condition(StrProperty)=
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_explorezone:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::Complete
-				TargetTags(StrProperty)=Stat.Mission.Secondary.ExplorationMission
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless
-				Condition(StrProperty)=
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_01_minor:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week01
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_01_major:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week01
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_02_minor:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week02
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_02_major:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week02
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_03_minor:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::WaveComplete
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week03
-				Condition(StrProperty)=Mission.Wave = 6
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_03_major:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::WaveComplete
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week03
-				Condition(StrProperty)=Mission.Wave = 6
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_04_minor:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week04
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_04_major:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week04
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_05_minor:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week05
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_05_major:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week05
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_06_minor:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week06
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_06_major:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week06
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_07_minor:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week07
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_07_major:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week07
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_08_minor:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week08
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			winterquest_2018_frostnite_challenge_08_major:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::TimeElapsed
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.Week08
-				Condition(StrProperty)=Mission.TimeElapsed >= 1800
-				TemplateId(StrProperty)=
-				AlternateTemplateIds(ArrayProperty)=[object]
-			WinterQuest_2018_EndgameWave30_Completion:
-				Type(EnumProperty)=EFortQuestObjectiveStatEvent::WaveComplete
-				TargetTags(StrProperty)=
-				SourceTags(StrProperty)=
-				ContextTags(StrProperty)=Stat.Theater.Endless.NonChallenge
-				Condition(StrProperty)=Mission.Wave = 30 && Zone.Difficulty >= 50
 				TemplateId(StrProperty)=
 				AlternateTemplateIds(ArrayProperty)=[object]

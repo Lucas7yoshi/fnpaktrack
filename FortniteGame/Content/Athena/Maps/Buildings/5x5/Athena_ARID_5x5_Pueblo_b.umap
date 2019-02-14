@@ -29,6 +29,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/CartWithWheels
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Wall_AC_Units_Power_A
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Wall_AC_Units_Power_B
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01
 	/Game/Building/ActorBlueprints/Prop/Prop_WildWest_SimpleChair_01
 	/Game/Building/ActorBlueprints/Prop/Prop_WildWest_SimpleChair_02
@@ -198,6 +199,7 @@ Name table:
 	Default__MaterialInstanceDynamic
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Prop_Desert_JoshuaTree_01_C
 	Default__Prop_WildWest_SimpleChair_01_C
 	Default__Prop_WildWest_SimpleChair_02_C
@@ -274,6 +276,8 @@ Name table:
 	IntProperty
 	Key
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -332,6 +336,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -349,7 +354,9 @@ Name table:
 	OverrideMaterials
 	Package
 	Parent
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	PointLight
 	PointLight_GEN_VARIABLE
@@ -421,6 +428,7 @@ Name table:
 	SoftClassPath
 	SortedInstances
 	Spawn_Location
+	SphereComponent
 	SphereRadius
 	SpotLightComponent
 	StaticMesh
@@ -769,7 +777,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=156 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2393.509,-336.092,-0.9955282)) Max(Vector(325.6007,2402.292,26.82409)),27905) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2393.509,-336.092,-0.9955282)) Max(Vector(325.6007,2402.292,26.82409)),28161) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=156 
@@ -792,7 +800,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=11 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2190.748,-205.2552,-0.01802349)) Max(Vector(-176.0599,2305.846,22.9661)),36097) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2190.748,-205.2552,-0.01802349)) Max(Vector(-176.0599,2305.846,22.9661)),36353) 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=11 
 			InstancingRandomSeed(IntProperty)=1 
@@ -950,13 +958,15 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ARID_5x5_Pueblo_b 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	Prop_Desert_JoshuaTree_29 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_29>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+	Prop_Desert_JoshuaTree_29 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_29>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_ARID_5x5_Pueblo_b 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_ARID_5x5_Pueblo_b 
 			MyGuid(StructProperty)=Guid: 3076746701-1164024995-761221519-2640887458 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_ARID_5x5_Pueblo_b 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Prop_WildWest_SimpleChair_01_2 (0-0-0-0): size 193 (cls: Prop_WildWest_SimpleChair_01_2>Prop_WildWest_SimpleChair_01_C>/Game/Building/ActorBlueprints/Prop/Prop_WildWest_SimpleChair_01):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_ARID_5x5_Pueblo_b 
@@ -1774,6 +1784,13 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_ARID_5x5_Pueblo_b 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ARID_5x5_Pueblo_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)

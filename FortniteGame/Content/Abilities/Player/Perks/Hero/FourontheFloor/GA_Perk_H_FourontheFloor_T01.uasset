@@ -40,6 +40,7 @@ Name table:
 	ArrayProperty
 	bConsiderFriendlyFireWhenExcludingFriends
 	bCreateHitResultWhenNoTargetsFound
+	bExcludeAllAI
 	bExcludeAllAttachedToInstigator
 	bExcludeAllAttachedToRequester
 	bExcludeAthenaVehicle
@@ -89,21 +90,30 @@ Name table:
 	CallFunc_BreakTransform_Location
 	CallFunc_BreakTransform_Location1
 	CallFunc_BreakTransform_Location2
+	CallFunc_BreakTransform_Location3
 	CallFunc_BreakTransform_Rotation
 	CallFunc_BreakTransform_Rotation1
 	CallFunc_BreakTransform_Rotation2
+	CallFunc_BreakTransform_Rotation3
 	CallFunc_BreakTransform_Scale
 	CallFunc_BreakTransform_Scale1
 	CallFunc_BreakTransform_Scale2
+	CallFunc_BreakTransform_Scale3
 	CallFunc_BreakVector_X
 	CallFunc_BreakVector_X1
 	CallFunc_BreakVector_X2
+	CallFunc_BreakVector_X3
+	CallFunc_BreakVector_X4
 	CallFunc_BreakVector_Y
 	CallFunc_BreakVector_Y1
 	CallFunc_BreakVector_Y2
+	CallFunc_BreakVector_Y3
+	CallFunc_BreakVector_Y4
 	CallFunc_BreakVector_Z
 	CallFunc_BreakVector_Z1
 	CallFunc_BreakVector_Z2
+	CallFunc_BreakVector_Z3
+	CallFunc_BreakVector_Z4
 	CallFunc_DistanceBetweenTwoVectors_Distance
 	CallFunc_Divide_FloatFloat_ReturnValue
 	CallFunc_DoesTagAssetInterfaceHaveTag_ReturnValue
@@ -223,6 +233,7 @@ Name table:
 	Gameplay.Status.Knockback
 	GameplayAbility
 	GameplayAbilityTargetDataHandle
+	GameplayCue.Perk.FourOnTheFloor.MainDrums
 	GameplayCue.Perk.FourOnTheFloor.Pulse
 	GameplayCueParameters
 	GameplayEffectContextHandle
@@ -255,6 +266,7 @@ Name table:
 	IntProperty
 	IsValid
 	K2_ActivateAbilityFromEvent
+	K2_AddGameplayCueWithParams
 	K2_ClearAndInvalidateTimerHandle
 	K2_EndAbility
 	K2_ExecuteGameplayCueWithParams
@@ -273,9 +285,12 @@ Name table:
 	K2Node_Event_bWasCancelled
 	K2Node_Event_EventData
 	K2Node_MakeStruct_GameplayCueParameters
+	K2Node_MakeStruct_GameplayCueParameters1
 	K2Node_MakeStruct_ScalableFloat
 	K2Node_MakeStruct_Vector_NetQuantize10
+	K2Node_MakeStruct_Vector_NetQuantize101
 	K2Node_MakeStruct_Vector_NetQuantizeNormal
+	K2Node_MakeStruct_Vector_NetQuantizeNormal1
 	KismetArrayLibrary
 	KismetMathLibrary
 	KismetSystemLibrary
@@ -377,7 +392,7 @@ Serialized exports:
 	GA_Perk_H_FourontheFloor_T01_C (0-0-0-0): size 301 (cls: GA_Perk_H_FourontheFloor_T01_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_GA_Perk_H_FourontheFloor_T01=GA_Perk_H_FourontheFloor_T01_C 
-	Default__GA_Perk_H_FourontheFloor_T01_C (0-0-0-0): size 4578 (cls: Default__GA_Perk_H_FourontheFloor_T01_C>GA_Perk_H_FourontheFloor_T01_C):
+	Default__GA_Perk_H_FourontheFloor_T01_C (0-0-0-0): size 4604 (cls: Default__GA_Perk_H_FourontheFloor_T01_C>GA_Perk_H_FourontheFloor_T01_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			CustomTarget(StructProperty)=System.Byte[] 
@@ -401,7 +416,7 @@ Serialized exports:
 			AbilityTriggers(ArrayProperty)=[object] (inner: StructProperty)
 	CustomTarget (0-0-0-0): size 36 (cls: CustomTarget>StructProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_GA_Perk_H_FourontheFloor_T01 (0-0-0-0): size 2697 (cls: ExecuteUbergraph_GA_Perk_H_FourontheFloor_T01>Function>/Script/CoreUObject)
+	ExecuteUbergraph_GA_Perk_H_FourontheFloor_T01 (0-0-0-0): size 3316 (cls: ExecuteUbergraph_GA_Perk_H_FourontheFloor_T01>Function>/Script/CoreUObject)
 	CallFunc_ApplyGameplayEffectContainer_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_ApplyGameplayEffectContainer_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_ApplyGameplayEffectContainer_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_ApplyGameplayEffectContainer_ReturnValue>ArrayProperty>/Script/CoreUObject)
 	CallFunc_GetAllActorsFromTargetData_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetAllActorsFromTargetData_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -436,12 +451,18 @@ Serialized exports:
 	CallFunc_BreakVector_X (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_X1 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X1>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_X2 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X2>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_X3 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X3>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_X4 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X4>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Y (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Y1 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y1>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Y2 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y2>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Y3 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y3>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Y4 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y4>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Z (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Z1 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z1>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Z2 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z2>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Z3 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z3>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Z4 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z4>FloatProperty>/Script/CoreUObject)
 	CallFunc_DistanceBetweenTwoVectors_Distance (0-0-0-0): size 32 (cls: CallFunc_DistanceBetweenTwoVectors_Distance>FloatProperty>/Script/CoreUObject)
 	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetRangeFromGameplayEffectContainer_Range (0-0-0-0): size 32 (cls: CallFunc_GetRangeFromGameplayEffectContainer_Range>FloatProperty>/Script/CoreUObject)
@@ -480,12 +501,15 @@ Serialized exports:
 	CallFunc_BreakTransform_Location (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Location1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location1>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Location2 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location2>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Location3 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location3>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Rotation (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Rotation1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation1>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Rotation2 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation2>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Rotation3 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation3>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Scale (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Scale1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale1>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Scale2 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale2>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Scale3 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale3>StructProperty>/Script/CoreUObject)
 	CallFunc_FindLookAtRotation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_FindLookAtRotation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetActorForwardVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetActorForwardVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetForwardVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetForwardVector_ReturnValue>StructProperty>/Script/CoreUObject)
@@ -500,8 +524,11 @@ Serialized exports:
 	K2Node_CustomEvent_TargetData1 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_TargetData1>StructProperty>/Script/CoreUObject)
 	K2Node_Event_EventData (0-0-0-0): size 36 (cls: K2Node_Event_EventData>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_GameplayCueParameters (0-0-0-0): size 36 (cls: K2Node_MakeStruct_GameplayCueParameters>StructProperty>/Script/CoreUObject)
+	K2Node_MakeStruct_GameplayCueParameters1 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_GameplayCueParameters1>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_Vector_NetQuantize10 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_Vector_NetQuantize10>StructProperty>/Script/CoreUObject)
+	K2Node_MakeStruct_Vector_NetQuantize101 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_Vector_NetQuantize101>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_Vector_NetQuantizeNormal (0-0-0-0): size 36 (cls: K2Node_MakeStruct_Vector_NetQuantizeNormal>StructProperty>/Script/CoreUObject)
+	K2Node_MakeStruct_Vector_NetQuantizeNormal1 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_Vector_NetQuantizeNormal1>StructProperty>/Script/CoreUObject)
 	Temp_struct_Variable (0-0-0-0): size 36 (cls: Temp_struct_Variable>StructProperty>/Script/CoreUObject)
 	Temp_struct_Variable1 (0-0-0-0): size 36 (cls: Temp_struct_Variable1>StructProperty>/Script/CoreUObject)
 	GEC_Default (0-0-0-0): size 36 (cls: GEC_Default>StructProperty>/Script/CoreUObject)

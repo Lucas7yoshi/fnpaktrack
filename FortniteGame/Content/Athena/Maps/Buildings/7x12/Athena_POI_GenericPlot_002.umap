@@ -9,6 +9,7 @@ Name table:
 	/Game/Athena/Maps/Buildings/5x5/Athena_SUB_5x5_House2_a.Athena_SUB_5x5_House2_a
 	/Game/Athena/Maps/Buildings/7x12/Athena_POI_GenericPlot_002
 	/Game/Athena/Maps/Buildings/7x12/HLOD/Athena_POI_GenericPlot_002_0_HLOD
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Wall/Fence_Picket01
 	/Game/Building/ActorBlueprints/Wall/Fence_Picket01_Half_b
 	/Game/Building/ActorBlueprints/Wall/Fence_Picket01a
@@ -43,8 +44,10 @@ Name table:
 	bEnableDensityScaling
 	bEnableNavigationSystem
 	bHasPerInstanceHitProxies
+	BlueprintCreatedComponents
 	BlueprintGeneratedClass
 	bMirrored
+	bNetAddressable
 	BodyInstance
 	BookmarkArray
 	BoolProperty
@@ -69,6 +72,7 @@ Name table:
 	CollisionProfileName
 	CollisionResponse
 	CollisionResponses
+	CreationMethod
 	CullDistance
 	DataVersion
 	Default__Athena_POI_GenericPlot_002_C
@@ -91,6 +95,7 @@ Name table:
 	Default__LODActor
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__World
 	DefaultPhysicsVolume
 	ECC_WorldStatic
@@ -98,10 +103,13 @@ Name table:
 	ECollisionEnabled
 	ECollisionEnabled::NoCollision
 	ECollisionResponse
+	EComponentCreationMethod
+	EComponentCreationMethod::SimpleConstructionScript
 	EComponentMobility
 	EComponentMobility::Static
 	ECR_Ignore
 	Engine
+	EnumProperty
 	Fence_Picket01
 	Fence_Picket01_C
 	Fence_Picket01_Half_b2
@@ -135,6 +143,8 @@ Name table:
 	InstancingRandomSeed
 	IntProperty
 	Key
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Level
 	LevelBounds
 	LevelBuildDataId
@@ -147,6 +157,9 @@ Name table:
 	MaxAngularVelocity
 	MaxCullDistance
 	MaxCullObjectSize
+	MemberGuid
+	MemberName
+	MemberParent
 	MinCullDistance
 	MinCullObjectSize
 	MinDrawDistance
@@ -158,6 +171,8 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NoCollision
+	NODE_AddParticleSystemComponent-1
+	NODE_AddStaticMeshComponent-0
 	None
 	NumBuiltInstances
 	Object
@@ -167,7 +182,10 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
+	ParticleSystemComponent
 	PersistentLevel
+	PrimitiveComponent
 	Proxy
 	RelativeLocation
 	RelativeRotation
@@ -186,10 +204,12 @@ Name table:
 	S_Elevation_Ground_Z6
 	S_Elevation_Ground_Z7
 	SceneComponent
+	SimpleMemberReference
 	SM_Athena_POI_GenericPlot_002_0_S_Elevation_Ground_Z
 	SoftClassPath
 	SoftObjectProperty
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	StaticMesh
 	StaticMeshComponent
@@ -198,6 +218,7 @@ Name table:
 	StructProperty
 	SubActors
 	Tree_Medium
+	UCSModifiedProperties
 	Utility_Dumpster_01
 	Vector
 	Visibility
@@ -216,13 +237,15 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=12325.74 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_002 
-	Tree_Medium_3 (0-0-0-0): size 193 (cls: Tree_Medium_3>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+	Tree_Medium_3 (0-0-0-0): size 263 (cls: Tree_Medium_3>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_GenericPlot_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_002 
 			MyGuid(StructProperty)=Guid: 3816050482-1276646727-1601755062-1618614209 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_002 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	BoxComponent0 (0-0-0-0): size 249 (cls: BoxComponent0>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
@@ -232,7 +255,7 @@ Serialized exports:
 	BuildingFoundation3x3_1 (0-0-0-0): size 287 (cls: BuildingFoundation3x3_1>BuildingFoundation3x3>/Script/FortniteGame):
 		Tag array:
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-1280,-256.0002,-40)) Max(Vector(256.0002,1280,-8)),49409) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-1280,-256.0002,-40)) Max(Vector(256.0002,1280,-8)),54529) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_002 
 			MyGuid(StructProperty)=Guid: 620548036-1341601219-3190339463-1034169817 
 			DataVersion(IntProperty)=1 
@@ -240,7 +263,7 @@ Serialized exports:
 	BuildingFoundation5x5_1 (0-0-0-0): size 287 (cls: BuildingFoundation5x5_1>BuildingFoundation5x5>/Script/FortniteGame):
 		Tag array:
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-2304,-256.0003,-40)) Max(Vector(256.0002,2304,-8)),49409) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-2304,-256.0003,-40)) Max(Vector(256.0002,2304,-8)),54529) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_002 
 			MyGuid(StructProperty)=Guid: 2641819841-1228474863-1051080838-2595378706 
 			DataVersion(IntProperty)=1 
@@ -327,7 +350,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=1347 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-5978.019,-345.6099,-5.25587)) Max(Vector(348.0497,3422.004,33.02489)),10497) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-5978.019,-345.6099,-5.25587)) Max(Vector(348.0497,3422.004,33.02489)),10753) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=1347 
@@ -419,6 +442,13 @@ Serialized exports:
 			bAutoSpawnMissingNavData(BoolProperty)=True 
 			NavigationSystemClass(StructProperty)=UE4.FSoftObjectPath 
 	RootComponent0 (0-0-0-0): size 12 (cls: RootComponent0>SceneComponent>/Script/Engine)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 180 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			RelativeLocation(StructProperty)=Vector(-4608.002,2559.998,0) 

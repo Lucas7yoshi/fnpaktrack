@@ -121,6 +121,7 @@ Name table:
 	ComponentDelegateBindings
 	ComponentPropertyName
 	Construct
+	Container_YoutubeStuff
 	Content
 	ContentAlignment
 	ContentBorder
@@ -211,8 +212,11 @@ Name table:
 	EditableTextBox
 	EditableTextBoxStyle
 	EditText_Name
+	EditText_YoutubeVideoId
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	EInputPriority
 	EInputPriority::Modal
@@ -242,6 +246,7 @@ Name table:
 	ESlateVisibility::Hidden
 	ETextJustify
 	ETextJustify::Center
+	ETextJustify::Right
 	ETextWrappingPolicy
 	ETextWrappingPolicy::AllowPerCharacterWrapping
 	EUINavigationRule
@@ -260,6 +265,7 @@ Name table:
 	FloatCurve
 	FloatFunction
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontMaterial
 	FontObject
@@ -506,6 +512,7 @@ Name table:
 	Text_ErrorInNameField
 	Text_ErrorOnPublish
 	Text_IslandCode
+	Text_IslandPublishedSuccess
 	TextBlock
 	TextProperty
 	TextScrollStyle-Base_C
@@ -580,15 +587,14 @@ Serialized exports:
 	Default__PublishModal_C (0-0-0-0): size 187 (cls: Default__PublishModal_C>PublishModal_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
-			NameEntryCharLimit(IntProperty)=25 
+			NameEntryCharLimit(IntProperty)=40 
 			InputPriority(EnumProperty)=EInputPriority::Modal 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
-	BackgroundBlur_0 (0-0-0-0): size 458 (cls: BackgroundBlur_0>BackgroundBlur>/Script/UMG):
+	BackgroundBlur_0 (0-0-0-0): size 372 (cls: BackgroundBlur_0>BackgroundBlur>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Top 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
 			BlurStrength(FloatProperty)=30 
 			LowQualityFallbackBrush(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -597,12 +603,12 @@ Serialized exports:
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Top 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=BackgroundBlur_0=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
 	Copied (0-0-0-0): size 36 (cls: Copied>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_PublishModal (0-0-0-0): size 552 (cls: ExecuteUbergraph_PublishModal>Function>/Script/CoreUObject)
+	ExecuteUbergraph_PublishModal (0-0-0-0): size 578 (cls: ExecuteUbergraph_PublishModal>Function>/Script/CoreUObject)
 	K2Node_Event_bSuccess (0-0-0-0): size 34 (cls: K2Node_Event_bSuccess>BoolProperty>/Script/CoreUObject)
 	OnCodeConfirmation (0-0-0-0): size 54 (cls: OnCodeConfirmation>Function>/Script/CoreUObject)
 	OnPublishBegin (0-0-0-0): size 54 (cls: OnPublishBegin>Function>/Script/CoreUObject)
@@ -627,12 +633,6 @@ Serialized exports:
 			Background(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
-	Border_1 (0-0-0-0): size 434 (cls: Border_1>Border>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	Border_5 (0-0-0-0): size 118 (cls: Border_5>Border>/Script/UMG):
 		Tag array:
 			BrushColor(StructProperty)=UE4.FLinearColor 
@@ -673,11 +673,6 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=Border_0=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_1=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Parent(ObjectProperty)=Border_1=WidgetArchetype 
-			Content(ObjectProperty)=Text_IslandCode=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 70 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=Border_5=WidgetArchetype 
@@ -696,7 +691,7 @@ Serialized exports:
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_2=WidgetArchetype 
-			Content(ObjectProperty)=Switcher_Content=WidgetArchetype 
+			Content(ObjectProperty)=VerticalBox_6=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -770,15 +765,14 @@ Serialized exports:
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	CommonTextBlock_0 (0-0-0-0): size 417 (cls: CommonTextBlock_0>CommonTextBlock>/Script/CommonUI):
+	CommonTextBlock_0 (0-0-0-0): size 375 (cls: CommonTextBlock_0>CommonTextBlock>/Script/CommonUI):
 		Tag array:
-			Text(TextProperty)=ENTER ISLAND DESCRIPTION: (3A2C93BB47651DCD8370E29FF553D059) 
+			Text(TextProperty)=DESCRIPTION: (3A2C93BB47651DCD8370E29FF553D059) 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
-			MinDesiredWidth(FloatProperty)=365 
-			Justification(ByteProperty)=ETextJustify::Center 
-			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	CommonTextBlock_1 (0-0-0-0): size 697 (cls: CommonTextBlock_1>CommonTextBlock>/Script/CommonUI):
+			Justification(ByteProperty)=ETextJustify::Right 
+			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
+	CommonTextBlock_1 (0-0-0-0): size 583 (cls: CommonTextBlock_1>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Text(TextProperty)=Publishing will make a playable copy of your island that anyone can visit using the provided code. (F3876A1A492F0CBEF977DFAEBFA12E35) 
 			ColorAndOpacity(StructProperty)=System.Byte[] 
@@ -787,27 +781,26 @@ Serialized exports:
 			Justification(ByteProperty)=ETextJustify::Center 
 			WrapTextAt(FloatProperty)=1060.966 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-	CommonTextBlock_2 (0-0-0-0): size 379 (cls: CommonTextBlock_2>CommonTextBlock>/Script/CommonUI):
+	CommonTextBlock_2 (0-0-0-0): size 351 (cls: CommonTextBlock_2>CommonTextBlock>/Script/CommonUI):
 		Tag array:
-			Text(TextProperty)=CONGRATULATIONS! (61F6E73A4A6B90F9B27D1FB6D860B63E) 
+			Text(TextProperty)=YouTube VIDEO ID: (0B348F5E4A9D63536AE5A5A0B4A6B84F) 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
-			Justification(ByteProperty)=ETextJustify::Center 
-			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	CommonTextBlock_3 (0-0-0-0): size 385 (cls: CommonTextBlock_3>CommonTextBlock>/Script/CommonUI):
+			Justification(ByteProperty)=ETextJustify::Right 
+			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+	CommonTextBlock_3 (0-0-0-0): size 369 (cls: CommonTextBlock_3>CommonTextBlock>/Script/CommonUI):
 		Tag array:
-			Text(TextProperty)=ENTER AN ISLAND TITLE: (CC2BD13A4953C5C867B15F8F4FDF68BF) 
+			Text(TextProperty)=TITLE: (CC2BD13A4953C5C867B15F8F4FDF68BF) 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
-			Justification(ByteProperty)=ETextJustify::Center 
-			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	CommonTextBlock_4 (0-0-0-0): size 393 (cls: CommonTextBlock_4>CommonTextBlock>/Script/CommonUI):
+			Justification(ByteProperty)=ETextJustify::Right 
+			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
+	CommonTextBlock_53 (0-0-0-0): size 371 (cls: CommonTextBlock_53>CommonTextBlock>/Script/CommonUI):
 		Tag array:
-			Text(TextProperty)=YOUR ISLAND HAS BEEN PUBLISHED (E2C0164E4734E3276CC640910A926A88) 
+			Text(TextProperty)=http://www.youtube.com/watch?v={VIDEO ID} (2CA24E6547C42FCAC55E64A04DB81AE6) 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
-			Justification(ByteProperty)=ETextJustify::Center 
+			Justification(ByteProperty)=ETextJustify::Right 
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 	CommonTextBlock_8 (0-0-0-0): size 701 (cls: CommonTextBlock_8>CommonTextBlock>/Script/CommonUI):
 		Tag array:
@@ -854,24 +847,33 @@ Serialized exports:
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::Hidden 
-	Text_ErrorOnPublish (0-0-0-0): size 568 (cls: Text_ErrorOnPublish>CommonTextBlock>/Script/CommonUI):
+	Text_ErrorOnPublish (0-0-0-0): size 570 (cls: Text_ErrorOnPublish>CommonTextBlock>/Script/CommonUI):
 		Tag array:
-			Text(TextProperty)=PUBLISHING ERROR... (5FE26E0141B81A6D1373F3816B9E96E2) 
+			Text(TextProperty)={PUBLISHING ERROR...} (319A420F4C7A324EDA7C939BB439C8C1) 
 			ColorAndOpacity(StructProperty)=System.Byte[] 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Center 
 			AutoWrapText(BoolProperty)=True 
-			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+			Slot(ObjectProperty)=VerticalBoxSlot_4=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
-	Text_IslandCode (0-0-0-0): size 420 (cls: Text_IslandCode>CommonTextBlock>/Script/CommonUI):
+	Text_IslandCode (0-0-0-0): size 449 (cls: Text_IslandCode>CommonTextBlock>/Script/CommonUI):
 		Tag array:
-			Text(TextProperty)=FOXTROT-UNICORN-CHARLIE-KILO (B5B7EA524C96ACE9F652F886FCEF47EF) 
+			Text(TextProperty)={Published Code} (533124F94D0FAA26D3BF26A31583DE37) 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Center 
-			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
+	Text_IslandPublishedSuccess (0-0-0-0): size 419 (cls: Text_IslandPublishedSuccess>CommonTextBlock>/Script/CommonUI):
+		Tag array:
+			Text(TextProperty)=YOUR ISLAND HAS BEEN PUBLISHED (E2C0164E4734E3276CC640910A926A88) 
+			Font(StructProperty)=System.Byte[] 
+			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Justification(ByteProperty)=ETextJustify::Center 
+			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
 	WIndowButtons (0-0-0-0): size 437 (cls: WIndowButtons>CommonVisibilityWidget>/Script/CommonUI):
 		Tag array:
 			bShowForMac(BoolProperty)=False 
@@ -887,7 +889,7 @@ Serialized exports:
 	Switcher_Content (0-0-0-0): size 86 (cls: Switcher_Content>CommonWidgetSwitcher>/Script/CommonUI):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 	ComponentDelegateBinding_0 (0-0-0-0): size 526 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
 		Tag array:
 			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
@@ -897,6 +899,13 @@ Serialized exports:
 			HintText(TextProperty)=Your Island's name goes here! (C49857A5402C3AE1A567A4AA52E2754A) 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+	EditText_YoutubeVideoId (0-0-0-0): size 577 (cls: EditText_YoutubeVideoId>EditableTextBox>/Script/UMG):
+		Tag array:
+			WidgetStyle(StructProperty)=System.Byte[] 
+			HintText(TextProperty)=ex: dQw4w9WgXcQ (8C874F7F41226F3116FF07911F92C0F7) 
+			Justification(ByteProperty)=ETextJustify::Center 
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=False 
 	K2Node_ComponentBoundEvent_Button2 (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button2>ObjectProperty>/Script/CoreUObject)
 	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
 	BndEvt__BackButton_K2Node_ComponentBoundEvent_3_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__BackButton_K2Node_ComponentBoundEvent_3_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
@@ -917,22 +926,37 @@ Serialized exports:
 	K2Node_CustomEvent_Text1 (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Text1>TextProperty>/Script/CoreUObject)
 	Text (0-0-0-0): size 32 (cls: Text>TextProperty>/Script/CoreUObject)
 	OnTextChanged_Event_0 (0-0-0-0): size 68 (cls: OnTextChanged_Event_0>Function>/Script/CoreUObject)
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	Container_YoutubeStuff (0-0-0-0): size 86 (cls: Container_YoutubeStuff>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_4=WidgetArchetype 
 	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
+	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
+	HorizontalBox_2 (0-0-0-0): size 86 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 	HorizontalBox_4 (0-0-0-0): size 82 (cls: HorizontalBox_4>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1015,6 +1039,17 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
+	HorizontalBoxSlot_1 (0-0-0-0): size 295 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Size(StructProperty)=System.Byte[] 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=Container_YoutubeStuff=WidgetArchetype 
+			Content(ObjectProperty)=VerticalBox_9=WidgetArchetype 
+	HorizontalBoxSlot_2 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=Container_YoutubeStuff=WidgetArchetype 
+			Content(ObjectProperty)=SizeBox_2=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 156 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1026,6 +1061,28 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=MatchmakingSpinner=WidgetArchetype 
+	HorizontalBoxSlot_0 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
+			Content(ObjectProperty)=VerticalBox_3=WidgetArchetype 
+	HorizontalBoxSlot_1 (0-0-0-0): size 324 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Size(StructProperty)=System.Byte[] 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
+			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
+	HorizontalBoxSlot_0 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
+			Content(ObjectProperty)=VerticalBox_2=WidgetArchetype 
+	HorizontalBoxSlot_1 (0-0-0-0): size 324 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Size(StructProperty)=System.Byte[] 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
+			Content(ObjectProperty)=CommonTextBlock_3=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
@@ -1062,7 +1119,7 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bIsFocusable(BoolProperty)=False 
 			bCookedWidgetTree(BoolProperty)=True 
-			Slot(ObjectProperty)=VerticalBoxSlot_5=WidgetArchetype 
+			Slot(ObjectProperty)=VerticalBoxSlot_7=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 			Navigation(ObjectProperty)=WidgetNavigation_0=WidgetArchetype 
 	CloseButton (0-0-0-0): size 596 (cls: CloseButton>IconTextButton_C>/Game/UI/Foundation/Buttons/IconTextButton):
@@ -1307,14 +1364,6 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	Overlay_1 (0-0-0-0): size 82 (cls: Overlay_1>Overlay>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	Overlay_3 (0-0-0-0): size 82 (cls: Overlay_3>Overlay>/Script/UMG):
-		Tag array:
-			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_4=WidgetArchetype 
 	OverlaySlot_0 (0-0-0-0): size 325 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1380,16 +1429,6 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=WindowsOverlay=WidgetArchetype 
 			Content(ObjectProperty)=WIndowButtons=WidgetArchetype 
-	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Fill 
-			VerticalAlignment(ByteProperty)=VAlign_Fill 
-			Parent(ObjectProperty)=Overlay_1=WidgetArchetype 
-			Content(ObjectProperty)=VerticalBox_0=WidgetArchetype 
-	OverlaySlot_0 (0-0-0-0): size 70 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
-		Tag array:
-			Parent(ObjectProperty)=Overlay_3=WidgetArchetype 
-			Content(ObjectProperty)=SizeBox_1=WidgetArchetype 
 	PanelSlot_0 (0-0-0-0): size 70 (cls: PanelSlot_0>PanelSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=Content=WidgetArchetype 
@@ -1407,13 +1446,14 @@ Serialized exports:
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			RenderTransformPivot(StructProperty)=Vector2D(0.5,1) 
-	WidgetArchetype (0-0-0-0): size 531 (cls: WidgetArchetype>PublishModal_C):
+	WidgetArchetype (0-0-0-0): size 618 (cls: WidgetArchetype>PublishModal_C):
 		Tag array:
 			BackButton(ObjectProperty)=BackButton=WidgetArchetype 
 			Border_5(ObjectProperty)=Border_5=WidgetArchetype 
 			CloseButton(ObjectProperty)=CloseButton=WidgetArchetype 
 			Lightbox(ObjectProperty)=Lightbox=WidgetArchetype 
 			MatchmakingSpinner(ObjectProperty)=MatchmakingSpinner=WidgetArchetype 
+			Container_YoutubeStuff(ObjectProperty)=Container_YoutubeStuff=WidgetArchetype 
 			Switcher_Content(ObjectProperty)=Switcher_Content=WidgetArchetype 
 			Text_IslandCode(ObjectProperty)=Text_IslandCode=WidgetArchetype 
 			Text_ErrorInNameField(ObjectProperty)=Text_ErrorInNameField=WidgetArchetype 
@@ -1421,10 +1461,12 @@ Serialized exports:
 			Text_ErrorOnPublish(ObjectProperty)=Text_ErrorOnPublish=WidgetArchetype 
 			Text_CharCountTitle(ObjectProperty)=Text_CharCountTitle=WidgetArchetype 
 			Text_CharCountDesc(ObjectProperty)=Text_CharCountDesc=WidgetArchetype 
+			Text_IslandPublishedSuccess(ObjectProperty)=Text_IslandPublishedSuccess=WidgetArchetype 
 			Button_Submit(ObjectProperty)=Button_Submit=WidgetArchetype 
 			Button_CopyCode(ObjectProperty)=Button_CopyCode=WidgetArchetype 
 			EditText_Name(ObjectProperty)=EditText_Name=WidgetArchetype 
 			MultiLineEditText_Description(ObjectProperty)=MultiLineEditText_Description=WidgetArchetype 
+			EditText_YoutubeVideoId(ObjectProperty)=EditText_YoutubeVideoId=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 	SafeZone_0 (0-0-0-0): size 82 (cls: SafeZone_0>SafeZone>/Script/UMG):
@@ -1441,20 +1483,22 @@ Serialized exports:
 			HeightOverride(FloatProperty)=64 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	SizeBox_0 (0-0-0-0): size 195 (cls: SizeBox_0>SizeBox>/Script/UMG):
+	SizeBox_0 (0-0-0-0): size 224 (cls: SizeBox_0>SizeBox>/Script/UMG):
 		Tag array:
-			bOverride_WidthOverride(BoolProperty)=True 
+			bOverride_MinDesiredWidth(BoolProperty)=True 
 			WidthOverride(FloatProperty)=1300 
 			HeightOverride(FloatProperty)=950 
+			MinDesiredWidth(FloatProperty)=1300 
 			MaxDesiredHeight(FloatProperty)=1000 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BackgroundBlurSlot_0=WidgetArchetype 
-	SizeBox_1 (0-0-0-0): size 137 (cls: SizeBox_1>SizeBox>/Script/UMG):
+	SizeBox_2 (0-0-0-0): size 166 (cls: SizeBox_2>SizeBox>/Script/UMG):
 		Tag array:
-			bOverride_MinDesiredWidth(BoolProperty)=True 
-			MinDesiredWidth(FloatProperty)=800 
+			bOverride_WidthOverride(BoolProperty)=True 
+			WidthOverride(FloatProperty)=800 
+			HeightOverride(FloatProperty)=105 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 	SizeBox_3 (0-0-0-0): size 192 (cls: SizeBox_3>SizeBox>/Script/UMG):
 		Tag array:
 			bOverride_WidthOverride(BoolProperty)=True 
@@ -1478,11 +1522,11 @@ Serialized exports:
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_0=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_1=WidgetArchetype 
+			Content(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
-			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
-			Content(ObjectProperty)=Border_1=WidgetArchetype 
+			Parent(ObjectProperty)=SizeBox_2=WidgetArchetype 
+			Content(ObjectProperty)=EditText_YoutubeVideoId=WidgetArchetype 
 	SizeBoxSlot_1 (0-0-0-0): size 70 (cls: SizeBoxSlot_1>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_3=WidgetArchetype 
@@ -1498,7 +1542,7 @@ Serialized exports:
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 			RenderTransform(StructProperty)=System.Byte[] 
-	VB_PublishEntry (0-0-0-0): size 123 (cls: VB_PublishEntry>VerticalBox>/Script/UMG):
+	VB_PublishEntry (0-0-0-0): size 127 (cls: VB_PublishEntry>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
@@ -1506,20 +1550,20 @@ Serialized exports:
 	VerticalBox_0 (0-0-0-0): size 86 (cls: VerticalBox_0>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
-	VerticalBox_1 (0-0-0-0): size 86 (cls: VerticalBox_1>VerticalBox>/Script/UMG):
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+	VerticalBox_1 (0-0-0-0): size 90 (cls: VerticalBox_1>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	VerticalBox_2 (0-0-0-0): size 90 (cls: VerticalBox_2>VerticalBox>/Script/UMG):
+	VerticalBox_2 (0-0-0-0): size 86 (cls: VerticalBox_2>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	VerticalBox_3 (0-0-0-0): size 94 (cls: VerticalBox_3>VerticalBox>/Script/UMG):
+			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
+	VerticalBox_3 (0-0-0-0): size 90 (cls: VerticalBox_3>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	VerticalBox_4 (0-0-0-0): size 106 (cls: VerticalBox_4>VerticalBox>/Script/UMG):
+			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
+	VerticalBox_4 (0-0-0-0): size 94 (cls: VerticalBox_4>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
@@ -1527,6 +1571,14 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+	VerticalBox_6 (0-0-0-0): size 86 (cls: VerticalBox_6>VerticalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+	VerticalBox_9 (0-0-0-0): size 86 (cls: VerticalBox_9>VerticalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 267 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1538,14 +1590,14 @@ Serialized exports:
 		Tag array:
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=VB_PublishEntry=WidgetArchetype 
-			Content(ObjectProperty)=VerticalBox_2=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 238 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=VB_PublishEntry=WidgetArchetype 
-			Content(ObjectProperty)=VerticalBox_3=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
 	VerticalBoxSlot_3 (0-0-0-0): size 394 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1554,6 +1606,12 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=VB_PublishEntry=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
+	VerticalBoxSlot_4 (0-0-0-0): size 197 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			VerticalAlignment(ByteProperty)=VAlign_Top 
+			Parent(ObjectProperty)=VB_PublishEntry=WidgetArchetype 
+			Content(ObjectProperty)=Container_YoutubeStuff=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 168 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
@@ -1563,8 +1621,9 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=Border_0=WidgetArchetype 
-	VerticalBoxSlot_0 (0-0-0-0): size 70 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_0 (0-0-0-0): size 156 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
+			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=TextBlock_0=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 197 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
@@ -1573,18 +1632,18 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_1=WidgetArchetype 
+	VerticalBoxSlot_4 (0-0-0-0): size 226 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
+			Content(ObjectProperty)=Text_ErrorOnPublish=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 197 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			Parent(ObjectProperty)=VerticalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_5=WidgetArchetype 
-	VerticalBoxSlot_1 (0-0-0-0): size 152 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=VerticalBox_2=WidgetArchetype 
-			Content(ObjectProperty)=CommonTextBlock_3=WidgetArchetype 
 	VerticalBoxSlot_3 (0-0-0-0): size 197 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1596,12 +1655,6 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			Parent(ObjectProperty)=VerticalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_3=WidgetArchetype 
-	VerticalBoxSlot_1 (0-0-0-0): size 226 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			Parent(ObjectProperty)=VerticalBox_3=WidgetArchetype 
-			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
 	VerticalBoxSlot_3 (0-0-0-0): size 197 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1614,47 +1667,20 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			Parent(ObjectProperty)=VerticalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=Text_ErrorInDescriptionField=WidgetArchetype 
-	VerticalBoxSlot_0 (0-0-0-0): size 238 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_2 (0-0-0-0): size 325 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=VerticalBox_4=WidgetArchetype 
-			Content(ObjectProperty)=Text_ErrorOnPublish=WidgetArchetype 
-	VerticalBoxSlot_1 (0-0-0-0): size 238 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
+			Content(ObjectProperty)=Text_IslandPublishedSuccess=WidgetArchetype 
+	VerticalBoxSlot_3 (0-0-0-0): size 238 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=VerticalBox_4=WidgetArchetype 
-			Content(ObjectProperty)=CommonTextBlock_2=WidgetArchetype 
-	VerticalBoxSlot_2 (0-0-0-0): size 238 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=VerticalBox_4=WidgetArchetype 
-			Content(ObjectProperty)=CommonTextBlock_4=WidgetArchetype 
-	VerticalBoxSlot_3 (0-0-0-0): size 152 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
-		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=VerticalBox_4=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_8=WidgetArchetype 
-	VerticalBoxSlot_4 (0-0-0-0): size 238 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Parent(ObjectProperty)=VerticalBox_4=WidgetArchetype 
-			Content(ObjectProperty)=Overlay_3=WidgetArchetype 
-	VerticalBoxSlot_5 (0-0-0-0): size 296 (cls: VerticalBoxSlot_5>VerticalBoxSlot>/Script/UMG):
-		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Bottom 
-			Parent(ObjectProperty)=VerticalBox_4=WidgetArchetype 
-			Content(ObjectProperty)=Button_CopyCode=WidgetArchetype 
 	VerticalBoxSlot_6 (0-0-0-0): size 365 (cls: VerticalBoxSlot_6>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1663,6 +1689,12 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Bottom 
 			Parent(ObjectProperty)=VerticalBox_4=WidgetArchetype 
 			Content(ObjectProperty)=BackButton=WidgetArchetype 
+	VerticalBoxSlot_7 (0-0-0-0): size 152 (cls: VerticalBoxSlot_7>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Bottom 
+			Parent(ObjectProperty)=VerticalBox_4=WidgetArchetype 
+			Content(ObjectProperty)=Button_CopyCode=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 70 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=VerticalBox_5=WidgetArchetype 
@@ -1673,6 +1705,23 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=VerticalBox_5=WidgetArchetype 
 			Content(ObjectProperty)=Text_CharCountTitle=WidgetArchetype 
+	VerticalBoxSlot_0 (0-0-0-0): size 70 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=VerticalBox_6=WidgetArchetype 
+			Content(ObjectProperty)=Switcher_Content=WidgetArchetype 
+	VerticalBoxSlot_1 (0-0-0-0): size 214 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=VerticalBox_6=WidgetArchetype 
+			Content(ObjectProperty)=Text_IslandCode=WidgetArchetype 
+	VerticalBoxSlot_0 (0-0-0-0): size 70 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=VerticalBox_9=WidgetArchetype 
+			Content(ObjectProperty)=CommonTextBlock_2=WidgetArchetype 
+	VerticalBoxSlot_2 (0-0-0-0): size 70 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=VerticalBox_9=WidgetArchetype 
+			Content(ObjectProperty)=CommonTextBlock_53=WidgetArchetype 
 	Copied_INST (0-0-0-0): size 17824 (cls: Copied_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=Copied=PublishModal_C 

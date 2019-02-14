@@ -58,6 +58,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Kitchen_StoveHood_02
 	/Game/Building/ActorBlueprints/Prop/Palm_Tree_06
 	/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/PowerTransformer01
 	/Game/Building/ActorBlueprints/Prop/PowerTransformer02
 	/Game/Building/ActorBlueprints/Prop/Prop_Plantstand_02
@@ -373,6 +374,7 @@ Name table:
 	Default__NavigationSystemModuleConfig
 	Default__Palm_Tree_06_C
 	Default__Palm_Tree_06c_C
+	Default__Parent_Tree_C
 	Default__PowerTransformer01_C
 	Default__PowerTransformer02_C
 	Default__Prop_Plantstand_02_C
@@ -499,6 +501,8 @@ Name table:
 	Kitchen_StoveHood_02_C
 	LCD_Dining_Table_01
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -569,6 +573,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -589,6 +594,7 @@ Name table:
 	Palm_Tree_06_C
 	Palm_Tree_06b
 	Palm_Tree_06c_C
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_15974__78D18F9B
@@ -607,6 +613,7 @@ Name table:
 	PowerTransformer02_C
 	PowerTransformer3
 	PreviewSkelMesh
+	PrimitiveComponent
 	Prop_Plantstand
 	Prop_Plantstand_02
 	Prop_Plantstand_02_C
@@ -669,6 +676,7 @@ Name table:
 	SoftClassPath
 	SoftObjectProperty
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	SpotLight
 	SpotLight_GEN_VARIABLE
@@ -2903,7 +2911,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=445 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(681.6268,-11610.67,-1.199772)) Max(Vector(3418.771,-6825.303,30.01588)),54273) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(681.6268,-11610.67,-1.199772)) Max(Vector(3418.771,-6825.303,30.01588)),54529) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=445 
@@ -3291,20 +3299,24 @@ Serialized exports:
 		Tag array:
 			bAutoSpawnMissingNavData(BoolProperty)=True 
 			NavigationSystemClass(StructProperty)=UE4.FSoftObjectPath 
-	Palm_Tree_06b_2 (0-0-0-0): size 193 (cls: Palm_Tree_06b_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+	Palm_Tree_06b_2 (0-0-0-0): size 263 (cls: Palm_Tree_06b_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_5x9_Palms_Resort_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_5x9_Palms_Resort_a 
 			MyGuid(StructProperty)=Guid: 844694596-1123549192-2935034752-1100230666 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_5x9_Palms_Resort_a 
-	Tree_10_Palm_15 (0-0-0-0): size 193 (cls: Tree_10_Palm_15>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_10_Palm_15 (0-0-0-0): size 263 (cls: Tree_10_Palm_15>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_5x9_Palms_Resort_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_5x9_Palms_Resort_a 
 			MyGuid(StructProperty)=Guid: 2639976932-1161819451-935484848-2749572067 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_5x9_Palms_Resort_a 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Effect (0-0-0-0): size 137 (cls: Effect>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			CachedMaxDrawDistance(FloatProperty)=4735.026 
@@ -4930,6 +4942,20 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_5x9_Palms_Resort_a 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_5x9_Palms_Resort_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_5x9_Palms_Resort_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 

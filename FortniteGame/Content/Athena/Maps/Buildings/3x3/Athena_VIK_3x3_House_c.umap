@@ -10,6 +10,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Floor/Boardwalk_Floor
 	/Game/Building/ActorBlueprints/Prop/Farm_HayPulley_01
 	/Game/Building/ActorBlueprints/Prop/Haybale_04
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01c
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01e
 	/Game/Building/ActorBlueprints/Prop/Prop_WildWest_SimpleTable_01
@@ -156,6 +157,7 @@ Name table:
 	Default__LODActor
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Prop_Boxes_01c_C
 	Default__Prop_Boxes_01e_C
 	Default__Prop_WildWest_SimpleTable_01_C
@@ -201,6 +203,8 @@ Name table:
 	IntProperty
 	Key
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -221,6 +225,9 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MI_Factory_Brick
 	MI_Farm_Wood
 	MinCullDistance
@@ -243,15 +250,20 @@ Name table:
 	NavigationSystemClass
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
+	NODE_AddParticleSystemComponent-1
+	NODE_AddStaticMeshComponent-0
 	NODE_AddStaticMeshComponent-1
 	None
 	ObjectProperty
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	Plant_Shrub_06
 	PointLightComponent
+	PrimitiveComponent
 	Prop_Boxes_01c2
 	Prop_Boxes_01c_C
 	Prop_Boxes_01e
@@ -280,12 +292,14 @@ Name table:
 	Shelters_Panel03_C
 	Shelters_Panel03Spikes_C
 	Shelters_Panel4
+	SimpleMemberReference
 	SM_Athena_VIK_3x3_House_c_1_S_Elevation_Ground_Z41
 	SM_FORT_DecoBarriers_WindowBoards01
 	SM_FORT_DecoBarriers_WindowBoards01_C
 	SM_Laundry_Basin3
 	SM_Laundry_Bathtub3
 	SoftClassPath
+	SphereComponent
 	StaticMesh
 	StaticMeshComponent
 	StaticMeshComponent0
@@ -312,6 +326,7 @@ Name table:
 	Tree_04_C
 	Tree_Log_5c2
 	Tree_Log_5c_C
+	UCSModifiedProperties
 	Vector
 	Viking_Laundry_Basin_C
 	Viking_Laundry_Bathtub_C
@@ -882,6 +897,20 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=15795.87 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_VIK_3x3_House_c 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_VIK_3x3_House_c 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_VIK_3x3_House_c 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 291 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1571,20 +1600,24 @@ Serialized exports:
 			TheTimeline(StructProperty)=System.Byte[] 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
-	Tree_04_2 (0-0-0-0): size 193 (cls: Tree_04_2>Tree_04_C>/Game/Building/ActorBlueprints/Prop/Tree_04):
+	Tree_04_2 (0-0-0-0): size 263 (cls: Tree_04_2>Tree_04_C>/Game/Building/ActorBlueprints/Prop/Tree_04):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_VIK_3x3_House_c 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_VIK_3x3_House_c 
 			MyGuid(StructProperty)=Guid: 2709410616-1248014446-538314630-349572609 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_VIK_3x3_House_c 
-	Tree_Log_5c2_2 (0-0-0-0): size 193 (cls: Tree_Log_5c2_2>Tree_Log_5c_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_5c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_5c2_2 (0-0-0-0): size 263 (cls: Tree_Log_5c2_2>Tree_Log_5c_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_5c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_VIK_3x3_House_c 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_VIK_3x3_House_c 
 			MyGuid(StructProperty)=Guid: 3259431067-1284945868-3115316903-856824591 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_VIK_3x3_House_c 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	SM_Laundry_Basin3 (0-0-0-0): size 193 (cls: SM_Laundry_Basin3>Viking_Laundry_Basin_C>/Game/Building/ActorBlueprints/Prop/Viking_Laundry_Basin):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_VIK_3x3_House_c 

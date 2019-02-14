@@ -49,6 +49,7 @@ Name table:
 	ArrayProperty
 	bConsiderFriendlyFireWhenExcludingFriends
 	bCreateHitResultWhenNoTargetsFound
+	bExcludeAllAI
 	bExcludeAllAttachedToInstigator
 	bExcludeAllAttachedToRequester
 	bExcludeAthenaVehicle
@@ -97,6 +98,8 @@ Name table:
 	CallFunc_GetController_ReturnValue
 	CallFunc_GetSocketLocation_ReturnValue
 	CallFunc_HasAllMatchingGameplayTags_ReturnValue
+	CallFunc_HasAllMatchingGameplayTags_ReturnValue1
+	CallFunc_HasAllMatchingGameplayTags_TagContainerInterface1_CastInput
 	CallFunc_HasAllMatchingGameplayTags_TagContainerInterface_CastInput
 	CallFunc_IsDedicatedServer_ReturnValue
 	CallFunc_IsValid_ReturnValue
@@ -201,6 +204,7 @@ Name table:
 	FortGameplayEffectContainer
 	FortPlayerController
 	FortTargetFilter
+	FourOnTheFloor_T02
 	Function
 	GA_Outlander_GroundWave_C
 	GadgetScaling
@@ -210,6 +214,7 @@ Name table:
 	GameplayAbilityTargetDataHandle
 	GameplayCue.Abilities.Outlander.GroundWave.ChargeUp
 	GameplayCue.Abilities.Outlander.GroundWave.Punch
+	GameplayCue.Perk.FourOnTheFloor.ChargeUp
 	GameplayCueParameters
 	GameplayEffectContextHandle
 	GameplayEffectLevel
@@ -222,6 +227,8 @@ Name table:
 	GAT_ActiveAbility_Hero_C
 	GAT_OutlanderActiveAbility_C
 	GauntletAnims
+	GC_ChargeUp_Default
+	GC_ChargeUp_FourOnTheFloor
 	GE_Outlander_GroundWave_Cooldown_C
 	GE_Outlander_GroundWave_Damage_C
 	GetAbilitySystemComponent
@@ -229,6 +236,8 @@ Name table:
 	GetController
 	GetSocketLocation
 	Granted.Abilities.Outlander.Perks.GroundWave.ReturnToSender
+	Granted.Perk.FourOnTheFloor.T02
+	Granted.Perk.ReturnToSender.T01
 	HalfExtents
 	Handle
 	HasAllMatchingGameplayTags
@@ -261,6 +270,7 @@ Name table:
 	K2Node_MakeStruct_GameplayCueParameters
 	K2Node_MakeStruct_Vector_NetQuantize10
 	K2Node_MakeStruct_Vector_NetQuantizeNormal
+	K2Node_Select_Default
 	KismetMathLibrary
 	KismetSystemLibrary
 	LatentActionInfo
@@ -318,10 +328,12 @@ Name table:
 	TargetGameplayEffectClasses
 	TargetSelection
 	TargetSelectionUsage
+	TC_FourOnTheFloor_T02
 	TC_ReturnToSender
 	TC_ReturnToSender_T01
 	Temp_bool_Has_Been_Initd_Variable
 	Temp_bool_IsClosed_Variable
+	Temp_bool_Variable
 	Temp_struct_Variable
 	Temp_struct_Variable1
 	TestType
@@ -350,10 +362,10 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	GA_Outlander_GroundWave_C (0-0-0-0): size 345 (cls: GA_Outlander_GroundWave_C>BlueprintGeneratedClass>/Script/Engine):
+	GA_Outlander_GroundWave_C (0-0-0-0): size 361 (cls: GA_Outlander_GroundWave_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_GA_Outlander_GroundWave=GA_Outlander_GroundWave_C 
-	Default__GA_Outlander_GroundWave_C (0-0-0-0): size 4095 (cls: Default__GA_Outlander_GroundWave_C>GA_Outlander_GroundWave_C):
+	Default__GA_Outlander_GroundWave_C (0-0-0-0): size 4370 (cls: Default__GA_Outlander_GroundWave_C>GA_Outlander_GroundWave_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			TimerH_AnimTimeOut(StructProperty)=System.Byte[] 
@@ -371,9 +383,12 @@ Serialized exports:
 			GauntletAnims(ArrayProperty)=[object] (inner: StructProperty)
 			TC_ReturnToSender(StructProperty)=GameplayTagContainer:Granted.Abilities.Outlander.Perks.GroundWave.ReturnToSender 
 			AbilityFeedback(ObjectProperty)=FF_Outlander_GroundWave=/Game/Weapons/ForceFeedback/FF_Outlander_GroundWave 
-			TC_ReturnToSender_T01(StructProperty)=GameplayTagContainer: 
+			TC_ReturnToSender_T01(StructProperty)=GameplayTagContainer:Granted.Perk.ReturnToSender.T01 
 			T_Event_Deactivate(StructProperty)=System.Byte[] 
 			T_Event_Activate(StructProperty)=System.Byte[] 
+			TC_FourOnTheFloor_T02(StructProperty)=GameplayTagContainer:Granted.Perk.FourOnTheFloor.T02 
+			GC_ChargeUp_Default(StructProperty)=System.Byte[] 
+			GC_ChargeUp_FourOnTheFloor(StructProperty)=System.Byte[] 
 			EffectContainers(StructProperty)=System.Byte[] 
 			DamageStatHandle(StructProperty)=System.Byte[] 
 			AbilityCosts(ArrayProperty)=[object] (inner: StructProperty)
@@ -384,12 +399,12 @@ Serialized exports:
 	GauntletAnims (0-0-0-0): size 36 (cls: GauntletAnims>ArrayProperty>/Script/CoreUObject)
 	TimerH_AnimTimeOut (0-0-0-0): size 36 (cls: TimerH_AnimTimeOut>StructProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_GA_Outlander_GroundWave (0-0-0-0): size 2136 (cls: ExecuteUbergraph_GA_Outlander_GroundWave>Function>/Script/CoreUObject)
+	ExecuteUbergraph_GA_Outlander_GroundWave (0-0-0-0): size 2173 (cls: ExecuteUbergraph_GA_Outlander_GroundWave>Function>/Script/CoreUObject)
 	bWasCancelled (0-0-0-0): size 34 (cls: bWasCancelled>BoolProperty>/Script/CoreUObject)
 	K2_OnEndAbility (0-0-0-0): size 68 (cls: K2_OnEndAbility>Function>/Script/CoreUObject)
 	Unlock (0-0-0-0): size 54 (cls: Unlock>Function>/Script/CoreUObject)
-	AnimTimeOut (0-0-0-0): size 54 (cls: AnimTimeOut>Function>/Script/CoreUObject)
 	K2_ActivateAbility (0-0-0-0): size 54 (cls: K2_ActivateAbility>Function>/Script/CoreUObject)
+	AnimTimeOut (0-0-0-0): size 54 (cls: AnimTimeOut>Function>/Script/CoreUObject)
 	TargetData (0-0-0-0): size 36 (cls: TargetData>StructProperty>/Script/CoreUObject)
 	Triggered_4EF13C5B4E6AA2498C04E0A4D36F6862 (0-0-0-0): size 82 (cls: Triggered_4EF13C5B4E6AA2498C04E0A4D36F6862>Function>/Script/CoreUObject)
 	TargetData (0-0-0-0): size 36 (cls: TargetData>StructProperty>/Script/CoreUObject)
@@ -399,8 +414,9 @@ Serialized exports:
 	AbilitySystem (0-0-0-0): size 36 (cls: AbilitySystem>ObjectProperty>/Script/CoreUObject)
 	SetupAbility (0-0-0-0): size 136 (cls: SetupAbility>Function>/Script/CoreUObject)
 	AbilitySystemIn (0-0-0-0): size 36 (cls: AbilitySystemIn>ObjectProperty>/Script/CoreUObject)
-	ActiveAbilitySetup (0-0-0-0): size 171 (cls: ActiveAbilitySetup>Function>/Script/CoreUObject)
+	ActiveAbilitySetup (0-0-0-0): size 246 (cls: ActiveAbilitySetup>Function>/Script/CoreUObject)
 	CallFunc_HasAllMatchingGameplayTags_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAllMatchingGameplayTags_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_HasAllMatchingGameplayTags_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_HasAllMatchingGameplayTags_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	AnimTriggered (0-0-0-0): size 34 (cls: AnimTriggered>BoolProperty>/Script/CoreUObject)
 	CallFunc_CommitAbilityWithEvent_Passed (0-0-0-0): size 34 (cls: CallFunc_CommitAbilityWithEvent_Passed>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_GameplayTag_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_GameplayTag_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -414,6 +430,8 @@ Serialized exports:
 	K2Node_Event_bWasCancelled (0-0-0-0): size 34 (cls: K2Node_Event_bWasCancelled>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Has_Been_Initd_Variable (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_IsClosed_Variable (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
+	FourOnTheFloor_T02 (0-0-0-0): size 34 (cls: FourOnTheFloor_T02>BoolProperty>/Script/CoreUObject)
 	ReturnToSender (0-0-0-0): size 34 (cls: ReturnToSender>BoolProperty>/Script/CoreUObject)
 	ReturnToSender_T01 (0-0-0-0): size 34 (cls: ReturnToSender_T01>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAllMatchingGameplayTags_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAllMatchingGameplayTags_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -433,6 +451,7 @@ Serialized exports:
 	CallFunc_BreakVector_Z1 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z1>FloatProperty>/Script/CoreUObject)
 	PunchShakeScale (0-0-0-0): size 32 (cls: PunchShakeScale>FloatProperty>/Script/CoreUObject)
 	TimeBetweenWaves (0-0-0-0): size 32 (cls: TimeBetweenWaves>FloatProperty>/Script/CoreUObject)
+	CallFunc_HasAllMatchingGameplayTags_TagContainerInterface1_CastInput (0-0-0-0): size 36 (cls: CallFunc_HasAllMatchingGameplayTags_TagContainerInterface1_CastInput>InterfaceProperty>/Script/CoreUObject)
 	CallFunc_HasAllMatchingGameplayTags_TagContainerInterface_CastInput (0-0-0-0): size 36 (cls: CallFunc_HasAllMatchingGameplayTags_TagContainerInterface_CastInput>InterfaceProperty>/Script/CoreUObject)
 	CallFunc_HasAllMatchingGameplayTags_TagContainerInterface_CastInput (0-0-0-0): size 36 (cls: CallFunc_HasAllMatchingGameplayTags_TagContainerInterface_CastInput>InterfaceProperty>/Script/CoreUObject)
 	NumSegments (0-0-0-0): size 32 (cls: NumSegments>IntProperty>/Script/CoreUObject)
@@ -459,11 +478,15 @@ Serialized exports:
 	K2Node_MakeStruct_GameplayCueParameters (0-0-0-0): size 36 (cls: K2Node_MakeStruct_GameplayCueParameters>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_Vector_NetQuantize10 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_Vector_NetQuantize10>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_Vector_NetQuantizeNormal (0-0-0-0): size 36 (cls: K2Node_MakeStruct_Vector_NetQuantizeNormal>StructProperty>/Script/CoreUObject)
+	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>StructProperty>/Script/CoreUObject)
 	Temp_struct_Variable (0-0-0-0): size 36 (cls: Temp_struct_Variable>StructProperty>/Script/CoreUObject)
 	Temp_struct_Variable1 (0-0-0-0): size 36 (cls: Temp_struct_Variable1>StructProperty>/Script/CoreUObject)
+	GC_ChargeUp_Default (0-0-0-0): size 36 (cls: GC_ChargeUp_Default>StructProperty>/Script/CoreUObject)
+	GC_ChargeUp_FourOnTheFloor (0-0-0-0): size 36 (cls: GC_ChargeUp_FourOnTheFloor>StructProperty>/Script/CoreUObject)
 	T_AnimTrigger (0-0-0-0): size 36 (cls: T_AnimTrigger>StructProperty>/Script/CoreUObject)
 	T_Event_Activate (0-0-0-0): size 36 (cls: T_Event_Activate>StructProperty>/Script/CoreUObject)
 	T_Event_Deactivate (0-0-0-0): size 36 (cls: T_Event_Deactivate>StructProperty>/Script/CoreUObject)
+	TC_FourOnTheFloor_T02 (0-0-0-0): size 36 (cls: TC_FourOnTheFloor_T02>StructProperty>/Script/CoreUObject)
 	TC_ReturnToSender (0-0-0-0): size 36 (cls: TC_ReturnToSender>StructProperty>/Script/CoreUObject)
 	TC_ReturnToSender_T01 (0-0-0-0): size 36 (cls: TC_ReturnToSender_T01>StructProperty>/Script/CoreUObject)
 	ApplicationTag (0-0-0-0): size 36 (cls: ApplicationTag>StructProperty>/Script/CoreUObject)

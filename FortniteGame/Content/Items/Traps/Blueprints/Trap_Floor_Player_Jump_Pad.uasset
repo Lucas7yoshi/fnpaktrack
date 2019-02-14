@@ -51,7 +51,7 @@ Name table:
 	BuildingDeco
 	BuildingSMActor
 	BuildingTrap
-	BuildingTrapFloor
+	BuildingTrapFloor_Launch
 	BurstAmount
 	ByteProperty
 	CallFunc_BreakVector_X
@@ -61,6 +61,7 @@ Name table:
 	CallFunc_GetBuildingMeshComponent_ReturnValue
 	CallFunc_GetCameraLocation_ReturnValue
 	CallFunc_GetPlayerCameraManager_ReturnValue
+	CallFunc_GetVelocity_ReturnValue
 	CallFunc_IsDedicatedServer_ReturnValue
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
@@ -104,7 +105,7 @@ Name table:
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
 	Default__BoxComponent
-	Default__BuildingTrapFloor
+	Default__BuildingTrapFloor_Launch
 	Default__ByteProperty
 	Default__FloatProperty
 	Default__Function
@@ -149,7 +150,9 @@ Name table:
 	GAS_Trap_FloorJumpPad
 	GetBuildingMeshComponent
 	GetCameraLocation
+	GetImpulseDirection
 	GetPlayerCameraManager
+	GetVelocity
 	Guid
 	InstanceParameters
 	InternalVariableName
@@ -182,12 +185,15 @@ Name table:
 	KismetMathLibrary
 	KismetSystemLibrary
 	LatentActionInfo
+	LaunchingActor
+	LaunchStrength
 	LessEqual_FloatFloat
 	MakeVector
 	MassInKgOverride
 	Material
 	MaterialInstanceConstant
 	MaterialInstanceDynamic
+	MaxLaunchStrength
 	MI_FORT_S_JumpPads_Inst
 	Multiply_FloatFloat
 	Multiply_VectorVector
@@ -221,11 +227,14 @@ Name table:
 	PointerToUberGraphFrame
 	PrimaryComponentTick
 	RelativeLocation
+	RelativeRotation
 	Response
 	ResponseArray
 	ResponseChannel
+	ReturnValue
 	RootComponent
 	RootNodes
+	Rotator
 	S_Floor_Player_Jump_PadUP_Guide
 	Scalar
 	Scalar_Low
@@ -254,6 +263,7 @@ Name table:
 	Subtract_VectorVector
 	Temp_float_Variable
 	Template
+	TempLaunch
 	Trace Location
 	TraceLocation
 	Trap_Active_Sound
@@ -280,11 +290,11 @@ Name table:
 	WorldStatic
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Trap_Floor_Player_Jump_Pad_C (0-0-0-0): size 302 (cls: Trap_Floor_Player_Jump_Pad_C>BlueprintGeneratedClass>/Script/Engine):
+	Trap_Floor_Player_Jump_Pad_C (0-0-0-0): size 326 (cls: Trap_Floor_Player_Jump_Pad_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_47=Trap_Floor_Player_Jump_Pad_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Trap_Floor_Player_Jump_Pad=Trap_Floor_Player_Jump_Pad_C 
-	Default__Trap_Floor_Player_Jump_Pad_C (0-0-0-0): size 1030 (cls: Default__Trap_Floor_Player_Jump_Pad_C>Trap_Floor_Player_Jump_Pad_C):
+	Default__Trap_Floor_Player_Jump_Pad_C (0-0-0-0): size 1088 (cls: Default__Trap_Floor_Player_Jump_Pad_C>Trap_Floor_Player_Jump_Pad_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			Trap_Placed_Sound(ObjectProperty)=JumpPad_Placed_Cue=/Game/Sounds/Fort_Traps/JumpPad/JumpPad_Placed_Cue 
@@ -292,6 +302,8 @@ Serialized exports:
 			Trap_Fire_Sound(ObjectProperty)=JumpPad_Fire_Cue=/Game/Sounds/Fort_Traps/JumpPad/JumpPad_Fire_Cue 
 			Trap_Reload_Sound(ObjectProperty)=Spike_Trap_Reload_Cue=/Game/Sounds/Fort_Traps/Spike_Trap/Spike_Trap_Reload_Cue 
 			Trap_Explode_Sound(ObjectProperty)=JumpPad_Destroyed_Cue=/Game/Sounds/Fort_Traps/JumpPad/JumpPad_Destroyed_Cue 
+			LaunchStrength(FloatProperty)=2150 
+			MaxLaunchStrength(FloatProperty)=2795 
 			TraceLocation(ObjectProperty)=Trace Location=Default__Trap_Floor_Player_Jump_Pad_C 
 			TrapRangeMesh(ObjectProperty)=S_Floor_Player_Jump_PadUP_Guide=/Game/Weapons/FORT_TRAPS/Floor_Player_Jump_Pad/S_Floor_Player_Jump_PadUP_Guide 
 			TriggerFilter(StructProperty)=System.Byte[] 
@@ -320,7 +332,7 @@ Serialized exports:
 			BoxExtent(StructProperty)=Vector(128,128,64) 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-128,384,100) 
+			RelativeLocation(StructProperty)=Vector(-128,384,66) 
 	K2Node_GameplayCueEvent_EventType (0-0-0-0): size 36 (cls: K2Node_GameplayCueEvent_EventType>ByteProperty>/Script/CoreUObject)
 	K2Node_GameplayCueEvent_EventType1 (0-0-0-0): size 36 (cls: K2Node_GameplayCueEvent_EventType1>ByteProperty>/Script/CoreUObject)
 	OnOutOfDurability (0-0-0-0): size 54 (cls: OnOutOfDurability>Function>/Script/CoreUObject)
@@ -339,6 +351,16 @@ Serialized exports:
 	OnPlaced (0-0-0-0): size 54 (cls: OnPlaced>Function>/Script/CoreUObject)
 	OnReloadEnd (0-0-0-0): size 54 (cls: OnReloadEnd>Function>/Script/CoreUObject)
 	UserConstructionScript (0-0-0-0): size 43 (cls: UserConstructionScript>Function>/Script/CoreUObject)
+	LaunchingActor (0-0-0-0): size 36 (cls: LaunchingActor>ObjectProperty>/Script/CoreUObject)
+	GetImpulseDirection (0-0-0-0): size 260 (cls: GetImpulseDirection>Function>/Script/CoreUObject)
+	CallFunc_BreakVector_X (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Y (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Z (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z>FloatProperty>/Script/CoreUObject)
+	CallFunc_Multiply_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_Multiply_FloatFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
+	TempLaunch (0-0-0-0): size 32 (cls: TempLaunch>FloatProperty>/Script/CoreUObject)
+	LaunchStrength (0-0-0-0): size 32 (cls: LaunchStrength>FloatProperty>/Script/CoreUObject)
+	MaxLaunchStrength (0-0-0-0): size 32 (cls: MaxLaunchStrength>FloatProperty>/Script/CoreUObject)
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_CreateDynamicMaterialInstance_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetBuildingMeshComponent_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetBuildingMeshComponent_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetPlayerCameraManager_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetPlayerCameraManager_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -359,10 +381,11 @@ Serialized exports:
 			RelativeLocation(StructProperty)=Vector(-128,384,0) 
 			PrimaryComponentTick(StructProperty)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
-	Trace Location (0-0-0-0): size 102 (cls: Trace Location>SceneComponent>/Script/Engine):
+	Trace Location (0-0-0-0): size 163 (cls: Trace Location>SceneComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Default__Trap_Floor_Player_Jump_Pad_C 
 			RelativeLocation(StructProperty)=Vector(-128,384,128) 
+			RelativeRotation(StructProperty)=Rotator(90,180,180) 
 	SceneComponent_68__DA8F228C (0-0-0-0): size 12 (cls: SceneComponent_68__DA8F228C>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 227 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
@@ -430,3 +453,6 @@ Serialized exports:
 	K2Node_MakeStruct_ParticleSysParam6 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_ParticleSysParam6>StructProperty>/Script/CoreUObject)
 	Parameters (0-0-0-0): size 36 (cls: Parameters>StructProperty>/Script/CoreUObject)
 	Parameters (0-0-0-0): size 36 (cls: Parameters>StructProperty>/Script/CoreUObject)
+	CallFunc_GetVelocity_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetVelocity_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_MakeVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>StructProperty>/Script/CoreUObject)

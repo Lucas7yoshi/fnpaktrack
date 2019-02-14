@@ -127,10 +127,10 @@ Name table:
 	bIgnoreNextFallingDamage
 	bIsBeingDisplayed
 	bIsCurated
-	bIsCuratedPortal
 	bIsDBNO
 	bIsExternalCurve
 	bIsLinkCode
+	bIsPublishedPortal
 	bIsUserInitiatedLoad
 	bIsValid
 	BlendRadius
@@ -448,6 +448,7 @@ Name table:
 	Destructible
 	DirectionPropertyName
 	DisplayNameChanged
+	Distance
 	DistanceBetweenTwoVectors
 	Divide_FloatFloat
 	DORM_Awake
@@ -1134,7 +1135,7 @@ Serialized exports:
 			UI_PortalInfoPlateSoftClass(SoftObjectProperty)=/Game/Playgrounds/Items/Portals/UI/PortalInfoPlate.PortalInfoPlate_C 
 			UI_IslandSelectSoftClass(SoftObjectProperty)=/Game/Playgrounds/Items/Portals/UI/IslandSelect_UI.IslandSelect_UI_C 
 			UI_IslandCodeEntrySoftClass(SoftObjectProperty)=/Game/UI/Creative/CreativeIslandLinkScreen.CreativeIslandLinkScreen_C 
-			ThumbnailWorldSizeScale(FloatProperty)=210 
+			ThumbnailWorldSizeScale(FloatProperty)=420 
 			OwnedThumbnailColor(StructProperty)=UE4.FLinearColor 
 			UnownedThumbnailColor(StructProperty)=UE4.FLinearColor 
 			LoadingText(TextProperty)=Loading... (FF7D7DAC4A06FE9E2C218391ADDFA2B6) 
@@ -1165,7 +1166,7 @@ Serialized exports:
 	NewIslandName (0-0-0-0): size 32 (cls: NewIslandName>TextProperty>/Script/CoreUObject)
 	UpdateIslandName__DelegateSignature (0-0-0-0): size 47 (cls: UpdateIslandName__DelegateSignature>Function>/Script/CoreUObject)
 	Show (0-0-0-0): size 34 (cls: Show>BoolProperty>/Script/CoreUObject)
-	UpdatePortalUIVis__DelegateSignature (0-0-0-0): size 51 (cls: UpdatePortalUIVis__DelegateSignature>Function>/Script/CoreUObject)
+	UpdatePortalUIVis__DelegateSignature (0-0-0-0): size 55 (cls: UpdatePortalUIVis__DelegateSignature>Function>/Script/CoreUObject)
 	bIsCurated (0-0-0-0): size 34 (cls: bIsCurated>BoolProperty>/Script/CoreUObject)
 	UpdateIsCuratedPortal__DelegateSignature (0-0-0-0): size 55 (cls: UpdateIsCuratedPortal__DelegateSignature>Function>/Script/CoreUObject)
 	Description (0-0-0-0): size 32 (cls: Description>TextProperty>/Script/CoreUObject)
@@ -1173,7 +1174,7 @@ Serialized exports:
 	LinkCode (0-0-0-0): size 32 (cls: LinkCode>StrProperty>/Script/CoreUObject)
 	UpdateLinkCode__DelegateSignature (0-0-0-0): size 47 (cls: UpdateLinkCode__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_BGA_IslandPortal (0-0-0-0): size 7724 (cls: ExecuteUbergraph_BGA_IslandPortal>Function>/Script/CoreUObject)
+	ExecuteUbergraph_BGA_IslandPortal (0-0-0-0): size 7739 (cls: ExecuteUbergraph_BGA_IslandPortal>Function>/Script/CoreUObject)
 	OnThumbnailTextureReady (0-0-0-0): size 54 (cls: OnThumbnailTextureReady>Function>/Script/CoreUObject)
 	Location (0-0-0-0): size 36 (cls: Location>StructProperty>/Script/CoreUObject)
 	Play Rift Exit Sound (0-0-0-0): size 70 (cls: Play Rift Exit Sound>Function>/Script/CoreUObject)
@@ -1264,7 +1265,7 @@ Serialized exports:
 	RequestingController (0-0-0-0): size 36 (cls: RequestingController>ObjectProperty>/Script/CoreUObject)
 	TeleportToLobbyIsland (0-0-0-0): size 669 (cls: TeleportToLobbyIsland>Function>/Script/CoreUObject)
 	Show (0-0-0-0): size 34 (cls: Show>BoolProperty>/Script/CoreUObject)
-	SetPortalUIVisibility (0-0-0-0): size 162 (cls: SetPortalUIVisibility>Function>/Script/CoreUObject)
+	SetPortalUIVisibility (0-0-0-0): size 171 (cls: SetPortalUIVisibility>Function>/Script/CoreUObject)
 	CallFunc_Conv_ByteToInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_ByteToInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	UpdatePopulationDisplay (0-0-0-0): size 115 (cls: UpdatePopulationDisplay>Function>/Script/CoreUObject)
 	CallFunc_Len_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Len_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -1496,6 +1497,7 @@ Serialized exports:
 	CallFunc_Conv_IntToFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
 	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_Divide_FloatFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
+	Distance (0-0-0-0): size 32 (cls: Distance>FloatProperty>/Script/CoreUObject)
 	TeleportDelay (0-0-0-0): size 32 (cls: TeleportDelay>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_X (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Y (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y>FloatProperty>/Script/CoreUObject)
@@ -1504,6 +1506,7 @@ Serialized exports:
 	ThumbnailWorldSizeScale (0-0-0-0): size 32 (cls: ThumbnailWorldSizeScale>FloatProperty>/Script/CoreUObject)
 	Timeline_0_Open_D988993744202060C85FC18A08065960 (0-0-0-0): size 32 (cls: Timeline_0_Open_D988993744202060C85FC18A08065960>FloatProperty>/Script/CoreUObject)
 	UIShowDistance (0-0-0-0): size 32 (cls: UIShowDistance>FloatProperty>/Script/CoreUObject)
+	Distance (0-0-0-0): size 32 (cls: Distance>FloatProperty>/Script/CoreUObject)
 	VectorScale_Open_7AB95DD3448038155AB954ABBF1B806E (0-0-0-0): size 32 (cls: VectorScale_Open_7AB95DD3448038155AB954ABBF1B806E>FloatProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsGameplay_Tag_Asset_Interface (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsGameplay_Tag_Asset_Interface>InterfaceProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsGameplay_Tag_Asset_Interface1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsGameplay_Tag_Asset_Interface1>InterfaceProperty>/Script/CoreUObject)

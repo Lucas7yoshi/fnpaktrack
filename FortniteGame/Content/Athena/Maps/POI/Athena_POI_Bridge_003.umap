@@ -8,6 +8,8 @@ Name table:
 	/Game/Athena/Environments/Blueprints/Tiered_Athena_FloorLoot_01
 	/Game/Athena/Environments/Landscape/Foliage/Athena_SM_WavyGrass_TopologyColor
 	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_Cliff
+	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_Cliff_ForceSnow
+	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_ForceSnow
 	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_NoAsphalt_Inst
 	/Game/Athena/Environments/Materials/MI_Athena_Car_Pickup_05
 	/Game/Athena/Environments/Materials/MI_Athena_Car_Stocker_04
@@ -82,7 +84,7 @@ Name table:
 	/Script/FortniteGame
 	/Script/FortniteGame.FortNavSystem
 	/Script/NavigationSystem
-	76927B120C6645ACB9200E7FB8896AC3_BE3A381F4951F51EEF5EDD9C85177EA7_4EC1D4D4_B01D5777_126D21FB_ProxyLODMeshReduction
+	76927B120C6645ACB9200E7FB8896AC3_BE3A381F4951F51EEF5EDD9C85177EA7_DD477D99_B01D5777_22D2C04E_ProxyLODMeshReduction
 	AlarmLightMultiplier
 	AreaClass
 	ArrayProperty
@@ -100,6 +102,8 @@ Name table:
 	Athena_Prop_Storage_Crate3a_side_C
 	Athena_SM_WavyGrass_TopologyColor
 	Athena_Terrain_Mat_Biome_Cliff
+	Athena_Terrain_Mat_Biome_Cliff_ForceSnow
+	Athena_Terrain_Mat_Biome_ForceSnow
 	Athena_Terrain_Mat_Biome_NoAsphalt_Inst
 	AthenaSearchSpeed
 	AttachParent
@@ -115,6 +119,7 @@ Name table:
 	bEnableAutoLODGeneration
 	bEnableDensityScaling
 	bEnableNavigationSystem
+	bGenerateOverlapEvents
 	bHasPerInstanceHitProxies
 	BlueprintCreatedComponents
 	BlueprintGeneratedClass
@@ -173,19 +178,15 @@ Name table:
 	BounceCar__FinishedFunc
 	BounceCar__UpdateFunc
 	BounceCar_Vertical_Bounce_Component_05733C554001D77C015F47B548F45A12
-	Box
 	BoxComponent
 	BoxComponent0
-	BoxExtent
-	BoxSphereBounds
 	bReceivesDecals
 	bTextureStreamingRotationChanged
 	BuildingTextureData
-	BuiltInstanceBounds
 	bUseAsOccluder
+	bUseProceduralFoliage
 	ByteProperty
 	CachedMaxDrawDistance
-	CacheMeshExtendedBounds
 	Camera
 	Car_Copper_C
 	Car_IceCreamTruck7
@@ -331,10 +332,8 @@ Name table:
 	hlight2 - impact bounce light location
 	HLight2SocketLocation
 	HLODProxy
-	InstanceCountToRender
 	InstancedFoliageActor
 	InstanceEndCullDistance
-	InstanceReorderTable
 	InstanceStartCullDistance
 	InstancingRandomSeed
 	InterpFloats
@@ -405,13 +404,11 @@ Name table:
 	NODE_AddStaticMeshComponent-0
 	NODE_AddStaticMeshComponent-1
 	None
-	NumBuiltInstances
 	Object
 	ObjectProperty
 	ObjectType
 	OcclusionLayerNumNodes
 	OnComponentBeginOverlap
-	Origin
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
@@ -504,7 +501,6 @@ Name table:
 	S_Elevation_Ground_Z40
 	S_Elevation_Ground_Z41
 	S_Elevation_Ground_Z5
-	S_Elevation_Ground_Z6
 	S_Elevation_Ground_Z7
 	S_Elevation_Ground_Z86
 	S_Elevation_Ground_Z87
@@ -571,8 +567,6 @@ Name table:
 	SM_Wood01_InteriorPillarSingle_ThreeQuarters4
 	SM_Wood01_InteriorPillarSingle_ThreeQuarters_C
 	SoftClassPath
-	SortedInstances
-	SphereRadius
 	SpotLightComponent
 	StaticMesh
 	StaticMeshComponent
@@ -673,19 +667,19 @@ Serialized exports:
 			BounceCar(ObjectProperty)=BounceCar=Athena_POI_Bridge_003 
 			Timeline_0(ObjectProperty)=Timeline_0=Athena_POI_Bridge_003 
 			HLight1(ObjectProperty)=NODE_AddSpotLightComponent-1=Athena_POI_Bridge_003 
-			HLight1SocketLocation(StructProperty)=Vector(487.8214,162.0391,-35.3835) 
-			HLight2SocketLocation(StructProperty)=Vector(486.0976,154.1543,127.1987) 
+			HLight1SocketLocation(StructProperty)=Vector(487.8212,162.0369,-35.3831) 
+			HLight2SocketLocation(StructProperty)=Vector(486.0964,154.1488,127.1989) 
 			Taillight1(ObjectProperty)=NODE_AddSpotLightComponent-3=Athena_POI_Bridge_003 
 			Taillight2(ObjectProperty)=NODE_AddSpotLightComponent-5=Athena_POI_Bridge_003 
 			TailLightsExist(BoolProperty)=True 
 			HeadLightsExist(BoolProperty)=True 
 			HLight2(ObjectProperty)=NODE_AddSpotLightComponent-2=Athena_POI_Bridge_003 
-			TLight1SocketLocation(StructProperty)=Vector(12.65489,61.00302,122.8015) 
-			TLight2SocketLocation(StructProperty)=Vector(14.47833,69.34334,-49.17686) 
-			hlight2 - impact bounce light location(StructProperty)=Vector(486.0976,154.1543,127.1987) 
-			tlight2 - impact bounce light location(StructProperty)=Vector(14.47833,69.34334,-49.17686) 
-			hlight1 - impact bounce light location(StructProperty)=Vector(487.8214,162.0391,-35.3835) 
-			tlight1 - impact bounce light location(StructProperty)=Vector(12.65489,61.00302,122.8015) 
+			TLight1SocketLocation(StructProperty)=Vector(12.65242,61.00452,122.7975) 
+			TLight2SocketLocation(StructProperty)=Vector(14.47682,69.3485,-49.18069) 
+			hlight2 - impact bounce light location(StructProperty)=Vector(486.0964,154.1488,127.1989) 
+			tlight2 - impact bounce light location(StructProperty)=Vector(14.47682,69.3485,-49.18069) 
+			hlight1 - impact bounce light location(StructProperty)=Vector(487.8212,162.0369,-35.3831) 
+			tlight1 - impact bounce light location(StructProperty)=Vector(12.65242,61.00452,122.7975) 
 			TimeOfDayControlledLights(ArrayProperty)=[object] (inner: ObjectProperty)
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			MyGuid(StructProperty)=Guid: 2609255179-1079877158-1679783854-3587344230 
@@ -693,7 +687,7 @@ Serialized exports:
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	Athena_POI_Bridge_003_C_2 (0-0-0-0): size 12 (cls: Athena_POI_Bridge_003_C_2>Athena_POI_Bridge_003_C)
+	Athena_POI_Bridge_003_C_0 (0-0-0-0): size 12 (cls: Athena_POI_Bridge_003_C_0>Athena_POI_Bridge_003_C)
 	Prop_Bear2_526 (0-0-0-0): size 222 (cls: Prop_Bear2_526>Athena_Prop_Prop_Bear_C>/Game/Athena/BuildingActors/Props/Building/ActorBlueprints/Prop/Athena_Prop_Prop_Bear):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
@@ -800,9 +794,9 @@ Serialized exports:
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-1383.93,501.7773,188.4819) 
+			RelativeLocation(StructProperty)=Vector(-1383.926,501.7695,188.4817) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99995,0) 
-			RelativeScale3D(StructProperty)=Vector(10777.55,10777.54,2982.596) 
+			RelativeScale3D(StructProperty)=Vector(10777.55,10777.54,2982.595) 
 	Car_Pickup26_3316 (0-0-0-0): size 1083 (cls: Car_Pickup26_3316>Car_Pickup_C>/Game/Building/ActorBlueprints/Prop/Car_Pickup):
 		Tag array:
 			Timeline_2(ObjectProperty)=Timeline_2=Athena_POI_Bridge_003 
@@ -863,19 +857,19 @@ Serialized exports:
 			BounceCar(ObjectProperty)=BounceCar=Athena_POI_Bridge_003 
 			Timeline_0(ObjectProperty)=Timeline_0=Athena_POI_Bridge_003 
 			HLight1(ObjectProperty)=NODE_AddSpotLightComponent-1=Athena_POI_Bridge_003 
-			HLight1SocketLocation(StructProperty)=Vector(-65.70947,-64.73303,835.5801) 
-			HLight2SocketLocation(StructProperty)=Vector(54.01431,-96.29654,822.2009) 
+			HLight1SocketLocation(StructProperty)=Vector(-65.70847,-64.73312,835.5801) 
+			HLight2SocketLocation(StructProperty)=Vector(54.0152,-96.29716,822.2009) 
 			Taillight1(ObjectProperty)=NODE_AddSpotLightComponent-3=Athena_POI_Bridge_003 
 			Taillight2(ObjectProperty)=NODE_AddSpotLightComponent-5=Athena_POI_Bridge_003 
 			TailLightsExist(BoolProperty)=True 
 			HeadLightsExist(BoolProperty)=True 
 			HLight2(ObjectProperty)=NODE_AddSpotLightComponent-2=Athena_POI_Bridge_003 
-			TLight1SocketLocation(StructProperty)=Vector(-189.1609,-558.1635,858.0839) 
-			TLight2SocketLocation(StructProperty)=Vector(-74.8632,-588.2966,845.3111) 
-			hlight2 - impact bounce light location(StructProperty)=Vector(54.01431,-96.29654,822.2009) 
-			tlight2 - impact bounce light location(StructProperty)=Vector(-74.8632,-588.2966,845.3111) 
-			hlight1 - impact bounce light location(StructProperty)=Vector(-65.70947,-64.73303,835.5801) 
-			tlight1 - impact bounce light location(StructProperty)=Vector(-189.1609,-558.1635,858.0839) 
+			TLight1SocketLocation(StructProperty)=Vector(-189.162,-558.1631,858.0839) 
+			TLight2SocketLocation(StructProperty)=Vector(-74.86443,-588.2967,845.3111) 
+			hlight2 - impact bounce light location(StructProperty)=Vector(54.0152,-96.29716,822.2009) 
+			tlight2 - impact bounce light location(StructProperty)=Vector(-74.86443,-588.2967,845.3111) 
+			hlight1 - impact bounce light location(StructProperty)=Vector(-65.70847,-64.73312,835.5801) 
+			tlight1 - impact bounce light location(StructProperty)=Vector(-189.162,-558.1631,858.0839) 
 			TimeOfDayControlledLights(ArrayProperty)=[object] (inner: ObjectProperty)
 			TextureData(ObjectProperty)=TD_Athena_Car_Stocker_04=/Game/Athena/Environments/TextureData/TD_Athena_Car_Stocker_04 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
@@ -1170,19 +1164,13 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-	FoliageInstancedStaticMeshComponent_0 (0-0-0-0): size 349317 (cls: FoliageInstancedStaticMeshComponent_0>FoliageInstancedStaticMeshComponent>/Script/Foliage):
+	FoliageInstancedStaticMeshComponent_0 (0-0-0-0): size 975 (cls: FoliageInstancedStaticMeshComponent_0>FoliageInstancedStaticMeshComponent>/Script/Foliage):
 		Tag array:
-			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
-			NumBuiltInstances(IntProperty)=2873 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-6200.255,-4786.765,373.231)) Max(Vector(3416.919,5829.079,1185.239)),29185) 
 			bEnableDensityScaling(BoolProperty)=True 
 			OcclusionLayerNumNodes(IntProperty)=16 
-			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
-			InstanceCountToRender(IntProperty)=2873 
 			InstancingRandomSeed(IntProperty)=1 
 			InstanceStartCullDistance(IntProperty)=4096 
 			InstanceEndCullDistance(IntProperty)=5120 
-			InstanceReorderTable(ArrayProperty)=[object] (inner: IntProperty)
 			StaticMesh(ObjectProperty)=Athena_SM_WavyGrass_TopologyColor=/Game/Athena/Environments/Landscape/Foliage/Athena_SM_WavyGrass_TopologyColor 
 			OverriddenLightMapRes(IntProperty)=8 
 			bReceivesDecals(BoolProperty)=False 
@@ -1454,11 +1442,6 @@ Serialized exports:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			bCanBeInCluster(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-	S_Elevation_Ground_Z6_9 (0-0-0-0): size 96 (cls: S_Elevation_Ground_Z6_9>FortStaticMeshActor>/Script/FortniteGame):
-		Tag array:
-			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			bCanBeInCluster(BoolProperty)=True 
-			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 	S_Elevation_Ground_Z7_13 (0-0-0-0): size 96 (cls: S_Elevation_Ground_Z7_13>FortStaticMeshActor>/Script/FortniteGame):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
@@ -1534,10 +1517,11 @@ Serialized exports:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			bCanBeInCluster(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-	FortWorldSettings (0-0-0-0): size 2398 (cls: FortWorldSettings>FortWorldSettings>/Script/FortniteGame):
+	FortWorldSettings (0-0-0-0): size 2424 (cls: FortWorldSettings>FortWorldSettings>/Script/FortniteGame):
 		Tag array:
 			WorldCells(ArrayProperty)=[object] (inner: IntProperty)
 			WorldCellsOrigin(StructProperty)=Vector(-6144,-4608,-1536) 
+			bUseProceduralFoliage(BoolProperty)=False 
 			MinCullObjectSize(FloatProperty)=64 
 			MinCullDistance(FloatProperty)=2800 
 			MaxCullObjectSize(FloatProperty)=1000 
@@ -1548,21 +1532,21 @@ Serialized exports:
 	InstancedFoliageActor_0 (0-0-0-0): size 53 (cls: InstancedFoliageActor_0>InstancedFoliageActor>/Script/Foliage):
 		Tag array:
 			RootComponent(ObjectProperty)=RootComponent0=Athena_POI_Bridge_003 
-	PersistentLevel (0-0-0-0): size 1238 (cls: PersistentLevel>Level>/Script/Engine):
+	PersistentLevel (0-0-0-0): size 1234 (cls: PersistentLevel>Level>/Script/Engine):
 		Tag array:
 			Model(ObjectProperty)=Model_0=Athena_POI_Bridge_003 
-			LevelScriptActor(ObjectProperty)=Athena_POI_Bridge_003_C_2=Athena_POI_Bridge_003 
+			LevelScriptActor(ObjectProperty)=Athena_POI_Bridge_003_C_0=Athena_POI_Bridge_003 
 			LevelBuildDataId(StructProperty)=Guid: 2892983193-1260921080-1462471352-1899585516 
 			bTextureStreamingRotationChanged(BoolProperty)=True 
 			WorldSettings(ObjectProperty)=FortWorldSettings=Athena_POI_Bridge_003 
 	LevelBounds_0 (0-0-0-0): size 41 (cls: LevelBounds_0>LevelBounds>/Script/Engine):
 		Tag array:
 			RootComponent(ObjectProperty)=BoxComponent0=Athena_POI_Bridge_003 
-	LODActor_0 (0-0-0-0): size 1011 (cls: LODActor_0>LODActor>/Script/Engine):
+	LODActor_0 (0-0-0-0): size 1007 (cls: LODActor_0>LODActor>/Script/Engine):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			Proxy(ObjectProperty)=Athena_POI_Bridge_003_0_HLOD=/Game/Athena/Maps/POI/HLOD/Athena_POI_Bridge_003_0_HLOD 
-			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_BE3A381F4951F51EEF5EDD9C85177EA7_4EC1D4D4_B01D5777_126D21FB_ProxyLODMeshReduction 
+			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_BE3A381F4951F51EEF5EDD9C85177EA7_DD477D99_B01D5777_22D2C04E_ProxyLODMeshReduction 
 			LODDrawDistance(FloatProperty)=24911.78 
 			LODLevel(IntProperty)=1 
 			SubActors(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1917,83 +1901,83 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2404612083-1182939713-2237088-313037223 
+			LightGuid(StructProperty)=Guid: 2510754246-1073815841-199437737-2274276991 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(91.20301,281.1598,90.31802) 
-			RelativeRotation(StructProperty)=Rotator(6.830189E-06,89.99998,5.735236E-06) 
+			RelativeLocation(StructProperty)=Vector(91.20304,281.1596,90.31789) 
+			RelativeRotation(StructProperty)=Rotator(-6.830189E-06,89.99995,4.829671E-06) 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3595255212-1094615713-3659789995-202442133 
+			LightGuid(StructProperty)=Guid: 3297442107-1305749650-669800852-3129947081 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-89.66621,281.1597,90.31806) 
-			RelativeRotation(StructProperty)=Rotator(6.830189E-06,89.99998,5.735236E-06) 
+			RelativeLocation(StructProperty)=Vector(-89.66618,281.1596,90.318) 
+			RelativeRotation(StructProperty)=Rotator(-6.830189E-06,89.99995,4.829671E-06) 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2031983404-1138762108-3210163855-115227268 
+			LightGuid(StructProperty)=Guid: 1578446985-1267157233-1014702260-1085030140 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-95.37074,-254.205,118.854) 
-			RelativeRotation(StructProperty)=Rotator(-6.830189E-06,-89.99995,-2.71669E-06) 
+			RelativeLocation(StructProperty)=Vector(-95.37081,-254.205,118.854) 
+			RelativeRotation(StructProperty)=Rotator(6.830189E-06,-89.99995,-4.225962E-06) 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 643590449-1094814426-1966550960-704962597 
+			LightGuid(StructProperty)=Guid: 277316903-1228295300-2490725781-3317251566 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(95.95152,-254.205,118.854) 
-			RelativeRotation(StructProperty)=Rotator(-6.830189E-06,-89.99995,-2.71669E-06) 
+			RelativeLocation(StructProperty)=Vector(95.95145,-254.205,118.8539) 
+			RelativeRotation(StructProperty)=Rotator(6.830189E-06,-89.99995,-4.225962E-06) 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 356 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=21083.93 
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4294456202-1096956106-842758576-691381674 
+			LightGuid(StructProperty)=Guid: 3689548572-1124429084-1468017586-673197799 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-41.72043,232.2492,62.01786) 
-			RelativeRotation(StructProperty)=Rotator(0,90.00005,3.395858E-07) 
+			RelativeLocation(StructProperty)=Vector(-41.72046,232.2492,62.01786) 
+			RelativeRotation(StructProperty)=Rotator(0,90.00007,5.659777E-07) 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 356 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=21083.93 
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2977097533-1108638526-3683981498-683860041 
+			LightGuid(StructProperty)=Guid: 1388123568-1298735719-5492395-3172944832 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(82.81485,232.2493,62.01785) 
-			RelativeRotation(StructProperty)=Rotator(0,90.00005,3.395858E-07) 
+			RelativeLocation(StructProperty)=Vector(82.81489,232.2493,62.01786) 
+			RelativeRotation(StructProperty)=Rotator(0,90.00007,5.659777E-07) 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 356 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=21083.93 
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 123431612-1092522428-162666916-2489634302 
+			LightGuid(StructProperty)=Guid: 1652600744-1074787195-10338487-168345454 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-37.75938,-276.7986,70.67453) 
-			RelativeRotation(StructProperty)=Rotator(0,-90.00002,-4.150499E-07) 
+			RelativeLocation(StructProperty)=Vector(-37.75938,-276.7986,70.67452) 
+			RelativeRotation(StructProperty)=Rotator(0,-90.00002,-3.395859E-07) 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 356 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=21083.93 
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1634080433-1318772730-3334163386-552665402 
+			LightGuid(StructProperty)=Guid: 1009948116-1214722606-3554112137-3121016922 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(81.13177,-276.7987,70.67453) 
-			RelativeRotation(StructProperty)=Rotator(0,-90.00002,-4.150499E-07) 
+			RelativeLocation(StructProperty)=Vector(81.13178,-276.7987,70.67452) 
+			RelativeRotation(StructProperty)=Rotator(0,-90.00002,-3.395859E-07) 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::UserConstructionScript 
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1709144893-1314111599-1955301034-1790878780 
+			LightGuid(StructProperty)=Guid: 3207095226-1142802615-2533873040-3431381287 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(-79.29369,218.6826,82.94495) 
@@ -2002,7 +1986,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1439501872-1109829419-588987808-907160945 
+			LightGuid(StructProperty)=Guid: 3377243848-1181971193-1436738463-2795141187 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(77.41652,220.4459,82.94495) 
@@ -2011,7 +1995,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3584722511-1111742877-4243468184-1082474053 
+			LightGuid(StructProperty)=Guid: 1874562373-1224907523-2059742117-2150538954 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(110.3233,-175.1274,80.37219) 
@@ -2020,7 +2004,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 277886528-1300697809-1758837413-3514667592 
+			LightGuid(StructProperty)=Guid: 1570208433-1210761937-3156292283-2001567924 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(-111.3303,-173.5729,80.37219) 
@@ -2029,7 +2013,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 265361910-1238578868-2879813046-422994677 
+			LightGuid(StructProperty)=Guid: 913387741-1202981793-4214543807-863248540 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(415.6619,88.82111,118.4151) 
@@ -2037,7 +2021,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3186559817-1282905280-3637009552-2156897012 
+			LightGuid(StructProperty)=Guid: 3082162799-1093868575-3244508561-2193844415 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(415.6618,-86.89671,118.4151) 
@@ -2045,7 +2029,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 96049112-1091692523-2522239929-112781925 
+			LightGuid(StructProperty)=Guid: 4091675240-1278846450-1184614329-1753732370 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(-406.5482,-78.87022,128.0259) 
@@ -2054,7 +2038,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 785695005-1145406505-1976534428-1710887376 
+			LightGuid(StructProperty)=Guid: 1846243954-1184271449-176385952-1608682138 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(-406.5493,78.88474,128.0259) 
@@ -2065,7 +2049,7 @@ Serialized exports:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(-2688.004,3455.996,1152) 
-			RelativeRotation(StructProperty)=Rotator(0,-105.4372,0) 
+			RelativeRotation(StructProperty)=Rotator(0,-105.4375,0) 
 			RelativeScale3D(StructProperty)=Vector(1.048552,1.048552,1.048552) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
@@ -2361,14 +2345,14 @@ Serialized exports:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(225,203,46) 
-			RelativeRotation(StructProperty)=Rotator(-87.15806,77.66711,-159.5892) 
+			RelativeRotation(StructProperty)=Rotator(-87.15681,77.66613,-159.5891) 
 			RelativeScale3D(StructProperty)=Vector(0.9,0.9,0.9) 
 	StaticMeshComponent0 (0-0-0-0): size 224 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=21083.93 
 			RelativeLocation(StructProperty)=Vector(-90.98828,-299.9727,776) 
-			RelativeRotation(StructProperty)=Rotator(-6.16736,-14.76923,1.622088) 
+			RelativeRotation(StructProperty)=Rotator(-6.16736,-14.76946,1.622089) 
 	StaticMeshComponent0 (0-0-0-0): size 224 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2380,7 +2364,7 @@ Serialized exports:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			RelativeLocation(StructProperty)=Vector(388.9961,-534.0039,716) 
-			RelativeRotation(StructProperty)=Rotator(0.2000016,171.7333,-0.9999833) 
+			RelativeRotation(StructProperty)=Rotator(0.2000016,171.7333,-0.9999817) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2404,7 +2388,7 @@ Serialized exports:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=13777.69 
 			RelativeLocation(StructProperty)=Vector(1627.996,-135.9961,776) 
-			RelativeRotation(StructProperty)=Rotator(0,-95.50179,0) 
+			RelativeRotation(StructProperty)=Rotator(0,-95.50182,0) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2491,10 +2475,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 285 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 311 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=6284.271 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			RelativeLocation(StructProperty)=Vector(-86.00391,-433.0039,776) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99995,0) 
 			RelativeScale3D(StructProperty)=Vector(0.75,0.75,0.75) 
@@ -2509,7 +2494,7 @@ Serialized exports:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=16419.06 
 			RelativeLocation(StructProperty)=Vector(2785,-766,767) 
-			RelativeRotation(StructProperty)=Rotator(0,163.8136,0) 
+			RelativeRotation(StructProperty)=Rotator(0,163.8134,0) 
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2541,7 +2526,7 @@ Serialized exports:
 			StaticMesh(ObjectProperty)=S_Cave_Outer_Middle=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Elevation/S_Cave_Outer_Middle 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2048.137,-2048.148,384) 
+			RelativeLocation(StructProperty)=Vector(-2048.148,-2048.16,384) 
 			RelativeRotation(StructProperty)=Rotator(0,-0.0002049056,0) 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	StaticMeshComponent0 (0-0-0-0): size 279 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
@@ -2640,7 +2625,7 @@ Serialized exports:
 			StaticMesh(ObjectProperty)=S_CliffShort_Inner=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Elevation/S_CliffShort_Inner 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2560.148,-2048.117,768) 
+			RelativeLocation(StructProperty)=Vector(-2560.16,-2048.133,768) 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	StaticMeshComponent0 (0-0-0-0): size 218 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
@@ -2783,7 +2768,7 @@ Serialized exports:
 			StaticMesh(ObjectProperty)=S_Cave_Straight_Middle2=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Elevation/S_Cave_Straight_Middle2 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2048.09,-3072.168,-384) 
+			RelativeLocation(StructProperty)=Vector(-2048.102,-3072.184,-384) 
 			RelativeRotation(StructProperty)=Rotator(0,90.00008,0) 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	StaticMeshComponent0 (0-0-0-0): size 279 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
@@ -2877,7 +2862,7 @@ Serialized exports:
 			StaticMesh(ObjectProperty)=S_Cave_Straight_Middle2=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Elevation/S_Cave_Straight_Middle2 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2048.09,-3072.168,-384) 
+			RelativeLocation(StructProperty)=Vector(-2048.102,-3072.184,-384) 
 			RelativeRotation(StructProperty)=Rotator(0,-0.0002049056,0) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
 			bCanEverAffectNavigation(BoolProperty)=True 
@@ -2895,7 +2880,7 @@ Serialized exports:
 			StaticMesh(ObjectProperty)=S_Elevation_Ground_Z=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Ground/S_Elevation_Ground_Z 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2560.148,-2048.117,768) 
+			RelativeLocation(StructProperty)=Vector(-2560.16,-2048.133,768) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99995,0) 
 			RelativeScale3D(StructProperty)=Vector(2,1.5,1) 
 			bCanEverAffectNavigation(BoolProperty)=True 
@@ -2911,7 +2896,7 @@ Serialized exports:
 			StaticMesh(ObjectProperty)=S_Elevation_Ground_Z=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Ground/S_Elevation_Ground_Z 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2048.09,-3072.168,384) 
+			RelativeLocation(StructProperty)=Vector(-2048.102,-3072.184,384) 
 			RelativeRotation(StructProperty)=Rotator(0,-179.9998,0) 
 			RelativeScale3D(StructProperty)=Vector(1,2,1) 
 			bCanEverAffectNavigation(BoolProperty)=True 
@@ -2966,20 +2951,12 @@ Serialized exports:
 			RelativeLocation(StructProperty)=Vector(-2048.09,1535.926,0) 
 			RelativeRotation(StructProperty)=Rotator(0,180,0) 
 			bCanEverAffectNavigation(BoolProperty)=True 
-	StaticMeshComponent0 (0-0-0-0): size 279 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
-		Tag array:
-			StaticMesh(ObjectProperty)=S_Cave_Straight_Middle2=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Elevation/S_Cave_Straight_Middle2 
-			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2048.09,1535.926,-384) 
-			RelativeRotation(StructProperty)=Rotator(0,-89.99988,0) 
-			bCanEverAffectNavigation(BoolProperty)=True 
 	StaticMeshComponent0 (0-0-0-0): size 218 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=S_Cave_Outer_Middle2=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Elevation/S_Cave_Outer_Middle2 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2048.09,-3072.168,-384) 
+			RelativeLocation(StructProperty)=Vector(-2048.102,-3072.184,-384) 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	StaticMeshComponent0 (0-0-0-0): size 358 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
@@ -3020,7 +2997,7 @@ Serialized exports:
 			StaticMesh(ObjectProperty)=S_Elevation_Ground_Z=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Ground/S_Elevation_Ground_Z 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			LODParentPrimitive(ObjectProperty)=StaticMeshComponent0=Athena_POI_Bridge_003 
-			RelativeLocation(StructProperty)=Vector(-2560.039,5631.949,1152) 
+			RelativeLocation(StructProperty)=Vector(-2560.039,5631.957,1152) 
 			RelativeRotation(StructProperty)=Rotator(0,-89.99995,0) 
 			RelativeScale3D(StructProperty)=Vector(5,2,1) 
 			bCanEverAffectNavigation(BoolProperty)=True 
@@ -3383,7 +3360,7 @@ Serialized exports:
 			LDMaxDrawDistance(FloatProperty)=0 
 			CachedMaxDrawDistance(FloatProperty)=14181.11 
 			RelativeLocation(StructProperty)=Vector(437.9961,-545,1016) 
-			RelativeRotation(StructProperty)=Rotator(0,-28.70111,0) 
+			RelativeRotation(StructProperty)=Rotator(0,-28.70109,0) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -3403,7 +3380,7 @@ Serialized exports:
 			LDMaxDrawDistance(FloatProperty)=0 
 			CachedMaxDrawDistance(FloatProperty)=16635.13 
 			RelativeLocation(StructProperty)=Vector(2043.996,-509.9961,776) 
-			RelativeRotation(StructProperty)=Rotator(0,-75.05382,0) 
+			RelativeRotation(StructProperty)=Rotator(0,-75.0536,0) 
 	StaticMeshComponent0 (0-0-0-0): size 253 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)

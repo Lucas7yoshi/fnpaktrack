@@ -64,6 +64,7 @@ Name table:
 	Background
 	bAllowTemplate
 	BaseLevel
+	bClassRequiresNativeTick
 	bCookedWidgetTree
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
@@ -205,13 +206,13 @@ Name table:
 	Default__ByteProperty
 	Default__CircularThrobber
 	Default__CommonActionWidget
-	Default__CommonActivatablePanel
 	Default__CommonBorder
 	Default__CommonTextBlock
 	Default__CommonWidgetSwitcher
 	Default__ComponentDelegateBinding
 	Default__DelegateProperty
 	Default__EnumProperty
+	Default__FortActivatablePanelWithItemPreview
 	Default__FortUIManagerWidget_NUI
 	Default__Function
 	Default__HorizontalBox
@@ -264,6 +265,8 @@ Name table:
 	Down
 	DrawAs
 	DynamicBindingObjects
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	Engine
 	EntryPoint
@@ -290,10 +293,12 @@ Name table:
 	FirstItem
 	FirstWidget
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	Format
 	FormatArgumentData
+	FortActivatablePanelWithItemPreview
 	FortFrontEndContext
 	FortItem
 	FortMcpContext
@@ -302,6 +307,7 @@ Name table:
 	FortStoreContext
 	FortUIManagerWidget_NUI
 	FortUINavigationManager
+	FramingWidget
 	Function
 	FunctionNameToBind
 	GenerateItemWidgets
@@ -320,12 +326,12 @@ Name table:
 	GetUIManagerWidget
 	GetUINavigationManager
 	GetVBuckPrice
+	GetWidgetForFramingViewedItem
 	Glow
 	Greater_IntInt
-	HAlign
 	HAlign_Center
 	HAlign_Fill
-	HAlign_Left
+	HAlign_Right
 	Handle_BackAction
 	HandleBack
 	HeaderText
@@ -534,7 +540,6 @@ Name table:
 	UnderlyingType
 	Up
 	UserWidget
-	VAlign
 	VAlign_Bottom
 	VAlign_Center
 	VAlign_Fill
@@ -561,11 +566,12 @@ Name table:
 	WrapTextAt
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	AthenaSeasonLevelConfirmationScreen_C (0-0-0-0): size 628 (cls: AthenaSeasonLevelConfirmationScreen_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	AthenaSeasonLevelConfirmationScreen_C (0-0-0-0): size 674 (cls: AthenaSeasonLevelConfirmationScreen_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
 			bValidTemplate(BoolProperty)=True 
+			bClassRequiresNativeTick(BoolProperty)=True 
 			TemplateAsset(SoftObjectProperty)=/Game/Athena/UI/Season/AthenaSeasonLevelConfirmationScreen.WidgetArchetype 
 			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_AthenaSeasonLevelConfirmationScreen=AthenaSeasonLevelConfirmationScreen_C 
@@ -631,13 +637,14 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
-	WidgetArchetype (0-0-0-0): size 473 (cls: WidgetArchetype>AthenaSeasonLevelConfirmationScreen_C):
+	WidgetArchetype (0-0-0-0): size 502 (cls: WidgetArchetype>AthenaSeasonLevelConfirmationScreen_C):
 		Tag array:
 			AthenaDirectAcquisitonDetails_RefundDisclaimer(ObjectProperty)=AthenaDirectAcquisitonDetails_RefundDisclaimer=WidgetArchetype 
 			BulkMessageAlertSB(ObjectProperty)=BulkMessageAlertSB=WidgetArchetype 
 			BulkTierMessage(ObjectProperty)=BulkTierMessage=WidgetArchetype 
 			ConfirmState(ObjectProperty)=ConfirmState=WidgetArchetype 
 			DecreasePurchaseTier(ObjectProperty)=DecreasePurchaseTier=WidgetArchetype 
+			FramingWidget(ObjectProperty)=FramingWidget=WidgetArchetype 
 			HeaderText(ObjectProperty)=HeaderText=WidgetArchetype 
 			IncreasePurchaseTier(ObjectProperty)=IncreasePurchaseTier=WidgetArchetype 
 			ItemRewardsSB(ObjectProperty)=ItemRewardsSB=WidgetArchetype 
@@ -782,7 +789,7 @@ Serialized exports:
 			MinimumPadding(StructProperty)=System.Byte[] 
 			Padding(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=SafeZoneSlot_0=WidgetArchetype 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	DisclaimerText (0-0-0-0): size 513 (cls: DisclaimerText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS_C=/Game/UI/Foundation/Text/TextStyle-Base-XS 
@@ -885,6 +892,9 @@ Serialized exports:
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
+	FramingWidget (0-0-0-0): size 36 (cls: FramingWidget>ObjectProperty>/Script/CoreUObject)
+	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>ObjectProperty>/Script/CoreUObject)
+	GetWidgetForFramingViewedItem (0-0-0-0): size 62 (cls: GetWidgetForFramingViewedItem>Function>/Script/CoreUObject)
 	HorizontalBoxDisclaimer (0-0-0-0): size 108 (cls: HorizontalBoxDisclaimer>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -906,10 +916,11 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	PurchasingState (0-0-0-0): size 112 (cls: PurchasingState>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1149,6 +1160,10 @@ Serialized exports:
 	Overlay_0 (0-0-0-0): size 57 (cls: Overlay_0>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+	Overlay_238 (0-0-0-0): size 86 (cls: Overlay_238>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=SafeZoneSlot_0=WidgetArchetype 
 	Overlay_6 (0-0-0-0): size 86 (cls: Overlay_6>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1181,6 +1196,17 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
 			Content(ObjectProperty)=ContentSlot=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 111 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=Overlay_238=WidgetArchetype 
+			Content(ObjectProperty)=SafeZoneCB=WidgetArchetype 
+	OverlaySlot_2 (0-0-0-0): size 152 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=Overlay_238=WidgetArchetype 
+			Content(ObjectProperty)=FramingWidget=WidgetArchetype 
 	OverlaySlot_10 (0-0-0-0): size 325 (cls: OverlaySlot_10>OverlaySlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1235,12 +1261,10 @@ Serialized exports:
 			PadBottom(BoolProperty)=False 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=False 
-	SafeZoneSlot_0 (0-0-0-0): size 152 (cls: SafeZoneSlot_0>SafeZoneSlot>/Script/UMG):
+	SafeZoneSlot_0 (0-0-0-0): size 70 (cls: SafeZoneSlot_0>SafeZoneSlot>/Script/UMG):
 		Tag array:
-			HAlign(ByteProperty)=HAlign_Left 
-			VAlign(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=SafeZone_2=WidgetArchetype 
-			Content(ObjectProperty)=SafeZoneCB=WidgetArchetype 
+			Content(ObjectProperty)=Overlay_238=WidgetArchetype 
 	ItemRewardsSB (0-0-0-0): size 557 (cls: ItemRewardsSB>ScrollBox>/Script/UMG):
 		Tag array:
 			WidgetStyle(StructProperty)=System.Byte[] 
@@ -1253,6 +1277,12 @@ Serialized exports:
 			MinDesiredHeight(FloatProperty)=64 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_31=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	FramingWidget (0-0-0-0): size 122 (cls: FramingWidget>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_WidthOverride(BoolProperty)=True 
+			WidthOverride(FloatProperty)=1100 
+			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	SizeBox_0 (0-0-0-0): size 221 (cls: SizeBox_0>SizeBox>/Script/UMG):
 		Tag array:

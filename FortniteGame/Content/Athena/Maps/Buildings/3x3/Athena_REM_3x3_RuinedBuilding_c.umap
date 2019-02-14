@@ -22,6 +22,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Floor/SM_FORT_Floors_Generic_TilesBrokenBeamsO
 	/Game/Building/ActorBlueprints/Prop/Barriers_Wood01
 	/Game/Building/ActorBlueprints/Prop/Barriers_Wood02
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Stairs/Rural_House_Stair
 	/Game/Building/ActorBlueprints/Wall/BrickSimple_AAA_SolidWall
 	/Game/Building/ActorBlueprints/Wall/CryptWalls_01
@@ -166,6 +167,7 @@ Name table:
 	Default__Model
 	Default__NavigationSystemModuleConfig
 	Default__ObjectProperty
+	Default__Parent_Tree_C
 	Default__Rural_House_Post_1_C
 	Default__Rural_House_Stair_1_C
 	Default__SceneComponent
@@ -240,6 +242,8 @@ Name table:
 	LCD_Shrub_023
 	LCD_Shrub_026
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -261,6 +265,9 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MI_CryptWallsSet
 	MI_FORT_Brick_Simple
 	MI_Fort_Floors_Generic_TilesAndGarbage_Tan
@@ -292,6 +299,7 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NoCollision
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	NODE_AddStaticMeshComponent-1
 	None
@@ -304,10 +312,13 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	Plant_Shrub_09
 	PointLightComponent
+	PrimitiveComponent
 	Prop_RubblePile_026
 	PropertySetObject
 	Proxy
@@ -335,6 +346,7 @@ Name table:
 	ShutterHouse_Windows_Des_C
 	Siding_06
 	SimpleConstructionScript
+	SimpleMemberReference
 	SM_Athena_REM_3x3_RuinedBuilding_c_1_AAAsimplewall_2sided
 	SM_FORT_Floors_Generic_BasicTile_C
 	SM_FORT_Floors_Generic_TilesBrokenBeams
@@ -357,6 +369,7 @@ Name table:
 	SoftClassPath
 	SoftObjectProperty
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	StaticMesh
 	StaticMeshActor
@@ -388,6 +401,7 @@ Name table:
 	TrackName
 	TrasureLight
 	TrasureLight_GEN_VARIABLE
+	UCSModifiedProperties
 	VariableGuid
 	Vector
 	Visibility
@@ -470,14 +484,16 @@ Serialized exports:
 			DefaultSceneRoot(ObjectProperty)=DefaultSceneRoot=Athena_REM_3x3_RuinedBuilding_c 
 			RootComponent(ObjectProperty)=DefaultSceneRoot=Athena_REM_3x3_RuinedBuilding_c 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	Athena_Tree_Medium_01_2 (0-0-0-0): size 238 (cls: Athena_Tree_Medium_01_2>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+	Athena_Tree_Medium_01_2 (0-0-0-0): size 308 (cls: Athena_Tree_Medium_01_2>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_REM_3x3_RuinedBuilding_c 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RuinedBuilding_c 
 			MyGuid(StructProperty)=Guid: 3308065281-1116002894-2463078551-2193379753 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RuinedBuilding_c 
 			Tags(ArrayProperty)=ZRotate_Tree_Medium_04 (inner: NameProperty)
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Chest_Ambient_Sound (0-0-0-0): size 108 (cls: Chest_Ambient_Sound>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RuinedBuilding_c 
@@ -734,7 +750,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=30 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1347.749,-339.4745,-2.422855)) Max(Vector(306.6917,1345.622,28.51124)),22017) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1347.749,-339.4745,-2.422855)) Max(Vector(306.6917,1345.622,28.51124)),22273) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=30 
@@ -981,6 +997,13 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RuinedBuilding_c 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_3x3_RuinedBuilding_c 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)

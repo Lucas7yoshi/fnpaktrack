@@ -150,6 +150,7 @@ Name table:
 	CallFunc_GetRewardToShow_ReturnValue
 	CallFunc_GetShortName_ReturnValue
 	CallFunc_GetShortNameNumber_ReturnValue
+	CallFunc_GetVaultedItemToPreview_ReturnValue
 	CallFunc_HasQuestReward_OutRecievedCount
 	CallFunc_HasQuestReward_OutTotalCount
 	CallFunc_HasQuestReward_ReturnValue
@@ -318,6 +319,7 @@ Name table:
 	GetRewardToShow
 	GetShortName
 	GetShortNameNumber
+	GetVaultedItemToPreview
 	Glow
 	GradCB
 	HAlign_Center
@@ -434,6 +436,11 @@ Name table:
 	Segment12
 	Segment13
 	Segment14
+	Segment15
+	Segment16
+	Segment17
+	Segment18
+	Segment19
 	Segment2
 	Segment3
 	Segment4
@@ -571,7 +578,7 @@ Serialized exports:
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	BattleStars (0-0-0-0): size 36 (cls: BattleStars>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_AthenaChallengeTreeEntry (0-0-0-0): size 464 (cls: ExecuteUbergraph_AthenaChallengeTreeEntry>Function>/Script/CoreUObject)
+	ExecuteUbergraph_AthenaChallengeTreeEntry (0-0-0-0): size 491 (cls: ExecuteUbergraph_AthenaChallengeTreeEntry>Function>/Script/CoreUObject)
 	bIsExpanded (0-0-0-0): size 34 (cls: bIsExpanded>BoolProperty>/Script/CoreUObject)
 	BP_OnItemExpansionChanged (0-0-0-0): size 68 (cls: BP_OnItemExpansionChanged>Function>/Script/CoreUObject)
 	BP_OnHovered (0-0-0-0): size 54 (cls: BP_OnHovered>Function>/Script/CoreUObject)
@@ -716,7 +723,7 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	ChallengeProgressWidget (0-0-0-0): size 1195 (cls: ChallengeProgressWidget>ChallengeProgressWidget_C>/Game/Athena/UI/Challenges/ChallengeProgressWidget):
+	ChallengeProgressWidget (0-0-0-0): size 1514 (cls: ChallengeProgressWidget>ChallengeProgressWidget_C>/Game/Athena/UI/Challenges/ChallengeProgressWidget):
 		Tag array:
 			ArrowLeftSpacer(ObjectProperty)=ArrowLeftSpacer=WidgetArchetype 
 			ArrowRightSpacer(ObjectProperty)=ArrowRightSpacer=WidgetArchetype 
@@ -731,6 +738,11 @@ Serialized exports:
 			Segment12(ObjectProperty)=Segment12=WidgetArchetype 
 			Segment13(ObjectProperty)=Segment13=WidgetArchetype 
 			Segment14(ObjectProperty)=Segment14=WidgetArchetype 
+			Segment15(ObjectProperty)=Segment15=WidgetArchetype 
+			Segment16(ObjectProperty)=Segment16=WidgetArchetype 
+			Segment17(ObjectProperty)=Segment17=WidgetArchetype 
+			Segment18(ObjectProperty)=Segment18=WidgetArchetype 
+			Segment19(ObjectProperty)=Segment19=WidgetArchetype 
 			Segment2(ObjectProperty)=Segment2=WidgetArchetype 
 			Segment3(ObjectProperty)=Segment3=WidgetArchetype 
 			Segment4(ObjectProperty)=Segment4=WidgetArchetype 
@@ -753,6 +765,12 @@ Serialized exports:
 			Spacer_11(ObjectProperty)=Spacer_11=WidgetArchetype 
 			Spacer_12(ObjectProperty)=Spacer_12=WidgetArchetype 
 			Spacer_13(ObjectProperty)=Spacer_13=WidgetArchetype 
+			Spacer_14(ObjectProperty)=Spacer_14=WidgetArchetype 
+			Spacer_15(ObjectProperty)=Spacer_15=WidgetArchetype 
+			Spacer_16(ObjectProperty)=Spacer_16=WidgetArchetype 
+			Spacer_17(ObjectProperty)=Spacer_17=WidgetArchetype 
+			Spacer_18(ObjectProperty)=Spacer_18=WidgetArchetype 
+			Spacer_19(ObjectProperty)=Spacer_19=WidgetArchetype 
 			Unlock(ObjectProperty)=Unlock=WidgetArchetype 
 			XpBar(ObjectProperty)=XpBar=WidgetArchetype 
 			IsSmallProgressBar(BoolProperty)=True 
@@ -1054,7 +1072,7 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-	SegmentsHB (0-0-0-0): size 190 (cls: SegmentsHB>HorizontalBox>/Script/UMG):
+	SegmentsHB (0-0-0-0): size 234 (cls: SegmentsHB>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
@@ -1241,10 +1259,60 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
 			Content(ObjectProperty)=Segment14=WidgetArchetype 
+	HorizontalBoxSlot_28 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_28>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_14=WidgetArchetype 
+	HorizontalBoxSlot_29 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_29>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Segment15=WidgetArchetype 
 	HorizontalBoxSlot_3 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
 			Content(ObjectProperty)=Segment2=WidgetArchetype 
+	HorizontalBoxSlot_30 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_30>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_15=WidgetArchetype 
+	HorizontalBoxSlot_31 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_31>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Segment16=WidgetArchetype 
+	HorizontalBoxSlot_32 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_32>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_16=WidgetArchetype 
+	HorizontalBoxSlot_33 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_33>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Segment17=WidgetArchetype 
+	HorizontalBoxSlot_34 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_34>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_17=WidgetArchetype 
+	HorizontalBoxSlot_35 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_35>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Segment18=WidgetArchetype 
+	HorizontalBoxSlot_36 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_36>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_18=WidgetArchetype 
+	HorizontalBoxSlot_37 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_37>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Segment19=WidgetArchetype 
+	HorizontalBoxSlot_38 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_38>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			Parent(ObjectProperty)=SegmentsHB=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_19=WidgetArchetype 
 	HorizontalBoxSlot_4 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_4>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
@@ -1378,6 +1446,36 @@ Serialized exports:
 			Brush(StructProperty)=System.Byte[] 
 			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
 			Slot(ObjectProperty)=HorizontalBoxSlot_27=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	Segment15 (0-0-0-0): size 261 (cls: Segment15>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=HorizontalBoxSlot_29=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	Segment16 (0-0-0-0): size 261 (cls: Segment16>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=HorizontalBoxSlot_31=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	Segment17 (0-0-0-0): size 261 (cls: Segment17>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=HorizontalBoxSlot_33=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	Segment18 (0-0-0-0): size 261 (cls: Segment18>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=HorizontalBoxSlot_35=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
+	Segment19 (0-0-0-0): size 261 (cls: Segment19>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=HorizontalBoxSlot_37=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	Segment2 (0-0-0-0): size 261 (cls: Segment2>Image>/Script/UMG):
 		Tag array:
@@ -1539,7 +1637,7 @@ Serialized exports:
 	ChaseRewardCard (0-0-0-0): size 36 (cls: ChaseRewardCard>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetChallengeBundleInfo_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetChallengeBundleInfo_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetRewardToShow_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetRewardToShow_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetVaultedItemToPreview_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetVaultedItemToPreview_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_Event_Bundle (0-0-0-0): size 36 (cls: K2Node_Event_Bundle>ObjectProperty>/Script/CoreUObject)
 	K2Node_Event_Schedule (0-0-0-0): size 36 (cls: K2Node_Event_Schedule>ObjectProperty>/Script/CoreUObject)
 	ExpansionIndicator (0-0-0-0): size 36 (cls: ExpansionIndicator>ObjectProperty>/Script/CoreUObject)
@@ -2067,6 +2165,30 @@ Serialized exports:
 	Spacer_13 (0-0-0-0): size 67 (cls: Spacer_13>Spacer>/Script/UMG):
 		Tag array:
 			Slot(ObjectProperty)=HorizontalBoxSlot_26=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Spacer_14 (0-0-0-0): size 67 (cls: Spacer_14>Spacer>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=HorizontalBoxSlot_28=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Spacer_15 (0-0-0-0): size 67 (cls: Spacer_15>Spacer>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=HorizontalBoxSlot_30=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Spacer_16 (0-0-0-0): size 67 (cls: Spacer_16>Spacer>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=HorizontalBoxSlot_32=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Spacer_17 (0-0-0-0): size 67 (cls: Spacer_17>Spacer>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=HorizontalBoxSlot_34=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Spacer_18 (0-0-0-0): size 67 (cls: Spacer_18>Spacer>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=HorizontalBoxSlot_36=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+	Spacer_19 (0-0-0-0): size 67 (cls: Spacer_19>Spacer>/Script/UMG):
+		Tag array:
+			Slot(ObjectProperty)=HorizontalBoxSlot_38=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Spacer_2 (0-0-0-0): size 67 (cls: Spacer_2>Spacer>/Script/UMG):
 		Tag array:

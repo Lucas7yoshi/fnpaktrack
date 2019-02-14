@@ -28,7 +28,7 @@ Name table:
 	/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_MT
 	/Game/Athena/Environments/Blueprints/Tiered_Athena_FloorLoot_01
 	/Game/Athena/Environments/Landscape/Foliage/Athena_SM_WavyGrass_TopologyColor
-	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_ForceMountain_NoAsphalt_Inst
+	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_ForceSnow
 	/Game/Athena/Environments/Materials/M_Athena_TV_Screen
 	/Game/Athena/Environments/Materials/MI_Pine_05_Ambient_Leaves_Inst
 	/Game/Athena/Items/QuestInteractables/Doorbell/Prop_Athena_Doorbell_Interactable
@@ -50,6 +50,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Chair_Office03
 	/Game/Building/ActorBlueprints/Prop/Lab_Light
 	/Game/Building/ActorBlueprints/Prop/Microfiche
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_Plantstand_02
 	/Game/Building/ActorBlueprints/Prop/Roof_AirConditioner_02
 	/Game/Building/ActorBlueprints/Prop/ServerRacks03
@@ -104,8 +105,8 @@ Name table:
 	/Script/FortniteGame
 	/Script/FortniteGame.FortNavSystem
 	/Script/NavigationSystem
-	76927B120C6645ACB9200E7FB8896AC3_19557A8C407EE2FB97EA51AA6AB38953_417DC273_36D64577_5D1A20E7_ProxyLODMeshReduction
-	76927B120C6645ACB9200E7FB8896AC3_8FF1347F4E68CB92233512BE974BB5AF_F8B99ED8_36D64577_33E431ED_ProxyLODMeshReduction
+	76927B120C6645ACB9200E7FB8896AC3_19557A8C407EE2FB97EA51AA6AB38953_417DC273_36D64577_52FC9DC9_ProxyLODMeshReduction
+	76927B120C6645ACB9200E7FB8896AC3_8FF1347F4E68CB92233512BE974BB5AF_F8B99ED8_36D64577_A8202680_ProxyLODMeshReduction
 	AAAsimplewall_2sided
 	AreaClass
 	ArrayProperty
@@ -157,8 +158,9 @@ Name table:
 	Athena_Prop_Utility_WasherDryer_02_C
 	Athena_RUR_3x3_House_c
 	Athena_RUR_3x3_House_c_2_1_HLOD
+	Athena_RUR_3x3_House_c_C
 	Athena_SM_WavyGrass_TopologyColor
-	Athena_Terrain_Mat_Biome_ForceMountain_NoAsphalt_Inst
+	Athena_Terrain_Mat_Biome_ForceSnow
 	Athena_Tree_Pine_01_MT_C
 	AthenaHouseType
 	AthenaHouseType::NewEnumerator1
@@ -193,12 +195,10 @@ Name table:
 	BodyInstance
 	BookmarkArray
 	BoolProperty
-	Box
 	BoxComponent
 	BoxComponent0
 	BoxComponent_5250__44C6E966
 	BoxExtent
-	BoxSphereBounds
 	bReceivesDecals
 	BrickSimple_AAA_SolidWall_C
 	BrickSimple_Archway01_C
@@ -209,12 +209,11 @@ Name table:
 	BrickWall_002a
 	bTextureStreamingRotationChanged
 	BuildingTextureData
-	BuiltInstanceBounds
 	bUseAsOccluder
+	bUseProceduralFoliage
 	ByteProperty
 	CachedMaxDrawDistance
 	CachedNumHLODLevels
-	CacheMeshExtendedBounds
 	Camera
 	CameraRotation
 	CastShadow
@@ -267,8 +266,10 @@ Name table:
 	Default__Athena_Prop_Storage_Suitcases_03_C
 	Default__Athena_Prop_Utility_TrashCan_01_C
 	Default__Athena_Prop_Utility_WasherDryer_02_C
+	Default__Athena_RUR_3x3_House_c_C
 	Default__Athena_Tree_Pine_01_MT_C
 	Default__Basic_Corner_01e_Quarter_C
+	Default__BlueprintGeneratedClass
 	Default__BrickSimple_AAA_SolidWall_C
 	Default__BrickSimple_Archway01_C
 	Default__BrickSimple_Chimney_C
@@ -286,6 +287,7 @@ Name table:
 	Default__FORT_Roof_Straight_C
 	Default__FORT_Roof_Straight_Dormer2_C
 	Default__FORT_Roof_Straight_Dormer_C
+	Default__FortLevelScriptActor
 	Default__FortStaticMeshActor
 	Default__FortWorldSettings
 	Default__GamePoster01_C
@@ -302,6 +304,7 @@ Name table:
 	Default__Movie_Set_Camera_C
 	Default__Movieset_BoomMic1_C
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Prop_Athena_Doorbell_Interactable_C
 	Default__Prop_Plantstand_02_C
 	Default__Roof_AirConditioner_02_C
@@ -358,6 +361,7 @@ Name table:
 	EFortResourceType
 	EFortResourceType::Stone
 	EFortResourceType::Wood
+	Engine
 	EnumProperty
 	ETimelineLengthMode
 	Fence_Picket01
@@ -375,6 +379,7 @@ Name table:
 	FORT_Roof_Straight_C
 	FORT_Roof_Straight_Dormer2_C
 	FORT_Roof_Straight_Dormer_C
+	FortLevelScriptActor
 	FortMetaNavArea_Obstacles
 	FortStaticMeshActor
 	FortWorldSettings
@@ -394,10 +399,8 @@ Name table:
 	HouseType
 	InsideHouseOverlap
 	InsideHouseOverlap_GEN_VARIABLE
-	InstanceCountToRender
 	InstancedFoliageActor
 	InstanceEndCullDistance
-	InstanceReorderTable
 	InstanceStartCullDistance
 	InstancingRandomSeed
 	InterpFloats
@@ -424,6 +427,8 @@ Name table:
 	LCD_TrashBag_01_C199
 	LCD_TrashBag_01_C200
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -432,6 +437,7 @@ Name table:
 	Level
 	LevelBounds
 	LevelBuildDataId
+	LevelScriptActor
 	LightGuid
 	LODActor
 	LODDrawDistance
@@ -498,19 +504,20 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NoCollision
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	NODE_AddStaticMeshComponent-1
 	None
-	NumBuiltInstances
 	NumTextureStreamingUnbuiltComponents
+	Object
 	ObjectProperty
 	ObjectType
 	OpacityMaskClipValue
-	Origin
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
 	Parent
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_7086__001EDC14
@@ -600,9 +607,8 @@ Name table:
 	SM_Wood01_WoodStairs_DoubleBack_NoTrim2
 	SM_Wood01_WoodStairs_DoubleBack_NoTrim_C
 	SoftClassPath
-	SortedInstances
 	Spawn_Location
-	SphereRadius
+	SphereComponent
 	SpotLight
 	SpotLight_GEN_VARIABLE
 	SpotLightComponent
@@ -669,6 +675,8 @@ Name table:
 	WorldCellsOrigin
 	WorldSettings
 Serialized exports:
+	Athena_RUR_3x3_House_c_C (0-0-0-0): size 76 (cls: Athena_RUR_3x3_House_c_C>BlueprintGeneratedClass>/Script/Engine)
+	Default__Athena_RUR_3x3_House_c_C (0-0-0-0): size 8 (cls: Default__Athena_RUR_3x3_House_c_C>Athena_RUR_3x3_House_c_C)
 	Art_Painting06_2 (0-0-0-0): size 222 (cls: Art_Painting06_2>Art_Painting06_C>/Game/Building/ActorBlueprints/Deco/Art_Painting06):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
@@ -942,13 +950,16 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=9963.229 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
-	Tree__25 (0-0-0-0): size 193 (cls: Tree__25>Athena_Tree_Pine_01_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_MT):
+	Athena_RUR_3x3_House_c_C_0 (0-0-0-0): size 12 (cls: Athena_RUR_3x3_House_c_C_0>Athena_RUR_3x3_House_c_C)
+	Tree__25 (0-0-0-0): size 263 (cls: Tree__25>Athena_Tree_Pine_01_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_MT):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_RUR_3x3_House_c_2 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
 			MyGuid(StructProperty)=Guid: 1865051949-1142171688-947297190-2100992196 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Chest_Ambient_Sound (0-0-0-0): size 108 (cls: Chest_Ambient_Sound>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
@@ -1079,8 +1090,8 @@ Serialized exports:
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-589.6086,439.9999,360.1731) 
-			RelativeScale3D(StructProperty)=Vector(1901.258,1680,1648.346) 
+			RelativeLocation(StructProperty)=Vector(-589.6086,423.9999,360.2323) 
+			RelativeScale3D(StructProperty)=Vector(1901.258,1712,1648.465) 
 	InsideHouseOverlap (0-0-0-0): size 566 (cls: InsideHouseOverlap>BoxComponent>/Script/Engine):
 		Tag array:
 			BoxExtent(StructProperty)=Vector(512,768,768) 
@@ -1258,18 +1269,12 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
-	FoliageInstancedStaticMeshComponent_0 (0-0-0-0): size 7288 (cls: FoliageInstancedStaticMeshComponent_0>FoliageInstancedStaticMeshComponent>/Script/Foliage):
+	FoliageInstancedStaticMeshComponent_0 (0-0-0-0): size 946 (cls: FoliageInstancedStaticMeshComponent_0>FoliageInstancedStaticMeshComponent>/Script/Foliage):
 		Tag array:
-			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
-			NumBuiltInstances(IntProperty)=31 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1354.735,692.9948,-4.054547)) Max(Vector(319.4496,1359.616,31.44129)),47105) 
 			bEnableDensityScaling(BoolProperty)=True 
-			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
-			InstanceCountToRender(IntProperty)=31 
 			InstancingRandomSeed(IntProperty)=1 
 			InstanceStartCullDistance(IntProperty)=4096 
 			InstanceEndCullDistance(IntProperty)=5120 
-			InstanceReorderTable(ArrayProperty)=[object] (inner: IntProperty)
 			StaticMesh(ObjectProperty)=Athena_SM_WavyGrass_TopologyColor=/Game/Athena/Environments/Landscape/Foliage/Athena_SM_WavyGrass_TopologyColor 
 			OverriddenLightMapRes(IntProperty)=8 
 			bReceivesDecals(BoolProperty)=False 
@@ -1381,10 +1386,11 @@ Serialized exports:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
 			bCanBeInCluster(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
-	FortWorldSettings (0-0-0-0): size 510 (cls: FortWorldSettings>FortWorldSettings>/Script/FortniteGame):
+	FortWorldSettings (0-0-0-0): size 536 (cls: FortWorldSettings>FortWorldSettings>/Script/FortniteGame):
 		Tag array:
 			WorldCells(ArrayProperty)=[object] (inner: IntProperty)
 			WorldCellsOrigin(StructProperty)=Vector(-1024,0,-768) 
+			bUseProceduralFoliage(BoolProperty)=False 
 			MinCullObjectSize(FloatProperty)=64 
 			MinCullDistance(FloatProperty)=2800 
 			MaxCullObjectSize(FloatProperty)=1000 
@@ -1415,10 +1421,11 @@ Serialized exports:
 			CullDistance(FloatProperty)=4472.28 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	PersistentLevel (0-0-0-0): size 1037 (cls: PersistentLevel>Level>/Script/Engine):
+	PersistentLevel (0-0-0-0): size 1070 (cls: PersistentLevel>Level>/Script/Engine):
 		Tag array:
 			Model(ObjectProperty)=Model_4=Athena_RUR_3x3_House_c_2 
 			NumTextureStreamingUnbuiltComponents(IntProperty)=167 
+			LevelScriptActor(ObjectProperty)=Athena_RUR_3x3_House_c_C_0=Athena_RUR_3x3_House_c_2 
 			LevelBuildDataId(StructProperty)=Guid: 2284934444-1217145714-1249320332-387246464 
 			MapBuildData(ObjectProperty)=MapBuildDataRegistry= 
 			bTextureStreamingRotationChanged(BoolProperty)=True 
@@ -1430,7 +1437,7 @@ Serialized exports:
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
 			Proxy(ObjectProperty)=[object] 
-			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_8FF1347F4E68CB92233512BE974BB5AF_F8B99ED8_36D64577_33E431ED_ProxyLODMeshReduction 
+			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_8FF1347F4E68CB92233512BE974BB5AF_F8B99ED8_36D64577_A8202680_ProxyLODMeshReduction 
 			LODDrawDistance(FloatProperty)=40000 
 			LODLevel(IntProperty)=1 
 			SubActors(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1440,7 +1447,7 @@ Serialized exports:
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
 			Proxy(ObjectProperty)=Athena_RUR_3x3_House_c_2_1_HLOD=/Game/Athena/Maps/Buildings/3x3/HLOD/Athena_RUR_3x3_House_c_2_1_HLOD 
-			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_19557A8C407EE2FB97EA51AA6AB38953_417DC273_36D64577_5D1A20E7_ProxyLODMeshReduction 
+			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_19557A8C407EE2FB97EA51AA6AB38953_417DC273_36D64577_52FC9DC9_ProxyLODMeshReduction 
 			LODDrawDistance(FloatProperty)=35000 
 			LODLevel(IntProperty)=2 
 			SubActors(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2127,6 +2134,13 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_House_c_2 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SpotLight (0-0-0-0): size 260 (cls: SpotLight>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=9318.33 

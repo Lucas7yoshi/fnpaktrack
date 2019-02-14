@@ -76,6 +76,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Chimney_Transition
 	/Game/Building/ActorBlueprints/Prop/HousePile_06
 	/Game/Building/ActorBlueprints/Prop/Outdoor_Grill
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Picnic_Table
 	/Game/Building/ActorBlueprints/Prop/Prop_Rocks_09
 	/Game/Building/ActorBlueprints/Prop/Prop_TirePile_04
@@ -229,6 +230,7 @@ Name table:
 	bEnableAutoLODGeneration
 	bEnableDensityScaling
 	bEnableNavigationSystem
+	bGenerateOverlapEvents
 	bHasPerInstanceHitProxies
 	BlueprintCreatedComponents
 	BlueprintGeneratedClass
@@ -395,6 +397,7 @@ Name table:
 	Default__Model
 	Default__NavigationSystemModuleConfig
 	Default__Outdoor_Grill_C
+	Default__Parent_Tree_C
 	Default__Picnic_Table_C
 	Default__Prop_QuestInteractable_DancingFish1_C
 	Default__Prop_Rocks_09_C
@@ -522,6 +525,8 @@ Name table:
 	LCD_Suitcases_03
 	LCD_ToolBox_02
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -597,6 +602,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -624,6 +630,7 @@ Name table:
 	OverrideMaterials
 	Package
 	Parent
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_1007__38D6C920
@@ -702,6 +709,7 @@ Name table:
 	SoftClassPath
 	SortedInstances
 	Spawn_Location
+	SphereComponent
 	SphereRadius
 	SpotLight
 	SpotLight_GEN_VARIABLE
@@ -1429,14 +1437,16 @@ Serialized exports:
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Athena_TheFarmstead_5x9_House_a_C_1 (0-0-0-0): size 12 (cls: Athena_TheFarmstead_5x9_House_a_C_1>Athena_TheFarmstead_5x9_House_a_C)
-	Athena_Tree_Medium_01_ (0-0-0-0): size 238 (cls: Athena_Tree_Medium_01_>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+	Athena_Tree_Medium_01_ (0-0-0-0): size 308 (cls: Athena_Tree_Medium_01_>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_TheFarmstead_5x9_House_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
 			MyGuid(StructProperty)=Guid: 3757084016-1109983897-3786278812-3937815086 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
 			Tags(ArrayProperty)=ZRotate_Tree_Medium_04 (inner: NameProperty)
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Water_Loop (0-0-0-0): size 108 (cls: Water_Loop>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=Effect=Athena_TheFarmstead_5x9_House_a 
@@ -2071,7 +2081,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=621 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-4438.578,-342.2491,-1.163319)) Max(Vector(346.9541,2394.643,28.88189)),58369) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-4438.578,-342.2491,-1.163319)) Max(Vector(346.9541,2394.643,28.88189)),58625) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=621 
@@ -3269,6 +3279,20 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
@@ -4291,10 +4315,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 204 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 230 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=9628.729 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			CanCharacterStepUpOn(ByteProperty)=ECB_Yes 
 			RelativeLocation(StructProperty)=Vector(-2997,1653,4) 
 	StaticMeshComponent0 (0-0-0-0): size 188 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
@@ -5560,13 +5585,15 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=16635.13 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
-	Tree_Forest_Bush_3 (0-0-0-0): size 193 (cls: Tree_Forest_Bush_3>Tree_Forest_Bush_C>/Game/Building/ActorBlueprints/Prop/Tree_Forest_Bush):
+	Tree_Forest_Bush_3 (0-0-0-0): size 263 (cls: Tree_Forest_Bush_3>Tree_Forest_Bush_C>/Game/Building/ActorBlueprints/Prop/Tree_Forest_Bush):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_TheFarmstead_5x9_House_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
 			MyGuid(StructProperty)=Guid: 1215598818-1107359419-2185988256-2881181480 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_TheFarmstead_5x9_House_a 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Rural_House_Wall_23 (0-0-0-0): size 280 (cls: Rural_House_Wall_23>WoodHouse_Archway_NoTrim_C>/Game/Building/ActorBlueprints/Wall/WoodHouse_Archway_NoTrim):
 		Tag array:
 			TextureData(ObjectProperty)=House_Interior_02_Tan=/Game/Building/TextureData/WallInner/House_Interior_02_Tan 

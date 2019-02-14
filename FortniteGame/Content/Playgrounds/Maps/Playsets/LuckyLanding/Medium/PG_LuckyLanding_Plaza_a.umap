@@ -19,6 +19,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Lantern_String
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Sign07_Balloon
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Wooden_Trashcan
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Planter_Rectangle
 	/Game/Building/ActorBlueprints/Prop/Planter_Round
 	/Game/Building/ActorBlueprints/Prop/Prop_WildWest_SimpleChair_02
@@ -184,6 +185,7 @@ Name table:
 	Default__LevelBounds
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__PG_LuckyLanding_Plaza_a_C
 	Default__Planter_Rectangle_C
 	Default__Planter_Round_C
@@ -221,6 +223,8 @@ Name table:
 	InstancingRandomSeed
 	IntProperty
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Level
 	LevelBounds
 	LevelBuildDataId
@@ -236,6 +240,9 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MinCullDistance
 	MinCullObjectSize
 	Mobility
@@ -246,6 +253,8 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NoCollision
+	NODE_AddParticleSystemComponent-1
+	NODE_AddStaticMeshComponent-0
 	None
 	Object
 	ObjectProperty
@@ -253,7 +262,9 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	PG_LuckyLanding_Plaza_a
 	PG_LuckyLanding_Plaza_a_C
@@ -274,6 +285,7 @@ Name table:
 	PointLight
 	PointLight_GEN_VARIABLE
 	PointLightComponent
+	PrimitiveComponent
 	Prop_WildWest_SimpleChair_02
 	Prop_WildWest_SimpleChair_02_C
 	Recreation_ParkBench
@@ -297,8 +309,10 @@ Name table:
 	S_Sidewalk_InsideCorner3
 	S_Sidewalk_InsideCorner4
 	SceneComponent
+	SimpleMemberReference
 	SoftClassPath
 	SoftObjectProperty
+	SphereComponent
 	StaticMesh
 	StaticMeshComponent
 	StaticMeshComponent0
@@ -307,6 +321,7 @@ Name table:
 	TrashPile
 	TrashPile_01
 	TrashPile_01_C
+	UCSModifiedProperties
 	Vector
 	Visibility
 	VolumetricScatteringIntensity
@@ -431,13 +446,15 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=7177.147 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
-	Athena_Tree_Large_1 (0-0-0-0): size 193 (cls: Athena_Tree_Large_1>Athena_Tree_Large_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_3):
+	Athena_Tree_Large_1 (0-0-0-0): size 263 (cls: Athena_Tree_Large_1>Athena_Tree_Large_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_LuckyLanding_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
 			MyGuid(StructProperty)=Guid: 3899841064-1173246196-4265235637-1039003459 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=40000 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Boardwalk_QuarterWallS2 (0-0-0-0): size 193 (cls: Boardwalk_QuarterWallS2>Boardwalk_QuarterWallS_C>/Game/Building/ActorBlueprints/Wall/Boardwalk_QuarterWallS):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
@@ -508,34 +525,42 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=5222.478 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
-	ChinaTown_Bamboo_Tree5 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree5>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+	ChinaTown_Bamboo_Tree5 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree5>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_LuckyLanding_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
 			MyGuid(StructProperty)=Guid: 124721043-1324058332-1787418046-3080284970 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=25963.45 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
-	ChinaTown_Bamboo_Tree6 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree6>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	ChinaTown_Bamboo_Tree6 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree6>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_LuckyLanding_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
 			MyGuid(StructProperty)=Guid: 764877307-1110338179-354058404-2818217382 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=25963.45 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
-	ChinaTown_Bamboo_Tree7 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree7>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	ChinaTown_Bamboo_Tree7 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree7>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_LuckyLanding_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
 			MyGuid(StructProperty)=Guid: 2927569313-1225635118-2139628678-678374355 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=25963.45 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
-	ChinaTown_Bamboo_Tree8 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree8>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	ChinaTown_Bamboo_Tree8 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree8>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_LuckyLanding_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
 			MyGuid(StructProperty)=Guid: 3392146803-1183235303-1055790769-374426868 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=25963.45 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Chinatown_Frame_02_6 (0-0-0-0): size 193 (cls: Chinatown_Frame_02_6>Chinatown_Frame_02_C>/Game/Building/ActorBlueprints/Chinatown/Sets/Shrines/Chinatown_Frame_02):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
@@ -1279,6 +1304,46 @@ Serialized exports:
 	RootComponent0 (0-0-0-0): size 73 (cls: RootComponent0>SceneComponent>/Script/Engine):
 		Tag array:
 			RelativeRotation(StructProperty)=Rotator(0,-3.756603E-05,0) 
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=40000 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=25963.45 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=25963.45 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=25963.45 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=25963.45 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_LuckyLanding_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)

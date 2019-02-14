@@ -1,4 +1,5 @@
 Name table:
+	/Game/UI/Fort_HUD/DailySummary/TextShadow
 	/Game/UI/Foundation/Buttons/IconTabButton
 	/Game/UI/Foundation/Fonts/BurbankSmall
 	/Game/UI/Foundation/Fonts/NotoSans
@@ -13,7 +14,7 @@ Name table:
 	/Game/UI/Frontend/HeroLoadout/HeroLoadoutStatsOverview
 	/Game/UI/Frontend/HeroLoadout/Picker/HeroLoadoutHeroPicker
 	/Game/UI/Frontend/HeroLoadout/Picker/HeroLoadoutHeroPicker.WidgetArchetype
-	/Game/UI/Frontend/HeroLoadout/Picker/HeroLoadoutHeroPickerTileButton
+	/Game/UI/Frontend/HeroLoadout/Picker/HeroLoadoutHeroPickerListEntryButton
 	/Game/UI/Icons/Classes/Icon-Commando/Icon-Class-Commando-M
 	/Game/UI/Icons/Classes/Icon-Constructor/Icon-Class-Constructor-M
 	/Game/UI/Icons/Classes/Icon-Ninja/Icon-Class-Ninja-M
@@ -57,7 +58,9 @@ Name table:
 	BlueprintGeneratedClass
 	BlueprintMapLibrary
 	bManualEaseIn
-	BndEvt__PickerTileView_K2Node_ComponentBoundEvent_0_OnListEntryGeneratedDynamic__DelegateSignature
+	BndEvt__Cancel_Button_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature
+	BndEvt__ItemListViewWidget_K2Node_ComponentBoundEvent_3_OnListEntryGeneratedDynamic__DelegateSignature
+	BndEvt__Select_Button_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 	BooleanAND
 	BooleanOR
 	BoolProperty
@@ -76,6 +79,7 @@ Name table:
 	BP_OnEntryGenerated
 	Brush
 	BurbankSmall
+	Button
 	bValidTemplate
 	ByteProperty
 	CallFunc_BooleanAND_ReturnValue
@@ -91,12 +95,16 @@ Name table:
 	CallFunc_Not_PreBool_ReturnValue
 	CallFunc_PlayAnimation_ReturnValue
 	CallFunc_TextToUpper_ReturnValue
+	CallFunc_TryCommitSelectedItem_ReturnValue
+	Cancel_Button
 	ChildTemplates
 	Class
+	ColorAndOpacity
 	ColorUseRule
 	commanderslot
 	Commando
 	CommonBorder
+	CommonButton
 	CommonTabListWidget
 	CommonTextBlock
 	CommonWidgetSwitcher
@@ -118,10 +126,10 @@ Name table:
 	Default__ComponentDelegateBinding
 	Default__EnumProperty
 	Default__FortHeroLoadoutHeroPicker
-	Default__FortItemTileView
+	Default__FortItemListView
 	Default__Function
 	Default__HeroLoadoutHeroPicker_C
-	Default__HeroLoadoutHeroPickerTileButton_C
+	Default__HeroLoadoutHeroPickerListEntryButton_C
 	Default__HeroLoadoutPerkDetailRow_C
 	Default__HeroLoadoutStatsOverview_C
 	Default__HorizontalBox
@@ -172,18 +180,16 @@ Name table:
 	EFortHeroLoadoutPerkType
 	EFortHeroLoadoutPerkType::Leader
 	EHorizontalAlignment
-	EItemTileViewDisplayType
-	EItemTileViewDisplayType::Account
+	EItemListViewDisplayType
+	EItemListViewDisplayType::Account
 	EMovieSceneBlendType
 	EMovieSceneBlendType::Absolute
 	EMovieSceneCompletionMode
 	EMovieSceneCompletionMode::KeepState
 	Engine
-	EntryHeight
 	EntryPoint
 	EntrySpacing
 	EntryWidgetClass
-	EntryWidth
 	Enum
 	EnumProperty
 	EqualEqual_NameName
@@ -208,6 +214,7 @@ Name table:
 	ESlateSizeRule::Fill
 	ESlateVisibility
 	ESlateVisibility::Collapsed
+	ESlateVisibility::Hidden
 	ESlateVisibility::SelfHitTestInvisible
 	ESlateVisibility::Visible
 	ETextJustify
@@ -232,7 +239,8 @@ Name table:
 	FortCampaignHeroLoadoutItem
 	FortHero
 	FortHeroLoadoutHeroPicker
-	FortItemTileView
+	FortItemListView
+	FortItemPickerBase
 	FortTabButtonLabelInfo
 	FrameNumber
 	FrameRate
@@ -250,7 +258,7 @@ Name table:
 	HandleFilterTabSelectedBP
 	HeightOverride
 	HeroLoadoutHeroPicker_C
-	HeroLoadoutHeroPickerTileButton_C
+	HeroLoadoutHeroPickerListEntryButton_C
 	HeroLoadoutPerkDetailRow
 	HeroLoadoutPerkDetailRow_C
 	HeroLoadoutStatsOverview_C
@@ -279,9 +287,12 @@ Name table:
 	Intro_PickerParts_2_INST
 	Intro_PickerParts_INST
 	IsValid
+	ItemListViewWidget
 	Justification
+	K2Node_ComponentBoundEvent_Button
+	K2Node_ComponentBoundEvent_Button1
 	K2Node_ComponentBoundEvent_Widget
-	K2Node_DynamicCast_AsHero_Loadout_Hero_Picker_Tile_Button
+	K2Node_DynamicCast_AsHero_Loadout_Hero_Picker_List_Entry_Button
 	K2Node_DynamicCast_bSuccess
 	K2Node_Event_TabId
 	K2Node_Select_Default
@@ -356,8 +367,10 @@ Name table:
 	ObjectBindings
 	ObjectGuid
 	ObjectProperty
+	OnButtonClicked
 	Outlander
 	Overlay
+	OverlayLockPerk
 	OverlaySlot
 	Package
 	Padding
@@ -367,7 +380,6 @@ Name table:
 	PerkIconSizeBox
 	PickerLoadoutStatsOverview
 	PickerParts_Intro
-	PickerTileView
 	PlayAnimation
 	PlaybackRange
 	PointerToUberGraphFrame
@@ -405,12 +417,14 @@ Name table:
 	SegmentIdentifierToIndex
 	SegmentPtrLUT
 	Segments
+	Select_Button
 	SequenceID
 	SequenceSignature
 	SetHero
 	SetTabVisibility
 	SetTargetLoadoutSlot
 	SetVisibility
+	Shadow
 	ShadowOffset
 	Shear
 	Signature
@@ -458,6 +472,7 @@ Name table:
 	TemplateSerialNumber
 	Text
 	TextProperty
+	TextShadow
 	TextStyle-Base-XS-B_C
 	TextStyle-BurbankSmall-XS-Cyan_C
 	TextStyleSet
@@ -473,6 +488,7 @@ Name table:
 	TrackSignatureToTrackIdentifier
 	TrackTemplate
 	Translation
+	TryCommitSelectedItem
 	TypefaceFontName
 	UberGraphFrame
 	UberGraphFunction
@@ -503,12 +519,13 @@ Name table:
 	WidgetBlueprintGeneratedClass
 	WidgetName
 	WidgetSwitcherSlot
+	WidgetTransform
 	WidgetTree
 	WidthOverride
 	WorldIcon_Heart
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	HeroLoadoutHeroPicker_C (0-0-0-0): size 451 (cls: HeroLoadoutHeroPicker_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	HeroLoadoutHeroPicker_C (0-0-0-0): size 483 (cls: HeroLoadoutHeroPicker_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -527,17 +544,22 @@ Serialized exports:
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	Intro_PickerParts_2 (0-0-0-0): size 36 (cls: Intro_PickerParts_2>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_HeroLoadoutHeroPicker (0-0-0-0): size 502 (cls: ExecuteUbergraph_HeroLoadoutHeroPicker>Function>/Script/CoreUObject)
+	ExecuteUbergraph_HeroLoadoutHeroPicker (0-0-0-0): size 531 (cls: ExecuteUbergraph_HeroLoadoutHeroPicker>Function>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_NameName_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_NameName_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_TryCommitSelectedItem_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_TryCommitSelectedItem_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
+	Widget (0-0-0-0): size 36 (cls: Widget>ObjectProperty>/Script/CoreUObject)
+	BndEvt__ItemListViewWidget_K2Node_ComponentBoundEvent_3_OnListEntryGeneratedDynamic__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__ItemListViewWidget_K2Node_ComponentBoundEvent_3_OnListEntryGeneratedDynamic__DelegateSignature>Function>/Script/CoreUObject)
+	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
+	BndEvt__Cancel_Button_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__Cancel_Button_K2Node_ComponentBoundEvent_2_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
+	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
+	BndEvt__Select_Button_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__Select_Button_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
 	TabId (0-0-0-0): size 32 (cls: TabId>NameProperty>/Script/CoreUObject)
 	HandleFilterTabSelectedBP (0-0-0-0): size 68 (cls: HandleFilterTabSelectedBP>Function>/Script/CoreUObject)
-	Widget (0-0-0-0): size 36 (cls: Widget>ObjectProperty>/Script/CoreUObject)
-	BndEvt__PickerTileView_K2Node_ComponentBoundEvent_0_OnListEntryGeneratedDynamic__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__PickerTileView_K2Node_ComponentBoundEvent_0_OnListEntryGeneratedDynamic__DelegateSignature>Function>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	UpdatePickerInformation (0-0-0-0): size 358 (cls: UpdatePickerInformation>Function>/Script/CoreUObject)
 	CallFunc_PlayAnimation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -608,7 +630,7 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_5=WidgetArchetype 
-	ComponentDelegateBinding_0 (0-0-0-0): size 205 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
+	ComponentDelegateBinding_0 (0-0-0-0): size 419 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
 		Tag array:
 			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
@@ -617,22 +639,20 @@ Serialized exports:
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
-	PickerTileView (0-0-0-0): size 198 (cls: PickerTileView>FortItemTileView>/Script/FortniteUI):
+	ItemListViewWidget (0-0-0-0): size 140 (cls: ItemListViewWidget>FortItemListView>/Script/FortniteUI):
 		Tag array:
-			DisplayType(EnumProperty)=EItemTileViewDisplayType::Account 
-			EntryHeight(FloatProperty)=142 
-			EntryWidth(FloatProperty)=88 
-			EntrySpacing(FloatProperty)=8 
-			EntryWidgetClass(ObjectProperty)=HeroLoadoutHeroPickerTileButton_C=/Game/UI/Frontend/HeroLoadout/Picker/HeroLoadoutHeroPickerTileButton 
+			DisplayType(EnumProperty)=EItemListViewDisplayType::Account 
+			EntrySpacing(FloatProperty)=4 
+			EntryWidgetClass(ObjectProperty)=HeroLoadoutHeroPickerListEntryButton_C=/Game/UI/Frontend/HeroLoadout/Picker/HeroLoadoutHeroPickerListEntryButton 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	WidgetArchetype (0-0-0-0): size 154 (cls: WidgetArchetype>HeroLoadoutHeroPicker_C):
 		Tag array:
 			Border_Matching(ObjectProperty)=Border_Matching=WidgetArchetype 
 			HeroLoadoutPerkDetailRow(ObjectProperty)=HeroLoadoutPerkDetailRow=WidgetArchetype 
-			PickerTileView(ObjectProperty)=PickerTileView=WidgetArchetype 
+			ItemListViewWidget(ObjectProperty)=ItemListViewWidget=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
-	HeroLoadoutPerkDetailRow (0-0-0-0): size 514 (cls: HeroLoadoutPerkDetailRow>HeroLoadoutPerkDetailRow_C>/Game/UI/Foundation/Items/Details/HeroLoadoutPerkDetailRow):
+	HeroLoadoutPerkDetailRow (0-0-0-0): size 572 (cls: HeroLoadoutPerkDetailRow>HeroLoadoutPerkDetailRow_C>/Game/UI/Foundation/Items/Details/HeroLoadoutPerkDetailRow):
 		Tag array:
 			Border_PerkIcon(ObjectProperty)=Border_PerkIcon=WidgetArchetype 
 			ImageLockPerk(ObjectProperty)=ImageLockPerk=WidgetArchetype 
@@ -642,8 +662,10 @@ Serialized exports:
 			LargeInfo(ObjectProperty)=LargeInfo=WidgetArchetype 
 			LargeName(ObjectProperty)=LargeName=WidgetArchetype 
 			LevelTextNew(ObjectProperty)=LevelTextNew=WidgetArchetype 
+			OverlayLockPerk(ObjectProperty)=OverlayLockPerk=WidgetArchetype 
 			PerkIconSizeBox(ObjectProperty)=PerkIconSizeBox=WidgetArchetype 
 			RichText_SmallDescription(ObjectProperty)=RichText_SmallDescription=WidgetArchetype 
+			Shadow(ObjectProperty)=Shadow=WidgetArchetype 
 			SmallInfo(ObjectProperty)=SmallInfo=WidgetArchetype 
 			SmallName(ObjectProperty)=SmallName=WidgetArchetype 
 			UnlockedDisplayNameTextStyle(ObjectProperty)=TextStyle-BurbankSmall-XS-Cyan_C=/Game/UI/Foundation/Text/TextStyle-BurbankSmall-XS-Cyan 
@@ -676,11 +698,11 @@ Serialized exports:
 			Size(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=InfoSwitcher=WidgetArchetype 
-	ImageLockPerk (0-0-0-0): size 156 (cls: ImageLockPerk>Image>/Script/UMG):
+	ImageLockPerk (0-0-0-0): size 225 (cls: ImageLockPerk>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
-			RenderOpacity(FloatProperty)=0 
+			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+			Visibility(EnumProperty)=ESlateVisibility::Hidden 
 	ImagePerkIcon (0-0-0-0): size 184 (cls: ImagePerkIcon>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -689,6 +711,13 @@ Serialized exports:
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
+	Shadow (0-0-0-0): size 347 (cls: Shadow>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
+			RenderTransform(StructProperty)=System.Byte[] 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	Intro_PickerParts_2 (0-0-0-0): size 4996 (cls: Intro_PickerParts_2>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
@@ -1260,8 +1289,10 @@ Serialized exports:
 	Border_Matching (0-0-0-0): size 36 (cls: Border_Matching>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetLeaderHero_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLeaderHero_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetLeaderHero_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetLeaderHero_ReturnValue1>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_Button (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_Button1 (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button1>ObjectProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_Widget (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Widget>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsHero_Loadout_Hero_Picker_Tile_Button (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsHero_Loadout_Hero_Picker_Tile_Button>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsHero_Loadout_Hero_Picker_List_Entry_Button (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsHero_Loadout_Hero_Picker_List_Entry_Button>ObjectProperty>/Script/CoreUObject)
 	HeroLoadoutPerkDetailRow (0-0-0-0): size 36 (cls: HeroLoadoutPerkDetailRow>ObjectProperty>/Script/CoreUObject)
 	Intro_PickerParts (0-0-0-0): size 36 (cls: Intro_PickerParts>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetLeaderHero_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLeaderHero_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -1273,6 +1304,11 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
+	OverlayLockPerk (0-0-0-0): size 112 (cls: OverlayLockPerk>Overlay>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
 	Overlay_1 (0-0-0-0): size 82 (cls: Overlay_1>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1283,12 +1319,10 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
 			Content(ObjectProperty)=PerkIconSizeBox=WidgetArchetype 
-	OverlaySlot_5 (0-0-0-0): size 152 (cls: OverlaySlot_5>OverlaySlot>/Script/UMG):
+	OverlaySlot_5 (0-0-0-0): size 70 (cls: OverlaySlot_5>OverlaySlot>/Script/UMG):
 		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
-			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
-			Content(ObjectProperty)=ImageLockPerk=WidgetArchetype 
+			Content(ObjectProperty)=SizeBox_1=WidgetArchetype 
 	OverlaySlot_0 (0-0-0-0): size 111 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
@@ -1299,6 +1333,18 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			Parent(ObjectProperty)=Overlay_5=WidgetArchetype 
 			Content(ObjectProperty)=LevelTextNew=WidgetArchetype 
+	OverlaySlot_0 (0-0-0-0): size 152 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=OverlayLockPerk=WidgetArchetype 
+			Content(ObjectProperty)=ImageLockPerk=WidgetArchetype 
+	OverlaySlot_2 (0-0-0-0): size 152 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Fill 
+			VerticalAlignment(ByteProperty)=VAlign_Fill 
+			Parent(ObjectProperty)=OverlayLockPerk=WidgetArchetype 
+			Content(ObjectProperty)=Shadow=WidgetArchetype 
 	OverlaySlot_1 (0-0-0-0): size 152 (cls: OverlaySlot_1>OverlaySlot>/Script/UMG):
 		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
@@ -1337,6 +1383,14 @@ Serialized exports:
 			bOverride_MinDesiredHeight(BoolProperty)=True 
 			MinDesiredHeight(FloatProperty)=56 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+	SizeBox_1 (0-0-0-0): size 192 (cls: SizeBox_1>SizeBox>/Script/UMG):
+		Tag array:
+			bOverride_WidthOverride(BoolProperty)=True 
+			bOverride_HeightOverride(BoolProperty)=True 
+			WidthOverride(FloatProperty)=24 
+			HeightOverride(FloatProperty)=24 
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
 	SizeBoxTileView (0-0-0-0): size 82 (cls: SizeBoxTileView>SizeBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1363,8 +1417,12 @@ Serialized exports:
 			Content(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
+			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
+			Content(ObjectProperty)=OverlayLockPerk=WidgetArchetype 
+	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
+		Tag array:
 			Parent(ObjectProperty)=SizeBoxTileView=WidgetArchetype 
-			Content(ObjectProperty)=PickerTileView=WidgetArchetype 
+			Content(ObjectProperty)=ItemListViewWidget=WidgetArchetype 
 	CallFunc_Map_Find_Value (0-0-0-0): size 36 (cls: CallFunc_Map_Find_Value>StructProperty>/Script/CoreUObject)
 	CallFunc_TextToUpper_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_TextToUpper_ReturnValue>TextProperty>/Script/CoreUObject)
 	ReturnValue (0-0-0-0): size 32 (cls: ReturnValue>TextProperty>/Script/CoreUObject)

@@ -19,6 +19,7 @@ Name table:
 	bAllowTemplate
 	bClassRequiresNativeTick
 	bCookedWidgetTree
+	bFlipForRightToLeftFlowDirection
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
 	bIsVariable
@@ -73,7 +74,10 @@ Name table:
 	Default__WidgetTree
 	Divider
 	DrawAs
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortQuestState
+	EHorizontalAlignment
 	Engine
 	EntryPoint
 	Enum
@@ -87,6 +91,7 @@ Name table:
 	EVerticalAlignment
 	ExecuteUbergraph_JournalQuestRewardDetails
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	FortJournalQuestDetails
@@ -98,7 +103,9 @@ Name table:
 	GetQuestDefinitionBP
 	GetQuestState
 	GetRewardInfo_BP
+	HAlign_Left
 	HandleCurrentQuestChangedBP
+	HorizontalAlignment
 	HorizontalBox
 	HorizontalBoxSlot
 	ImageSize
@@ -209,9 +216,10 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_1=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_7=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+	BorderSlot_0 (0-0-0-0): size 284 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=CommonBorder_2=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_2=WidgetArchetype 
 	BorderSlot_1 (0-0-0-0): size 243 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
@@ -240,11 +248,13 @@ Serialized exports:
 			BrushColor(StructProperty)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	CommonBorder_2 (0-0-0-0): size 349 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
+	CommonBorder_2 (0-0-0-0): size 416 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_DkBlue 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	Divider (0-0-0-0): size 349 (cls: Divider>CommonBorder>/Script/CommonUI):
@@ -267,12 +277,15 @@ Serialized exports:
 	CallFunc_GetRewardInfo_BP_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetRewardInfo_BP_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetQuestDefinitionBP_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetQuestDefinitionBP_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	UpdatePanelInfo (0-0-0-0): size 142 (cls: UpdatePanelInfo>Function>/Script/CoreUObject)
-	HorizontalBox_2 (0-0-0-0): size 82 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
+	HorizontalBox_2 (0-0-0-0): size 123 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_10=WidgetArchetype 
-	HorizontalBoxSlot_1 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBoxSlot_1 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
+			Size(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=CommonBorder_2=WidgetArchetype 
 	WidgetArchetype (0-0-0-0): size 154 (cls: WidgetArchetype>JournalQuestRewardDetails_C):

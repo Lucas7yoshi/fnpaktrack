@@ -19,9 +19,11 @@ Name table:
 	AttributeSource
 	AttributeToCapture
 	BackingAttribute
+	bExecutePeriodicEffectOnApplication
 	BlueprintGeneratedClass
 	BoolProperty
 	bSnapshot
+	bSuppressStackingCues
 	ByteProperty
 	CalculationClass
 	CalculationClassMagnitude
@@ -46,12 +48,19 @@ Name table:
 	Default__GE_Perk_H_Corrupted_Aura_Damage_C
 	Default__GET_DirectPhysicalDamage_C
 	DurationMagnitude
+	DurationPolicy
 	EAttributeBasedFloatCalculationType
 	EAttributeBasedFloatCalculationType::AttributeMagnitude
 	EGameplayEffectAttributeCaptureSource
 	EGameplayEffectAttributeCaptureSource::Source
+	EGameplayEffectDurationType
+	EGameplayEffectDurationType::HasDuration
 	EGameplayEffectMagnitudeCalculation
 	EGameplayEffectMagnitudeCalculation::AttributeBased
+	EGameplayEffectStackingPeriodPolicy
+	EGameplayEffectStackingPeriodPolicy::NeverReset
+	EGameplayEffectStackingType
+	EGameplayEffectStackingType::AggregateByTarget
 	EGameplayModEvaluationChannel
 	EGameplayModEvaluationChannel::Channel0
 	EGameplayModOp
@@ -89,6 +98,7 @@ Name table:
 	IgnoreTags
 	InheritableGameplayEffectTags
 	InheritedTagContainer
+	IntProperty
 	MagnitudeAttribute
 	MagnitudeCalculationType
 	MaxLevel
@@ -103,7 +113,9 @@ Name table:
 	OutgoingBaseDamage
 	Package
 	PassedInTags
+	Period
 	Perk.CorruptedAura.T01.Damage
+	Perk.CorruptedAura.T01.TickRate
 	Perk.CorruptedAura.T02.Damage
 	PostMultiplyAdditiveValue
 	PreMultiplyAdditiveValue
@@ -116,6 +128,9 @@ Name table:
 	SetByCallerMagnitude
 	SourceTagFilter
 	SourceTags
+	StackingType
+	StackLimitCount
+	StackPeriodResetPolicy
 	StrProperty
 	StructProperty
 	TagName
@@ -124,9 +139,16 @@ Name table:
 	Value
 Serialized exports:
 	GE_Perk_H_Corrupted_Aura_Damage_C (0-0-0-0): size 76 (cls: GE_Perk_H_Corrupted_Aura_Damage_C>BlueprintGeneratedClass>/Script/Engine)
-	Default__GE_Perk_H_Corrupted_Aura_Damage_C (0-0-0-0): size 7790 (cls: Default__GE_Perk_H_Corrupted_Aura_Damage_C>GE_Perk_H_Corrupted_Aura_Damage_C):
+	Default__GE_Perk_H_Corrupted_Aura_Damage_C (0-0-0-0): size 8318 (cls: Default__GE_Perk_H_Corrupted_Aura_Damage_C>GE_Perk_H_Corrupted_Aura_Damage_C):
 		Tag array:
+			DurationPolicy(EnumProperty)=EGameplayEffectDurationType::HasDuration 
 			DurationMagnitude(StructProperty)=System.Byte[] 
+			Period(StructProperty)=System.Byte[] 
+			bExecutePeriodicEffectOnApplication(BoolProperty)=False 
 			Executions(ArrayProperty)=[object] (inner: StructProperty)
+			bSuppressStackingCues(BoolProperty)=True 
 			GameplayCues(ArrayProperty)=[object] (inner: StructProperty)
 			InheritableGameplayEffectTags(StructProperty)=System.Byte[] 
+			StackingType(EnumProperty)=EGameplayEffectStackingType::AggregateByTarget 
+			StackLimitCount(IntProperty)=1 
+			StackPeriodResetPolicy(EnumProperty)=EGameplayEffectStackingPeriodPolicy::NeverReset 

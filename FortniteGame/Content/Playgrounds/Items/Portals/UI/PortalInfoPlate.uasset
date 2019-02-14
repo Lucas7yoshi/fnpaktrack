@@ -57,6 +57,7 @@ Name table:
 	Bottom
 	bReturnToCreativeHub
 	Brush
+	bShouldShowDescription
 	Burbank
 	Burbank-Black
 	BurbankSmall
@@ -72,6 +73,7 @@ Name table:
 	CallFunc_Greater_IntInt_ReturnValue
 	CallFunc_IsCreativeModeAccessLimited_ReturnValue
 	CallFunc_Len_ReturnValue
+	CallFunc_Less_FloatFloat_ReturnValue
 	CallFunc_Less_IntInt_ReturnValue
 	CallFunc_MakeLiteralText_ReturnValue
 	CallFunc_Not_PreBool_ReturnValue
@@ -95,6 +97,7 @@ Name table:
 	Default__CommonTextBlock
 	Default__DelegateProperty
 	Default__EnumProperty
+	Default__FloatProperty
 	Default__Function
 	Default__GameplayStatics
 	Default__HorizontalBox
@@ -128,8 +131,10 @@ Name table:
 	DelegateProperty
 	Denominator
 	Description
+	DescriptionDistanceLimit
 	DisplayLabel
 	DisplayRate
+	Distance
 	EaseIn
 	EaseInFunction
 	EaseOut
@@ -192,6 +197,7 @@ Name table:
 	Groups
 	Guid
 	HAlign_Center
+	HasDescription
 	HorizontalAlignment
 	HorizontalBox
 	HorizontalBoxSlot
@@ -218,6 +224,8 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate1
 	K2Node_CreateDelegate_OutputDelegate10
 	K2Node_CreateDelegate_OutputDelegate11
+	K2Node_CreateDelegate_OutputDelegate12
+	K2Node_CreateDelegate_OutputDelegate13
 	K2Node_CreateDelegate_OutputDelegate2
 	K2Node_CreateDelegate_OutputDelegate3
 	K2Node_CreateDelegate_OutputDelegate4
@@ -226,6 +234,9 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate7
 	K2Node_CreateDelegate_OutputDelegate8
 	K2Node_CreateDelegate_OutputDelegate9
+	K2Node_CustomEvent_Distance
+	K2Node_CustomEvent_Show
+	K2Node_CustomEvent_WasHidden
 	K2Node_DynamicCast_AsBGA_Island_Portal
 	K2Node_DynamicCast_bSuccess
 	K2Node_Event_InitObject
@@ -245,6 +256,7 @@ Name table:
 	LeaveTangentWeight
 	Left
 	Len
+	Less_FloatFloat
 	Less_IntInt
 	LimitedAccessText
 	LinearColor
@@ -307,6 +319,7 @@ Name table:
 	ObjectBindings
 	ObjectGuid
 	ObjectProperty
+	OnUpdateNameplateVis
 	OutlineColor
 	OutlineSettings
 	OutlineSize
@@ -375,6 +388,7 @@ Name table:
 	ShadowColorAndOpacity
 	ShadowOffset
 	Shear
+	Show
 	Signature
 	Size
 	SlateBrush
@@ -453,6 +467,9 @@ Name table:
 	UpdatePlayerName__DelegateSignature
 	UpdatePlayerPop
 	UpdatePlayerPop__DelegateSignature
+	UpdatePortalUIVis
+	UpdatePortalUIVis__DelegateSignature
+	UpdateVisBasedOnDistance
 	UserWidget
 	VAlign_Center
 	Value
@@ -462,6 +479,7 @@ Name table:
 	VerticalBox
 	VerticalBoxSlot
 	Visibility
+	WasHidden
 	WidgetAnimation
 	WidgetAnimationBinding
 	WidgetArchetype
@@ -475,7 +493,7 @@ Name table:
 	WrapTextAt
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	PortalInfoPlate_C (0-0-0-0): size 524 (cls: PortalInfoPlate_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	PortalInfoPlate_C (0-0-0-0): size 568 (cls: PortalInfoPlate_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -483,16 +501,19 @@ Serialized exports:
 			Animations(ArrayProperty)=[object] (inner: ObjectProperty)
 			TemplateAsset(SoftObjectProperty)=/Game/Playgrounds/Items/Portals/UI/PortalInfoPlate.WidgetArchetype 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_PortalInfoPlate=PortalInfoPlate_C 
-	Default__PortalInfoPlate_C (0-0-0-0): size 117 (cls: Default__PortalInfoPlate_C>PortalInfoPlate_C):
+	Default__PortalInfoPlate_C (0-0-0-0): size 146 (cls: Default__PortalInfoPlate_C>PortalInfoPlate_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
+			DescriptionDistanceLimit(FloatProperty)=1000 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	intro2 (0-0-0-0): size 36 (cls: intro2>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_PortalInfoPlate (0-0-0-0): size 1043 (cls: ExecuteUbergraph_PortalInfoPlate>Function>/Script/CoreUObject)
+	ExecuteUbergraph_PortalInfoPlate (0-0-0-0): size 1127 (cls: ExecuteUbergraph_PortalInfoPlate>Function>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>StructProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ArrayProperty>/Script/CoreUObject)
+	Show (0-0-0-0): size 34 (cls: Show>BoolProperty>/Script/CoreUObject)
+	OnUpdateNameplateVis (0-0-0-0): size 96 (cls: OnUpdateNameplateVis>Function>/Script/CoreUObject)
 	InitObject (0-0-0-0): size 36 (cls: InitObject>ObjectProperty>/Script/CoreUObject)
 	InitFromObject (0-0-0-0): size 68 (cls: InitFromObject>Function>/Script/CoreUObject)
 	PlayIntro (0-0-0-0): size 54 (cls: PlayIntro>Function>/Script/CoreUObject)
@@ -503,16 +524,22 @@ Serialized exports:
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>StructProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ArrayProperty>/Script/CoreUObject)
 	bIsCurated (0-0-0-0): size 34 (cls: bIsCurated>BoolProperty>/Script/CoreUObject)
+	bShouldShowDescription (0-0-0-0): size 34 (cls: bShouldShowDescription>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsCreativeModeAccessLimited_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsCreativeModeAccessLimited_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_Less_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_Show (0-0-0-0): size 34 (cls: K2Node_CustomEvent_Show>BoolProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_WasHidden (0-0-0-0): size 34 (cls: K2Node_CustomEvent_WasHidden>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
+	HasDescription (0-0-0-0): size 34 (cls: HasDescription>BoolProperty>/Script/CoreUObject)
 	IsLinkCode (0-0-0-0): size 34 (cls: IsLinkCode>BoolProperty>/Script/CoreUObject)
+	WasHidden (0-0-0-0): size 34 (cls: WasHidden>BoolProperty>/Script/CoreUObject)
 	NewIslandName (0-0-0-0): size 32 (cls: NewIslandName>TextProperty>/Script/CoreUObject)
 	SetIslandName (0-0-0-0): size 238 (cls: SetIslandName>Function>/Script/CoreUObject)
 	InPortal (0-0-0-0): size 36 (cls: InPortal>ObjectProperty>/Script/CoreUObject)
-	SetupPortalEventBinding (0-0-0-0): size 594 (cls: SetupPortalEventBinding>Function>/Script/CoreUObject)
+	SetupPortalEventBinding (0-0-0-0): size 682 (cls: SetupPortalEventBinding>Function>/Script/CoreUObject)
 	SetCuratedSwitcher (0-0-0-0): size 262 (cls: SetCuratedSwitcher>Function>/Script/CoreUObject)
 	bIsFeatured (0-0-0-0): size 34 (cls: bIsFeatured>BoolProperty>/Script/CoreUObject)
 	bIsLinkCode (0-0-0-0): size 34 (cls: bIsLinkCode>BoolProperty>/Script/CoreUObject)
@@ -521,7 +548,8 @@ Serialized exports:
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	Description (0-0-0-0): size 32 (cls: Description>TextProperty>/Script/CoreUObject)
-	SetDescription (0-0-0-0): size 223 (cls: SetDescription>Function>/Script/CoreUObject)
+	SetDescription (0-0-0-0): size 286 (cls: SetDescription>Function>/Script/CoreUObject)
+	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_TextIsEmpty_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_TextIsEmpty_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	CallFunc_TextIsEmpty_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_TextIsEmpty_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -536,12 +564,18 @@ Serialized exports:
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
 	Bind (0-0-0-0): size 34 (cls: Bind>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
+	UpdateVisBasedOnDistance (0-0-0-0): size 181 (cls: UpdateVisBasedOnDistance>Function>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Border_PlateDivider (0-0-0-0): size 369 (cls: Border_PlateDivider>Border>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 			RenderTransform(StructProperty)=System.Byte[] 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -656,6 +690,8 @@ Serialized exports:
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate10 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate10>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate11 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate11>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate12 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate12>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate13 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate13>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate2 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate2>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate3 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate3>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate4 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate4>DelegateProperty>/Script/CoreUObject)
@@ -685,6 +721,12 @@ Serialized exports:
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable2 (0-0-0-0): size 40 (cls: Temp_byte_Variable2>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable3 (0-0-0-0): size 40 (cls: Temp_byte_Variable3>EnumProperty>/Script/CoreUObject)
+	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
+	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
+	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
+	DescriptionDistanceLimit (0-0-0-0): size 32 (cls: DescriptionDistanceLimit>FloatProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_Distance (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Distance>FloatProperty>/Script/CoreUObject)
+	Distance (0-0-0-0): size 32 (cls: Distance>FloatProperty>/Script/CoreUObject)
 	PopulationBox (0-0-0-0): size 112 (cls: PopulationBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)

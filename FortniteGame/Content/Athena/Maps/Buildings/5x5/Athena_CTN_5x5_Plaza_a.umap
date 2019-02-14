@@ -24,6 +24,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Lantern_String
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Sign07_Balloon
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Wooden_Trashcan
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Planter_Rectangle
 	/Game/Building/ActorBlueprints/Prop/Planter_Round
 	/Game/Building/ActorBlueprints/Prop/Prop_WildWest_SimpleChair_02
@@ -209,6 +210,7 @@ Name table:
 	Default__LODActor
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Planter_Rectangle_C
 	Default__Planter_Round_C
 	Default__Prop_WildWest_SimpleChair_02_C
@@ -258,6 +260,8 @@ Name table:
 	IntProperty
 	Key
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -283,6 +287,9 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MinCullDistance
 	MinCullObjectSize
 	MinDrawDistance
@@ -305,6 +312,8 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NoCollision
+	NODE_AddParticleSystemComponent-1
+	NODE_AddStaticMeshComponent-0
 	NODE_AddStaticMeshComponent-1
 	None
 	NumBuiltInstances
@@ -315,7 +324,9 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	Plant_Flowerbed
 	Plant_Flowerbed_07
@@ -332,6 +343,7 @@ Name table:
 	PointLight
 	PointLight_GEN_VARIABLE
 	PointLightComponent
+	PrimitiveComponent
 	Prop_WildWest_SimpleChair_02
 	Prop_WildWest_SimpleChair_02_C
 	PropertySetObject
@@ -360,6 +372,7 @@ Name table:
 	S_Sidewalk_InsideCorner3
 	S_Sidewalk_InsideCorner4
 	SceneComponent
+	SimpleMemberReference
 	SM_Athena_CTN_5x5_Plaza_a_1_S_Sidewalk_InsideCorner
 	SM_Sidewalk_Rounded
 	SM_Sidewalk_Rounded_01
@@ -367,6 +380,7 @@ Name table:
 	SM_Sidewalk_Small_01x2
 	SoftClassPath
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	StaticMesh
 	StaticMeshComponent
@@ -391,6 +405,7 @@ Name table:
 	TrashPile_01_C
 	TrasureLight
 	TrasureLight_GEN_VARIABLE
+	UCSModifiedProperties
 	Vector
 	Visibility
 	VolumetricScatteringIntensity
@@ -515,13 +530,15 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=7177.147 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
-	Athena_Tree_Large_1 (0-0-0-0): size 193 (cls: Athena_Tree_Large_1>Athena_Tree_Large_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_3):
+	Athena_Tree_Large_1 (0-0-0-0): size 263 (cls: Athena_Tree_Large_1>Athena_Tree_Large_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
 			MyGuid(StructProperty)=Guid: 1274073303-1216934336-337573809-3117826357 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Chest_Ambient_Sound (0-0-0-0): size 108 (cls: Chest_Ambient_Sound>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
@@ -597,34 +614,42 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=5222.478 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
-	ChinaTown_Bamboo_Tree5 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree5>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+	ChinaTown_Bamboo_Tree5 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree5>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
 			MyGuid(StructProperty)=Guid: 1271326198-1173647118-779315098-2603270216 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
-	ChinaTown_Bamboo_Tree6 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree6>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	ChinaTown_Bamboo_Tree6 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree6>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
 			MyGuid(StructProperty)=Guid: 3965011549-1256600902-3711813781-3986008411 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
-	ChinaTown_Bamboo_Tree7 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree7>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	ChinaTown_Bamboo_Tree7 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree7>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
 			MyGuid(StructProperty)=Guid: 3127051644-1321385274-806031019-3607728052 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
-	ChinaTown_Bamboo_Tree8 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree8>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	ChinaTown_Bamboo_Tree8 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree8>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Plaza_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
 			MyGuid(StructProperty)=Guid: 3878968462-1118046044-4087242641-1359004524 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Chinatown_Frame_02_6 (0-0-0-0): size 193 (cls: Chinatown_Frame_02_6>Chinatown_Frame_02_C>/Game/Building/ActorBlueprints/Chinatown/Sets/Shrines/Chinatown_Frame_02):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
@@ -1085,7 +1110,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=17 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1295.639,775.9521,2.67283)) Max(Vector(-758.1644,1277.449,27.37237)),18689) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1295.639,775.9521,2.67283)) Max(Vector(-758.1644,1277.449,27.37237)),18945) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=17 
@@ -1480,6 +1505,41 @@ Serialized exports:
 	RootComponent0 (0-0-0-0): size 73 (cls: RootComponent0>SceneComponent>/Script/Engine):
 		Tag array:
 			RelativeRotation(StructProperty)=Rotator(0,-3.756603E-05,0) 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)

@@ -46,6 +46,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Deco/TrashPile_01
 	/Game/Building/ActorBlueprints/Prop/Chair_Cafeteria_01
 	/Game/Building/ActorBlueprints/Prop/Chair_Kitchen02
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Wall/BrickSimple_Chimney
 	/Game/Building/ActorBlueprints/Wall/BrickSimple_ChimneyTop
 	/Game/Building/ActorBlueprints/Wall/WoodHouse_Railing_Half
@@ -202,6 +203,7 @@ Name table:
 	Default__MaterialInstanceDynamic
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__PG_PleasantPark_M_House_g_GP_C
 	Default__Prop_Athena_Doorbell_Interactable_C
 	Default__SM_Wood01_InteriorPillarSingle_C
@@ -290,6 +292,8 @@ Name table:
 	LCD_TrashBag_01_C194
 	LCD_TrashCan_01_C89
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	Level
@@ -323,6 +327,8 @@ Name table:
 	NavigationSystemClass
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
+	NODE_AddParticleSystemComponent-1
+	NODE_AddStaticMeshComponent-0
 	None
 	Object
 	ObjectProperty
@@ -330,6 +336,7 @@ Name table:
 	OverrideMaterials
 	Package
 	Parent
+	Parent_Tree_C
 	ParticleSystemComponent
 	ParticleSystemComponent_1007__38D6C920
 	ParticleSystemComponent_1008__60B5D976
@@ -367,6 +374,7 @@ Name table:
 	SoftClassPath
 	SoftObjectProperty
 	Spawn_Location
+	SphereComponent
 	SpotLight
 	SpotLight_GEN_VARIABLE
 	SpotLightComponent
@@ -676,27 +684,33 @@ Serialized exports:
 			CullDistance(FloatProperty)=5937.039 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	Tree_08 (0-0-0-0): size 193 (cls: Tree_08>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+	Tree_08 (0-0-0-0): size 263 (cls: Tree_08>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_PleasantPark_M_House_g_GP 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
 			MyGuid(StructProperty)=Guid: 4085472877-1187937529-3479686041-2681954586 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=32058.54 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
-	Tree__2_C4 (0-0-0-0): size 193 (cls: Tree__2_C4>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree__2_C4 (0-0-0-0): size 263 (cls: Tree__2_C4>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_PleasantPark_M_House_g_GP 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
 			MyGuid(StructProperty)=Guid: 2425240960-1291474223-912062650-375024989 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=21289.86 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
-	Tree_Birch__2_C129 (0-0-0-0): size 193 (cls: Tree_Birch__2_C129>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Birch__2_C129 (0-0-0-0): size 263 (cls: Tree_Birch__2_C129>Athena_Tree_Pine_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_PleasantPark_M_House_g_GP 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
 			MyGuid(StructProperty)=Guid: 4171794464-1148977986-2643747757-761881120 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=35413.68 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Water_Loop (0-0-0-0): size 108 (cls: Water_Loop>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=Effect=PG_PleasantPark_M_House_g_GP 
@@ -922,6 +936,30 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=15993.84 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=32058.54 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=21289.86 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=35413.68 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_PleasantPark_M_House_g_GP 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SpotLight (0-0-0-0): size 260 (cls: SpotLight>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=11504.24 

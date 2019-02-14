@@ -13,7 +13,10 @@ Name table:
 	ArriveTangent
 	bAlwaysInWorldSpace
 	bCameraFacing
+	bEnabled
 	bEnableMotionBlur
+	bKillOnCompleted
+	bKillOnDeactivate
 	BoolProperty
 	bOverrideDefaultMotionBlurSettings
 	bOverrideMaterial
@@ -75,7 +78,6 @@ Name table:
 	EInterpCurveMode
 	EMeshCameraFacingOptions
 	EmissiveAmount
-	EmitterDelay
 	EmitterDuration
 	EmitterDynamicParameter
 	EmitterLoops
@@ -310,9 +312,10 @@ Serialized exports:
 			TypeDataModule(ObjectProperty)=ParticleModuleTypeDataRibbon_0=P_Melee_Pickaxe_Graffiti_Swing 
 			SpawnModule(ObjectProperty)=ParticleModuleSpawn_19=P_Melee_Pickaxe_Graffiti_Swing 
 			PeakActiveParticles(IntProperty)=523 
-	ParticleLODLevel_4 (0-0-0-0): size 234 (cls: ParticleLODLevel_4>ParticleLODLevel>/Script/Engine):
+	ParticleLODLevel_4 (0-0-0-0): size 260 (cls: ParticleLODLevel_4>ParticleLODLevel>/Script/Engine):
 		Tag array:
 			Level(IntProperty)=1 
+			bEnabled(BoolProperty)=False 
 			RequiredModule(ObjectProperty)=ParticleModuleRequired_14=P_Melee_Pickaxe_Graffiti_Swing 
 			Modules(ArrayProperty)=[object] (inner: ObjectProperty)
 			TypeDataModule(ObjectProperty)=ParticleModuleTypeDataRibbon_0=P_Melee_Pickaxe_Graffiti_Swing 
@@ -324,7 +327,7 @@ Serialized exports:
 			Modules(ArrayProperty)=[object] (inner: ObjectProperty)
 			TypeDataModule(ObjectProperty)=ParticleModuleTypeDataMesh_2=P_Melee_Pickaxe_Graffiti_Swing 
 			SpawnModule(ObjectProperty)=ParticleModuleSpawn_15=P_Melee_Pickaxe_Graffiti_Swing 
-			PeakActiveParticles(IntProperty)=3 
+			PeakActiveParticles(IntProperty)=5 
 	ParticleLODLevel_2 (0-0-0-0): size 238 (cls: ParticleLODLevel_2>ParticleLODLevel>/Script/Engine):
 		Tag array:
 			Level(IntProperty)=1 
@@ -339,7 +342,7 @@ Serialized exports:
 			Modules(ArrayProperty)=[object] (inner: ObjectProperty)
 			TypeDataModule(ObjectProperty)=ParticleModuleTypeDataMesh_3=P_Melee_Pickaxe_Graffiti_Swing 
 			SpawnModule(ObjectProperty)=ParticleModuleSpawn_18=P_Melee_Pickaxe_Graffiti_Swing 
-			PeakActiveParticles(IntProperty)=3 
+			PeakActiveParticles(IntProperty)=5 
 	ParticleLODLevel_2 (0-0-0-0): size 238 (cls: ParticleLODLevel_2>ParticleLODLevel>/Script/Engine):
 		Tag array:
 			Level(IntProperty)=1 
@@ -354,7 +357,7 @@ Serialized exports:
 			Modules(ArrayProperty)=[object] (inner: ObjectProperty)
 			TypeDataModule(ObjectProperty)=ParticleModuleTypeDataMesh_4=P_Melee_Pickaxe_Graffiti_Swing 
 			SpawnModule(ObjectProperty)=ParticleModuleSpawn_20=P_Melee_Pickaxe_Graffiti_Swing 
-			PeakActiveParticles(IntProperty)=3 
+			PeakActiveParticles(IntProperty)=5 
 	ParticleLODLevel_2 (0-0-0-0): size 238 (cls: ParticleLODLevel_2>ParticleLODLevel>/Script/Engine):
 		Tag array:
 			Level(IntProperty)=1 
@@ -432,10 +435,11 @@ Serialized exports:
 			ColorScaleOverLife(StructProperty)=System.Byte[] 
 			AlphaScaleOverLife(StructProperty)=System.Byte[] 
 			LODValidity(ByteProperty)=[object] 
-	ParticleModuleKillBox_0 (0-0-0-0): size 994 (cls: ParticleModuleKillBox_0>ParticleModuleKillBox>/Script/Engine):
+	ParticleModuleKillBox_0 (0-0-0-0): size 1020 (cls: ParticleModuleKillBox_0>ParticleModuleKillBox>/Script/Engine):
 		Tag array:
 			LowerLeftCorner(StructProperty)=System.Byte[] 
 			UpperRightCorner(StructProperty)=System.Byte[] 
+			bEnabled(BoolProperty)=False 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleLifetime_1 (0-0-0-0): size 428 (cls: ParticleModuleLifetime_1>ParticleModuleLifetime>/Script/Engine):
 		Tag array:
@@ -517,12 +521,13 @@ Serialized exports:
 			SubImages_Vertical(IntProperty)=2 
 			RandomImageTime(FloatProperty)=1 
 			LODValidity(ByteProperty)=[object] 
-	ParticleModuleRequired_14 (0-0-0-0): size 282 (cls: ParticleModuleRequired_14>ParticleModuleRequired>/Script/Engine):
+	ParticleModuleRequired_14 (0-0-0-0): size 305 (cls: ParticleModuleRequired_14>ParticleModuleRequired>/Script/Engine):
 		Tag array:
 			Material(ObjectProperty)=M_Smoke_Trail_Soft_FadeStart_Paint=/Game/Effects/Fort_Effects/Materials/Trails/M_Smoke_Trail_Soft_FadeStart_Paint 
+			bKillOnDeactivate(BoolProperty)=True 
+			bKillOnCompleted(BoolProperty)=True 
 			bUseLegacyEmitterTime(BoolProperty)=False 
 			EmitterDuration(FloatProperty)=0.35 
-			EmitterLoops(IntProperty)=1 
 			SpawnRate(StructProperty)=System.Byte[] 
 			RandomImageTime(FloatProperty)=1 
 			LODValidity(ByteProperty)=[object] 
@@ -539,7 +544,7 @@ Serialized exports:
 			SubImages_Vertical(IntProperty)=2 
 			RandomImageTime(FloatProperty)=1 
 			LODValidity(ByteProperty)=[object] 
-	ParticleModuleRequired_3 (0-0-0-0): size 451 (cls: ParticleModuleRequired_3>ParticleModuleRequired>/Script/Engine):
+	ParticleModuleRequired_3 (0-0-0-0): size 422 (cls: ParticleModuleRequired_3>ParticleModuleRequired>/Script/Engine):
 		Tag array:
 			Material(ObjectProperty)=M_Melee_Pickaxe_Graffiti_BigSplashes=/Game/Weapons/FORT_Melee/Pickaxe_Graffiti/Effects/M_Melee_Pickaxe_Graffiti_BigSplashes 
 			ScreenAlignment(ByteProperty)=PSA_Rectangle 
@@ -547,7 +552,6 @@ Serialized exports:
 			EmitterDuration(FloatProperty)=0.25 
 			EmitterLoops(IntProperty)=1 
 			SpawnRate(StructProperty)=System.Byte[] 
-			EmitterDelay(FloatProperty)=0.03 
 			InterpolationMethod(ByteProperty)=PSUVIM_Random 
 			SubImages_Horizontal(IntProperty)=4 
 			SubImages_Vertical(IntProperty)=2 
@@ -835,6 +839,6 @@ Serialized exports:
 			LODDistances(ArrayProperty)=0.000,2500.000 (inner: FloatProperty)
 			LODSettings(ArrayProperty)=[object] (inner: StructProperty)
 			bUseFixedRelativeBoundingBox(BoolProperty)=True 
-			FixedRelativeBoundingBox(StructProperty)=Box(Min(Vector(-500,-500,-500)) Max(Vector(500,500,500)),5121) 
+			FixedRelativeBoundingBox(StructProperty)=Box(Min(Vector(-500,-500,-500)) Max(Vector(500,500,500)),5889) 
 			bShouldResetPeakCounts(BoolProperty)=True 
-			CustomOcclusionBounds(StructProperty)=Box(Min(Vector(0,0,0)) Max(Vector(0,0,0)),30721) 
+			CustomOcclusionBounds(StructProperty)=Box(Min(Vector(0,0,0)) Max(Vector(0,0,0)),31233) 

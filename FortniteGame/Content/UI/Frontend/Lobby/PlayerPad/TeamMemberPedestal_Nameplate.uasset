@@ -3,6 +3,8 @@ Name table:
 	/Game/Athena/HUD/Art/mic-muted
 	/Game/Athena/HUD/Art/mic-notalk
 	/Game/Athena/UI/Matchmaking/MatchmakingInputIndicator
+	/Game/Sounds/Fort_UI_Sounds/FrontEnd/New_FrontEnd/Fortnite_UI_ReadyUp_01_Cue
+	/Game/Sounds/Fort_UI_Sounds/FrontEnd/New_FrontEnd/Fortnite_UI_UnReady_01_Cue
 	/Game/UI/Foundation/Banner/M-CrownShine
 	/Game/UI/Foundation/Fonts/Burbank
 	/Game/UI/Foundation/Fonts/NotoSans
@@ -121,7 +123,6 @@ Name table:
 	CallFunc_IsUsingGamepad_ReturnValue
 	CallFunc_Not_PreBool_ReturnValue
 	CallFunc_PlayAnimation_ReturnValue
-	CallFunc_PlayAnimation_ReturnValue1
 	ChildTemplates
 	Class
 	ColorAndOpacity
@@ -159,6 +160,7 @@ Name table:
 	Default__FortVisualAttachment
 	Default__FortVoiceChatStatusIcon
 	Default__Function
+	Default__GameplayStatics
 	Default__HomebaseRatingBar_C
 	Default__HorizontalBox
 	Default__HorizontalBoxSlot
@@ -206,8 +208,6 @@ Name table:
 	Easing
 	EEvaluationMethod
 	EEvaluationMethod::Static
-	EFortTeam
-	EFortTeam::MAX
 	EFrontEndCamera
 	EHorizontalAlignment
 	EMatchmakingInputSource
@@ -270,6 +270,8 @@ Name table:
 	FortHomeBaseInfo
 	FortMaterialProgressBarSectionInfo
 	FortMaterialProgressBarSectionStyle
+	Fortnite_UI_ReadyUp_01_Cue
+	Fortnite_UI_UnReady_01_Cue
 	FortPlayerBanner
 	FortTeamMemberEntryBase
 	FortTeamMemberInfo
@@ -280,6 +282,7 @@ Name table:
 	FrameRate
 	Function
 	FunctionName
+	GameplayStatics
 	GetContext
 	GreenCurve
 	Groups
@@ -323,10 +326,13 @@ Name table:
 	K2Node_CustomEvent_NewCamera
 	K2Node_CustomEvent_OldCamera
 	K2Node_Event_bIsReadyForMatchmaking
+	K2Node_Event_bIsReadyForMatchmaking1
 	K2Node_Event_UniqueId
+	K2Node_MakeStruct_SlateColor
 	K2Node_Select1_Default
 	K2Node_Select2_Default
 	K2Node_Select3_Default
+	K2Node_Select4_Default
 	K2Node_Select_Default
 	Key
 	KismetMathLibrary
@@ -403,6 +409,7 @@ Name table:
 	NotoSans
 	NotoSans-Bold
 	NotoSans-Regular
+	NotReadyColor
 	NotReadyTextColor
 	NotReadyTextColor_INST
 	Numerator
@@ -420,6 +427,7 @@ Name table:
 	OnCameraChangedDelegate__DelegateSignature
 	OnFrontendCameraChanged
 	OnFrontEndCameraChanged
+	OnPlayReadyAudio
 	OnReadyStatusChanged
 	OnTeamMemberEstablished
 	OutlineColor
@@ -439,6 +447,7 @@ Name table:
 	PlayerIndex
 	PlayerName
 	PlayerTracker_CampaignPower
+	PlaySound2D
 	PointerToUberGraphFrame
 	Possessables
 	PossessedObjectClass
@@ -460,6 +469,8 @@ Name table:
 	RCIM_Cubic
 	RCTM_Auto
 	RCTWM_WeightedNone
+	ReadyColor
+	ReadySound
 	ReadyTextColor
 	ReadyTextColor_INST
 	RedCurve
@@ -486,6 +497,7 @@ Name table:
 	SelectedGadgetItems
 	SequenceID
 	SequenceSignature
+	SetColorAndOpacity
 	SetVisibility
 	ShadowOffset
 	Shear
@@ -505,6 +517,8 @@ Name table:
 	SlotWidgetName
 	SoftObjectProperty
 	SortedSegments
+	SoundBase
+	SoundCue
 	SourceSection
 	SourceTrack
 	SpecifiedColor
@@ -528,6 +542,7 @@ Name table:
 	Temp_bool_Variable1
 	Temp_bool_Variable2
 	Temp_bool_Variable3
+	Temp_bool_Variable4
 	Temp_byte_Variable
 	Temp_byte_Variable1
 	Temp_byte_Variable2
@@ -540,6 +555,7 @@ Name table:
 	Text
 	Text_MemberName
 	Text_ReadyStatus
+	TextBlock
 	TextProperty
 	TextStyle-Base-XS-B-Red-Outline_C
 	TextStyle-Base_C
@@ -568,6 +584,7 @@ Name table:
 	UnderlyingType
 	UniqueId
 	UniqueNetIdRepl
+	UnReadySound
 	UseLargeStyle
 	UserWidget
 	UVRegion
@@ -595,7 +612,7 @@ Name table:
 	WidthOverride
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	TeamMemberPedestal_Nameplate_C (0-0-0-0): size 434 (cls: TeamMemberPedestal_Nameplate_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	TeamMemberPedestal_Nameplate_C (0-0-0-0): size 466 (cls: TeamMemberPedestal_Nameplate_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -604,13 +621,17 @@ Serialized exports:
 			Animations(ArrayProperty)=[object] (inner: ObjectProperty)
 			TemplateAsset(SoftObjectProperty)=/Game/UI/Frontend/Lobby/PlayerPad/TeamMemberPedestal_Nameplate.WidgetArchetype 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_TeamMemberPedestal_Nameplate=TeamMemberPedestal_Nameplate_C 
-	Default__TeamMemberPedestal_Nameplate_C (0-0-0-0): size 4164 (cls: Default__TeamMemberPedestal_Nameplate_C>TeamMemberPedestal_Nameplate_C):
+	Default__TeamMemberPedestal_Nameplate_C (0-0-0-0): size 4345 (cls: Default__TeamMemberPedestal_Nameplate_C>TeamMemberPedestal_Nameplate_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			TeamMemberInfo(StructProperty)=System.Byte[] 
 			TalkingBrush(StructProperty)=System.Byte[] 
 			MutedBrush(StructProperty)=System.Byte[] 
 			MicBrush(StructProperty)=System.Byte[] 
+			ReadyColor(StructProperty)=UE4.FLinearColor 
+			NotReadyColor(StructProperty)=UE4.FLinearColor 
+			UnReadySound(ObjectProperty)=Fortnite_UI_UnReady_01_Cue=/Game/Sounds/Fort_UI_Sounds/FrontEnd/New_FrontEnd/Fortnite_UI_UnReady_01_Cue 
+			ReadySound(ObjectProperty)=Fortnite_UI_ReadyUp_01_Cue=/Game/Sounds/Fort_UI_Sounds/FrontEnd/New_FrontEnd/Fortnite_UI_ReadyUp_01_Cue 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	BackgroundBlur_0 (0-0-0-0): size 111 (cls: BackgroundBlur_0>BackgroundBlur>/Script/UMG):
@@ -628,7 +649,7 @@ Serialized exports:
 	bIsTalking (0-0-0-0): size 34 (cls: bIsTalking>BoolProperty>/Script/CoreUObject)
 	NotReadyTextColor (0-0-0-0): size 36 (cls: NotReadyTextColor>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_TeamMemberPedestal_Nameplate (0-0-0-0): size 803 (cls: ExecuteUbergraph_TeamMemberPedestal_Nameplate>Function>/Script/CoreUObject)
+	ExecuteUbergraph_TeamMemberPedestal_Nameplate (0-0-0-0): size 934 (cls: ExecuteUbergraph_TeamMemberPedestal_Nameplate>Function>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_ByteByte_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -636,10 +657,14 @@ Serialized exports:
 	CallFunc_IsUsingGamepad_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsUsingGamepad_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bIsReadyForMatchmaking (0-0-0-0): size 34 (cls: K2Node_Event_bIsReadyForMatchmaking>BoolProperty>/Script/CoreUObject)
+	K2Node_Event_bIsReadyForMatchmaking1 (0-0-0-0): size 34 (cls: K2Node_Event_bIsReadyForMatchmaking1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_Variable2>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable3 (0-0-0-0): size 34 (cls: Temp_bool_Variable3>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable4 (0-0-0-0): size 34 (cls: Temp_bool_Variable4>BoolProperty>/Script/CoreUObject)
+	OnPlayReadyAudio (0-0-0-0): size 68 (cls: OnPlayReadyAudio>Function>/Script/CoreUObject)
+	bIsReadyForMatchmaking (0-0-0-0): size 34 (cls: bIsReadyForMatchmaking>BoolProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	NewCamera (0-0-0-0): size 40 (cls: NewCamera>EnumProperty>/Script/CoreUObject)
 	OnFrontendCameraChanged (0-0-0-0): size 82 (cls: OnFrontendCameraChanged>Function>/Script/CoreUObject)
@@ -752,7 +777,7 @@ Serialized exports:
 	K2Node_CustomEvent_OldCamera (0-0-0-0): size 40 (cls: K2Node_CustomEvent_OldCamera>EnumProperty>/Script/CoreUObject)
 	K2Node_Select1_Default (0-0-0-0): size 40 (cls: K2Node_Select1_Default>EnumProperty>/Script/CoreUObject)
 	K2Node_Select2_Default (0-0-0-0): size 40 (cls: K2Node_Select2_Default>EnumProperty>/Script/CoreUObject)
-	K2Node_Select3_Default (0-0-0-0): size 40 (cls: K2Node_Select3_Default>EnumProperty>/Script/CoreUObject)
+	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable2 (0-0-0-0): size 40 (cls: Temp_byte_Variable2>EnumProperty>/Script/CoreUObject)
@@ -1053,12 +1078,13 @@ Serialized exports:
 	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_PlayAnimation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	CallFunc_PlayAnimation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue1>ObjectProperty>/Script/CoreUObject)
-	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>ObjectProperty>/Script/CoreUObject)
+	K2Node_Select4_Default (0-0-0-0): size 36 (cls: K2Node_Select4_Default>ObjectProperty>/Script/CoreUObject)
 	InputActionWidget (0-0-0-0): size 36 (cls: InputActionWidget>ObjectProperty>/Script/CoreUObject)
 	On Ready Change Text (0-0-0-0): size 36 (cls: On Ready Change Text>ObjectProperty>/Script/CoreUObject)
+	ReadySound (0-0-0-0): size 36 (cls: ReadySound>ObjectProperty>/Script/CoreUObject)
 	ReadyTextColor (0-0-0-0): size 36 (cls: ReadyTextColor>ObjectProperty>/Script/CoreUObject)
 	SB_InputAction (0-0-0-0): size 36 (cls: SB_InputAction>ObjectProperty>/Script/CoreUObject)
+	UnReadySound (0-0-0-0): size 36 (cls: UnReadySound>ObjectProperty>/Script/CoreUObject)
 	Overlay_0 (0-0-0-0): size 94 (cls: Overlay_0>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1257,8 +1283,12 @@ Serialized exports:
 			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
 			Content(ObjectProperty)=InputIndicator_ActiveInputType=WidgetArchetype 
 	K2Node_Event_UniqueId (0-0-0-0): size 36 (cls: K2Node_Event_UniqueId>StructProperty>/Script/CoreUObject)
+	K2Node_MakeStruct_SlateColor (0-0-0-0): size 36 (cls: K2Node_MakeStruct_SlateColor>StructProperty>/Script/CoreUObject)
+	K2Node_Select3_Default (0-0-0-0): size 36 (cls: K2Node_Select3_Default>StructProperty>/Script/CoreUObject)
 	MicBrush (0-0-0-0): size 36 (cls: MicBrush>StructProperty>/Script/CoreUObject)
 	MutedBrush (0-0-0-0): size 36 (cls: MutedBrush>StructProperty>/Script/CoreUObject)
+	NotReadyColor (0-0-0-0): size 36 (cls: NotReadyColor>StructProperty>/Script/CoreUObject)
+	ReadyColor (0-0-0-0): size 36 (cls: ReadyColor>StructProperty>/Script/CoreUObject)
 	TalkingBrush (0-0-0-0): size 36 (cls: TalkingBrush>StructProperty>/Script/CoreUObject)
 	TeamMemberInfo (0-0-0-0): size 36 (cls: TeamMemberInfo>StructProperty>/Script/CoreUObject)
 	WidgetArchetype (0-0-0-0): size 357 (cls: WidgetArchetype>TeamMemberPedestal_Nameplate_C):

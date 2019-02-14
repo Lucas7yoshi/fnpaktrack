@@ -5,10 +5,10 @@ Name table:
 	/Game/Athena/DrivableVehicles/Athena_VehicleSpawner
 	/Game/Athena/Environments/Blueprints/Tiered_Athena_FloorLoot_01
 	/Game/Athena/Environments/Landscape/Foliage/Athena_SM_WavyGrass_TopologyColor
-	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_ForceMountain
+	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_ForceSnow
 	/Game/Athena/Items/Gameplay/VendingMachine/B_Athena_VendingMachine
-	/Game/Athena/Maps/Buildings/3x3/Athena_RUR_3x3_Barn_a
-	/Game/Athena/Maps/Buildings/3x3/Athena_RUR_3x3_Barn_a.Athena_RUR_3x3_Barn_a
+	/Game/Athena/Maps/Buildings/3x3/Athena_RUR_3x3_Barn_a_SNW
+	/Game/Athena/Maps/Buildings/3x3/Athena_RUR_3x3_Barn_a_SNW.Athena_RUR_3x3_Barn_a_SNW
 	/Game/Athena/Maps/Buildings/3x3/Athena_SUB_3x3_House_p
 	/Game/Athena/Maps/Buildings/3x3/Athena_SUB_3x3_House_p.Athena_SUB_3x3_House_p
 	/Game/Athena/Maps/Buildings/3x3/Athena_SUB_3x3_TacoStand_a
@@ -45,8 +45,8 @@ Name table:
 	/Script/FortniteGame
 	/Script/FortniteGame.FortNavSystem
 	/Script/NavigationSystem
-	76927B120C6645ACB9200E7FB8896AC3_5EA21F514CFC601F72CE6E905C41DEBD_C71E4431_D16D8ABA_884F09E6_ProxyLODMeshReduction
-	76927B120C6645ACB9200E7FB8896AC3_C0EE3BED42759C896567E9A9F7A16BC1_3BB7283B_D16D8ABA_52341DEA_ProxyLODMeshReduction
+	76927B120C6645ACB9200E7FB8896AC3_5EA21F514CFC601F72CE6E905C41DEBD_C71E4431_D16D8ABA_47595DB9_ProxyLODMeshReduction
+	76927B120C6645ACB9200E7FB8896AC3_C0EE3BED42759C896567E9A9F7A16BC1_3BB7283B_D16D8ABA_17CB67A6_ProxyLODMeshReduction
 	AdditionalWorlds
 	AlarmLightMultiplier
 	AreaClass
@@ -56,9 +56,10 @@ Name table:
 	Athena_CartSpawner_C
 	Athena_POI_GenericPlot_SIG_001
 	Athena_POI_GenericPlot_SIG_001_1_HLOD
+	Athena_POI_GenericPlot_SIG_001_C
 	Athena_Prop_Utility_Dumpster_01_C
 	Athena_SM_WavyGrass_TopologyColor
-	Athena_Terrain_Mat_Biome_ForceMountain
+	Athena_Terrain_Mat_Biome_ForceSnow
 	Athena_VehicleSpawner_C
 	AttachParent
 	AudioComponent
@@ -92,19 +93,16 @@ Name table:
 	Box
 	BoxComponent
 	BoxComponent0
-	BoxExtent
-	BoxSphereBounds
 	bReceivesDecals
 	BuildingFoundation3x3
 	BuildingFoundation3x32
 	BuildingFoundation3x33
 	BuildingTextureData
-	BuiltInstanceBounds
 	bUseAsOccluder
+	bUseProceduralFoliage
 	ByteProperty
 	CachedMaxDrawDistance
 	CachedNumHLODLevels
-	CacheMeshExtendedBounds
 	Camera
 	Car_Copper_C
 	Car_Pickup
@@ -129,10 +127,12 @@ Name table:
 	DataVersion
 	DecalComponent
 	Default__Athena_CartSpawner_C
+	Default__Athena_POI_GenericPlot_SIG_001_C
 	Default__Athena_Prop_Utility_Dumpster_01_C
 	Default__Athena_VehicleSpawner_C
 	Default__B_Athena_VendingMachine_C
 	Default__B_DowntownTrashCan_BasketballMinigame_C
+	Default__BlueprintGeneratedClass
 	Default__BuildingFoundation3x3
 	Default__Car_Copper_C
 	Default__Car_Pickup_C
@@ -145,6 +145,7 @@ Name table:
 	Default__Fence_Rural_Low_C
 	Default__Fence_Rural_Low_End_C
 	Default__FoliageInstancedStaticMeshComponent
+	Default__FortLevelScriptActor
 	Default__FortStaticMeshActor
 	Default__FortWorldSettings
 	Default__IND_Billboard_02_C
@@ -183,6 +184,7 @@ Name table:
 	EComponentMobility
 	EComponentMobility::Static
 	ECR_Ignore
+	Engine
 	EnumProperty
 	ETimelineLengthMode
 	EventFunc
@@ -215,6 +217,7 @@ Name table:
 	ForceFeedbackFail_GEN_VARIABLE
 	ForceFeedbackSuccess
 	ForceFeedbackSuccess_GEN_VARIABLE
+	FortLevelScriptActor
 	FortMetaNavArea_Obstacles
 	FortStaticMeshActor
 	FortWorldSettings
@@ -231,10 +234,8 @@ Name table:
 	IND_Billboard
 	IND_Billboard_02
 	IND_Billboard_02_C
-	InstanceCountToRender
 	InstancedFoliageActor
 	InstanceEndCullDistance
-	InstanceReorderTable
 	InstanceStartCullDistance
 	InstancingRandomSeed
 	InterpFloats
@@ -248,6 +249,7 @@ Name table:
 	Level
 	LevelBounds
 	LevelBuildDataId
+	LevelScriptActor
 	LightGuid
 	LODActor
 	LODDrawDistance
@@ -283,11 +285,10 @@ Name table:
 	NODE_AddSpotLightComponent-5
 	NODE_AddStaticMeshComponent-0
 	None
-	NumBuiltInstances
+	Object
 	ObjectProperty
 	ObjectType
 	OnComponentBeginOverlap
-	Origin
 	OverriddenLightMapRes
 	OverrideMaterials
 	P_Loot_Effect_Vending
@@ -370,8 +371,6 @@ Name table:
 	SM_VendingMachineQuest_GEN_VARIABLE
 	SoftClassPath
 	SoftObjectProperty
-	SortedInstances
-	SphereRadius
 	SpotLight
 	SpotLight_GEN_VARIABLE
 	SpotLightComponent
@@ -446,6 +445,8 @@ Name table:
 	WorldCellsOrigin
 	WorldSettings
 Serialized exports:
+	Athena_POI_GenericPlot_SIG_001_C (0-0-0-0): size 76 (cls: Athena_POI_GenericPlot_SIG_001_C>BlueprintGeneratedClass>/Script/Engine)
+	Default__Athena_POI_GenericPlot_SIG_001_C (0-0-0-0): size 8 (cls: Default__Athena_POI_GenericPlot_SIG_001_C>Athena_POI_GenericPlot_SIG_001_C)
 	Athena_CartSpawner2_5 (0-0-0-0): size 144 (cls: Athena_CartSpawner2_5>Athena_CartSpawner_C>/Game/Athena/DrivableVehicles/Athena_CartSpawner):
 		Tag array:
 			PreviewSkelMesh(ObjectProperty)=[object] 
@@ -458,6 +459,7 @@ Serialized exports:
 			Scene(ObjectProperty)=Scene=Athena_POI_GenericPlot_SIG_001 
 			RootComponent(ObjectProperty)=Scene=Athena_POI_GenericPlot_SIG_001 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_POI_GenericPlot_SIG_001_C_1 (0-0-0-0): size 12 (cls: Athena_POI_GenericPlot_SIG_001_C_1>Athena_POI_GenericPlot_SIG_001_C)
 	Utility_Dumpster_01_2 (0-0-0-0): size 193 (cls: Utility_Dumpster_01_2>Athena_Prop_Utility_Dumpster_01_C>/Game/Athena/BuildingActors/Props/Building/ActorBlueprints/Containers/Athena_Prop_Utility_Dumpster_01):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
@@ -514,8 +516,8 @@ Serialized exports:
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-2771.681,1491.681,448.2111) 
-			RelativeScale3D(StructProperty)=Vector(6272.785,3712.785,1144.422) 
+			RelativeLocation(StructProperty)=Vector(-2787.715,1495.354,448.2111) 
+			RelativeScale3D(StructProperty)=Vector(6318.589,3732.715,1144.422) 
 	TriggerBox (0-0-0-0): size 178 (cls: TriggerBox>BoxComponent>/Script/Engine):
 		Tag array:
 			CachedMaxDrawDistance(FloatProperty)=5932.581 
@@ -533,7 +535,7 @@ Serialized exports:
 	BuildingFoundation3x32 (0-0-0-0): size 287 (cls: BuildingFoundation3x32>BuildingFoundation3x3>/Script/FortniteGame):
 		Tag array:
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-1280,-256.0002,-40)) Max(Vector(256.0002,1280,-8)),30977) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-1280,-256.0002,-40)) Max(Vector(256.0002,1280,-8)),30721) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
 			MyGuid(StructProperty)=Guid: 2746182105-1334963190-2546319287-3858483289 
 			DataVersion(IntProperty)=1 
@@ -541,7 +543,7 @@ Serialized exports:
 	BuildingFoundation3x33 (0-0-0-0): size 287 (cls: BuildingFoundation3x33>BuildingFoundation3x3>/Script/FortniteGame):
 		Tag array:
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-1280,-256.0002,-40)) Max(Vector(256.0002,1280,-8)),30977) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-1280,-256.0002,-40)) Max(Vector(256.0002,1280,-8)),30721) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
 			MyGuid(StructProperty)=Guid: 812341674-1246929966-1052207283-2250027695 
 			DataVersion(IntProperty)=1 
@@ -549,7 +551,7 @@ Serialized exports:
 	BuildingFoundation3x3_1 (0-0-0-0): size 287 (cls: BuildingFoundation3x3_1>BuildingFoundation3x3>/Script/FortniteGame):
 		Tag array:
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-1280,-256.0002,-40)) Max(Vector(256.0002,1280,-8)),30977) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-1280,-256.0002,-40)) Max(Vector(256.0002,1280,-8)),30721) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
 			MyGuid(StructProperty)=Guid: 3327238034-1139786763-1234780326-3852811413 
 			DataVersion(IntProperty)=1 
@@ -743,18 +745,12 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=21268.43 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
-	FoliageInstancedStaticMeshComponent_0 (0-0-0-0): size 11208 (cls: FoliageInstancedStaticMeshComponent_0>FoliageInstancedStaticMeshComponent>/Script/Foliage):
+	FoliageInstancedStaticMeshComponent_0 (0-0-0-0): size 946 (cls: FoliageInstancedStaticMeshComponent_0>FoliageInstancedStaticMeshComponent>/Script/Foliage):
 		Tag array:
-			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
-			NumBuiltInstances(IntProperty)=69 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-4113.387,-338.1353,-4.184927)) Max(Vector(295.5347,3298.719,31.92515)),18945) 
 			bEnableDensityScaling(BoolProperty)=True 
-			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
-			InstanceCountToRender(IntProperty)=69 
 			InstancingRandomSeed(IntProperty)=1 
 			InstanceStartCullDistance(IntProperty)=4096 
 			InstanceEndCullDistance(IntProperty)=5120 
-			InstanceReorderTable(ArrayProperty)=[object] (inner: IntProperty)
 			StaticMesh(ObjectProperty)=Athena_SM_WavyGrass_TopologyColor=/Game/Athena/Environments/Landscape/Foliage/Athena_SM_WavyGrass_TopologyColor 
 			OverriddenLightMapRes(IntProperty)=8 
 			bReceivesDecals(BoolProperty)=False 
@@ -816,10 +812,11 @@ Serialized exports:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
 			bCanBeInCluster(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
-	FortWorldSettings (0-0-0-0): size 1278 (cls: FortWorldSettings>FortWorldSettings>/Script/FortniteGame):
+	FortWorldSettings (0-0-0-0): size 1288 (cls: FortWorldSettings>FortWorldSettings>/Script/FortniteGame):
 		Tag array:
 			WorldCells(ArrayProperty)=[object] (inner: IntProperty)
 			WorldCellsOrigin(StructProperty)=Vector(-5632,0,0) 
+			bUseProceduralFoliage(BoolProperty)=False 
 			MinCullObjectSize(FloatProperty)=64 
 			MinCullDistance(FloatProperty)=2800 
 			MaxCullObjectSize(FloatProperty)=1000 
@@ -852,9 +849,10 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=5049.82 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
-	PersistentLevel (0-0-0-0): size 599 (cls: PersistentLevel>Level>/Script/Engine):
+	PersistentLevel (0-0-0-0): size 632 (cls: PersistentLevel>Level>/Script/Engine):
 		Tag array:
 			Model(ObjectProperty)=Model_0=Athena_POI_GenericPlot_SIG_001 
+			LevelScriptActor(ObjectProperty)=Athena_POI_GenericPlot_SIG_001_C_1=Athena_POI_GenericPlot_SIG_001 
 			LevelBuildDataId(StructProperty)=Guid: 3230561437-1197343448-484992190-2003247820 
 			WorldSettings(ObjectProperty)=FortWorldSettings=Athena_POI_GenericPlot_SIG_001 
 	LevelBounds_0 (0-0-0-0): size 41 (cls: LevelBounds_0>LevelBounds>/Script/Engine):
@@ -864,7 +862,7 @@ Serialized exports:
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
 			Proxy(ObjectProperty)=[object] 
-			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_5EA21F514CFC601F72CE6E905C41DEBD_C71E4431_D16D8ABA_884F09E6_ProxyLODMeshReduction 
+			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_5EA21F514CFC601F72CE6E905C41DEBD_C71E4431_D16D8ABA_47595DB9_ProxyLODMeshReduction 
 			LODDrawDistance(FloatProperty)=40000 
 			LODLevel(IntProperty)=1 
 			SubActors(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -874,7 +872,7 @@ Serialized exports:
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_SIG_001 
 			Proxy(ObjectProperty)=Athena_POI_GenericPlot_SIG_001_1_HLOD=/Game/Athena/Maps/Buildings/7x12/HLOD/Athena_POI_GenericPlot_SIG_001_1_HLOD 
-			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_C0EE3BED42759C896567E9A9F7A16BC1_3BB7283B_D16D8ABA_52341DEA_ProxyLODMeshReduction 
+			Key(NameProperty)=76927B120C6645ACB9200E7FB8896AC3_C0EE3BED42759C896567E9A9F7A16BC1_3BB7283B_D16D8ABA_17CB67A6_ProxyLODMeshReduction 
 			LODDrawDistance(FloatProperty)=35000 
 			LODLevel(IntProperty)=2 
 			SubActors(ArrayProperty)=[object] (inner: ObjectProperty)

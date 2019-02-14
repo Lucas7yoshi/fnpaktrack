@@ -5,6 +5,7 @@ Name table:
 	/Game/Athena/BuildingActors/Props/Building/ActorBlueprints/Containers/Athena_Prop_PresentXmas4
 	/Game/Athena/BuildingActors/Props/Building/ActorBlueprints/Containers/Athena_Prop_PresentXmas5
 	/Game/Athena/BuildingActors/Props/Building/ActorBlueprints/Containers/Athena_Prop_PresentXmas6
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_Llama_LawnOrnament
 	/Game/Building/ActorBlueprints/Prop/Prop_SnowFlake_01
 	/Game/Building/ActorBlueprints/Prop/Prop_SnowFlake_02
@@ -74,6 +75,7 @@ Name table:
 	Default__LevelBounds
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__PG_Props_S_Holiday_C
 	Default__PlaysetIcon_Floor_C
 	Default__Prop_Llama_LawnOrnament_C
@@ -99,6 +101,8 @@ Name table:
 	FortWorldSettings
 	Guid
 	IntProperty
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Level
 	LevelBounds
 	LevelBuildDataId
@@ -112,18 +116,26 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MinCullDistance
 	MinCullObjectSize
 	Model
 	MyGuid
+	NameProperty
 	NavigationSystemClass
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
+	NODE_AddParticleSystemComponent-1
+	NODE_AddStaticMeshComponent-0
 	None
 	Object
 	ObjectProperty
 	OverrideMaterials
 	Package
+	Parent_Tree_C
+	ParticleSystemComponent
 	PersistentLevel
 	PG_Props_S_Holiday
 	PG_Props_S_Holiday_C
@@ -132,6 +144,7 @@ Name table:
 	PointLight
 	PointLight_GEN_VARIABLE
 	PointLightComponent
+	PrimitiveComponent
 	Prop_Llama_LawnOrnament
 	Prop_Llama_LawnOrnament_C
 	Prop_SnowFlake
@@ -148,8 +161,10 @@ Name table:
 	RootComponent
 	Rotator
 	SceneComponent
+	SimpleMemberReference
 	SoftClassPath
 	SoftObjectProperty
+	SphereComponent
 	SpotLight
 	SpotLight_GEN_VARIABLE
 	SpotLightComponent
@@ -163,6 +178,7 @@ Name table:
 	Tree_Pine_05_Christmas3_Athena
 	Tree_Pine_05_Christmas3_Athena_C
 	Tree_Pine_05_Christmas3_C
+	UCSModifiedProperties
 	Vector
 	VolumetricScatteringIntensity
 	Winter_StringLights
@@ -306,6 +322,30 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=5012.21 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=22826.63 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=34365.19 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=33746.25 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SpotLight (0-0-0-0): size 260 (cls: SpotLight>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=34365.19 
@@ -450,9 +490,10 @@ Serialized exports:
 			BodyInstance(StructProperty)=System.Byte[] 
 			RelativeLocation(StructProperty)=Vector(-320.697,-256,21.96939) 
 			RelativeRotation(StructProperty)=Rotator(0,-180,0) 
-	Tree_Pine_01_Christmas_2 (0-0-0-0): size 304 (cls: Tree_Pine_01_Christmas_2>Tree_Pine_01_Christmas_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_01_Christmas):
+	Tree_Pine_01_Christmas_2 (0-0-0-0): size 337 (cls: Tree_Pine_01_Christmas_2>Tree_Pine_01_Christmas_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_01_Christmas):
 		Tag array:
 			PointLight(ObjectProperty)=PointLight=PG_Props_S_Holiday 
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Holiday 
 			TimeOfDayControlledLights(ArrayProperty)=[object] (inner: ObjectProperty)
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
 			MyGuid(StructProperty)=Guid: 4235663987-1184584561-718907549-1755128871 
@@ -460,9 +501,10 @@ Serialized exports:
 			CullDistance(FloatProperty)=22826.63 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	Tree_Pine_05_Christmas3_Athena_2 (0-0-0-0): size 304 (cls: Tree_Pine_05_Christmas3_Athena_2>Tree_Pine_05_Christmas3_Athena_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_05_Christmas3_Athena):
+	Tree_Pine_05_Christmas3_Athena_2 (0-0-0-0): size 337 (cls: Tree_Pine_05_Christmas3_Athena_2>Tree_Pine_05_Christmas3_Athena_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_05_Christmas3_Athena):
 		Tag array:
 			SpotLight(ObjectProperty)=SpotLight=PG_Props_S_Holiday 
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Holiday 
 			TimeOfDayControlledLights(ArrayProperty)=[object] (inner: ObjectProperty)
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
 			MyGuid(StructProperty)=Guid: 2529645867-1133733701-2347094920-3826896689 
@@ -470,9 +512,10 @@ Serialized exports:
 			CullDistance(FloatProperty)=33746.25 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	Tree_Pine_05_Christmas3_2 (0-0-0-0): size 304 (cls: Tree_Pine_05_Christmas3_2>Tree_Pine_05_Christmas3_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_05_Christmas3):
+	Tree_Pine_05_Christmas3_2 (0-0-0-0): size 337 (cls: Tree_Pine_05_Christmas3_2>Tree_Pine_05_Christmas3_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_05_Christmas3):
 		Tag array:
 			SpotLight(ObjectProperty)=SpotLight=PG_Props_S_Holiday 
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Holiday 
 			TimeOfDayControlledLights(ArrayProperty)=[object] (inner: ObjectProperty)
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Holiday 
 			MyGuid(StructProperty)=Guid: 3850858841-1194088825-3067397258-1938114280 

@@ -57,6 +57,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Car_Stocker
 	/Game/Building/ActorBlueprints/Prop/Hedge_Low_Rectangle
 	/Game/Building/ActorBlueprints/Prop/Hedge_Low_Round
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_GolfCourse_Tee_Sign1
 	/Game/Building/ActorBlueprints/Prop/S_Parking_Spot_Stopper
 	/Game/Building/ActorBlueprints/Prop/Tree_04
@@ -67,6 +68,7 @@ Name table:
 	/Game/Effects/Fort_Effects/BluePrints/Frosty/BP_Frosty_Progression_Large_Ambient_Master
 	/Game/Effects/Fort_Effects/BluePrints/Frosty/BP_Frosty_Progression_LargeBlow_Master
 	/Game/Effects/Fort_Effects/BluePrints/Frosty/BP_Frosty_Progression_SnowSpline_OpenArea_Master
+	/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base
 	/Game/Environments/Foliage/FoliageType/GrassFoliageType_Athena
 	/Game/Environments/Props/Golf_Course/Materials/M_GolfCourse_Sign_Numbers
 	/Game/Environments/Sets/Factory/Materials/MI_Factory_Brick
@@ -92,6 +94,7 @@ Name table:
 	76927B120C6645ACB9200E7FB8896AC3_A6E0F12B436B902D799BA2BE08353EE2_22ACA90A_76B2292B_D9C09FE3_ProxyLODMeshReduction
 	Actor
 	Actor_13_6A42496A4663E346C97AFEB9993C68F7
+	ActorComponent
 	ActorData
 	AdditionalWorlds
 	AggGeom
@@ -100,6 +103,7 @@ Name table:
 	AreaClass
 	ArrayProperty
 	ArrowComponent
+	Association
 	Athena_GolfCartSpawner12
 	Athena_GolfCartSpawner_C
 	Athena_Prop_Rocks_StoneLarge01_C
@@ -140,7 +144,10 @@ Name table:
 	B_GolfMinigame_TeeBox_C
 	bAffectDistanceFieldLighting
 	bAffectDynamicIndirectLighting
+	Base Mesh
+	Base Mesh_GEN_VARIABLE
 	BaseMaterial
+	bAutoActivate
 	bAutoSpawnMissingNavData
 	bAutoWeld
 	bCanBeInCluster
@@ -152,6 +159,7 @@ Name table:
 	bGenerateMirroredCollision
 	bHasPerInstanceHitProxies
 	bHidden
+	bHiddenInGame
 	Billboard
 	BillboardComponent
 	bInterpolateWhenSubStepping
@@ -204,6 +212,7 @@ Name table:
 	BuildingTextureData
 	BuiltInstanceBounds
 	bUseAsOccluder
+	bVisible
 	ByteProperty
 	CachedMaxDrawDistance
 	CachedMeshBodySetupGuid
@@ -294,8 +303,10 @@ Name table:
 	Default__LF_7x12_GenericPlot_C
 	Default__LF_7x12_Parent_C
 	Default__LODActor
+	Default__MaterialInstanceDynamic
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Prop_GolfCourse_Tee_Sign1_C
 	Default__S_Parking_Spot_Stopper_C
 	Default__Sublevel_X5Y3_C
@@ -332,6 +343,7 @@ Name table:
 	EFortResourceType
 	EFortResourceType::Wood
 	ElemBox
+	EMaterialParameterAssociation
 	EndOffset
 	EndPos
 	EndScale
@@ -345,6 +357,7 @@ Name table:
 	EventFunc
 	EventName
 	Events
+	ExpressionGUID
 	Factory_HalfWall84
 	Factory_HalfWall85
 	Factory_HalfWall86
@@ -370,6 +383,8 @@ Name table:
 	FloatCurve
 	FloatProperty
 	FloatPropertyName
+	Foam Color
+	Foam Position
 	FoamColor
 	FoliageInstancedStaticMeshComponent
 	FoliageType_InstancedStaticMesh
@@ -378,6 +393,7 @@ Name table:
 	FortStaticMeshActor
 	FortWorldSettings
 	GeomSelection
+	GlobalParameter
 	GrassFoliageType_Athena
 	Guid
 	HasExecutedConstuctionScript
@@ -418,6 +434,8 @@ Name table:
 	Key
 	Large Ambient Blow_GEN_VARIABLE
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -435,14 +453,18 @@ Name table:
 	LF_7x12_Parent_C
 	LG Ambient_GEN_VARIABLE
 	LightGuid
+	LinearColor
 	LODActor
 	LODDrawDistance
 	LODLevel
 	LODParentPrimitive
 	M_Foundation_Texture
 	M_GolfCourse_Sign_Numbers
+	M_WaterFall_Base
 	Material
 	MaterialInstanceConstant
+	MaterialInstanceDynamic
+	MaterialParameterInfo
 	MaxAngularVelocity
 	MaxCullDistance
 	MaxCullObjectSize
@@ -488,6 +510,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -506,7 +529,11 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	ParameterInfo
+	ParameterValue
 	ParamType
+	Parent
+	Parent_Tree_C
 	ParticleSysParam
 	ParticleSystemComponent
 	PersistentLevel
@@ -593,6 +620,7 @@ Name table:
 	Sound
 	SoundCue
 	SpawnCollisionHandlingMethod
+	SphereComponent
 	SphereRadius
 	SplashFX_Position_Manual
 	SplashFX_Scale
@@ -680,6 +708,8 @@ Name table:
 	Vector
 	Vector2D
 	Vector_Low
+	VectorParameterValue
+	VectorParameterValues
 	VertexData
 	Vertical Bounce Component
 	Visibility
@@ -735,262 +765,334 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_01_133 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_01_133>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+	Athena_Tree_Medium_01_133 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_01_133>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2439521121-1244855113-3468322225-2366648567 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_01_134 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_01_134>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01_134 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_01_134>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2178976777-1193950979-987347089-2541656119 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_01_135 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_01_135>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01_135 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_01_135>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2504769704-1320252352-819981242-131970845 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_01_136 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_01_136>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01_136 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_01_136>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 683012528-1094942024-3609815683-3270626844 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_01_5 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_01_5>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01_5 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_01_5>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 568479632-1139117350-1411425200-1383275528 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_01__2 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_01__2>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01__2 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_01__2>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 4263235173-1243553798-2166998194-1061950898 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_01_FM28 (0-0-0-0): size 238 (cls: Athena_Tree_Medium_01_FM28>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01_FM28 (0-0-0-0): size 308 (cls: Athena_Tree_Medium_01_FM28>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3962588172-1154663645-3700119956-2127962463 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			Tags(ArrayProperty)=ZRotate_Tree_Medium_04_FM (inner: NameProperty)
-	Athena_Tree_Medium_01_FM29 (0-0-0-0): size 238 (cls: Athena_Tree_Medium_01_FM29>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01_FM29 (0-0-0-0): size 308 (cls: Athena_Tree_Medium_01_FM29>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 335994296-1146301943-173387696-3629630772 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			Tags(ArrayProperty)=ZRotate_Tree_Medium_04_FM (inner: NameProperty)
-	Athena_Tree_Medium_01_FM30 (0-0-0-0): size 238 (cls: Athena_Tree_Medium_01_FM30>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01_FM30 (0-0-0-0): size 308 (cls: Athena_Tree_Medium_01_FM30>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 178625885-1250138049-2405866655-1640712135 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			Tags(ArrayProperty)=ZRotate_Tree_Medium_04_FM (inner: NameProperty)
-	Athena_Tree_Medium_01_FM31 (0-0-0-0): size 238 (cls: Athena_Tree_Medium_01_FM31>Athena_Tree_Medium_01_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_FM):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_01_FM31 (0-0-0-0): size 308 (cls: Athena_Tree_Medium_01_FM31>Athena_Tree_Medium_01_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_FM):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 775675556-1125952955-3412351907-3191113074 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			Tags(ArrayProperty)=ZRotate_Tree_Medium_04_FM (inner: NameProperty)
-	Athena_Tree_Pine_2237 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_2237>Athena_Tree_Medium_01_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_FM):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_2237 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_2237>Athena_Tree_Medium_01_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_FM):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2421548351-1283764472-1173302928-3407061933 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_2238 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_2238>Athena_Tree_Medium_01_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_FM):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_2238 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_2238>Athena_Tree_Medium_01_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_FM):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 1284792119-1107937398-364364725-247251022 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_03_136 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_03_136>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_03_136 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_03_136>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3097687990-1307792759-1768758679-2620433062 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_03_137 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_03_137>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_03_137 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_03_137>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 532992089-1312219911-932399233-2250299193 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_03__2 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_03__2>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_03__2 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_03__2>Athena_Tree_Medium_03__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3768591997-1223610170-1386352278-2916039417 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_2239 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_2239>Athena_Tree_Medium_03_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_FM):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_2239 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_2239>Athena_Tree_Medium_03_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_FM):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 1352314311-1162218709-1368951228-2439463025 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_2240 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_2240>Athena_Tree_Medium_03_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_FM):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_2240 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_2240>Athena_Tree_Medium_03_FM_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_03_FM):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3059781081-1224133282-3629675677-2897460571 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_11 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_11>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_11 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_11>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3737051106-1095296274-619977653-2168509445 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_14 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_14>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_14 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_14>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 1121505319-1303260953-213907352-2828427241 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_17 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_17>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_17 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_17>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 442808475-1182008545-896467346-3858550057 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_2 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_2>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_2 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_2>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3870013292-1107711860-2686534843-406805455 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_20 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_20>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_20 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_20>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2081054231-1258367336-2541408664-3610075823 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_23 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_23>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_23 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_23>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 906341616-1086887079-2204686732-1680779164 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_26 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_26>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_26 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_26>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 4040644832-1312938957-2898086575-2545947025 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_29 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_29>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_29 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_29>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3323001030-1196361730-333803136-4126566060 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_32 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_32>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_32 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_32>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3467423536-1135654188-4178037167-845844292 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_38 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_38>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_38 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_38>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2338452715-1101743843-1849261720-309604149 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_41 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_41>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_41 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_41>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2614437737-1142107238-58633891-2489672563 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_5 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_5>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_5 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_5>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 860923862-1312827838-1306572477-1485412882 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Pine_8 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_8>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_8 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_8>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3876672125-1330885522-423486120-540916292 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_WeepingWillow_17 (0-0-0-0): size 193 (cls: Athena_Tree_WeepingWillow_17>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_WeepingWillow_17 (0-0-0-0): size 263 (cls: Athena_Tree_WeepingWillow_17>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 503554905-1188596676-648256146-4011818662 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_WeepingWillow_63 (0-0-0-0): size 193 (cls: Athena_Tree_WeepingWillow_63>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_WeepingWillow_63 (0-0-0-0): size 263 (cls: Athena_Tree_WeepingWillow_63>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 1010298380-1101512626-2231534751-2969750964 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_WeepingWillow_64 (0-0-0-0): size 193 (cls: Athena_Tree_WeepingWillow_64>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_WeepingWillow_64 (0-0-0-0): size 263 (cls: Athena_Tree_WeepingWillow_64>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3256915685-1085386873-4121857153-3305523393 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_WeepingWillow_65 (0-0-0-0): size 193 (cls: Athena_Tree_WeepingWillow_65>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_WeepingWillow_65 (0-0-0-0): size 263 (cls: Athena_Tree_WeepingWillow_65>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2887402982-1173899928-282759597-1207216911 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_WeepingWillow_66 (0-0-0-0): size 193 (cls: Athena_Tree_WeepingWillow_66>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_WeepingWillow_66 (0-0-0-0): size 263 (cls: Athena_Tree_WeepingWillow_66>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 3824004756-1121636139-2666476953-2363446076 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Tree_100 (0-0-0-0): size 193 (cls: Tree_100>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_100 (0-0-0-0): size 263 (cls: Tree_100>Athena_Tree_WeepingWillow_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_WeepingWillow_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 1337728481-1327464077-2782697630-3964870835 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	WaterFall_Base_Sound_L (0-0-0-0): size 554 (cls: WaterFall_Base_Sound_L>AudioComponent>/Script/Engine):
 		Tag array:
 			Sound(ObjectProperty)=Waterfall_Large_A_02_Cue=/Game/Sounds/Fort_Ambient_Looping/Water/Waterfall_Large_A_02_Cue 
@@ -1145,8 +1247,9 @@ Serialized exports:
 		Tag array:
 			SplineMeshComponent(ObjectProperty)=SplineMeshComponent0=Sublevel_X5Y3 
 			RootComponent(ObjectProperty)=SplineMeshComponent0=Sublevel_X5Y3 
-	BP_Waterfall10 (0-0-0-0): size 536 (cls: BP_Waterfall10>BP_Waterfall_C>/Game/Packages/DS_Fortnite_Terrain_NoLOD/Blueprints/BP_Waterfall):
+	BP_Waterfall10 (0-0-0-0): size 598 (cls: BP_Waterfall10>BP_Waterfall_C>/Game/Packages/DS_Fortnite_Terrain_NoLOD/Blueprints/BP_Waterfall):
 		Tag array:
+			Base Mesh(ObjectProperty)=Base Mesh=Sublevel_X5Y3 
 			WaterFall_Base_Sound_L(ObjectProperty)=WaterFall_Base_Sound_L=Sublevel_X5Y3 
 			WaterFall_Base_Sound_R(ObjectProperty)=WaterFall_Base_Sound_R=Sublevel_X5Y3 
 			WaterFallVFX(ObjectProperty)=WaterFallVFX=Sublevel_X5Y3 
@@ -1154,6 +1257,7 @@ Serialized exports:
 			SplashFX_Scale(StructProperty)=Vector(3,3,3) 
 			Terrain Material(ObjectProperty)=Athena_Terrain_Mat_Biome_Cliff=/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_Cliff 
 			WaterMaterialOverride(ObjectProperty)=Athena_Stream_Waterfall_Inst=/Game/Athena/Environments/Landscape/Material/Athena_Stream_Waterfall_Inst 
+			Foam Position(IntProperty)=4 
 			CollisionMesh1(ObjectProperty)=CollisionMesh1=Sublevel_X5Y3 
 			CollisionMesh2(ObjectProperty)=[object] 
 			CollisionMesh4(ObjectProperty)=[object] 
@@ -1162,8 +1266,9 @@ Serialized exports:
 			HasExecutedConstuctionScript(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMesh1=Sublevel_X5Y3 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	BP_Waterfall9 (0-0-0-0): size 536 (cls: BP_Waterfall9>BP_Waterfall_C>/Game/Packages/DS_Fortnite_Terrain_NoLOD/Blueprints/BP_Waterfall):
+	BP_Waterfall9 (0-0-0-0): size 598 (cls: BP_Waterfall9>BP_Waterfall_C>/Game/Packages/DS_Fortnite_Terrain_NoLOD/Blueprints/BP_Waterfall):
 		Tag array:
+			Base Mesh(ObjectProperty)=Base Mesh=Sublevel_X5Y3 
 			WaterFall_Base_Sound_L(ObjectProperty)=WaterFall_Base_Sound_L=Sublevel_X5Y3 
 			WaterFall_Base_Sound_R(ObjectProperty)=WaterFall_Base_Sound_R=Sublevel_X5Y3 
 			WaterFallVFX(ObjectProperty)=WaterFallVFX=Sublevel_X5Y3 
@@ -1171,6 +1276,7 @@ Serialized exports:
 			SplashFX_Scale(StructProperty)=Vector(3,3,2) 
 			Terrain Material(ObjectProperty)=Athena_Terrain_Mat_Biome_Cliff=/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome_Cliff 
 			WaterMaterialOverride(ObjectProperty)=Athena_Stream_Waterfall_Inst=/Game/Athena/Environments/Landscape/Material/Athena_Stream_Waterfall_Inst 
+			Foam Position(IntProperty)=4 
 			CollisionMesh1(ObjectProperty)=CollisionMesh1=Sublevel_X5Y3 
 			CollisionMesh2(ObjectProperty)=[object] 
 			CollisionMesh4(ObjectProperty)=[object] 
@@ -1436,7 +1542,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=1672 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-21832.34,8618.748,-2563.906)) Max(Vector(-7896.121,19786.5,-704.8511)),37889) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-21832.34,8618.748,-2563.906)) Max(Vector(-7896.121,19786.5,-704.8511)),39681) 
 			bEnableDensityScaling(BoolProperty)=True 
 			OcclusionLayerNumNodes(IntProperty)=8 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
@@ -1632,7 +1738,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),24577) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),31745) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2612501940-1165687037-2676826264-1954400768 
 			DataVersion(IntProperty)=1 
@@ -1641,7 +1747,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),24577) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),31745) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 4014366179-1099223966-3309047953-344768577 
 			DataVersion(IntProperty)=1 
@@ -1650,7 +1756,7 @@ Serialized exports:
 		Tag array:
 			RenderTextComponent(ObjectProperty)=RenderTextComponent=Sublevel_X5Y3 
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-5888,-256.0002,-40)) Max(Vector(256,3328,-8)),24577) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-5888,-256.0002,-40)) Max(Vector(256,3328,-8)),31745) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 2790123093-1176445607-2550470066-804201754 
 			DataVersion(IntProperty)=1 
@@ -1665,6 +1771,14 @@ Serialized exports:
 			LODLevel(IntProperty)=1 
 			SubActors(ArrayProperty)=[object] (inner: ObjectProperty)
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+	MaterialInstanceDynamic_0 (0-0-0-0): size 425 (cls: MaterialInstanceDynamic_0>MaterialInstanceDynamic>/Script/Engine):
+		Tag array:
+			Parent(ObjectProperty)=M_WaterFall_Base=/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base 
+			VectorParameterValues(ArrayProperty)=[object] (inner: StructProperty)
+	MaterialInstanceDynamic_0 (0-0-0-0): size 425 (cls: MaterialInstanceDynamic_0>MaterialInstanceDynamic>/Script/Engine):
+		Tag array:
+			Parent(ObjectProperty)=M_WaterFall_Base=/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base 
+			VectorParameterValues(ArrayProperty)=[object] (inner: StructProperty)
 	Model_0 (0-0-0-0): size 1674 (cls: Model_0>Model>/Script/Engine)
 	Model_1 (0-0-0-0): size 1674 (cls: Model_1>Model>/Script/Engine)
 	Model_1 (0-0-0-0): size 1686 (cls: Model_1>Model>/Script/Engine)
@@ -1674,22 +1788,24 @@ Serialized exports:
 		Tag array:
 			bAutoSpawnMissingNavData(BoolProperty)=True 
 			NavigationSystemClass(StructProperty)=UE4.FSoftObjectPath 
-	WaterFallVFX (0-0-0-0): size 1180 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
+	WaterFallVFX (0-0-0-0): size 1341 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			InstanceParameters(ArrayProperty)=[object] (inner: StructProperty)
 			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X5Y3 
 			RelativeLocation(StructProperty)=Vector(512,-100.0001,-1714.667) 
 			RelativeScale3D(StructProperty)=Vector(1,1,2) 
 			bNetAddressable(BoolProperty)=True 
+			bAutoActivate(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
-	WaterFallVFX (0-0-0-0): size 1180 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
+	WaterFallVFX (0-0-0-0): size 1341 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			InstanceParameters(ArrayProperty)=[object] (inner: StructProperty)
 			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X5Y3 
 			RelativeLocation(StructProperty)=Vector(512,-60.00012,-1872) 
 			RelativeScale3D(StructProperty)=Vector(1,1.5,2) 
 			bNetAddressable(BoolProperty)=True 
+			bAutoActivate(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	TrasureLight (0-0-0-0): size 231 (cls: TrasureLight>PointLightComponent>/Script/Engine):
@@ -1798,6 +1914,265 @@ Serialized exports:
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	RootComponent0 (0-0-0-0): size 12 (cls: RootComponent0>SceneComponent>/Script/Engine)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SplineMeshComponent0 (0-0-0-0): size 1837 (cls: SplineMeshComponent0>SplineMeshComponent>/Script/Engine):
 		Tag array:
 			SplineParams(StructProperty)=System.Byte[] 
@@ -2383,6 +2758,17 @@ Serialized exports:
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	Base Mesh (0-0-0-0): size 1088 (cls: Base Mesh>StaticMeshComponent>/Script/Engine):
+		Tag array:
+			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
+			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X5Y3 
+			RelativeLocation(StructProperty)=Vector(512,-100.0001,-1714.667) 
+			RelativeScale3D(StructProperty)=Vector(1,1,2) 
+			bVisible(BoolProperty)=False 
+			bHiddenInGame(BoolProperty)=True 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	CollisionMesh1 (0-0-0-0): size 194 (cls: CollisionMesh1>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OnComponentBeginOverlap(MulticastDelegateProperty)=[object] 
@@ -2396,6 +2782,17 @@ Serialized exports:
 			RelativeLocation(StructProperty)=Vector(-8520,10752,-2536) 
 			RelativeRotation(StructProperty)=Rotator(0,90.00001,0) 
 			RelativeScale3D(StructProperty)=Vector(3,3,1.5) 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	Base Mesh (0-0-0-0): size 1088 (cls: Base Mesh>StaticMeshComponent>/Script/Engine):
+		Tag array:
+			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
+			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X5Y3 
+			RelativeLocation(StructProperty)=Vector(512,-60.00012,-1872) 
+			RelativeScale3D(StructProperty)=Vector(1,1.5,2) 
+			bVisible(BoolProperty)=False 
+			bHiddenInGame(BoolProperty)=True 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
@@ -3051,13 +3448,15 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=16635.13 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
-	Athena_Tree_Medium_03_135 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_03_135>Tree_04_C>/Game/Building/ActorBlueprints/Prop/Tree_04):
+	Athena_Tree_Medium_03_135 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_03_135>Tree_04_C>/Game/Building/ActorBlueprints/Prop/Tree_04):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X5Y3 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
 			MyGuid(StructProperty)=Guid: 4171913535-1324841602-1647735693-3553076243 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X5Y3 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Sublevel_X5Y3 (0-0-0-0): size 53 (cls: Sublevel_X5Y3>World>/Script/Engine):
 		Tag array:
 			DefaultPhysicsVolume(ObjectProperty)=[object] 

@@ -62,6 +62,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Crypt_Dust_02
 	/Game/Building/ActorBlueprints/Prop/Garage_Door_03
 	/Game/Building/ActorBlueprints/Prop/IND_PropaneTank_01
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02
 	/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_04
 	/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01
@@ -192,6 +193,7 @@ Name table:
 	bCanEverAffectNavigation
 	bCastStaticShadow
 	bEnableDensityScaling
+	bGenerateOverlapEvents
 	bHasPerInstanceHitProxies
 	bInterpolateWhenSubStepping
 	BlueprintCreatedComponents
@@ -370,6 +372,7 @@ Name table:
 	Default__LODActor
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Plant_Desert_Bush_2_C
 	Default__Plant_Desert_Bush_4_C
 	Default__Plant_Desert_Flower_1_C
@@ -544,6 +547,8 @@ Name table:
 	LCD_JunkPile_02b9
 	LCD_RubblePile
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -618,6 +623,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -636,6 +642,7 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_19295__03578D0A
@@ -652,6 +659,7 @@ Name table:
 	Plant_Desert_Tumbleweed_01_C
 	PointLightComponent
 	PreviewSkelMesh
+	PrimitiveComponent
 	Prop_Desert_Cactus
 	Prop_Desert_Cactus_02
 	Prop_Desert_Cactus_02_C
@@ -760,6 +768,7 @@ Name table:
 	SoftClassPath
 	SoftObjectProperty
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	SpotLight
 	SpotLight_GEN_VARIABLE
@@ -1914,7 +1923,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=42 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-3357.393,183.9038,-0.1633606)) Max(Vector(246.4767,5209.068,23.63781)),63745) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-3357.393,183.9038,-0.1633606)) Max(Vector(246.4767,5209.068,23.63781)),64257) 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=42 
 			InstancingRandomSeed(IntProperty)=1 
@@ -1973,7 +1982,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=190 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-3384.824,-342.8953,-384.6223)) Max(Vector(341.4799,5457.532,26.43333)),49153) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-3384.824,-342.8953,-384.6223)) Max(Vector(341.4799,5457.532,26.43333)),49409) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=190 
@@ -2517,48 +2526,60 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	Prop_Desert_Cactus_02_2 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_02_2>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+	Prop_Desert_Cactus_02_2 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_02_2>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_Roadside_7x12_Garage_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			MyGuid(StructProperty)=Guid: 101431620-1283715054-2629765524-4241528819 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
-	Prop_Desert_Cactus_3 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_3>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_3 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_3>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_Roadside_7x12_Garage_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			MyGuid(StructProperty)=Guid: 2442446016-1232777031-673458093-3311545923 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
-	Prop_Desert_Cactus_6 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_6>Prop_Desert_Cactus_04_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_04):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_6 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_6>Prop_Desert_Cactus_04_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_04):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_Roadside_7x12_Garage_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			MyGuid(StructProperty)=Guid: 3315527299-1206121815-1188589718-1884772979 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
-	Prop_Desert_JoshuaTree_01_2 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_01_2>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_01_2 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_01_2>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_Roadside_7x12_Garage_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			MyGuid(StructProperty)=Guid: 2544597197-1150124231-1210132631-1789486657 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
-	Prop_Desert_JoshuaTree_6 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_6>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_6 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_6>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_Roadside_7x12_Garage_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			MyGuid(StructProperty)=Guid: 3913302246-1204223257-682939812-1090417258 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
-	Prop_Desert_JoshuaTree_7 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_7>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_7 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_7>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_Roadside_7x12_Garage_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			MyGuid(StructProperty)=Guid: 1482457182-1249553182-314366643-476310120 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Prop_Desert_MediumRock_01_2 (0-0-0-0): size 193 (cls: Prop_Desert_MediumRock_01_2>Prop_Desert_MediumRock_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_MediumRock_01):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
@@ -2986,6 +3007,48 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
@@ -4198,10 +4261,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 269 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 295 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=21182.95 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			RelativeLocation(StructProperty)=Vector(-3772.945,547.9609,4) 
 			RelativeRotation(StructProperty)=Rotator(0,61.89446,0) 
 			RelativeScale3D(StructProperty)=Vector(-1,1,1) 
@@ -4212,10 +4276,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_Roadside_7x12_Garage_002 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 234 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=19088.46 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			RelativeLocation(StructProperty)=Vector(-2458.07,700.2771,3.455811) 
 			RelativeRotation(StructProperty)=Rotator(0,-47.04008,0) 
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):

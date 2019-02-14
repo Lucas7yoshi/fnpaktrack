@@ -33,7 +33,7 @@ Name table:
 	/Game/Athena/Environments/Landscape/Material/Athena_Terrain_Mat_Biome
 	/Game/Athena/Environments/Landscape/Material/CraterColoration
 	/Game/Athena/Environments/Landscape/MaterialFunctions/Corruption/MF_Athena_Corruption_01
-	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_BiomeMask
+	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_ColorTest
 	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_Material_BaseMultiply
 	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Landscape_GrassDistanceBlend
 	/Game/Athena/Environments/Landscape/MaterialFunctions/MF_SplineMatHeightOffset
@@ -46,6 +46,7 @@ Name table:
 	/Game/Athena/Environments/Landscape/Textures/T_Athena_Terrain_GroundColor
 	/Game/Athena/Environments/Landscape/Textures/T_Athena_Terrain_RockColor
 	/Game/Athena/Environments/MaterialFunctions/SimpleLowEndTriplanar
+	/Game/Athena/Events/Test/MF_Cracks
 	/Game/Athena/WinterArt/Materials/MF_SharedWinter
 	/Game/Characters/Fortress_Character/Textures/AllBlack
 	/Game/Effects/Fort_Effects/Effects/Atlas/Materials/MF_Timestamp_InOut_01
@@ -239,13 +240,14 @@ Name table:
 	MatLayerBlend_Standard
 	MatLayerBlend_Tint
 	Metallic
-	MF_Athena_BiomeMask
+	MF_Athena_ColorTest
 	MF_Athena_Corruption_01
 	MF_Athena_Holiday_SnowFall
 	MF_Athena_LakeGrass_01
 	MF_Athena_Material_BaseMultiply
 	MF_Athena_Snow_01
 	MF_Athena_Terrain_Coords
+	MF_Cracks
 	MF_CreativeMoveTool
 	MF_Landscape_GrassDistanceBlend
 	MF_SharedWinter
@@ -374,6 +376,7 @@ Name table:
 	UseDirt
 	UseDirtDiffuseAsSpec
 	UseMud
+	UseProgressingCracks
 	UseSnow
 	UseSplineHeightOffset
 	UseSplineWPOOffset
@@ -399,7 +402,7 @@ Name table:
 	XY coordinate offset over Z
 	Z coordinate offset over XY
 Serialized exports:
-	Athena_Terrain_Mat_Biome (0-0-0-0): size 374337 (cls: Athena_Terrain_Mat_Biome>Material>/Script/Engine):
+	Athena_Terrain_Mat_Biome (0-0-0-0): size 362069 (cls: Athena_Terrain_Mat_Biome>Material>/Script/Engine):
 		Tag array:
 			PhysMaterial(ObjectProperty)=Dirt=/Game/FortressPhysicalMaterials/Dirt 
 			Metallic(StructProperty)=System.Byte[] 
@@ -414,7 +417,7 @@ Serialized exports:
 			MaterialFunctionInfos(ArrayProperty)=[object] (inner: StructProperty)
 			MaterialParameterCollectionInfos(ArrayProperty)=[object] (inner: StructProperty)
 			bUseMaterialAttributes(BoolProperty)=True 
-			StateId(StructProperty)=Guid: 4037410150-1076818936-398682784-1254270883 
+			StateId(StructProperty)=Guid: 4069661624-1205978957-1375934911-1112756622 
 			CachedQualityLevelsUsed(ArrayProperty)=[object] (inner: BoolProperty)
 	MaterialExpressionCollectionParameter_0 (0-0-0-0): size 168 (cls: MaterialExpressionCollectionParameter_0>MaterialExpressionCollectionParameter>/Script/Engine):
 		Tag array:
@@ -586,6 +589,10 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=HeightLerp=/Engine/Functions/Engine_MaterialFunctions02/Texturing/HeightLerp 
 			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
+	MaterialExpressionMaterialFunctionCall_22 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_22>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=MF_Cracks=/Game/Athena/Events/Test/MF_Cracks 
+			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
 	MaterialExpressionMaterialFunctionCall_23 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_23>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=MatLayerBlend_Standard=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Standard 
@@ -686,6 +693,10 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=Fortnite_Terrain_invertOpacityNormalBool=/Game/Packages/Fortnite_UniqueMaterials_1/MaterialFunctions/Fortnite_Terrain_invertOpacityNormalBool 
 			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
+	MaterialExpressionMaterialFunctionCall_46 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_46>MaterialExpressionMaterialFunctionCall>/Script/Engine):
+		Tag array:
+			MaterialFunction(ObjectProperty)=MF_Athena_Holiday_SnowFall=/Game/Athena/Environments/Landscape/MaterialFunctions/Snow/MF_Athena_Holiday_SnowFall 
+			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
 	MaterialExpressionMaterialFunctionCall_47 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_47>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=HeightLerp=/Engine/Functions/Engine_MaterialFunctions02/Texturing/HeightLerp 
@@ -728,7 +739,7 @@ Serialized exports:
 			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
 	MaterialExpressionMaterialFunctionCall_6 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_6>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
-			MaterialFunction(ObjectProperty)=MF_Athena_BiomeMask=/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_BiomeMask 
+			MaterialFunction(ObjectProperty)=MF_Athena_ColorTest=/Game/Athena/Environments/Landscape/MaterialFunctions/MF_Athena_ColorTest 
 			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
 	MaterialExpressionMaterialFunctionCall_62 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_62>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
@@ -1567,11 +1578,10 @@ Serialized exports:
 			ParameterName(NameProperty)=Use Spec 
 			ExpressionGUID(StructProperty)=Guid: 1421710163-1172680119-1681410231-2074769550 
 			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
-	MaterialExpressionStaticSwitchParameter_42 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_42>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+	MaterialExpressionStaticSwitchParameter_42 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_42>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
 			A(StructProperty)=System.Byte[] 
 			B(StructProperty)=System.Byte[] 
-			DefaultValue(BoolProperty)=True 
 			ParameterName(NameProperty)=UseSnow 
 			ExpressionGUID(StructProperty)=Guid: 1735080043-1179212287-881878942-2663056462 
 			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
@@ -1635,6 +1645,13 @@ Serialized exports:
 			ParameterName(NameProperty)=Hlerp_MudDarking 
 			ExpressionGUID(StructProperty)=Guid: 196098655-1320443252-3112790447-2450456407 
 			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
+	MaterialExpressionStaticSwitchParameter_6 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_6>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+		Tag array:
+			A(StructProperty)=System.Byte[] 
+			B(StructProperty)=System.Byte[] 
+			ParameterName(NameProperty)=UseProgressingCracks 
+			ExpressionGUID(StructProperty)=Guid: 801476089-1134557464-1077616534-2821611091 
+			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
 	MaterialExpressionStaticSwitchParameter_61 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_61>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
 			A(StructProperty)=System.Byte[] 
@@ -1642,6 +1659,13 @@ Serialized exports:
 			DefaultValue(BoolProperty)=True 
 			ParameterName(NameProperty)=UseTextureNormals 
 			ExpressionGUID(StructProperty)=Guid: 1000245442-1108416469-4093755552-697394302 
+			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
+	MaterialExpressionStaticSwitchParameter_7 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_7>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+		Tag array:
+			A(StructProperty)=System.Byte[] 
+			B(StructProperty)=System.Byte[] 
+			ParameterName(NameProperty)=UseSnow 
+			ExpressionGUID(StructProperty)=Guid: 3987578049-1209219684-1772359867-3186838958 
 			Material(ObjectProperty)=Athena_Terrain_Mat_Biome= 
 	MaterialExpressionStaticSwitchParameter_9 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_9>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:

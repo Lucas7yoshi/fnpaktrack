@@ -71,6 +71,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Lab_Light
 	/Game/Building/ActorBlueprints/Prop/Mansion_DeerHead
 	/Game/Building/ActorBlueprints/Prop/Outdoor_Grill
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Picnic_Table
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01b
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01c
@@ -701,6 +702,7 @@ Name table:
 	Default__NavigationSystemModuleConfig
 	Default__Neo_Class_Stair_1_C
 	Default__Outdoor_Grill_C
+	Default__Parent_Tree_C
 	Default__PG_Winter_Village_L_Pubs_A_C
 	Default__Picnic_Table_C
 	Default__Planter_Rectangle_C
@@ -783,6 +785,8 @@ Name table:
 	Lab_Light18
 	Lab_Light_C
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Level
 	LevelBounds
 	LevelBuildDataId
@@ -842,6 +846,8 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	Neo_Class_Stair_1_C
+	NODE_AddParticleSystemComponent-1
+	NODE_AddStaticMeshComponent-0
 	None
 	Object
 	ObjectProperty
@@ -849,6 +855,7 @@ Name table:
 	Outdoor_Grill_C
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_11579__5B805640
@@ -1036,6 +1043,7 @@ Name table:
 	SoftClassPath
 	SoftObjectProperty
 	Spawn_Location
+	SphereComponent
 	SpotLight
 	SpotLight_GEN_VARIABLE
 	SpotLightComponent
@@ -2385,27 +2393,33 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=2800 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
-	Athena_Tree_Pine_01_Winter2 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_01_Winter2>Athena_Tree_Pine_01_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_Winter):
+	Athena_Tree_Pine_01_Winter2 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_01_Winter2>Athena_Tree_Pine_01_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_Winter):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Winter_Village_L_Pubs_A 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
 			MyGuid(StructProperty)=Guid: 3256307025-1191779216-605870731-85510147 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=21289.86 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
-	Athena_Tree_Pine_01_Winter3 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_01_Winter3>Athena_Tree_Pine_01_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_Winter):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_01_Winter3 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_01_Winter3>Athena_Tree_Pine_01_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_Winter):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Winter_Village_L_Pubs_A 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
 			MyGuid(StructProperty)=Guid: 470327867-1250247728-4041810585-2049203439 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=21289.86 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
-	Athena_Tree_Pine_01_Winter_2 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_01_Winter_2>Athena_Tree_Pine_01_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_Winter):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_01_Winter_2 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_01_Winter_2>Athena_Tree_Pine_01_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_Winter):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Winter_Village_L_Pubs_A 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
 			MyGuid(StructProperty)=Guid: 2377926826-1215030879-2120072349-329931181 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=21289.86 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Water_Loop (0-0-0-0): size 108 (cls: Water_Loop>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=Effect=PG_Winter_Village_L_Pubs_A 
@@ -8639,6 +8653,54 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=24665.13 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=21289.86 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=21289.86 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=21289.86 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=29398.69 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=12018.73 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=11634.49 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SpotLight (0-0-0-0): size 260 (cls: SpotLight>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=9318.33 
@@ -14187,23 +14249,28 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=6752.473 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
-	Tree_Pine_01_Christmas_Placeable2_5 (0-0-0-0): size 193 (cls: Tree_Pine_01_Christmas_Placeable2_5>Tree_Pine_01_Christmas_Placeable_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_01_Christmas_Placeable):
+	Tree_Pine_01_Christmas_Placeable2_5 (0-0-0-0): size 263 (cls: Tree_Pine_01_Christmas_Placeable2_5>Tree_Pine_01_Christmas_Placeable_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_01_Christmas_Placeable):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Winter_Village_L_Pubs_A 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
 			MyGuid(StructProperty)=Guid: 98711398-1337354207-4026978733-3950949515 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=12018.73 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
-	Tree_Pine_01_Christmas_Placeable_2 (0-0-0-0): size 193 (cls: Tree_Pine_01_Christmas_Placeable_2>Tree_Pine_01_Christmas_Placeable_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_01_Christmas_Placeable):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Pine_01_Christmas_Placeable_2 (0-0-0-0): size 263 (cls: Tree_Pine_01_Christmas_Placeable_2>Tree_Pine_01_Christmas_Placeable_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_01_Christmas_Placeable):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Winter_Village_L_Pubs_A 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
 			MyGuid(StructProperty)=Guid: 3053095820-1177341794-4015904398-4292404053 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=11634.49 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
-	Athena_Tree_Pine_03_Winter_2 (0-0-0-0): size 304 (cls: Athena_Tree_Pine_03_Winter_2>Tree_Pine_05_Christmas3_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_05_Christmas3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_03_Winter_2 (0-0-0-0): size 337 (cls: Athena_Tree_Pine_03_Winter_2>Tree_Pine_05_Christmas3_C>/Game/Building/ActorBlueprints/Prop/Winter/Tree_Pine_05_Christmas3):
 		Tag array:
 			SpotLight(ObjectProperty)=SpotLight=PG_Winter_Village_L_Pubs_A 
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Winter_Village_L_Pubs_A 
 			TimeOfDayControlledLights(ArrayProperty)=[object] (inner: ObjectProperty)
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Winter_Village_L_Pubs_A 
 			MyGuid(StructProperty)=Guid: 76266014-1138964838-3235834037-1092178627 

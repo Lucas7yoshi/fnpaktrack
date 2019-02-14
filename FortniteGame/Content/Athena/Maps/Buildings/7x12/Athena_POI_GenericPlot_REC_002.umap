@@ -34,6 +34,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Chair_FastFoodStool
 	/Game/Building/ActorBlueprints/Prop/CoffeeShop_Menu_01
 	/Game/Building/ActorBlueprints/Prop/Commerce_Awning
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_SmallChimney_01
 	/Game/Building/ActorBlueprints/Prop/Roof_Ducts05
 	/Game/Building/ActorBlueprints/Prop/Sign_TacoStand_01
@@ -235,6 +236,7 @@ Name table:
 	Default__LODActor
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Prop_SmallChimney_01_C
 	Default__Roof_Ducts05_C
 	Default__Sign_TacoStand_01_C
@@ -363,6 +365,8 @@ Name table:
 	LCD_KitchenModern_Counter5
 	LCD_Refrigerator_024
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	Level
@@ -383,6 +387,9 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MI_AthenaTreeXmasPine_01_Impostor_MT
 	MI_AthenaTreeXmasPine_02_Impostor_MT
 	MI_DurrSet
@@ -407,6 +414,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -421,6 +429,7 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_8358__82B00B3C
@@ -430,6 +439,7 @@ Name table:
 	PointLight1
 	PointLight1_GEN_VARIABLE
 	PointLightComponent
+	PrimitiveComponent
 	Prop_SmallChimney
 	Prop_SmallChimney_01_C
 	PropertySetObject
@@ -464,6 +474,7 @@ Name table:
 	S_Elevation_Ground_Z8
 	SceneComponent
 	Sign_TacoStand_01_C
+	SimpleMemberReference
 	SirenLightMultiplier
 	SM_Athena_POI_GenericPlot_REC_002_1_SM_Sidewalk_Rounded_01
 	SM_FORT_Floors_Generic_BasicTile61
@@ -481,6 +492,7 @@ Name table:
 	SoftClassPath
 	SoftObjectProperty
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	SpotLight
 	SpotLight1
@@ -555,6 +567,7 @@ Name table:
 	TrashPile_01
 	TrashPile_01_C
 	TrashPile_05_C
+	UCSModifiedProperties
 	Utility_Dumpster
 	Vector
 	Vertical Bounce Component
@@ -651,20 +664,24 @@ Serialized exports:
 			CullDistance(FloatProperty)=4841.904 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	Athena_Tree_Pine_01_2 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_01_2>Athena_Tree_Pine_01_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_MT):
+	Athena_Tree_Pine_01_2 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_01_2>Athena_Tree_Pine_01_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_MT):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_GenericPlot_REC_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
 			MyGuid(StructProperty)=Guid: 2569041142-1105279304-2074912703-2671549942 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
-	Athena_Tree_Pine_4 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_4>Athena_Tree_Pine_03_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_03_MT):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_4 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_4>Athena_Tree_Pine_03_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_03_MT):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_POI_GenericPlot_REC_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
 			MyGuid(StructProperty)=Guid: 3333239593-1210710491-2716104360-1904233780 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Factory_4c_ThreeQuarter5 (0-0-0-0): size 292 (cls: Factory_4c_ThreeQuarter5>Basic_Corner_01e_Quarter_C>/Game/Building/ActorBlueprints/Corner/Basic_Corner_01e_Quarter):
 		Tag array:
 			TextureData(ObjectProperty)=MI_Hospital_00=/Game/Building/TextureData/WallOuter/MI_Hospital_00 
@@ -784,7 +801,7 @@ Serialized exports:
 	BuildingFoundation5x57 (0-0-0-0): size 287 (cls: BuildingFoundation5x57>BuildingFoundation5x5>/Script/FortniteGame):
 		Tag array:
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-2304,-256.0003,-40)) Max(Vector(256.0002,2304,-8)),59649) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-2304,-256.0003,-40)) Max(Vector(256.0002,2304,-8)),62721) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
 			MyGuid(StructProperty)=Guid: 3553423777-1182885855-209604504-2534301184 
 			DataVersion(IntProperty)=1 
@@ -1419,7 +1436,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=397 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-5978.467,-345.3342,-3.966569)) Max(Vector(347.0155,3421.611,32.12048)),31745) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-5978.467,-345.3342,-3.966569)) Max(Vector(347.0155,3421.611,32.12048)),32001) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=397 
@@ -1661,6 +1678,20 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_POI_GenericPlot_REC_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 

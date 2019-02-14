@@ -40,6 +40,7 @@ Name table:
 	/Game/UI/Foundation/Textures/Buttons/T-Tab-Secondary-Base-32x64
 	/Game/UI/Foundation/Textures/Icons/PS4Buttons/T_PS4_RStick
 	/Script/BlueprintContext
+	/Script/CommonInput
 	/Script/CommonUI
 	/Script/CoreUObject
 	/Script/Engine
@@ -54,7 +55,6 @@ Name table:
 	ActiveEntities
 	ActiveSequences
 	ActiveWidgetIndex
-	AddInputActionHandler
 	AlphaCurve
 	AnimationBindings
 	AnimationGuid
@@ -80,6 +80,7 @@ Name table:
 	BacchusClose3Button
 	BacchusCloseButton
 	Back
+	Back Action
 	bAllowedInZone
 	bAllowTemplate
 	BannerImage
@@ -93,6 +94,7 @@ Name table:
 	bDisplayInputActionWhenNotInteractable
 	bEvaluateInPostroll
 	bEvaluateInPreroll
+	bFlipForRightToLeftFlowDirection
 	bHasDefaultValue
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
@@ -107,12 +109,12 @@ Name table:
 	BlueprintComponentDelegateBinding
 	BlueprintContextLibrary
 	BlueprintGeneratedClass
-	BlueprintMapLibrary
 	bManualEaseOut
 	BndEvt__BacchusClose2Button_K2Node_ComponentBoundEvent_1_CommonButtonClicked__DelegateSignature
 	BndEvt__BacchusClose3Button_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature
 	BndEvt__BacchusCloseButton_K2Node_ComponentBoundEvent_26_CommonButtonClicked__DelegateSignature
 	BndEvt__StatsTabList_K2Node_ComponentBoundEvent_0_OnTabSelected__DelegateSignature
+	bNewInputType
 	BoolProperty
 	Border-SolidBG-DkBlue_C
 	Border_AthenaStore_OfferHeader_C
@@ -147,8 +149,7 @@ Name table:
 	CallFunc_Conv_IntToText_ReturnValue
 	CallFunc_Conv_IntToText_ReturnValue1
 	CallFunc_Conv_IntToText_ReturnValue2
-	CallFunc_Conv_IntToText_ReturnValue3
-	CallFunc_Conv_IntToText_ReturnValue4
+	CallFunc_EqualEqual_ByteByte_ReturnValue
 	CallFunc_Format_ReturnValue
 	CallFunc_Format_ReturnValue1
 	CallFunc_GetAthenaProfile_ReturnValue
@@ -159,30 +160,17 @@ Name table:
 	CallFunc_GetContext_ReturnValue3
 	CallFunc_GetContext_ReturnValue4
 	CallFunc_GetContext_ReturnValue5
+	CallFunc_GetCurrentInputType_ReturnValue
 	CallFunc_GetCurrentlyViewedAccountInfo_Result
 	CallFunc_GetCurrentSeasonName_ReturnValue
-	CallFunc_GetLastUpdateTime_ReturnValue
+	CallFunc_GetGameInstanceSubsystem_ReturnValue
 	CallFunc_GetSeasonFriendMatchXpBoost_ReturnValue
 	CallFunc_GetSeasonMatchXpBoost_ReturnValue
-	CallFunc_GetSecondTierPlaceTag_ReturnValue
-	CallFunc_GetStatValue_ReturnValue
-	CallFunc_GetStatValue_ReturnValue1
-	CallFunc_GetStatValue_ReturnValue2
-	CallFunc_GetStatValue_ReturnValue3
-	CallFunc_GetStatValue_ReturnValue4
-	CallFunc_GetThirdTierPlaceTag_ReturnValue
 	CallFunc_GetUIManagerWidget_ReturnValue
-	CallFunc_GetWinsTag_ReturnValue
 	CallFunc_HandleBack_PassThrough
+	CallFunc_HasInputActionHandler_ReturnValue
 	CallFunc_IsActivated_ReturnValue
 	CallFunc_IsMobileGame_ReturnValue
-	CallFunc_IsMobileGame_ReturnValue1
-	CallFunc_Map_Find_ReturnValue
-	CallFunc_Map_Find_ReturnValue1
-	CallFunc_Map_Find_ReturnValue2
-	CallFunc_Map_Find_Value
-	CallFunc_Map_Find_Value1
-	CallFunc_Map_Find_Value2
 	CallFunc_PlayAnimation_ReturnValue
 	CallFunc_PlayAnimation_ReturnValue1
 	CallFunc_TextToUpper_ReturnValue
@@ -196,6 +184,7 @@ Name table:
 	CommonActivatablePanel
 	CommonBorder
 	CommonButton
+	CommonInputSubsystem
 	CommonLoadGuard
 	CommonTabListWidget
 	CommonTextBlock
@@ -218,7 +207,6 @@ Name table:
 	Default__AthenaStatsScreenBase
 	Default__AthenaStatsTab_C
 	Default__BlueprintContextLibrary
-	Default__BlueprintMapLibrary
 	Default__BoolProperty
 	Default__Border-SolidBG-DkBlue_C
 	Default__Border_AthenaStore_OfferHeader_C
@@ -248,7 +236,6 @@ Name table:
 	Default__IntProperty
 	Default__KismetTextLibrary
 	Default__LoadGuardSlot
-	Default__MapProperty
 	Default__MovieScene
 	Default__MovieScene2DTransformSection
 	Default__MovieScene2DTransformTrack
@@ -270,8 +257,8 @@ Name table:
 	Default__SizeBox
 	Default__SizeBoxSlot
 	Default__Spacer
-	Default__StrProperty
 	Default__StructProperty
+	Default__SubsystemBlueprintLibrary
 	Default__TextProperty
 	Default__TextScrollStyle-Base_C
 	Default__TextScrollStyle-NoFade_C
@@ -304,14 +291,18 @@ Name table:
 	Divider2
 	DrawAs
 	Duo
+	DuoPlaylistNames
 	DynamicBindingObjects
 	EaseIn
 	EaseInFunction
 	EaseOut
 	EaseOutFunction
 	Easing
+	ECommonInputType
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	EMovieSceneBlendType
 	EMovieSceneBlendType::Absolute
@@ -323,6 +314,7 @@ Name table:
 	EntryPoint
 	Enum
 	EnumProperty
+	EqualEqual_ByteByte
 	ERichCurveExtrapolation
 	ERichCurveInterpMode
 	ERichCurveTangentMode
@@ -362,6 +354,7 @@ Name table:
 	ExecuteUbergraph_AthenaStatsTab
 	Flags
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontMaterial
 	FontObject
@@ -386,16 +379,13 @@ Name table:
 	FunctionNameToBind
 	GetAthenaProfile
 	GetContext
+	GetCurrentInputType
 	GetCurrentlyViewedAccountInfo
 	GetCurrentSeasonName
-	GetLastUpdateTime
+	GetGameInstanceSubsystem
 	GetSeasonFriendMatchXpBoost
 	GetSeasonMatchXpBoost
-	GetSecondTierPlaceTag
-	GetStatValue
-	GetThirdTierPlaceTag
 	GetUIManagerWidget
-	GetWinsTag
 	Glow
 	Groups
 	Guid
@@ -404,6 +394,7 @@ Name table:
 	HAlign_Left
 	HAlign_Right
 	HandleBack
+	HasInputActionHandler
 	HBMain
 	HBoxNoStats
 	HeightOverride
@@ -420,9 +411,11 @@ Name table:
 	ImageSize
 	ImageType
 	ImplIndex
+	Init Back Action
 	InputActionDataTable
 	InputActionHorizontalAlignment
 	InputActionWidget
+	InputMethodChangedDelegate__DelegateSignature
 	InterfaceProperty
 	InterpMode
 	IntProperty
@@ -434,6 +427,7 @@ Name table:
 	K2Node_ComponentBoundEvent_Button2
 	K2Node_ComponentBoundEvent_TabId
 	K2Node_CreateDelegate_OutputDelegate
+	K2Node_CustomEvent_bNewInputType
 	K2Node_Event_bWasSuccessful
 	K2Node_MakeArray_Array
 	K2Node_MakeArray_Array1
@@ -444,6 +438,7 @@ Name table:
 	K2Node_Select_Default
 	Key
 	KillsRow
+	KismetMathLibrary
 	KismetTextLibrary
 	LastTrackIdentifier
 	LastUpdatedTime
@@ -456,6 +451,8 @@ Name table:
 	LoadGuard
 	LoadGuardSlot
 	LoadingText
+	LTM
+	LTM_ExclusionPlaylistNames
 	LUTIndices
 	LUTOffset
 	M-Borderless-Banner
@@ -463,7 +460,6 @@ Name table:
 	M-Button-Console-YellowOutline
 	M_Border_SoftWhiteGlow
 	M_Font_Horizon_Dynamic
-	Map_Find
 	MapProperty
 	Margin
 	Mask
@@ -508,6 +504,7 @@ Name table:
 	MovieSceneTemplateGenerationLedger
 	MovieSceneTrackIdentifier
 	MovieSceneTrackImplementationPtr
+	MulticastDelegateProperty
 	Name
 	NamedSlot
 	NameProperty
@@ -533,6 +530,8 @@ Name table:
 	OnActivated
 	OnButtonClicked
 	OnDeactivated
+	OnInputMethodChanged
+	OnInputMethodChanged_Event
 	OnQueryFinished
 	OnQueryStarted
 	OnTabSelected
@@ -577,6 +576,7 @@ Name table:
 	RCTM_Auto
 	RCTM_User
 	RCTWM_WeightedNone
+	RemoveInputActionHandler
 	RenderTransform
 	RenderTransformPivot
 	ResourceName
@@ -606,10 +606,8 @@ Name table:
 	SequenceID
 	SequenceSignature
 	SetFrontEndCamera
+	SetInputActionHandler
 	SetLinkedSwitcher
-	SetStatValue
-	SetStatValueAsText
-	SetTagAndDisplayName
 	SetText
 	SetVisibility
 	ShadowOffset
@@ -628,12 +626,14 @@ Name table:
 	SlotWidgetName
 	SoftObjectProperty
 	Solo
+	SoloPlaylistNames
 	SortedSegments
 	SourceSection
 	SourceTrack
 	Spacer
 	SpecifiedColor
 	Squad
+	SquadPlaylistNames
 	StatName
 	StatsHeader
 	StatsTabList
@@ -641,6 +641,7 @@ Name table:
 	StrProperty
 	StructProperty
 	Style
+	SubsystemBlueprintLibrary
 	SubTemplateSerialNumbers
 	SurroundImage
 	SurroundLoadGuard
@@ -656,8 +657,6 @@ Name table:
 	Tabs_Paginate
 	Tabs_Paginate_INST
 	Tags
-	TagToDisplayName
-	TagToDisplayName_Value
 	Tangent
 	TangentMode
 	TangentWeightMode
@@ -692,6 +691,7 @@ Name table:
 	ThirdTierTile
 	Throbber_Material-Monochrome
 	TickResolution
+	TileTier
 	Tiling
 	TimePlayedRow
 	Times
@@ -710,8 +710,6 @@ Name table:
 	UInt32Property
 	UMGSequencePlayer
 	UnderlyingType
-	UpdateLastUpdatedTime
-	UpdateStats
 	UpdatingBox
 	UseButtonStyle
 	UserSpecifiedScale
@@ -743,7 +741,7 @@ Name table:
 	WinsTile
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	AthenaStatsTab_C (0-0-0-0): size 679 (cls: AthenaStatsTab_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	AthenaStatsTab_C (0-0-0-0): size 655 (cls: AthenaStatsTab_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -753,52 +751,56 @@ Serialized exports:
 			TemplateAsset(SoftObjectProperty)=/Game/Athena/UI/Frontend/AthenaStatsTab.WidgetArchetype 
 			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_AthenaStatsTab=AthenaStatsTab_C 
-	Default__AthenaStatsTab_C (0-0-0-0): size 833 (cls: Default__AthenaStatsTab_C>AthenaStatsTab_C):
+	Default__AthenaStatsTab_C (0-0-0-0): size 2204 (cls: Default__AthenaStatsTab_C>AthenaStatsTab_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
-			TagToDisplayName(MapProperty)=[object] (inner: StrProperty)
+			Back Action(StructProperty)=System.Byte[] 
+			SoloPlaylistNames(ArrayProperty)=[object] (inner: StrProperty)
+			DuoPlaylistNames(ArrayProperty)=[object] (inner: StrProperty)
+			SquadPlaylistNames(ArrayProperty)=[object] (inner: StrProperty)
+			LTM_ExclusionPlaylistNames(ArrayProperty)=[object] (inner: StrProperty)
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	Entrance (0-0-0-0): size 36 (cls: Entrance>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_AthenaStatsTab (0-0-0-0): size 2650 (cls: ExecuteUbergraph_AthenaStatsTab>Function>/Script/CoreUObject)
+	ExecuteUbergraph_AthenaStatsTab (0-0-0-0): size 2417 (cls: ExecuteUbergraph_AthenaStatsTab>Function>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>StructProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ArrayProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array1 (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array1>StructProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array1 (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array1>ArrayProperty>/Script/CoreUObject)
-	SecondTierTile (0-0-0-0): size 275 (cls: SecondTierTile>AthenaMainStatTile_C>/Game/Athena/UI/Frontend/AthenaMainStatTile):
+	SecondTierTile (0-0-0-0): size 212 (cls: SecondTierTile>AthenaMainStatTile_C>/Game/Athena/UI/Frontend/AthenaMainStatTile):
 		Tag array:
 			Glow(ObjectProperty)=Glow=WidgetArchetype 
-			NameTextBlock(ObjectProperty)=NameTextBlock=WidgetArchetype 
 			ValueTextBlock(ObjectProperty)=ValueTextBlock=WidgetArchetype 
-			StatName(TextProperty)=Places in Top 10 (FC32F49D4D639950252B98A6FE3A12B6) 
+			NameTextBlock(ObjectProperty)=NameTextBlock=WidgetArchetype 
+			TileTier(IntProperty)=2 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_9=WidgetArchetype 
-	ThirdTierTile (0-0-0-0): size 275 (cls: ThirdTierTile>AthenaMainStatTile_C>/Game/Athena/UI/Frontend/AthenaMainStatTile):
+	ThirdTierTile (0-0-0-0): size 212 (cls: ThirdTierTile>AthenaMainStatTile_C>/Game/Athena/UI/Frontend/AthenaMainStatTile):
 		Tag array:
 			Glow(ObjectProperty)=Glow=WidgetArchetype 
-			NameTextBlock(ObjectProperty)=NameTextBlock=WidgetArchetype 
 			ValueTextBlock(ObjectProperty)=ValueTextBlock=WidgetArchetype 
-			StatName(TextProperty)=Places in Top 25 (BD19042B4C8349A7D634638D25BC968A) 
+			NameTextBlock(ObjectProperty)=NameTextBlock=WidgetArchetype 
+			TileTier(IntProperty)=3 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_10=WidgetArchetype 
-	WinsTile (0-0-0-0): size 263 (cls: WinsTile>AthenaMainStatTile_C>/Game/Athena/UI/Frontend/AthenaMainStatTile):
+	WinsTile (0-0-0-0): size 212 (cls: WinsTile>AthenaMainStatTile_C>/Game/Athena/UI/Frontend/AthenaMainStatTile):
 		Tag array:
 			Glow(ObjectProperty)=Glow=WidgetArchetype 
-			NameTextBlock(ObjectProperty)=NameTextBlock=WidgetArchetype 
 			ValueTextBlock(ObjectProperty)=ValueTextBlock=WidgetArchetype 
-			StatName(TextProperty)=Wins (7D2BB85E4F3C00DDEE0313A2DCD44D9B) 
+			NameTextBlock(ObjectProperty)=NameTextBlock=WidgetArchetype 
+			TileTier(IntProperty)=1 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_6=WidgetArchetype 
 	KillsRow (0-0-0-0): size 350 (cls: KillsRow>AthenaStatsRow_C>/Game/Athena/UI/Frontend/AthenaStatsRow):
 		Tag array:
 			Name(ObjectProperty)=Name=WidgetArchetype 
-			Value(ObjectProperty)=Value=WidgetArchetype 
 			StatName(TextProperty)=Eliminations (3D95A244411392CEEF99889BDF8B4E24) 
 			BaseGameplayTag(StrProperty)=GameplayStat.BR.Kills 
+			Value(ObjectProperty)=Value=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_16=WidgetArchetype 
@@ -806,9 +808,9 @@ Serialized exports:
 	MatchesPlayedRow (0-0-0-0): size 360 (cls: MatchesPlayedRow>AthenaStatsRow_C>/Game/Athena/UI/Frontend/AthenaStatsRow):
 		Tag array:
 			Name(ObjectProperty)=Name=WidgetArchetype 
-			Value(ObjectProperty)=Value=WidgetArchetype 
 			StatName(TextProperty)=Matches Played (ACCBA1EA43CE1621A349949B80DD2F2C) 
 			BaseGameplayTag(StrProperty)=GameplayStat.BR.MatchesPlayed 
+			Value(ObjectProperty)=Value=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_17=WidgetArchetype 
@@ -826,24 +828,27 @@ Serialized exports:
 			FriendMatchXpBoostPointsLabel(ObjectProperty)=FriendMatchXpBoostPointsLabel=WidgetArchetype 
 			HBoxNoStats(ObjectProperty)=HBoxNoStats=WidgetArchetype 
 			HiddenSwitcher(ObjectProperty)=HiddenSwitcher=WidgetArchetype 
-			KillsRow(ObjectProperty)=KillsRow=WidgetArchetype 
-			LastUpdatedTime(ObjectProperty)=LastUpdatedTime=WidgetArchetype 
 			LastUpdatedTimeBox(ObjectProperty)=LastUpdatedTimeBox=WidgetArchetype 
-			MatchesPlayedRow(ObjectProperty)=MatchesPlayedRow=WidgetArchetype 
 			MatchXpBoostPointsLabel(ObjectProperty)=MatchXpBoostPointsLabel=WidgetArchetype 
 			NoStatsText(ObjectProperty)=NoStatsText=WidgetArchetype 
 			PlayerRankEmblem(ObjectProperty)=PlayerRankEmblem=WidgetArchetype 
 			ProgressSpinner(ObjectProperty)=ProgressSpinner=WidgetArchetype 
 			SeasonLabel(ObjectProperty)=SeasonLabel=WidgetArchetype 
-			SecondTierTile(ObjectProperty)=SecondTierTile=WidgetArchetype 
-			ThirdTierTile(ObjectProperty)=ThirdTierTile=WidgetArchetype 
 			UpdatingBox(ObjectProperty)=UpdatingBox=WidgetArchetype 
 			VBoxbannerstats(ObjectProperty)=VBoxbannerstats=WidgetArchetype 
 			VBoxStats(ObjectProperty)=VBoxStats=WidgetArchetype 
-			WinsTile(ObjectProperty)=WinsTile=WidgetArchetype 
 			StatsTabList(ObjectProperty)=StatsTabList=WidgetArchetype 
+			WinsTile(ObjectProperty)=WinsTile=WidgetArchetype 
+			SecondTierTile(ObjectProperty)=SecondTierTile=WidgetArchetype 
+			ThirdTierTile(ObjectProperty)=ThirdTierTile=WidgetArchetype 
+			KillsRow(ObjectProperty)=KillsRow=WidgetArchetype 
+			MatchesPlayedRow(ObjectProperty)=MatchesPlayedRow=WidgetArchetype 
+			LastUpdatedTime(ObjectProperty)=LastUpdatedTime=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	bNewInputType (0-0-0-0): size 40 (cls: bNewInputType>EnumProperty>/Script/CoreUObject)
+	OnInputMethodChanged_Event_0 (0-0-0-0): size 68 (cls: OnInputMethodChanged_Event_0>Function>/Script/CoreUObject)
 	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
 	BndEvt__BacchusClose3Button_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__BacchusClose3Button_K2Node_ComponentBoundEvent_36_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
 	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
@@ -858,10 +863,6 @@ Serialized exports:
 	bWasSuccessful (0-0-0-0): size 34 (cls: bWasSuccessful>BoolProperty>/Script/CoreUObject)
 	OnQueryFinished (0-0-0-0): size 68 (cls: OnQueryFinished>Function>/Script/CoreUObject)
 	OnActivated (0-0-0-0): size 54 (cls: OnActivated>Function>/Script/CoreUObject)
-	CallFunc_GetStatValue_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetStatValue_ReturnValue>IntProperty>/Script/CoreUObject)
-	UpdateStats (0-0-0-0): size 728 (cls: UpdateStats>Function>/Script/CoreUObject)
-	CallFunc_IsActivated_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsActivated_ReturnValue>BoolProperty>/Script/CoreUObject)
-	UpdateLastUpdatedTime (0-0-0-0): size 118 (cls: UpdateLastUpdatedTime>Function>/Script/CoreUObject)
 	CanShowStats (0-0-0-0): size 177 (cls: CanShowStats>Function>/Script/CoreUObject)
 	bCanShowStats (0-0-0-0): size 34 (cls: bCanShowStats>BoolProperty>/Script/CoreUObject)
 	CallFunc_CanShowStats_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_CanShowStats_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -872,16 +873,15 @@ Serialized exports:
 	CallFunc_HandleBack_PassThrough (0-0-0-0): size 34 (cls: CallFunc_HandleBack_PassThrough>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsActivated_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsActivated_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsMobileGame_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsMobileGame_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsMobileGame_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsMobileGame_ReturnValue1>BoolProperty>/Script/CoreUObject)
-	CallFunc_Map_Find_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Map_Find_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_Map_Find_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Map_Find_ReturnValue1>BoolProperty>/Script/CoreUObject)
-	CallFunc_Map_Find_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_Map_Find_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bWasSuccessful (0-0-0-0): size 34 (cls: K2Node_Event_bWasSuccessful>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_Variable2>BoolProperty>/Script/CoreUObject)
 	HandleBack (0-0-0-0): size 105 (cls: HandleBack>Function>/Script/CoreUObject)
 	PassThrough (0-0-0-0): size 34 (cls: PassThrough>BoolProperty>/Script/CoreUObject)
+	CallFunc_HasInputActionHandler_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasInputActionHandler_ReturnValue>BoolProperty>/Script/CoreUObject)
+	Init Back Action (0-0-0-0): size 260 (cls: Init Back Action>Function>/Script/CoreUObject)
+	CallFunc_EqualEqual_ByteByte_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue>BoolProperty>/Script/CoreUObject)
 	BorderSlot_1 (0-0-0-0): size 243 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -987,6 +987,8 @@ Serialized exports:
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	InputActionWidget (0-0-0-0): size 380 (cls: InputActionWidget>CommonActionWidget>/Script/CommonUI):
 		Tag array:
 			IconRimBrush(StructProperty)=System.Byte[] 
@@ -1045,11 +1047,12 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	CommonBorder_11 (0-0-0-0): size 325 (cls: CommonBorder_11>CommonBorder>/Script/CommonUI):
+	CommonBorder_11 (0-0-0-0): size 351 (cls: CommonBorder_11>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_AthenaStore_OfferHeader_C=/Game/UI/Foundation/Border/Border_AthenaStore_OfferHeader 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Padding(StructProperty)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_3=WidgetArchetype 
 	CommonBorder_2 (0-0-0-0): size 349 (cls: CommonBorder_2>CommonBorder>/Script/CommonUI):
@@ -1059,11 +1062,12 @@ Serialized exports:
 			BrushColor(StructProperty)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	CommonBorder_3 (0-0-0-0): size 325 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
+	CommonBorder_3 (0-0-0-0): size 351 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_AthenaStore_OfferHeader_C=/Game/UI/Foundation/Border/Border_AthenaStore_OfferHeader 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Padding(StructProperty)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_3=WidgetArchetype 
 	CommonBorder_4 (0-0-0-0): size 184 (cls: CommonBorder_4>CommonBorder>/Script/CommonUI):
@@ -1077,11 +1081,12 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-	CommonBorder_6 (0-0-0-0): size 325 (cls: CommonBorder_6>CommonBorder>/Script/CommonUI):
+	CommonBorder_6 (0-0-0-0): size 351 (cls: CommonBorder_6>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_AthenaStore_OfferHeader_C=/Game/UI/Foundation/Border/Border_AthenaStore_OfferHeader 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Padding(StructProperty)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_3=WidgetArchetype 
 	CommonBorder_7 (0-0-0-0): size 349 (cls: CommonBorder_7>CommonBorder>/Script/CommonUI):
@@ -1395,6 +1400,8 @@ Serialized exports:
 		Tag array:
 			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_bNewInputType (0-0-0-0): size 40 (cls: K2Node_CustomEvent_bNewInputType>EnumProperty>/Script/CoreUObject)
 	K2Node_Select1_Default (0-0-0-0): size 40 (cls: K2Node_Select1_Default>EnumProperty>/Script/CoreUObject)
 	K2Node_Select2_Default (0-0-0-0): size 40 (cls: K2Node_Select2_Default>EnumProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
@@ -1404,6 +1411,7 @@ Serialized exports:
 	Temp_byte_Variable3 (0-0-0-0): size 40 (cls: Temp_byte_Variable3>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable4 (0-0-0-0): size 40 (cls: Temp_byte_Variable4>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable5 (0-0-0-0): size 40 (cls: Temp_byte_Variable5>EnumProperty>/Script/CoreUObject)
+	CallFunc_GetCurrentInputType_ReturnValue (0-0-0-0): size 40 (cls: CallFunc_GetCurrentInputType_ReturnValue>EnumProperty>/Script/CoreUObject)
 	HBMain (0-0-0-0): size 86 (cls: HBMain>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1418,43 +1426,50 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
+	HorizontalBox_1 (0-0-0-0): size 127 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	HorizontalBox_2 (0-0-0-0): size 82 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_2 (0-0-0-0): size 123 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
-	HorizontalBox_3 (0-0-0-0): size 82 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_3 (0-0-0-0): size 123 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_4 (0-0-0-0): size 86 (cls: HorizontalBox_4>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_5=WidgetArchetype 
-	HorizontalBox_6 (0-0-0-0): size 98 (cls: HorizontalBox_6>HorizontalBox>/Script/UMG):
+	HorizontalBox_6 (0-0-0-0): size 139 (cls: HorizontalBox_6>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
-	HorizontalBox_8 (0-0-0-0): size 82 (cls: HorizontalBox_8>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_8 (0-0-0-0): size 123 (cls: HorizontalBox_8>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
-	HorizontalBox_3 (0-0-0-0): size 86 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_3 (0-0-0-0): size 127 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	LastUpdatedTimeBox (0-0-0-0): size 108 (cls: LastUpdatedTimeBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	HorizontalBox_3 (0-0-0-0): size 86 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
+	HorizontalBox_3 (0-0-0-0): size 127 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 90 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1569,17 +1584,16 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_8=WidgetArchetype 
 			Content(ObjectProperty)=CommonBorder_11=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 336 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_0 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=Value=WidgetArchetype 
-	HorizontalBoxSlot_8 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_8>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_8 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_8>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
+			Size(StructProperty)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=Name=WidgetArchetype 
@@ -1589,17 +1603,16 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=LastUpdatedTimeBox=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_6=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 336 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_0 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=Value=WidgetArchetype 
-	HorizontalBoxSlot_8 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_8>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_8 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_8>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
+			Size(StructProperty)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=Name=WidgetArchetype 
@@ -1639,7 +1652,7 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=UpdatingBox=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
-	StatsTabList (0-0-0-0): size 4045 (cls: StatsTabList>HorizontalTabList_C>/Game/UI/Foundation/TabbedView/HorizontalTabList):
+	StatsTabList (0-0-0-0): size 5100 (cls: StatsTabList>HorizontalTabList_C>/Game/UI/Foundation/TabbedView/HorizontalTabList):
 		Tag array:
 			ImageGamepadKeyPrompt(ObjectProperty)=ImageGamepadKeyPrompt=WidgetArchetype 
 			ImageHorizRule(ObjectProperty)=ImageHorizRule=WidgetArchetype 
@@ -1720,10 +1733,6 @@ Serialized exports:
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	CallFunc_GetSeasonFriendMatchXpBoost_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetSeasonFriendMatchXpBoost_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_GetSeasonMatchXpBoost_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetSeasonMatchXpBoost_ReturnValue>IntProperty>/Script/CoreUObject)
-	CallFunc_GetStatValue_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_GetStatValue_ReturnValue1>IntProperty>/Script/CoreUObject)
-	CallFunc_GetStatValue_ReturnValue2 (0-0-0-0): size 32 (cls: CallFunc_GetStatValue_ReturnValue2>IntProperty>/Script/CoreUObject)
-	CallFunc_GetStatValue_ReturnValue3 (0-0-0-0): size 32 (cls: CallFunc_GetStatValue_ReturnValue3>IntProperty>/Script/CoreUObject)
-	CallFunc_GetStatValue_ReturnValue4 (0-0-0-0): size 32 (cls: CallFunc_GetStatValue_ReturnValue4>IntProperty>/Script/CoreUObject)
 	LoadGuardSlot_0 (0-0-0-0): size 70 (cls: LoadGuardSlot_0>LoadGuardSlot>/Script/CommonUI):
 		Tag array:
 			Parent(ObjectProperty)=LoadGuard=WidgetArchetype 
@@ -1732,9 +1741,6 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=SurroundLoadGuard=WidgetArchetype 
 			Content(ObjectProperty)=SurroundImage=WidgetArchetype 
-	TagToDisplayName_Value (0-0-0-0): size 32 (cls: TagToDisplayName_Value>TextProperty>/Script/CoreUObject)
-	TagToDisplayName (0-0-0-0): size 32 (cls: TagToDisplayName>StrProperty>/Script/CoreUObject)
-	TagToDisplayName (0-0-0-0): size 40 (cls: TagToDisplayName>MapProperty>/Script/CoreUObject)
 	Entrance (0-0-0-0): size 2398 (cls: Entrance>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
@@ -2089,6 +2095,7 @@ Serialized exports:
 	CallFunc_GetContext_ReturnValue3 (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue3>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue4 (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue4>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue5 (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue5>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetGameInstanceSubsystem_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetGameInstanceSubsystem_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_PlayAnimation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_PlayAnimation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue1>ObjectProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_Button (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button>ObjectProperty>/Script/CoreUObject)
@@ -2098,22 +2105,17 @@ Serialized exports:
 	CallFunc_GetUIManagerWidget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetUIManagerWidget_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	HBoxNoStats (0-0-0-0): size 36 (cls: HBoxNoStats>ObjectProperty>/Script/CoreUObject)
 	HiddenSwitcher (0-0-0-0): size 36 (cls: HiddenSwitcher>ObjectProperty>/Script/CoreUObject)
-	KillsRow (0-0-0-0): size 36 (cls: KillsRow>ObjectProperty>/Script/CoreUObject)
-	LastUpdatedTime (0-0-0-0): size 36 (cls: LastUpdatedTime>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetGameInstanceSubsystem_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetGameInstanceSubsystem_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	LastUpdatedTimeBox (0-0-0-0): size 36 (cls: LastUpdatedTimeBox>ObjectProperty>/Script/CoreUObject)
-	MatchesPlayedRow (0-0-0-0): size 36 (cls: MatchesPlayedRow>ObjectProperty>/Script/CoreUObject)
 	MatchXpBoostPointsLabel (0-0-0-0): size 36 (cls: MatchXpBoostPointsLabel>ObjectProperty>/Script/CoreUObject)
 	NoStatsText (0-0-0-0): size 36 (cls: NoStatsText>ObjectProperty>/Script/CoreUObject)
 	PlayerRankEmblem (0-0-0-0): size 36 (cls: PlayerRankEmblem>ObjectProperty>/Script/CoreUObject)
 	ProgressSpinner (0-0-0-0): size 36 (cls: ProgressSpinner>ObjectProperty>/Script/CoreUObject)
 	SeasonLabel (0-0-0-0): size 36 (cls: SeasonLabel>ObjectProperty>/Script/CoreUObject)
-	SecondTierTile (0-0-0-0): size 36 (cls: SecondTierTile>ObjectProperty>/Script/CoreUObject)
 	Tabs_Paginate (0-0-0-0): size 36 (cls: Tabs_Paginate>ObjectProperty>/Script/CoreUObject)
-	ThirdTierTile (0-0-0-0): size 36 (cls: ThirdTierTile>ObjectProperty>/Script/CoreUObject)
 	UpdatingBox (0-0-0-0): size 36 (cls: UpdatingBox>ObjectProperty>/Script/CoreUObject)
 	VBoxbannerstats (0-0-0-0): size 36 (cls: VBoxbannerstats>ObjectProperty>/Script/CoreUObject)
 	VBoxStats (0-0-0-0): size 36 (cls: VBoxStats>ObjectProperty>/Script/CoreUObject)
-	WinsTile (0-0-0-0): size 36 (cls: WinsTile>ObjectProperty>/Script/CoreUObject)
 	Overlay_0 (0-0-0-0): size 57 (cls: Overlay_0>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2507,12 +2509,7 @@ Serialized exports:
 		Tag array:
 			Size(StructProperty)=Vector2D(1,4) 
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
-	CallFunc_GetSecondTierPlaceTag_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetSecondTierPlaceTag_ReturnValue>StrProperty>/Script/CoreUObject)
-	CallFunc_GetThirdTierPlaceTag_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetThirdTierPlaceTag_ReturnValue>StrProperty>/Script/CoreUObject)
-	CallFunc_GetWinsTag_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetWinsTag_ReturnValue>StrProperty>/Script/CoreUObject)
-	CallFunc_GetSecondTierPlaceTag_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetSecondTierPlaceTag_ReturnValue>StrProperty>/Script/CoreUObject)
-	CallFunc_GetThirdTierPlaceTag_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetThirdTierPlaceTag_ReturnValue>StrProperty>/Script/CoreUObject)
-	CallFunc_GetWinsTag_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetWinsTag_ReturnValue>StrProperty>/Script/CoreUObject)
+	Back Action (0-0-0-0): size 36 (cls: Back Action>StructProperty>/Script/CoreUObject)
 	CallFunc_GetCurrentlyViewedAccountInfo_Result (0-0-0-0): size 36 (cls: CallFunc_GetCurrentlyViewedAccountInfo_Result>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_FormatArgumentData (0-0-0-0): size 36 (cls: K2Node_MakeStruct_FormatArgumentData>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_FormatArgumentData1 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_FormatArgumentData1>StructProperty>/Script/CoreUObject)
@@ -2522,16 +2519,7 @@ Serialized exports:
 	CallFunc_Format_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Format_ReturnValue>TextProperty>/Script/CoreUObject)
 	CallFunc_Format_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Format_ReturnValue1>TextProperty>/Script/CoreUObject)
 	CallFunc_GetCurrentSeasonName_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetCurrentSeasonName_ReturnValue>TextProperty>/Script/CoreUObject)
-	CallFunc_Map_Find_Value (0-0-0-0): size 32 (cls: CallFunc_Map_Find_Value>TextProperty>/Script/CoreUObject)
-	CallFunc_Map_Find_Value1 (0-0-0-0): size 32 (cls: CallFunc_Map_Find_Value1>TextProperty>/Script/CoreUObject)
-	CallFunc_Map_Find_Value2 (0-0-0-0): size 32 (cls: CallFunc_Map_Find_Value2>TextProperty>/Script/CoreUObject)
 	CallFunc_TextToUpper_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_TextToUpper_ReturnValue>TextProperty>/Script/CoreUObject)
-	CallFunc_GetLastUpdateTime_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetLastUpdateTime_ReturnValue>TextProperty>/Script/CoreUObject)
-	CallFunc_Conv_IntToText_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToText_ReturnValue>TextProperty>/Script/CoreUObject)
-	CallFunc_Conv_IntToText_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToText_ReturnValue1>TextProperty>/Script/CoreUObject)
-	CallFunc_Conv_IntToText_ReturnValue2 (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToText_ReturnValue2>TextProperty>/Script/CoreUObject)
-	CallFunc_Conv_IntToText_ReturnValue3 (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToText_ReturnValue3>TextProperty>/Script/CoreUObject)
-	CallFunc_Conv_IntToText_ReturnValue4 (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToText_ReturnValue4>TextProperty>/Script/CoreUObject)
 	VerticalBox_0 (0-0-0-0): size 57 (cls: VerticalBox_0>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2685,17 +2673,15 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=VerticalBox_11=WidgetArchetype 
 			Content(ObjectProperty)=AccountLevelLabel=WidgetArchetype 
-	VerticalBoxSlot_6 (0-0-0-0): size 209 (cls: VerticalBoxSlot_6>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_6 (0-0-0-0): size 168 (cls: VerticalBoxSlot_6>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VerticalBox_12=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_9=WidgetArchetype 
-	VerticalBoxSlot_8 (0-0-0-0): size 295 (cls: VerticalBoxSlot_8>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_8 (0-0-0-0): size 254 (cls: VerticalBoxSlot_8>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Size(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VerticalBox_12=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_13=WidgetArchetype 
 	VerticalBoxSlot_11 (0-0-0-0): size 70 (cls: VerticalBoxSlot_11>VerticalBoxSlot>/Script/UMG):
@@ -2706,10 +2692,9 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=VerticalBox_13=WidgetArchetype 
 			Content(ObjectProperty)=FriendMatchXpBoostPointsLabel=WidgetArchetype 
-	VerticalBoxSlot_11 (0-0-0-0): size 209 (cls: VerticalBoxSlot_11>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_11 (0-0-0-0): size 168 (cls: VerticalBoxSlot_11>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Size(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=VerticalBox_14=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_11=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 168 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):

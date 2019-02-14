@@ -17,6 +17,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Haybale_03
 	/Game/Building/ActorBlueprints/Prop/Haybale_04
 	/Game/Building/ActorBlueprints/Prop/Haystack_Prop
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_Rocks_09
 	/Game/Building/ActorBlueprints/Roof/Farm_Roof1_S
 	/Game/Building/ActorBlueprints/Wall/Fence_Rural_Low
@@ -123,6 +124,7 @@ Name table:
 	Default__MapBuildDataRegistry
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Prop_Rocks_09_C
 	Default__SM_Farm_Doorway_1_C
 	Default__SM_Farm_QuarterWall_C
@@ -190,6 +192,8 @@ Name table:
 	LCD_Barrel
 	LCD_Barrel_02
 	LCD_Shrub
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LerpInteactoIcon
@@ -210,6 +214,9 @@ Name table:
 	MaxAngularVelocity
 	MaxCullDistance
 	MaxCullObjectSize
+	MemberGuid
+	MemberName
+	MemberParent
 	MI_Farm_Set_Natural
 	MinCullDistance
 	MinCullObjectSize
@@ -229,6 +236,7 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NoCollision
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	None
 	NumBuiltInstances
@@ -239,11 +247,13 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_153__076876EB
 	PersistentLevel
 	Plant_Shrub_03
+	PrimitiveComponent
 	Prop_Rocks
 	Prop_Rocks_09_C
 	PropertySetObject
@@ -259,6 +269,7 @@ Name table:
 	Rotator
 	S_Elevation_Ground_Z
 	SceneComponent
+	SimpleMemberReference
 	SM_Athena_RUR_3x3_Shed_c_1_SM_Farm_Wall
 	SM_Farm_Doorway_1_C
 	SM_Farm_QuarterWall
@@ -269,6 +280,7 @@ Name table:
 	SM_Farm_Wall_4_C
 	SoftClassPath
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	StaticMesh
 	StaticMeshComponent
@@ -289,6 +301,7 @@ Name table:
 	TimelinePostUpdateFunc
 	TL_TimelineLength
 	TrackName
+	UCSModifiedProperties
 	Vector
 	Visibility
 	World
@@ -358,14 +371,16 @@ Serialized exports:
 			CullDistance(FloatProperty)=2800 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_Shed_c 
 	Athena_RUR_3x3_Shed_c_C_0 (0-0-0-0): size 12 (cls: Athena_RUR_3x3_Shed_c_C_0>Athena_RUR_3x3_Shed_c_C)
-	Athena_Tree_Medium_01_1 (0-0-0-0): size 238 (cls: Athena_Tree_Medium_01_1>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+	Athena_Tree_Medium_01_1 (0-0-0-0): size 308 (cls: Athena_Tree_Medium_01_1>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_RUR_3x3_Shed_c 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_Shed_c 
 			MyGuid(StructProperty)=Guid: 3801249050-1157232855-1681748629-3019326888 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_Shed_c 
 			Tags(ArrayProperty)=ZRotate_Tree_Medium_04 (inner: NameProperty)
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	BoxComponent0 (0-0-0-0): size 249 (cls: BoxComponent0>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
@@ -419,7 +434,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=148 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1364.745,-339.6949,-1.781789)) Max(Vector(329.7021,1374.821,29.21009)),15617) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-1364.745,-339.6949,-1.781789)) Max(Vector(329.7021,1374.821,29.21009)),15873) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=148 
@@ -634,6 +649,13 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_Shed_c 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_RUR_3x3_Shed_c 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 287 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)

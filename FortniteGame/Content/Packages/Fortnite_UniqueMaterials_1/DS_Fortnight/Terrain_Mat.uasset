@@ -24,9 +24,6 @@ Name table:
 	/Game/Characters/Fortress_Character/Textures/AllBlack
 	/Game/Effects/Fort_Effects/Effects/Atlas/Materials/MF_Timestamp_InOut_01
 	/Game/Effects/Fort_Effects/Materials/_Functions/MF_Smoothstep_01
-	/Game/Environments/Sets/Winter/Terrain/MF_SharedSnow
-	/Game/Environments/Sets/Winter/Terrain/T_Snow01_M
-	/Game/Environments/Sets/Winter/Terrain/T_Snow01_N
 	/Game/FortressPhysicalMaterials/Dirt
 	/Game/Packages/DS_Fortnight/LeavesDead0019_D
 	/Game/Packages/DS_Fortnight/SM/Materials/concreteMF
@@ -86,7 +83,6 @@ Name table:
 	Cliffs
 	CliffTexture
 	CliffWorldCoordScale
-	ColorSnow
 	ComponentPivotLocation
 	concreteMF
 	Coordinates
@@ -103,7 +99,6 @@ Name table:
 	Default__MaterialExpressionStaticComponentMaskParameter
 	Default__MaterialExpressionStaticSwitchParameter
 	Default__MaterialExpressionTextureObjectParameter
-	Default__MaterialExpressionTextureSample
 	Default__MaterialExpressionTextureSampleParameter2D
 	Default__MaterialExpressionVectorParameter
 	DefaultR
@@ -114,9 +109,6 @@ Name table:
 	DirtBlendPower-B
 	DirtBlendX-A
 	DirtBlendX-B
-	DirtDiffuseSpecMod
-	DirtOnCliffTint
-	DirtRoughnessMod
 	DirtTextureNormal
 	DirtTextureTilingFrequency
 	DitheredLODTransition
@@ -132,8 +124,6 @@ Name table:
 	Function
 	Grass
 	Grass/Cliff Transition. Rock or Grass H map lerp
-	GrassAOLower
-	GrassAOUpper
 	GrassDiffuse
 	GrassMudShadowPowerA
 	GrassMudShadowTintA
@@ -165,7 +155,6 @@ Name table:
 	MaterialExpressionAppendVector
 	MaterialExpressionBreakMaterialAttributes
 	MaterialExpressionClamp
-	MaterialExpressionComponentMask
 	MaterialExpressionConstant
 	MaterialExpressionDivide
 	MaterialExpressionFeatureLevelSwitch
@@ -177,12 +166,10 @@ Name table:
 	MaterialExpressionQualitySwitch
 	MaterialExpressionReroute
 	MaterialExpressionScalarParameter
-	MaterialExpressionSetMaterialAttributes
 	MaterialExpressionStaticBoolParameter
 	MaterialExpressionStaticComponentMaskParameter
 	MaterialExpressionStaticSwitchParameter
 	MaterialExpressionTextureObjectParameter
-	MaterialExpressionTextureSample
 	MaterialExpressionTextureSampleParameter2D
 	MaterialExpressionVectorParameter
 	MaterialExpressionVertexNormalWS
@@ -196,7 +183,6 @@ Name table:
 	MatLayerBlend_Tint
 	Metallic
 	MF_CreativeMoveTool
-	MF_SharedSnow
 	MF_Smoothstep_01
 	MF_Timestamp_InOut_01
 	Modify Top Tiling Mask Brightness
@@ -208,7 +194,6 @@ Name table:
 	Mud Wetness Level
 	Mud_Diffuse
 	Mud_Normal
-	Mud_SpecMask
 	MudRoughScalar
 	MudSpecScalar
 	MudTextureTilingFrequency
@@ -234,7 +219,6 @@ Name table:
 	ParameterName
 	PhysicalMaterial
 	PhysMaterial
-	Roughness_Snow
 	SafeNormalize
 	SamplerSource
 	SamplerType
@@ -246,10 +230,8 @@ Name table:
 	SnowColor
 	SnowDiffuseContrast1
 	SnowDiffuseContrast2
-	SnowMask_Contrast
 	SnowNormalContrast1
 	SnowNormalContrast2
-	SnowScaleA
 	SSM_Wrap_WorldGroupSettings
 	StateId
 	StructProperty
@@ -264,8 +246,6 @@ Name table:
 	T_Grasslands_N
 	T_Noise02
 	T_Normal
-	T_Snow01_M
-	T_Snow01_N
 	T_SoccerTennisBasketball
 	Terrain_Mat
 	Texture
@@ -281,6 +261,7 @@ Name table:
 	TopLayer
 	TopLayerColorMultiplier
 	Transform3x3Matrix
+	trueGrassTriplanar
 	Use a base Layer
 	Use Base Texture Normals
 	Use Base Texture Spec
@@ -309,7 +290,6 @@ Name table:
 	UseCliffs (Disables Mud)
 	UseConcrete
 	UseDirt
-	UseDirtDiffuseAsSpec
 	UseMud
 	UseSnow
 	UseTextureNormals
@@ -324,7 +304,7 @@ Name table:
 	XY coordinate offset over Z
 	Z coordinate offset over XY
 Serialized exports:
-	Terrain_Mat (0-0-0-0): size 241834 (cls: Terrain_Mat>Material>/Script/Engine):
+	Terrain_Mat (0-0-0-0): size 239756 (cls: Terrain_Mat>Material>/Script/Engine):
 		Tag array:
 			PhysMaterial(ObjectProperty)=Dirt=/Game/FortressPhysicalMaterials/Dirt 
 			Metallic(StructProperty)=System.Byte[] 
@@ -337,7 +317,7 @@ Serialized exports:
 			Expressions(ArrayProperty)=[object] (inner: ObjectProperty)
 			MaterialFunctionInfos(ArrayProperty)=[object] (inner: StructProperty)
 			bUseMaterialAttributes(BoolProperty)=True 
-			StateId(StructProperty)=Guid: 360561868-1322403425-1992711593-3287872140 
+			StateId(StructProperty)=Guid: 4147496521-1169798469-2162437306-3600931567 
 			CachedQualityLevelsUsed(ArrayProperty)=[object] (inner: BoolProperty)
 	MaterialExpressionFeatureLevelSwitch_0 (0-0-0-0): size 308 (cls: MaterialExpressionFeatureLevelSwitch_0>MaterialExpressionFeatureLevelSwitch>/Script/Engine):
 		Tag array:
@@ -461,15 +441,7 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=MatLayerBlend_Standard=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Standard 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionMaterialFunctionCall_25 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_25>MaterialExpressionMaterialFunctionCall>/Script/Engine):
-		Tag array:
-			MaterialFunction(ObjectProperty)=MatLayerBlend_Standard=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Standard 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionMaterialFunctionCall_27 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_27>MaterialExpressionMaterialFunctionCall>/Script/Engine):
-		Tag array:
-			MaterialFunction(ObjectProperty)=MatLayerBlend_Tint=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Tint 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionMaterialFunctionCall_28 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_28>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=MatLayerBlend_Tint=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Tint 
 			Material(ObjectProperty)=Terrain_Mat= 
@@ -513,14 +485,6 @@ Serialized exports:
 		Tag array:
 			MaterialFunction(ObjectProperty)=HeightLerp=/Engine/Functions/Engine_MaterialFunctions02/Texturing/HeightLerp 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionMaterialFunctionCall_39 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_39>MaterialExpressionMaterialFunctionCall>/Script/Engine):
-		Tag array:
-			MaterialFunction(ObjectProperty)=HeightLerp=/Engine/Functions/Engine_MaterialFunctions02/Texturing/HeightLerp 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionMaterialFunctionCall_4 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_4>MaterialExpressionMaterialFunctionCall>/Script/Engine):
-		Tag array:
-			MaterialFunction(ObjectProperty)=MatLayerBlend_Standard=/Engine/Functions/MaterialLayerFunctions/MatLayerBlend_Standard 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionMaterialFunctionCall_44 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_44>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=MatLayerBlend_BreakOpacity=/Engine/Functions/Engine_MaterialFunctions02/MatLayerBlend_BreakOpacity 
@@ -528,10 +492,6 @@ Serialized exports:
 	MaterialExpressionMaterialFunctionCall_45 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_45>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=Fortnite_Terrain_invertOpacityNormalBool=/Game/Packages/Fortnite_UniqueMaterials_1/MaterialFunctions/Fortnite_Terrain_invertOpacityNormalBool 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionMaterialFunctionCall_5 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_5>MaterialExpressionMaterialFunctionCall>/Script/Engine):
-		Tag array:
-			MaterialFunction(ObjectProperty)=MF_SharedSnow=/Game/Environments/Sets/Winter/Terrain/MF_SharedSnow 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionMaterialFunctionCall_50 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_50>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
@@ -560,10 +520,6 @@ Serialized exports:
 	MaterialExpressionMaterialFunctionCall_73 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_73>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=Fortnite_Terrain_invertOpacityNormalBool=/Game/Packages/Fortnite_UniqueMaterials_1/MaterialFunctions/Fortnite_Terrain_invertOpacityNormalBool 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionMaterialFunctionCall_74 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_74>MaterialExpressionMaterialFunctionCall>/Script/Engine):
-		Tag array:
-			MaterialFunction(ObjectProperty)=SwizzleWorldAlignedSpecOutputForFortnite=/Game/Packages/Fortress_SharedMaterials/Base_Material_Functions/SwizzleWorldAlignedSpecOutputForFortnite 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionMaterialFunctionCall_75 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_75>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
@@ -623,23 +579,11 @@ Serialized exports:
 			Inputs(StructProperty)=System.Byte[] 
 			Inputs(StructProperty)=System.Byte[] 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_0 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_0>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(FloatProperty)=1 
-			ParameterName(NameProperty)=Roughness_Snow 
-			ExpressionGUID(StructProperty)=Guid: 2627815877-1242879200-4137913230-371133182 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionScalarParameter_1 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_1>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=-512 
 			ParameterName(NameProperty)=Base Tiling Texture Tile Size 
 			ExpressionGUID(StructProperty)=Guid: 2784716774-1191061730-361454484-700336554 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_10 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_10>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(FloatProperty)=-1363.06 
-			ParameterName(NameProperty)=SnowScaleA_4 
-			ExpressionGUID(StructProperty)=Guid: 3185243406-1277817052-2882856079-664785711 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionScalarParameter_100 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_100>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -652,17 +596,6 @@ Serialized exports:
 			DefaultValue(FloatProperty)=0.5 
 			ParameterName(NameProperty)=MudToGrassBlendA 
 			ExpressionGUID(StructProperty)=Guid: 1754910319-1275839116-2839265929-1412414567 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_103 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_103>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			ParameterName(NameProperty)=DirtDiffuseSpecMod 
-			ExpressionGUID(StructProperty)=Guid: 1112409229-1125473923-842547383-2280635976 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_104 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_104>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(FloatProperty)=0.5 
-			ParameterName(NameProperty)=DirtRoughnessMod 
-			ExpressionGUID(StructProperty)=Guid: 1718895453-1214981548-1769142157-1636186066 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionScalarParameter_106 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_106>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -854,12 +787,6 @@ Serialized exports:
 			ParameterName(NameProperty)=GrassSpecAmount 
 			ExpressionGUID(StructProperty)=Guid: 25673027-1081950606-2397830801-3497858711 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_65 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_65>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(FloatProperty)=1.5 
-			ParameterName(NameProperty)=GrassAOUpper 
-			ExpressionGUID(StructProperty)=Guid: 3664744230-1153642315-378198166-2235703009 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionScalarParameter_66 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_66>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=0.5 
@@ -872,23 +799,11 @@ Serialized exports:
 			ParameterName(NameProperty)=GrassMudShadowPowerA 
 			ExpressionGUID(StructProperty)=Guid: 1208846164-1172777720-2010226107-2924064284 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_7 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_7>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(FloatProperty)=-1.146322 
-			ParameterName(NameProperty)=SnowMask_Contrast_1 
-			ExpressionGUID(StructProperty)=Guid: 2277273077-1116417959-3271193510-152108477 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionScalarParameter_71 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_71>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=3 
 			ParameterName(NameProperty)=Cliff Height Lerp Contrast 
 			ExpressionGUID(StructProperty)=Guid: 1935840781-1226034683-680365711-1897684579 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_72 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_72>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(FloatProperty)=0.75 
-			ParameterName(NameProperty)=GrassAOLower 
-			ExpressionGUID(StructProperty)=Guid: 2189456186-1331415131-1494552972-1431829635 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionScalarParameter_73 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_73>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -925,12 +840,6 @@ Serialized exports:
 			ParameterName(NameProperty)=Top Layer Blend Contrast 
 			ExpressionGUID(StructProperty)=Guid: 3820643570-1319137283-3091239558-405785524 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_9 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_9>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(FloatProperty)=0.756354 
-			ParameterName(NameProperty)=SnowMask_Contrast_2 
-			ExpressionGUID(StructProperty)=Guid: 2557590351-1290178287-2342330277-1293017342 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionScalarParameter_90 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_90>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=900 
@@ -948,11 +857,6 @@ Serialized exports:
 			DefaultValue(FloatProperty)=2 
 			ParameterName(NameProperty)=DirtBlendX-A 
 			ExpressionGUID(StructProperty)=Guid: 3268318699-1255670955-2116061089-1233637453 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionScalarParameter_93 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_93>MaterialExpressionScalarParameter>/Script/Engine):
-		Tag array:
-			ParameterName(NameProperty)=Cliff to Other Layers Transition Power_1 
-			ExpressionGUID(StructProperty)=Guid: 446122782-1313851708-1051387524-1574526834 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionScalarParameter_94 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_94>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -1080,6 +984,13 @@ Serialized exports:
 			ParameterName(NameProperty)=Use_Mud_forced 
 			ExpressionGUID(StructProperty)=Guid: 169278744-1338208632-850124961-608124699 
 			Material(ObjectProperty)=Terrain_Mat= 
+	MaterialExpressionStaticSwitchParameter_1 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_1>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+		Tag array:
+			A(StructProperty)=System.Byte[] 
+			B(StructProperty)=System.Byte[] 
+			ParameterName(NameProperty)=trueGrassTriplanar 
+			ExpressionGUID(StructProperty)=Guid: 1548725966-1234175319-2153715640-3499451494 
+			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionStaticSwitchParameter_10 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_10>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
 			A(StructProperty)=System.Byte[] 
@@ -1101,13 +1012,6 @@ Serialized exports:
 			B(StructProperty)=System.Byte[] 
 			ParameterName(NameProperty)=UseMud 
 			ExpressionGUID(StructProperty)=Guid: 3099647783-1245700114-4282010778-1618955391 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionStaticSwitchParameter_16 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_16>MaterialExpressionStaticSwitchParameter>/Script/Engine):
-		Tag array:
-			A(StructProperty)=System.Byte[] 
-			B(StructProperty)=System.Byte[] 
-			ParameterName(NameProperty)=UseSnow 
-			ExpressionGUID(StructProperty)=Guid: 1949141859-1260279463-567143552-2722390029 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionStaticSwitchParameter_17 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_17>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
@@ -1266,14 +1170,6 @@ Serialized exports:
 			ParameterName(NameProperty)=UseCliffs (Disables Mud) 
 			ExpressionGUID(StructProperty)=Guid: 1940166266-1288697211-2864605627-1833654072 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionStaticSwitchParameter_46 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_46>MaterialExpressionStaticSwitchParameter>/Script/Engine):
-		Tag array:
-			A(StructProperty)=System.Byte[] 
-			B(StructProperty)=System.Byte[] 
-			DefaultValue(BoolProperty)=True 
-			ParameterName(NameProperty)=UseDirtDiffuseAsSpec 
-			ExpressionGUID(StructProperty)=Guid: 2642651277-1229403455-3682635452-3683557443 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionStaticSwitchParameter_47 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_47>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
 			A(StructProperty)=System.Byte[] 
@@ -1318,6 +1214,13 @@ Serialized exports:
 			DefaultValue(BoolProperty)=True 
 			ParameterName(NameProperty)=Hlerp_MudDarking 
 			ExpressionGUID(StructProperty)=Guid: 196098655-1320443252-3112790447-2450456407 
+			Material(ObjectProperty)=Terrain_Mat= 
+	MaterialExpressionStaticSwitchParameter_6 (0-0-0-0): size 317 (cls: MaterialExpressionStaticSwitchParameter_6>MaterialExpressionStaticSwitchParameter>/Script/Engine):
+		Tag array:
+			A(StructProperty)=System.Byte[] 
+			B(StructProperty)=System.Byte[] 
+			ParameterName(NameProperty)=trueGrassTriplanar 
+			ExpressionGUID(StructProperty)=Guid: 1339388685-1271732422-121957763-1453289163 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionStaticSwitchParameter_61 (0-0-0-0): size 343 (cls: MaterialExpressionStaticSwitchParameter_61>MaterialExpressionStaticSwitchParameter>/Script/Engine):
 		Tag array:
@@ -1392,14 +1295,6 @@ Serialized exports:
 			SamplerSource(ByteProperty)=SSM_Wrap_WorldGroupSettings 
 			Texture(ObjectProperty)=T_Noise02=/Game/Packages/Fortress_SharedMaterials/Textures/T_Noise02 
 			SamplerType(ByteProperty)=SAMPLERTYPE_LinearColor 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionTextureObjectParameter_19 (0-0-0-0): size 242 (cls: MaterialExpressionTextureObjectParameter_19>MaterialExpressionTextureObjectParameter>/Script/Engine):
-		Tag array:
-			ParameterName(NameProperty)=Mud_SpecMask 
-			ExpressionGUID(StructProperty)=Guid: 3328909262-1265054852-2621285800-2743882433 
-			Group(NameProperty)=Mud 
-			SamplerSource(ByteProperty)=SSM_Wrap_WorldGroupSettings 
-			Texture(ObjectProperty)=AllBlack=/Game/Characters/Fortress_Character/Textures/AllBlack 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionTextureObjectParameter_20 (0-0-0-0): size 242 (cls: MaterialExpressionTextureObjectParameter_20>MaterialExpressionTextureObjectParameter>/Script/Engine):
 		Tag array:
@@ -1535,19 +1430,6 @@ Serialized exports:
 			SamplerSource(ByteProperty)=SSM_Wrap_WorldGroupSettings 
 			Texture(ObjectProperty)=T_Cave_Exterior_Wall_S=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Textures/T_Cave_Exterior_Wall_S 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionTextureSample_0 (0-0-0-0): size 241 (cls: MaterialExpressionTextureSample_0>MaterialExpressionTextureSample>/Script/Engine):
-		Tag array:
-			Coordinates(StructProperty)=System.Byte[] 
-			SamplerSource(ByteProperty)=SSM_Wrap_WorldGroupSettings 
-			Texture(ObjectProperty)=T_Snow01_N=/Game/Environments/Sets/Winter/Terrain/T_Snow01_N 
-			SamplerType(ByteProperty)=SAMPLERTYPE_Normal 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionTextureSample_1 (0-0-0-0): size 200 (cls: MaterialExpressionTextureSample_1>MaterialExpressionTextureSample>/Script/Engine):
-		Tag array:
-			Coordinates(StructProperty)=System.Byte[] 
-			SamplerSource(ByteProperty)=SSM_Wrap_WorldGroupSettings 
-			Texture(ObjectProperty)=T_Snow01_M=/Game/Environments/Sets/Winter/Terrain/T_Snow01_M 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionTextureSampleParameter2D_10 (0-0-0-0): size 242 (cls: MaterialExpressionTextureSampleParameter2D_10>MaterialExpressionTextureSampleParameter2D>/Script/Engine):
 		Tag array:
 			ParameterName(NameProperty)=Cliff Spec Texture_2 
@@ -1642,12 +1524,6 @@ Serialized exports:
 			SamplerSource(ByteProperty)=SSM_Wrap_WorldGroupSettings 
 			Texture(ObjectProperty)=T_Cave_Exterior_Wall_D=/Game/Packages/DS_Fortnite_Terrain_NoLOD/Textures/T_Cave_Exterior_Wall_D 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionVectorParameter_0 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_0>MaterialExpressionVectorParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(StructProperty)=UE4.FLinearColor 
-			ParameterName(NameProperty)=DirtOnCliffTint 
-			ExpressionGUID(StructProperty)=Guid: 2900216052-1108021411-25946254-2865825053 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionVectorParameter_12 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_12>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(StructProperty)=UE4.FLinearColor 
@@ -1660,12 +1536,6 @@ Serialized exports:
 			ParameterName(NameProperty)=CustomMud_Sub_Mult_DarkeningLevel_Contrast 
 			ExpressionGUID(StructProperty)=Guid: 1103608686-1209307931-2938852736-4236226085 
 			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionVectorParameter_2 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_2>MaterialExpressionVectorParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(StructProperty)=UE4.FLinearColor 
-			ParameterName(NameProperty)=ColorSnow_1 
-			ExpressionGUID(StructProperty)=Guid: 392021609-1185437774-4246497673-2986852529 
-			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionVectorParameter_3 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_3>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(StructProperty)=UE4.FLinearColor 
@@ -1677,12 +1547,6 @@ Serialized exports:
 			DefaultValue(StructProperty)=UE4.FLinearColor 
 			ParameterName(NameProperty)=SnowColor_1 
 			ExpressionGUID(StructProperty)=Guid: 2460791253-1161059485-1488098692-2528179131 
-			Material(ObjectProperty)=Terrain_Mat= 
-	MaterialExpressionVectorParameter_4 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_4>MaterialExpressionVectorParameter>/Script/Engine):
-		Tag array:
-			DefaultValue(StructProperty)=UE4.FLinearColor 
-			ParameterName(NameProperty)=ColorSnow_2 
-			ExpressionGUID(StructProperty)=Guid: 419188554-1207515175-3767130792-2604945267 
 			Material(ObjectProperty)=Terrain_Mat= 
 	MaterialExpressionVectorParameter_5 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_5>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:

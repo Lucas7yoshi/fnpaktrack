@@ -30,6 +30,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Chair_Kitchen02
 	/Game/Building/ActorBlueprints/Prop/Garage_Door_01
 	/Game/Building/ActorBlueprints/Prop/Haybale_05
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/SM_FORT_DecoBarriers_WindowBoards03
 	/Game/Building/ActorBlueprints/Prop/Tree_Log_6b
 	/Game/Building/ActorBlueprints/Roof/DestroyedHouse_Roof_Straight
@@ -218,6 +219,7 @@ Name table:
 	Default__LODActor
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__ShutterHouse_Solid_C
 	Default__ShutterHouse_Solid_Des_02_C
 	Default__ShutterHouse_Solid_Des_03_C
@@ -347,6 +349,8 @@ Name table:
 	LCD_Shrub_054
 	LCD_Suitcases_014
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -369,6 +373,9 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MI_CryptWallsSet
 	MI_DestroyedHouse_Roof_01
 	MI_DestroyedHouse_Roof_02
@@ -401,6 +408,7 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NoCollision
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	NODE_AddStaticMeshComponent-1
 	None
@@ -412,9 +420,12 @@ Name table:
 	OverriddenLightMapRes
 	OverrideMaterials
 	Package
+	Parent_Tree_C
+	ParticleSystemComponent
 	PatioFloor
 	PersistentLevel
 	PointLightComponent
+	PrimitiveComponent
 	Prop_RubblePile
 	Prop_RubblePile_0213
 	Prop_RubblePile_024
@@ -444,6 +455,7 @@ Name table:
 	ShutterHouse_Solid_Des_02_C
 	ShutterHouse_Solid_Des_03_C
 	ShutterHouse_Windows_Des_C
+	SimpleMemberReference
 	SM_Athena_SUB_5x5_RuinedBuilding_b2_1_S_Underground_Ground
 	SM_Boardwalk_Stair44_C
 	SM_FORT_DecoBarriers_WindowBoards03
@@ -481,6 +493,7 @@ Name table:
 	SoftClassPath
 	SoftObjectProperty
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	StaticMesh
 	StaticMeshComponent
@@ -519,6 +532,7 @@ Name table:
 	Tree_068
 	Tree_Log_6b2
 	Tree_Log_6b_C
+	UCSModifiedProperties
 	Vector
 	Visibility
 	Wind Direction
@@ -686,13 +700,15 @@ Serialized exports:
 			CullDistance(FloatProperty)=3798.583 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
 	Athena_SUB_5x5_RuinedBuilding_b2_C_2 (0-0-0-0): size 12 (cls: Athena_SUB_5x5_RuinedBuilding_b2_C_2>Athena_SUB_5x5_RuinedBuilding_b2_C)
-	Tree_068 (0-0-0-0): size 193 (cls: Tree_068>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+	Tree_068 (0-0-0-0): size 263 (cls: Tree_068>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_SUB_5x5_RuinedBuilding_b2 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
 			MyGuid(StructProperty)=Guid: 1246190455-1310121089-3546220420-1727375452 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	WoodCreakSound (0-0-0-0): size 108 (cls: WoodCreakSound>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
@@ -1345,7 +1361,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=246 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2392.374,-342.7197,-4.24344)) Max(Vector(347.2548,2392.183,31.492)),29697) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2392.374,-342.7197,-4.24344)) Max(Vector(347.2548,2392.183,31.492)),29953) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=246 
@@ -1753,6 +1769,20 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2851,14 +2881,16 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=19982.03 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
-	Tree_Log_6b2 (0-0-0-0): size 254 (cls: Tree_Log_6b2>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+	Tree_Log_6b2 (0-0-0-0): size 324 (cls: Tree_Log_6b2>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_SUB_5x5_RuinedBuilding_b2 
 			Wind Direction(StructProperty)=Vector(0.9999904,-3.98159E-05,0) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
 			MyGuid(StructProperty)=Guid: 525161541-1092055991-2782290834-2009945150 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_RuinedBuilding_b2 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Athena_SUB_5x5_RuinedBuilding_b2 (0-0-0-0): size 53 (cls: Athena_SUB_5x5_RuinedBuilding_b2>World>/Script/Engine):
 		Tag array:
 			DefaultPhysicsVolume(ObjectProperty)=[object] 

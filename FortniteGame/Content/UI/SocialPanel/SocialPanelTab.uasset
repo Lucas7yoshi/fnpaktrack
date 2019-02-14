@@ -44,9 +44,7 @@ Name table:
 	BigBang
 	BigBangCount
 	BindingName
-	bIsCurTab
 	bIsFocusable
-	bIsFriendsListTab
 	bIsRootWidget
 	bIsVariable
 	Black
@@ -61,7 +59,9 @@ Name table:
 	bOverride_HeightOverride
 	bOverride_MinDesiredWidth
 	bOverride_WidthOverride
+	BP_OnDeselected
 	BP_OnHovered
+	BP_OnSelected
 	BP_OnUnhovered
 	Brush
 	BrushColor
@@ -71,6 +71,7 @@ Name table:
 	ButtonStyle-TextOnlyBase_Empty_C
 	bValidTemplate
 	ByteProperty
+	CallFunc_GetSelected_ReturnValue
 	CallFunc_Not_PreBool_ReturnValue
 	CallFunc_PlayAnimation_ReturnValue
 	CallFunc_PlayAnimation_ReturnValue1
@@ -91,7 +92,7 @@ Name table:
 	Default__ButtonStyle-TextOnlyBase_Empty_C
 	Default__CommonBorder
 	Default__CommonTextBlock
-	Default__FortSocialTabButton
+	Default__FortSocialTab
 	Default__Function
 	Default__HorizontalBox
 	Default__HorizontalBoxSlot
@@ -175,11 +176,12 @@ Name table:
 	Font
 	FontObject
 	ForcedTime
-	FortSocialTabButton
+	FortSocialTab
 	FrameNumber
 	FrameRate
 	Function
 	FunctionName
+	GetSelected
 	Groups
 	Guid
 	HAlign_Center
@@ -283,8 +285,6 @@ Name table:
 	ParentGuid
 	PlayAnimation
 	PlaybackRange
-	PlaySelected
-	PlayUnselected
 	PointerToUberGraphFrame
 	Possessables
 	PossessedObjectClass
@@ -350,6 +350,7 @@ Name table:
 	SuperBang
 	T-Bang-Replacement
 	T_UI_Icon_AddFriends
+	TabIcon
 	TabName
 	Tags
 	Tangent
@@ -366,7 +367,6 @@ Name table:
 	TextStyle-Base-XS-B-Black_C
 	TextStyle-Header-M-Yellow_C
 	Texture2D
-	Texture_TabIcon
 	TickResolution
 	Times
 	TintColor
@@ -410,7 +410,7 @@ Name table:
 	WidthOverride
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	SocialPanelTab_C (0-0-0-0): size 414 (cls: SocialPanelTab_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	SocialPanelTab_C (0-0-0-0): size 406 (cls: SocialPanelTab_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -422,7 +422,7 @@ Serialized exports:
 	Default__SocialPanelTab_C (0-0-0-0): size 491 (cls: Default__SocialPanelTab_C>SocialPanelTab_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
-			Texture_TabIcon(ObjectProperty)=T_UI_Icon_AddFriends_64=/Game/UI/SocialPanel/Art/Textures/T_UI_Icon_AddFriends_64 
+			TabIcon(ObjectProperty)=T_UI_Icon_AddFriends_64=/Game/UI/SocialPanel/Art/Textures/T_UI_Icon_AddFriends_64 
 			TabName(TextProperty)=MY FRIENDS (E6F63F614242323DB1271AB01D39CD3E) 
 			InviteTintColor(StructProperty)=System.Byte[] 
 			Style(ObjectProperty)=ButtonStyle-TextOnlyBase_Empty_C=/Game/UI/Foundation/Buttons/ButtonStyles/ButtonStyle-TextOnlyBase_Empty 
@@ -431,11 +431,10 @@ Serialized exports:
 			bIsFocusable(BoolProperty)=False 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
-	bIsCurTab (0-0-0-0): size 34 (cls: bIsCurTab>BoolProperty>/Script/CoreUObject)
-	bIsFriendsListTab (0-0-0-0): size 34 (cls: bIsFriendsListTab>BoolProperty>/Script/CoreUObject)
 	Unselected (0-0-0-0): size 36 (cls: Unselected>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_SocialPanelTab (0-0-0-0): size 307 (cls: ExecuteUbergraph_SocialPanelTab>Function>/Script/CoreUObject)
+	ExecuteUbergraph_SocialPanelTab (0-0-0-0): size 316 (cls: ExecuteUbergraph_SocialPanelTab>Function>/Script/CoreUObject)
+	CallFunc_GetSelected_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GetSelected_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Border_Count (0-0-0-0): size 583 (cls: Border_Count>CommonBorder>/Script/CommonUI):
 		Tag array:
@@ -554,10 +553,10 @@ Serialized exports:
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			RenderOpacity(FloatProperty)=0.5 
+	BP_OnDeselected (0-0-0-0): size 54 (cls: BP_OnDeselected>Function>/Script/CoreUObject)
 	BP_OnHovered (0-0-0-0): size 54 (cls: BP_OnHovered>Function>/Script/CoreUObject)
+	BP_OnSelected (0-0-0-0): size 54 (cls: BP_OnSelected>Function>/Script/CoreUObject)
 	BP_OnUnhovered (0-0-0-0): size 54 (cls: BP_OnUnhovered>Function>/Script/CoreUObject)
-	PlaySelected (0-0-0-0): size 54 (cls: PlaySelected>Function>/Script/CoreUObject)
-	PlayUnselected (0-0-0-0): size 54 (cls: PlayUnselected>Function>/Script/CoreUObject)
 	LeftsideHB (0-0-0-0): size 90 (cls: LeftsideHB>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)

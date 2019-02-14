@@ -201,7 +201,6 @@ Name table:
 	activate trap marker
 	ActivateEventAtLevelBlueprint
 	ActivateEventAtLevelBlueprint__DelegateSignature
-	ActivateSlot
 	activatesound_GEN_VARIABLE
 	Active
 	ActiveGameplayEffectHandle
@@ -222,8 +221,8 @@ Name table:
 	AirstrikeNotificationRef
 	AirstrikeNowOnline
 	AirStrikeReady
-	AirStrikeUsed
 	AirstrikeUsed
+	AirStrikeUsed
 	AllNodes
 	AllowBarriersToTakeDamage
 	AllowOutsideListsToShow
@@ -760,9 +759,6 @@ Name table:
 	CallFunc_HasAuthority_ReturnValue7
 	CallFunc_HasAuthority_ReturnValue8
 	CallFunc_HasAuthority_ReturnValue9
-	CallFunc_IsInBuildMode_ReturnValue
-	CallFunc_IsInBuildMode_ReturnValue1
-	CallFunc_IsInBuildMode_ReturnValue2
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
 	CallFunc_IsValid_ReturnValue10
@@ -1248,6 +1244,8 @@ Name table:
 	ClassProperty
 	ClearAllBits
 	ClearMissionTimer
+	ClientActivateSlot
+	ClientUpdateServerOnPlayerChangedBuildMode
 	CloserEncounterRef
 	CollisionCylinder
 	CollisionSphere
@@ -1727,6 +1725,7 @@ Name table:
 	HandleMissionEvent_ToggledCursorMode
 	HandleMissionEvent_ToggledEditMode
 	HandleMissionEvent_WallEdited
+	HandlePlayerChangedBuildMode
 	Harvesting_Minimap_Distance
 	HarvestingSphere
 	HarvestResourcesHintref
@@ -1872,6 +1871,7 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate169
 	K2Node_CreateDelegate_OutputDelegate17
 	K2Node_CreateDelegate_OutputDelegate170
+	K2Node_CreateDelegate_OutputDelegate171
 	K2Node_CreateDelegate_OutputDelegate18
 	K2Node_CreateDelegate_OutputDelegate19
 	K2Node_CreateDelegate_OutputDelegate2
@@ -1964,6 +1964,7 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate99
 	K2Node_CustomEvent_bEnteredBuildMode
 	K2Node_CustomEvent_bEnteredBuildMode1
+	K2Node_CustomEvent_bEnteredBuildMode2
 	K2Node_CustomEvent_bSuccessfullyCompleted
 	K2Node_CustomEvent_BuildingModeActive
 	K2Node_CustomEvent_BuildModeActive
@@ -2989,6 +2990,7 @@ Name table:
 	OnEncounterRampStarted
 	OnEncounterRampStarted__DelegateSignature
 	OnMatchStarted
+	OnPlayerChangedBuildMode
 	OnPlayerEnteredBuildMode__DelegateSignature
 	OnRep_HighlightCraftingMelee
 	OnRep_HighlightGunTab
@@ -2999,7 +3001,6 @@ Name table:
 	OnRep_HighlightTraps
 	OnRep_HighlightWalls
 	OnRep_Hightlight_Objectives
-	OnServerPlayerChangedBuildMode
 	OnSmasherKilled
 	OnSmasherSpawned
 	OnStairsBuilt
@@ -3676,8 +3677,8 @@ Name table:
 	TrapsPlaced
 	TrapsToHaveAtTutorial
 	TrapTileMarkerTimer
-	Treefire
 	TreeFire
+	Treefire
 	treefire1_GEN_VARIABLE
 	treefire2_GEN_VARIABLE
 	Trigger_AudioFade_GEN_VARIABLE
@@ -3731,7 +3732,7 @@ Name table:
 	WoodItemData
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Mission_FarmsteadFort_C (0-0-0-0): size 6835 (cls: Mission_FarmsteadFort_C>BlueprintGeneratedClass>/Script/Engine):
+	Mission_FarmsteadFort_C (0-0-0-0): size 6855 (cls: Mission_FarmsteadFort_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=63 
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_2=Mission_FarmsteadFort_C 
@@ -3795,7 +3796,9 @@ Serialized exports:
 	EventToSend (0-0-0-0): size 36 (cls: EventToSend>ByteProperty>/Script/CoreUObject)
 	ActivateEventAtLevelBlueprint__DelegateSignature (0-0-0-0): size 47 (cls: ActivateEventAtLevelBlueprint__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_Mission_FarmsteadFort (0-0-0-0): size 94571 (cls: ExecuteUbergraph_Mission_FarmsteadFort>Function>/Script/CoreUObject)
+	ExecuteUbergraph_Mission_FarmsteadFort (0-0-0-0): size 94518 (cls: ExecuteUbergraph_Mission_FarmsteadFort>Function>/Script/CoreUObject)
+	bEnteredBuildMode (0-0-0-0): size 34 (cls: bEnteredBuildMode>BoolProperty>/Script/CoreUObject)
+	HandlePlayerChangedBuildMode (0-0-0-0): size 68 (cls: HandlePlayerChangedBuildMode>Function>/Script/CoreUObject)
 	KilledBy (0-0-0-0): size 36 (cls: KilledBy>ObjectProperty>/Script/CoreUObject)
 	HandleEnemyKilled (0-0-0-0): size 96 (cls: HandleEnemyKilled>Function>/Script/CoreUObject)
 	StopIntroMusic (0-0-0-0): size 56 (cls: StopIntroMusic>Function>/Script/CoreUObject)
@@ -4104,10 +4107,10 @@ Serialized exports:
 	OnCanceled_1A19862C47F5B5512EBB1BB06AB516D5 (0-0-0-0): size 54 (cls: OnCanceled_1A19862C47F5B5512EBB1BB06AB516D5>Function>/Script/CoreUObject)
 	OnAllClientsReady_1A19862C47F5B5512EBB1BB08B86E674 (0-0-0-0): size 54 (cls: OnAllClientsReady_1A19862C47F5B5512EBB1BB08B86E674>Function>/Script/CoreUObject)
 	OnCanceled_1A19862C47F5B5512EBB1BB08B86E674 (0-0-0-0): size 54 (cls: OnCanceled_1A19862C47F5B5512EBB1BB08B86E674>Function>/Script/CoreUObject)
-	OnAllClientsReady_1ED02ED748A4140AEF73B29EFBBBDE98 (0-0-0-0): size 54 (cls: OnAllClientsReady_1ED02ED748A4140AEF73B29EFBBBDE98>Function>/Script/CoreUObject)
-	OnCanceled_1ED02ED748A4140AEF73B29EFBBBDE98 (0-0-0-0): size 54 (cls: OnCanceled_1ED02ED748A4140AEF73B29EFBBBDE98>Function>/Script/CoreUObject)
 	OnAllClientsReady_1A19862C47F5B5512EBB1BB04B4FB5D4 (0-0-0-0): size 54 (cls: OnAllClientsReady_1A19862C47F5B5512EBB1BB04B4FB5D4>Function>/Script/CoreUObject)
 	OnCanceled_1A19862C47F5B5512EBB1BB04B4FB5D4 (0-0-0-0): size 54 (cls: OnCanceled_1A19862C47F5B5512EBB1BB04B4FB5D4>Function>/Script/CoreUObject)
+	OnAllClientsReady_1ED02ED748A4140AEF73B29EFBBBDE98 (0-0-0-0): size 54 (cls: OnAllClientsReady_1ED02ED748A4140AEF73B29EFBBBDE98>Function>/Script/CoreUObject)
+	OnCanceled_1ED02ED748A4140AEF73B29EFBBBDE98 (0-0-0-0): size 54 (cls: OnCanceled_1ED02ED748A4140AEF73B29EFBBBDE98>Function>/Script/CoreUObject)
 	OnAllClientsReady_1A19862C47F5B5512EBB1BB04B7064BB (0-0-0-0): size 54 (cls: OnAllClientsReady_1A19862C47F5B5512EBB1BB04B7064BB>Function>/Script/CoreUObject)
 	OnCanceled_1A19862C47F5B5512EBB1BB04B7064BB (0-0-0-0): size 54 (cls: OnCanceled_1A19862C47F5B5512EBB1BB04B7064BB>Function>/Script/CoreUObject)
 	OnAllClientsReady_1A19862C47F5B5512EBB1BB0025E47EC (0-0-0-0): size 54 (cls: OnAllClientsReady_1A19862C47F5B5512EBB1BB0025E47EC>Function>/Script/CoreUObject)
@@ -4871,9 +4874,6 @@ Serialized exports:
 	CallFunc_HasAuthority_ReturnValue7 (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue7>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue8 (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue8>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue9 (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue9>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsInBuildMode_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsInBuildMode_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsInBuildMode_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsInBuildMode_ReturnValue1>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsInBuildMode_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsInBuildMode_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue10 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue10>BoolProperty>/Script/CoreUObject)
@@ -5043,6 +5043,7 @@ Serialized exports:
 	CallFunc_Not_PreBool_ReturnValue9 (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue9>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_bEnteredBuildMode (0-0-0-0): size 34 (cls: K2Node_CustomEvent_bEnteredBuildMode>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_bEnteredBuildMode1 (0-0-0-0): size 34 (cls: K2Node_CustomEvent_bEnteredBuildMode1>BoolProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_bEnteredBuildMode2 (0-0-0-0): size 34 (cls: K2Node_CustomEvent_bEnteredBuildMode2>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_bSuccessfullyCompleted (0-0-0-0): size 34 (cls: K2Node_CustomEvent_bSuccessfullyCompleted>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_BuildingModeActive (0-0-0-0): size 34 (cls: K2Node_CustomEvent_BuildingModeActive>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_BuildModeActive (0-0-0-0): size 34 (cls: K2Node_CustomEvent_BuildModeActive>BoolProperty>/Script/CoreUObject)
@@ -5379,6 +5380,7 @@ Serialized exports:
 	HighlightTraps (0-0-0-0): size 34 (cls: HighlightTraps>BoolProperty>/Script/CoreUObject)
 	HighlightWalls (0-0-0-0): size 34 (cls: HighlightWalls>BoolProperty>/Script/CoreUObject)
 	Hightlight_Objectives (0-0-0-0): size 34 (cls: Hightlight_Objectives>BoolProperty>/Script/CoreUObject)
+	IsInBuildMode (0-0-0-0): size 34 (cls: IsInBuildMode>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
@@ -5572,6 +5574,7 @@ Serialized exports:
 	K2Node_CreateDelegate_OutputDelegate169 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate169>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate17 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate17>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate170 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate170>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate171 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate171>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate18 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate18>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate19 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate19>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate2 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate2>DelegateProperty>/Script/CoreUObject)

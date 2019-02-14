@@ -108,6 +108,7 @@ Name table:
 	CallFunc_Subtract_FloatFloat_ReturnValue2
 	CallFunc_Subtract_FloatFloat_ReturnValue3
 	CallOut Audio Stinger
+	CalloutImage
 	CenterButtonTextWidget
 	ChildTemplates
 	Class
@@ -206,6 +207,8 @@ Name table:
 	Easing
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	EMovieSceneBlendType
 	EMovieSceneBlendType::Absolute
@@ -245,6 +248,7 @@ Name table:
 	FloatCurve
 	FloatFunction
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	FontOutlineSettings
@@ -319,6 +323,7 @@ Name table:
 	Mask
 	Material
 	MaterialInstanceDynamic
+	MaterialInterface
 	MetaData
 	MouseEvent
 	MovieScene
@@ -459,6 +464,8 @@ Name table:
 	SequenceSignature
 	SetAnimationState-Hover
 	SetAnimationState-UnHover
+	SetBrushFromMaterial
+	SetCalloutImage
 	SetInputActionHandler
 	SetInputHandlers
 	SetPadding
@@ -565,7 +572,7 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	QuestEvent-Callout_C (0-0-0-0): size 693 (cls: QuestEvent-Callout_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	QuestEvent-Callout_C (0-0-0-0): size 709 (cls: QuestEvent-Callout_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -693,14 +700,18 @@ Serialized exports:
 	FadeOut (0-0-0-0): size 36 (cls: FadeOut>ObjectProperty>/Script/CoreUObject)
 	CallFunc_PlayAnimationForward_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_PlayAnimationForward_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	PlayFadeOut (0-0-0-0): size 76 (cls: PlayFadeOut>Function>/Script/CoreUObject)
+	CalloutImage (0-0-0-0): size 36 (cls: CalloutImage>ObjectProperty>/Script/CoreUObject)
+	Image (0-0-0-0): size 36 (cls: Image>ObjectProperty>/Script/CoreUObject)
+	SetCalloutImage (0-0-0-0): size 76 (cls: SetCalloutImage>Function>/Script/CoreUObject)
 	HorizontalBox_0 (0-0-0-0): size 82 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=ScaleBoxSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_0 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
@@ -746,6 +757,12 @@ Serialized exports:
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 			RenderOpacity(FloatProperty)=0 
+	CalloutImage (0-0-0-0): size 225 (cls: CalloutImage>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
+			RenderTransformPivot(StructProperty)=Vector2D(0,1) 
+			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	Image-Hittest (0-0-0-0): size 384 (cls: Image-Hittest>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -753,12 +770,6 @@ Serialized exports:
 			RenderTransform(StructProperty)=System.Byte[] 
 			RenderTransformPivot(StructProperty)=Vector2D(0.5,1) 
 			RenderOpacity(FloatProperty)=0 
-	Image_0 (0-0-0-0): size 225 (cls: Image_0>Image>/Script/UMG):
-		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
-			RenderTransformPivot(StructProperty)=Vector2D(0,1) 
-			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	LeftSideImage (0-0-0-0): size 196 (cls: LeftSideImage>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -777,27 +788,27 @@ Serialized exports:
 			PlaybackRange(StructProperty)=System.Byte[] 
 			DisplayRate(StructProperty)=System.Byte[] 
 			Signature(StructProperty)=Guid: 4102950579-1332822849-30780040-2207978409 
-	Hover (0-0-0-0): size 5268 (cls: Hover>MovieScene>/Script/MovieScene):
+	Hover (0-0-0-0): size 5273 (cls: Hover>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
 			PlaybackRange(StructProperty)=System.Byte[] 
 			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 3229445269-1324152816-1641584526-2983462158 
-	Reset (0-0-0-0): size 5290 (cls: Reset>MovieScene>/Script/MovieScene):
+			Signature(StructProperty)=Guid: 932398975-1191232390-1018564264-568777502 
+	Reset (0-0-0-0): size 5295 (cls: Reset>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
 			PlaybackRange(StructProperty)=System.Byte[] 
 			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1767558878-1231590601-3734964387-2738936955 
-	UnHover (0-0-0-0): size 5268 (cls: UnHover>MovieScene>/Script/MovieScene):
+			Signature(StructProperty)=Guid: 756498438-1122968722-3109377954-876071810 
+	UnHover (0-0-0-0): size 5273 (cls: UnHover>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
 			PlaybackRange(StructProperty)=System.Byte[] 
 			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1910115952-1240913043-3812859776-130267344 
+			Signature(StructProperty)=Guid: 1299903253-1283953227-1763925183-3049615733 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 5669 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
 			Translation(StructProperty)=System.Byte[] 
@@ -1554,7 +1565,6 @@ Serialized exports:
 	K2Node_ComponentBoundEvent_Button (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button>ObjectProperty>/Script/CoreUObject)
 	Hover (0-0-0-0): size 36 (cls: Hover>ObjectProperty>/Script/CoreUObject)
 	Image-Hittest (0-0-0-0): size 36 (cls: Image-Hittest>ObjectProperty>/Script/CoreUObject)
-	Image_0 (0-0-0-0): size 36 (cls: Image_0>ObjectProperty>/Script/CoreUObject)
 	Overlay-Art (0-0-0-0): size 36 (cls: Overlay-Art>ObjectProperty>/Script/CoreUObject)
 	Reset (0-0-0-0): size 36 (cls: Reset>ObjectProperty>/Script/CoreUObject)
 	SwitchQuestMap (0-0-0-0): size 36 (cls: SwitchQuestMap>ObjectProperty>/Script/CoreUObject)
@@ -1613,10 +1623,10 @@ Serialized exports:
 			Content(ObjectProperty)=SizeBox_1=WidgetArchetype 
 	WidgetArchetype (0-0-0-0): size 270 (cls: WidgetArchetype>QuestEvent-Callout_C):
 		Tag array:
+			CalloutImage(ObjectProperty)=CalloutImage=WidgetArchetype 
 			CommonActionWidget-Controller(ObjectProperty)=CommonActionWidget-Controller=WidgetArchetype 
 			CommonTextBlock-BodyCopy(ObjectProperty)=CommonTextBlock-BodyCopy=WidgetArchetype 
 			CommonTextBlock-Header(ObjectProperty)=CommonTextBlock-Header=WidgetArchetype 
-			Image_0(ObjectProperty)=Image_0=WidgetArchetype 
 			Image-Hittest(ObjectProperty)=Image-Hittest=WidgetArchetype 
 			Overlay-Art(ObjectProperty)=Overlay-Art=WidgetArchetype 
 			SwitchQuestMap(ObjectProperty)=SwitchQuestMap=WidgetArchetype 
@@ -1650,7 +1660,7 @@ Serialized exports:
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_0=WidgetArchetype 
-			Content(ObjectProperty)=Image_0=WidgetArchetype 
+			Content(ObjectProperty)=CalloutImage=WidgetArchetype 
 	SizeBoxSlot_0 (0-0-0-0): size 70 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
@@ -1708,21 +1718,21 @@ Serialized exports:
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			DisplayLabel(StrProperty)=Hover 
 			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 17569384-1154645524-2474034822-1242818625 
+			Signature(StructProperty)=Guid: 320518164-1112390347-17391002-1312373188 
 	Reset_INST (0-0-0-0): size 71128 (cls: Reset_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=Reset=QuestEvent-Callout_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			DisplayLabel(StrProperty)=Reset 
 			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2269313703-1276190072-3619632772-978223984 
+			Signature(StructProperty)=Guid: 201601840-1143155802-914216115-3148120318 
 	UnHover_INST (0-0-0-0): size 79042 (cls: UnHover_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=UnHover=QuestEvent-Callout_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			DisplayLabel(StrProperty)=UnHover 
 			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2967850458-1300131608-1020722328-3095321855 
+			Signature(StructProperty)=Guid: 1914682383-1277456912-1613788326-2957872889 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 

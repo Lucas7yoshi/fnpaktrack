@@ -63,6 +63,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Garage_Door_01
 	/Game/Building/ActorBlueprints/Prop/Hedge_Low_Rectangle
 	/Game/Building/ActorBlueprints/Prop/Outdoor_Grill
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Pipe03
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01a
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01b
@@ -361,6 +362,7 @@ Name table:
 	Default__Model
 	Default__NavigationSystemModuleConfig
 	Default__Outdoor_Grill_C
+	Default__Parent_Tree_C
 	Default__Pipe03_C
 	Default__Prop_Athena_Doorbell_Interactable_C
 	Default__Prop_Boxes_01a_C
@@ -509,6 +511,8 @@ Name table:
 	Kitchen_Refrigerator_01
 	Kitchen_StoveHood_01
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -583,6 +587,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -609,6 +614,7 @@ Name table:
 	ParameterInfo
 	ParameterValue
 	Parent
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_11579__5B805640
@@ -692,6 +698,7 @@ Name table:
 	SoftClassPath
 	SortedInstances
 	Spawn_Location
+	SphereComponent
 	SphereRadius
 	SpotLightComponent
 	SpriteScaleFar
@@ -1126,27 +1133,33 @@ Serialized exports:
 			CullDistance(FloatProperty)=9963.229 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
 	Athena_SUB_5x5_House_y_C_1 (0-0-0-0): size 12 (cls: Athena_SUB_5x5_House_y_C_1>Athena_SUB_5x5_House_y_C)
-	Athena_Tree_Medium_01__2 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_01__2>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
+	Athena_Tree_Medium_01__2 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_01__2>Athena_Tree_Medium_01__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_01_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_SUB_5x5_House_y 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
 			MyGuid(StructProperty)=Guid: 3535298857-1267100002-1133010342-1836869582 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
-	Athena_Tree_Pine_01_2 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_01_2>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_01_2 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_01_2>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_SUB_5x5_House_y 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
 			MyGuid(StructProperty)=Guid: 3948443047-1264043500-3524211073-3502788930 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
-	Athena_Tree_Pine_4 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_4>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_4 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_4>Athena_Tree_Pine_01_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_SUB_5x5_House_y 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
 			MyGuid(StructProperty)=Guid: 2136503772-1254849822-2958290332-2427401438 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Water_Loop (0-0-0-0): size 108 (cls: Water_Loop>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=Effect=Athena_SUB_5x5_House_y 
@@ -1802,7 +1815,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=113 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2392.205,-342.6288,-2.158943)) Max(Vector(347.0456,2391.418,29.44447)),56577) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2392.205,-342.6288,-2.158943)) Max(Vector(347.0456,2391.418,29.44447)),56833) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=113 
@@ -2947,6 +2960,27 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_SUB_5x5_House_y 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 

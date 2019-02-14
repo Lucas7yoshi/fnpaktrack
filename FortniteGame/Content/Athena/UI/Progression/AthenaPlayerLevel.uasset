@@ -62,6 +62,7 @@ Name table:
 	bEvaluateInPreroll
 	bFireEventsWhenBackwards
 	bFireEventsWhenForwards
+	bFlipForRightToLeftFlowDirection
 	bHasDefaultValue
 	bHasScriptImplementedPaint
 	BindingName
@@ -193,6 +194,8 @@ Name table:
 	EEvaluationMethod
 	EEvaluationMethod::Static
 	EEvaluationMethod::Swept
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	EMovieSceneBlendType
 	EMovieSceneBlendType::Absolute
@@ -241,6 +244,7 @@ Name table:
 	FloatCurve
 	FloatFunction
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontMaterial
 	FontObject
@@ -266,7 +270,6 @@ Name table:
 	GreaterEqual_IntInt
 	Groups
 	Guid
-	HAlign_Center
 	HAlign_Fill
 	HAlign_Left
 	HAlign_Right
@@ -687,9 +690,10 @@ Serialized exports:
 	CallFunc_Conv_IntToFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
 	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	XpLerp (0-0-0-0): size 32 (cls: XpLerp>FloatProperty>/Script/CoreUObject)
-	HorizontalBox_0 (0-0-0-0): size 57 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+	HorizontalBox_0 (0-0-0-0): size 98 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -698,16 +702,17 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 312 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_0 (0-0-0-0): size 353 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Size(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 325 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=PlayerBanner=WidgetArchetype 
@@ -748,9 +753,10 @@ Serialized exports:
 			Brush(StructProperty)=System.Byte[] 
 			Slot(ObjectProperty)=LoadGuardSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
-	XpBar (0-0-0-0): size 184 (cls: XpBar>Image>/Script/UMG):
+	XpBar (0-0-0-0): size 210 (cls: XpBar>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	CallFunc_FTrunc_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_FTrunc_ReturnValue>IntProperty>/Script/CoreUObject)
 	CurrentLevel (0-0-0-0): size 32 (cls: CurrentLevel>IntProperty>/Script/CoreUObject)
@@ -921,12 +927,13 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=ScaleBoxSlot_0=WidgetArchetype 
-	PlayerBanner (0-0-0-0): size 125 (cls: PlayerBanner>PlayerRankEmblem_C>/Game/Athena/UI/Progression/PlayerRankEmblem):
+	PlayerBanner (0-0-0-0): size 166 (cls: PlayerBanner>PlayerRankEmblem_C>/Game/Athena/UI/Progression/PlayerRankEmblem):
 		Tag array:
 			PlayerBanner(ObjectProperty)=PlayerBanner=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	ScaleBox_0 (0-0-0-0): size 123 (cls: ScaleBox_0>ScaleBox>/Script/UMG):
 		Tag array:
 			Stretch(ByteProperty)=EStretch::UserSpecified 

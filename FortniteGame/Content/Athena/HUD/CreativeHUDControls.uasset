@@ -121,6 +121,7 @@ Name table:
 	EquippedVisibility
 	ESlateVisibility
 	ESlateVisibility::Collapsed
+	ETransformationType
 	EVerticalAlignment
 	ExecuteUbergraph_CreativeHUDControls
 	Feedback
@@ -168,6 +169,8 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate14
 	K2Node_CreateDelegate_OutputDelegate15
 	K2Node_CreateDelegate_OutputDelegate16
+	K2Node_CreateDelegate_OutputDelegate17
+	K2Node_CreateDelegate_OutputDelegate18
 	K2Node_CreateDelegate_OutputDelegate2
 	K2Node_CreateDelegate_OutputDelegate3
 	K2Node_CreateDelegate_OutputDelegate4
@@ -186,6 +189,8 @@ Name table:
 	K2Node_CustomEvent_PrecisionOn
 	K2Node_CustomEvent_PrevWeapon
 	K2Node_CustomEvent_RotationAxisIndex
+	K2Node_CustomEvent_ScalingOn
+	K2Node_CustomEvent_TransformationType
 	K2Node_DynamicCast_AsB_Creative_Move_Tool_Athena
 	K2Node_DynamicCast_AsFort_Pawn
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena
@@ -206,6 +211,8 @@ Name table:
 	Local_CanFly
 	LowAmmo
 	Margin
+	Move Tool Scale Down_GEN_VARIABLE
+	Move Tool Scale Up_GEN_VARIABLE
 	MoveBuildingsOnGrid
 	MoveBuildingsOnGridVisibility
 	MoveObjectsFreely
@@ -258,6 +265,11 @@ Name table:
 	OnMoveToolRotationAxisChanged
 	OnMoveToolRotationAxisChanged__DelegateSignature
 	OnMoveToolRotationAxisChanged_Bind
+	OnMoveToolScaleInsteadOfRotateChanged
+	OnMoveToolScaleInsteadOfRotateChanged__DelegateSignature
+	OnMoveToolScalingModeChanged
+	OnMoveToolTransformationModeChanged
+	OnMoveToolTransformationModeChanged__DelegateSignature
 	OnPlayerStartedRespawn__DelegateSignature
 	OnSkyDivingStateChange__DelegateSignature
 	OnStartedRespawn
@@ -285,6 +297,7 @@ Name table:
 	RichTextBlock
 	RootWidget
 	RotationAxisIndex
+	ScalingOn
 	SceneComponent
 	ScriptStruct
 	SetVisibility
@@ -307,6 +320,7 @@ Name table:
 	TextStyleSet
 	TimerDynamicDelegate__DelegateSignature
 	TimerHandle
+	TransformationType
 	UberGraphFrame
 	UberGraphFunction
 	UInt64Property
@@ -326,7 +340,7 @@ Name table:
 	WidgetTree
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	CreativeHUDControls_C (0-0-0-0): size 655 (cls: CreativeHUDControls_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	CreativeHUDControls_C (0-0-0-0): size 687 (cls: CreativeHUDControls_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -373,34 +387,39 @@ Serialized exports:
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 	CreativeHUDControlsEquipped (0-0-0-0): size 36 (cls: CreativeHUDControlsEquipped>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_CreativeHUDControls (0-0-0-0): size 2921 (cls: ExecuteUbergraph_CreativeHUDControls>Function>/Script/CoreUObject)
+	ExecuteUbergraph_CreativeHUDControls (0-0-0-0): size 3083 (cls: ExecuteUbergraph_CreativeHUDControls>Function>/Script/CoreUObject)
+	ScalingOn (0-0-0-0): size 34 (cls: ScalingOn>BoolProperty>/Script/CoreUObject)
+	OnMoveToolScalingModeChanged (0-0-0-0): size 68 (cls: OnMoveToolScalingModeChanged>Function>/Script/CoreUObject)
+	Construct (0-0-0-0): size 54 (cls: Construct>Function>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	TransformationType (0-0-0-0): size 40 (cls: TransformationType>EnumProperty>/Script/CoreUObject)
+	OnMoveToolTransformationModeChanged (0-0-0-0): size 68 (cls: OnMoveToolTransformationModeChanged>Function>/Script/CoreUObject)
 	bIgnoreLineOfSightBlockers (0-0-0-0): size 34 (cls: bIgnoreLineOfSightBlockers>BoolProperty>/Script/CoreUObject)
 	OnMoveToolLineOfSightBlockingChanged_Bind (0-0-0-0): size 68 (cls: OnMoveToolLineOfSightBlockingChanged_Bind>Function>/Script/CoreUObject)
-	Construct (0-0-0-0): size 54 (cls: Construct>Function>/Script/CoreUObject)
 	ShowUnequippedControls (0-0-0-0): size 54 (cls: ShowUnequippedControls>Function>/Script/CoreUObject)
-	ShowMoveObjectsFreelyControls (0-0-0-0): size 54 (cls: ShowMoveObjectsFreelyControls>Function>/Script/CoreUObject)
-	ShowMoveBuildingsOnGridControls (0-0-0-0): size 54 (cls: ShowMoveBuildingsOnGridControls>Function>/Script/CoreUObject)
 	NewWeapon (0-0-0-0): size 36 (cls: NewWeapon>ObjectProperty>/Script/CoreUObject)
 	OnWeaponEquippedDelegate_Bind (0-0-0-0): size 82 (cls: OnWeaponEquippedDelegate_Bind>Function>/Script/CoreUObject)
+	ShowMoveObjectsFreelyControls (0-0-0-0): size 54 (cls: ShowMoveObjectsFreelyControls>Function>/Script/CoreUObject)
+	ShowMoveBuildingsOnGridControls (0-0-0-0): size 54 (cls: ShowMoveBuildingsOnGridControls>Function>/Script/CoreUObject)
 	ShowEquippedControls (0-0-0-0): size 54 (cls: ShowEquippedControls>Function>/Script/CoreUObject)
 	UpdateVisibilities (0-0-0-0): size 54 (cls: UpdateVisibilities>Function>/Script/CoreUObject)
 	OnEnterVehicle_Bind (0-0-0-0): size 54 (cls: OnEnterVehicle_Bind>Function>/Script/CoreUObject)
-	OnExitVehicle_Bind (0-0-0-0): size 54 (cls: OnExitVehicle_Bind>Function>/Script/CoreUObject)
 	OnKeybindsChanged_Bind (0-0-0-0): size 54 (cls: OnKeybindsChanged_Bind>Function>/Script/CoreUObject)
+	OnExitVehicle_Bind (0-0-0-0): size 54 (cls: OnExitVehicle_Bind>Function>/Script/CoreUObject)
 	OnEndSkydiving_Bind (0-0-0-0): size 54 (cls: OnEndSkydiving_Bind>Function>/Script/CoreUObject)
 	OnBeginSkydiving_Bind (0-0-0-0): size 54 (cls: OnBeginSkydiving_Bind>Function>/Script/CoreUObject)
 	bIsAllowedToFly (0-0-0-0): size 34 (cls: bIsAllowedToFly>BoolProperty>/Script/CoreUObject)
 	OnWorldInventoryChanged_Bind (0-0-0-0): size 68 (cls: OnWorldInventoryChanged_Bind>Function>/Script/CoreUObject)
+	CreativeInteraction (0-0-0-0): size 36 (cls: CreativeInteraction>ObjectProperty>/Script/CoreUObject)
+	OnMoveToolInteractionStarted (0-0-0-0): size 68 (cls: OnMoveToolInteractionStarted>Function>/Script/CoreUObject)
+	OnMoveToolInteractionStopped (0-0-0-0): size 54 (cls: OnMoveToolInteractionStopped>Function>/Script/CoreUObject)
 	RotationAxisIndex (0-0-0-0): size 36 (cls: RotationAxisIndex>ByteProperty>/Script/CoreUObject)
 	OnMoveToolRotationAxisChanged_Bind (0-0-0-0): size 68 (cls: OnMoveToolRotationAxisChanged_Bind>Function>/Script/CoreUObject)
 	PrecisionOn (0-0-0-0): size 34 (cls: PrecisionOn>BoolProperty>/Script/CoreUObject)
 	OnMoveToolPrecisionChanged_Bind (0-0-0-0): size 82 (cls: OnMoveToolPrecisionChanged_Bind>Function>/Script/CoreUObject)
 	bDropToFloorOn (0-0-0-0): size 34 (cls: bDropToFloorOn>BoolProperty>/Script/CoreUObject)
 	OnMoveToolDropToFloorChanged_Bind (0-0-0-0): size 68 (cls: OnMoveToolDropToFloorChanged_Bind>Function>/Script/CoreUObject)
-	CreativeInteraction (0-0-0-0): size 36 (cls: CreativeInteraction>ObjectProperty>/Script/CoreUObject)
-	OnMoveToolInteractionStarted (0-0-0-0): size 68 (cls: OnMoveToolInteractionStarted>Function>/Script/CoreUObject)
 	SetWaitForPawnTimer (0-0-0-0): size 54 (cls: SetWaitForPawnTimer>Function>/Script/CoreUObject)
-	OnMoveToolInteractionStopped (0-0-0-0): size 54 (cls: OnMoveToolInteractionStopped>Function>/Script/CoreUObject)
 	Flying (0-0-0-0): size 34 (cls: Flying>BoolProperty>/Script/CoreUObject)
 	OnCreativeFlyingChanged_Bind (0-0-0-0): size 68 (cls: OnCreativeFlyingChanged_Bind>Function>/Script/CoreUObject)
 	WaitForPawn (0-0-0-0): size 54 (cls: WaitForPawn>Function>/Script/CoreUObject)
@@ -423,6 +442,7 @@ Serialized exports:
 	K2Node_CustomEvent_bIsAllowedToFly (0-0-0-0): size 34 (cls: K2Node_CustomEvent_bIsAllowedToFly>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Flying (0-0-0-0): size 34 (cls: K2Node_CustomEvent_Flying>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_PrecisionOn (0-0-0-0): size 34 (cls: K2Node_CustomEvent_PrecisionOn>BoolProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_ScalingOn (0-0-0-0): size 34 (cls: K2Node_CustomEvent_ScalingOn>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
@@ -434,6 +454,7 @@ Serialized exports:
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_GridSnapIndex (0-0-0-0): size 36 (cls: K2Node_CustomEvent_GridSnapIndex>ByteProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_RotationAxisIndex (0-0-0-0): size 36 (cls: K2Node_CustomEvent_RotationAxisIndex>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -483,6 +504,8 @@ Serialized exports:
 	K2Node_CreateDelegate_OutputDelegate14 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate14>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate15 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate15>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate16 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate16>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate17 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate17>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate18 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate18>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate2 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate2>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate3 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate3>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate4 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate4>DelegateProperty>/Script/CoreUObject)
@@ -492,6 +515,7 @@ Serialized exports:
 	K2Node_CreateDelegate_OutputDelegate8 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate8>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate9 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate9>DelegateProperty>/Script/CoreUObject)
 	EquippedVisibility (0-0-0-0): size 40 (cls: EquippedVisibility>EnumProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_TransformationType (0-0-0-0): size 40 (cls: K2Node_CustomEvent_TransformationType>EnumProperty>/Script/CoreUObject)
 	MoveBuildingsOnGridVisibility (0-0-0-0): size 40 (cls: MoveBuildingsOnGridVisibility>EnumProperty>/Script/CoreUObject)
 	MoveObjectsFreelyVisibility (0-0-0-0): size 40 (cls: MoveObjectsFreelyVisibility>EnumProperty>/Script/CoreUObject)
 	NotEquippedVisibility (0-0-0-0): size 40 (cls: NotEquippedVisibility>EnumProperty>/Script/CoreUObject)

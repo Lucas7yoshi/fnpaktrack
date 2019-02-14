@@ -1,20 +1,22 @@
 Name table:
 	/Game/Abilities/Player/Athena/GCN_Athena_Bush
+	/Game/Athena/Balance/DataTables/AthenaGameData
 	/Game/Athena/Effects/Particles/P_Athena_Bush_Destruction
 	/Game/Athena/Effects/Particles/P_Athena_Bush_Move
-	/Game/Athena/Prototype/Terrain/MI_Athena_Bush_Fade_01
+	/Game/Athena/Prototype/Terrain/MI_Athena_Bush_Fade_01_Translucent
 	/Game/Athena/Prototype/Terrain/SM_Athena_Bush_01
 	/Game/Athena/Sounds/Bush/Athena_Character_Bush_Footstep_3P_Cue
 	/Game/Athena/Sounds/Bush/Athena_Character_Bush_Footstep_Cue
+	/Game/Sounds/Foley_Loot/Containers/Bushes/Prop_Bush_Destroyed_Cue
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
 	/Script/GameplayAbilities
 	/Script/GameplayTags
-	Activated
 	Actor
 	ActorComponentTickFunction
 	ActorTickFunction
+	Add_FloatFloat
 	AllNodes
 	ArrayProperty
 	Arrow
@@ -27,42 +29,69 @@ Name table:
 	ArrowComponent
 	Athena_Character_Bush_Footstep_3P_Cue
 	Athena_Character_Bush_Footstep_Cue
-	AttachParent
-	AttachPoint
+	AthenaGameData
+	AttachType
 	AudioComponent
+	AudioComponents
 	bAbsoluteScale
+	bAffectDistanceFieldLighting
 	bAutoAttachToOwner
-	bAutoDestroyOnRemove
 	bCanBeDamaged
 	bEnableAutoLODGeneration
+	bIsExternalCurve
 	bIsParentComponentNative
 	BlueprintGeneratedClass
 	BodyInstance
+	bOnlyOwnerSee
 	BooleanAND
 	BoolProperty
+	bOwnerNoSee
+	BreakRotator
+	BreakTransform
 	bReceivesDecals
-	bSnapToAttachPointAndPreserveWorldRotation
 	bStartWithTickEnabled
+	BurstCameraShakeInstance
+	BurstDecalInstance
 	bUseAsOccluder
+	BushDestructionSFX
+	BushDestructionVFX
 	BushMesh
 	BushMesh_GEN_VARIABLE
+	bValidatedAsWired
 	ByteProperty
+	CallFunc_Add_FloatFloat_ReturnValue
 	CallFunc_BooleanAND_ReturnValue
+	CallFunc_BreakRotator_Pitch
+	CallFunc_BreakRotator_Roll
+	CallFunc_BreakRotator_Yaw
+	CallFunc_BreakTransform_Location
+	CallFunc_BreakTransform_Rotation
+	CallFunc_BreakTransform_Scale
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue
+	CallFunc_CreateDynamicMaterialInstance_ReturnValue1
 	CallFunc_Divide_FloatFloat_ReturnValue
+	CallFunc_EvaluateCurveTableRow_OutXY
+	CallFunc_EvaluateCurveTableRow_ReturnValue
 	CallFunc_FClamp_ReturnValue
+	CallFunc_GetTransform_ReturnValue
 	CallFunc_GetVelocity_ReturnValue
 	CallFunc_Greater_FloatFloat_ReturnValue
 	CallFunc_Greater_FloatFloat_ReturnValue1
 	CallFunc_IsLocallyControlled_ReturnValue
 	CallFunc_IsValid_ReturnValue
+	CallFunc_IsValid_ReturnValue1
 	CallFunc_K2_GetActorLocation_ReturnValue
 	CallFunc_K2_SetRelativeRotation_SweepHitResult
+	CallFunc_MakeRotator_ReturnValue
+	CallFunc_SpawnEmitterAtLocation_ReturnValue
 	CallFunc_VSize_ReturnValue
 	Camera
+	CameraShake
 	Channel
+	Character
 	ChildNodes
 	Class
+	ClientBushOpacity
 	CollisionEnabled
 	CollisionProfileName
 	CollisionResponse
@@ -71,12 +100,21 @@ Name table:
 	ComponentClass
 	ComponentTemplate
 	CreateDynamicMaterialInstance
+	CurveFloat
+	CurveTable
+	CurveTableRowHandle
+	DecalActor
+	Default.Bush.OwningClientMeshOpacity
+	Default__ArrayProperty
 	Default__ArrowComponent
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
+	Default__ByteProperty
+	Default__CurveFloat
 	Default__DelegateProperty
 	Default__FloatProperty
-	Default__FortGameplayCueNotify_Looping
+	Default__FortGameplayCueNotify_Loop
+	Default__FortKismetLibrary
 	Default__Function
 	Default__GameplayStatics
 	Default__GCN_Athena_Bush_C
@@ -89,12 +127,16 @@ Name table:
 	Default__SimpleConstructionScript
 	Default__StaticMeshComponent
 	Default__StructProperty
+	Default__TimelineTemplate
+	DefaultAttachment
+	DefaultCondition
 	DefaultSceneRoot
 	DefaultSceneRoot_GEN_VARIABLE
 	DefaultSceneRootNode
 	DelegateFunction
 	DelegateProperty
 	DeltaSeconds
+	DirectionPropertyName
 	Divide_FloatFloat
 	ECC_WorldStatic
 	ECollisionChannel
@@ -102,22 +144,36 @@ Name table:
 	ECollisionEnabled::NoCollision
 	ECollisionResponse
 	ECR_Ignore
+	EFortGameplayCueAttachType
+	EFortGameplayCueAttachType::AttachToTarget
 	Engine
 	EntryPoint
+	Enum
+	EnumProperty
+	EParticleSignificanceLevel
+	EParticleSignificanceLevel::Critical
+	ETimelineDirection
+	EvaluateCurveTableRow
 	ExecuteUbergraph_GCN_Athena_Bush
 	FClamp
+	FinishedFunctionName
+	FloatCurve
 	FloatProperty
-	FortGameplayCueNotify_Looping
+	FloatTracks
+	FortGameplayCueAttachInfo
+	FortGameplayCueNotify_Loop
+	FortGameplayCueSpawnCondition
+	FortKismetLibrary
 	FortPlayerPawnAthena
 	Function
 	GameplayCue.Athena.Applied.Item.Bush
 	GameplayCueName
-	GameplayCueNotify_Actor
 	GameplayCueParameters
 	GameplayCueTag
 	GameplayStatics
 	GameplayTag
 	GCN_Athena_Bush_C
+	GetTransform
 	GetVelocity
 	Greater_FloatFloat
 	Guid
@@ -127,47 +183,83 @@ Name table:
 	IsActive
 	IsLocallyControlled
 	IsValid
+	K2_AttachToComponent
 	K2_GetActorLocation
 	K2_SetRelativeRotation
 	K2Node_CreateDelegate_OutputDelegate
+	K2Node_CreateDelegate_OutputDelegate1
 	K2Node_DynamicCast_AsFort_Player_Pawn_Athena
+	K2Node_DynamicCast_AsFort_Player_Pawn_Athena1
+	K2Node_DynamicCast_AsFort_Player_Pawn_Athena2
 	K2Node_DynamicCast_bSuccess
+	K2Node_DynamicCast_bSuccess1
+	K2Node_DynamicCast_bSuccess2
+	K2Node_Event_AudioComponents
+	K2Node_Event_AudioComponents1
+	K2Node_Event_BurstCameraShakeInstance
+	K2Node_Event_BurstDecalInstance
 	K2Node_Event_DeltaSeconds
+	K2Node_Event_MyTarget
+	K2Node_Event_MyTarget1
+	K2Node_Event_Parameters
+	K2Node_Event_Parameters1
+	K2Node_Event_ParticleComponents
+	K2Node_Event_ParticleComponents1
 	K2Node_Select_Default
+	Keys
 	KismetMathLibrary
 	KismetSystemLibrary
 	LeafAnimationAmount
 	LeafAnimationSpeed
+	MakeRotator
 	MaterialInstanceConstant
 	MaterialInstanceDynamic
-	MI_Athena_Bush_Fade_01
+	Mesh
+	MI_Athena_Bush_Fade_01_Translucent
 	MID_Bush
+	MID_OwningClientBush
 	MulticastDelegateProperty
 	MyTarget
 	NameProperty
 	NoCollision
 	None
+	NumPreallocatedInstances
 	Object
 	ObjectProperty
 	ObjectType
 	On Player Step
 	OnFootstepEvent
 	OnFootstepEvent__DelegateSignature
-	OnRemove
+	OnLoopingStart
+	OnRemoval
+	Opacity
+	OpacityFade
+	OpacityFade__Direction_B989988545DAA0B2E69D77AE069A4437
+	OpacityFade__FinishedFunc
+	OpacityFade__UpdateFunc
+	OpacityFade_OpacityFadeOut_B989988545DAA0B2E69D77AE069A4437
+	OpacityFade_Template
+	OpacityFadeOut
 	OverrideMaterials
+	OwningPlayer_BushMesh
+	OwningPlayer_BushMesh_GEN_VARIABLE
 	P_Athena_Bush_Destruction
 	P_Athena_Bush_Move
 	Package
 	Parameters
 	ParentComponentOrVariableName
+	ParticleComponents
 	ParticleSystem
 	ParticleSystemComponent
 	pelvis
 	PlayerPawn
+	PlayFromStart
 	PlaySoundAtLocation
 	PointerToUberGraphFrame
 	PrimaryActorTick
 	PrimaryComponentTick
+	Prop_Bush_Destroyed_Cue
+	PropertyName
 	ReceiveTick
 	RelativeLocation
 	RelativeRotation
@@ -175,63 +267,100 @@ Name table:
 	Response
 	ResponseArray
 	ResponseChannel
-	ReturnValue
+	RichCurve
+	RichCurveKey
 	RootComponent
 	RootNodes
 	Rotator
+	RowName
 	SceneComponent
 	ScriptStruct
 	SCS_Node
 	SetActorTickEnabled
 	SetScalarParameterValue
+	SetVisibility
+	Significance
 	SimpleConstructionScript
 	SM_Athena_Bush_01
+	SocketName
 	SoundBase
 	SoundCue
-	StartParticleSystem
+	SpawnEmitterAtLocation
 	StaticMesh
 	StaticMeshComponent
-	StopParticleSystem
 	StructProperty
 	TagName
+	TargetOpacity
 	Temp_bool_Variable
 	Temp_object_Variable
 	Temp_object_Variable1
 	Template
 	TickInterval
+	TimelineComponent
+	TimelineGuid
+	Timelines
+	TimelineTemplate
+	TrackName
 	Trail_Leaves
 	Trail_Leaves_GEN_VARIABLE
+	Transform
+	TranslucencySortPriority
+	TTFloatTrack
 	UberGraphFrame
 	UberGraphFunction
+	UpdateFunctionName
 	UserConstructionScript
 	VariableGuid
+	VariableName
 	Vector
 	Visibility
 	VSize
-	WhileActive
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	GCN_Athena_Bush_C (0-0-0-0): size 282 (cls: GCN_Athena_Bush_C>BlueprintGeneratedClass>/Script/Engine):
+	GCN_Athena_Bush_C (0-0-0-0): size 375 (cls: GCN_Athena_Bush_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
+			Timelines(ArrayProperty)=[object] (inner: ObjectProperty)
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=GCN_Athena_Bush_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_GCN_Athena_Bush=GCN_Athena_Bush_C 
-	Default__GCN_Athena_Bush_C (0-0-0-0): size 608 (cls: Default__GCN_Athena_Bush_C>GCN_Athena_Bush_C):
+	Default__GCN_Athena_Bush_C (0-0-0-0): size 842 (cls: Default__GCN_Athena_Bush_C>GCN_Athena_Bush_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
-			StartParticleSystem(ObjectProperty)=P_Athena_Bush_Destruction=/Game/Athena/Effects/Particles/P_Athena_Bush_Destruction 
-			StopParticleSystem(ObjectProperty)=P_Athena_Bush_Destruction=/Game/Athena/Effects/Particles/P_Athena_Bush_Destruction 
-			AttachPoint(NameProperty)=pelvis 
-			bSnapToAttachPointAndPreserveWorldRotation(BoolProperty)=True 
-			AudioComponent(ObjectProperty)=AudioComponent=Default__GCN_Athena_Bush_C 
-			ParticleSystemComponent(ObjectProperty)=ParticleSystemComponent=Default__GCN_Athena_Bush_C 
-			bAutoDestroyOnRemove(BoolProperty)=True 
+			ClientBushOpacity(StructProperty)=System.Byte[] 
+			BushDestructionVFX(ObjectProperty)=P_Athena_Bush_Destruction=/Game/Athena/Effects/Particles/P_Athena_Bush_Destruction 
+			BushDestructionSFX(ObjectProperty)=Prop_Bush_Destroyed_Cue=/Game/Sounds/Foley_Loot/Containers/Bushes/Prop_Bush_Destroyed_Cue 
+			DefaultCondition(StructProperty)=System.Byte[] 
+			DefaultAttachment(StructProperty)=System.Byte[] 
 			GameplayCueTag(StructProperty)=System.Byte[] 
 			GameplayCueName(NameProperty)=GameplayCue.Athena.Applied.Item.Bush 
 			bAutoAttachToOwner(BoolProperty)=True 
+			NumPreallocatedInstances(IntProperty)=0 
 			PrimaryActorTick(StructProperty)=System.Byte[] 
 			bCanBeDamaged(BoolProperty)=False 
 			bEnableAutoLODGeneration(BoolProperty)=False 
-			RootComponent(ObjectProperty)=ParticleSystemComponent=Default__GCN_Athena_Bush_C 
+			RootComponent(ObjectProperty)=RootComponent=Default__GCN_Athena_Bush_C 
+	OwningPlayer_BushMesh (0-0-0-0): size 36 (cls: OwningPlayer_BushMesh>ObjectProperty>/Script/CoreUObject)
+	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
+	ExecuteUbergraph_GCN_Athena_Bush (0-0-0-0): size 2189 (cls: ExecuteUbergraph_GCN_Athena_Bush>Function>/Script/CoreUObject)
+	K2Node_Event_AudioComponents (0-0-0-0): size 36 (cls: K2Node_Event_AudioComponents>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_AudioComponents (0-0-0-0): size 36 (cls: K2Node_Event_AudioComponents>ArrayProperty>/Script/CoreUObject)
+	K2Node_Event_AudioComponents1 (0-0-0-0): size 36 (cls: K2Node_Event_AudioComponents1>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_AudioComponents1 (0-0-0-0): size 36 (cls: K2Node_Event_AudioComponents1>ArrayProperty>/Script/CoreUObject)
+	K2Node_Event_ParticleComponents (0-0-0-0): size 36 (cls: K2Node_Event_ParticleComponents>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_ParticleComponents (0-0-0-0): size 36 (cls: K2Node_Event_ParticleComponents>ArrayProperty>/Script/CoreUObject)
+	K2Node_Event_ParticleComponents1 (0-0-0-0): size 36 (cls: K2Node_Event_ParticleComponents1>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_ParticleComponents1 (0-0-0-0): size 36 (cls: K2Node_Event_ParticleComponents1>ArrayProperty>/Script/CoreUObject)
+	MyTarget (0-0-0-0): size 36 (cls: MyTarget>ObjectProperty>/Script/CoreUObject)
+	OnRemoval (0-0-0-0): size 138 (cls: OnRemoval>Function>/Script/CoreUObject)
+	MyTarget (0-0-0-0): size 36 (cls: MyTarget>ObjectProperty>/Script/CoreUObject)
+	OnLoopingStart (0-0-0-0): size 110 (cls: OnLoopingStart>Function>/Script/CoreUObject)
+	AudioComponents (0-0-0-0): size 36 (cls: AudioComponents>ObjectProperty>/Script/CoreUObject)
+	AudioComponents (0-0-0-0): size 36 (cls: AudioComponents>ArrayProperty>/Script/CoreUObject)
+	ParticleComponents (0-0-0-0): size 36 (cls: ParticleComponents>ObjectProperty>/Script/CoreUObject)
+	ParticleComponents (0-0-0-0): size 36 (cls: ParticleComponents>ArrayProperty>/Script/CoreUObject)
+	AudioComponents (0-0-0-0): size 36 (cls: AudioComponents>ObjectProperty>/Script/CoreUObject)
+	AudioComponents (0-0-0-0): size 36 (cls: AudioComponents>ArrayProperty>/Script/CoreUObject)
+	ParticleComponents (0-0-0-0): size 36 (cls: ParticleComponents>ObjectProperty>/Script/CoreUObject)
+	ParticleComponents (0-0-0-0): size 36 (cls: ParticleComponents>ArrayProperty>/Script/CoreUObject)
 	Arrow1_GEN_VARIABLE (0-0-0-0): size 126 (cls: Arrow1_GEN_VARIABLE>ArrowComponent>/Script/Engine):
 		Tag array:
 			ArrowColor(StructProperty)=System.Byte[] 
@@ -245,59 +374,72 @@ Serialized exports:
 			ArrowColor(StructProperty)=System.Byte[] 
 			RelativeRotation(StructProperty)=Rotator(-2.732076E-05,0,0) 
 			RelativeScale3D(StructProperty)=Vector(2,2,2) 
-	AudioComponent (0-0-0-0): size 41 (cls: AudioComponent>AudioComponent>/Script/Engine):
-		Tag array:
-			AttachParent(ObjectProperty)=ParticleSystemComponent=Default__GCN_Athena_Bush_C 
-	Arrow2 (0-0-0-0): size 36 (cls: Arrow2>ObjectProperty>/Script/CoreUObject)
-	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_GCN_Athena_Bush (0-0-0-0): size 929 (cls: ExecuteUbergraph_GCN_Athena_Bush>Function>/Script/CoreUObject)
-	On Player Step (0-0-0-0): size 54 (cls: On Player Step>Function>/Script/CoreUObject)
-	DeltaSeconds (0-0-0-0): size 32 (cls: DeltaSeconds>FloatProperty>/Script/CoreUObject)
-	ReceiveTick (0-0-0-0): size 68 (cls: ReceiveTick>Function>/Script/CoreUObject)
-	UserConstructionScript (0-0-0-0): size 43 (cls: UserConstructionScript>Function>/Script/CoreUObject)
-	MyTarget (0-0-0-0): size 36 (cls: MyTarget>ObjectProperty>/Script/CoreUObject)
-	OnRemove (0-0-0-0): size 217 (cls: OnRemove>Function>/Script/CoreUObject)
-	MyTarget (0-0-0-0): size 36 (cls: MyTarget>ObjectProperty>/Script/CoreUObject)
-	WhileActive (0-0-0-0): size 81 (cls: WhileActive>Function>/Script/CoreUObject)
-	PlayerPawn (0-0-0-0): size 36 (cls: PlayerPawn>ObjectProperty>/Script/CoreUObject)
-	Activated (0-0-0-0): size 275 (cls: Activated>Function>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_EvaluateCurveTableRow_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EvaluateCurveTableRow_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Greater_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Greater_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Greater_FloatFloat_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Greater_FloatFloat_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsLocallyControlled_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsLocallyControlled_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	IsActive (0-0-0-0): size 34 (cls: IsActive>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
-	ReturnValue (0-0-0-0): size 34 (cls: ReturnValue>BoolProperty>/Script/CoreUObject)
-	ReturnValue (0-0-0-0): size 34 (cls: ReturnValue>BoolProperty>/Script/CoreUObject)
+	OpacityFade__Direction_B989988545DAA0B2E69D77AE069A4437 (0-0-0-0): size 36 (cls: OpacityFade__Direction_B989988545DAA0B2E69D77AE069A4437>ByteProperty>/Script/CoreUObject)
+	CurveFloat_0 (0-0-0-0): size 209 (cls: CurveFloat_0>CurveFloat>/Script/Engine):
+		Tag array:
+			FloatCurve(StructProperty)=System.Byte[] 
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
+	CallFunc_Add_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakRotator_Pitch (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Pitch>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakRotator_Roll (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Roll>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakRotator_Yaw (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Yaw>FloatProperty>/Script/CoreUObject)
 	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_EvaluateCurveTableRow_OutXY (0-0-0-0): size 32 (cls: CallFunc_EvaluateCurveTableRow_OutXY>FloatProperty>/Script/CoreUObject)
 	CallFunc_FClamp_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_FClamp_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_VSize_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_VSize_ReturnValue>FloatProperty>/Script/CoreUObject)
 	K2Node_Event_DeltaSeconds (0-0-0-0): size 32 (cls: K2Node_Event_DeltaSeconds>FloatProperty>/Script/CoreUObject)
-	CallFunc_CreateDynamicMaterialInstance_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_CreateDynamicMaterialInstance_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsFort_Player_Pawn_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn_Athena>ObjectProperty>/Script/CoreUObject)
+	OpacityFade_OpacityFadeOut_B989988545DAA0B2E69D77AE069A4437 (0-0-0-0): size 32 (cls: OpacityFade_OpacityFadeOut_B989988545DAA0B2E69D77AE069A4437>FloatProperty>/Script/CoreUObject)
+	On Player Step (0-0-0-0): size 54 (cls: On Player Step>Function>/Script/CoreUObject)
+	ReceiveTick (0-0-0-0): size 68 (cls: ReceiveTick>Function>/Script/CoreUObject)
+	DeltaSeconds (0-0-0-0): size 32 (cls: DeltaSeconds>FloatProperty>/Script/CoreUObject)
+	TargetOpacity (0-0-0-0): size 32 (cls: TargetOpacity>FloatProperty>/Script/CoreUObject)
+	OpacityFade__FinishedFunc (0-0-0-0): size 54 (cls: OpacityFade__FinishedFunc>Function>/Script/CoreUObject)
+	OpacityFade__UpdateFunc (0-0-0-0): size 54 (cls: OpacityFade__UpdateFunc>Function>/Script/CoreUObject)
+	UserConstructionScript (0-0-0-0): size 43 (cls: UserConstructionScript>Function>/Script/CoreUObject)
 	Arrow (0-0-0-0): size 36 (cls: Arrow>ObjectProperty>/Script/CoreUObject)
 	Arrow1 (0-0-0-0): size 36 (cls: Arrow1>ObjectProperty>/Script/CoreUObject)
+	Arrow2 (0-0-0-0): size 36 (cls: Arrow2>ObjectProperty>/Script/CoreUObject)
+	BushDestructionSFX (0-0-0-0): size 36 (cls: BushDestructionSFX>ObjectProperty>/Script/CoreUObject)
+	BushDestructionVFX (0-0-0-0): size 36 (cls: BushDestructionVFX>ObjectProperty>/Script/CoreUObject)
 	BushMesh (0-0-0-0): size 36 (cls: BushMesh>ObjectProperty>/Script/CoreUObject)
+	CallFunc_CreateDynamicMaterialInstance_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_CreateDynamicMaterialInstance_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_CreateDynamicMaterialInstance_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_CreateDynamicMaterialInstance_ReturnValue1>ObjectProperty>/Script/CoreUObject)
+	CallFunc_SpawnEmitterAtLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_SpawnEmitterAtLocation_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Player_Pawn_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn_Athena>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Pawn_Athena1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn_Athena1>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Pawn_Athena2 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn_Athena2>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_BurstCameraShakeInstance (0-0-0-0): size 36 (cls: K2Node_Event_BurstCameraShakeInstance>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_BurstDecalInstance (0-0-0-0): size 36 (cls: K2Node_Event_BurstDecalInstance>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_MyTarget (0-0-0-0): size 36 (cls: K2Node_Event_MyTarget>ObjectProperty>/Script/CoreUObject)
+	K2Node_Event_MyTarget1 (0-0-0-0): size 36 (cls: K2Node_Event_MyTarget1>ObjectProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable (0-0-0-0): size 36 (cls: Temp_object_Variable>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable1 (0-0-0-0): size 36 (cls: Temp_object_Variable1>ObjectProperty>/Script/CoreUObject)
 	MID_Bush (0-0-0-0): size 36 (cls: MID_Bush>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsFort_Player_Pawn_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn_Athena>ObjectProperty>/Script/CoreUObject)
+	MID_OwningClientBush (0-0-0-0): size 36 (cls: MID_OwningClientBush>ObjectProperty>/Script/CoreUObject)
+	BurstCameraShakeInstance (0-0-0-0): size 36 (cls: BurstCameraShakeInstance>ObjectProperty>/Script/CoreUObject)
+	BurstDecalInstance (0-0-0-0): size 36 (cls: BurstDecalInstance>ObjectProperty>/Script/CoreUObject)
+	OpacityFade (0-0-0-0): size 36 (cls: OpacityFade>ObjectProperty>/Script/CoreUObject)
 	PlayerPawn (0-0-0-0): size 36 (cls: PlayerPawn>ObjectProperty>/Script/CoreUObject)
 	Trail_Leaves (0-0-0-0): size 36 (cls: Trail_Leaves>ObjectProperty>/Script/CoreUObject)
-	ParticleSystemComponent (0-0-0-0): size 12 (cls: ParticleSystemComponent>ParticleSystemComponent>/Script/Engine)
 	Trail_Leaves_GEN_VARIABLE (0-0-0-0): size 124 (cls: Trail_Leaves_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Athena_Bush_Move=/Game/Athena/Effects/Particles/P_Athena_Bush_Move 
 			PrimaryComponentTick(StructProperty)=System.Byte[] 
+	RootComponent (0-0-0-0): size 12 (cls: RootComponent>SceneComponent>/Script/Engine)
 	DefaultSceneRoot_GEN_VARIABLE (0-0-0-0): size 12 (cls: DefaultSceneRoot_GEN_VARIABLE>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 168 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
@@ -315,12 +457,18 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Trail_Leaves_GEN_VARIABLE=GCN_Athena_Bush_C 
-			ParentComponentOrVariableName(NameProperty)=ParticleSystemComponent 
+			ParentComponentOrVariableName(NameProperty)=RootComponent 
 			bIsParentComponentNative(BoolProperty)=True 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			VariableGuid(StructProperty)=Guid: 2131166657-1168025688-3841288578-2585834108 
 			InternalVariableName(NameProperty)=Trail_Leaves 
-	SCS_Node_4 (0-0-0-0): size 217 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
+	SCS_Node_3 (0-0-0-0): size 168 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
+		Tag array:
+			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
+			ComponentTemplate(ObjectProperty)=OwningPlayer_BushMesh_GEN_VARIABLE=GCN_Athena_Bush_C 
+			VariableGuid(StructProperty)=Guid: 3920405321-1138571502-3905417885-3927205217 
+			InternalVariableName(NameProperty)=OwningPlayer_BushMesh 
+	SCS_Node_4 (0-0-0-0): size 221 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ArrowComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Arrow_GEN_VARIABLE=GCN_Athena_Bush_C 
@@ -339,24 +487,56 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=Arrow2_GEN_VARIABLE=GCN_Athena_Bush_C 
 			VariableGuid(StructProperty)=Guid: 3345272375-1146626473-1924874147-3768621472 
 			InternalVariableName(NameProperty)=Arrow2 
-	SimpleConstructionScript_0 (0-0-0-0): size 139 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
+	SimpleConstructionScript_0 (0-0-0-0): size 143 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
 			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_0=GCN_Athena_Bush_C 
-	BushMesh_GEN_VARIABLE (0-0-0-0): size 826 (cls: BushMesh_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
+	BushMesh_GEN_VARIABLE (0-0-0-0): size 852 (cls: BushMesh_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Athena_Bush_01=/Game/Athena/Prototype/Terrain/SM_Athena_Bush_01 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			bReceivesDecals(BoolProperty)=False 
+			bOwnerNoSee(BoolProperty)=True 
 			bUseAsOccluder(BoolProperty)=False 
 			BodyInstance(StructProperty)=System.Byte[] 
 			RelativeLocation(StructProperty)=Vector(-2.194016,-5.79657,-20) 
 			RelativeRotation(StructProperty)=Rotator(-7.693573,-129.3173,-0.9445801) 
 			RelativeScale3D(StructProperty)=Vector(0.4,0.5,0.7) 
 			bAbsoluteScale(BoolProperty)=True 
-	CallFunc_K2_SetRelativeRotation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeRotation_SweepHitResult>StructProperty>/Script/CoreUObject)
+	OwningPlayer_BushMesh_GEN_VARIABLE (0-0-0-0): size 907 (cls: OwningPlayer_BushMesh_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
+		Tag array:
+			StaticMesh(ObjectProperty)=SM_Athena_Bush_01=/Game/Athena/Prototype/Terrain/SM_Athena_Bush_01 
+			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
+			bReceivesDecals(BoolProperty)=False 
+			bOnlyOwnerSee(BoolProperty)=True 
+			bUseAsOccluder(BoolProperty)=False 
+			bAffectDistanceFieldLighting(BoolProperty)=False 
+			TranslucencySortPriority(IntProperty)=1 
+			BodyInstance(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty)=Vector(-2.194016,-5.79657,-20) 
+			RelativeRotation(StructProperty)=Rotator(-7.693573,-129.3173,-0.94458) 
+			RelativeScale3D(StructProperty)=Vector(0.4,0.5,0.7) 
+			bAbsoluteScale(BoolProperty)=True 
+	ClientBushOpacity (0-0-0-0): size 36 (cls: ClientBushOpacity>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Location (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Rotation (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Scale (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale>StructProperty>/Script/CoreUObject)
+	CallFunc_GetTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetTransform_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetVelocity_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetVelocity_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_SetRelativeRotation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeRotation_SweepHitResult>StructProperty>/Script/CoreUObject)
+	CallFunc_MakeRotator_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeRotator_ReturnValue>StructProperty>/Script/CoreUObject)
+	K2Node_Event_Parameters (0-0-0-0): size 36 (cls: K2Node_Event_Parameters>StructProperty>/Script/CoreUObject)
+	K2Node_Event_Parameters1 (0-0-0-0): size 36 (cls: K2Node_Event_Parameters1>StructProperty>/Script/CoreUObject)
 	Parameters (0-0-0-0): size 36 (cls: Parameters>StructProperty>/Script/CoreUObject)
 	Parameters (0-0-0-0): size 36 (cls: Parameters>StructProperty>/Script/CoreUObject)
+	OpacityFade_Template (0-0-0-0): size 450 (cls: OpacityFade_Template>TimelineTemplate>/Script/Engine):
+		Tag array:
+			bValidatedAsWired(BoolProperty)=True 
+			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
+			TimelineGuid(StructProperty)=Guid: 3112802437-1171955890-3869079470-110773303 
+			VariableName(NameProperty)=OpacityFade 
+			DirectionPropertyName(NameProperty)=OpacityFade__Direction_B989988545DAA0B2E69D77AE069A4437 
+			UpdateFunctionName(NameProperty)=OpacityFade__UpdateFunc 
+			FinishedFunctionName(NameProperty)=OpacityFade__FinishedFunc 

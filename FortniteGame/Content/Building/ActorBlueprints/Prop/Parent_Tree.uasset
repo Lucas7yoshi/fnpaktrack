@@ -2,6 +2,7 @@ Name table:
 	/Game/AI/HotSpots/BuildingActorHotSpot_LimitedBoundingBox
 	/Game/Balance/DataTables/ResourceRates
 	/Game/Building/ActorBlueprints/Prop/Parent_Tree
+	/Game/Effects/Fort_Effects/Effects/Environment/Foliage/P_Foliage_Leaves_Mesh_01
 	/Game/Effects/Fort_Effects/World/Destruction/Trees/P_OakTree_Large_Destruction
 	/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/En_LeafTypes_01
 	/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/Materials/M_Leaves_StormSystem_Large_M_Inst
@@ -25,8 +26,13 @@ Name table:
 	/Script/GameplayTags
 	3
 	Actor
+	ActorComponentTickFunction
+	Add_FloatFloat
 	Add_IntInt
+	Add_VectorVector
 	AddComponent
+	AllNodes
+	AreaClass
 	Array_Get
 	Array_Length
 	ArrayProperty
@@ -38,6 +44,7 @@ Name table:
 	bCanEverAffectNavigation
 	bCanExportNavigationCollisions
 	bForceAutomationPass_NavmeshOnTop
+	bIsParentComponentNative
 	BlendTime
 	BlueprintGeneratedClass
 	bNeedsDamageOverlay
@@ -49,6 +56,7 @@ Name table:
 	bRandomYawOnPlacement
 	BreakColor
 	BreakVector
+	bStartWithTickEnabled
 	Building.Type.Prop
 	BuildingActorHotSpot_LimitedBoundingBox
 	BuildingActorHotSpotConfig
@@ -56,9 +64,13 @@ Name table:
 	BuildingProp
 	BuildingResourceAmountOverride
 	BuildingSMActor
+	bVisible
 	ByteProperty
+	CallFunc_Add_FloatFloat_ReturnValue
 	CallFunc_Add_IntInt_ReturnValue
+	CallFunc_Add_VectorVector_ReturnValue
 	CallFunc_AddComponent_ReturnValue
+	CallFunc_AddComponent_ReturnValue1
 	CallFunc_Array_Get_Item
 	CallFunc_Array_Get_Item1
 	CallFunc_Array_Length_ReturnValue
@@ -73,12 +85,23 @@ Name table:
 	CallFunc_BreakColor_R
 	CallFunc_BreakColor_R1
 	CallFunc_BreakVector_X
+	CallFunc_BreakVector_X1
+	CallFunc_BreakVector_X2
 	CallFunc_BreakVector_Y
+	CallFunc_BreakVector_Y1
+	CallFunc_BreakVector_Y2
 	CallFunc_BreakVector_Z
+	CallFunc_BreakVector_Z1
+	CallFunc_BreakVector_Z2
+	CallFunc_Conv_VectorToTransform_ReturnValue
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue
+	CallFunc_Divide_FloatFloat_ReturnValue
 	CallFunc_EqualEqual_IntInt_ReturnValue
 	CallFunc_GetBuildingMeshComponent_ReturnValue
 	CallFunc_GetBuildingMeshComponent_ReturnValue1
+	CallFunc_GetComponentBounds_BoxExtent
+	CallFunc_GetComponentBounds_Origin
+	CallFunc_GetComponentBounds_SphereRadius
 	CallFunc_GetDisplayName_ReturnValue
 	CallFunc_GetDisplayName_ReturnValue1
 	CallFunc_GetGameUserSettings_ReturnValue
@@ -89,32 +112,46 @@ Name table:
 	CallFunc_GetMaterials_ReturnValue
 	CallFunc_GetNumMaterials_ReturnValue
 	CallFunc_GetShadowQuality_ReturnValue
+	CallFunc_GetTransform_ReturnValue
 	CallFunc_GetWindManager_ReturnValue
 	CallFunc_GetWindPannerSpeedCurveForPreview_ReturnValue
 	CallFunc_GetWindPannerSpeedCurveForPreview_ReturnValue1
 	CallFunc_GetWindSpeedCurveForPreview_ReturnValue
 	CallFunc_GetWindSpeedCurveForPreview_ReturnValue1
 	CallFunc_HasWindImpulse_ReturnValue
+	CallFunc_InverseTransformLocation_ReturnValue
 	CallFunc_IsDedicatedServer_ReturnValue
+	CallFunc_IsErebus_ReturnValue
+	CallFunc_IsMobilePlatform_ReturnValue
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
 	CallFunc_IsValid_ReturnValue2
 	CallFunc_IsValid_ReturnValue3
+	CallFunc_K2_GetComponentLocation_ReturnValue
+	CallFunc_K2_SetRelativeLocation_SweepHitResult
 	CallFunc_Less_IntInt_ReturnValue
 	CallFunc_LessEqual_IntInt_ReturnValue
 	CallFunc_MakeColor_ReturnValue
 	CallFunc_MakeVector_ReturnValue
+	CallFunc_MakeVector_ReturnValue1
 	CallFunc_Multiply_VectorFloat_ReturnValue
 	CallFunc_Not_PreBool_ReturnValue
 	CallFunc_RotateAngleAxis_ReturnValue
 	CallFunc_SetStaticMesh_ReturnValue
 	CallFunc_Subtract_IntInt_ReturnValue
+	Camera
 	CentroidOffset
 	ChangeWindIntensity
+	Channel
 	Class
+	CollisionEnabled
+	CollisionProfileName
+	CollisionResponse
+	CollisionResponses
 	ComponentClass
 	ComponentTemplate
 	ComponentTemplates
+	Conv_VectorToTransform
 	CreateDynamicMaterialInstance
 	CurrentEmitterCount
 	CurveLinearColor
@@ -136,6 +173,8 @@ Name table:
 	Default__BuildingProp
 	Default__ByteProperty
 	Default__FloatProperty
+	Default__FortGlobals
+	Default__FortKismetLibrary
 	Default__FortWindManager
 	Default__Function
 	Default__GameUserSettings
@@ -145,9 +184,11 @@ Name table:
 	Default__NameProperty
 	Default__ObjectProperty
 	Default__Parent_Tree_C
+	Default__ParticleSystemComponent
 	Default__SceneComponent
 	Default__SCS_Node
 	Default__SimpleConstructionScript
+	Default__SphereComponent
 	Default__StaticMeshComponent
 	Default__StrProperty
 	Default__StructProperty
@@ -157,7 +198,14 @@ Name table:
 	Destruction_TreeHigh
 	DestructionLootTierGroup
 	DistanceFieldsEnabled?
+	Divide_FloatFloat
 	EBuildingAttachmentType
+	ECC_WorldStatic
+	ECollisionChannel
+	ECollisionEnabled
+	ECollisionEnabled::NoCollision
+	ECollisionResponse
+	ECR_Ignore
 	EFortResourceType
 	EFortResourceType::Wood
 	EmitLeaves?
@@ -172,6 +220,9 @@ Name table:
 	ExecuteUbergraph_Parent_Tree
 	FloatProperty
 	FortAttributeInitializationKey
+	FortGlobals
+	FortKismetLibrary
+	FortMetaNavArea_Obstacles
 	FortWindImpulseHandle
 	FortWindManager
 	Function
@@ -194,6 +245,7 @@ Name table:
 	GameplayTagContainer
 	GameUserSettings
 	GetBuildingMeshComponent
+	GetComponentBounds
 	GetDisplayName
 	GetGameUserSettings
 	GetIntenseWindMaterialsForPreview
@@ -201,11 +253,13 @@ Name table:
 	GetMaterials
 	GetNumMaterials
 	GetShadowQuality
+	GetTransform
 	GetWindManager
 	GetWindPannerSpeedCurveForPreview
 	GetWindSpeedCurveForPreview
 	Guid
 	HasWindImpulse
+	HitResult
 	HotSpotConfig
 	Idle
 	IntenseWindMaterials
@@ -213,9 +267,14 @@ Name table:
 	Intensity
 	InternalVariableName
 	IntProperty
+	InverseTransformLocation
 	IsDedicatedServer
+	IsErebus
+	IsMobilePlatform
 	IsValid
+	K2_GetComponentLocation
 	K2_InterpolateMaterialInstanceParams
+	K2_SetRelativeLocation
 	K2Node_CustomEvent_Intensity
 	K2Node_CustomEvent_Time_It_Takes_To_Reach_New_Intensity
 	K2Node_DynamicCast_AsMaterial_Instance
@@ -236,10 +295,14 @@ Name table:
 	LargeLeafMaterialTranslucent
 	Leaf Emitter Setup Template
 	Leaf Material Setup
+	LeafCenter_Offset
 	LeafEmitterComponents
 	LeafEmitterNamesCylindrical
 	LeafEmitterNamesSpherical
 	LeafEmitterSetup
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
+	LeafRadius
 	LeafTypes
 	Less_IntInt
 	LessEqual_IntInt
@@ -268,6 +331,9 @@ Name table:
 	Multiply_VectorFloat
 	NameProperty
 	NavigationObstacleOverride
+	NewVar
+	NoCollision
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	None
 	Not_PreBool
@@ -275,17 +341,22 @@ Name table:
 	NotEqual_IntInt
 	Object
 	ObjectProperty
+	ObjectType
 	OriginalMaterials
+	P_Foliage_Leaves_Mesh_01
 	P_OakTree_Large_Destruction
 	Package
 	Parent_Tree_C
+	ParentComponentOrVariableName
 	ParticleSystem
 	ParticleSystemComponent
 	PineLeafMaterialMasked
 	PineLeafMaterialTranslucent
 	PointerToUberGraphFrame
+	PrimaryComponentTick
 	PrimitiveComponent
 	PrintString
+	Quat
 	ReceiveDestroyed
 	RemoveTestWind
 	RemoveWindImpulse
@@ -293,9 +364,15 @@ Name table:
 	ResourceType
 	ResourceWood
 	ResourceWoodHigh
+	Response
+	ResponseArray
+	ResponseChannel
 	RootComponent
+	RootNodes
 	RotateAngleAxis
+	Rotation
 	RowName
+	Scale3D
 	SceneComponent
 	ScriptStruct
 	SCS_Node
@@ -305,6 +382,7 @@ Name table:
 	SetFloatParameter
 	SetMaterial
 	SetScalarParameterValue
+	SetSphereRadius
 	SetStaticMesh
 	SetVectorParameter
 	SetVectorParameterValue
@@ -314,10 +392,14 @@ Name table:
 	SmallLeafMaterialTranslucent
 	SoftObjectProperty
 	SoundCue
+	SpawnFX
 	SpawnRate(Idle)
 	SpawnRate(Storm)
 	SpawnRateIdleScale
 	SpawnRateStormScale
+	SpawnWindFX?
+	SphereComponent
+	SphereRadius
 	StaticGameplayTags
 	StaticMesh
 	StaticMeshComponent
@@ -336,15 +418,19 @@ Name table:
 	Temp_int_Loop_Counter_Variable
 	Temp_int_Variable
 	Temp_struct_Variable
+	Template
 	Time It Takes To Reach New Intensity
 	Transform
+	Translation
 	UberGraphFrame
 	UberGraphFunction
 	UID
+	UseCylinder
 	UserConstructionScript
 	UserDefinedEnum
 	VariableGuid
 	Vector
+	Visibility
 	Wind Direction
 	Wind Intensity Debug Mesh
 	Wind_1_Speed_CodeReferenced
@@ -356,6 +442,9 @@ Name table:
 	Wind_Panner_Speed_2x_CodeReferenced
 	Wind_Panner_Speed_2y_CodeReferenced
 	WindDirection
+	WindFX
+	WindFX_MaxDrawDistance
+	WindFX_Transform
 	WindHandle
 	WindIntensity(Idle)
 	WindIntensity(Storm)
@@ -364,12 +453,12 @@ Name table:
 	WindVector_CodeControlled
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Parent_Tree_C (0-0-0-0): size 439 (cls: Parent_Tree_C>BlueprintGeneratedClass>/Script/Engine):
+	Parent_Tree_C (0-0-0-0): size 483 (cls: Parent_Tree_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			ComponentTemplates(ArrayProperty)=[object] (inner: ObjectProperty)
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_916=Parent_Tree_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Parent_Tree=Parent_Tree_C 
-	Default__Parent_Tree_C (0-0-0-0): size 2045 (cls: Default__Parent_Tree_C>Parent_Tree_C):
+	Default__Parent_Tree_C (0-0-0-0): size 2350 (cls: Default__Parent_Tree_C>Parent_Tree_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			Wind Direction(StructProperty)=Vector(1,0,0) 
@@ -394,6 +483,8 @@ Serialized exports:
 			LargeLeafMaterialTranslucent(ObjectProperty)=M_Leaves_StormSystem_Large_T_Inst=/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/Materials/M_Leaves_StormSystem_Large_T_Inst 
 			PineLeafMaterialTranslucent(ObjectProperty)=M_Leaves_StormSystem_Pine_T_Inst=/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/Materials/M_Leaves_StormSystem_Pine_T_Inst 
 			WindHandle(StructProperty)=System.Byte[] 
+			WindFX_Transform(StructProperty)=System.Byte[] 
+			LeafCenter_Offset(StructProperty)=Vector(0,0,0) 
 			ResourceType(ByteProperty)=EFortResourceType::Wood 
 			bRandomYawOnPlacement(BoolProperty)=True 
 			bRandomScaleOnPlacement(BoolProperty)=True 
@@ -424,7 +515,7 @@ Serialized exports:
 	LeafEmitterNamesCylindrical (0-0-0-0): size 36 (cls: LeafEmitterNamesCylindrical>ArrayProperty>/Script/CoreUObject)
 	LeafEmitterNamesSpherical (0-0-0-0): size 32 (cls: LeafEmitterNamesSpherical>NameProperty>/Script/CoreUObject)
 	LeafEmitterNamesSpherical (0-0-0-0): size 36 (cls: LeafEmitterNamesSpherical>ArrayProperty>/Script/CoreUObject)
-	Wind Direction (0-0-0-0): size 36 (cls: Wind Direction>StructProperty>/Script/CoreUObject)
+	LeafPlacement (0-0-0-0): size 36 (cls: LeafPlacement>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
 	ExecuteUbergraph_Parent_Tree (0-0-0-0): size 91 (cls: ExecuteUbergraph_Parent_Tree>Function>/Script/CoreUObject)
 	Intensity (0-0-0-0): size 32 (cls: Intensity>FloatProperty>/Script/CoreUObject)
@@ -432,7 +523,7 @@ Serialized exports:
 	ReceiveDestroyed (0-0-0-0): size 54 (cls: ReceiveDestroyed>Function>/Script/CoreUObject)
 	IntenseWindMaterialsForPreview (0-0-0-0): size 36 (cls: IntenseWindMaterialsForPreview>ObjectProperty>/Script/CoreUObject)
 	IntenseWindMaterialsForPreview (0-0-0-0): size 36 (cls: IntenseWindMaterialsForPreview>ArrayProperty>/Script/CoreUObject)
-	UserConstructionScript (0-0-0-0): size 2945 (cls: UserConstructionScript>Function>/Script/CoreUObject)
+	UserConstructionScript (0-0-0-0): size 3834 (cls: UserConstructionScript>Function>/Script/CoreUObject)
 	CallFunc_GetIntenseWindMaterialsForPreview_Materials (0-0-0-0): size 36 (cls: CallFunc_GetIntenseWindMaterialsForPreview_Materials>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetIntenseWindMaterialsForPreview_Materials (0-0-0-0): size 36 (cls: CallFunc_GetIntenseWindMaterialsForPreview_Materials>ArrayProperty>/Script/CoreUObject)
 	CallFunc_GetMaterials_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetMaterials_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -462,9 +553,14 @@ Serialized exports:
 	CallFunc_HasWindImpulse_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasWindImpulse_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	SpawnFX (0-0-0-0): size 34 (cls: SpawnFX>BoolProperty>/Script/CoreUObject)
+	SpawnWindFX? (0-0-0-0): size 34 (cls: SpawnWindFX?>BoolProperty>/Script/CoreUObject)
 	StormActive? (0-0-0-0): size 34 (cls: StormActive?>BoolProperty>/Script/CoreUObject)
+	UseCylinder (0-0-0-0): size 34 (cls: UseCylinder>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetIntenseWindMaterialsForPreview_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GetIntenseWindMaterialsForPreview_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsErebus_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsErebus_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsMobilePlatform_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsMobilePlatform_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue2>BoolProperty>/Script/CoreUObject)
@@ -481,10 +577,13 @@ Serialized exports:
 	K2Node_CustomEvent_Intensity (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Intensity>FloatProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Time_It_Takes_To_Reach_New_Intensity (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Time_It_Takes_To_Reach_New_Intensity>FloatProperty>/Script/CoreUObject)
 	K2Node_Select4_Default (0-0-0-0): size 32 (cls: K2Node_Select4_Default>FloatProperty>/Script/CoreUObject)
+	LeafRadius (0-0-0-0): size 32 (cls: LeafRadius>FloatProperty>/Script/CoreUObject)
 	Lifetime(Idle) (0-0-0-0): size 32 (cls: Lifetime(Idle)>FloatProperty>/Script/CoreUObject)
 	Lifetime(Storm) (0-0-0-0): size 32 (cls: Lifetime(Storm)>FloatProperty>/Script/CoreUObject)
+	NewVar_0 (0-0-0-0): size 32 (cls: NewVar_0>FloatProperty>/Script/CoreUObject)
 	SpawnRate(Idle) (0-0-0-0): size 32 (cls: SpawnRate(Idle)>FloatProperty>/Script/CoreUObject)
 	SpawnRate(Storm) (0-0-0-0): size 32 (cls: SpawnRate(Storm)>FloatProperty>/Script/CoreUObject)
+	CallFunc_Add_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakColor_A (0-0-0-0): size 32 (cls: CallFunc_BreakColor_A>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakColor_A1 (0-0-0-0): size 32 (cls: CallFunc_BreakColor_A1>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakColor_B (0-0-0-0): size 32 (cls: CallFunc_BreakColor_B>FloatProperty>/Script/CoreUObject)
@@ -494,8 +593,17 @@ Serialized exports:
 	CallFunc_BreakColor_R (0-0-0-0): size 32 (cls: CallFunc_BreakColor_R>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakColor_R1 (0-0-0-0): size 32 (cls: CallFunc_BreakColor_R1>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_X (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_X1 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X1>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_X2 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X2>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Y (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Y1 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y1>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Y2 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y2>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Z (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Z1 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z1>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Z2 (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z2>FloatProperty>/Script/CoreUObject)
+	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_GetComponentBounds_SphereRadius (0-0-0-0): size 32 (cls: CallFunc_GetComponentBounds_SphereRadius>FloatProperty>/Script/CoreUObject)
+	WindFX_MaxDrawDistance (0-0-0-0): size 32 (cls: WindFX_MaxDrawDistance>FloatProperty>/Script/CoreUObject)
 	WindIntensity(Idle) (0-0-0-0): size 32 (cls: WindIntensity(Idle)>FloatProperty>/Script/CoreUObject)
 	WindIntensity(Storm) (0-0-0-0): size 32 (cls: WindIntensity(Storm)>FloatProperty>/Script/CoreUObject)
 	CurrentEmitterCount (0-0-0-0): size 32 (cls: CurrentEmitterCount>IntProperty>/Script/CoreUObject)
@@ -534,6 +642,7 @@ Serialized exports:
 	SmallLeafMaterialMasked (0-0-0-0): size 36 (cls: SmallLeafMaterialMasked>ObjectProperty>/Script/CoreUObject)
 	SmallLeafMaterialTranslucent (0-0-0-0): size 36 (cls: SmallLeafMaterialTranslucent>ObjectProperty>/Script/CoreUObject)
 	CallFunc_AddComponent_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_AddComponent_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_AddComponent_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_AddComponent_ReturnValue1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item1 (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_CreateDynamicMaterialInstance_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -546,16 +655,37 @@ Serialized exports:
 	K2Node_DynamicCast_AsMaterial_Instance (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsMaterial_Instance>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsMaterial_Instance1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsMaterial_Instance1>ObjectProperty>/Script/CoreUObject)
 	Wind Intensity Debug Mesh (0-0-0-0): size 36 (cls: Wind Intensity Debug Mesh>ObjectProperty>/Script/CoreUObject)
+	WindFX (0-0-0-0): size 36 (cls: WindFX>ObjectProperty>/Script/CoreUObject)
+	NODE_AddParticleSystemComponent-1 (0-0-0-0): size 124 (cls: NODE_AddParticleSystemComponent-1>ParticleSystemComponent>/Script/Engine):
+		Tag array:
+			Template(ObjectProperty)=P_Foliage_Leaves_Mesh_01=/Game/Effects/Fort_Effects/Effects/Environment/Foliage/P_Foliage_Leaves_Mesh_01 
+			PrimaryComponentTick(StructProperty)=System.Byte[] 
 	SceneComponent_736 (0-0-0-0): size 12 (cls: SceneComponent_736>SceneComponent>/Script/Engine)
+	SCS_Node_0 (0-0-0-0): size 227 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
+		Tag array:
+			ComponentClass(ObjectProperty)=SphereComponent=/Script/Engine 
+			ComponentTemplate(ObjectProperty)=LeafPlacement_GEN_VARIABLE=Parent_Tree_C 
+			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
+			bIsParentComponentNative(BoolProperty)=True 
+			VariableGuid(StructProperty)=Guid: 3979999399-1076900455-3048678062-4201641885 
+			InternalVariableName(NameProperty)=LeafPlacement 
 	SCS_Node_746 (0-0-0-0): size 168 (cls: SCS_Node_746>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_736=Parent_Tree_C 
 			VariableGuid(StructProperty)=Guid: 1455200153-3298092774-840778389-2103358230 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
-	SimpleConstructionScript_916 (0-0-0-0): size 41 (cls: SimpleConstructionScript_916>SimpleConstructionScript>/Script/Engine):
+	SimpleConstructionScript_916 (0-0-0-0): size 123 (cls: SimpleConstructionScript_916>SimpleConstructionScript>/Script/Engine):
 		Tag array:
+			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
+			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_746=Parent_Tree_C 
+	LeafPlacement_GEN_VARIABLE (0-0-0-0): size 575 (cls: LeafPlacement_GEN_VARIABLE>SphereComponent>/Script/Engine):
+		Tag array:
+			SphereRadius(FloatProperty)=500 
+			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
+			BodyInstance(StructProperty)=System.Byte[] 
+			bVisible(BoolProperty)=False 
 	StaticMeshComponent0 (0-0-0-0): size 125 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			BodyInstance(StructProperty)=System.Byte[] 
@@ -565,10 +695,22 @@ Serialized exports:
 	CallFunc_GetDisplayName_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_GetDisplayName_ReturnValue1>StrProperty>/Script/CoreUObject)
 	EmitterSize (0-0-0-0): size 36 (cls: EmitterSize>StructProperty>/Script/CoreUObject)
 	CallFunc_Multiply_VectorFloat_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Multiply_VectorFloat_ReturnValue>StructProperty>/Script/CoreUObject)
+	LeafCenter_Offset (0-0-0-0): size 36 (cls: LeafCenter_Offset>StructProperty>/Script/CoreUObject)
+	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Conv_VectorToTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Conv_VectorToTransform_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_GetComponentBounds_BoxExtent (0-0-0-0): size 36 (cls: CallFunc_GetComponentBounds_BoxExtent>StructProperty>/Script/CoreUObject)
+	CallFunc_GetComponentBounds_Origin (0-0-0-0): size 36 (cls: CallFunc_GetComponentBounds_Origin>StructProperty>/Script/CoreUObject)
 	CallFunc_GetLinearColorValue_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLinearColorValue_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetLinearColorValue_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetLinearColorValue_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_GetTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetTransform_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_InverseTransformLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_InverseTransformLocation_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_GetComponentLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentLocation_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_SetRelativeLocation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeLocation_SweepHitResult>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeColor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeColor_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_MakeVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_RotateAngleAxis_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_RotateAngleAxis_ReturnValue>StructProperty>/Script/CoreUObject)
 	Temp_struct_Variable (0-0-0-0): size 36 (cls: Temp_struct_Variable>StructProperty>/Script/CoreUObject)
+	Wind Direction (0-0-0-0): size 36 (cls: Wind Direction>StructProperty>/Script/CoreUObject)
+	WindFX_Transform (0-0-0-0): size 36 (cls: WindFX_Transform>StructProperty>/Script/CoreUObject)
 	WindHandle (0-0-0-0): size 36 (cls: WindHandle>StructProperty>/Script/CoreUObject)

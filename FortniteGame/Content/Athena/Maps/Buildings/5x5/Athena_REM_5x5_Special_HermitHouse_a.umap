@@ -59,6 +59,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Chimney_Wide_Top
 	/Game/Building/ActorBlueprints/Prop/Lamp01
 	/Game/Building/ActorBlueprints/Prop/Palettes_Tall
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/PipeKit02
 	/Game/Building/ActorBlueprints/Prop/PowerTransformer01
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01d
@@ -209,6 +210,7 @@ Name table:
 	bEnableAutoLODGeneration
 	bEnableDensityScaling
 	bEnableNavigationSystem
+	bGenerateOverlapEvents
 	bHasPerInstanceHitProxies
 	BlueprintCreatedComponents
 	BlueprintGeneratedClass
@@ -382,6 +384,7 @@ Name table:
 	Default__Model
 	Default__NavigationSystemModuleConfig
 	Default__Palettes_Tall_C
+	Default__Parent_Tree_C
 	Default__PipeKit02_C
 	Default__PowerTransformer01_C
 	Default__Prop_Athena_Doorbell_Interactable_C
@@ -548,6 +551,8 @@ Name table:
 	LCD_Suitcases_03
 	LCD_ToolBox
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -611,6 +616,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -634,6 +640,7 @@ Name table:
 	Palettes_Tall
 	Palettes_Tall2
 	Palettes_Tall_C
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_1007__38D6C920
@@ -721,6 +728,7 @@ Name table:
 	SM_Wood01_IntactWall01_CornerExtb
 	SoftClassPath
 	SortedInstances
+	SphereComponent
 	SphereRadius
 	SpotLight
 	SpotLight_GEN_VARIABLE
@@ -2226,7 +2234,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=58 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2392.401,-295.4366,-2.774675)) Max(Vector(347.0456,2391.84,30.37778)),53249) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2392.401,-295.4366,-2.774675)) Max(Vector(347.0456,2391.84,30.37778)),53505) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=58 
@@ -2885,6 +2893,13 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SpotLight (0-0-0-0): size 231 (cls: SpotLight>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=11709.88 
@@ -3893,10 +3908,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 249 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 275 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=18718.7 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			CanCharacterStepUpOn(ByteProperty)=ECB_Yes 
 			RelativeLocation(StructProperty)=Vector(-469.0078,-1.992188,0) 
 			RelativeRotation(StructProperty)=Rotator(0,-160.3123,0) 
@@ -3907,10 +3923,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 188 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 214 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=9628.729 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			CanCharacterStepUpOn(ByteProperty)=ECB_Yes 
 			RelativeLocation(StructProperty)=Vector(-2091,1552.016,0) 
 	Jump_Collision (0-0-0-0): size 182 (cls: Jump_Collision>StaticMeshComponent>/Script/Engine):
@@ -3920,10 +3937,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 19664 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 19690 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=19088.46 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			CanCharacterStepUpOn(ByteProperty)=ECB_Yes 
 			RelativeLocation(StructProperty)=Vector(-1870.008,-108,0) 
 			RelativeRotation(StructProperty)=Rotator(0,150.6863,0) 
@@ -4724,13 +4742,15 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=19982.03 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 
-	Tree_Bush_1 (0-0-0-0): size 193 (cls: Tree_Bush_1>Tree_Bush_1a_C>/Game/Building/ActorBlueprints/Prop/Tree_Bush_1a):
+	Tree_Bush_1 (0-0-0-0): size 263 (cls: Tree_Bush_1>Tree_Bush_1a_C>/Game/Building/ActorBlueprints/Prop/Tree_Bush_1a):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_REM_5x5_Special_HermitHouse_a 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 
 			MyGuid(StructProperty)=Guid: 3512375058-1108010406-754505130-2258260621 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	WarehouseShelves_2 (0-0-0-0): size 193 (cls: WarehouseShelves_2>WarehouseShelves_01_C>/Game/Building/ActorBlueprints/Prop/WarehouseShelves_01):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Special_HermitHouse_a 

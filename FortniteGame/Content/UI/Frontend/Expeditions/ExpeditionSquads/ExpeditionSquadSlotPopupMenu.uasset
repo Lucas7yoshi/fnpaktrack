@@ -65,6 +65,7 @@ Name table:
 	ButtonStyle-Outline-S_C
 	ButtonStyle-TransparentWithCues-XS-B_C
 	ButtonText
+	ButtonTextJustification
 	bValidTemplate
 	ByteProperty
 	CallFunc_GetChildAt_ReturnValue
@@ -156,6 +157,8 @@ Name table:
 	EditSlotButton
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	EMovieSceneBlendType
 	EMovieSceneBlendType::Absolute
@@ -182,6 +185,7 @@ Name table:
 	ESlateVisibility::Visible
 	ETextJustify
 	ETextJustify::Center
+	ETextJustify::Left
 	EUINavigationRule
 	EUINavigationRule::Stop
 	EUINavigationRule::Wrap
@@ -207,6 +211,7 @@ Name table:
 	FloatCurve
 	FloatFunction
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	ForcedTime
@@ -614,18 +619,21 @@ Serialized exports:
 	OnBeginOutro (0-0-0-0): size 54 (cls: OnBeginOutro>Function>/Script/CoreUObject)
 	OnDeactivated (0-0-0-0): size 54 (cls: OnDeactivated>Function>/Script/CoreUObject)
 	WidgetAnimationEvt_FadeIn_K2Node_WidgetAnimationEvent_0 (0-0-0-0): size 54 (cls: WidgetAnimationEvt_FadeIn_K2Node_WidgetAnimationEvent_0>Function>/Script/CoreUObject)
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_0 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -704,26 +712,28 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
-	CancelButton (0-0-0-0): size 471 (cls: CancelButton>IconTextButton_C>/Game/UI/Foundation/Buttons/IconTextButton):
+	CancelButton (0-0-0-0): size 512 (cls: CancelButton>IconTextButton_C>/Game/UI/Foundation/Buttons/IconTextButton):
 		Tag array:
 			CenterButtonTextWidget(ObjectProperty)=CenterButtonTextWidget=WidgetArchetype 
 			ContentBorder(ObjectProperty)=ContentBorder=WidgetArchetype 
 			LeftSideImage(ObjectProperty)=LeftSideImage=WidgetArchetype 
 			RightExtraContentSlot(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
 			ButtonText(TextProperty)=Cancel (8FB0D83C4CE09E7B92E06FB03FE72A24) 
+			ButtonTextJustification(ByteProperty)=ETextJustify::Left 
 			Style(ObjectProperty)=ButtonStyle-TransparentWithCues-XS-B_C=/Game/UI/Foundation/Buttons/ButtonStyles/ButtonStyle-TransparentWithCues-XS-B 
 			TriggeringInputAction(StructProperty)=System.Byte[] 
 			InputActionWidget(ObjectProperty)=InputActionWidget=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	EditSlotButton (0-0-0-0): size 612 (cls: EditSlotButton>IconTextButton_C>/Game/UI/Foundation/Buttons/IconTextButton):
+	EditSlotButton (0-0-0-0): size 653 (cls: EditSlotButton>IconTextButton_C>/Game/UI/Foundation/Buttons/IconTextButton):
 		Tag array:
 			CenterButtonTextWidget(ObjectProperty)=CenterButtonTextWidget=WidgetArchetype 
 			ContentBorder(ObjectProperty)=ContentBorder=WidgetArchetype 
 			LeftSideImage(ObjectProperty)=LeftSideImage=WidgetArchetype 
 			RightExtraContentSlot(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
 			ButtonText(TextProperty)=Change (5525D9844AE43936CE2F5A81560AA224) 
+			ButtonTextJustification(ByteProperty)=ETextJustify::Left 
 			MinWidth(IntProperty)=250 
 			Style(ObjectProperty)=ButtonStyle-Outline-S_C=/Game/UI/Foundation/Buttons/ButtonStyles/TopBar/ButtonStyle-Outline-S 
 			bShouldUseFallbackDefaultInputAction(BoolProperty)=False 
@@ -733,13 +743,14 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	InspectButton (0-0-0-0): size 597 (cls: InspectButton>IconTextButton_C>/Game/UI/Foundation/Buttons/IconTextButton):
+	InspectButton (0-0-0-0): size 638 (cls: InspectButton>IconTextButton_C>/Game/UI/Foundation/Buttons/IconTextButton):
 		Tag array:
 			CenterButtonTextWidget(ObjectProperty)=CenterButtonTextWidget=WidgetArchetype 
 			ContentBorder(ObjectProperty)=ContentBorder=WidgetArchetype 
 			LeftSideImage(ObjectProperty)=LeftSideImage=WidgetArchetype 
 			RightExtraContentSlot(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
 			ButtonText(TextProperty)=Upgrade / Inspect (F26B51734DDDD5968A57C5833F58F957) 
+			ButtonTextJustification(ByteProperty)=ETextJustify::Left 
 			MinWidth(IntProperty)=250 
 			Style(ObjectProperty)=ButtonStyle-Outline-S_C=/Game/UI/Foundation/Buttons/ButtonStyles/TopBar/ButtonStyle-Outline-S 
 			TriggeringInputAction(StructProperty)=System.Byte[] 

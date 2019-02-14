@@ -31,6 +31,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Lantern_Single
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Lantern_String
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Picnic_Table
 	/Game/Building/ActorBlueprints/Prop/Planter_Round
 	/Game/Building/ActorBlueprints/Prop/Recreation_ParkBench_01
@@ -309,6 +310,7 @@ Name table:
 	Default__Model
 	Default__NavigationSystemModuleConfig
 	Default__Neo_Class_Stair_1_C
+	Default__Parent_Tree_C
 	Default__Picnic_Table_C
 	Default__Planter_Round_C
 	Default__Recreation_ParkBench_01_C
@@ -349,6 +351,8 @@ Name table:
 	IntProperty
 	Key
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -370,6 +374,9 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MI_Chinatown_PlasterWall
 	MI_FORT_Brick_Simple
 	MI_Fort_Floors_Generic_TilesClean
@@ -397,6 +404,7 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	Neo_Class_Stair_1_C
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	NODE_AddStaticMeshComponent-1
 	None
@@ -404,7 +412,9 @@ Name table:
 	ObjectProperty
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	Picnic_Table4
 	Picnic_Table5
@@ -418,6 +428,7 @@ Name table:
 	PointLight
 	PointLight_GEN_VARIABLE
 	PointLightComponent
+	PrimitiveComponent
 	PropertySetObject
 	Proxy
 	Recreation_ParkBench
@@ -435,6 +446,7 @@ Name table:
 	Shrine_Plaster_Red
 	Shrine_Plaster_White
 	ShrineStoneFloor
+	SimpleMemberReference
 	SM_Athena_CTN_5x5_Tower_b_1_SM_Sidewalk_Rounded
 	SM_Boardwalk_Stair2
 	SM_Boardwalk_Stair34_C
@@ -455,6 +467,7 @@ Name table:
 	SM_Wood01_InteriorPillarSingle_ThreeQuarters2
 	SM_Wood01_InteriorPillarSingle_ThreeQuarters_C
 	SoftClassPath
+	SphereComponent
 	StaticMesh
 	StaticMeshComponent
 	StaticMeshComponent0
@@ -484,6 +497,7 @@ Name table:
 	TrackName
 	TrasureLight
 	TrasureLight_GEN_VARIABLE
+	UCSModifiedProperties
 	Vector
 	VolumetricScatteringIntensity
 	WoodCreakSound
@@ -718,20 +732,24 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
-	ChinaTown_Bamboo_Tree8 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree8>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+	ChinaTown_Bamboo_Tree8 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree8>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Tower_b 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
 			MyGuid(StructProperty)=Guid: 3047438728-1163454095-3854812091-1905256758 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
-	ChinaTown_Bamboo_Tree9 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree9>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	ChinaTown_Bamboo_Tree9 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree9>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Tower_b 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
 			MyGuid(StructProperty)=Guid: 3134375506-1261693271-3125682055-484003752 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Chinatown_Frame_01_2 (0-0-0-0): size 193 (cls: Chinatown_Frame_01_2>Chinatown_Frame_02_C>/Game/Building/ActorBlueprints/Chinatown/Sets/Shrines/Chinatown_Frame_02):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
@@ -2756,6 +2774,20 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=15958.73 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Tower_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)

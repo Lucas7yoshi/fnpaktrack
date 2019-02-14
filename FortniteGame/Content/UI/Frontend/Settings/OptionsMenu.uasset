@@ -10,6 +10,7 @@ Name table:
 	/Game/UI/Foundation/Fonts/NotoSans
 	/Game/UI/Foundation/Input/InputActionDataTable
 	/Game/UI/Foundation/Modals/ProgressModal/ProgressModalWidget
+	/Game/UI/Foundation/Shell/windowchromebuttons
 	/Game/UI/Foundation/TabbedView/HorizontalTabList
 	/Game/UI/Foundation/Text/TextScrollStyle-Base
 	/Game/UI/Foundation/Text/TextStyle-Base-L-B
@@ -33,7 +34,6 @@ Name table:
 	/Game/UI/Frontend/Settings/TabGameOptions
 	/Game/UI/Frontend/Settings/TabGameOptionsHud
 	/Game/UI/Frontend/Settings/TabGameOptionsMain
-	/Game/UI/Frontend/Settings/TabGamePadConfig
 	/Game/UI/Frontend/Settings/TabInputOptions
 	/Game/UI/Frontend/Settings/TabInputOptions.TabInputOptions_C
 	/Game/UI/Frontend/Settings/TabVideoOptions
@@ -140,6 +140,7 @@ Name table:
 	ButtonStyle-Tab-Manage_C
 	ButtonText
 	bValidTemplate
+	bWindowButtonsEnabled
 	ByteProperty
 	CallFunc_Add_IntInt_ReturnValue
 	CallFunc_Add_IntInt_ReturnValue1
@@ -157,11 +158,6 @@ Name table:
 	CallFunc_ClassIsChildOf_ReturnValue
 	CallFunc_ClassIsChildOf_ReturnValue1
 	CallFunc_ClassIsChildOf_ReturnValue2
-	CallFunc_Concat_StrStr_ReturnValue
-	CallFunc_Concat_StrStr_ReturnValue1
-	CallFunc_Concat_StrStr_ReturnValue2
-	CallFunc_Conv_StringToText_ReturnValue
-	CallFunc_Conv_TextToString_ReturnValue
 	CallFunc_Create_ReturnValue
 	CallFunc_EqualEqual_ByteByte_ReturnValue
 	CallFunc_EqualEqual_ByteByte_ReturnValue1
@@ -170,6 +166,7 @@ Name table:
 	CallFunc_EqualEqual_NameName_ReturnValue
 	CallFunc_EqualEqual_StrStr_ReturnValue
 	CallFunc_Format_ReturnValue
+	CallFunc_Format_ReturnValue1
 	CallFunc_GetActiveTab_ReturnValue
 	CallFunc_GetActiveWidget_ReturnValue
 	CallFunc_GetActiveWidget_ReturnValue1
@@ -204,7 +201,6 @@ Name table:
 	CallFunc_HandleBack_PassThrough
 	CallFunc_Handled_ReturnValue
 	CallFunc_HasWidgets_ReturnValue
-	CallFunc_IsCustomConfig_ReturnValue
 	CallFunc_IsInZone_ReturnValue
 	CallFunc_IsMobileGame_ReturnValue
 	CallFunc_IsValid_ReturnValue
@@ -267,14 +263,11 @@ Name table:
 	ComponentDelegateBinding
 	ComponentDelegateBindings
 	ComponentPropertyName
-	Concat_StrStr
 	Construct
 	Content
 	ContentBorder
 	Controller
 	Controller Normal
-	Conv_StringToText
-	Conv_TextToString
 	Create
 	Current Tab
 	CurrentTabSwitcher
@@ -342,7 +335,6 @@ Name table:
 	Default__TabGameOptions_C
 	Default__TabGameOptionsHud_C
 	Default__TabGameOptionsMain_C
-	Default__TabGamePadConfig_C
 	Default__TabGamePadConfig_v3_C
 	Default__TabInputOptions_C
 	Default__TabVideoOptions_C
@@ -357,6 +349,7 @@ Name table:
 	Default__WidgetBlueprintLibrary
 	Default__WidgetNavigation
 	Default__WidgetTree
+	Default__windowchromebuttons_C
 	Default__WindowTitleBarArea
 	Default__WindowTitleBarAreaSlot
 	DelegateFunction
@@ -376,14 +369,14 @@ Name table:
 	Disable Overlay__DelegateSignature
 	DisableBack
 	DisplayName
-	DoNotResetToDefault
 	DoResetGameOptionsToDefault
 	DoResetHUDOptionsToDefault
 	DoResetKBMToDefault
-	DoResetToDefault
 	Down
 	DrawAs
 	DynamicBindingObjects
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortDialogResult
 	EHorizontalAlignment
 	EInputActionState
@@ -391,8 +384,6 @@ Name table:
 	Enable Overlay Input
 	Enable Overlay Video
 	Enable Overlay__DelegateSignature
-	EnableGamepadInputOverlay
-	EnableGamepadInputOverlay__DelegateSignature
 	Engine
 	EnterCameraMode
 	EntryPoint
@@ -420,6 +411,7 @@ Name table:
 	EVerticalAlignment
 	ExecuteUbergraph_OptionsMenu
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	ForceTabLabelsCollapsed
@@ -521,7 +513,6 @@ Name table:
 	InputPresetConfirmationRotator_C
 	InputTabClass
 	IntProperty
-	IsCustomConfig
 	IsEnabled
 	IsInZone
 	IsMobileGame
@@ -566,9 +557,6 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate20
 	K2Node_CreateDelegate_OutputDelegate21
 	K2Node_CreateDelegate_OutputDelegate22
-	K2Node_CreateDelegate_OutputDelegate23
-	K2Node_CreateDelegate_OutputDelegate24
-	K2Node_CreateDelegate_OutputDelegate25
 	K2Node_CreateDelegate_OutputDelegate3
 	K2Node_CreateDelegate_OutputDelegate4
 	K2Node_CreateDelegate_OutputDelegate5
@@ -611,9 +599,6 @@ Name table:
 	K2Node_DynamicCast_AsTab_Game_Options1
 	K2Node_DynamicCast_AsTab_Game_Options_Hud
 	K2Node_DynamicCast_AsTab_Game_Options_Main
-	K2Node_DynamicCast_AsTab_Game_Pad_Config
-	K2Node_DynamicCast_AsTab_Game_Pad_Config1
-	K2Node_DynamicCast_AsTab_Game_Pad_Config2
 	K2Node_DynamicCast_AsTab_Game_Pad_Config_V
 	K2Node_DynamicCast_AsTab_Input_Options
 	K2Node_DynamicCast_AsTab_Input_Options1
@@ -623,9 +608,6 @@ Name table:
 	K2Node_DynamicCast_bSuccess10
 	K2Node_DynamicCast_bSuccess11
 	K2Node_DynamicCast_bSuccess12
-	K2Node_DynamicCast_bSuccess13
-	K2Node_DynamicCast_bSuccess14
-	K2Node_DynamicCast_bSuccess15
 	K2Node_DynamicCast_bSuccess2
 	K2Node_DynamicCast_bSuccess3
 	K2Node_DynamicCast_bSuccess4
@@ -635,11 +617,11 @@ Name table:
 	K2Node_DynamicCast_bSuccess8
 	K2Node_DynamicCast_bSuccess9
 	K2Node_MakeArray_Array
+	K2Node_MakeArray_Array1
 	K2Node_MakeStruct_FormatArgumentData
 	K2Node_MakeStruct_FormatArgumentData1
+	K2Node_MakeStruct_FormatArgumentData2
 	K2Node_MakeStruct_FortTabButtonLabelInfo
-	K2Node_Select1_Default
-	K2Node_Select2_Default
 	K2Node_Select_Default
 	K2Node_SwitchEnum_CmpSuccess
 	Key
@@ -734,7 +716,6 @@ Name table:
 	Overlay Key Pressed
 	Overlay Text
 	Overlay_Container
-	OverlayKeyPressed
 	OverlaySlot
 	OverlayText
 	Package
@@ -754,7 +735,6 @@ Name table:
 	PopContentWidget
 	PopPanel
 	Preset To Set
-	PresetMappingIndex
 	Previous
 	PreviousTabAction
 	PreviousTabActionWrapper
@@ -764,6 +744,7 @@ Name table:
 	ProgressModalWidget_C
 	PushActivatablePanel
 	RegisterFortTab
+	RenderOpacity
 	RenderTransform
 	ResetActionHandlerStates
 	ResetClientHUDSettings
@@ -772,7 +753,6 @@ Name table:
 	ResetVideoOptionsTimer
 	ResetVideoOptionsTimerDelegate
 	ResourceObject
-	RestorePreviousWindowTitleBarState
 	Result
 	ResultName
 	ReturnValue
@@ -823,8 +803,6 @@ Name table:
 	ShowInputReset DefaultConfirmation
 	ShowLangaugeConfirmation
 	ShowResetDefaultConfirmation
-	ShowResetToDefaultMessage
-	ShowResetToDefaultMessage__DelegateSignature
 	ShowSimpleConfirmationDialog_CustomInput
 	ShowSimpleConfirmationDialog_NUI
 	ShowText
@@ -874,7 +852,6 @@ Name table:
 	TabGamePad
 	TabGamePadActionsThatNeedBinds
 	TabGamePadActionsThatNeedBinds__DelegateSignature
-	TabGamePadConfig_C
 	TabGamePadConfig_v3_C
 	TabGamePadConfigApply
 	TabGamePadConfigApply__DelegateSignature
@@ -890,8 +867,6 @@ Name table:
 	TabVideoOptions
 	TabVideoOptions_C
 	Temp_bool_Variable
-	Temp_bool_Variable1
-	Temp_bool_Variable2
 	Temp_byte_Variable
 	Temp_byte_Variable1
 	Temp_byte_Variable2
@@ -974,12 +949,14 @@ Name table:
 	WidgetToFocus
 	WidgetTransform
 	WidgetTree
+	windowchromebuttons
+	windowchromebuttons_C
 	WindowTitleBarArea
 	WindowTitleBarAreaSlot
 	WrapTextAt
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	OptionsMenu_C (0-0-0-0): size 1659 (cls: OptionsMenu_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	OptionsMenu_C (0-0-0-0): size 1663 (cls: OptionsMenu_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -1013,11 +990,13 @@ Serialized exports:
 	BackgroundBorder (0-0-0-0): size 36 (cls: BackgroundBorder>ObjectProperty>/Script/CoreUObject)
 	OnSettingsApplied__DelegateSignature (0-0-0-0): size 43 (cls: OnSettingsApplied__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_OptionsMenu (0-0-0-0): size 10275 (cls: ExecuteUbergraph_OptionsMenu>Function>/Script/CoreUObject)
+	ExecuteUbergraph_OptionsMenu (0-0-0-0): size 9886 (cls: ExecuteUbergraph_OptionsMenu>Function>/Script/CoreUObject)
 	K2Node_CustomEvent_ScreenLabels (0-0-0-0): size 32 (cls: K2Node_CustomEvent_ScreenLabels>TextProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_ScreenLabels (0-0-0-0): size 36 (cls: K2Node_CustomEvent_ScreenLabels>ArrayProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>StructProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ArrayProperty>/Script/CoreUObject)
+	K2Node_MakeArray_Array1 (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array1>StructProperty>/Script/CoreUObject)
+	K2Node_MakeArray_Array1 (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array1>ArrayProperty>/Script/CoreUObject)
 	HandleTabGamePadActionsNeedBinds (0-0-0-0): size 68 (cls: HandleTabGamePadActionsNeedBinds>Function>/Script/CoreUObject)
 	ScreenLabels (0-0-0-0): size 32 (cls: ScreenLabels>TextProperty>/Script/CoreUObject)
 	ScreenLabels (0-0-0-0): size 36 (cls: ScreenLabels>ArrayProperty>/Script/CoreUObject)
@@ -1109,7 +1088,7 @@ Serialized exports:
 	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
 	OnMouseWheel (0-0-0-0): size 691 (cls: OnMouseWheel>Function>/Script/CoreUObject)
 	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
-	OnPreviewKeyDown (0-0-0-0): size 824 (cls: OnPreviewKeyDown>Function>/Script/CoreUObject)
+	OnPreviewKeyDown (0-0-0-0): size 674 (cls: OnPreviewKeyDown>Function>/Script/CoreUObject)
 	PassThrough (0-0-0-0): size 34 (cls: PassThrough>BoolProperty>/Script/CoreUObject)
 	Handle Apply (0-0-0-0): size 664 (cls: Handle Apply>Function>/Script/CoreUObject)
 	PassThrough (0-0-0-0): size 34 (cls: PassThrough>BoolProperty>/Script/CoreUObject)
@@ -1174,9 +1153,6 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess10 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess10>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess11 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess11>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess12 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess12>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess13 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess13>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess14 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess14>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess15 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess15>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess3 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess3>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess4 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess4>BoolProperty>/Script/CoreUObject)
@@ -1197,9 +1173,8 @@ Serialized exports:
 	HandleTabInputOptionsActionHandlerStates (0-0-0-0): size 104 (cls: HandleTabInputOptionsActionHandlerStates>Function>/Script/CoreUObject)
 	ShouldShowApply (0-0-0-0): size 34 (cls: ShouldShowApply>BoolProperty>/Script/CoreUObject)
 	HandleResetUnavailableActionHandlerStates (0-0-0-0): size 187 (cls: HandleResetUnavailableActionHandlerStates>Function>/Script/CoreUObject)
-	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
-	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
-	HandleTabGamepadConfigActionHandlerStates (0-0-0-0): size 774 (cls: HandleTabGamepadConfigActionHandlerStates>Function>/Script/CoreUObject)
+	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
+	HandleTabGamepadConfigActionHandlerStates (0-0-0-0): size 365 (cls: HandleTabGamepadConfigActionHandlerStates>Function>/Script/CoreUObject)
 	Tab To Reset (0-0-0-0): size 36 (cls: Tab To Reset>ObjectProperty>/Script/CoreUObject)
 	DoResetGameOptionsToDefault (0-0-0-0): size 140 (cls: DoResetGameOptionsToDefault>Function>/Script/CoreUObject)
 	DoResetHUDOptionsToDefault (0-0-0-0): size 116 (cls: DoResetHUDOptionsToDefault>Function>/Script/CoreUObject)
@@ -1226,12 +1201,7 @@ Serialized exports:
 	CallFunc_EqualEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsInZone_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsInZone_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsCustomConfig_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsCustomConfig_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_Variable2>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_StrStr_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_StrStr_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasWidgets_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasWidgets_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_ShowAccessibilityOptions_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_ShowAccessibilityOptions_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -1254,7 +1224,6 @@ Serialized exports:
 	CallFunc_Key_IsGamepadKey_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Key_IsGamepadKey_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_LessEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LessEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsVisible_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsVisible_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_LessEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LessEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
@@ -1318,11 +1287,6 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=ContentBorder=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox=WidgetArchetype 
-	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
-	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
-	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
-	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
-	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -1500,9 +1464,6 @@ Serialized exports:
 	K2Node_CreateDelegate_OutputDelegate20 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate20>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate21 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate21>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate22 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate22>DelegateProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate23 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate23>DelegateProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate24 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate24>DelegateProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate25 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate25>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate3 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate3>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate4 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate4>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate5 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate5>DelegateProperty>/Script/CoreUObject)
@@ -1541,14 +1502,9 @@ Serialized exports:
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
-	K2Node_Select1_Default (0-0-0-0): size 40 (cls: K2Node_Select1_Default>EnumProperty>/Script/CoreUObject)
-	K2Node_Select2_Default (0-0-0-0): size 40 (cls: K2Node_Select2_Default>EnumProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
+	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
-	Temp_byte_Variable2 (0-0-0-0): size 40 (cls: Temp_byte_Variable2>EnumProperty>/Script/CoreUObject)
-	Temp_byte_Variable3 (0-0-0-0): size 40 (cls: Temp_byte_Variable3>EnumProperty>/Script/CoreUObject)
-	Temp_byte_Variable4 (0-0-0-0): size 40 (cls: Temp_byte_Variable4>EnumProperty>/Script/CoreUObject)
-	Temp_byte_Variable5 (0-0-0-0): size 40 (cls: Temp_byte_Variable5>EnumProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
@@ -1582,14 +1538,16 @@ Serialized exports:
 		Tag array:
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_1 (0-0-0-0): size 295 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1604,9 +1562,8 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=VideoSettingsCancel=WidgetArchetype 
-	HorizontalBoxSlot_2 (0-0-0-0): size 324 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_2 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
 			Size(StructProperty)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
@@ -1795,7 +1752,6 @@ Serialized exports:
 	Temp_int_Variable (0-0-0-0): size 32 (cls: Temp_int_Variable>IntProperty>/Script/CoreUObject)
 	CallFunc_GetActiveWidgetIndex_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetActiveWidgetIndex_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_GetActiveWidgetIndex_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetActiveWidgetIndex_ReturnValue>IntProperty>/Script/CoreUObject)
-	CallFunc_GetActiveWidgetIndex_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_GetActiveWidgetIndex_ReturnValue1>IntProperty>/Script/CoreUObject)
 	LoadCount (0-0-0-0): size 32 (cls: LoadCount>IntProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -1893,9 +1849,6 @@ Serialized exports:
 	K2Node_DynamicCast_AsTab_Game_Options1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Options1>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTab_Game_Options_Hud (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Options_Hud>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTab_Game_Options_Main (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Options_Main>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsTab_Game_Pad_Config (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Pad_Config>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsTab_Game_Pad_Config1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Pad_Config1>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsTab_Game_Pad_Config2 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Pad_Config2>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTab_Game_Pad_Config_V_3 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Pad_Config_V_3>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTab_Game_Pad_Config_V_31 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Pad_Config_V_31>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTab_Input_Options (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Input_Options>ObjectProperty>/Script/CoreUObject)
@@ -1907,8 +1860,6 @@ Serialized exports:
 	K2Node_DynamicCast_AsFort_Gamepad_Input_Options (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Gamepad_Input_Options>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetWidgetAtIndex_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetWidgetAtIndex_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetWidgetAtIndex_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetWidgetAtIndex_ReturnValue1>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsTab_Game_Pad_Config (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Pad_Config>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTab_Game_Pad_Config_V_3 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Pad_Config_V_3>ObjectProperty>/Script/CoreUObject)
 	Image_0 (0-0-0-0): size 36 (cls: Image_0>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Create_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Create_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -1923,7 +1874,6 @@ Serialized exports:
 	K2Node_DynamicCast_AsTab_Input_Options (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Input_Options>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetActiveWidget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetActiveWidget_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetChildAt_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetChildAt_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsTab_Game_Pad_Config (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Game_Pad_Config>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTab_Input_Options (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Input_Options>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetActiveWidget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetActiveWidget_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetChildAt_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetChildAt_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -1943,7 +1893,8 @@ Serialized exports:
 	K2Node_DynamicCast_AsTab_Input_Options (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTab_Input_Options>ObjectProperty>/Script/CoreUObject)
 	VideoSettingsAccept (0-0-0-0): size 36 (cls: VideoSettingsAccept>ObjectProperty>/Script/CoreUObject)
 	VideoSettingsCancel (0-0-0-0): size 36 (cls: VideoSettingsCancel>ObjectProperty>/Script/CoreUObject)
-	WidgetArchetype (0-0-0-0): size 444 (cls: WidgetArchetype>OptionsMenu_C):
+	windowchromebuttons (0-0-0-0): size 36 (cls: windowchromebuttons>ObjectProperty>/Script/CoreUObject)
+	WidgetArchetype (0-0-0-0): size 473 (cls: WidgetArchetype>OptionsMenu_C):
 		Tag array:
 			BackgroundBorder(ObjectProperty)=BackgroundBorder=WidgetArchetype 
 			BorderBackground(ObjectProperty)=BorderBackground=WidgetArchetype 
@@ -1958,12 +1909,13 @@ Serialized exports:
 			Title(ObjectProperty)=Title=WidgetArchetype 
 			VideoSettingsAccept(ObjectProperty)=VideoSettingsAccept=WidgetArchetype 
 			VideoSettingsCancel(ObjectProperty)=VideoSettingsCancel=WidgetArchetype 
+			windowchromebuttons(ObjectProperty)=windowchromebuttons=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 	Overlay_0 (0-0-0-0): size 61 (cls: Overlay_0>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-	Overlay_1 (0-0-0-0): size 86 (cls: Overlay_1>Overlay>/Script/UMG):
+	Overlay_1 (0-0-0-0): size 90 (cls: Overlay_1>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
@@ -1990,8 +1942,9 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
 			Content(ObjectProperty)=BorderBackground=WidgetArchetype 
-	OverlaySlot_0 (0-0-0-0): size 111 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
+	OverlaySlot_0 (0-0-0-0): size 284 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
+			Padding(StructProperty)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_1=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_5=WidgetArchetype 
@@ -2001,6 +1954,11 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_1=WidgetArchetype 
 			Content(ObjectProperty)=SettingsTabs=WidgetArchetype 
+	OverlaySlot_3 (0-0-0-0): size 111 (cls: OverlaySlot_3>OverlaySlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			Parent(ObjectProperty)=Overlay_1=WidgetArchetype 
+			Content(ObjectProperty)=windowchromebuttons=WidgetArchetype 
 	OverlaySlot_0 (0-0-0-0): size 111 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
@@ -2074,10 +2032,6 @@ Serialized exports:
 	TabGamePad (0-0-0-0): size 40 (cls: TabGamePad>SoftClassProperty>/Script/CoreUObject)
 	TabInputOptions (0-0-0-0): size 40 (cls: TabInputOptions>SoftClassProperty>/Script/CoreUObject)
 	TabVideoOptions (0-0-0-0): size 40 (cls: TabVideoOptions>SoftClassProperty>/Script/CoreUObject)
-	CallFunc_Concat_StrStr_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Concat_StrStr_ReturnValue>StrProperty>/Script/CoreUObject)
-	CallFunc_Concat_StrStr_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Concat_StrStr_ReturnValue1>StrProperty>/Script/CoreUObject)
-	CallFunc_Concat_StrStr_ReturnValue2 (0-0-0-0): size 32 (cls: CallFunc_Concat_StrStr_ReturnValue2>StrProperty>/Script/CoreUObject)
-	CallFunc_Conv_TextToString_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_TextToString_ReturnValue>StrProperty>/Script/CoreUObject)
 	CallFunc_GetPlatformName_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetPlatformName_ReturnValue>StrProperty>/Script/CoreUObject)
 	Icon (0-0-0-0): size 36 (cls: Icon>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_FortTabButtonLabelInfo (0-0-0-0): size 36 (cls: K2Node_MakeStruct_FortTabButtonLabelInfo>StructProperty>/Script/CoreUObject)
@@ -2086,6 +2040,7 @@ Serialized exports:
 	ChoosePreset (0-0-0-0): size 36 (cls: ChoosePreset>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_FormatArgumentData (0-0-0-0): size 36 (cls: K2Node_MakeStruct_FormatArgumentData>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_FormatArgumentData1 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_FormatArgumentData1>StructProperty>/Script/CoreUObject)
+	K2Node_MakeStruct_FormatArgumentData2 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_FormatArgumentData2>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetTimerDelegate_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_SetTimerDelegate_ReturnValue>StructProperty>/Script/CoreUObject)
 	Accounts Normal (0-0-0-0): size 36 (cls: Accounts Normal>StructProperty>/Script/CoreUObject)
 	Audio Normal (0-0-0-0): size 36 (cls: Audio Normal>StructProperty>/Script/CoreUObject)
@@ -2114,8 +2069,8 @@ Serialized exports:
 	DisplayName (0-0-0-0): size 32 (cls: DisplayName>TextProperty>/Script/CoreUObject)
 	Overlay Text (0-0-0-0): size 32 (cls: Overlay Text>TextProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 32 (cls: CallFunc_Array_Get_Item>TextProperty>/Script/CoreUObject)
-	CallFunc_Conv_StringToText_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToText_ReturnValue>TextProperty>/Script/CoreUObject)
 	CallFunc_Format_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Format_ReturnValue>TextProperty>/Script/CoreUObject)
+	CallFunc_Format_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Format_ReturnValue1>TextProperty>/Script/CoreUObject)
 	CallFunc_MakeLiteralText_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_MakeLiteralText_ReturnValue>TextProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Overlay_Text (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Overlay_Text>TextProperty>/Script/CoreUObject)
 	CallFunc_MakeLiteralText_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_MakeLiteralText_ReturnValue>TextProperty>/Script/CoreUObject)
@@ -2208,6 +2163,20 @@ Serialized exports:
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=ContentBorder=WidgetArchetype 
+	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
+		Tag array:
+			RootWidget(ObjectProperty)=WindowTitleBarArea_107=WidgetArchetype 
+	windowchromebuttons (0-0-0-0): size 125 (cls: windowchromebuttons>windowchromebuttons_C>/Game/UI/Foundation/Shell/windowchromebuttons):
+		Tag array:
+			WindowTitleBarArea_107(ObjectProperty)=WindowTitleBarArea_107=WidgetArchetype 
+			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
+			bCookedWidgetTree(BoolProperty)=True 
+			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
+	WindowTitleBarArea_107 (0-0-0-0): size 93 (cls: WindowTitleBarArea_107>WindowTitleBarArea>/Script/UMG):
+		Tag array:
+			bWindowButtonsEnabled(BoolProperty)=True 
+			bIsVariable(BoolProperty)=True 
+			RenderOpacity(FloatProperty)=0.2 
 	WindowTitleBarArea_0 (0-0-0-0): size 82 (cls: WindowTitleBarArea_0>WindowTitleBarArea>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)

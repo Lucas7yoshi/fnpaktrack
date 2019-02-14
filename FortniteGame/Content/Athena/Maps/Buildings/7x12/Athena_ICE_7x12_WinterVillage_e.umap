@@ -18,6 +18,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Floor/SM_FORT_Floors_Generic_BasicTile
 	/Game/Building/ActorBlueprints/Prop/Car_Copper
 	/Game/Building/ActorBlueprints/Prop/Car_Pickup
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Planter_Rectangle
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01b
 	/Game/Building/ActorBlueprints/Prop/Prop_Boxes_01c
@@ -215,6 +216,7 @@ Name table:
 	Default__Model
 	Default__NavigationSystemModuleConfig
 	Default__Neo_Class_Stair_1_C
+	Default__Parent_Tree_C
 	Default__Planter_Rectangle_C
 	Default__Prop_Boxes_01b_C
 	Default__Prop_Boxes_01c_C
@@ -273,6 +275,8 @@ Name table:
 	IntProperty
 	Key
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -334,6 +338,7 @@ Name table:
 	NavigationSystemModuleConfig
 	Neo_Class_Stair_1_C
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -345,7 +350,9 @@ Name table:
 	ObjectProperty
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	Planter_L20
 	Planter_L21
@@ -367,6 +374,7 @@ Name table:
 	PointLight_GEN_VARIABLE
 	PointLightComponent
 	PreviewSkelMesh
+	PrimitiveComponent
 	Prop_Boxes_01b5
 	Prop_Boxes_01b_C
 	Prop_Boxes_01c4
@@ -403,6 +411,7 @@ Name table:
 	SM_FORT_Floors_Generic_BasicTile270
 	SM_FORT_Floors_Generic_BasicTile_C
 	SoftClassPath
+	SphereComponent
 	SpotLightComponent
 	StaticMesh
 	StaticMeshComponent
@@ -522,20 +531,24 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=3157.545 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
-	Athena_Tree_Pine_03_Winter14 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_03_Winter14>Athena_Tree_Pine_03_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_03_MT):
+	Athena_Tree_Pine_03_Winter14 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_03_Winter14>Athena_Tree_Pine_03_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_03_MT):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_ICE_7x12_WinterVillage_e 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
 			MyGuid(StructProperty)=Guid: 1862795689-1112185207-1294746303-3674942704 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
-	Athena_Tree_Pine_03_Winter16_4 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_03_Winter16_4>Athena_Tree_Pine_03_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_03_MT):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_03_Winter16_4 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_03_Winter16_4>Athena_Tree_Pine_03_MT_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_03_MT):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_ICE_7x12_WinterVillage_e 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
 			MyGuid(StructProperty)=Guid: 606627464-1132287281-2588997807-564894767 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Chest_Ambient_Sound (0-0-0-0): size 108 (cls: Chest_Ambient_Sound>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
@@ -1585,10 +1598,24 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 16600191-1083318046-900351886-1095369880 
+			LightGuid(StructProperty)=Guid: 1298407028-1225398217-2168586421-3704086099 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
 			RelativeLocation(StructProperty)=Vector(-79.29355,218.6825,82.94495) 
@@ -1597,7 +1624,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3175118201-1081206572-885729433-3739963141 
+			LightGuid(StructProperty)=Guid: 2778765461-1281677608-1511747714-1552364043 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
 			RelativeLocation(StructProperty)=Vector(77.41661,220.4457,82.94495) 
@@ -1606,7 +1633,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1325159809-1113138215-550951839-740226416 
+			LightGuid(StructProperty)=Guid: 2758402943-1293555463-1023290001-2303013551 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
 			RelativeLocation(StructProperty)=Vector(110.3232,-175.1272,80.37219) 
@@ -1615,7 +1642,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2110662230-1275049123-402741664-2084690329 
+			LightGuid(StructProperty)=Guid: 3455519312-1340370964-1996483770-3049353631 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_ICE_7x12_WinterVillage_e 
 			RelativeLocation(StructProperty)=Vector(-111.3303,-173.5728,80.37219) 

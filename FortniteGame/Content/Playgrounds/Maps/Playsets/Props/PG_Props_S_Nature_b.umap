@@ -20,6 +20,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Hedge_High_Square
 	/Game/Building/ActorBlueprints/Prop/Hedge_Low_90Degree
 	/Game/Building/ActorBlueprints/Prop/Hedge_Low_Rectangle
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_Rocks_01
 	/Game/Building/ActorBlueprints/Prop/Prop_Rocks_02
 	/Game/Building/ActorBlueprints/Prop/Prop_Rocks_03
@@ -136,6 +137,7 @@ Name table:
 	Default__LevelBounds
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__PG_Props_S_Nature_b_C
 	Default__Plant_Shrub_bush_sm_01_Winter_C
 	Default__PlaysetIcon_Floor_C
@@ -176,6 +178,8 @@ Name table:
 	Hedge_Low_Rectangle_C
 	IntProperty
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Level
 	LevelBounds
 	LevelBuildDataId
@@ -186,6 +190,9 @@ Name table:
 	MaxAngularVelocity
 	MaxCullDistance
 	MaxCullObjectSize
+	MemberGuid
+	MemberName
+	MemberParent
 	MI_FallenTree_01_Inst_Winter
 	MI_FallenTree_02_Inst_Winter
 	MI_Props_Rocks_Winter
@@ -205,12 +212,14 @@ Name table:
 	NavigationSystemClass
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	None
 	Object
 	ObjectProperty
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParkingMeter
 	ParticleSystemComponent
 	ParticleSystemComponent_153__076876EB
@@ -221,6 +230,7 @@ Name table:
 	Plant_Shrub_bush_sm_01_Winter_C
 	PlaysetIcon_Floor
 	PlaysetIcon_Floor_C
+	PrimitiveComponent
 	Prop_Rocks_01_C
 	Prop_Rocks_02_C
 	Prop_Rocks_03_C
@@ -257,9 +267,11 @@ Name table:
 	Shrub_23_Winter
 	Shrub_92_Winter1
 	Shrub_bush_Sm_01_Winter
+	SimpleMemberReference
 	Snow_Rocks_01
 	SoftClassPath
 	SoftObjectProperty
+	SphereComponent
 	StaticMeshComponent
 	StaticMeshComponent0
 	StreetProp_TrafficLightUrban
@@ -279,6 +291,7 @@ Name table:
 	Tree_StumpSet02_C
 	Tree_StumpSet03_Winter
 	Tree_StumpSet3
+	UCSModifiedProperties
 	Vector
 	World
 	WorldCells
@@ -398,20 +411,24 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=18859.38 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Athena_Tree_Pine_01_Winter_2 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_01_Winter_2>Athena_Tree_Pine_01_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_Winter):
+	Athena_Tree_Pine_01_Winter_2 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_01_Winter_2>Athena_Tree_Pine_01_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_01_Winter):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 2091269121-1106625628-3571827903-936499172 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=30879.99 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Athena_Tree_Pine_03_Winter_2 (0-0-0-0): size 193 (cls: Athena_Tree_Pine_03_Winter_2>Athena_Tree_Pine_03_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_03_Winter):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Pine_03_Winter_2 (0-0-0-0): size 263 (cls: Athena_Tree_Pine_03_Winter_2>Athena_Tree_Pine_03_Winter_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Pine_03_Winter):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 2020198906-1234188471-1585179289-2163725278 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=35156.69 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	BoxComponent0 (0-0-0-0): size 249 (cls: BoxComponent0>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
@@ -589,6 +606,86 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=22664.46 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=30879.99 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=35156.69 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=30430.58 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=23978.62 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=19703.39 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=27067.92 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=17971.54 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=9325.36 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=17821.98 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=13945.31 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 324 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -877,70 +974,86 @@ Serialized exports:
 			RelativeLocation(StructProperty)=Vector(-3832,357.477,-15.99976) 
 			RelativeRotation(StructProperty)=Rotator(0,-52.17477,0) 
 			RelativeScale3D(StructProperty)=Vector(0.8,0.8,0.8) 
-	Tree_Log_2 (0-0-0-0): size 222 (cls: Tree_Log_2>Tree_Log_1_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_1):
+	Tree_Log_2 (0-0-0-0): size 292 (cls: Tree_Log_2>Tree_Log_1_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			TextureData(ObjectProperty)=Tree_Log_Winter=/Game/Building/TextureData/Winter/Tree_Log_Winter 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 228365891-1178981950-2727112108-1654188118 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=30430.58 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Tree_Log_6 (0-0-0-0): size 222 (cls: Tree_Log_6>Tree_Log_3_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_3):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6 (0-0-0-0): size 292 (cls: Tree_Log_6>Tree_Log_3_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			TextureData(ObjectProperty)=Tree_Log_Winter=/Game/Building/TextureData/Winter/Tree_Log_Winter 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 925312307-1269686496-4277588103-3003269200 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=19703.39 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Tree_Log_3 (0-0-0-0): size 222 (cls: Tree_Log_3>Tree_Log_5d_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_5d):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_3 (0-0-0-0): size 292 (cls: Tree_Log_3>Tree_Log_5d_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_5d):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			TextureData(ObjectProperty)=Tree_Log_01_Winter=/Game/Building/TextureData/Winter/Tree_Log_01_Winter 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 2916418527-1179009250-1201498025-2116294803 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=23978.62 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Tree_Log_7 (0-0-0-0): size 222 (cls: Tree_Log_7>Tree_Log_6_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_7 (0-0-0-0): size 292 (cls: Tree_Log_7>Tree_Log_6_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			TextureData(ObjectProperty)=Tree_Log_02_Winter=/Game/Building/TextureData/Winter/Tree_Log_02_Winter 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 147814324-1157620646-1014620321-3092999301 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=17971.54 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Tree_Log_9 (0-0-0-0): size 222 (cls: Tree_Log_9>Tree_Log_6_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_9 (0-0-0-0): size 292 (cls: Tree_Log_9>Tree_Log_6_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			TextureData(ObjectProperty)=Tree_Log_02_Winter=/Game/Building/TextureData/Winter/Tree_Log_02_Winter 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 1404338000-1141606747-1930156439-4066557639 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=9325.36 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Tree_Log_6b_2 (0-0-0-0): size 222 (cls: Tree_Log_6b_2>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6b_2 (0-0-0-0): size 292 (cls: Tree_Log_6b_2>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			TextureData(ObjectProperty)=Tree_Log_02_Winter=/Game/Building/TextureData/Winter/Tree_Log_02_Winter 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 578766536-1078589587-1166652341-247287574 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=27067.92 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Tree_StumpSet02_2 (0-0-0-0): size 222 (cls: Tree_StumpSet02_2>Tree_StumpSet02_C>/Game/Building/ActorBlueprints/Prop/Tree_StumpSet02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_StumpSet02_2 (0-0-0-0): size 292 (cls: Tree_StumpSet02_2>Tree_StumpSet02_C>/Game/Building/ActorBlueprints/Prop/Tree_StumpSet02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			TextureData(ObjectProperty)=Tree_StumpSet03_Winter=/Game/Building/TextureData/Winter/Tree_StumpSet03_Winter 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 3574715418-1129784078-2705358766-3557162877 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=17821.98 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
-	Tree_StumpSet3 (0-0-0-0): size 222 (cls: Tree_StumpSet3>Tree_StumpSet02_C>/Game/Building/ActorBlueprints/Prop/Tree_StumpSet02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_StumpSet3 (0-0-0-0): size 292 (cls: Tree_StumpSet3>Tree_StumpSet02_C>/Game/Building/ActorBlueprints/Prop/Tree_StumpSet02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Nature_b 
 			TextureData(ObjectProperty)=Tree_StumpSet03_Winter=/Game/Building/TextureData/Winter/Tree_StumpSet03_Winter 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
 			MyGuid(StructProperty)=Guid: 2362847265-1119253701-1497074364-1073808863 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=13945.31 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Nature_b 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	PG_Props_S_Nature_b (0-0-0-0): size 53 (cls: PG_Props_S_Nature_b>World>/Script/Engine):
 		Tag array:
 			DefaultPhysicsVolume(ObjectProperty)=[object] 

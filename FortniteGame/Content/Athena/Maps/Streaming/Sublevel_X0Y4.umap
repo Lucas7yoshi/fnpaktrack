@@ -100,6 +100,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Palettes_Tall
 	/Game/Building/ActorBlueprints/Prop/Palm_Tree_06
 	/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02
 	/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03
 	/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_07
@@ -147,6 +148,7 @@ Name table:
 	/Game/Effects/Fort_Effects/Effects/Environment/Desert/Dust/Organize/M_WindSplines_Athena_Desert_Inst
 	/Game/Effects/Fort_Effects/Effects/Environment/Desert/Dust/Organize/SM_WindSpline
 	/Game/Effects/Fort_Effects/Effects/Environment/Desert/Dust/P_Desert_Dust
+	/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base
 	/Game/Environments/Foliage/FoliageType/GrassFoliageType_Athena
 	/Game/Environments/Props/Ranger/Meshes/SM_Prop_Ranger_Lightpost_alternate
 	/Game/Environments/Props/Street/Materials/ElectronicSignChallenge
@@ -189,6 +191,7 @@ Name table:
 	76927B120C6645ACB9200E7FB8896AC3_709C36A84041DD2AF74B3FA4E1D7EA26_22ACA90A_062854E7_C731B28C_ProxyLODMeshReduction
 	Actor
 	Actor_13_6A42496A4663E346C97AFEB9993C68F7
+	ActorComponent
 	ActorComponentTickFunction
 	ActorData
 	AdditionalWorlds
@@ -274,9 +277,12 @@ Name table:
 	Barriers_Wood02_C
 	Barriers_Wood78
 	Barriers_Wood79
+	Base Mesh
+	Base Mesh_GEN_VARIABLE
 	BaseMaterial
 	battlepass_br_recordspeed_radarsigns_06
 	battlepass_destroy_specifictargets_06
+	bAutoActivate
 	bAutoSpawnMissingNavData
 	bAutoWeld
 	bCanBeInCluster
@@ -287,7 +293,9 @@ Name table:
 	bEnableDensityScaling
 	bEnableNavigationSystem
 	bGenerateMirroredCollision
+	bGenerateOverlapEvents
 	bHasPerInstanceHitProxies
+	bHiddenInGame
 	Billboard
 	bInterpolateWhenSubStepping
 	BitsSpawnRateScale
@@ -429,6 +437,7 @@ Name table:
 	BuildingTextureData
 	BuiltInstanceBounds
 	bUseAsOccluder
+	bVisible
 	ByteProperty
 	CachedMaxDrawDistance
 	CachedMeshBodySetupGuid
@@ -595,6 +604,7 @@ Name table:
 	Default__Palettes_Tall_C
 	Default__Palm_Tree_06_C
 	Default__Palm_Tree_06c_C
+	Default__Parent_Tree_C
 	Default__Prop_Desert_Cactus_02_C
 	Default__Prop_Desert_Cactus_03_C
 	Default__Prop_Desert_Cactus_07_C
@@ -724,6 +734,8 @@ Name table:
 	FloatCurve
 	FloatProperty
 	FloatPropertyName
+	Foam Color
+	Foam Position
 	FoamColor
 	FoliageInstancedStaticMeshComponent
 	FoliageType_InstancedStaticMesh
@@ -792,6 +804,8 @@ Name table:
 	LCD_CheckoutCounter3
 	LCD_MagazineStand
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -823,6 +837,7 @@ Name table:
 	M_Athena_Water_PostProcess
 	M_AthenaDesert_Simple_Inst
 	M_Foundation_Texture
+	M_WaterFall_Base
 	M_WindSplines_Athena_Desert_Inst
 	Material
 	MaterialInstanceConstant
@@ -874,6 +889,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -936,6 +952,7 @@ Name table:
 	ParameterValue
 	ParamType
 	Parent
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSysParam
 	ParticleSystem
@@ -1182,6 +1199,7 @@ Name table:
 	SoundCue
 	SpawnCollisionHandlingMethod
 	SpawnRateScale
+	SphereComponent
 	SphereRadius
 	SplashFX_Position_Manual
 	SplineMeshComponent
@@ -2493,12 +2511,14 @@ Serialized exports:
 		Tag array:
 			SplineMeshComponent(ObjectProperty)=SplineMeshComponent0=Sublevel_X0Y4 
 			RootComponent(ObjectProperty)=SplineMeshComponent0=Sublevel_X0Y4 
-	BP_Waterfall3 (0-0-0-0): size 417 (cls: BP_Waterfall3>BP_Waterfall_AridChild_C>/Game/Athena/Environments/Blueprints/Water/BP_Waterfall_AridChild):
+	BP_Waterfall3 (0-0-0-0): size 479 (cls: BP_Waterfall3>BP_Waterfall_AridChild_C>/Game/Athena/Environments/Blueprints/Water/BP_Waterfall_AridChild):
 		Tag array:
+			Base Mesh(ObjectProperty)=Base Mesh=Sublevel_X0Y4 
 			WaterFall_Base_Sound_L(ObjectProperty)=WaterFall_Base_Sound_L=Sublevel_X0Y4 
 			WaterFall_Base_Sound_R(ObjectProperty)=WaterFall_Base_Sound_R=Sublevel_X0Y4 
 			WaterFallVFX(ObjectProperty)=WaterFallVFX=Sublevel_X0Y4 
 			SplashFX_Position_Manual(StructProperty)=Vector(512.0001,-99.99963,-1226) 
+			Foam Position(IntProperty)=4 
 			CollisionMesh1(ObjectProperty)=CollisionMesh1=Sublevel_X0Y4 
 			CollisionMesh2(ObjectProperty)=[object] 
 			CollisionMesh4(ObjectProperty)=[object] 
@@ -2507,12 +2527,14 @@ Serialized exports:
 			HasExecutedConstuctionScript(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	BP_Waterfall_AridChild3 (0-0-0-0): size 417 (cls: BP_Waterfall_AridChild3>BP_Waterfall_AridChild_C>/Game/Athena/Environments/Blueprints/Water/BP_Waterfall_AridChild):
+	BP_Waterfall_AridChild3 (0-0-0-0): size 479 (cls: BP_Waterfall_AridChild3>BP_Waterfall_AridChild_C>/Game/Athena/Environments/Blueprints/Water/BP_Waterfall_AridChild):
 		Tag array:
+			Base Mesh(ObjectProperty)=Base Mesh=Sublevel_X0Y4 
 			WaterFall_Base_Sound_L(ObjectProperty)=WaterFall_Base_Sound_L=Sublevel_X0Y4 
 			WaterFall_Base_Sound_R(ObjectProperty)=WaterFall_Base_Sound_R=Sublevel_X0Y4 
 			WaterFallVFX(ObjectProperty)=WaterFallVFX=Sublevel_X0Y4 
 			SplashFX_Position_Manual(StructProperty)=Vector(512,-99.99969,-1776) 
+			Foam Position(IntProperty)=4 
 			CollisionMesh1(ObjectProperty)=CollisionMesh1=Sublevel_X0Y4 
 			CollisionMesh2(ObjectProperty)=[object] 
 			CollisionMesh4(ObjectProperty)=[object] 
@@ -2521,12 +2543,14 @@ Serialized exports:
 			HasExecutedConstuctionScript(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	BP_Waterfall_AridChild4 (0-0-0-0): size 417 (cls: BP_Waterfall_AridChild4>BP_Waterfall_AridChild_C>/Game/Athena/Environments/Blueprints/Water/BP_Waterfall_AridChild):
+	BP_Waterfall_AridChild4 (0-0-0-0): size 479 (cls: BP_Waterfall_AridChild4>BP_Waterfall_AridChild_C>/Game/Athena/Environments/Blueprints/Water/BP_Waterfall_AridChild):
 		Tag array:
+			Base Mesh(ObjectProperty)=Base Mesh=Sublevel_X0Y4 
 			WaterFall_Base_Sound_L(ObjectProperty)=WaterFall_Base_Sound_L=Sublevel_X0Y4 
 			WaterFall_Base_Sound_R(ObjectProperty)=WaterFall_Base_Sound_R=Sublevel_X0Y4 
 			WaterFallVFX(ObjectProperty)=WaterFallVFX=Sublevel_X0Y4 
 			SplashFX_Position_Manual(StructProperty)=Vector(512.0001,-99.99847,-1824) 
+			Foam Position(IntProperty)=4 
 			CollisionMesh1(ObjectProperty)=CollisionMesh1=Sublevel_X0Y4 
 			CollisionMesh2(ObjectProperty)=[object] 
 			CollisionMesh4(ObjectProperty)=[object] 
@@ -2535,12 +2559,14 @@ Serialized exports:
 			HasExecutedConstuctionScript(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
 			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
-	BP_Waterfall_AridChild_2 (0-0-0-0): size 417 (cls: BP_Waterfall_AridChild_2>BP_Waterfall_AridChild_C>/Game/Athena/Environments/Blueprints/Water/BP_Waterfall_AridChild):
+	BP_Waterfall_AridChild_2 (0-0-0-0): size 479 (cls: BP_Waterfall_AridChild_2>BP_Waterfall_AridChild_C>/Game/Athena/Environments/Blueprints/Water/BP_Waterfall_AridChild):
 		Tag array:
+			Base Mesh(ObjectProperty)=Base Mesh=Sublevel_X0Y4 
 			WaterFall_Base_Sound_L(ObjectProperty)=WaterFall_Base_Sound_L=Sublevel_X0Y4 
 			WaterFall_Base_Sound_R(ObjectProperty)=WaterFall_Base_Sound_R=Sublevel_X0Y4 
 			WaterFallVFX(ObjectProperty)=WaterFallVFX=Sublevel_X0Y4 
 			SplashFX_Position_Manual(StructProperty)=Vector(512.0001,-99.99847,-1824) 
+			Foam Position(IntProperty)=4 
 			CollisionMesh1(ObjectProperty)=CollisionMesh1=Sublevel_X0Y4 
 			CollisionMesh2(ObjectProperty)=[object] 
 			CollisionMesh4(ObjectProperty)=[object] 
@@ -3482,7 +3508,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=2155 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-6361.159,-17698.61,-3340.967)) Max(Vector(21600.97,20697.51,1566.409)),7425) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-6361.159,-17698.61,-3340.967)) Max(Vector(21600.97,20697.51,1566.409)),8961) 
 			bEnableDensityScaling(BoolProperty)=True 
 			OcclusionLayerNumNodes(IntProperty)=8 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
@@ -4133,7 +4159,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),44801) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),49409) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 785388104-1317854155-2347966907-1435850958 
 			DataVersion(IntProperty)=1 
@@ -4142,7 +4168,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),44801) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),49409) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1815896426-1297043595-4111367845-1601793168 
 			DataVersion(IntProperty)=1 
@@ -4151,7 +4177,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),44801) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),49409) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 11625869-1273246221-1754152329-3446757451 
 			DataVersion(IntProperty)=1 
@@ -4160,7 +4186,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),44801) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),49409) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3389532646-1327194884-970095001-2238256131 
 			DataVersion(IntProperty)=1 
@@ -4169,7 +4195,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),44801) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),49409) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 193567745-1216030124-1622452912-316801834 
 			DataVersion(IntProperty)=1 
@@ -4178,7 +4204,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),44801) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),49409) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1259188152-1238845090-868346044-1135203261 
 			DataVersion(IntProperty)=1 
@@ -4187,7 +4213,7 @@ Serialized exports:
 		Tag array:
 			BuildingGroups(ArrayProperty)=[object] (inner: ObjectProperty)
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),44801) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-256.0001,-256.0002,0)) Max(Vector(256.0001,256.0001,47.60808)),49409) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1040014428-1129119739-1307627191-335867122 
 			DataVersion(IntProperty)=1 
@@ -4196,7 +4222,7 @@ Serialized exports:
 		Tag array:
 			RenderTextComponent(ObjectProperty)=RenderTextComponent=Sublevel_X0Y4 
 			AdditionalWorlds(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-5888,-256.0002,-40)) Max(Vector(256,3328,-8)),44801) 
+			StreamingBoundingBox(StructProperty)=Box(Min(Vector(-5888,-256.0002,-40)) Max(Vector(256,3328,-8)),49409) 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3361217962-1215303532-1053899919-3108431658 
 			DataVersion(IntProperty)=1 
@@ -4214,6 +4240,22 @@ Serialized exports:
 	MaterialInstanceDynamic_1 (0-0-0-0): size 41 (cls: MaterialInstanceDynamic_1>MaterialInstanceDynamic>/Script/Engine):
 		Tag array:
 			Parent(ObjectProperty)=ElectronicSignChallenge=/Game/Environments/Props/Street/Materials/ElectronicSignChallenge 
+	MaterialInstanceDynamic_0 (0-0-0-0): size 425 (cls: MaterialInstanceDynamic_0>MaterialInstanceDynamic>/Script/Engine):
+		Tag array:
+			Parent(ObjectProperty)=M_WaterFall_Base=/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base 
+			VectorParameterValues(ArrayProperty)=[object] (inner: StructProperty)
+	MaterialInstanceDynamic_0 (0-0-0-0): size 425 (cls: MaterialInstanceDynamic_0>MaterialInstanceDynamic>/Script/Engine):
+		Tag array:
+			Parent(ObjectProperty)=M_WaterFall_Base=/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base 
+			VectorParameterValues(ArrayProperty)=[object] (inner: StructProperty)
+	MaterialInstanceDynamic_0 (0-0-0-0): size 425 (cls: MaterialInstanceDynamic_0>MaterialInstanceDynamic>/Script/Engine):
+		Tag array:
+			Parent(ObjectProperty)=M_WaterFall_Base=/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base 
+			VectorParameterValues(ArrayProperty)=[object] (inner: StructProperty)
+	MaterialInstanceDynamic_0 (0-0-0-0): size 425 (cls: MaterialInstanceDynamic_0>MaterialInstanceDynamic>/Script/Engine):
+		Tag array:
+			Parent(ObjectProperty)=M_WaterFall_Base=/Game/Effects/Fort_Effects/Materials/Water/M_WaterFall_Base 
+			VectorParameterValues(ArrayProperty)=[object] (inner: StructProperty)
 	MaterialInstanceDynamic_0 (0-0-0-0): size 389 (cls: MaterialInstanceDynamic_0>MaterialInstanceDynamic>/Script/Engine):
 		Tag array:
 			Parent(ObjectProperty)=Athena_SoccerGame_ScoreDisplay=/Game/Athena/Prototype/SoccerGame/Athena_SoccerGame_ScoreDisplay 
@@ -4257,132 +4299,168 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=12189.98 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06_2 (0-0-0-0): size 193 (cls: Palm_Tree_06_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+	Palm_Tree_06_2 (0-0-0-0): size 263 (cls: Palm_Tree_06_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 181191916-1326848305-892498082-2194577818 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06b12 (0-0-0-0): size 193 (cls: Palm_Tree_06b12>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b12 (0-0-0-0): size 263 (cls: Palm_Tree_06b12>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1263655161-1319697602-1933230783-157866895 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06b13 (0-0-0-0): size 193 (cls: Palm_Tree_06b13>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b13 (0-0-0-0): size 263 (cls: Palm_Tree_06b13>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 100525588-1160770762-4218077841-4225048193 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06b2 (0-0-0-0): size 193 (cls: Palm_Tree_06b2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b2 (0-0-0-0): size 263 (cls: Palm_Tree_06b2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2386401783-1292472203-2967510975-1450042572 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06b_2 (0-0-0-0): size 193 (cls: Palm_Tree_06b_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06b_2 (0-0-0-0): size 263 (cls: Palm_Tree_06b_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1493191781-1237653240-1596332-1341823628 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_11 (0-0-0-0): size 193 (cls: Palm_Tree_11>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_11 (0-0-0-0): size 263 (cls: Palm_Tree_11>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 28989969-1165307193-1350284987-3433037737 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_13 (0-0-0-0): size 193 (cls: Palm_Tree_13>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_13 (0-0-0-0): size 263 (cls: Palm_Tree_13>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3229689536-1313159371-1790186937-4142672148 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_2 (0-0-0-0): size 193 (cls: Palm_Tree_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_2 (0-0-0-0): size 263 (cls: Palm_Tree_2>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2823238544-1264772102-2145100673-3467872936 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_4 (0-0-0-0): size 193 (cls: Palm_Tree_4>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_4 (0-0-0-0): size 263 (cls: Palm_Tree_4>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1865039753-1089321449-1227733921-233678082 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_5 (0-0-0-0): size 193 (cls: Palm_Tree_5>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_5 (0-0-0-0): size 263 (cls: Palm_Tree_5>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2092789473-1096773344-1594993593-2075493456 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_7 (0-0-0-0): size 193 (cls: Palm_Tree_7>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_7 (0-0-0-0): size 263 (cls: Palm_Tree_7>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2252167779-1123795246-3747788714-4110955557 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_8 (0-0-0-0): size 193 (cls: Palm_Tree_8>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_8 (0-0-0-0): size 263 (cls: Palm_Tree_8>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3580288118-1256000347-4151480997-1405774715 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_9 (0-0-0-0): size 193 (cls: Palm_Tree_9>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_9 (0-0-0-0): size 263 (cls: Palm_Tree_9>Palm_Tree_06_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3436759384-1168312243-33083025-729450327 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06c14_2 (0-0-0-0): size 193 (cls: Palm_Tree_06c14_2>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c14_2 (0-0-0-0): size 263 (cls: Palm_Tree_06c14_2>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 857840915-1239156809-1922610319-693851498 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06c15_5 (0-0-0-0): size 193 (cls: Palm_Tree_06c15_5>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c15_5 (0-0-0-0): size 263 (cls: Palm_Tree_06c15_5>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 700593627-1188046155-399424415-1902338449 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06c8 (0-0-0-0): size 193 (cls: Palm_Tree_06c8>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c8 (0-0-0-0): size 263 (cls: Palm_Tree_06c8>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1639854430-1175949255-2255975308-556604034 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06c9 (0-0-0-0): size 193 (cls: Palm_Tree_06c9>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c9 (0-0-0-0): size 263 (cls: Palm_Tree_06c9>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3613217612-1309043356-1597513091-1992736461 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Palm_Tree_06c_2 (0-0-0-0): size 193 (cls: Palm_Tree_06c_2>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Palm_Tree_06c_2 (0-0-0-0): size 263 (cls: Palm_Tree_06c_2>Palm_Tree_06c_C>/Game/Building/ActorBlueprints/Prop/Palm_Tree_06c):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 188042878-1212923202-1971625863-723890803 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Effect (0-0-0-0): size 108 (cls: Effect>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
@@ -4417,39 +4495,43 @@ Serialized exports:
 			AttachParent(ObjectProperty)=SM_VendingMachineQuest=Sublevel_X0Y4 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	WaterFallVFX (0-0-0-0): size 984 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
+	WaterFallVFX (0-0-0-0): size 1145 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			InstanceParameters(ArrayProperty)=[object] (inner: StructProperty)
 			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(512.0001,-99.99963,-1226) 
 			bNetAddressable(BoolProperty)=True 
+			bAutoActivate(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
-	WaterFallVFX (0-0-0-0): size 1180 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
+	WaterFallVFX (0-0-0-0): size 1341 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			InstanceParameters(ArrayProperty)=[object] (inner: StructProperty)
 			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(512,-99.99969,-1776) 
 			RelativeScale3D(StructProperty)=Vector(0.6666667,1,1) 
 			bNetAddressable(BoolProperty)=True 
+			bAutoActivate(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
-	WaterFallVFX (0-0-0-0): size 1180 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
+	WaterFallVFX (0-0-0-0): size 1341 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			InstanceParameters(ArrayProperty)=[object] (inner: StructProperty)
 			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(512.0001,-99.99847,-1824) 
 			RelativeScale3D(StructProperty)=Vector(0.6666667,1,1) 
 			bNetAddressable(BoolProperty)=True 
+			bAutoActivate(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
-	WaterFallVFX (0-0-0-0): size 1180 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
+	WaterFallVFX (0-0-0-0): size 1341 (cls: WaterFallVFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			InstanceParameters(ArrayProperty)=[object] (inner: StructProperty)
 			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(512.0001,-99.99847,-1824) 
 			RelativeScale3D(StructProperty)=Vector(0.6666667,1,1) 
 			bNetAddressable(BoolProperty)=True 
+			bAutoActivate(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	ParticleSystemComponent0 (0-0-0-0): size 2045 (cls: ParticleSystemComponent0>ParticleSystemComponent>/Script/Engine):
@@ -4666,493 +4748,631 @@ Serialized exports:
 			AttachParent(ObjectProperty)=Box=Sublevel_X0Y4 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	Prop_Desert_Cactus_10 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_10>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+	Prop_Desert_Cactus_10 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_10>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2948185238-1319873863-3263694527-2261779079 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_106 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_106>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_106 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_106>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2794785700-1124306607-2727019136-3940919429 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_107 (0-0-0-0): size 219 (cls: Prop_Desert_Cactus_107>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_107 (0-0-0-0): size 289 (cls: Prop_Desert_Cactus_107>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 4096467807-1134936285-3852864429-1862905029 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_14 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_14>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_14 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_14>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1861157515-1074667024-1924282250-2637757787 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_143 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_143>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_143 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_143>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3955327552-1294544521-927764380-3162140598 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_144 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_144>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_144 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_144>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1539398960-1254354913-2307266433-243267528 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_15 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_15>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_15 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_15>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2195467699-1291229560-3044980120-4089873009 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_155 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_155>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_155 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_155>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2668939019-1282843762-1309053887-633795518 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_2 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_2>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_2 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_2>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2707296421-1164329834-1895293568-2419083577 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_21 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_21>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_21 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_21>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2727175885-1239937782-2211999421-365094587 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_22 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_22>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_22 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_22>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 752269273-1124904922-4195197825-1074503328 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_24 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_24>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_24 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_24>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3160373663-1282066678-3649919915-3453247439 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_25 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_25>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_25 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_25>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1677051717-1234616226-2142833595-3075065043 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_26 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_26>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_26 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_26>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1886360862-1098186446-2879507900-4107072035 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_27 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_27>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_27 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_27>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 4033614932-1162138800-906886278-3289611290 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_3 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_3>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_3 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_3>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1384484359-1095243038-234756756-981078298 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_32 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_32>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_32 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_32>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3337272895-1179443112-2559419580-3699873248 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_37 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_37>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_37 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_37>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2492521079-1241075952-449684371-2024323984 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_38 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_38>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_38 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_38>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2138849477-1264994741-1839144596-3289078772 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_39 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_39>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_39 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_39>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 358076552-1178992715-2076488351-2048247259 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_40 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_40>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_40 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_40>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2556115382-1260104487-1755540921-3459445137 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_41 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_41>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_41 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_41>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 863172916-1084435968-4005891498-377144307 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_42 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_42>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_42 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_42>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1096799074-1164335473-1244521116-281577694 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_5 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_5>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_5 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_5>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2775575719-1300446570-3034758334-294056565 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_7 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_7>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_7 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_7>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 514886204-1322700388-1420802467-3733666651 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_8 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_8>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_8 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_8>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 38766062-1133827791-303917725-528623239 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_9 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_9>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_9 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_9>Prop_Desert_Cactus_02_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_02):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 4175823745-1261042977-31735220-3642343690 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_03_2 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_03_2>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_03_2 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_03_2>Prop_Desert_Cactus_03_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_03):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 4294056676-1096340461-1513135771-1480231537 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_Cactus_07_2 (0-0-0-0): size 193 (cls: Prop_Desert_Cactus_07_2>Prop_Desert_Cactus_07_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_07):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_Cactus_07_2 (0-0-0-0): size 263 (cls: Prop_Desert_Cactus_07_2>Prop_Desert_Cactus_07_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_Cactus_07):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2443321651-1186285855-3357713052-2625891544 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_03_2 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_03_2>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_03_2 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_03_2>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2395672317-1294614888-3443330691-3624256266 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_11 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_11>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_11 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_11>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2938199081-1223236672-1009926301-273390794 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_12 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_12>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_12 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_12>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 778163350-1274988357-3041593493-2663969799 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_13 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_13>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_13 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_13>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1350229199-1234131886-3214776965-2281445496 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_141 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_141>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_141 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_141>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1053398911-1198550863-2689068446-3847916233 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_144 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_144>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_144 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_144>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2204177898-1238968882-499110799-1124740629 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_156 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_156>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_156 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_156>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3316482299-1116552894-2244490167-3221130517 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_157 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_157>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_157 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_157>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 811381977-1152459659-2704294022-3966621988 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_2 (0-0-0-0): size 219 (cls: Prop_Desert_JoshuaTree_2>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_2 (0-0-0-0): size 289 (cls: Prop_Desert_JoshuaTree_2>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 958435240-1195854386-4123636157-2336166787 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_22 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_22>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_22 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_22>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3234147507-1155898890-3218222209-3053721518 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_24 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_24>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_24 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_24>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2325751976-1152387006-3385240497-4153227665 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_25 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_25>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_25 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_25>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2839915586-1195680054-1928258198-711592344 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_26 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_26>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_26 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_26>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1517698611-1225192648-3529108106-3286188368 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_27 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_27>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_27 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_27>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2292052361-1337968926-2894562440-444327158 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_28 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_28>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_28 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_28>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 4278253480-1279985156-1618648766-228359842 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_29 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_29>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_29 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_29>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3478084447-1232911931-856564136-2267808079 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_3 (0-0-0-0): size 219 (cls: Prop_Desert_JoshuaTree_3>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_3 (0-0-0-0): size 289 (cls: Prop_Desert_JoshuaTree_3>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2681865778-1247465659-3453130904-344161462 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_30 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_30>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_30 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_30>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3112107357-1124222264-3885271732-3816170359 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_31 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_31>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_31 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_31>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 881301013-1233208619-3978343073-372079462 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_34 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_34>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_34 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_34>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1720291455-1090655513-4078047362-1520027759 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_4 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_4>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_4 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_4>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2433359050-1202072075-2650133429-2849485264 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_5 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_5>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_5 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_5>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3955181593-1074064170-1905297829-2305981481 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_57 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_57>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_57 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_57>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3284387787-1234600601-2312706713-2351737917 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_6 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_6>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_6 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_6>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2007821076-1110116125-2843918007-1281647554 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_60 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_60>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_60 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_60>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3886361481-1224369166-4204076473-473878663 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_62 (0-0-0-0): size 219 (cls: Prop_Desert_JoshuaTree_62>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_62 (0-0-0-0): size 289 (cls: Prop_Desert_JoshuaTree_62>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			bMirrored(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 558956230-1261371745-1207235715-558543962 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_63 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_63>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_63 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_63>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3545561270-1205009532-1578301876-1999996292 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_64 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_64>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_64 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_64>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2332004261-1315049832-2084536249-4287526009 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_65 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_65>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_65 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_65>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1956978490-1126123089-2407612840-669969036 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_7 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_7>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_7 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_7>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3710391930-1243055268-2221104019-4169577001 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_70 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_70>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_70 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_70>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 4102894254-1168127874-1738611353-3302223748 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_72 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_72>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_72 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_72>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 720329811-1285743069-1212086176-2962256830 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_73 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_73>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_73 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_73>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1465316230-1152932944-707573122-3121788441 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_74 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_74>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_74 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_74>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 91244101-1147686246-701030310-29644074 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_75 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_75>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_75 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_75>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1920334155-1279800326-3002836390-3409210609 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_76 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_76>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_76 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_76>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 174469437-1148470036-1015473046-3447214521 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_79 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_79>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_79 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_79>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 907760579-1191150820-3709184677-3271775159 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_8 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_8>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_8 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_8>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2179356135-1199178229-4182352794-2439971272 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_83 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_83>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_83 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_83>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2612479482-1238732585-1128136883-1171339472 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Prop_Desert_JoshuaTree_9 (0-0-0-0): size 193 (cls: Prop_Desert_JoshuaTree_9>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Prop_Desert_JoshuaTree_9 (0-0-0-0): size 263 (cls: Prop_Desert_JoshuaTree_9>Prop_Desert_JoshuaTree_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_JoshuaTree_01):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3834360028-1202175911-1497516672-2742669154 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Prop_Desert_LargeRock_4 (0-0-0-0): size 193 (cls: Prop_Desert_LargeRock_4>Prop_Desert_LargeRock_01_C>/Game/Building/ActorBlueprints/Prop/Prop_Desert_LargeRock_01):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
@@ -5673,6 +5893,671 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SplineMeshComponent0 (0-0-0-0): size 1723 (cls: SplineMeshComponent0>SplineMeshComponent>/Script/Engine):
 		Tag array:
 			SplineParams(StructProperty)=System.Byte[] 
@@ -6374,7 +7259,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1051800166-1254486876-3342741432-735954268 
+			LightGuid(StructProperty)=Guid: 1096536935-1282834084-412224131-1471716599 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(23.97398,248.3137,69.50871) 
@@ -6383,7 +7268,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2098457408-1131386726-1229570229-2550547348 
+			LightGuid(StructProperty)=Guid: 266677012-1100332459-3304890809-1286888319 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-90.20692,248.3133,69.50871) 
@@ -6392,7 +7277,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1039662127-1153218059-1074784399-2635312540 
+			LightGuid(StructProperty)=Guid: 1968682027-1143708212-2590146475-2507851681 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-92.11813,-194.5533,86.47282) 
@@ -6401,7 +7286,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1214839217-1208896136-2407031477-3273516057 
+			LightGuid(StructProperty)=Guid: 2109532976-1138522475-256205712-1675465651 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(31.59079,-194.5533,86.47276) 
@@ -6410,7 +7295,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2791975995-1158678718-3843331459-1015705755 
+			LightGuid(StructProperty)=Guid: 3832227950-1279489788-3242558880-4261516447 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-79.29333,218.682,82.94495) 
@@ -6419,7 +7304,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3643992067-1193425354-3590088106-1817986421 
+			LightGuid(StructProperty)=Guid: 2984314503-1135268903-3315201946-2399357985 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(77.41653,220.446,82.94495) 
@@ -6428,7 +7313,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2465616659-1219075731-1839538351-2397834165 
+			LightGuid(StructProperty)=Guid: 834422384-1163729622-2137537433-839068377 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(110.323,-175.1266,80.37219) 
@@ -6437,7 +7322,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1292686977-1125529712-2453087933-4251460870 
+			LightGuid(StructProperty)=Guid: 3919758375-1299877557-382331806-3433580201 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-111.33,-173.573,80.37219) 
@@ -6446,7 +7331,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3473640407-1340714872-3745167289-3558015092 
+			LightGuid(StructProperty)=Guid: 1029570500-1187789443-345235613-3951402982 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-79.29362,218.6828,82.94495) 
@@ -6455,7 +7340,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1671949947-1076698870-1670561421-2201256551 
+			LightGuid(StructProperty)=Guid: 207181772-1234669911-853115059-3278779028 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(77.41648,220.4457,82.94495) 
@@ -6464,7 +7349,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1462889487-1128695430-952811921-1388834513 
+			LightGuid(StructProperty)=Guid: 1839352754-1197999492-1902953129-3220394095 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(110.3233,-175.1273,80.37219) 
@@ -6473,7 +7358,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 407206914-1227597137-375970479-3190559660 
+			LightGuid(StructProperty)=Guid: 188503579-1117082752-591778978-2242077851 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-111.3302,-173.5726,80.37219) 
@@ -6482,7 +7367,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 525536347-1254329661-1976904348-1472652719 
+			LightGuid(StructProperty)=Guid: 2278019837-1291053737-2956605070-3866925001 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-79.29379,218.6826,82.94495) 
@@ -6491,7 +7376,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 687670970-1307400154-2588601995-2693454839 
+			LightGuid(StructProperty)=Guid: 3665952914-1080196759-224057479-2248398369 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(77.41636,220.446,82.94495) 
@@ -6500,7 +7385,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3797649882-1166428963-802258840-1971613481 
+			LightGuid(StructProperty)=Guid: 2933821624-1310674622-3932024459-233729140 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(110.3224,-175.1278,80.37219) 
@@ -6509,7 +7394,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1623494354-1123764253-756157072-1870080839 
+			LightGuid(StructProperty)=Guid: 2976896169-1085285769-3791018147-2701868898 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-111.3302,-173.5728,80.37219) 
@@ -6518,7 +7403,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 155901941-1277432934-4039395202-3218746603 
+			LightGuid(StructProperty)=Guid: 4294075770-1105247886-237571212-1217869283 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6626,88.82138,118.415) 
@@ -6526,7 +7411,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 664081304-1178318165-2631565440-181854472 
+			LightGuid(StructProperty)=Guid: 1845803157-1166383807-3528832910-3436768767 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6626,-86.89639,118.415) 
@@ -6534,7 +7419,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 382779763-1204959358-2653337251-3703456799 
+			LightGuid(StructProperty)=Guid: 105745235-1315695886-3696402307-584051251 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5488,-78.87018,128.0259) 
@@ -6543,7 +7428,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4217869948-1102779007-117522816-3217081397 
+			LightGuid(StructProperty)=Guid: 1808833764-1252138301-177572789-2262685679 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5498,78.88467,128.0259) 
@@ -6552,7 +7437,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3336320171-1282306197-3321049767-39352776 
+			LightGuid(StructProperty)=Guid: 3666067175-1095489798-3279923348-1339461612 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6625,88.82089,118.415) 
@@ -6560,7 +7445,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1935297667-1144032640-928904606-4275616130 
+			LightGuid(StructProperty)=Guid: 1244549364-1177837750-4094455714-2239495704 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6627,-86.89697,118.415) 
@@ -6568,7 +7453,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2162828132-1199541527-2966745765-718669649 
+			LightGuid(StructProperty)=Guid: 1366317439-1259057789-48833429-2369687971 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5491,-78.87019,128.0258) 
@@ -6577,7 +7462,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 16342515-1200990296-2889751213-3660862820 
+			LightGuid(StructProperty)=Guid: 3507847340-1142479553-978310573-899784947 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5501,78.88496,128.0258) 
@@ -6586,7 +7471,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1898480566-1088706519-132685447-2839698951 
+			LightGuid(StructProperty)=Guid: 3627944582-1175732251-401488316-2315617773 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.662,88.82123,118.415) 
@@ -6602,7 +7487,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2919740497-1076117423-1329120667-4117941540 
+			LightGuid(StructProperty)=Guid: 395601554-1335831616-229435533-2794587808 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5495,-78.87039,128.0259) 
@@ -6611,7 +7496,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 559200412-1220235154-3963731880-3471374127 
+			LightGuid(StructProperty)=Guid: 399413611-1273323209-2920816276-3266900280 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5499,78.8848,128.0259) 
@@ -6620,7 +7505,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 109522486-1234273012-700800671-1292454842 
+			LightGuid(StructProperty)=Guid: 773860356-1225454804-4267392388-1236847686 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6625,88.82095,118.4143) 
@@ -6628,7 +7513,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 82796905-1289005828-1176339361-3084251249 
+			LightGuid(StructProperty)=Guid: 1401695133-1151123270-181409199-2542694942 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6616,-86.89684,118.4144) 
@@ -6636,7 +7521,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4223594505-1176777973-409850028-2332752745 
+			LightGuid(StructProperty)=Guid: 2524412934-1322848575-4262182075-3451258078 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.549,-78.87073,128.0261) 
@@ -6645,7 +7530,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2661491026-1109591173-3606281346-628578179 
+			LightGuid(StructProperty)=Guid: 763274134-1312500310-3647211160-2612777163 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5499,78.88474,128.026) 
@@ -6654,7 +7539,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2977844209-1339892769-845118115-3535354998 
+			LightGuid(StructProperty)=Guid: 1810934341-1133342866-3218998940-4082650084 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.663,88.82141,118.4156) 
@@ -6662,7 +7547,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 569040147-1274558847-1049427604-216014233 
+			LightGuid(StructProperty)=Guid: 3705413310-1089527763-3258941847-657748964 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6629,-86.89703,118.4152) 
@@ -6670,7 +7555,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3575294013-1297356532-1763743379-2768969542 
+			LightGuid(StructProperty)=Guid: 1349140580-1114346502-3408079514-343178211 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.549,-78.87051,128.0259) 
@@ -6679,7 +7564,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 556187323-1097137966-3320797084-3663470888 
+			LightGuid(StructProperty)=Guid: 1870989542-1310579352-2471969161-4038947319 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5501,78.88509,128.0258) 
@@ -6688,7 +7573,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1983655891-1334374191-383827098-3505503266 
+			LightGuid(StructProperty)=Guid: 3660463061-1110599272-3046861468-629682201 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6626,88.82123,118.4149) 
@@ -6696,7 +7581,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 329023249-1242704173-1811330195-3616663451 
+			LightGuid(StructProperty)=Guid: 4124290984-1107586095-400212664-3261897225 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6628,-86.89679,118.4153) 
@@ -6704,7 +7589,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1577588635-1237227826-996668080-3669391003 
+			LightGuid(StructProperty)=Guid: 2210194653-1327849316-666786222-2229319374 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5488,-78.87021,128.0256) 
@@ -6713,7 +7598,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 146928423-1223302427-2237319857-896819672 
+			LightGuid(StructProperty)=Guid: 2847661902-1298488812-76519587-3989310342 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.55,78.88513,128.0256) 
@@ -6722,7 +7607,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3261785987-1267662034-1644759224-1605409788 
+			LightGuid(StructProperty)=Guid: 4050519084-1242146261-3336367498-2193818200 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6628,88.82152,118.4149) 
@@ -6730,7 +7615,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3105240982-1201681446-1668812202-3000574428 
+			LightGuid(StructProperty)=Guid: 236941662-1120511388-1751356292-2263472932 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(415.6627,-86.89723,118.4154) 
@@ -6738,7 +7623,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 895636972-1157168464-213544120-3034720692 
+			LightGuid(StructProperty)=Guid: 42287138-1117830639-2229696915-417601806 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.549,-78.8706,128.0261) 
@@ -6747,7 +7632,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3712655684-1259844460-531304845-4116308459 
+			LightGuid(StructProperty)=Guid: 251333962-1303709366-1900896937-20066354 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-406.5498,78.88472,128.0261) 
@@ -6756,7 +7641,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1356212799-1309052239-3038874796-1913919895 
+			LightGuid(StructProperty)=Guid: 1666184468-1293275297-3773905330-1332430342 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-531.1015,100.5066,103.6692) 
@@ -6765,7 +7650,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3789574552-1217595496-1465939342-2031486218 
+			LightGuid(StructProperty)=Guid: 3469189789-1244539901-1587894427-2573171737 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-531.1007,-101.0345,103.6692) 
@@ -6774,7 +7659,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3758771933-1125076684-1644748458-3599994850 
+			LightGuid(StructProperty)=Guid: 2650826353-1213385060-61477784-2237801483 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(153.3905,-94.49043,74.11682) 
@@ -6790,7 +7675,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 278998147-1294172087-918089092-2047157085 
+			LightGuid(StructProperty)=Guid: 1336610546-1316392851-678757296-3986660758 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-531.1011,100.5065,103.6691) 
@@ -6799,7 +7684,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3838957140-1201638466-1277347751-1053947848 
+			LightGuid(StructProperty)=Guid: 637389320-1145347071-151331250-3969660840 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-531.1013,-101.0343,103.6691) 
@@ -6808,7 +7693,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3530836740-1130993417-1243521153-2811869383 
+			LightGuid(StructProperty)=Guid: 3251838943-1234477753-3555910316-1163676322 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(153.3912,-94.49071,74.11682) 
@@ -6816,7 +7701,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 266 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 900143072-1312068144-717320840-2567407775 
+			LightGuid(StructProperty)=Guid: 854156254-1164914552-3080032642-2635665134 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(153.3904,96.76618,74.11682) 
@@ -6824,7 +7709,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2986496693-1268857646-903313329-4098909852 
+			LightGuid(StructProperty)=Guid: 498334188-1116178600-2641687208-3228527965 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(58.81554,221.7082,50.95142) 
@@ -6833,7 +7718,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3618715455-1151213601-1464869565-4213084700 
+			LightGuid(StructProperty)=Guid: 541890466-1254530511-2439543220-2472333334 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-58.40076,221.7084,50.95142) 
@@ -6842,7 +7727,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 465900228-1251817145-2114851223-1469844634 
+			LightGuid(StructProperty)=Guid: 2413510194-1143362233-2499633809-2249930180 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.47868,-235.5287,68.65247) 
@@ -6851,7 +7736,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3321874281-1261452006-2152704146-2217242835 
+			LightGuid(StructProperty)=Guid: 2188683439-1213560336-860088726-3204520821 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(67.92693,-235.4014,68.65247) 
@@ -6860,7 +7745,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2268750325-1272529885-4034028452-2961300762 
+			LightGuid(StructProperty)=Guid: 3238962950-1323758773-327919252-3498970274 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(58.81509,221.7077,50.95142) 
@@ -6869,7 +7754,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1441483895-1137767712-2611664538-2689751241 
+			LightGuid(StructProperty)=Guid: 1411068338-1299612528-695289490-3625791039 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-58.40097,221.7077,50.95142) 
@@ -6878,7 +7763,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4006470811-1307874066-3951719080-2723305371 
+			LightGuid(StructProperty)=Guid: 2331719910-1108925014-423025329-1546089196 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.47919,-235.5295,68.65247) 
@@ -6887,7 +7772,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1735670776-1093792459-3613788837-3781016466 
+			LightGuid(StructProperty)=Guid: 3463073324-1217400274-13345165-2888626394 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(67.92691,-235.4008,68.65247) 
@@ -6896,7 +7781,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1338392488-1334362789-54282130-256316040 
+			LightGuid(StructProperty)=Guid: 1324349939-1321960623-2022384014-1166926344 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(58.81482,221.7082,50.95186) 
@@ -6905,7 +7790,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2290249279-1188129315-3737783202-3942979072 
+			LightGuid(StructProperty)=Guid: 2628656076-1304884102-33230777-2250783040 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-58.40141,221.7083,50.95137) 
@@ -6914,7 +7799,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 251068984-1272603439-965478588-621392425 
+			LightGuid(StructProperty)=Guid: 279659714-1127541750-901841062-1418265944 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.47841,-235.5291,68.65233) 
@@ -6923,7 +7808,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3400364148-1092785312-384393400-2185117447 
+			LightGuid(StructProperty)=Guid: 82625184-1271735815-766010752-1626711613 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(67.92649,-235.4015,68.65273) 
@@ -6932,7 +7817,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 573975042-1084397380-2953295500-2512488008 
+			LightGuid(StructProperty)=Guid: 2106257393-1290264430-65616555-3273903296 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(58.81524,221.7085,50.95135) 
@@ -6941,7 +7826,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 577699009-1332454477-3185136318-4159192824 
+			LightGuid(StructProperty)=Guid: 3637063882-1074808302-370601613-1878030604 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-58.40106,221.7079,50.9511) 
@@ -6950,7 +7835,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 906380984-1130496848-4076195239-1966246201 
+			LightGuid(StructProperty)=Guid: 306712215-1166363035-1218050447-1106291259 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.47872,-235.5288,68.65285) 
@@ -6959,7 +7844,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 804936560-1096224538-291642256-3106681164 
+			LightGuid(StructProperty)=Guid: 1509738977-1270262520-341386667-91973981 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(67.92682,-235.4015,68.6525) 
@@ -6968,7 +7853,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3767785133-1165426820-1368894375-2408137416 
+			LightGuid(StructProperty)=Guid: 3795406923-1273013421-841581493-4200614157 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(58.815,221.7085,50.95142) 
@@ -6977,7 +7862,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1418176512-1272868140-304890767-1270254456 
+			LightGuid(StructProperty)=Guid: 1874781394-1125022799-3261704581-2693498704 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-58.40075,221.7084,50.95161) 
@@ -6986,7 +7871,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2391367000-1194213741-2714550151-2015461598 
+			LightGuid(StructProperty)=Guid: 1752124393-1256609644-2946785941-2344686963 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.4787,-235.5288,68.65235) 
@@ -6995,7 +7880,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2385452021-1194529973-3619901119-1797901210 
+			LightGuid(StructProperty)=Guid: 594040917-1266421786-4028446105-3992749678 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(67.92696,-235.4017,68.65263) 
@@ -7004,7 +7889,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3580322343-1203520437-2370227349-568860182 
+			LightGuid(StructProperty)=Guid: 3718504392-1170283596-2076800932-2246597174 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(58.81541,221.7081,50.95129) 
@@ -7013,7 +7898,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2331147584-1321744430-2521136777-2653900893 
+			LightGuid(StructProperty)=Guid: 2385304496-1228657254-726960283-2755756642 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-58.4012,221.7083,50.9514) 
@@ -7022,7 +7907,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4007146020-1086048002-2607483053-1869398188 
+			LightGuid(StructProperty)=Guid: 2871946606-1176845364-1203947411-4172263193 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.4789,-235.5287,68.65237) 
@@ -7031,7 +7916,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 342606716-1339720647-1648201619-2142329205 
+			LightGuid(StructProperty)=Guid: 906600668-1305938027-693568170-1321867425 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(67.92645,-235.4016,68.6526) 
@@ -7040,7 +7925,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3658674696-1317869565-2207509932-3854449852 
+			LightGuid(StructProperty)=Guid: 1394049122-1122859892-3737615016-2448874743 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-41.7207,232.249,62.01782) 
@@ -7049,7 +7934,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4096896211-1114120187-3668534662-729544088 
+			LightGuid(StructProperty)=Guid: 3523857571-1325521505-1876163724-2666480622 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(82.81445,232.249,62.01782) 
@@ -7058,7 +7943,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3064366217-1249976749-3140242603-4190443928 
+			LightGuid(StructProperty)=Guid: 18823680-1325163024-4141803160-1454959155 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-37.75977,-276.7988,70.67456) 
@@ -7067,7 +7952,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2211659338-1188200754-3465867928-3487721652 
+			LightGuid(StructProperty)=Guid: 2919755843-1289823735-1632466577-3836454530 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(81.13184,-276.7988,70.67456) 
@@ -7076,7 +7961,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1563053044-1179849485-1651479949-2262630865 
+			LightGuid(StructProperty)=Guid: 536993242-1149151237-3440540851-1855622160 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-41.7212,232.249,62.01799) 
@@ -7085,7 +7970,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2970038140-1336188303-908460188-417481727 
+			LightGuid(StructProperty)=Guid: 3135965594-1238438593-3011209379-1811290278 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(82.81396,232.2491,62.01776) 
@@ -7094,7 +7979,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1589892459-1173224465-3420864641-3273229001 
+			LightGuid(StructProperty)=Guid: 361215083-1115070686-2496431488-3420953942 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-37.76003,-276.7981,70.67451) 
@@ -7121,7 +8006,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 465186794-1116282351-3486214544-767492092 
+			LightGuid(StructProperty)=Guid: 2864788353-1150940164-3201185210-2942118196 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(77.41585,220.4455,82.94501) 
@@ -7139,7 +8024,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2484195299-1275892569-1293629606-1103642446 
+			LightGuid(StructProperty)=Guid: 3905592718-1114715246-4263670667-1814195158 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-111.3307,-173.5737,80.37188) 
@@ -7148,7 +8033,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3984540513-1120785349-196081319-183360378 
+			LightGuid(StructProperty)=Guid: 2582403403-1216377069-3493030819-4239385890 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-79.29329,218.683,82.94489) 
@@ -7157,7 +8042,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1237963847-1310127692-1310821288-4016120617 
+			LightGuid(StructProperty)=Guid: 870023241-1076011217-2232189071-1379456684 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(77.41661,220.4455,82.94505) 
@@ -7166,7 +8051,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2411567496-1326867757-992055485-2282102203 
+			LightGuid(StructProperty)=Guid: 2741339089-1128379472-3844010924-2271042856 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(110.3237,-175.1265,80.37246) 
@@ -7175,7 +8060,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4115515903-1316735724-2279914168-1916023517 
+			LightGuid(StructProperty)=Guid: 2598911966-1289156334-1297837239-1726534755 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-111.3306,-173.5738,80.37233) 
@@ -7184,7 +8069,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3606612715-1111930642-2748841351-3232259148 
+			LightGuid(StructProperty)=Guid: 1623002345-1086347027-1685631653-907975605 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(58.81519,221.7081,50.95168) 
@@ -7202,7 +8087,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3842752759-1292526919-3626643856-566701222 
+			LightGuid(StructProperty)=Guid: 4113672826-1278237725-656758207-2562238644 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.47891,-235.5291,68.65237) 
@@ -7211,7 +8096,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1617725107-1268855178-3701276586-1575311357 
+			LightGuid(StructProperty)=Guid: 1975267415-1340423631-92010134-2535690976 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(67.92635,-235.402,68.6522) 
@@ -7220,7 +8105,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1910386052-1145691310-1961563545-2996287622 
+			LightGuid(StructProperty)=Guid: 2232414478-1228496573-900603799-3989886282 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(58.81488,221.709,50.9516) 
@@ -7229,7 +8114,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 384694486-1228207589-4152188565-355701055 
+			LightGuid(StructProperty)=Guid: 2859383857-1215818000-899475860-413881643 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-58.40094,221.7088,50.95142) 
@@ -7238,7 +8123,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 4172641809-1272585657-506057893-1248675145 
+			LightGuid(StructProperty)=Guid: 962473683-1303328758-3435449491-3857388112 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.47911,-235.5296,68.65237) 
@@ -7265,7 +8150,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-2 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-2>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 3791617743-1267610861-3877839011-838239329 
+			LightGuid(StructProperty)=Guid: 707609004-1224469978-934267548-3936161609 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-58.40099,221.7087,50.95108) 
@@ -7274,7 +8159,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-3 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-3>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 1775956677-1208588131-1855369128-1891754979 
+			LightGuid(StructProperty)=Guid: 2492431195-1101120478-2343842972-204078500 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(-66.47871,-235.5289,68.6526) 
@@ -7283,7 +8168,7 @@ Serialized exports:
 	NODE_AddSpotLightComponent-5 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-5>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 
-			LightGuid(StructProperty)=Guid: 2183578049-1091069844-4079483028-532025655 
+			LightGuid(StructProperty)=Guid: 2573509757-1207537556-17455280-3324861915 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			RelativeLocation(StructProperty)=Vector(67.92656,-235.4007,68.65187) 
@@ -7615,6 +8500,16 @@ Serialized exports:
 			AttachParent(ObjectProperty)=Water_Base=Sublevel_X0Y4 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+	Base Mesh (0-0-0-0): size 892 (cls: Base Mesh>StaticMeshComponent>/Script/Engine):
+		Tag array:
+			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
+			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
+			RelativeLocation(StructProperty)=Vector(512.0001,-99.99963,-1226) 
+			bVisible(BoolProperty)=False 
+			bHiddenInGame(BoolProperty)=True 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	CollisionMesh1 (0-0-0-0): size 194 (cls: CollisionMesh1>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OnComponentBeginOverlap(MulticastDelegateProperty)=[object] 
@@ -7627,6 +8522,17 @@ Serialized exports:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			RelativeLocation(StructProperty)=Vector(18432,-7168,768) 
 			RelativeRotation(StructProperty)=Rotator(0,180,0) 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	Base Mesh (0-0-0-0): size 1088 (cls: Base Mesh>StaticMeshComponent>/Script/Engine):
+		Tag array:
+			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
+			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
+			RelativeLocation(StructProperty)=Vector(512,-99.99969,-1776) 
+			RelativeScale3D(StructProperty)=Vector(0.6666667,1,1) 
+			bVisible(BoolProperty)=False 
+			bHiddenInGame(BoolProperty)=True 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
@@ -7646,6 +8552,17 @@ Serialized exports:
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	Base Mesh (0-0-0-0): size 1088 (cls: Base Mesh>StaticMeshComponent>/Script/Engine):
+		Tag array:
+			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
+			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
+			RelativeLocation(StructProperty)=Vector(512.0001,-99.99847,-1824) 
+			RelativeScale3D(StructProperty)=Vector(0.6666667,1,1) 
+			bVisible(BoolProperty)=False 
+			bHiddenInGame(BoolProperty)=True 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	CollisionMesh1 (0-0-0-0): size 194 (cls: CollisionMesh1>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OnComponentBeginOverlap(MulticastDelegateProperty)=[object] 
@@ -7659,6 +8576,17 @@ Serialized exports:
 			RelativeLocation(StructProperty)=Vector(-3584,19456,-1536) 
 			RelativeRotation(StructProperty)=Rotator(0,-90.00012,0) 
 			RelativeScale3D(StructProperty)=Vector(1.5,1,1) 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	Base Mesh (0-0-0-0): size 1088 (cls: Base Mesh>StaticMeshComponent>/Script/Engine):
+		Tag array:
+			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
+			AttachParent(ObjectProperty)=StaticMesh1=Sublevel_X0Y4 
+			RelativeLocation(StructProperty)=Vector(512.0001,-99.99847,-1824) 
+			RelativeScale3D(StructProperty)=Vector(0.6666667,1,1) 
+			bVisible(BoolProperty)=False 
+			bHiddenInGame(BoolProperty)=True 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
 			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
@@ -9259,10 +10187,11 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
-	StaticMeshComponent0 (0-0-0-0): size 208 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 234 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CachedMaxDrawDistance(FloatProperty)=10140.34 
+			bGenerateOverlapEvents(BoolProperty)=True 
 			RelativeLocation(StructProperty)=Vector(-2548,21352,-748) 
 			RelativeRotation(StructProperty)=Rotator(0,84.37492,0) 
 	StaticMeshComponent0 (0-0-0-0): size 173 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
@@ -11417,62 +12346,78 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=19982.03 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Tree_Log_6b10 (0-0-0-0): size 193 (cls: Tree_Log_6b10>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+	Tree_Log_6b10 (0-0-0-0): size 263 (cls: Tree_Log_6b10>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 3148107070-1295452472-2051851447-2025937952 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Tree_Log_6b2_2 (0-0-0-0): size 193 (cls: Tree_Log_6b2_2>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6b2_2 (0-0-0-0): size 263 (cls: Tree_Log_6b2_2>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 816084447-1240908186-74092437-649137744 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Tree_Log_6b3 (0-0-0-0): size 193 (cls: Tree_Log_6b3>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6b3 (0-0-0-0): size 263 (cls: Tree_Log_6b3>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2496453128-1105876451-3933991358-1508449632 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Tree_Log_6b4 (0-0-0-0): size 193 (cls: Tree_Log_6b4>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6b4 (0-0-0-0): size 263 (cls: Tree_Log_6b4>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2738387671-1314417341-3273230014-658702397 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Tree_Log_6b5_12 (0-0-0-0): size 193 (cls: Tree_Log_6b5_12>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6b5_12 (0-0-0-0): size 263 (cls: Tree_Log_6b5_12>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 1554218927-1220728907-362779324-4176450836 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Tree_Log_6b6 (0-0-0-0): size 193 (cls: Tree_Log_6b6>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6b6 (0-0-0-0): size 263 (cls: Tree_Log_6b6>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 2123273384-1258782981-661202048-3657070651 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Tree_Log_6b7 (0-0-0-0): size 193 (cls: Tree_Log_6b7>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6b7 (0-0-0-0): size 263 (cls: Tree_Log_6b7>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 772318301-1094457681-3539316630-1673008283 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
-	Tree_Log_6b9 (0-0-0-0): size 193 (cls: Tree_Log_6b9>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Tree_Log_6b9 (0-0-0-0): size 263 (cls: Tree_Log_6b9>Tree_Log_6b_C>/Game/Building/ActorBlueprints/Prop/Tree_Log_6b):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Sublevel_X0Y4 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
 			MyGuid(StructProperty)=Guid: 460447003-1179294161-965333889-3278329312 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Umbrella01_2 (0-0-0-0): size 193 (cls: Umbrella01_2>Umbrella01_C>/Game/Building/ActorBlueprints/Prop/Umbrella01):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Sublevel_X0Y4 

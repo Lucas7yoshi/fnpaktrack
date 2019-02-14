@@ -23,6 +23,7 @@ Name table:
 	ActorTypeFilter
 	AddImpulse
 	AnimMontage
+	AnimPlayRate
 	ApplicationTag
 	ArrayProperty
 	AudioComponent
@@ -30,6 +31,7 @@ Name table:
 	bClampMaxYawAngleToFire
 	bConsiderFriendlyFireWhenExcludingFriends
 	bCreateHitResultWhenNoTargetsFound
+	bExcludeAllAI
 	bExcludeAllAttachedToInstigator
 	bExcludeAllAttachedToRequester
 	bExcludeAthenaVehicle
@@ -68,6 +70,8 @@ Name table:
 	ByteProperty
 	CallFunc_BooleanAND_ReturnValue
 	CallFunc_Conv_RotatorToVector_ReturnValue
+	CallFunc_Divide_FloatFloat_ReturnValue
+	CallFunc_Divide_FloatFloat_ReturnValue1
 	CallFunc_EncounterHasReservedSpawnRequestForEnemySpawner_ReturnValue
 	CallFunc_GetActivatingPawn_ReturnValue
 	CallFunc_GetActivatingPawn_ReturnValue1
@@ -135,6 +139,7 @@ Name table:
 	DesiredThrowAngle
 	Distance
 	DistanceDataTag
+	Divide_FloatFloat
 	EEndPlayReason
 	EffectContainers
 	EFortAbilityTargetingSource
@@ -301,6 +306,8 @@ Name table:
 	Shape
 	SpawnAIPawnReservedForEnemySpawner
 	SpawnFX
+	SpawnFXEndTime
+	SpawnFXStartTime
 	StopFX
 	StrProperty
 	StructProperty
@@ -325,14 +332,16 @@ Name table:
 	WaitTargetSelectionDelegate__DelegateSignature
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	GAB_FlingerThrowHusk_C (0-0-0-0): size 333 (cls: GAB_FlingerThrowHusk_C>BlueprintGeneratedClass>/Script/Engine):
+	GAB_FlingerThrowHusk_C (0-0-0-0): size 341 (cls: GAB_FlingerThrowHusk_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_GAB_FlingerThrowHusk=GAB_FlingerThrowHusk_C 
-	Default__GAB_FlingerThrowHusk_C (0-0-0-0): size 6239 (cls: Default__GAB_FlingerThrowHusk_C>GAB_FlingerThrowHusk_C):
+	Default__GAB_FlingerThrowHusk_C (0-0-0-0): size 6378 (cls: Default__GAB_FlingerThrowHusk_C>GAB_FlingerThrowHusk_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			GC_FlingerGrabNPC(StructProperty)=System.Byte[] 
 			GC_NPCRangedThrow(StructProperty)=System.Byte[] 
+			SpawnFXStartTime(FloatProperty)=0.848 
+			SpawnFXEndTime(FloatProperty)=2.897 
 			EffectContainers(StructProperty)=System.Byte[] 
 			ProjectileClass(ObjectProperty)=ProjectileHuskLobber_C=/Game/Characters/Enemies/Husk/Blueprints/ProjectileHuskLobber 
 			bStopsAIBehaviorLogic(BoolProperty)=True 
@@ -356,7 +365,7 @@ Serialized exports:
 			ActivationOwnedTags(StructProperty)=GameplayTagContainer:NPC.Status.ControlResistance.Decreased 
 	FlingerPawn (0-0-0-0): size 36 (cls: FlingerPawn>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_GAB_FlingerThrowHusk (0-0-0-0): size 2070 (cls: ExecuteUbergraph_GAB_FlingerThrowHusk>Function>/Script/CoreUObject)
+	ExecuteUbergraph_GAB_FlingerThrowHusk (0-0-0-0): size 2135 (cls: ExecuteUbergraph_GAB_FlingerThrowHusk>Function>/Script/CoreUObject)
 	CallFunc_EncounterHasReservedSpawnRequestForEnemySpawner_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EncounterHasReservedSpawnRequestForEnemySpawner_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
@@ -398,8 +407,12 @@ Serialized exports:
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate2 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate2>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate3 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate3>DelegateProperty>/Script/CoreUObject)
+	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_Divide_FloatFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetProjectileInitialValues_outProjectileGravity (0-0-0-0): size 32 (cls: CallFunc_GetProjectileInitialValues_outProjectileGravity>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetProjectileInitialValues_outProjectileSpeed (0-0-0-0): size 32 (cls: CallFunc_GetProjectileInitialValues_outProjectileSpeed>FloatProperty>/Script/CoreUObject)
+	SpawnFXEndTime (0-0-0-0): size 32 (cls: SpawnFXEndTime>FloatProperty>/Script/CoreUObject)
+	SpawnFXStartTime (0-0-0-0): size 32 (cls: SpawnFXStartTime>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetActivatingPawn_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetActivatingPawn_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetActivatingPawn_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetActivatingPawn_ReturnValue1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetEncounterInfo_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetEncounterInfo_ReturnValue>ObjectProperty>/Script/CoreUObject)

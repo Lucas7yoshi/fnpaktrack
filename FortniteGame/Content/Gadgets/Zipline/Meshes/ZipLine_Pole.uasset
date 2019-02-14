@@ -10,6 +10,9 @@ Name table:
 	/Script/FortniteGame
 	/Script/GameplayTags
 	1
+	Actor
+	AllNodes
+	AreaClass
 	ArrayProperty
 	ATTACH_Floor
 	AttributeInitCategory
@@ -21,8 +24,8 @@ Name table:
 	bCanEverAffectNavigation
 	bCanExportNavigationCollisions
 	bDoNotBlockBuildings
-	bDoNotBlockInteract
 	bEnableAutoLODGeneration
+	bIsParentComponentNative
 	BlueprintGeneratedClass
 	BodyInstance
 	BoolProperty
@@ -34,6 +37,7 @@ Name table:
 	BuildingResourceAmountOverride
 	ByteProperty
 	CachedMaxDrawDistance
+	Camera
 	CanCharacterStepUpOn
 	Channel
 	Class
@@ -48,7 +52,10 @@ Name table:
 	DeathParticles
 	DeathSound
 	Default__BlueprintGeneratedClass
+	Default__BoxComponent
 	Default__BuildingProp
+	Default__Function
+	Default__ObjectProperty
 	Default__SceneComponent
 	Default__SCS_Node
 	Default__SimpleConstructionScript
@@ -57,33 +64,30 @@ Name table:
 	DefaultSceneRootNode
 	Demo_MetalSmall_Impact_Cue
 	Demo_MetalSmall_ImpactFinal_Cue
+	Destructible
 	EBuildingAttachmentType
 	ECanBeCharacterBase
 	ECB_Yes
 	ECollisionResponse
 	ECR_Block
-	ECR_Overlap
+	ECR_Ignore
 	EFortResourceType
 	EFortResourceType::Metal
 	ENavigationObstacleOverride
 	ENavigationObstacleOverride::ForceEnabled
 	EnumProperty
-	FCC_Object_PawnAI
-	FCC_Object_Projectile
-	FCC_Object_ProjectileIgnoreAI
-	FCC_Object_ProjectileMesh
 	FCC_Trace_Interaction
-	FCC_Trace_Weapon
-	FCC_Trace_WeaponCapsule
-	FCC_Trace_WeaponMulti
-	FCC_Trace_WeaponPawnAndWorldMulti
-	FCC_Trace_World
+	FCC_Trace_WeaponWorldMulti
 	FloatProperty
 	FortAttributeInitializationKey
+	FortMetaNavArea_Obstacles
+	Function
 	Game
 	GameplayTag
 	GameplayTagContainer
 	Guid
+	InteractBlocker
+	InteractBlocker_GEN_VARIABLE
 	InternalVariableName
 	LDMaxDrawDistance
 	NameProperty
@@ -93,16 +97,22 @@ Name table:
 	ObjectProperty
 	P_General_Deco_Destruction_Small
 	Package
+	ParentComponentOrVariableName
 	ParticleSystem
+	Pawn
+	PhysicsBody
 	PlayHitSound
 	PropMetal
 	PropMetalLow
+	RelativeLocation
+	RelativeScale3D
 	ResourceRates
 	ResourceType
 	Response
 	ResponseArray
 	ResponseChannel
 	RootComponent
+	RootNodes
 	RowName
 	SceneComponent
 	ScriptStruct
@@ -115,17 +125,24 @@ Name table:
 	StaticMeshComponent
 	StaticMeshComponent0
 	StructProperty
+	UserConstructionScript
 	VariableGuid
+	Vector
+	Vehicle
+	Visibility
+	WorldDynamic
+	WorldStatic
 	ZipLine_Pole_C
 Serialized exports:
-	ZipLine_Pole_C (0-0-0-0): size 105 (cls: ZipLine_Pole_C>BlueprintGeneratedClass>/Script/Engine):
+	InteractBlocker (0-0-0-0): size 36 (cls: InteractBlocker>ObjectProperty>/Script/CoreUObject)
+	UserConstructionScript (0-0-0-0): size 43 (cls: UserConstructionScript>Function>/Script/CoreUObject)
+	ZipLine_Pole_C (0-0-0-0): size 125 (cls: ZipLine_Pole_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_314=ZipLine_Pole_C 
-	Default__ZipLine_Pole_C (0-0-0-0): size 890 (cls: Default__ZipLine_Pole_C>ZipLine_Pole_C):
+	Default__ZipLine_Pole_C (0-0-0-0): size 864 (cls: Default__ZipLine_Pole_C>ZipLine_Pole_C):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Zipline_Pole=/Game/Gadgets/Zipline/Meshes/SM_Zipline_Pole 
 			ResourceType(ByteProperty)=EFortResourceType::Metal 
-			bDoNotBlockInteract(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Default__ZipLine_Pole_C 
 			BuildingResourceAmountOverride(StructProperty)=System.Byte[] 
 			DeathParticles(ObjectProperty)=P_General_Deco_Destruction_Small=/Game/Effects/Fort_Effects/World/Destruction/Base_Effects/P_General_Deco_Destruction_Small 
@@ -142,17 +159,33 @@ Serialized exports:
 			bCanBeDamaged(BoolProperty)=False 
 			bEnableAutoLODGeneration(BoolProperty)=False 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Default__ZipLine_Pole_C 
+	InteractBlocker_GEN_VARIABLE (0-0-0-0): size 1216 (cls: InteractBlocker_GEN_VARIABLE>BoxComponent>/Script/Engine):
+		Tag array:
+			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
+			BodyInstance(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty)=Vector(84,0,144) 
+			RelativeScale3D(StructProperty)=Vector(3,2.5,5.5) 
 	SceneComponent_1770 (0-0-0-0): size 12 (cls: SceneComponent_1770>SceneComponent>/Script/Engine)
+	SCS_Node_0 (0-0-0-0): size 227 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
+		Tag array:
+			ComponentClass(ObjectProperty)=BoxComponent=/Script/Engine 
+			ComponentTemplate(ObjectProperty)=InteractBlocker_GEN_VARIABLE=ZipLine_Pole_C 
+			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
+			bIsParentComponentNative(BoolProperty)=True 
+			VariableGuid(StructProperty)=Guid: 397414684-1172937393-1837853326-1005676623 
+			InternalVariableName(NameProperty)=InteractBlocker 
 	SCS_Node_1774 (0-0-0-0): size 168 (cls: SCS_Node_1774>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_1770=ZipLine_Pole_C 
 			VariableGuid(StructProperty)=Guid: 1455200153-3298092774-840778389-2103358230 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
-	SimpleConstructionScript_314 (0-0-0-0): size 41 (cls: SimpleConstructionScript_314>SimpleConstructionScript>/Script/Engine):
+	SimpleConstructionScript_314 (0-0-0-0): size 123 (cls: SimpleConstructionScript_314>SimpleConstructionScript>/Script/Engine):
 		Tag array:
+			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
+			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_1774=ZipLine_Pole_C 
-	StaticMeshComponent0 (0-0-0-0): size 1275 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 279 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Zipline_Pole=/Game/Gadgets/Zipline/Meshes/SM_Zipline_Pole 
 			LDMaxDrawDistance(FloatProperty)=15000 

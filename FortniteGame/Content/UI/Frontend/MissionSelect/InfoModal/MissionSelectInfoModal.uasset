@@ -66,6 +66,7 @@ Name table:
 	bAllowTemplate
 	bApplyOutlineToDropShadows
 	bCookedWidgetTree
+	bFlipForRightToLeftFlowDirection
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
 	bIsVariable
@@ -244,6 +245,8 @@ Name table:
 	DynamicBindingObjects
 	EConsumeMouseWheel
 	EConsumeMouseWheel::Always
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortItemType
 	EFortItemType::AccountItem
 	EFortTheaterMapTileType
@@ -270,6 +273,7 @@ Name table:
 	EVerticalAlignment
 	ExecuteUbergraph_MissionSelectInfoModal
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	FontOutlineSettings
@@ -755,12 +759,13 @@ Serialized exports:
 			BrushColor(StructProperty)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-	CommonBorder_3 (0-0-0-0): size 653 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
+	CommonBorder_3 (0-0-0-0): size 679 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Tab_DkBlue_C=/Game/UI/Foundation/Border/Border_Tab_DkBlue 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Padding(StructProperty)=System.Byte[] 
 			Background(StructProperty)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 	Border_Small (0-0-0-0): size 538 (cls: Border_Small>CommonBorder>/Script/CommonUI):
@@ -2370,10 +2375,11 @@ Play With Others earns you bonus XP along with the regular rewards from the miss
 		Tag array:
 			EmptyItemType(EnumProperty)=EFortItemType::AccountItem 
 			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2382,10 +2388,11 @@ Play With Others earns you bonus XP along with the regular rewards from the miss
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+	HorizontalBox_0 (0-0-0-0): size 127 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	ContentBox (0-0-0-0): size 79 (cls: ContentBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -2433,22 +2440,25 @@ Play With Others earns you bonus XP along with the regular rewards from the miss
 	HBox (0-0-0-0): size 57 (cls: HBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-	HorizontalBox_0 (0-0-0-0): size 82 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+	HorizontalBox_0 (0-0-0-0): size 123 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBox_1 (0-0-0-0): size 127 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_2 (0-0-0-0): size 82 (cls: HorizontalBox_2>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
-	HorizontalBox_3 (0-0-0-0): size 86 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
+	HorizontalBox_3 (0-0-0-0): size 127 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 77 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -3799,7 +3809,7 @@ Play With Others earns you bonus XP along with the regular rewards from the miss
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=BackgroundBlurSlot_0=WidgetArchetype 
-	MissionDetailsExpireCountdown (0-0-0-0): size 268 (cls: MissionDetailsExpireCountdown>MissionDetailsExpireCountdown_C>/Game/UI/Frontend/MissionDetails/MissionDetailsExpireCountdown):
+	MissionDetailsExpireCountdown (0-0-0-0): size 309 (cls: MissionDetailsExpireCountdown>MissionDetailsExpireCountdown_C>/Game/UI/Frontend/MissionDetails/MissionDetailsExpireCountdown):
 		Tag array:
 			ContentBox(ObjectProperty)=ContentBox=WidgetArchetype 
 			MissionRemainTime(ObjectProperty)=MissionRemainTime=WidgetArchetype 
@@ -3807,6 +3817,7 @@ Play With Others earns you bonus XP along with the regular rewards from the miss
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 			RenderTransform(StructProperty)=System.Byte[] 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	MissionDetailsHeader_193 (0-0-0-0): size 238 (cls: MissionDetailsHeader_193>MissionDetailsHeader_C>/Game/UI/Frontend/MissionDetails/MissionDetailsHeader):
 		Tag array:
 			MissionDetailsExpireCountdown(ObjectProperty)=MissionDetailsExpireCountdown=WidgetArchetype 
@@ -5944,7 +5955,7 @@ Play With Others earns you bonus XP along with the regular rewards from the miss
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=MissionNameText=WidgetArchetype 
-	VerticalBoxSlot_3 (0-0-0-0): size 185 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_3 (0-0-0-0): size 156 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 

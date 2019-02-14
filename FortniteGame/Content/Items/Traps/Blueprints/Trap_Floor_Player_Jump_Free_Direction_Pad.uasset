@@ -7,6 +7,8 @@ Name table:
 	/Game/Sounds/Fort_Traps/JumpPad/JumpPad_Placed_Cue
 	/Game/Sounds/Fort_Traps/Spike_Trap/Spike_Trap_Reload_Cue
 	/Game/Sounds/Fort_Traps/Spike_Trap/Spike_trap_Reset_Cue
+	/Game/Weapons/ForceFeedback/FF_Generic_LaunchPawn
+	/Game/Weapons/ForceFeedback/FF_Generic_LaunchPawn.FF_Generic_LaunchPawn
 	/Game/Weapons/FORT_TRAPS/Floor_Player_Jump_Pad/Material/MI_FORT_S_JumpPads_Inst
 	/Game/Weapons/FORT_TRAPS/Floor_Player_Jump_Pad/Mesh/JumpPadD_floor
 	/Game/Weapons/FORT_TRAPS/Floor_Player_Jump_Pad/P_PlayerJump_Out_Trap
@@ -48,12 +50,13 @@ Name table:
 	BoxComponent_556__F591608A
 	BoxExtent
 	BP_ShouldTrigger
+	BreakRotator
 	BreakVector
 	bStartWithTickEnabled
 	BuildingDeco
 	BuildingSMActor
 	BuildingTrap
-	BuildingTrapFloor
+	BuildingTrapFloor_Launch
 	BurstAmount
 	ByteProperty
 	CallFunc_Add_IntInt_ReturnValue
@@ -61,13 +64,19 @@ Name table:
 	CallFunc_Array_Get_Item
 	CallFunc_Array_Length_ReturnValue
 	CallFunc_Array_Length_ReturnValue1
+	CallFunc_BreakRotator_Pitch
+	CallFunc_BreakRotator_Roll
+	CallFunc_BreakRotator_Yaw
 	CallFunc_BreakVector_X
 	CallFunc_BreakVector_Y
 	CallFunc_BreakVector_Z
+	CallFunc_Conv_VectorToRotator_ReturnValue
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue
 	CallFunc_GetBuildingMeshComponent_ReturnValue
 	CallFunc_GetCameraLocation_ReturnValue
+	CallFunc_GetForwardVector_ReturnValue
 	CallFunc_GetPlayerCameraManager_ReturnValue
+	CallFunc_GetVelocity_ReturnValue
 	CallFunc_Greater_IntInt_ReturnValue
 	CallFunc_IsDBNO_ReturnValue
 	CallFunc_IsDedicatedServer_ReturnValue
@@ -85,10 +94,12 @@ Name table:
 	CallFunc_K2_GetRootComponent_ReturnValue
 	CallFunc_Less_IntInt_ReturnValue
 	CallFunc_LessEqual_FloatFloat_ReturnValue
+	CallFunc_MakeRotator_ReturnValue
 	CallFunc_MakeVector_ReturnValue
 	CallFunc_MakeVector_ReturnValue1
 	CallFunc_Multiply_FloatFloat_ReturnValue
 	CallFunc_Multiply_FloatFloat_ReturnValue1
+	CallFunc_Multiply_VectorFloat_ReturnValue
 	CallFunc_Multiply_VectorVector_ReturnValue
 	CallFunc_Multiply_VectorVector_ReturnValue1
 	CallFunc_Multiply_VectorVector_ReturnValue2
@@ -109,13 +120,14 @@ Name table:
 	Color
 	ComponentClass
 	ComponentTemplate
+	Conv_VectorToRotator
 	CreateDynamicMaterialInstance
 	Custom
 	Default__ArrayProperty
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
 	Default__BoxComponent
-	Default__BuildingTrapFloor
+	Default__BuildingTrapFloor_Launch
 	Default__ByteProperty
 	Default__FloatProperty
 	Default__Function
@@ -147,6 +159,7 @@ Name table:
 	ExecuteUbergraph_Trap_Floor_Player_Jump_Free_Direction_Pad
 	FCC_Object_PawnAI
 	FloatProperty
+	ForceFeedbackClass
 	FortAbilitySet
 	FortAttributeInitializationKey
 	FortCameraOnly
@@ -163,7 +176,10 @@ Name table:
 	GAS_Trap_FloorJumpPadDirectional
 	GetBuildingMeshComponent
 	GetCameraLocation
+	GetForwardVector
+	GetImpulseDirection
 	GetPlayerCameraManager
+	GetVelocity
 	Greater_IntInt
 	Guid
 	InstanceParameters
@@ -201,9 +217,13 @@ Name table:
 	KismetMathLibrary
 	KismetSystemLibrary
 	LatentActionInfo
+	LaunchingActor
+	LaunchPitch
+	LaunchStrength
 	Less_IntInt
 	LessEqual_FloatFloat
 	LocalTouching
+	MakeRotator
 	MakeVector
 	MassInKgOverride
 	Material
@@ -211,6 +231,7 @@ Name table:
 	MaterialInstanceDynamic
 	MI_FORT_S_JumpPads_Inst
 	Multiply_FloatFloat
+	Multiply_VectorFloat
 	Multiply_VectorVector
 	Name
 	NameProperty
@@ -247,6 +268,7 @@ Name table:
 	ReturnValue
 	RootComponent
 	RootNodes
+	Rotator
 	S_Floor_Player_Jump_PadOUT_Guide
 	Scalar
 	Scalar_Low
@@ -263,6 +285,7 @@ Name table:
 	SizeX-
 	SizeY+
 	SizeY-
+	SoftObjectProperty
 	SoundCue
 	SpawnEmitterAtLocation
 	SpawnEmitterAttached
@@ -304,11 +327,11 @@ Name table:
 	WorldStatic
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Trap_Floor_Player_Jump_Free_Direction_Pad_C (0-0-0-0): size 318 (cls: Trap_Floor_Player_Jump_Free_Direction_Pad_C>BlueprintGeneratedClass>/Script/Engine):
+	Trap_Floor_Player_Jump_Free_Direction_Pad_C (0-0-0-0): size 342 (cls: Trap_Floor_Player_Jump_Free_Direction_Pad_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_49=Trap_Floor_Player_Jump_Free_Direction_Pad_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Trap_Floor_Player_Jump_Free_Direction_Pad=Trap_Floor_Player_Jump_Free_Direction_Pad_C 
-	Default__Trap_Floor_Player_Jump_Free_Direction_Pad_C (0-0-0-0): size 852 (cls: Default__Trap_Floor_Player_Jump_Free_Direction_Pad_C>Trap_Floor_Player_Jump_Free_Direction_Pad_C):
+	Default__Trap_Floor_Player_Jump_Free_Direction_Pad_C (0-0-0-0): size 947 (cls: Default__Trap_Floor_Player_Jump_Free_Direction_Pad_C>Trap_Floor_Player_Jump_Free_Direction_Pad_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			Trap_Placed_Sound(ObjectProperty)=JumpPad_Placed_Cue=/Game/Sounds/Fort_Traps/JumpPad/JumpPad_Placed_Cue 
@@ -316,6 +339,9 @@ Serialized exports:
 			Trap_Fire_Sound(ObjectProperty)=JumpPad_Fire_Cue=/Game/Sounds/Fort_Traps/JumpPad/JumpPad_Fire_Cue 
 			Trap_Reload_Sound(ObjectProperty)=Spike_Trap_Reload_Cue=/Game/Sounds/Fort_Traps/Spike_Trap/Spike_Trap_Reload_Cue 
 			Trap_Explode_Sound(ObjectProperty)=JumpPad_Destroyed_Cue=/Game/Sounds/Fort_Traps/JumpPad/JumpPad_Destroyed_Cue 
+			LaunchStrength(FloatProperty)=2500 
+			LaunchPitch(FloatProperty)=35 
+			ForceFeedbackClass(SoftObjectProperty)=/Game/Weapons/ForceFeedback/FF_Generic_LaunchPawn.FF_Generic_LaunchPawn 
 			TraceLocation(ObjectProperty)=Trace Location=Default__Trap_Floor_Player_Jump_Free_Direction_Pad_C 
 			TrapRangeMesh(ObjectProperty)=S_Floor_Player_Jump_PadOUT_Guide=/Game/Weapons/FORT_TRAPS/Floor_Player_Jump_Pad/S_Floor_Player_Jump_PadOUT_Guide 
 			TriggerFilter(StructProperty)=System.Byte[] 
@@ -373,6 +399,13 @@ Serialized exports:
 	CallFunc_Multiply_FloatFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
 	CallFunc_VSize_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_VSize_ReturnValue>FloatProperty>/Script/CoreUObject)
 	Temp_float_Variable (0-0-0-0): size 32 (cls: Temp_float_Variable>FloatProperty>/Script/CoreUObject)
+	LaunchingActor (0-0-0-0): size 36 (cls: LaunchingActor>ObjectProperty>/Script/CoreUObject)
+	GetImpulseDirection (0-0-0-0): size 261 (cls: GetImpulseDirection>Function>/Script/CoreUObject)
+	CallFunc_BreakRotator_Pitch (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Pitch>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakRotator_Roll (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Roll>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakRotator_Yaw (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Yaw>FloatProperty>/Script/CoreUObject)
+	LaunchPitch (0-0-0-0): size 32 (cls: LaunchPitch>FloatProperty>/Script/CoreUObject)
+	LaunchStrength (0-0-0-0): size 32 (cls: LaunchStrength>FloatProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_AddUnique_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_AddUnique_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -472,3 +505,9 @@ Serialized exports:
 	K2Node_MakeStruct_ParticleSysParam6 (0-0-0-0): size 36 (cls: K2Node_MakeStruct_ParticleSysParam6>StructProperty>/Script/CoreUObject)
 	Parameters (0-0-0-0): size 36 (cls: Parameters>StructProperty>/Script/CoreUObject)
 	Parameters (0-0-0-0): size 36 (cls: Parameters>StructProperty>/Script/CoreUObject)
+	CallFunc_Conv_VectorToRotator_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Conv_VectorToRotator_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_GetForwardVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetForwardVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_GetVelocity_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetVelocity_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_MakeRotator_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeRotator_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Multiply_VectorFloat_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Multiply_VectorFloat_ReturnValue>StructProperty>/Script/CoreUObject)
+	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>StructProperty>/Script/CoreUObject)

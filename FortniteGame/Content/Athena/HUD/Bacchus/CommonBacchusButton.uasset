@@ -1,6 +1,5 @@
 Name table:
 	/Game/Athena/HUD/Atlas/Bacchus/Confirm_Normal_L_Sprite
-	/Game/Athena/HUD/Atlas/Bacchus/PickUp_Normal_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/T_ButtonsBG_01_Sprite
 	/Game/Athena/HUD/Bacchus/CommonBacchusButton
 	/Game/Athena/HUD/Bacchus/CommonBacchusButton.WidgetArchetype
@@ -10,6 +9,7 @@ Name table:
 	/Script/GameplayTags
 	/Script/MovieScene
 	/Script/Paper2D
+	/Script/SlateCore
 	/Script/UMG
 	ActiveEntities
 	ActiveSequences
@@ -53,9 +53,11 @@ Name table:
 	CallFunc_IsValid_ReturnValue
 	CallFunc_Multiply_FloatFloat_ReturnValue
 	CallFunc_SetBrushFromAtlasInterface_AtlasRegion_CastInput
+	CallFunc_Unhandled_ReturnValue
 	ChildTemplates
 	Class
 	ColorAndOpacity
+	ColorUseRule
 	CommonBacchusButton_C
 	CompletionMode
 	Confirm_Normal_L_Sprite
@@ -83,6 +85,7 @@ Name table:
 	Default__StructProperty
 	Default__WidgetAnimation
 	Default__WidgetBlueprintGeneratedClass
+	Default__WidgetBlueprintLibrary
 	Default__WidgetTree
 	DefaultIcon
 	DefaultValue
@@ -110,6 +113,8 @@ Name table:
 	ERichCurveTangentWeightMode
 	ESectionEvaluationFlags
 	ESectionEvaluationFlags::None
+	ESlateColorStylingMode
+	ESlateColorStylingMode::UseColor_Specified
 	ESlateVisibility
 	ESlateVisibility::HitTestInvisible
 	EvalOptions
@@ -119,6 +124,7 @@ Name table:
 	EvaluationMethod
 	EvaluationPriority
 	EvaluationTree
+	EventReply
 	EVerticalAlignment
 	ExecuteUbergraph_CommonBacchusButton
 	Flags
@@ -130,6 +136,7 @@ Name table:
 	FunctionName
 	GameplayTag
 	GameplayTagContainer
+	Geometry
 	Groups
 	Guid
 	HAlign_Center
@@ -148,6 +155,7 @@ Name table:
 	InterfaceProperty
 	InternalButton
 	InterpMode
+	InTouchEvent
 	IntProperty
 	IsDesignTime
 	IsValid
@@ -155,6 +163,7 @@ Name table:
 	K2Node_Event_NewButtonSize
 	K2Node_Event_NewDisplayScale
 	K2Node_Event_NewSprite
+	K2Node_Select_Default
 	Key
 	KismetMathLibrary
 	KismetSystemLibrary
@@ -206,6 +215,7 @@ Name table:
 	MovieSceneTrackIdentifier
 	MovieSceneTrackImplementationPtr
 	Multiply_FloatFloat
+	MyGeometry
 	Name
 	NameProperty
 	NewButtonSize
@@ -222,6 +232,8 @@ Name table:
 	ObjectBindings
 	ObjectGuid
 	ObjectProperty
+	OnClicked
+	OnTouchStarted
 	Overlay
 	OverlaySlot
 	Package
@@ -229,8 +241,8 @@ Name table:
 	PaperSprite
 	Parent
 	ParentGuid
-	PickUp_Normal_Sprite
 	PlaybackRange
+	PointerEvent
 	PointerToUberGraphFrame
 	Possessables
 	PossessedObjectClass
@@ -239,6 +251,7 @@ Name table:
 	PreConstruct
 	PreInfinityExtrap
 	Pressed
+	Pressed Color
 	PropertyData
 	PropertyName
 	PropertyPath
@@ -249,6 +262,7 @@ Name table:
 	RCTWM_WeightedNone
 	RenderTransform
 	ResourceObject
+	ReturnValue
 	Right
 	RootWidget
 	Rotation
@@ -266,10 +280,12 @@ Name table:
 	SequenceID
 	SequenceSignature
 	SetBrushFromAtlasInterface
+	SetBrushTintColor
 	SetButtonDisplayScale
 	SetButtonSize
 	SetButtonSprite
 	SetHeightOverride
+	SetIconPressed
 	SetWidthOverride
 	Shear
 	Signature
@@ -296,6 +312,7 @@ Name table:
 	TangentWeightMode
 	TapAnim
 	TapAnim_INST
+	Temp_bool_Variable
 	TemplateAsset
 	TemplateLedger
 	TemplateSerialNumber
@@ -313,6 +330,8 @@ Name table:
 	UberGraphFunction
 	UInt16Property
 	UInt32Property
+	Unhandled
+	Unpressed Color
 	UserWidget
 	VAlign_Center
 	VAlign_Fill
@@ -325,13 +344,14 @@ Name table:
 	WidgetAnimationBinding
 	WidgetArchetype
 	WidgetBlueprintGeneratedClass
+	WidgetBlueprintLibrary
 	WidgetName
 	WidgetStyle
 	WidgetTree
 	WidthOverride
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	CommonBacchusButton_C (0-0-0-0): size 372 (cls: CommonBacchusButton_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	CommonBacchusButton_C (0-0-0-0): size 428 (cls: CommonBacchusButton_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -339,10 +359,12 @@ Serialized exports:
 			Animations(ArrayProperty)=[object] (inner: ObjectProperty)
 			TemplateAsset(SoftObjectProperty)=/Game/Athena/HUD/Bacchus/CommonBacchusButton.WidgetArchetype 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_CommonBacchusButton=CommonBacchusButton_C 
-	Default__CommonBacchusButton_C (0-0-0-0): size 417 (cls: Default__CommonBacchusButton_C>CommonBacchusButton_C):
+	Default__CommonBacchusButton_C (0-0-0-0): size 743 (cls: Default__CommonBacchusButton_C>CommonBacchusButton_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
 			DefaultIcon(ObjectProperty)=Confirm_Normal_L_Sprite=/Game/Athena/HUD/Atlas/Bacchus/Confirm_Normal_L_Sprite 
+			Pressed Color(StructProperty)=System.Byte[] 
+			Unpressed Color(StructProperty)=System.Byte[] 
 			ButtonSizeName(TextProperty)=Size (D6C845DD45FC1C51C02EDBB619FBE010) 
 			ButtonDisplayScaleName(TextProperty)=Display Scale (97AD9FBB4DEF10F3EC36F18E3D8D65E6) 
 			HUDElementTag(StructProperty)=GameplayTagContainer:HUD.Bacchus.TouchButton 
@@ -351,9 +373,10 @@ Serialized exports:
 			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
 	TapAnim (0-0-0-0): size 36 (cls: TapAnim>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_CommonBacchusButton (0-0-0-0): size 428 (cls: ExecuteUbergraph_CommonBacchusButton>Function>/Script/CoreUObject)
+	ExecuteUbergraph_CommonBacchusButton (0-0-0-0): size 440 (cls: ExecuteUbergraph_CommonBacchusButton>Function>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_IsDesignTime (0-0-0-0): size 34 (cls: K2Node_Event_IsDesignTime>BoolProperty>/Script/CoreUObject)
+	OnClicked (0-0-0-0): size 54 (cls: OnClicked>Function>/Script/CoreUObject)
 	NewDisplayScale (0-0-0-0): size 32 (cls: NewDisplayScale>FloatProperty>/Script/CoreUObject)
 	SetButtonDisplayScale (0-0-0-0): size 68 (cls: SetButtonDisplayScale>Function>/Script/CoreUObject)
 	NewButtonSize (0-0-0-0): size 32 (cls: NewButtonSize>FloatProperty>/Script/CoreUObject)
@@ -362,6 +385,9 @@ Serialized exports:
 	SetButtonSprite (0-0-0-0): size 68 (cls: SetButtonSprite>Function>/Script/CoreUObject)
 	PreConstruct (0-0-0-0): size 68 (cls: PreConstruct>Function>/Script/CoreUObject)
 	IsDesignTime (0-0-0-0): size 34 (cls: IsDesignTime>BoolProperty>/Script/CoreUObject)
+	SetIconPressed (0-0-0-0): size 123 (cls: SetIconPressed>Function>/Script/CoreUObject)
+	Pressed (0-0-0-0): size 34 (cls: Pressed>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	InternalButton (0-0-0-0): size 855 (cls: InternalButton>Button>/Script/UMG):
 		Tag array:
 			WidgetStyle(StructProperty)=System.Byte[] 
@@ -379,6 +405,11 @@ Serialized exports:
 	CallFunc_Multiply_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	K2Node_Event_NewButtonSize (0-0-0-0): size 32 (cls: K2Node_Event_NewButtonSize>FloatProperty>/Script/CoreUObject)
 	K2Node_Event_NewDisplayScale (0-0-0-0): size 32 (cls: K2Node_Event_NewDisplayScale>FloatProperty>/Script/CoreUObject)
+	CallFunc_Unhandled_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Unhandled_ReturnValue>StructProperty>/Script/CoreUObject)
+	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>StructProperty>/Script/CoreUObject)
+	InTouchEvent (0-0-0-0): size 36 (cls: InTouchEvent>StructProperty>/Script/CoreUObject)
+	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
+	OnTouchStarted (0-0-0-0): size 119 (cls: OnTouchStarted>Function>/Script/CoreUObject)
 	Image_Background (0-0-0-0): size 249 (cls: Image_Background>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -513,6 +544,9 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_1=WidgetArchetype 
 			Content(ObjectProperty)=Overlay_1=WidgetArchetype 
+	Pressed Color (0-0-0-0): size 36 (cls: Pressed Color>StructProperty>/Script/CoreUObject)
+	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>StructProperty>/Script/CoreUObject)
+	Unpressed Color (0-0-0-0): size 36 (cls: Unpressed Color>StructProperty>/Script/CoreUObject)
 	TapAnim_INST (0-0-0-0): size 9716 (cls: TapAnim_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=TapAnim=CommonBacchusButton_C 

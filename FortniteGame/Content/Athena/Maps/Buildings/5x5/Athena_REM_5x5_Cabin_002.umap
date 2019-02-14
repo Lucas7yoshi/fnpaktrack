@@ -67,6 +67,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/Outdoor_Grill
 	/Game/Building/ActorBlueprints/Prop/Palettes_Medium
 	/Game/Building/ActorBlueprints/Prop/Palettes_Tall
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Picnic_Table
 	/Game/Building/ActorBlueprints/Prop/Prop_IndMedPipe_01_S
 	/Game/Building/ActorBlueprints/Prop/Prop_IndMedPipe_02_T
@@ -468,6 +469,7 @@ Name table:
 	Default__Outdoor_Grill_C
 	Default__Palettes_Medium_C
 	Default__Palettes_Tall_C
+	Default__Parent_Tree_C
 	Default__Picnic_Table_C
 	Default__Prop_IndMedPipe_01_S_C
 	Default__Prop_IndMedPipe_02_T_C
@@ -592,6 +594,8 @@ Name table:
 	Lamp01_C
 	Lamp2
 	LDMaxDrawDistance
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LERP
@@ -718,6 +722,7 @@ Name table:
 	NavigationSystemModuleConfig
 	NoCollision
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -750,6 +755,7 @@ Name table:
 	ParameterInfo
 	ParameterValue
 	Parent
+	Parent_Tree_C
 	ParentActorToAttachTo
 	ParticleSystemComponent
 	ParticleSystemComponent_300__B10649FE
@@ -888,6 +894,7 @@ Name table:
 	SoftObjectProperty
 	SortedInstances
 	Spawn_Location
+	SphereComponent
 	SphereRadius
 	SpotLight
 	SpotLight_GEN_VARIABLE
@@ -1224,13 +1231,15 @@ Serialized exports:
 			CullDistance(FloatProperty)=9963.229 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Cabin_002 
 	Athena_REM_5x5_Cabin_002_C_0 (0-0-0-0): size 12 (cls: Athena_REM_5x5_Cabin_002_C_0>Athena_REM_5x5_Cabin_002_C)
-	Athena_Tree_Large_952 (0-0-0-0): size 193 (cls: Athena_Tree_Large_952>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
+	Athena_Tree_Large_952 (0-0-0-0): size 263 (cls: Athena_Tree_Large_952>Athena_Tree_Large_1_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_1):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_REM_5x5_Cabin_002 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Cabin_002 
 			MyGuid(StructProperty)=Guid: 2099306886-1145867468-1303389082-1607493347 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Cabin_002 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	Water_Loop (0-0-0-0): size 108 (cls: Water_Loop>AudioComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=Effect=Athena_REM_5x5_Cabin_002 
@@ -1915,7 +1924,7 @@ Serialized exports:
 		Tag array:
 			SortedInstances(ArrayProperty)=[object] (inner: IntProperty)
 			NumBuiltInstances(IntProperty)=69 
-			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2392.062,-339.6002,-4.786391)) Max(Vector(-271.2682,2387.594,30.81458)),61185) 
+			BuiltInstanceBounds(StructProperty)=Box(Min(Vector(-2392.062,-339.6002,-4.786391)) Max(Vector(-271.2682,2387.594,30.81458)),61441) 
 			bEnableDensityScaling(BoolProperty)=True 
 			CacheMeshExtendedBounds(StructProperty)=System.Byte[] 
 			InstanceCountToRender(IntProperty)=69 
@@ -3140,6 +3149,13 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Cabin_002 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_REM_5x5_Cabin_002 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	SpotLight (0-0-0-0): size 260 (cls: SpotLight>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDrawDistance(FloatProperty)=9318.33 

@@ -9,6 +9,7 @@ Name table:
 	/Game/UI/Foundation/Buttons/TextStyles/TextStyle-MediumButton
 	/Game/UI/Foundation/Fonts/Burbank
 	/Game/UI/Foundation/Fonts/NotoSans
+	/Game/UI/Foundation/Input/InputActionDataTable
 	/Game/UI/Foundation/Lightbox/Lightbox
 	/Game/UI/Foundation/Shell/windowchromebuttons
 	/Game/UI/Foundation/Text/TextScrollStyle-Base
@@ -19,6 +20,7 @@ Name table:
 	/Game/UI/Foundation/Textures/LoadingScreens/BacchusTutorial/CombatScreenRSFB
 	/Game/UI/Materials/HollowCircularProgressBar
 	/Script/BlueprintContext
+	/Script/CommonInput
 	/Script/CommonUI
 	/Script/CoreUObject
 	/Script/Engine
@@ -34,6 +36,8 @@ Name table:
 	AthenaHUDContext
 	AutoWrapText
 	BacchusControlsHelp_C
+	Back
+	Back Action
 	Background
 	BackgroundBlur
 	bAllowTemplate
@@ -50,6 +54,7 @@ Name table:
 	BlurStrength
 	BndEvt__ButtonCombat_K2Node_ComponentBoundEvent_113_CommonButtonClicked__DelegateSignature
 	BndEvt__PanelButton_K2Node_ComponentBoundEvent_29_CommonButtonClicked__DelegateSignature
+	bNewInputType
 	BoolProperty
 	Border
 	Border_Darken
@@ -76,9 +81,14 @@ Name table:
 	bValidTemplate
 	bWindowButtonsEnabled
 	ByteProperty
+	CallFunc_EqualEqual_ByteByte_ReturnValue
 	CallFunc_EqualEqual_IntInt_ReturnValue
 	CallFunc_GetContext_ReturnValue
+	CallFunc_GetCurrentInputType_ReturnValue
+	CallFunc_GetGameInstanceSubsystem_ReturnValue
 	CallFunc_GetUIManagerWidget_ReturnValue
+	CallFunc_Handle_Close_Passthrough
+	CallFunc_HasInputActionHandler_ReturnValue
 	CallFunc_IsMobileGame_ReturnValue
 	CallFunc_MakeLiteralText_ReturnValue
 	CallFunc_MakeLiteralText_ReturnValue1
@@ -91,10 +101,12 @@ Name table:
 	CombatModeSwitcher
 	CombatScreen
 	CombatScreenRSFB
+	CommonActionCommited__DelegateSignature
 	CommonActionWidget
 	CommonActivatablePanel
 	CommonBorder
 	CommonButton
+	CommonInputSubsystem
 	CommonTextBlock
 	CommonVisibilityWidget
 	CommonWidgetSwitcher
@@ -106,6 +118,8 @@ Name table:
 	ContentAlignment
 	ContentBorder
 	ContentSlot
+	DataTable
+	DataTableRowHandle
 	Default__BacchusControlsHelp_C
 	Default__BackgroundBlur
 	Default__BlueprintContextLibrary
@@ -124,6 +138,7 @@ Name table:
 	Default__CommonVisibilityWidget
 	Default__CommonWidgetSwitcher
 	Default__ComponentDelegateBinding
+	Default__DelegateProperty
 	Default__EnumProperty
 	Default__FortKismetLibrary
 	Default__FortUIManagerWidget_NUI
@@ -146,6 +161,7 @@ Name table:
 	Default__SizeBoxSlot
 	Default__Spacer
 	Default__StructProperty
+	Default__SubsystemBlueprintLibrary
 	Default__TextProperty
 	Default__TextScrollStyle-Base_C
 	Default__TextStyle-Base-M-B-Yellow_C
@@ -158,15 +174,21 @@ Name table:
 	Default__WidgetTree
 	Default__windowchromebuttons_C
 	Default__WindowTitleBarArea
+	DelegateFunction
+	DelegateProperty
 	DelegatePropertyName
 	Dimmer
 	DrawAs
 	DynamicBindingObjects
+	ECommonInputType
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	Engine
 	EntryPoint
 	Enum
 	EnumProperty
+	EqualEqual_ByteByte
 	EqualEqual_IntInt
 	ESlateBrushDrawType
 	ESlateBrushDrawType::Image
@@ -182,6 +204,7 @@ Name table:
 	EVerticalAlignment
 	ExecuteUbergraph_BacchusControlsHelp
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	FortKismetLibrary
@@ -189,11 +212,14 @@ Name table:
 	Function
 	FunctionNameToBind
 	GetContext
+	GetCurrentInputType
+	GetGameInstanceSubsystem
 	GetUIManagerWidget
 	HAlign_Center
 	HAlign_Fill
 	HAlign_Right
 	Handle Close
+	HasInputActionHandler
 	HeightOverride
 	HollowCircularProgressBar
 	HorizontalAlignment
@@ -203,12 +229,17 @@ Name table:
 	IconTextButton_C
 	Image
 	ImageSize
+	InitBack Action
+	InputActionDataTable
 	InputActionWidget
+	InputMethodChangedDelegate__DelegateSignature
 	IntProperty
 	IsMobileGame
 	Justification
 	K2Node_ComponentBoundEvent_Button
 	K2Node_ComponentBoundEvent_Button1
+	K2Node_CreateDelegate_OutputDelegate
+	K2Node_CustomEvent_bNewInputType
 	K2Node_Select1_Default
 	K2Node_Select_Default
 	KismetMathLibrary
@@ -229,6 +260,7 @@ Name table:
 	MinHeight
 	Minimum
 	MinWidth
+	MulticastDelegateProperty
 	NamedSlot
 	NameProperty
 	None
@@ -239,6 +271,8 @@ Name table:
 	Offsets
 	OnActivated
 	OnButtonClicked
+	OnInputMethodChanged
+	OnInputMethodChanged_Event
 	Overlay
 	OverlaySlot
 	Package
@@ -246,17 +280,20 @@ Name table:
 	PanelButton
 	PanelButton_C
 	Parent
+	Passthrough
 	Percentage
 	PointerToUberGraphFrame
 	PopActivatablePanelInModalLayer
 	ProgressMaterialBrush
 	ProgressMaterialParam
+	RemoveInputActionHandler
 	RenderOpacity
 	RenderTransform
 	ResourceObject
 	Right
 	RightExtraContentSlot
 	RootWidget
+	RowName
 	SafeZone
 	SafeZoneSlot
 	SBBuilding
@@ -266,6 +303,7 @@ Name table:
 	ScrollStyle
 	Set Text
 	SetActiveWidgetIndex
+	SetInputActionHandler
 	SetVisibility
 	ShadowOffset
 	Size
@@ -283,6 +321,7 @@ Name table:
 	SpecifiedColor
 	StructProperty
 	Style
+	SubsystemBlueprintLibrary
 	SwitcherHelp
 	Temp_bool_Variable
 	Temp_bool_Variable1
@@ -330,7 +369,7 @@ Name table:
 	WindowTitleBarArea
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	BacchusControlsHelp_C (0-0-0-0): size 412 (cls: BacchusControlsHelp_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	BacchusControlsHelp_C (0-0-0-0): size 448 (cls: BacchusControlsHelp_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -338,9 +377,10 @@ Serialized exports:
 			TemplateAsset(SoftObjectProperty)=/Game/Athena/UI/Frontend/BacchusControlsHelp.WidgetArchetype 
 			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_BacchusControlsHelp=BacchusControlsHelp_C 
-	Default__BacchusControlsHelp_C (0-0-0-0): size 117 (cls: Default__BacchusControlsHelp_C>BacchusControlsHelp_C):
+	Default__BacchusControlsHelp_C (0-0-0-0): size 236 (cls: Default__BacchusControlsHelp_C>BacchusControlsHelp_C):
 		Tag array:
 			UberGraphFrame(StructProperty)=System.Byte[] 
+			Back Action(StructProperty)=System.Byte[] 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	WidgetArchetype (0-0-0-0): size 299 (cls: WidgetArchetype>BacchusControlsHelp_C):
@@ -362,12 +402,28 @@ Serialized exports:
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	ButtonSwitcher (0-0-0-0): size 36 (cls: ButtonSwitcher>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_BacchusControlsHelp (0-0-0-0): size 741 (cls: ExecuteUbergraph_BacchusControlsHelp>Function>/Script/CoreUObject)
+	ExecuteUbergraph_BacchusControlsHelp (0-0-0-0): size 859 (cls: ExecuteUbergraph_BacchusControlsHelp>Function>/Script/CoreUObject)
 	CallFunc_EqualEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_Handle_Close_Passthrough (0-0-0-0): size 34 (cls: CallFunc_Handle_Close_Passthrough>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsMobileGame_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsMobileGame_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_UseTapToShoot_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_UseTapToShoot_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	bNewInputType (0-0-0-0): size 40 (cls: bNewInputType>EnumProperty>/Script/CoreUObject)
+	OnInputMethodChanged_Event_0 (0-0-0-0): size 68 (cls: OnInputMethodChanged_Event_0>Function>/Script/CoreUObject)
+	OnActivated (0-0-0-0): size 54 (cls: OnActivated>Function>/Script/CoreUObject)
+	Update (0-0-0-0): size 54 (cls: Update>Function>/Script/CoreUObject)
+	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
+	BndEvt__PanelButton_K2Node_ComponentBoundEvent_29_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__PanelButton_K2Node_ComponentBoundEvent_29_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
+	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
+	BndEvt__ButtonCombat_K2Node_ComponentBoundEvent_113_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__ButtonCombat_K2Node_ComponentBoundEvent_113_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
+	Construct (0-0-0-0): size 54 (cls: Construct>Function>/Script/CoreUObject)
+	Handle Close (0-0-0-0): size 103 (cls: Handle Close>Function>/Script/CoreUObject)
+	Passthrough (0-0-0-0): size 34 (cls: Passthrough>BoolProperty>/Script/CoreUObject)
+	CallFunc_HasInputActionHandler_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasInputActionHandler_ReturnValue>BoolProperty>/Script/CoreUObject)
+	InitBack Action (0-0-0-0): size 260 (cls: InitBack Action>Function>/Script/CoreUObject)
+	CallFunc_EqualEqual_ByteByte_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue>BoolProperty>/Script/CoreUObject)
 	ContentBorder (0-0-0-0): size 350 (cls: ContentBorder>Border>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -416,6 +472,8 @@ Serialized exports:
 			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=WIndowButtons=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -884,24 +942,18 @@ to aim (88627C894F22E36C1D0710A1F9A46931)
 	ComponentDelegateBinding_0 (0-0-0-0): size 312 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
 		Tag array:
 			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
-	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_bNewInputType (0-0-0-0): size 40 (cls: K2Node_CustomEvent_bNewInputType>EnumProperty>/Script/CoreUObject)
+	K2Node_Select1_Default (0-0-0-0): size 40 (cls: K2Node_Select1_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
-	K2Node_ComponentBoundEvent_Button1 (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button1>ObjectProperty>/Script/CoreUObject)
-	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
-	BndEvt__ButtonCombat_K2Node_ComponentBoundEvent_113_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__ButtonCombat_K2Node_ComponentBoundEvent_113_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
-	K2Node_ComponentBoundEvent_Button (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button>ObjectProperty>/Script/CoreUObject)
-	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
-	BndEvt__PanelButton_K2Node_ComponentBoundEvent_29_CommonButtonClicked__DelegateSignature (0-0-0-0): size 68 (cls: BndEvt__PanelButton_K2Node_ComponentBoundEvent_29_CommonButtonClicked__DelegateSignature>Function>/Script/CoreUObject)
-	Construct (0-0-0-0): size 54 (cls: Construct>Function>/Script/CoreUObject)
-	CallFunc_GetUIManagerWidget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetUIManagerWidget_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	Handle Close (0-0-0-0): size 99 (cls: Handle Close>Function>/Script/CoreUObject)
-	OnActivated (0-0-0-0): size 54 (cls: OnActivated>Function>/Script/CoreUObject)
-	Update (0-0-0-0): size 54 (cls: Update>Function>/Script/CoreUObject)
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	CallFunc_GetCurrentInputType_ReturnValue (0-0-0-0): size 40 (cls: CallFunc_GetCurrentInputType_ReturnValue>EnumProperty>/Script/CoreUObject)
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 90 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1005,6 +1057,11 @@ to aim (88627C894F22E36C1D0710A1F9A46931)
 			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
 	CombatModeSwitcher (0-0-0-0): size 36 (cls: CombatModeSwitcher>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetGameInstanceSubsystem_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetGameInstanceSubsystem_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_Button (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_Button1 (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_Button1>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetUIManagerWidget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetUIManagerWidget_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetGameInstanceSubsystem_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetGameInstanceSubsystem_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	Lightbox (0-0-0-0): size 36 (cls: Lightbox>ObjectProperty>/Script/CoreUObject)
 	PanelButton (0-0-0-0): size 36 (cls: PanelButton>ObjectProperty>/Script/CoreUObject)
 	SBBuilding (0-0-0-0): size 36 (cls: SBBuilding>ObjectProperty>/Script/CoreUObject)
@@ -1421,9 +1478,10 @@ to aim (88627C894F22E36C1D0710A1F9A46931)
 			Size(StructProperty)=Vector2D(768,1) 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::Visible 
+	Back Action (0-0-0-0): size 36 (cls: Back Action>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeLiteralText_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_MakeLiteralText_ReturnValue>TextProperty>/Script/CoreUObject)
 	CallFunc_MakeLiteralText_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_MakeLiteralText_ReturnValue1>TextProperty>/Script/CoreUObject)
-	K2Node_Select1_Default (0-0-0-0): size 32 (cls: K2Node_Select1_Default>TextProperty>/Script/CoreUObject)
+	K2Node_Select_Default (0-0-0-0): size 32 (cls: K2Node_Select_Default>TextProperty>/Script/CoreUObject)
 	VerticalBox_0 (0-0-0-0): size 90 (cls: VerticalBox_0>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)

@@ -13,6 +13,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Wall_AC_Units_Power_A
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Wall_AC_Units_Power_B
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Wooden_Trashcan
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Playgrounds/Items/IconRenders/PlaysetIcon_Floor
 	/Game/Playgrounds/Maps/Playsets/Props/PG_Props_S_Lucky
 	/Game/TimeOfDay/TODM/BR/TODM_PG_PS_Capture
@@ -91,6 +92,7 @@ Name table:
 	Default__LevelBounds
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__PG_Props_S_Lucky_C
 	Default__PlaysetIcon_Floor_C
 	Default__World
@@ -106,6 +108,8 @@ Name table:
 	FortWorldSettings
 	Guid
 	IntProperty
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Level
 	LevelBounds
 	LevelBuildDataId
@@ -116,18 +120,26 @@ Name table:
 	MaxCullObjectSize
 	MaxDistanceFadeRange
 	MaxDrawDistance
+	MemberGuid
+	MemberName
+	MemberParent
 	MinCullDistance
 	MinCullObjectSize
 	Model
 	MyGuid
+	NameProperty
 	NavigationSystemClass
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
+	NODE_AddParticleSystemComponent-1
+	NODE_AddStaticMeshComponent-0
 	None
 	Object
 	ObjectProperty
 	OverrideMaterials
 	Package
+	Parent_Tree_C
+	ParticleSystemComponent
 	PersistentLevel
 	PG_Props_S_Lucky
 	PG_Props_S_Lucky_C
@@ -136,18 +148,22 @@ Name table:
 	PointLight
 	PointLight_GEN_VARIABLE
 	PointLightComponent
+	PrimitiveComponent
 	RelativeLocation
 	RelativeRotation
 	RelativeScale3D
 	RootComponent
 	Rotator
 	SceneComponent
+	SimpleMemberReference
 	SoftClassPath
 	SoftObjectProperty
+	SphereComponent
 	StaticMeshComponent
 	StaticMeshComponent0
 	StructProperty
 	TimeOfDayControlledLights
+	UCSModifiedProperties
 	Vector
 	VolumetricScatteringIntensity
 	World
@@ -158,26 +174,30 @@ Name table:
 Serialized exports:
 	PG_Props_S_Lucky_C (0-0-0-0): size 76 (cls: PG_Props_S_Lucky_C>BlueprintGeneratedClass>/Script/Engine)
 	Default__PG_Props_S_Lucky_C (0-0-0-0): size 8 (cls: Default__PG_Props_S_Lucky_C>PG_Props_S_Lucky_C)
-	Athena_Tree_Large_3 (0-0-0-0): size 193 (cls: Athena_Tree_Large_3>Athena_Tree_Large_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_3):
+	Athena_Tree_Large_3 (0-0-0-0): size 263 (cls: Athena_Tree_Large_3>Athena_Tree_Large_3_C>/Game/Athena/Environments/Blueprints/Athena_Tree_Large_3):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Lucky 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Lucky 
 			MyGuid(StructProperty)=Guid: 3033546513-1201614356-3035719583-2556480447 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=40000 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Lucky 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	BoxComponent0 (0-0-0-0): size 249 (cls: BoxComponent0>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			BodyInstance(StructProperty)=System.Byte[] 
 			RelativeLocation(StructProperty)=Vector(-462.3483,1035.816,1093.107) 
 			RelativeScale3D(StructProperty)=Vector(3171.302,3095.633,2436.422) 
-	ChinaTown_Bamboo_Tree_2 (0-0-0-0): size 193 (cls: ChinaTown_Bamboo_Tree_2>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
+	ChinaTown_Bamboo_Tree_2 (0-0-0-0): size 263 (cls: ChinaTown_Bamboo_Tree_2>ChinaTown_Bamboo_Tree_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Bamboo_Tree):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=PG_Props_S_Lucky 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Lucky 
 			MyGuid(StructProperty)=Guid: 93337440-1094300100-1238755482-65876029 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=27518.67 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Lucky 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	ChinaTown_Dragon_Balloon_2 (0-0-0-0): size 193 (cls: ChinaTown_Dragon_Balloon_2>ChinaTown_Dragon_Balloon_C>/Game/Building/ActorBlueprints/Prop/ChinaTown_Dragon_Balloon):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Lucky 
@@ -330,6 +350,22 @@ Serialized exports:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Lucky 
 			bNetAddressable(BoolProperty)=True 
 			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=40000 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Lucky 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 444 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			CachedMaxDrawDistance(FloatProperty)=27518.67 
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=PG_Props_S_Lucky 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	StaticMeshComponent0 (0-0-0-0): size 185 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			CachedMaxDrawDistance(FloatProperty)=40000 

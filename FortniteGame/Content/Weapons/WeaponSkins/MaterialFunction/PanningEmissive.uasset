@@ -2,7 +2,6 @@ Name table:
 	/Engine/Functions/Engine_MaterialFunctions01/ImageAdjustment/CheapContrast
 	/Engine/Functions/Engine_MaterialFunctions02/HueShift
 	/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat3Components
-	/Engine/Functions/Engine_MaterialFunctions02/Utility/MakeFloat2
 	/Game/Weapons/WeaponSkins/MaterialFunction/PanningEmissive
 	/Game/Weapons/WeaponSkins/Textures/T_BlackBodyGradient
 	/Game/Weapons/WeaponSkins/Textures/T_Swirly_Noise_highContrast
@@ -30,9 +29,7 @@ Name table:
 	Default__MaterialExpressionVectorParameter
 	Default__MaterialFunction
 	DefaultValue
-	Divisor
 	EMaterialSamplerType
-	Emissive Color UV Gradient
 	Emissive Tiling
 	Emissive_BrightnessMax
 	Emissive_BrightnessMIn
@@ -45,14 +42,12 @@ Name table:
 	FloatProperty
 	Function
 	FunctionExpressions
-	Gmap INtensity
-	Gmap Power
+	GradientSpeed_X
+	GradientSpeed_Y
 	Group
 	Guid
 	HueShift
-	InvertFresnel
 	LinearColor
-	MakeFloat2
 	MaterialExpressionAdd
 	MaterialExpressionComponentMask
 	MaterialExpressionLinearInterpolate
@@ -73,18 +68,17 @@ Name table:
 	ObjectProperty
 	Package
 	Panning Emissive HueShiftSpeed
-	Panning Emissive Speed X
-	Panning Emissive Speed Y
-	Panning World Space Blend Strength
+	Panning Emissive_ Use Base Color as Emissive Color
+	Panning Emissive_Invert Fresnel
+	Panning Emissive_Use Diffuse Map as Base Color (Otherwise Black)
 	PanningEmissive
-	PanningEmissive_FresEX
-	PanningEmissiveRoughness
+	PanningEmissive_Fresnel Exponent
+	PanningEmissive_Roughness
 	ParameterName
 	RainbowHueShift
 	SamplerSource
 	SamplerType
 	SAMPLERTYPE_LinearColor
-	Speed
 	SquareMaskPower
 	SSM_Wrap_WorldGroupSettings
 	StateId
@@ -95,21 +89,21 @@ Name table:
 	Texture
 	Texture2D
 	TextureObject
+	TriPlanner Speed
+	TriPlanner_AxisBlendStrength
+	Triplanner_ConstantScaleDivisor
+	Triplanner_Z axis Only
 	Use 'Emissive' Texture as Panning Emissive Color
-	Use Base Color
+	Use Colored Gradient Map
 	use UV gradient Color
-	UseBaseColorForEmissiveColor
-	useColoredGradiant
-	UseGmap for UV Gradient
 	UseSecondUVChannelForPanning
-	uv Gradient Brightness
+	UV Gradient Map
+	UV Gradient_ Use Gmap
+	UV Gradient_Brightness
+	UV Gradient_Gmap Intensity
+	UV Gradient_Gmap Power
 	World Aligned Gradient
-	Z_only
 Serialized exports:
-	MaterialExpressionMaterialFunctionCall_0 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_0>MaterialExpressionMaterialFunctionCall>/Script/Engine):
-		Tag array:
-			MaterialFunction(ObjectProperty)=MakeFloat2=/Engine/Functions/Engine_MaterialFunctions02/Utility/MakeFloat2 
-			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionMaterialFunctionCall_1 (0-0-0-0): size 70 (cls: MaterialExpressionMaterialFunctionCall_1>MaterialExpressionMaterialFunctionCall>/Script/Engine):
 		Tag array:
 			MaterialFunction(ObjectProperty)=CheapContrast=/Engine/Functions/Engine_MaterialFunctions01/ImageAdjustment/CheapContrast 
@@ -139,12 +133,12 @@ Serialized exports:
 	MaterialExpressionScalarParameter_10 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_10>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=1 
-			ParameterName(NameProperty)=Panning World Space Blend Strength 
+			ParameterName(NameProperty)=TriPlanner_AxisBlendStrength 
 			ExpressionGUID(StructProperty)=Guid: 449742649-1193855242-2796958593-3988212107 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_11 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_11>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			ParameterName(NameProperty)=UseBaseColorForEmissiveColor 
+			ParameterName(NameProperty)=Panning Emissive_ Use Base Color as Emissive Color 
 			ExpressionGUID(StructProperty)=Guid: 1957120508-1208937542-3824961457-1778526894 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_12 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_12>MaterialExpressionScalarParameter>/Script/Engine):
@@ -154,40 +148,40 @@ Serialized exports:
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_13 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_13>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			ParameterName(NameProperty)=InvertFresnel 
+			ParameterName(NameProperty)=Panning Emissive_Invert Fresnel 
 			ExpressionGUID(StructProperty)=Guid: 1324085689-1203439635-1836298395-447252393 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_14 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_14>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			ParameterName(NameProperty)=Use Base Color 
+			ParameterName(NameProperty)=Panning Emissive_Use Diffuse Map as Base Color (Otherwise Black) 
 			ExpressionGUID(StructProperty)=Guid: 3358677406-1304129375-1005605262-3775054112 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_15 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_15>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			ParameterName(NameProperty)=useColoredGradiant 
+			ParameterName(NameProperty)=Use Colored Gradient Map 
 			ExpressionGUID(StructProperty)=Guid: 1732003168-1190087620-3012034700-3501836627 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_16 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_16>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=1 
-			ParameterName(NameProperty)=uv Gradient Brightness 
+			ParameterName(NameProperty)=UV Gradient_Brightness 
 			ExpressionGUID(StructProperty)=Guid: 2584161009-1099915310-3305364366-3848997067 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_17 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_17>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=40 
-			ParameterName(NameProperty)=Divisor 
+			ParameterName(NameProperty)=Triplanner_ConstantScaleDivisor 
 			ExpressionGUID(StructProperty)=Guid: 162065484-1147902662-2653782198-1213182321 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_18 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_18>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=1 
-			ParameterName(NameProperty)=Gmap INtensity 
+			ParameterName(NameProperty)=UV Gradient_Gmap Intensity 
 			ExpressionGUID(StructProperty)=Guid: 3846049281-1335565683-449962159-117997870 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_19 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_19>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			ParameterName(NameProperty)=UseGmap for UV Gradient 
+			ParameterName(NameProperty)=UV Gradient_ Use Gmap 
 			ExpressionGUID(StructProperty)=Guid: 3543113869-1304812785-4041852306-284993989 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_2 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_2>MaterialExpressionScalarParameter>/Script/Engine):
@@ -199,19 +193,19 @@ Serialized exports:
 	MaterialExpressionScalarParameter_20 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_20>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=1 
-			ParameterName(NameProperty)=PanningEmissiveRoughness 
+			ParameterName(NameProperty)=PanningEmissive_Roughness 
 			ExpressionGUID(StructProperty)=Guid: 4214421399-1218835323-2513105590-3309047639 
 			Function(ObjectProperty)=PanningEmissive= 
-	MaterialExpressionScalarParameter_21 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_21>MaterialExpressionScalarParameter>/Script/Engine):
+	MaterialExpressionScalarParameter_25 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_25>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			ParameterName(NameProperty)=Panning Emissive Speed X 
-			ExpressionGUID(StructProperty)=Guid: 3566660556-1199335358-4167408009-3646335549 
+			ParameterName(NameProperty)=GradientSpeed_X 
+			ExpressionGUID(StructProperty)=Guid: 1381657876-1335320765-3852535975-2376676462 
 			Function(ObjectProperty)=PanningEmissive= 
-	MaterialExpressionScalarParameter_22 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_22>MaterialExpressionScalarParameter>/Script/Engine):
+	MaterialExpressionScalarParameter_26 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_26>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=0.2 
-			ParameterName(NameProperty)=Panning Emissive Speed Y 
-			ExpressionGUID(StructProperty)=Guid: 3975403952-1309773346-2698975383-525082038 
+			ParameterName(NameProperty)=GradientSpeed_Y 
+			ExpressionGUID(StructProperty)=Guid: 984736263-1152653173-295307449-3330846399 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_3 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_3>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
@@ -233,7 +227,7 @@ Serialized exports:
 	MaterialExpressionScalarParameter_6 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_6>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=4 
-			ParameterName(NameProperty)=PanningEmissive_FresEX 
+			ParameterName(NameProperty)=PanningEmissive_Fresnel Exponent 
 			ExpressionGUID(StructProperty)=Guid: 3288261937-1217733657-4218450827-3490654483 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_7 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_7>MaterialExpressionScalarParameter>/Script/Engine):
@@ -244,13 +238,13 @@ Serialized exports:
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_8 (0-0-0-0): size 139 (cls: MaterialExpressionScalarParameter_8>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
-			ParameterName(NameProperty)=Z_only 
+			ParameterName(NameProperty)=Triplanner_Z axis Only 
 			ExpressionGUID(StructProperty)=Guid: 1955348793-1237613810-632393112-4141860558 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionScalarParameter_9 (0-0-0-0): size 168 (cls: MaterialExpressionScalarParameter_9>MaterialExpressionScalarParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(FloatProperty)=2 
-			ParameterName(NameProperty)=Gmap Power 
+			ParameterName(NameProperty)=UV Gradient_Gmap Power 
 			ExpressionGUID(StructProperty)=Guid: 869271808-1261122452-3669993101-2712801088 
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionStaticBoolParameter_1 (0-0-0-0): size 139 (cls: MaterialExpressionStaticBoolParameter_1>MaterialExpressionStaticBoolParameter>/Script/Engine):
@@ -324,7 +318,7 @@ Serialized exports:
 			Function(ObjectProperty)=PanningEmissive= 
 	MaterialExpressionTextureSampleParameter2D_1 (0-0-0-0): size 290 (cls: MaterialExpressionTextureSampleParameter2D_1>MaterialExpressionTextureSampleParameter2D>/Script/Engine):
 		Tag array:
-			ParameterName(NameProperty)=Emissive Color UV Gradient 
+			ParameterName(NameProperty)=UV Gradient Map 
 			ExpressionGUID(StructProperty)=Guid: 1218977753-1186615236-3019110818-137683625 
 			Group(NameProperty)=PanningEmissive 
 			Coordinates(StructProperty)=System.Byte[] 
@@ -339,10 +333,10 @@ Serialized exports:
 	MaterialExpressionVectorParameter_1 (0-0-0-0): size 204 (cls: MaterialExpressionVectorParameter_1>MaterialExpressionVectorParameter>/Script/Engine):
 		Tag array:
 			DefaultValue(StructProperty)=UE4.FLinearColor 
-			ParameterName(NameProperty)=Speed 
+			ParameterName(NameProperty)=TriPlanner Speed 
 			ExpressionGUID(StructProperty)=Guid: 154589849-1201967185-744163718-3809553947 
 			Function(ObjectProperty)=PanningEmissive= 
-	PanningEmissive (0-0-0-0): size 594 (cls: PanningEmissive>MaterialFunction>/Script/Engine):
+	PanningEmissive (0-0-0-0): size 598 (cls: PanningEmissive>MaterialFunction>/Script/Engine):
 		Tag array:
 			FunctionExpressions(ArrayProperty)=[object] (inner: ObjectProperty)
-			StateId(StructProperty)=Guid: 3818545791-1183766928-2465472412-1407120168 
+			StateId(StructProperty)=Guid: 1234533851-1288660163-1789105296-2984433520 

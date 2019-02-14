@@ -27,6 +27,7 @@ Name table:
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Rickshaw
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Sign_Coffee
 	/Game/Building/ActorBlueprints/Prop/ChinaTown_Wooden_Trashcan
+	/Game/Building/ActorBlueprints/Prop/Parent_Tree
 	/Game/Building/ActorBlueprints/Prop/Planter_Rectangle
 	/Game/Building/ActorBlueprints/Prop/Recreation_ParkBench_01
 	/Game/Building/TextureData/Ceiling/PlasterCeiling_02
@@ -156,6 +157,7 @@ Name table:
 	Default__LODActor
 	Default__Model
 	Default__NavigationSystemModuleConfig
+	Default__Parent_Tree_C
 	Default__Planter_Rectangle_C
 	Default__Recreation_ParkBench_01_C
 	Default__SM_FORT_Floors_Generic_BasicTile_C
@@ -168,6 +170,7 @@ Name table:
 	DelegateProperty
 	DirectionPropertyName
 	EComponentCreationMethod
+	EComponentCreationMethod::SimpleConstructionScript
 	EComponentCreationMethod::UserConstructionScript
 	EFortResourceType
 	EFortResourceType::Stone
@@ -197,6 +200,8 @@ Name table:
 	InterpFunc
 	IntProperty
 	Key
+	LeafPlacement
+	LeafPlacement_GEN_VARIABLE
 	Length
 	LengthMode
 	LerpInteactoIcon
@@ -216,6 +221,9 @@ Name table:
 	MaxCullDistance
 	MaxCullObjectSize
 	MaxDistanceFadeRange
+	MemberGuid
+	MemberName
+	MemberParent
 	MI_Athena_Car_Stocker_02
 	MI_Chinatown_PlasterWall
 	MI_Fort_Floors_Generic_TilesClean
@@ -235,6 +243,7 @@ Name table:
 	NavigationSystemConfig
 	NavigationSystemModuleConfig
 	NODE_AddDecalComponent-0
+	NODE_AddParticleSystemComponent-1
 	NODE_AddSpotLightComponent-1
 	NODE_AddSpotLightComponent-2
 	NODE_AddSpotLightComponent-3
@@ -245,7 +254,9 @@ Name table:
 	ObjectProperty
 	OverrideMaterials
 	Package
+	Parent_Tree_C
 	ParentActorToAttachTo
+	ParticleSystemComponent
 	PersistentLevel
 	Plant_Flowerbed
 	Planter_Rectangle10
@@ -254,6 +265,7 @@ Name table:
 	Planter_Rectangle9
 	Planter_Rectangle_C
 	PlasterCeiling_02
+	PrimitiveComponent
 	PropertySetObject
 	Proxy
 	Recreation_ParkBench
@@ -276,6 +288,7 @@ Name table:
 	S_Sidewalk_1x2_NoCurb8
 	S_Sidewalk_1x2_NoCurb9
 	SceneComponent
+	SimpleMemberReference
 	SirenLightMultiplier
 	SM_Athena_CTN_5x5_Plaza_b_1_SM_Sidewalk_Rounded
 	SM_FORT_Floors_Generic_BasicTile_C
@@ -287,6 +300,7 @@ Name table:
 	SM_Sidewalk_Small_01
 	SM_Sidewalk_Small_01x2
 	SoftClassPath
+	SphereComponent
 	SpotLightComponent
 	StaticMesh
 	StaticMeshComponent
@@ -327,6 +341,7 @@ Name table:
 	tlight2 - impact bounce light location
 	TLight2SocketLocation
 	TrackName
+	UCSModifiedProperties
 	Vector
 	Vertical Bounce Component
 	VolumetricScatteringIntensity
@@ -408,20 +423,24 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=5191.869 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_b 
-	Athena_Tree_Medium_03_1 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_03_1>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+	Athena_Tree_Medium_03_1 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_03_1>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Plaza_b 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_b 
 			MyGuid(StructProperty)=Guid: 2793665603-1156560186-2158947485-1694430772 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_b 
-	Athena_Tree_Medium_03_6 (0-0-0-0): size 193 (cls: Athena_Tree_Medium_03_6>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
+	Athena_Tree_Medium_03_6 (0-0-0-0): size 263 (cls: Athena_Tree_Medium_03_6>Athena_Tree_Medium_04__C>/Game/Athena/Environments/Blueprints/Athena_Tree_Medium_04_):
 		Tag array:
+			LeafPlacement(ObjectProperty)=LeafPlacement=Athena_CTN_5x5_Plaza_b 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_b 
 			MyGuid(StructProperty)=Guid: 598591461-1319746395-3122277545-4018744316 
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_b 
+			BlueprintCreatedComponents(ArrayProperty)=[object] (inner: ObjectProperty)
 	BoxComponent0 (0-0-0-0): size 249 (cls: BoxComponent0>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
@@ -731,6 +750,20 @@ Serialized exports:
 			DataVersion(IntProperty)=1 
 			CullDistance(FloatProperty)=0 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_b 
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
+	LeafPlacement (0-0-0-0): size 415 (cls: LeafPlacement>SphereComponent>/Script/Engine):
+		Tag array:
+			BodyInstance(StructProperty)=System.Byte[] 
+			AttachParent(ObjectProperty)=StaticMeshComponent0=Athena_CTN_5x5_Plaza_b 
+			bNetAddressable(BoolProperty)=True 
+			CreationMethod(EnumProperty)=EComponentCreationMethod::SimpleConstructionScript 
+			UCSModifiedProperties(ArrayProperty)=[object] (inner: StructProperty)
 	NODE_AddSpotLightComponent-1 (0-0-0-0): size 327 (cls: NODE_AddSpotLightComponent-1>SpotLightComponent>/Script/Engine):
 		Tag array:
 			MaxDistanceFadeRange(FloatProperty)=2048 

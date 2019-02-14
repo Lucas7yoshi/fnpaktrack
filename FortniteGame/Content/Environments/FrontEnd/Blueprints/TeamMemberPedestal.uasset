@@ -1,5 +1,6 @@
 Name table:
 	/Game/Athena/PlayerPawn_Athena
+	/Game/Athena/PlayerPawn_Athena_Generic
 	/Game/Effects/Fort_Effects/Effects/Characters/Outlander/InTheZone/P_Outlander_Teleport
 	/Game/Effects/Fort_Effects/Materials/Flares/M_FakeLightCone_FE
 	/Game/Effects/Fort_Effects/Materials/Flares/M_FakeLightCone_FE_Inst
@@ -34,9 +35,9 @@ Name table:
 	ActorComponentTickFunction
 	AllNodes
 	Animation.FrontEnd.Lobby
+	AnimTrailPS_GEN_VARIABLE
 	ApplyUniformOverrideMaterial
 	Array_Get
-	Array_IsValidIndex
 	ArrayProperty
 	AssignedMemberIndex
 	AttachParent
@@ -53,6 +54,7 @@ Name table:
 	bGenerateOverlapEvents
 	bHiddenInGame
 	bIsHovered
+	bIsInFrontendHologram
 	bIsInMatch
 	bIsParentComponentNative
 	bIsPlayerSelected
@@ -74,7 +76,6 @@ Name table:
 	bVisible
 	ByteProperty
 	CallFunc_Array_Get_Item
-	CallFunc_Array_IsValidIndex_ReturnValue
 	CallFunc_BooleanAND_ReturnValue
 	CallFunc_BooleanAND_ReturnValue1
 	CallFunc_BooleanAND_ReturnValue2
@@ -108,6 +109,8 @@ Name table:
 	CallFunc_IsInLobby_ReturnValue
 	CallFunc_IsLocalPlayersUniqueID_ReturnValue
 	CallFunc_IsValid_ReturnValue
+	CallFunc_IsValidTeamMember_ReturnValue
+	CallFunc_IsValidTeamMember_ReturnValue1
 	CallFunc_K2_SetRelativeLocation_SweepHitResult
 	CallFunc_MakeGameplayTagQuery_ReturnValue
 	CallFunc_MakeGameplayTagQuery_ReturnValue1
@@ -177,6 +180,7 @@ Name table:
 	Default__ObjectProperty
 	Default__ParticleSystemComponent
 	Default__PlayerPawn_Athena_C
+	Default__PlayerPawn_Athena_Generic_C
 	Default__PointLightComponent
 	Default__SceneComponent
 	Default__SCS_Node
@@ -200,6 +204,7 @@ Name table:
 	ECollisionResponse
 	ECR_Ignore
 	EDetailMode
+	Effect_WaterInteraction_FX_GEN_VARIABLE
 	EFortStoreState
 	EFrontEndCamera
 	Engine
@@ -251,8 +256,8 @@ Name table:
 	HandleClientEvent_StoreTabClosed
 	HandleClientEvent_StoreTabSelected
 	HandleHoverInputActions
-	Has Player
 	HasCompletedQuest
+	HitDamageParticles_GEN_VARIABLE
 	HitResult
 	HoloMaterial
 	Homebase.Class.IsCommando.Athena
@@ -273,6 +278,7 @@ Name table:
 	IsInLobby
 	IsLocalPlayersUniqueID
 	IsValid
+	IsValidTeamMember
 	K2_DestroyActor
 	K2_SetRelativeLocation
 	K2Node_CreateDelegate_OutputDelegate
@@ -284,10 +290,14 @@ Name table:
 	K2Node_DynamicCast_AsLobby_Player_Pad_Gadgets
 	K2Node_DynamicCast_AsPlayer_Pawn_Athena
 	K2Node_DynamicCast_AsPlayer_Pawn_Athena1
+	K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic
+	K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic1
 	K2Node_DynamicCast_AsTeam_Member_Pedestal_Nameplate
 	K2Node_DynamicCast_bSuccess
 	K2Node_DynamicCast_bSuccess1
 	K2Node_DynamicCast_bSuccess2
+	K2Node_DynamicCast_bSuccess3
+	K2Node_DynamicCast_bSuccess4
 	K2Node_Event_bIsInMatch
 	K2Node_Event_bIsPopulated
 	K2Node_Event_bOwnsBattlePass
@@ -346,7 +356,9 @@ Name table:
 	NoCollision
 	NODE_AddPointLightComponent-1
 	NODE_AddPointLightComponent-2
+	NODE_AddPoseableMeshComponent-1
 	NODE_AddPostProcessComponent-2
+	NODE_AddSkeletalMeshComponent-13
 	None
 	NotEqual_IntInt
 	NotEqual_ObjectObject
@@ -387,14 +399,15 @@ Name table:
 	ParentComponentOrVariableName
 	ParticleSystem
 	ParticleSystemComponent
-	Pass
 	pass
+	Pass
 	Pivot
 	PlayAnimationsMatchingQuery
 	PlayerAdd
 	PlayerIndex
 	PlayerInWaterFX
 	PlayerPawn_Athena_C
+	PlayerPawn_Athena_Generic_C
 	PlayerRunLandFX
 	PlayerSlideLandFX
 	PlayerWalkLandFX
@@ -402,6 +415,7 @@ Name table:
 	PlayResOut
 	PointerToUberGraphFrame
 	PointLightComponent
+	PoseableMeshComponent
 	PostProcessComponent
 	PreviewMesh
 	PrimaryComponentTick
@@ -416,6 +430,7 @@ Name table:
 	Refresh
 	RefreshBattlePassOwnerVisuals
 	RefreshWidgets
+	ReInitFrontendPetDisplay
 	RelativeLocation
 	RelativeRotation
 	RelativeScale3D
@@ -450,6 +465,7 @@ Name table:
 	ShadowBias
 	SimpleConstructionScript
 	SizeBox
+	SkeletalMeshComponent
 	SkeletalMeshComponentBudgeted
 	SlateBrush
 	SlateColor
@@ -474,8 +490,6 @@ Name table:
 	Temp_bool_IsClosed_Variable
 	Temp_bool_Variable
 	Temp_bool_Variable1
-	Temp_bool_Variable2
-	Temp_bool_Variable3
 	Temp_byte_Variable
 	Temp_byte_Variable1
 	Temp_byte_Variable2
@@ -546,7 +560,7 @@ Serialized exports:
 	PlayerIndex (0-0-0-0): size 32 (cls: PlayerIndex>IntProperty>/Script/CoreUObject)
 	Debug_OnFriendLFGRequest__DelegateSignature (0-0-0-0): size 47 (cls: Debug_OnFriendLFGRequest__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_TeamMemberPedestal (0-0-0-0): size 4466 (cls: ExecuteUbergraph_TeamMemberPedestal>Function>/Script/CoreUObject)
+	ExecuteUbergraph_TeamMemberPedestal (0-0-0-0): size 4634 (cls: ExecuteUbergraph_TeamMemberPedestal>Function>/Script/CoreUObject)
 	OnItemClicked (0-0-0-0): size 54 (cls: OnItemClicked>Function>/Script/CoreUObject)
 	bIsPopulated (0-0-0-0): size 34 (cls: bIsPopulated>BoolProperty>/Script/CoreUObject)
 	OnPedestalIsPopulatedChanged (0-0-0-0): size 68 (cls: OnPedestalIsPopulatedChanged>Function>/Script/CoreUObject)
@@ -572,7 +586,7 @@ Serialized exports:
 	TeamMemberInfo (0-0-0-0): size 36 (cls: TeamMemberInfo>StructProperty>/Script/CoreUObject)
 	OnTeamMemberStateChanged (0-0-0-0): size 98 (cls: OnTeamMemberStateChanged>Function>/Script/CoreUObject)
 	TeamMemberInfo (0-0-0-0): size 36 (cls: TeamMemberInfo>StructProperty>/Script/CoreUObject)
-	RefreshWidgets (0-0-0-0): size 1371 (cls: RefreshWidgets>Function>/Script/CoreUObject)
+	RefreshWidgets (0-0-0-0): size 1249 (cls: RefreshWidgets>Function>/Script/CoreUObject)
 	CallFunc_GetTeamMembers_TeamMembers (0-0-0-0): size 36 (cls: CallFunc_GetTeamMembers_TeamMembers>StructProperty>/Script/CoreUObject)
 	CallFunc_GetTeamMembers_TeamMembers (0-0-0-0): size 36 (cls: CallFunc_GetTeamMembers_TeamMembers>ArrayProperty>/Script/CoreUObject)
 	bAllowPartySuggestions (0-0-0-0): size 34 (cls: bAllowPartySuggestions>BoolProperty>/Script/CoreUObject)
@@ -594,6 +608,8 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess3 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess3>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess4 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess4>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bIsInMatch (0-0-0-0): size 34 (cls: K2Node_Event_bIsInMatch>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bIsPopulated (0-0-0-0): size 34 (cls: K2Node_Event_bIsPopulated>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bOwnsBattlePass (0-0-0-0): size 34 (cls: K2Node_Event_bOwnsBattlePass>BoolProperty>/Script/CoreUObject)
@@ -628,7 +644,6 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	PreviewMesh (0-0-0-0): size 34 (cls: PreviewMesh>BoolProperty>/Script/CoreUObject)
-	CallFunc_Array_IsValidIndex_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Array_IsValidIndex_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue2>BoolProperty>/Script/CoreUObject)
@@ -638,12 +653,9 @@ Serialized exports:
 	CallFunc_EqualEqual_ByteByte_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsInLobby_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsInLobby_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsLocalPlayersUniqueID_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsLocalPlayersUniqueID_ReturnValue>BoolProperty>/Script/CoreUObject)
-	Has Player (0-0-0-0): size 34 (cls: Has Player>BoolProperty>/Script/CoreUObject)
-	K2Node_Select1_Default (0-0-0-0): size 34 (cls: K2Node_Select1_Default>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValidTeamMember_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValidTeamMember_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValidTeamMember_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValidTeamMember_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_Variable2>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable3 (0-0-0-0): size 34 (cls: Temp_bool_Variable3>BoolProperty>/Script/CoreUObject)
 	CallFunc_SetStaticMesh_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_SetStaticMesh_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -714,6 +726,8 @@ Serialized exports:
 	K2Node_DynamicCast_AsLobby_Player_Pad_Gadgets (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsLobby_Player_Pad_Gadgets>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsPlayer_Pawn_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsPlayer_Pawn_Athena>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsPlayer_Pawn_Athena1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsPlayer_Pawn_Athena1>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic1>ObjectProperty>/Script/CoreUObject)
 	K2Node_HandleClientEvent_EventFocus (0-0-0-0): size 36 (cls: K2Node_HandleClientEvent_EventFocus>ObjectProperty>/Script/CoreUObject)
 	K2Node_HandleClientEvent_EventFocus1 (0-0-0-0): size 36 (cls: K2Node_HandleClientEvent_EventFocus1>ObjectProperty>/Script/CoreUObject)
 	K2Node_HandleClientEvent_EventSource (0-0-0-0): size 36 (cls: K2Node_HandleClientEvent_EventSource>ObjectProperty>/Script/CoreUObject)

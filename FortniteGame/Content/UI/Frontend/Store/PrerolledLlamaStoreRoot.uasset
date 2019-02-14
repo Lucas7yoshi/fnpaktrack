@@ -14,9 +14,9 @@ Name table:
 	/Game/UI/Foundation/Text/Materials/M-FontShadow
 	/Game/UI/Foundation/Text/Materials/M_Font_Horizon_Dynamic
 	/Game/UI/Foundation/Text/TextScrollStyle-Base
+	/Game/UI/Foundation/Text/TextStyle-Base-S-B-70pc
 	/Game/UI/Foundation/Text/TextStyle-Base-XS
 	/Game/UI/Foundation/Text/TextStyle-Base-XS-70pc
-	/Game/UI/Foundation/Text/TextStyle-Base-XS-B
 	/Game/UI/Foundation/Text/TextStyle-Base-XS-B-70pc
 	/Game/UI/Foundation/Text/TextStyle-Base-XS-B-S
 	/Game/UI/Foundation/Text/TextStyle-Header-L-Horizon
@@ -30,6 +30,7 @@ Name table:
 	/Game/UI/Frontend/Store/StoreOffer
 	/Game/UI/Frontend/Store/StoreOpeningCardPack
 	/Game/UI/Frontend/Store/StorePurchaseModalContent
+	/Game/UI/Frontend/Store/Textures/T-CollectionBook-Bang
 	/Game/UI/Frontend/Store/Textures/T-Icon-Store-NewItem
 	/Game/UI/Frontend/Store/Textures/T_Icon_StoreLlamaBG
 	/Game/UI/Frontend/Store/UnopenLlamasWidget
@@ -236,6 +237,7 @@ Name table:
 	Default__SimpleItemListViewTile_C
 	Default__SizeBox
 	Default__SizeBoxSlot
+	Default__Spacer
 	Default__StoreOffer_2_C
 	Default__StoreOpeningCardPack_C
 	Default__StorePurchaseModalContent_C
@@ -243,10 +245,10 @@ Name table:
 	Default__StructProperty
 	Default__TextProperty
 	Default__TextScrollStyle-Base_C
+	Default__TextStyle-Base-S-B-70pc_C
 	Default__TextStyle-Base-XS-70pc_C
 	Default__TextStyle-Base-XS-B-70pc_C
 	Default__TextStyle-Base-XS-B-S_C
-	Default__TextStyle-Base-XS-B_C
 	Default__TextStyle-Base-XS_C
 	Default__TextStyle-Header-L-Horizon_C
 	Default__TextStyle-Header-XXXL_C
@@ -279,6 +281,8 @@ Name table:
 	Easing
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortDialogResult
 	EHorizontalAlignment
 	EListItemAlignment
@@ -311,6 +315,7 @@ Name table:
 	ESlateSizeRule
 	ESlateSizeRule::Fill
 	ESlateVisibility
+	ESlateVisibility::Collapsed
 	ESlateVisibility::Hidden
 	ESlateVisibility::SelfHitTestInvisible
 	ETextJustify
@@ -328,6 +333,7 @@ Name table:
 	Flags
 	Flash
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontMaterial
 	FontObject
@@ -378,6 +384,7 @@ Name table:
 	HandleOffersGenerated
 	HandleTencentDetails
 	HasOtherPlatformCurrency
+	HBox_CB
 	HBox_NewItems
 	Header_Border
 	HeightOverride
@@ -617,6 +624,7 @@ Name table:
 	SortedSegments
 	SourceSection
 	SourceTrack
+	Spacer
 	SpecifiedColor
 	SplitCurrencyText
 	StoreData
@@ -632,6 +640,7 @@ Name table:
 	SwapToCardEnterState
 	Switcher
 	SwitcherItemsProgress
+	T-CollectionBook-Bang
 	T-Icon-Store-NewItem
 	T_Icon_StoreLlamaBG
 	Tags
@@ -649,16 +658,17 @@ Name table:
 	TencentDetailsAction
 	TencentStoreDetailsURL
 	Text
+	Text_CB
 	Text_Description
 	Text_Header
 	Text_NewItems
 	Text_Time
 	TextProperty
 	TextScrollStyle-Base_C
+	TextStyle-Base-S-B-70pc_C
 	TextStyle-Base-XS-70pc_C
 	TextStyle-Base-XS-B-70pc_C
 	TextStyle-Base-XS-B-S_C
-	TextStyle-Base-XS-B_C
 	TextStyle-Base-XS_C
 	TextStyle-Header-L-Horizon_C
 	TextStyle-Header-XXXL_C
@@ -803,8 +813,9 @@ Serialized exports:
 			Background(StructProperty)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=True 
-	Border_6 (0-0-0-0): size 147 (cls: Border_6>Border>/Script/UMG):
+	Border_6 (0-0-0-0): size 320 (cls: Border_6>Border>/Script/UMG):
 		Tag array:
+			Padding(StructProperty)=System.Byte[] 
 			BrushColor(StructProperty)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
@@ -852,8 +863,9 @@ Serialized exports:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=NoOffersBox=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
-	BorderSlot_0 (0-0-0-0): size 70 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
+	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
+			Padding(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=Border_6=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
@@ -874,7 +886,7 @@ Serialized exports:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Footer_Border=WidgetArchetype 
-			Content(ObjectProperty)=HBox_NewItems=WidgetArchetype 
+			Content(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
@@ -1001,6 +1013,15 @@ Serialized exports:
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 			RenderTransform(StructProperty)=System.Byte[] 
 			RenderOpacity(FloatProperty)=0.2 
+	Text_CB (0-0-0-0): size 500 (cls: Text_CB>CommonTextBlock>/Script/CommonUI):
+		Tag array:
+			Style(ObjectProperty)=TextStyle-Base-S-B-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-B-70pc 
+			Text(TextProperty)=# (50D143F24ED07855B01E20971FF9CF78) 
+			ColorAndOpacity(StructProperty)=System.Byte[] 
+			Font(StructProperty)=System.Byte[] 
+			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
 	Text_Description (0-0-0-0): size 406 (cls: Text_Description>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS_C=/Game/UI/Foundation/Text/TextStyle-Base-XS 
@@ -1018,10 +1039,11 @@ Serialized exports:
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	Text_NewItems (0-0-0-0): size 388 (cls: Text_NewItems>CommonTextBlock>/Script/CommonUI):
+	Text_NewItems (0-0-0-0): size 504 (cls: Text_NewItems>CommonTextBlock>/Script/CommonUI):
 		Tag array:
-			Style(ObjectProperty)=TextStyle-Base-XS-B_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-B 
-			Text(TextProperty)=# NEW ITEMS (578BB0CA46C67B0E9C284C89F2C9E806) 
+			Style(ObjectProperty)=TextStyle-Base-S-B-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-B-70pc 
+			Text(TextProperty)=# NEW (578BB0CA46C67B0E9C284C89F2C9E806) 
+			ColorAndOpacity(StructProperty)=System.Byte[] 
 			Font(StructProperty)=System.Byte[] 
 			ShadowOffset(StructProperty)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
@@ -1095,10 +1117,11 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_1 (0-0-0-0): size 82 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1119,12 +1142,22 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_10=WidgetArchetype 
+	HBox_CB (0-0-0-0): size 153 (cls: HBox_CB>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
+			bIsVariable(BoolProperty)=True 
+			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	HBox_NewItems (0-0-0-0): size 112 (cls: HBox_NewItems>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	HorizontalBox_0 (0-0-0-0): size 82 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+		Tag array:
+			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+	HorizontalBox_1 (0-0-0-0): size 90 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
@@ -1224,6 +1257,17 @@ Serialized exports:
 		Tag array:
 			Padding(StructProperty)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
+			Parent(ObjectProperty)=HBox_CB=WidgetArchetype 
+			Content(ObjectProperty)=Image_0=WidgetArchetype 
+	HorizontalBoxSlot_1 (0-0-0-0): size 111 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
+			Parent(ObjectProperty)=HBox_CB=WidgetArchetype 
+			Content(ObjectProperty)=Text_CB=WidgetArchetype 
+	HorizontalBoxSlot_0 (0-0-0-0): size 197 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=HBox_NewItems=WidgetArchetype 
 			Content(ObjectProperty)=Image_1=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 111 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
@@ -1237,6 +1281,22 @@ Serialized exports:
 			Size(StructProperty)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=Text_Description=WidgetArchetype 
+	HorizontalBoxSlot_0 (0-0-0-0): size 111 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
+			Content(ObjectProperty)=HBox_NewItems=WidgetArchetype 
+	HorizontalBoxSlot_1 (0-0-0-0): size 325 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Padding(StructProperty)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			VerticalAlignment(ByteProperty)=VAlign_Center 
+			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
+			Content(ObjectProperty)=HBox_CB=WidgetArchetype 
+	HorizontalBoxSlot_2 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
+		Tag array:
+			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
+			Content(ObjectProperty)=Spacer_0=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
@@ -1278,6 +1338,11 @@ Serialized exports:
 		Tag array:
 			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
 			RenderOpacity(FloatProperty)=0 
+	Image_0 (0-0-0-0): size 153 (cls: Image_0>Image>/Script/UMG):
+		Tag array:
+			Brush(StructProperty)=System.Byte[] 
+			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
+			bIsVariable(BoolProperty)=False 
 	Image_1 (0-0-0-0): size 153 (cls: Image_1>Image>/Script/UMG):
 		Tag array:
 			Brush(StructProperty)=System.Byte[] 
@@ -1303,12 +1368,14 @@ Serialized exports:
 			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_7=WidgetArchetype 
 			RenderTransformPivot(StructProperty)=Vector2D(1,0.5) 
-	OfferDetails (0-0-0-0): size 299 (cls: OfferDetails>InfoAreaPreRolledBox_C>/Game/UI/Frontend/Store/InfoAreaPreRolledBox):
+	OfferDetails (0-0-0-0): size 357 (cls: OfferDetails>InfoAreaPreRolledBox_C>/Game/UI/Frontend/Store/InfoAreaPreRolledBox):
 		Tag array:
 			Border_Description(ObjectProperty)=Border_Description=WidgetArchetype 
 			Flash(ObjectProperty)=Flash=WidgetArchetype 
+			HBox_CB(ObjectProperty)=HBox_CB=WidgetArchetype 
 			HBox_NewItems(ObjectProperty)=HBox_NewItems=WidgetArchetype 
 			Switcher(ObjectProperty)=Switcher=WidgetArchetype 
+			Text_CB(ObjectProperty)=Text_CB=WidgetArchetype 
 			Text_Header(ObjectProperty)=Text_Header=WidgetArchetype 
 			Text_NewItems(ObjectProperty)=Text_NewItems=WidgetArchetype 
 			ItemTileView(ObjectProperty)=ItemTileView=WidgetArchetype 
@@ -1697,6 +1764,10 @@ Serialized exports:
 		Tag array:
 			Parent(ObjectProperty)=SizeBox_6=WidgetArchetype 
 			Content(ObjectProperty)=Overlay_1=WidgetArchetype 
+	Spacer_0 (0-0-0-0): size 98 (cls: Spacer_0>Spacer>/Script/UMG):
+		Tag array:
+			Size(StructProperty)=Vector2D(30,1) 
+			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 	K2Node_Event_AffiliateName (0-0-0-0): size 32 (cls: K2Node_Event_AffiliateName>StrProperty>/Script/CoreUObject)
 	CallFunc_GetAffiliateName_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetAffiliateName_ReturnValue>StrProperty>/Script/CoreUObject)
 	AddVBucksAction (0-0-0-0): size 36 (cls: AddVBucksAction>StructProperty>/Script/CoreUObject)
