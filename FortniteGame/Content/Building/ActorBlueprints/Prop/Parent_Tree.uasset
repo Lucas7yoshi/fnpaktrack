@@ -460,12 +460,12 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Parent_Tree=Parent_Tree_C 
 	Default__Parent_Tree_C (0-0-0-0): size 2350 (cls: Default__Parent_Tree_C>Parent_Tree_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			Wind Direction(StructProperty)=Vector(1,0,0) 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			Wind Direction(StructProperty/Vector)=Vector(1,0,0) 
 			EmitLeaves?(BoolProperty)=True 
 			LeafEmitterNamesSpherical(ArrayProperty)=FX_Leaves_S_00,FX_Leaves_S_01,FX_Leaves_S_02,FX_Leaves_S_03,FX_Leaves_S_04,FX_Leaves_S_05 (inner: NameProperty)
 			LeafEmitterNamesCylindrical(ArrayProperty)=FX_Leaves_C_00,FX_Leaves_C_01,FX_Leaves_C_02,FX_Leaves_C_03,FX_Leaves_C_04,FX_Leaves_C_05 (inner: NameProperty)
-			EmitterSize(StructProperty)=Vector(225,350,90) 
+			EmitterSize(StructProperty/Vector)=Vector(225,350,90) 
 			Lifetime(Idle)(FloatProperty)=10 
 			Lifetime(Storm)(FloatProperty)=5 
 			SpawnRate(Idle)(FloatProperty)=1 
@@ -482,9 +482,9 @@ Serialized exports:
 			SmallLeafMaterialTranslucent(ObjectProperty)=M_Leaves_StormSystem_Small_T_Inst=/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/Materials/M_Leaves_StormSystem_Small_T_Inst 
 			LargeLeafMaterialTranslucent(ObjectProperty)=M_Leaves_StormSystem_Large_T_Inst=/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/Materials/M_Leaves_StormSystem_Large_T_Inst 
 			PineLeafMaterialTranslucent(ObjectProperty)=M_Leaves_StormSystem_Pine_T_Inst=/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/Materials/M_Leaves_StormSystem_Pine_T_Inst 
-			WindHandle(StructProperty)=System.Byte[] 
-			WindFX_Transform(StructProperty)=System.Byte[] 
-			LeafCenter_Offset(StructProperty)=Vector(0,0,0) 
+			WindHandle(StructProperty/FortWindImpulseHandle)=System.Byte[] 
+			WindFX_Transform(StructProperty/Transform)=System.Byte[] 
+			LeafCenter_Offset(StructProperty/Vector)=Vector(0,0,0) 
 			ResourceType(ByteProperty)=EFortResourceType::Wood 
 			bRandomYawOnPlacement(BoolProperty)=True 
 			bRandomScaleOnPlacement(BoolProperty)=True 
@@ -492,7 +492,7 @@ Serialized exports:
 			bNeedsDamageOverlay(BoolProperty)=False 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Default__Parent_Tree_C 
 			DestructionLootTierGroup(NameProperty)=Destruction_TreeHigh 
-			BuildingResourceAmountOverride(StructProperty)=System.Byte[] 
+			BuildingResourceAmountOverride(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			WindSpeedCurve(SoftObjectProperty)=/Game/VisualThreatManager/StormVisuals/Curves/ParentTreeWindSpeed.ParentTreeWindSpeed 
 			WindPannerSpeedCurve(SoftObjectProperty)=/Game/VisualThreatManager/StormVisuals/Curves/ParentTreeWindPannerSpeed.ParentTreeWindPannerSpeed 
 			IntenseWindMaterials(ArrayProperty)=[object] (inner: SoftObjectProperty)
@@ -500,13 +500,13 @@ Serialized exports:
 			DeathParticleSocketName(NameProperty)=DeathParticle 
 			DeathSound(ObjectProperty)=Demo_OakTree_Destroyed_Cue=/Game/Sounds/Fort_Impact_Sounds/Demolition/Wood/Demo_OakTree_Destroyed_Cue 
 			BuildingAttachmentType(ByteProperty)=ATTACH_Floor 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
 			NavigationObstacleOverride(EnumProperty)=ENavigationObstacleOverride::ForceEnabled 
 			bCanExportNavigationCollisions(BoolProperty)=True 
 			bForceAutomationPass_NavmeshOnTop(BoolProperty)=True 
-			StaticGameplayTags(StructProperty)=GameplayTagContainer:Building.Type.Prop 
-			CentroidOffset(StructProperty)=Vector(0,0,120) 
+			StaticGameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Building.Type.Prop 
+			CentroidOffset(StructProperty/Vector)=Vector(0,0,120) 
 			HotSpotConfig(ObjectProperty)=BuildingActorHotSpot_LimitedBoundingBox=/Game/AI/HotSpots/BuildingActorHotSpot_LimitedBoundingBox 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Default__Parent_Tree_C 
 	LeafEmitterComponents (0-0-0-0): size 36 (cls: LeafEmitterComponents>ObjectProperty>/Script/CoreUObject)
@@ -659,7 +659,7 @@ Serialized exports:
 	NODE_AddParticleSystemComponent-1 (0-0-0-0): size 124 (cls: NODE_AddParticleSystemComponent-1>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Foliage_Leaves_Mesh_01=/Game/Effects/Fort_Effects/Effects/Environment/Foliage/P_Foliage_Leaves_Mesh_01 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	SceneComponent_736 (0-0-0-0): size 12 (cls: SceneComponent_736>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 227 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
@@ -667,13 +667,13 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=LeafPlacement_GEN_VARIABLE=Parent_Tree_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3979999399-1076900455-3048678062-4201641885 
+			VariableGuid(StructProperty/Guid)=Guid: 3979999399-1076900455-3048678062-4201641885 
 			InternalVariableName(NameProperty)=LeafPlacement 
 	SCS_Node_746 (0-0-0-0): size 168 (cls: SCS_Node_746>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_736=Parent_Tree_C 
-			VariableGuid(StructProperty)=Guid: 1455200153-3298092774-840778389-2103358230 
+			VariableGuid(StructProperty/Guid)=Guid: 1455200153-3298092774-840778389-2103358230 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SimpleConstructionScript_916 (0-0-0-0): size 123 (cls: SimpleConstructionScript_916>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -684,11 +684,11 @@ Serialized exports:
 		Tag array:
 			SphereRadius(FloatProperty)=500 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 			bVisible(BoolProperty)=False 
 	StaticMeshComponent0 (0-0-0-0): size 125 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	NODE_AddStaticMeshComponent-0 (0-0-0-0): size 16 (cls: NODE_AddStaticMeshComponent-0>StaticMeshComponent>/Script/Engine)
 	CallFunc_GetDisplayName_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetDisplayName_ReturnValue>StrProperty>/Script/CoreUObject)
