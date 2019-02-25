@@ -1,20 +1,24 @@
 Name table:
 	/Game/Athena/Effects/Meshes/Shapes/SM_Pipe_XForward
-	/Game/Athena/Items/QuestInteractables/Llama_Puzzle/Meshes/Icons/SM_Llama_Puzzle_Piece_Icon_07
 	/Game/Athena/Playlists/Score/Coins/FX/P_Athena_ScoreCoin_Collect_Gold
-	/Game/Athena/Playlists/Score/Coins/Meshes/SM_Coin
 	/Game/Athena/Sounds/Quests/ScoreCoin_Collect_Gold_Cue
 	/Game/Items/Art_noLOD/Meshes/S_Loot_Box_Cylinder
 	/Game/Items/Art_noLOD/Meshes/S_Loot_Box_Pyramid
 	/Game/Items/Art_noLOD/Meshes/S_Loot_Box_Pyramid_Temp02
 	/Game/Items/Art_noLOD/Meshes/S_Loot_Box_Sphere
 	/Game/Playgrounds/Items/Props/Prop_Creative_Coin
+	/Game/Playgrounds/Items/Props/SM_Creative_Coin
+	/Game/Playgrounds/Items/Props/Sm_Creative_Puzzle
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
 	/Script/GameplayTags
 	Actor
+	Add_VectorVector
+	AddGameplayTag
+	AddMinigameTag
 	AllNodes
+	AmountToCount
 	AreaClass
 	Array_AddUnique
 	Array_Clear
@@ -27,6 +31,7 @@ Name table:
 	bFromSweep
 	bIsParentComponentNative
 	BlueprintComponentDelegateBinding
+	BlueprintGameplayTagLibrary
 	BlueprintGeneratedClass
 	BndEvt__FortMinigameProgress_K2Node_ComponentBoundEvent_2_SimpleDynamicMulticastDelegate__DelegateSignature
 	BndEvt__FortMinigameProgress_K2Node_ComponentBoundEvent_3_SimpleDynamicMulticastDelegate__DelegateSignature
@@ -43,18 +48,36 @@ Name table:
 	BuildingProp
 	BuildingSMActor
 	ByteProperty
+	CallFunc_Add_VectorVector_ReturnValue
+	CallFunc_Add_VectorVector_ReturnValue1
 	CallFunc_Array_AddUnique_ReturnValue
 	CallFunc_Array_Contains_ReturnValue
+	CallFunc_Divide_VectorFloat_ReturnValue
 	CallFunc_GetDriver_ReturnValue
 	CallFunc_GetFortPlayerControllerFromActor_ReturnValue
 	CallFunc_GetFortPlayerControllerFromActor_ReturnValue1
+	CallFunc_GetLocalBounds_Max
+	CallFunc_GetLocalBounds_Min
+	CallFunc_GetMinigameManager_ReturnValue
+	CallFunc_GetOwnedGameplayTags_self_CastInput
+	CallFunc_GetOwnedGameplayTags_TagContainer
+	CallFunc_GetOwner_ReturnValue
+	CallFunc_GetQuestManager_ReturnValue
+	CallFunc_GetSourceAndContextTags_OutContextTags
+	CallFunc_GetSourceAndContextTags_OutSourceTags
 	CallFunc_HasAuthority_ReturnValue
 	CallFunc_HasAuthority_ReturnValue1
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
 	CallFunc_IsValid_ReturnValue2
 	CallFunc_IsValid_ReturnValue3
+	CallFunc_IsValid_ReturnValue4
+	CallFunc_IsValid_ReturnValue5
 	CallFunc_K2_GetComponentLocation_ReturnValue
+	CallFunc_K2_GetComponentLocation_ReturnValue1
+	CallFunc_K2_SetWorldLocation_SweepHitResult
+	CallFunc_SendComplexCustomStatEvent_QuestActive
+	CallFunc_SendComplexCustomStatEvent_QuestCompleted
 	CallFunc_SetStaticMesh_ReturnValue
 	CallFunc_SetStaticMesh_ReturnValue1
 	CallFunc_SetStaticMesh_ReturnValue2
@@ -77,7 +100,15 @@ Name table:
 	ComponentPropertyName
 	ComponentTemplate
 	Controller
+	Creative.Item.Coin.Coin
+	Creative.Item.Coin.Cylinder
+	Creative.Item.Coin.Orb
+	Creative.Item.Coin.Puzzle
+	Creative.Item.Coin.Pyramid
+	Creative.Item.Coin.TP
+	CurrentCoinTag
 	Default__ArrayProperty
+	Default__BlueprintGameplayTagLibrary
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
 	Default__BuildingProp
@@ -87,6 +118,7 @@ Name table:
 	Default__FortMinigameProgressComponent
 	Default__Function
 	Default__GameplayStatics
+	Default__InterfaceProperty
 	Default__IntProperty
 	Default__KismetArrayLibrary
 	Default__KismetSystemLibrary
@@ -101,6 +133,7 @@ Name table:
 	DefaultSceneRoot_GEN_VARIABLE
 	DefaultSceneRootNode
 	DelegatePropertyName
+	Divide_VectorFloat
 	DynamicBindingObjects
 	ECollisionResponse
 	EComponentMobility
@@ -117,28 +150,42 @@ Name table:
 	FortAthenaVehicle
 	FortKismetLibrary
 	FortMetaNavArea_Obstacles
+	FortMinigameLogicComponent
+	FortMinigameManager
 	FortMinigameProgress
 	FortMinigameProgress_GEN_VARIABLE
 	FortMinigameProgressComponent
 	FortPlayerController
+	FortPlayerControllerZone
 	FortPlayerPawn
+	FortQuestManager
 	Function
 	FunctionNameToBind
 	Game
 	GameplayStatics
 	GameplayTag
+	GameplayTagAssetInterface
 	GameplayTagContainer
+	GameplayTags
 	GetDriver
 	GetFortPlayerControllerFromActor
+	GetLocalBounds
+	GetMinigameManager
+	GetOwnedGameplayTags
+	GetOwner
+	GetQuestManager
+	GetSourceAndContextTags
 	Guid
 	HasAuthority
 	HideForPlayers
 	HitResult
 	InitializationReason
+	InterfaceProperty
 	InternalVariableName
 	IntProperty
 	IsValid
 	K2_GetComponentLocation
+	K2_SetWorldLocation
 	K2Node_ComponentBoundEvent_bFromSweep
 	K2Node_ComponentBoundEvent_OtherActor
 	K2Node_ComponentBoundEvent_OtherBodyIndex
@@ -146,7 +193,9 @@ Name table:
 	K2Node_ComponentBoundEvent_OverlappedComponent
 	K2Node_ComponentBoundEvent_SweepResult
 	K2Node_DynamicCast_AsFort_Athena_Vehicle
+	K2Node_DynamicCast_AsFort_Player_Controller_Zone
 	K2Node_DynamicCast_bSuccess
+	K2Node_DynamicCast_bSuccess1
 	K2Node_Event_BuildingPersistentState
 	K2Node_Event_InitializationReason
 	K2Node_SwitchInteger_CmpSuccess
@@ -188,8 +237,6 @@ Name table:
 	PrimitiveComponent
 	Prop_Creative_Coin_C
 	ReceiveBeginPlay
-	RelativeLocation
-	RelativeScale3D
 	Response
 	ResponseArray
 	ResponseChannel
@@ -203,6 +250,8 @@ Name table:
 	ScoreCoin_Collect_Gold_Cue
 	ScriptStruct
 	SCS_Node
+	SendComplexCustomStatEvent
+	SendStatEventWithTags
 	ServerSetFXState
 	SetCollisionEnabled
 	SetCollisionProfileName
@@ -210,8 +259,8 @@ Name table:
 	SetVisibility
 	SetWorldScale3D
 	SimpleConstructionScript
-	SM_Coin
-	SM_Llama_Puzzle_Piece_Icon_07
+	SM_Creative_Coin
+	Sm_Creative_Puzzle
 	SM_Pipe_XForward
 	SoundCue
 	SpawnEmitterAtLocation
@@ -223,6 +272,8 @@ Name table:
 	StaticMeshComponent0
 	StructProperty
 	SweepResult
+	TagName
+	TargetTags
 	Temp_bool_Has_Been_Initd_Variable
 	Temp_bool_IsClosed_Variable
 	Temp_bool_Whether_the_gate_is_currently_open_or_close_Variable
@@ -234,20 +285,23 @@ Name table:
 	Vehicle
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Prop_Creative_Coin_C (0-0-0-0): size 404 (cls: Prop_Creative_Coin_C>BlueprintGeneratedClass>/Script/Engine):
+	Prop_Creative_Coin_C (0-0-0-0): size 416 (cls: Prop_Creative_Coin_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=2 
 			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=Prop_Creative_Coin_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Prop_Creative_Coin=Prop_Creative_Coin_C 
-	Default__Prop_Creative_Coin_C (0-0-0-0): size 317 (cls: Default__Prop_Creative_Coin_C>Prop_Creative_Coin_C):
+	Default__Prop_Creative_Coin_C (0-0-0-0): size 489 (cls: Default__Prop_Creative_Coin_C>Prop_Creative_Coin_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			CurrentCoinTag(StructProperty/GameplayTag)=System.Byte[] 
+			AmountToCount(IntProperty)=1 
+			TargetTags(StructProperty/GameplayTagContainer)=GameplayTagContainer: 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Default__Prop_Creative_Coin_C 
 			bSurpressHealthBar(BoolProperty)=True 
 			bCanExportNavigationCollisions(BoolProperty)=True 
 			bDestroyFoliageWhenPlaced(BoolProperty)=True 
-			StaticGameplayTags(StructProperty)=GameplayTagContainer:Building.Type.Prop 
+			StaticGameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Building.Type.Prop 
 			BRMaxDrawDistance(FloatProperty)=5000 
 			bCanBeDamaged(BoolProperty)=False 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Default__Prop_Creative_Coin_C 
@@ -255,7 +309,7 @@ Serialized exports:
 	HideForPlayers (0-0-0-0): size 36 (cls: HideForPlayers>ArrayProperty>/Script/CoreUObject)
 	FortMinigameProgress (0-0-0-0): size 36 (cls: FortMinigameProgress>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_Prop_Creative_Coin (0-0-0-0): size 2066 (cls: ExecuteUbergraph_Prop_Creative_Coin>Function>/Script/CoreUObject)
+	ExecuteUbergraph_Prop_Creative_Coin (0-0-0-0): size 3135 (cls: ExecuteUbergraph_Prop_Creative_Coin>Function>/Script/CoreUObject)
 	PostFinishSpawning (0-0-0-0): size 54 (cls: PostFinishSpawning>Function>/Script/CoreUObject)
 	BndEvt__FortMinigameProgress_K2Node_ComponentBoundEvent_3_SimpleDynamicMulticastDelegate__DelegateSignature (0-0-0-0): size 54 (cls: BndEvt__FortMinigameProgress_K2Node_ComponentBoundEvent_3_SimpleDynamicMulticastDelegate__DelegateSignature>Function>/Script/CoreUObject)
 	BndEvt__FortMinigameProgress_K2Node_ComponentBoundEvent_2_SimpleDynamicMulticastDelegate__DelegateSignature (0-0-0-0): size 54 (cls: BndEvt__FortMinigameProgress_K2Node_ComponentBoundEvent_2_SimpleDynamicMulticastDelegate__DelegateSignature>Function>/Script/CoreUObject)
@@ -274,6 +328,10 @@ Serialized exports:
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue3>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue4 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue4>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue5 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue5>BoolProperty>/Script/CoreUObject)
+	CallFunc_SendComplexCustomStatEvent_QuestActive (0-0-0-0): size 34 (cls: CallFunc_SendComplexCustomStatEvent_QuestActive>BoolProperty>/Script/CoreUObject)
+	CallFunc_SendComplexCustomStatEvent_QuestCompleted (0-0-0-0): size 34 (cls: CallFunc_SendComplexCustomStatEvent_QuestCompleted>BoolProperty>/Script/CoreUObject)
 	CallFunc_SetStaticMesh_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_SetStaticMesh_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_SetStaticMesh_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue2>BoolProperty>/Script/CoreUObject)
@@ -283,6 +341,7 @@ Serialized exports:
 	CallFunc_SetStaticMesh_ReturnValue6 (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue6>BoolProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_bFromSweep (0-0-0-0): size 34 (cls: K2Node_ComponentBoundEvent_bFromSweep>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	K2Node_SwitchInteger_CmpSuccess (0-0-0-0): size 34 (cls: K2Node_SwitchInteger_CmpSuccess>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Has_Been_Initd_Variable (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_IsClosed_Variable (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable>BoolProperty>/Script/CoreUObject)
@@ -296,6 +355,8 @@ Serialized exports:
 	FortMinigameProgress_GEN_VARIABLE (0-0-0-0): size 12 (cls: FortMinigameProgress_GEN_VARIABLE>FortMinigameProgressComponent>/Script/FortniteGame)
 	OnRep_HideForPlayers (0-0-0-0): size 43 (cls: OnRep_HideForPlayers>Function>/Script/CoreUObject)
 	UserConstructionScript (0-0-0-0): size 43 (cls: UserConstructionScript>Function>/Script/CoreUObject)
+	CallFunc_GetOwnedGameplayTags_self_CastInput (0-0-0-0): size 36 (cls: CallFunc_GetOwnedGameplayTags_self_CastInput>InterfaceProperty>/Script/CoreUObject)
+	AmountToCount (0-0-0-0): size 32 (cls: AmountToCount>IntProperty>/Script/CoreUObject)
 	OtherBodyIndex (0-0-0-0): size 32 (cls: OtherBodyIndex>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_AddUnique_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_AddUnique_ReturnValue>IntProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_OtherBodyIndex (0-0-0-0): size 32 (cls: K2Node_ComponentBoundEvent_OtherBodyIndex>IntProperty>/Script/CoreUObject)
@@ -306,24 +367,28 @@ Serialized exports:
 	CallFunc_GetDriver_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetDriver_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetFortPlayerControllerFromActor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetFortPlayerControllerFromActor_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetFortPlayerControllerFromActor_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetFortPlayerControllerFromActor_ReturnValue1>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetMinigameManager_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetMinigameManager_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetOwner_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetOwner_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetQuestManager_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetQuestManager_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_SpawnEmitterAtLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_SpawnEmitterAtLocation_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_OtherActor (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OtherActor>ObjectProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_OtherComp (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OtherComp>ObjectProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_OverlappedComponent (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OverlappedComponent>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Athena_Vehicle (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Athena_Vehicle>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Controller_Zone (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller_Zone>ObjectProperty>/Script/CoreUObject)
 	PlayerStateOfCollector (0-0-0-0): size 36 (cls: PlayerStateOfCollector>ObjectProperty>/Script/CoreUObject)
 	DefaultSceneRoot_GEN_VARIABLE (0-0-0-0): size 12 (cls: DefaultSceneRoot_GEN_VARIABLE>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 168 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=Prop_Creative_Coin_C 
-			VariableGuid(StructProperty)=Guid: 3246700607-1211933468-2095081898-2941626653 
+			VariableGuid(StructProperty/Guid)=Guid: 3246700607-1211933468-2095081898-2941626653 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 168 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=FortMinigameProgressComponent=/Script/FortniteGame 
 			ComponentTemplate(ObjectProperty)=FortMinigameProgress_GEN_VARIABLE=Prop_Creative_Coin_C 
-			VariableGuid(StructProperty)=Guid: 465917982-1175128559-2678952592-1356533569 
+			VariableGuid(StructProperty/Guid)=Guid: 465917982-1175128559-2678952592-1356533569 
 			InternalVariableName(NameProperty)=FortMinigameProgress 
 	SCS_Node_7 (0-0-0-0): size 227 (cls: SCS_Node_7>SCS_Node>/Script/Engine):
 		Tag array:
@@ -331,25 +396,35 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=Collider_GEN_VARIABLE=Prop_Creative_Coin_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 799664980-1094259016-2718926474-2201981518 
+			VariableGuid(StructProperty/Guid)=Guid: 799664980-1094259016-2718926474-2201981518 
 			InternalVariableName(NameProperty)=Collider 
 	SimpleConstructionScript_0 (0-0-0-0): size 131 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
 			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_0=Prop_Creative_Coin_C 
-	Collider_GEN_VARIABLE (0-0-0-0): size 753 (cls: Collider_GEN_VARIABLE>SphereComponent>/Script/Engine):
+	Collider_GEN_VARIABLE (0-0-0-0): size 631 (cls: Collider_GEN_VARIABLE>SphereComponent>/Script/Engine):
 		Tag array:
-			SphereRadius(FloatProperty)=48 
+			SphereRadius(FloatProperty)=90 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,10) 
-			RelativeScale3D(StructProperty)=Vector(0.6,0.6,0.6) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	StaticMeshComponent0 (0-0-0-0): size 109 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			bReceivesDecals(BoolProperty)=False 
 			Mobility(ByteProperty)=EComponentMobility::Movable 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	SweepResult (0-0-0-0): size 36 (cls: SweepResult>StructProperty>/Script/CoreUObject)
+	CurrentCoinTag (0-0-0-0): size 36 (cls: CurrentCoinTag>StructProperty>/Script/CoreUObject)
+	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Add_VectorVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_Divide_VectorFloat_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Divide_VectorFloat_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_GetLocalBounds_Max (0-0-0-0): size 36 (cls: CallFunc_GetLocalBounds_Max>StructProperty>/Script/CoreUObject)
+	CallFunc_GetLocalBounds_Min (0-0-0-0): size 36 (cls: CallFunc_GetLocalBounds_Min>StructProperty>/Script/CoreUObject)
+	CallFunc_GetOwnedGameplayTags_TagContainer (0-0-0-0): size 36 (cls: CallFunc_GetOwnedGameplayTags_TagContainer>StructProperty>/Script/CoreUObject)
+	CallFunc_GetSourceAndContextTags_OutContextTags (0-0-0-0): size 36 (cls: CallFunc_GetSourceAndContextTags_OutContextTags>StructProperty>/Script/CoreUObject)
+	CallFunc_GetSourceAndContextTags_OutSourceTags (0-0-0-0): size 36 (cls: CallFunc_GetSourceAndContextTags_OutSourceTags>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetComponentLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentLocation_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_GetComponentLocation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentLocation_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_SetWorldLocation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetWorldLocation_SweepHitResult>StructProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_SweepResult (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_SweepResult>StructProperty>/Script/CoreUObject)
+	TargetTags (0-0-0-0): size 36 (cls: TargetTags>StructProperty>/Script/CoreUObject)

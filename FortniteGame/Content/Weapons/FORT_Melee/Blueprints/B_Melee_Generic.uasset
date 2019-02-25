@@ -55,6 +55,7 @@ Name table:
 	AllNodes
 	Alteration Ambient PS
 	AmbientParticleSystem
+	Anim Trail Template
 	AnimInstance
 	AnimMontage
 	AnimTrail_PSC
@@ -62,16 +63,19 @@ Name table:
 	AnimTrailsNotify
 	AnimTrailsParticles
 	AnimTrailsSetup
-	AnimTrialCompOverride
-	AnimTrialCompOverride_GEN_VARIABLE
+	AnimTrial
+	AnimTrial_GEN_VARIABLE
 	Array_Contains
+	ArrayIndex
 	ArrayProperty
 	Atlas_Frame_Impact_Cue
 	AudioComponent
 	B_Melee_Generic_C
+	bAutoActivate
 	bHasCookedComponentInstancingData
 	bIsParentComponentNative
 	bIsValid
+	BlueprintComponentChangedPropertyInfo
 	BlueprintCookedComponentInstancingData
 	BlueprintGeneratedClass
 	BooleanAND
@@ -169,6 +173,9 @@ Name table:
 	CallFunc_IsDedicatedServer_ReturnValue
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
+	CallFunc_IsValid_ReturnValue2
+	CallFunc_IsValid_ReturnValue3
+	CallFunc_IsValid_ReturnValue4
 	CallFunc_K2_GetActorLocation_ReturnValue
 	CallFunc_K2_SetWorldLocationAndRotation_SweepHitResult
 	CallFunc_K2_SetWorldRotation_SweepHitResult
@@ -202,6 +209,7 @@ Name table:
 	CameraBase3PClass
 	CameraTargeting1PClass
 	CapsuleComponent
+	ChangedPropertyList
 	Character
 	CharacterMesh0
 	CharMoveComp
@@ -271,6 +279,7 @@ Name table:
 	Divide_FloatFloat
 	DoesSocketExist
 	DynamicMaterialInstance
+	EAttachmentRule
 	Effects_Color_Level
 	EFortRarity
 	Engine
@@ -324,10 +333,16 @@ Name table:
 	Husk_Body_Impact_Cue
 	Husky_Husk_Blockbuster_Body_Impact_Cue
 	IconTex
+	Idle Effect Component
+	Idle FX Rotation Rule
+	Idle FX Scale Rule
 	Idle_Effect
 	idle_fx
+	IdleFX
+	IdleFX Location Rule
+	IdleFX Template
+	IdleFX_GEN_VARIABLE
 	IdleFXAttachSocket
-	IdleFXComponent
 	Impact_Electric_Husk_Cue
 	Impact_Fire_Husk_Cue
 	Impact_Ice_Husk_Cue
@@ -377,11 +392,7 @@ Name table:
 	Loaded
 	LowAmmo
 	Lunge_RootMotion
-	Lv2_wpn
-	Lv3_Wpn
 	M_WeaponDestroyExclamation
-	Main_Effects_Color2_Lv
-	Main_Effects_Color_Lv
 	MakeRotFromXY
 	MakeVector
 	Material
@@ -455,6 +466,8 @@ Name table:
 	PrimaryImpactForceFeedbackEffect
 	PrimitiveComponent
 	PrintString
+	PropertyName
+	PropertyScope
 	Purple_Impact_Flesh_Cue
 	ReceiveBeginPlay
 	ReinitializeWeaponMaterials
@@ -477,6 +490,7 @@ Name table:
 	SecondaryImpactForceFeedbackEffect
 	SetActive
 	SetActiveAlterationIdleParticles
+	SetAutoAttachmentParameters
 	SetCullDistance
 	SetEmitterEnable
 	SetFloatParameter
@@ -505,8 +519,14 @@ Name table:
 	StructProperty
 	STW_PlayerCameraModeMelee_C
 	Subtract_VectorVector
+	Swing Effect Component
+	Swing FX Rotation Rule
+	Swing FX Scale Rule
+	Swing FX Template
 	Swing_Effect
 	SwingFX
+	SwingFX Location Rule
+	SwingFX_GEN_VARIABLE
 	SwingFXSocket
 	Swoosh
 	TagName
@@ -528,7 +548,6 @@ Name table:
 	UberGraphFrame
 	UberGraphFunction
 	UnderlyingType
-	Use_Effect_Color_Override
 	UseAnimTrails
 	UseDestroyEffect
 	UserConstructionScript
@@ -546,36 +565,33 @@ Name table:
 	Width
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	B_Melee_Generic_C (0-0-0-0): size 612 (cls: B_Melee_Generic_C>BlueprintGeneratedClass>/Script/Engine):
+	B_Melee_Generic_C (0-0-0-0): size 640 (cls: B_Melee_Generic_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			bHasCookedComponentInstancingData(BoolProperty)=True 
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_162=B_Melee_Generic_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_Melee_Generic=B_Melee_Generic_C 
-	Default__B_Melee_Generic_C (0-0-0-0): size 2372 (cls: Default__B_Melee_Generic_C>B_Melee_Generic_C):
+	Default__B_Melee_Generic_C (0-0-0-0): size 2216 (cls: Default__B_Melee_Generic_C>B_Melee_Generic_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			Effects_Color_Level(StructProperty)=Vector(6,1,0.4) 
-			Use_Effect_Color_Override(BoolProperty)=True 
-			Main_Effects_Color_Lv(StructProperty)=UE4.FLinearColor 
-			Main_Effects_Color2_Lv(StructProperty)=UE4.FLinearColor 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			IdleFXAttachSocket(NameProperty)=idle_fx 
+			SwingFXSocket(NameProperty)=SwingFX 
+			UseAnimTrails(BoolProperty)=True 
+			AnimTrailsParticles(ObjectProperty)=P_Melee_Trail_Default=/Game/Effects/Fort_Effects/Effects/Melee/P_Melee_Trail_Default 
+			FirstSocketName(NameProperty)=Melee_R_Upper 
+			Second Socket Name(NameProperty)=Melee_R_Lower 
+			OverrideFirstSocketName(NameProperty)=Melee_R_Upper 
+			OverrideSecond Socket Name(NameProperty)=Melee_R_Lower 
+			Width(FloatProperty)=1 
 			MeleeHeavy_ParticleSystem(ObjectProperty)=P_Melee_Heavy=/Game/Weapons/FORT_Melee/Effects/P_Melee_Heavy 
 			WeaponDurabilityDestroyEffect(ObjectProperty)=P_WeaponDestroy=/Game/Effects/WeaponDestroy/P_WeaponDestroy 
 			WeaponDurabilityDestroyEffectIcon(ObjectProperty)=P_WeaponDestroyIcon=/Game/Effects/WeaponDestroy/P_WeaponDestroyIcon 
 			UseDestroyEffect(BoolProperty)=True 
-			IdleFXAttachSocket(NameProperty)=idle_fx 
-			AnimTrailsParticles(ObjectProperty)=P_Melee_Trail_Default=/Game/Effects/Fort_Effects/Effects/Melee/P_Melee_Trail_Default 
-			FirstSocketName(NameProperty)=Melee_R_Upper 
-			Second Socket Name(NameProperty)=Melee_R_Lower 
-			Width(FloatProperty)=1 
-			UseAnimTrails(BoolProperty)=True 
-			SwingFXSocket(NameProperty)=SwingFX 
 			PokeAnimations(ArrayProperty)=[object] (inner: ObjectProperty)
-			OverrideFirstSocketName(NameProperty)=Melee_R_Upper 
-			OverrideSecond Socket Name(NameProperty)=Melee_R_Lower 
-			Melee Heavy Launch Gameplay Cue Tag Override(StructProperty)=System.Byte[] 
-			Melee Heavy Impact Gameplay Cue Tag Override(StructProperty)=System.Byte[] 
+			Melee Heavy Launch Gameplay Cue Tag Override(StructProperty/GameplayTag)=System.Byte[] 
+			Melee Heavy Impact Gameplay Cue Tag Override(StructProperty/GameplayTag)=System.Byte[] 
+			Effects_Color_Level(StructProperty/Vector)=Vector(6,1,0.4) 
 			ReticleImage(ObjectProperty)=HUD_Xhair_Dot=/Game/UI/Fort_HUD/HUD_Xhair_Dot 
-			ReticleBuildingColor(StructProperty)=System.Byte[] 
+			ReticleBuildingColor(StructProperty/Color)=System.Byte[] 
 			CameraBase3PClass(ObjectProperty)=STW_PlayerCameraModeMelee_C=/Game/Blueprints/Camera/StW/STW_PlayerCameraModeMelee 
 			CameraBase1PClass(ObjectProperty)=PlayerCameraMode1P_C=/Game/Blueprints/Camera/FirstPerson/PlayerCameraMode1P 
 			CameraTargeting1PClass(ObjectProperty)=PlayerCameraMode1P_C=/Game/Blueprints/Camera/FirstPerson/PlayerCameraMode1P 
@@ -633,9 +649,9 @@ Serialized exports:
 	ReloadCartridge (0-0-0-0): size 12 (cls: ReloadCartridge>AudioComponent>/Script/Engine)
 	ReloadEnd (0-0-0-0): size 12 (cls: ReloadEnd>AudioComponent>/Script/Engine)
 	ReloadStart (0-0-0-0): size 12 (cls: ReloadStart>AudioComponent>/Script/Engine)
-	AnimTrialCompOverride (0-0-0-0): size 36 (cls: AnimTrialCompOverride>ObjectProperty>/Script/CoreUObject)
+	IdleFX (0-0-0-0): size 36 (cls: IdleFX>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_B_Melee_Generic (0-0-0-0): size 5917 (cls: ExecuteUbergraph_B_Melee_Generic>Function>/Script/CoreUObject)
+	ExecuteUbergraph_B_Melee_Generic (0-0-0-0): size 6206 (cls: ExecuteUbergraph_B_Melee_Generic>Function>/Script/CoreUObject)
 	CallFunc_Array_Contains_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Array_Contains_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -657,6 +673,9 @@ Serialized exports:
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue2>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue3>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue4 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue4>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
@@ -669,8 +688,6 @@ Serialized exports:
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Has_Idle_Effect (0-0-0-0): size 34 (cls: Has_Idle_Effect>BoolProperty>/Script/CoreUObject)
 	Has_Swing_Effect (0-0-0-0): size 34 (cls: Has_Swing_Effect>BoolProperty>/Script/CoreUObject)
-	Lv2_wpn (0-0-0-0): size 34 (cls: Lv2_wpn>BoolProperty>/Script/CoreUObject)
-	Lv3_Wpn (0-0-0-0): size 34 (cls: Lv3_Wpn>BoolProperty>/Script/CoreUObject)
 	OnWeaponDetached (0-0-0-0): size 54 (cls: OnWeaponDetached>Function>/Script/CoreUObject)
 	bVisible (0-0-0-0): size 34 (cls: bVisible>BoolProperty>/Script/CoreUObject)
 	OnWeaponVisibilityChanged (0-0-0-0): size 68 (cls: OnWeaponVisibilityChanged>Function>/Script/CoreUObject)
@@ -691,7 +708,7 @@ Serialized exports:
 	MeleeSwingRight (0-0-0-0): size 54 (cls: MeleeSwingRight>Function>/Script/CoreUObject)
 	Loaded (0-0-0-0): size 36 (cls: Loaded>ObjectProperty>/Script/CoreUObject)
 	OnLoaded_CB594210420542B302428F8181D85E48 (0-0-0-0): size 68 (cls: OnLoaded_CB594210420542B302428F8181D85E48>Function>/Script/CoreUObject)
-	UserConstructionScript (0-0-0-0): size 148 (cls: UserConstructionScript>Function>/Script/CoreUObject)
+	UserConstructionScript (0-0-0-0): size 143 (cls: UserConstructionScript>Function>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
 	SetWpnRarity (0-0-0-0): size 513 (cls: SetWpnRarity>Function>/Script/CoreUObject)
@@ -700,10 +717,12 @@ Serialized exports:
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Reset (0-0-0-0): size 34 (cls: Reset>BoolProperty>/Script/CoreUObject)
-	Use_Effect_Color_Override (0-0-0-0): size 34 (cls: Use_Effect_Color_Override>BoolProperty>/Script/CoreUObject)
 	UseAnimTrails (0-0-0-0): size 34 (cls: UseAnimTrails>BoolProperty>/Script/CoreUObject)
 	UseDestroyEffect (0-0-0-0): size 34 (cls: UseDestroyEffect>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_ImpactPhysicalSurface (0-0-0-0): size 36 (cls: K2Node_Event_ImpactPhysicalSurface>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	ImpactPhysicalSurface (0-0-0-0): size 36 (cls: ImpactPhysicalSurface>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>ByteProperty>/Script/CoreUObject)
@@ -717,8 +736,17 @@ Serialized exports:
 	Temp_byte_Variable7 (0-0-0-0): size 36 (cls: Temp_byte_Variable7>ByteProperty>/Script/CoreUObject)
 	Temp_byte_Variable8 (0-0-0-0): size 36 (cls: Temp_byte_Variable8>ByteProperty>/Script/CoreUObject)
 	Temp_byte_Variable9 (0-0-0-0): size 36 (cls: Temp_byte_Variable9>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
+	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	Idle FX Rotation Rule (0-0-0-0): size 40 (cls: Idle FX Rotation Rule>EnumProperty>/Script/CoreUObject)
+	Idle FX Scale Rule (0-0-0-0): size 40 (cls: Idle FX Scale Rule>EnumProperty>/Script/CoreUObject)
+	IdleFX Location Rule (0-0-0-0): size 40 (cls: IdleFX Location Rule>EnumProperty>/Script/CoreUObject)
 	CallFunc_GetRarity_ReturnValue (0-0-0-0): size 40 (cls: CallFunc_GetRarity_ReturnValue>EnumProperty>/Script/CoreUObject)
+	Swing FX Rotation Rule (0-0-0-0): size 40 (cls: Swing FX Rotation Rule>EnumProperty>/Script/CoreUObject)
+	Swing FX Scale Rule (0-0-0-0): size 40 (cls: Swing FX Scale Rule>EnumProperty>/Script/CoreUObject)
+	SwingFX Location Rule (0-0-0-0): size 40 (cls: SwingFX Location Rule>EnumProperty>/Script/CoreUObject)
 	CallFunc_Add_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_Distance (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_Distance>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_Time (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_Time>FloatProperty>/Script/CoreUObject)
@@ -758,8 +786,10 @@ Serialized exports:
 	Second Socket Name (0-0-0-0): size 32 (cls: Second Socket Name>NameProperty>/Script/CoreUObject)
 	SwingFXSocket (0-0-0-0): size 32 (cls: SwingFXSocket>NameProperty>/Script/CoreUObject)
 	Alteration Ambient PS (0-0-0-0): size 36 (cls: Alteration Ambient PS>ObjectProperty>/Script/CoreUObject)
+	Anim Trail Template (0-0-0-0): size 36 (cls: Anim Trail Template>ObjectProperty>/Script/CoreUObject)
 	AnimTrail_PSC (0-0-0-0): size 36 (cls: AnimTrail_PSC>ObjectProperty>/Script/CoreUObject)
 	AnimTrailsParticles (0-0-0-0): size 36 (cls: AnimTrailsParticles>ObjectProperty>/Script/CoreUObject)
+	AnimTrial (0-0-0-0): size 36 (cls: AnimTrial>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitActor (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_HitActor>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitComponent (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_HitComponent>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_PhysMat (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_PhysMat>ObjectProperty>/Script/CoreUObject)
@@ -787,35 +817,61 @@ Serialized exports:
 	K2Node_Event_DynamicMaterialInstance (0-0-0-0): size 36 (cls: K2Node_Event_DynamicMaterialInstance>ObjectProperty>/Script/CoreUObject)
 	K2Node_Event_SpawnedPSC (0-0-0-0): size 36 (cls: K2Node_Event_SpawnedPSC>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable (0-0-0-0): size 36 (cls: Temp_object_Variable>ObjectProperty>/Script/CoreUObject)
+	Idle Effect Component (0-0-0-0): size 36 (cls: Idle Effect Component>ObjectProperty>/Script/CoreUObject)
 	Idle_Effect (0-0-0-0): size 36 (cls: Idle_Effect>ObjectProperty>/Script/CoreUObject)
-	IdleFXComponent (0-0-0-0): size 36 (cls: IdleFXComponent>ObjectProperty>/Script/CoreUObject)
+	IdleFX Template (0-0-0-0): size 36 (cls: IdleFX Template>ObjectProperty>/Script/CoreUObject)
 	MeleeHeavy_ParticleSystem (0-0-0-0): size 36 (cls: MeleeHeavy_ParticleSystem>ObjectProperty>/Script/CoreUObject)
 	MeleeHeavy_PSC (0-0-0-0): size 36 (cls: MeleeHeavy_PSC>ObjectProperty>/Script/CoreUObject)
 	MeleeHeavy_Sound (0-0-0-0): size 36 (cls: MeleeHeavy_Sound>ObjectProperty>/Script/CoreUObject)
 	DynamicMaterialInstance (0-0-0-0): size 36 (cls: DynamicMaterialInstance>ObjectProperty>/Script/CoreUObject)
 	SpawnedPSC (0-0-0-0): size 36 (cls: SpawnedPSC>ObjectProperty>/Script/CoreUObject)
+	Swing Effect Component (0-0-0-0): size 36 (cls: Swing Effect Component>ObjectProperty>/Script/CoreUObject)
+	Swing FX Template (0-0-0-0): size 36 (cls: Swing FX Template>ObjectProperty>/Script/CoreUObject)
 	Swing_Effect (0-0-0-0): size 36 (cls: Swing_Effect>ObjectProperty>/Script/CoreUObject)
+	SwingFX (0-0-0-0): size 36 (cls: SwingFX>ObjectProperty>/Script/CoreUObject)
 	WeaponDurabilityDestroyEffect (0-0-0-0): size 36 (cls: WeaponDurabilityDestroyEffect>ObjectProperty>/Script/CoreUObject)
 	WeaponDurabilityDestroyEffectIcon (0-0-0-0): size 36 (cls: WeaponDurabilityDestroyEffectIcon>ObjectProperty>/Script/CoreUObject)
 	WeaponMID (0-0-0-0): size 36 (cls: WeaponMID>ObjectProperty>/Script/CoreUObject)
-	AnimTrialCompOverride_GEN_VARIABLE (0-0-0-0): size 12 (cls: AnimTrialCompOverride_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine)
+	AnimTrial_GEN_VARIABLE (0-0-0-0): size 12 (cls: AnimTrial_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine)
+	IdleFX_GEN_VARIABLE (0-0-0-0): size 12 (cls: IdleFX_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine)
+	SwingFX_GEN_VARIABLE (0-0-0-0): size 38 (cls: SwingFX_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
+		Tag array:
+			bAutoActivate(BoolProperty)=False 
 	SceneComponent_33 (0-0-0-0): size 12 (cls: SceneComponent_33>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 310 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
-			ComponentTemplate(ObjectProperty)=AnimTrialCompOverride_GEN_VARIABLE=B_Melee_Generic_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			ComponentTemplate(ObjectProperty)=AnimTrial_GEN_VARIABLE=B_Melee_Generic_C 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=WeaponMesh0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2966555899-1148233984-3350504872-1376125485 
-			InternalVariableName(NameProperty)=AnimTrialCompOverride 
+			VariableGuid(StructProperty/Guid)=Guid: 2966555899-1148233984-3350504872-1376125485 
+			InternalVariableName(NameProperty)=AnimTrial 
+	SCS_Node_1 (0-0-0-0): size 495 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
+		Tag array:
+			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
+			ComponentTemplate(ObjectProperty)=SwingFX_GEN_VARIABLE=B_Melee_Generic_C 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			ParentComponentOrVariableName(NameProperty)=WeaponMesh0 
+			bIsParentComponentNative(BoolProperty)=True 
+			VariableGuid(StructProperty/Guid)=Guid: 4092781629-1191443058-949337997-2049646520 
+			InternalVariableName(NameProperty)=SwingFX 
+	SCS_Node_2 (0-0-0-0): size 310 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
+		Tag array:
+			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
+			ComponentTemplate(ObjectProperty)=IdleFX_GEN_VARIABLE=B_Melee_Generic_C 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			ParentComponentOrVariableName(NameProperty)=WeaponMesh0 
+			bIsParentComponentNative(BoolProperty)=True 
+			VariableGuid(StructProperty/Guid)=Guid: 2814410859-1285189494-3959297415-3414763755 
+			InternalVariableName(NameProperty)=IdleFX 
 	SCS_Node_35 (0-0-0-0): size 168 (cls: SCS_Node_35>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_33=B_Melee_Generic_C 
-			VariableGuid(StructProperty)=Guid: 1295648158-0-0-0 
+			VariableGuid(StructProperty/Guid)=Guid: 1295648158-0-0-0 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
-	SimpleConstructionScript_162 (0-0-0-0): size 123 (cls: SimpleConstructionScript_162>SimpleConstructionScript>/Script/Engine):
+	SimpleConstructionScript_162 (0-0-0-0): size 139 (cls: SimpleConstructionScript_162>SimpleConstructionScript>/Script/Engine):
 		Tag array:
 			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -873,7 +929,5 @@ Serialized exports:
 	K2Node_Event_CosmeticMod (0-0-0-0): size 36 (cls: K2Node_Event_CosmeticMod>StructProperty>/Script/CoreUObject)
 	K2Node_Event_HitResult (0-0-0-0): size 36 (cls: K2Node_Event_HitResult>StructProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>StructProperty>/Script/CoreUObject)
-	Main_Effects_Color2_Lv (0-0-0-0): size 36 (cls: Main_Effects_Color2_Lv>StructProperty>/Script/CoreUObject)
-	Main_Effects_Color_Lv (0-0-0-0): size 36 (cls: Main_Effects_Color_Lv>StructProperty>/Script/CoreUObject)
 	Melee Heavy Impact Gameplay Cue Tag Override (0-0-0-0): size 36 (cls: Melee Heavy Impact Gameplay Cue Tag Override>StructProperty>/Script/CoreUObject)
 	Melee Heavy Launch Gameplay Cue Tag Override (0-0-0-0): size 36 (cls: Melee Heavy Launch Gameplay Cue Tag Override>StructProperty>/Script/CoreUObject)

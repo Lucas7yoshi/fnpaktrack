@@ -126,6 +126,7 @@ Name table:
 	BindClothToMasterPoseComponent
 	BindOnDestroyed
 	bInterruptCurrentLine
+	bIsInFrontendHologram
 	bIsParentComponentNative
 	bIsValid
 	Blueprint_Edit
@@ -534,6 +535,7 @@ Name table:
 	Controller
 	Conv_VectorToRotator
 	CookedComponentInstancingData
+	CosmeticPetInstance
 	Create and Duplicate Effect Poseable Skeletal Mesh
 	Create and Duplicate Effect Skeletal Meshes Parent
 	CreateDynamicMaterialInstance
@@ -677,6 +679,7 @@ Name table:
 	FortPawnVocalChord
 	FortPlayerController
 	FortPlayerPawn
+	FortPlayerPet
 	FortProjectileAthena
 	FortSpokenLine
 	FortWeapon
@@ -1017,6 +1020,8 @@ Name table:
 	RandomFloatInRange
 	RandomInteger
 	ReceiveDestroyed
+	ReInitFrontendPetDisplay
+	ReInitPetDisplay
 	RelativeLocation
 	RelativeRotation
 	ReloadCartridge
@@ -1201,7 +1206,7 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	PlayerPawn_Athena_Generic_C (0-0-0-0): size 1623 (cls: PlayerPawn_Athena_Generic_C>BlueprintGeneratedClass>/Script/Engine):
+	PlayerPawn_Athena_Generic_C (0-0-0-0): size 1643 (cls: PlayerPawn_Athena_Generic_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			bHasCookedComponentInstancingData(BoolProperty)=True 
 			ComponentTemplates(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1210,25 +1215,25 @@ Serialized exports:
 			CookedComponentInstancingData(MapProperty)=[object] (inner: NameProperty)
 	Default__PlayerPawn_Athena_Generic_C (0-0-0-0): size 5244 (cls: Default__PlayerPawn_Athena_Generic_C>PlayerPawn_Athena_Generic_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			ScreenEffect_PlayerHealthDamageDirection(ObjectProperty)=B_PlayerHealthDamage_LensEffect_Direction_C=/Game/Effects/Fort_Effects/Camera_Effects/B_PlayerHealthDamage_LensEffect_Direction 
 			ScreenEffect_PlayerHealthDamage(ObjectProperty)=B_PlayerHealthDamage_CameraLensEffect_C=/Game/Effects/Fort_Effects/Camera_Effects/B_PlayerHealthDamage_CameraLensEffect 
 			ScreenEffect_PlayerShieldDamageDirection(ObjectProperty)=B_PlayerShieldDamage_LensEffect_Direction_C=/Game/Effects/Fort_Effects/Camera_Effects/B_PlayerShieldDamage_LensEffect_Direction 
 			ScreenEffect_PlayerShieldDamage(ObjectProperty)=B_PlayerShieldDamage_CameraLensEffect_C=/Game/Effects/Fort_Effects/Camera_Effects/B_PlayerShieldDamage_CameraLensEffect 
 			CanSpawnDustLandFX?(BoolProperty)=True 
-			RunWalkParticleRotation(StructProperty)=Rotator(0,0,0) 
-			GameplayTagsForHitByHuskMeleeSound(StructProperty)=GameplayTagContainer:NPC.CharacterType.Blaster,NPC.CharacterType.Husk 
+			RunWalkParticleRotation(StructProperty/Rotator)=Rotator(0,0,0) 
+			GameplayTagsForHitByHuskMeleeSound(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.CharacterType.Blaster,NPC.CharacterType.Husk 
 			Sound_Shield_Impact(ObjectProperty)=Cons_Shield_Impacts_Athena_Cue=/Game/Sounds/Fort_Gadgets/Shield/Cons_Shield_Impacts_Athena_Cue 
 			Sound_Shield_Destroyed(ObjectProperty)=Cons_Shield_Deactivate_Athena_Cue=/Game/Sounds/Fort_Gadgets/Shield/Cons_Shield_Deactivate_Athena_Cue 
 			Sound_Shield_FullyCharged(ObjectProperty)=Cons_Shield_Activate_Cue=/Game/Sounds/Fort_Gadgets/Shield/Cons_Shield_Activate_Cue 
 			Sound_Shield_StartRecharge(ObjectProperty)=Cons_Shield_Activate_Cue=/Game/Sounds/Fort_Gadgets/Shield/Cons_Shield_Activate_Cue 
-			TC_GameplayCueDamageShielded(StructProperty)=GameplayTagContainer:GameplayCue.Damage.Shielded 
+			TC_GameplayCueDamageShielded(StructProperty/GameplayTagContainer)=GameplayTagContainer:GameplayCue.Damage.Shielded 
 			Effect_Player_LandedDust(ObjectProperty)=P_Player_Land_Effect=/Game/Effects/Fort_Effects/Gameplay/SmokeDustExplosions/Particles/P_Player_Land_Effect 
 			DamageForceFeedback(ObjectProperty)=FF_Generic_TakeDamage=/Game/Weapons/ForceFeedback/FF_Generic_TakeDamage 
 			SpeechBubbleWidgetClass(ObjectProperty)=SpeechBubbleWidget_C=/Game/UI/InGame/Mission/SpeechBubbleWidget 
 			DamageCameraShake(ObjectProperty)=PlayerTakeDamage_CameraShake_C=/Game/Blueprints/Camera/Original/PlayerTakeDamage_CameraShake 
-			WaterTraceHitLocation(StructProperty)=System.Byte[] 
-			StableVelocityVector(StructProperty)=Vector(0,0,0) 
+			WaterTraceHitLocation(StructProperty/HitResult)=System.Byte[] 
+			StableVelocityVector(StructProperty/Vector)=Vector(0,0,0) 
 			PlayerRunTemplate_Ground(ObjectProperty)=P_Run_DustKickup_01=/Game/Effects/Fort_Effects/Gameplay/SmokeDustExplosions/Particles/P_Run_DustKickup_01 
 			PlayerWalkTemplate_Ground(ObjectProperty)=P_Walk_DustKickup_01=/Game/Effects/Fort_Effects/Gameplay/SmokeDustExplosions/Particles/P_Walk_DustKickup_01 
 			InstigatorCheckDistanceSqrd(FloatProperty)=262144 
@@ -1246,22 +1251,22 @@ Serialized exports:
 			OutsideSafeZonePPComponent(ObjectProperty)=OutsideSafeZonePP0=Default__PlayerPawn_Athena_Generic_C 
 			SelfReviveGameplayEffect(ObjectProperty)=GE_ExtraLifeRevive_C=/Game/Abilities/Player/Generic/GameplayEffects/GE_ExtraLifeRevive 
 			TeammateReviveGameplayEffect(ObjectProperty)=GE_Athena_Revive_C=/Game/Athena/MappedEffects/GE_Athena_Revive 
-			SetByCallerReviveHealth(StructProperty)=System.Byte[] 
+			SetByCallerReviveHealth(StructProperty/ScalableFloat)=System.Byte[] 
 			UnableToPerformActionMontage(ObjectProperty)=CantDoThat=/Game/Animation/Game/MainPlayer/Montages/General/CantDoThat 
 			BluePrintPlaceAnimation(ObjectProperty)=Blueprint_Place=/Game/Animation/Game/MainPlayer/Montages/Blueprint/Blueprint_Place 
 			BluePrintEditAnimation(ObjectProperty)=Blueprint_Edit=/Game/Animation/Game/MainPlayer/Montages/Blueprint/Blueprint_Edit 
 			CarriedObjectAttachmentSocket(NameProperty)=Backpack 
-			AboveBelowMiniMapIconBrush(StructProperty)=System.Byte[] 
-			FarOffMiniMapIconBrush(StructProperty)=System.Byte[] 
-			DBNOMiniMapIconBrush(StructProperty)=System.Byte[] 
-			PawnStatHandle(StructProperty)=System.Byte[] 
+			AboveBelowMiniMapIconBrush(StructProperty/SlateBrush)=System.Byte[] 
+			FarOffMiniMapIconBrush(StructProperty/SlateBrush)=System.Byte[] 
+			DBNOMiniMapIconBrush(StructProperty/SlateBrush)=System.Byte[] 
+			PawnStatHandle(StructProperty/DataTableRowHandle)=System.Byte[] 
 			MaxFootstepDistance(FloatProperty)=2000 
 			DefaultFootstepSound(ObjectProperty)=Player_Step_Walk_Cue=/Game/Sounds/Fortress_Foley/Player_Movement/Player_Step_Walk_Cue 
 			DefaultFastFootstepSound(ObjectProperty)=Player_Step_Run_Cue=/Game/Sounds/Fortress_Foley/Player_Movement/Player_Step_Run_Cue 
 			DefaultLandingSound(ObjectProperty)=Human_Land_Light_Dirt_Cue=/Game/Sounds/Fort_Step_Sounds/Human/Human_Land_Light_Dirt_Cue 
 			DefaultHardLandingSound(ObjectProperty)=Human_Land_Heavy_Dirt_Cue=/Game/Sounds/Fort_Step_Sounds/Human/Human_Land_Heavy_Dirt_Cue 
 			DefaultJumpSound(ObjectProperty)=Player_Foley_Jump_Cue=/Game/Sounds/Fort_Foley_Sounds/Moves/Player_Foley_Jump_Cue 
-			DamageZones(StructProperty)=System.Byte[] 
+			DamageZones(StructProperty/PawnDamageZones)=System.Byte[] 
 			TargettingZOffset(FloatProperty)=45 
 			HealthRegenDelayGameplayEffect(ObjectProperty)=GE_HealthRegen_Delay_Damaged_C=/Game/Abilities/Player/Generic/GameplayEffects/GE_HealthRegen_Delay_Damaged 
 			HealthRegenGameplayEffect(ObjectProperty)=GE_Generic_HealthRegen_C=/Game/Abilities/Player/Generic/GameplayEffects/GE_Generic_HealthRegen 
@@ -1360,6 +1365,7 @@ Serialized exports:
 	Are the wind and water RTT passes enabled (0-0-0-0): size 171 (cls: Are the wind and water RTT passes enabled>Function>/Script/CoreUObject)
 	CallFunc_Greater_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Greater_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	BackpackValid (0-0-0-0): size 34 (cls: BackpackValid>BoolProperty>/Script/CoreUObject)
+	bIsInFrontendHologram (0-0-0-0): size 34 (cls: bIsInFrontendHologram>BoolProperty>/Script/CoreUObject)
 	BodyValid (0-0-0-0): size 34 (cls: BodyValid>BoolProperty>/Script/CoreUObject)
 	CanSpawnDustLandFX? (0-0-0-0): size 34 (cls: CanSpawnDustLandFX?>BoolProperty>/Script/CoreUObject)
 	CanSpawnSlideKickupFX? (0-0-0-0): size 34 (cls: CanSpawnSlideKickupFX?>BoolProperty>/Script/CoreUObject)
@@ -1545,6 +1551,8 @@ Serialized exports:
 	IsInWater (0-0-0-0): size 34 (cls: IsInWater>BoolProperty>/Script/CoreUObject)
 	IsShielded (0-0-0-0): size 34 (cls: IsShielded>BoolProperty>/Script/CoreUObject)
 	LatestDamageIsShieldDamage (0-0-0-0): size 34 (cls: LatestDamageIsShieldDamage>BoolProperty>/Script/CoreUObject)
+	ReInitFrontendPetDisplay (0-0-0-0): size 108 (cls: ReInitFrontendPetDisplay>Function>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_NameName_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_NameName_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_K2_AttachToComponent_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_K2_AttachToComponent_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -1576,7 +1584,7 @@ Serialized exports:
 	CollisionCylinder (0-0-0-0): size 156 (cls: CollisionCylinder>CapsuleComponent>/Script/Engine):
 		Tag array:
 			CapsuleHalfHeight(FloatProperty)=75 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	DamageCameraShake (0-0-0-0): size 40 (cls: DamageCameraShake>ClassProperty>/Script/CoreUObject)
 	K2Node_Select2_Default (0-0-0-0): size 40 (cls: K2Node_Select2_Default>ClassProperty>/Script/CoreUObject)
 	ScreenEffect_PlayerHealthDamage (0-0-0-0): size 40 (cls: ScreenEffect_PlayerHealthDamage>ClassProperty>/Script/CoreUObject)
@@ -1635,7 +1643,7 @@ Serialized exports:
 			MaxAcceleration(FloatProperty)=1000 
 			BrakingDecelerationWalking(FloatProperty)=1000 
 			AirControl(FloatProperty)=0.95 
-			NavAgentProps(StructProperty)=System.Byte[] 
+			NavAgentProps(StructProperty/NavAgentProperties)=System.Byte[] 
 	Melee_Color_Set (0-0-0-0): size 36 (cls: Melee_Color_Set>StructProperty>/Script/CoreUObject)
 	Melee_Effect_Color (0-0-0-0): size 70 (cls: Melee_Effect_Color>Function>/Script/CoreUObject)
 	K2Node_DynamicCast_AsGameplay_Tag_Asset_Interface (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsGameplay_Tag_Asset_Interface>InterfaceProperty>/Script/CoreUObject)
@@ -1921,25 +1929,25 @@ Serialized exports:
 		Tag array:
 			Template(ObjectProperty)=P_Player_In_Water_Athena=/Game/WaterAndWind/Particles/WaterInteraction/P_Player_In_Water_Athena 
 			AttachParent(ObjectProperty)=CollisionCylinder=Default__PlayerPawn_Athena_Generic_C 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	PlayerRunLandFX (0-0-0-0): size 182 (cls: PlayerRunLandFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Run_DustKickup_01=/Game/Effects/Fort_Effects/Gameplay/SmokeDustExplosions/Particles/P_Run_DustKickup_01 
 			AutoAttachParent(ObjectProperty)=CharacterMesh0=Default__PlayerPawn_Athena_Generic_C 
 			AttachParent(ObjectProperty)=CharacterMesh0=Default__PlayerPawn_Athena_Generic_C 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	PlayerSlideLandFX (0-0-0-0): size 182 (cls: PlayerSlideLandFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Slide_DustKickup_01=/Game/Effects/Fort_Effects/Gameplay/SmokeDustExplosions/Particles/P_Slide_DustKickup_01 
 			AutoAttachParent(ObjectProperty)=CharacterMesh0=Default__PlayerPawn_Athena_Generic_C 
 			AttachParent(ObjectProperty)=CharacterMesh0=Default__PlayerPawn_Athena_Generic_C 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	PlayerWalkLandFX (0-0-0-0): size 182 (cls: PlayerWalkLandFX>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Walk_DustKickup_01=/Game/Effects/Fort_Effects/Gameplay/SmokeDustExplosions/Particles/P_Walk_DustKickup_01 
 			AutoAttachParent(ObjectProperty)=CharacterMesh0=Default__PlayerPawn_Athena_Generic_C 
 			AttachParent(ObjectProperty)=CharacterMesh0=Default__PlayerPawn_Athena_Generic_C 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	AnimTrailPS_GEN_VARIABLE (0-0-0-0): size 93 (cls: AnimTrailPS_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			bAutoManageAttachment(BoolProperty)=True 
@@ -1951,17 +1959,17 @@ Serialized exports:
 			bAutoManageAttachment(BoolProperty)=True 
 			CachedMaxDrawDistance(FloatProperty)=2125 
 			TranslucencySortPriority(IntProperty)=-1 
-			RelativeLocation(StructProperty)=Vector(0,0,86) 
-			RelativeRotation(StructProperty)=Rotator(0,89.99999,0) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,86) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,89.99999,0) 
 			DetailMode(ByteProperty)=DM_Medium 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	HitDamageParticles_GEN_VARIABLE (0-0-0-0): size 237 (cls: HitDamageParticles_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Player_HealthShield_Damage_Effect=/Game/Effects/Fort_Effects/Gameplay/Player/P_Player_HealthShield_Damage_Effect 
 			bAutoManageAttachment(BoolProperty)=True 
-			RelativeLocation(StructProperty)=Vector(0,0,12) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,12) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	NODE_AddPoseableMeshComponent-1 (0-0-0-0): size 12 (cls: NODE_AddPoseableMeshComponent-1>PoseableMeshComponent>/Script/Engine)
 	OutsideSafeZonePP0 (0-0-0-0): size 12 (cls: OutsideSafeZonePP0>PostProcessComponent>/Script/Engine)
@@ -1970,34 +1978,34 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=HitDamageParticles_GEN_VARIABLE=PlayerPawn_Athena_Generic_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCylinder 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3185269196-1082188566-332541096-1701307564 
+			VariableGuid(StructProperty/Guid)=Guid: 3185269196-1082188566-332541096-1701307564 
 			InternalVariableName(NameProperty)=HitDamageParticles 
 	SCS_Node_11 (0-0-0-0): size 168 (cls: SCS_Node_11>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_9=PlayerPawn_Athena_Generic_C 
-			VariableGuid(StructProperty)=Guid: 1295648158-0-0-0 
+			VariableGuid(StructProperty/Guid)=Guid: 1295648158-0-0-0 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_2 (0-0-0-0): size 693 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=AnimTrailPS_GEN_VARIABLE=PlayerPawn_Athena_Generic_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CharacterMesh0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1824495611-1117076550-1582368183-3152039858 
+			VariableGuid(StructProperty/Guid)=Guid: 1824495611-1117076550-1582368183-3152039858 
 			InternalVariableName(NameProperty)=AnimTrailPS 
 	SCS_Node_4 (0-0-0-0): size 1584 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Effect_WaterInteraction_FX_GEN_VARIABLE=PlayerPawn_Athena_Generic_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CharacterMesh0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1831611413-1282018286-2238011821-1323270471 
+			VariableGuid(StructProperty/Guid)=Guid: 1831611413-1282018286-2238011821-1323270471 
 			InternalVariableName(NameProperty)=Effect_WaterInteraction_FX 
 	SimpleConstructionScript_2 (0-0-0-0): size 139 (cls: SimpleConstructionScript_2>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -2007,16 +2015,16 @@ Serialized exports:
 	NODE_AddSkeletalMeshComponent-13 (0-0-0-0): size 127 (cls: NODE_AddSkeletalMeshComponent-13>SkeletalMeshComponent>/Script/Engine):
 		Tag array:
 			ClothingSimulationFactory(ObjectProperty)=ClothingSimulationFactoryNv=/Script/ClothingSystemRuntime 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	CharacterMesh0 (0-0-0-0): size 327 (cls: CharacterMesh0>SkeletalMeshComponentBudgeted>/Script/AnimationBudgetAllocator):
 		Tag array:
 			AnimClass(ObjectProperty)=Fortnite_M_Avg_Player_AnimBlueprint_C=/Game/Characters/Player/Male/Male_Avg_Base/Fortnite_M_Avg_Player_AnimBlueprint 
 			bUseRefPoseOnInitAnim(BoolProperty)=True 
 			SkeletalMesh(ObjectProperty)=Fortnite_M_Avg_Player=/Game/Characters/Player/Male/Male_Avg_Base/Fortnite_M_Avg_Player 
 			bReceivesDecals(BoolProperty)=False 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 			AttachParent(ObjectProperty)=CollisionCylinder=Default__PlayerPawn_Athena_Generic_C 
-			RelativeLocation(StructProperty)=Vector(0,0,-75) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-75) 
 	CallFunc_GetRelativeTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetRelativeTransform_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetRelativeTransform_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeTransform_SweepHitResult>StructProperty>/Script/CoreUObject)
 	Temp_struct_Variable (0-0-0-0): size 36 (cls: Temp_struct_Variable>StructProperty>/Script/CoreUObject)

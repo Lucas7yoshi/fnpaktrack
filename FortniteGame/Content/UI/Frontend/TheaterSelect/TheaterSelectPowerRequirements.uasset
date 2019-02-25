@@ -45,15 +45,22 @@ Name table:
 	Default__WidgetBlueprintGeneratedClass
 	Default__WidgetTree
 	DrawAs
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	Engine
+	EnumProperty
 	ESlateBrushDrawType
 	ESlateBrushDrawType::Box
+	ESlateSizeRule
+	ESlateSizeRule::Fill
 	EVerticalAlignment
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	HAlign_Center
+	HAlign_Left
 	HorizontalAlignment
 	HorizontalBox
 	HorizontalBoxSlot
@@ -79,7 +86,9 @@ Name table:
 	RootWidget
 	ShadowOffset
 	Size
+	SizeRule
 	SlateBrush
+	SlateChildSize
 	SlateColor
 	SlateFontInfo
 	Slot
@@ -117,31 +126,34 @@ Serialized exports:
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_0=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 	CommonBorder_0 (0-0-0-0): size 382 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border-Underpowered_C=/Game/UI/Foundation/Border/Border-Underpowered 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 	CommonTextBlock_0 (0-0-0-0): size 538 (cls: CommonTextBlock_0>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-Picasso_C=/Game/UI/Foundation/Text/TextStyle-Base-S-Picasso 
 			Text(TextProperty)=You are underpowered for this location! (5221832D4F0E5FC56BCB9EB27515E2D5) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			AutoWrapText(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
-	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+	HorizontalBox_0 (0-0-0-0): size 127 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 197 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBoxSlot_0 (0-0-0-0): size 336 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
@@ -153,7 +165,7 @@ Serialized exports:
 			Content(ObjectProperty)=Image_0=WidgetArchetype 
 	Image_0 (0-0-0-0): size 332 (cls: Image_0>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
 	WidgetArchetype (0-0-0-0): size 67 (cls: WidgetArchetype>TheaterSelectPowerRequirements_C):

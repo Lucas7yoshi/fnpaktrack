@@ -1,8 +1,8 @@
 Name table:
+	/Game/Athena/HUD/Atlas/Bacchus/Confirm_Normal_L_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/DriveAction_Normal_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/Glide_Normal_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/Jump_Normal_Sprite
-	/Game/Athena/HUD/Atlas/Bacchus/PickUp_Normal_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/Skydive_Normal_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/T-Icon-BR-Jump_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/T_ButtonsBG_01_Sprite
@@ -70,6 +70,7 @@ Name table:
 	ColorAndOpacity
 	CommonBacchusButton_C
 	CompletionMode
+	Confirm_Normal_L_Sprite
 	Content
 	Default__BlueprintContextLibrary
 	Default__BoolProperty
@@ -261,6 +262,7 @@ Name table:
 	OnInVehicle
 	OnTargeting
 	OnTouchEnded
+	OnTouchMoved
 	OnTouchStarted
 	OnUsingScopeTargeting
 	Overlay
@@ -270,7 +272,6 @@ Name table:
 	PaperSprite
 	Parent
 	ParentGuid
-	PickUp_Normal_Sprite
 	PlayAnimation
 	PlaybackRange
 	PointerEvent
@@ -310,6 +311,7 @@ Name table:
 	SequenceID
 	SequenceSignature
 	SetButtonSprite
+	SetIconPressed
 	Shear
 	Signature
 	SizeBox
@@ -379,7 +381,7 @@ Name table:
 	WidthOverride
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Button_Jump_C (0-0-0-0): size 356 (cls: Button_Jump_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	Button_Jump_C (0-0-0-0): size 372 (cls: Button_Jump_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -389,7 +391,7 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Button_Jump=Button_Jump_C 
 	Default__Button_Jump_C (0-0-0-0): size 1065 (cls: Default__Button_Jump_C>Button_Jump_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			GliderIcon(ObjectProperty)=Glide_Normal_Sprite=/Game/Athena/HUD/Atlas/Bacchus/Glide_Normal_Sprite 
 			SkydiveIcon(ObjectProperty)=Skydive_Normal_Sprite=/Game/Athena/HUD/Atlas/Bacchus/Skydive_Normal_Sprite 
 			JumpIcon(ObjectProperty)=Jump_Normal_Sprite=/Game/Athena/HUD/Atlas/Bacchus/Jump_Normal_Sprite 
@@ -397,7 +399,7 @@ Serialized exports:
 			SpecialJump(ObjectProperty)=T-Icon-BR-Jump_Sprite=/Game/Athena/HUD/Atlas/Bacchus/T-Icon-BR-Jump_Sprite 
 			DefaultIcon(ObjectProperty)=Jump_Normal_Sprite=/Game/Athena/HUD/Atlas/Bacchus/Jump_Normal_Sprite 
 			TouchMethod(ByteProperty)=EButtonTouchMethod::PreciseTap 
-			VisualType(StructProperty)=System.Byte[] 
+			VisualType(StructProperty/GameplayTag)=System.Byte[] 
 			WidgetName(TextProperty)=Jump (99D2A92E4240A69E5A1FCE9AC60B4392) 
 			OnInBuildMode(EnumProperty)=EBacchusHUDStateType::Show 
 			OnInCombatMode(EnumProperty)=EBacchusHUDStateType::Show 
@@ -420,7 +422,7 @@ Serialized exports:
 	CallFunc_HasMatchingGameplayTag_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasMatchingGameplayTag_ReturnValue>BoolProperty>/Script/CoreUObject)
 	InternalButton (0-0-0-0): size 855 (cls: InternalButton>Button>/Script/UMG):
 		Tag array:
-			WidgetStyle(StructProperty)=System.Byte[] 
+			WidgetStyle(StructProperty/ButtonStyle)=System.Byte[] 
 			Slot(ObjectProperty)=OverlaySlot_9=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
 	WidgetArchetype (0-0-0-0): size 212 (cls: WidgetArchetype>Button_Jump_C):
@@ -440,46 +442,51 @@ Serialized exports:
 	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>StructProperty>/Script/CoreUObject)
 	InTouchEvent (0-0-0-0): size 36 (cls: InTouchEvent>StructProperty>/Script/CoreUObject)
 	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
-	OnTouchEnded (0-0-0-0): size 164 (cls: OnTouchEnded>Function>/Script/CoreUObject)
-	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	CallFunc_PointerEvent_GetPointerIndex_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_PointerEvent_GetPointerIndex_ReturnValue>IntProperty>/Script/CoreUObject)
-	CallFunc_Handled_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Handled_ReturnValue>StructProperty>/Script/CoreUObject)
+	OnTouchEnded (0-0-0-0): size 175 (cls: OnTouchEnded>Function>/Script/CoreUObject)
+	CallFunc_Unhandled_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Unhandled_ReturnValue>StructProperty>/Script/CoreUObject)
 	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>StructProperty>/Script/CoreUObject)
 	InTouchEvent (0-0-0-0): size 36 (cls: InTouchEvent>StructProperty>/Script/CoreUObject)
 	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
-	OnTouchStarted (0-0-0-0): size 208 (cls: OnTouchStarted>Function>/Script/CoreUObject)
+	OnTouchMoved (0-0-0-0): size 119 (cls: OnTouchMoved>Function>/Script/CoreUObject)
+	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_Handled_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Handled_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_PointerEvent_GetPointerIndex_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_PointerEvent_GetPointerIndex_ReturnValue>IntProperty>/Script/CoreUObject)
+	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>StructProperty>/Script/CoreUObject)
+	InTouchEvent (0-0-0-0): size 36 (cls: InTouchEvent>StructProperty>/Script/CoreUObject)
+	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
+	OnTouchStarted (0-0-0-0): size 219 (cls: OnTouchStarted>Function>/Script/CoreUObject)
 	Image_Background (0-0-0-0): size 249 (cls: Image_Background>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
 	Image_Icon (0-0-0-0): size 290 (cls: Image_Icon>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
 	JumpOutOfPlane (0-0-0-0): size 802 (cls: JumpOutOfPlane>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 130052404-1284759893-2438756229-2476885159 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 130052404-1284759893-2438756229-2476885159 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2829 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Scale(StructProperty)=System.Byte[] 
-			Scale(StructProperty)=System.Byte[] 
-			EvalOptions(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 3537437637-1298498849-3518361511-1018350129 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			EvalOptions(StructProperty/MovieSceneSectionEvalOptions)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 3537437637-1298498849-3518361511-1018350129 
 	MovieScene2DTransformTrack_0 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_0>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 259233309-1316582060-2026066614-4246151746 
+			Signature(StructProperty/Guid)=Guid: 259233309-1316582060-2026066614-4246151746 
 	EaseInFunction (0-0-0-0): size 12 (cls: EaseInFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	EaseOutFunction (0-0-0-0): size 12 (cls: EaseOutFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -498,7 +505,7 @@ Serialized exports:
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	OverlaySlot_10 (0-0-0-0): size 325 (cls: OverlaySlot_10>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
@@ -587,8 +594,8 @@ Serialized exports:
 			MovieScene(ObjectProperty)=JumpOutOfPlane=Button_Jump_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1284203023-1111395792-54963620-1958299966 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1284203023-1111395792-54963620-1958299966 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=Overlay_0=WidgetArchetype 

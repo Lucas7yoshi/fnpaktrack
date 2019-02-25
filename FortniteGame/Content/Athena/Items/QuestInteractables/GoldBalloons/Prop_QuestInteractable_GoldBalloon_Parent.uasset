@@ -7,11 +7,15 @@ Name table:
 	/Game/Athena/Items/QuestInteractables/GoldBalloons/Prop_QuestInteractable_GoldBalloon_Parent
 	/Game/Athena/Items/Quests/BattlePass/Quest_BR_Destroy_GoldBalloons
 	/Game/Sounds/Fort_Gadgets/Balloons/Balloons_Quest_Pop_Cue
+	/Game/Weapons/FORT_Sniper/Blueprints/B_Prj_Arrow_Crossbow_Athena
+	/Game/Weapons/FORT_Sniper/Blueprints/B_Prj_Arrow_Valentine_Crossbow_Athena
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
 	/Script/GameplayTags
 	Actor
+	AllNodes
+	AreaClass
 	Array_Get
 	ArrayProperty
 	Athena_CheckCreativeMode
@@ -19,6 +23,8 @@ Name table:
 	AthenaQuestFunctionLibrary_C
 	ATTACH_All
 	AttachmentDestroyed
+	B_Prj_Arrow_Crossbow_Athena_C
+	B_Prj_Arrow_Valentine_Crossbow_Athena_C
 	bAffectDistanceFieldLighting
 	BalloonDied
 	Balloons_Quest_Pop_Cue
@@ -30,9 +36,13 @@ Name table:
 	bClearMIDWhenReturningToUndamagedState
 	bDoNotBlockInteract
 	bEnableMaterialParameterCaching
+	bFromSweep
 	bIsMovable
+	bIsParentComponentNative
 	BlueprintCanInteract
+	BlueprintComponentDelegateBinding
 	BlueprintGeneratedClass
+	BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
 	bNoCameraCollision
 	BodyInstance
 	BoneName
@@ -59,10 +69,13 @@ Name table:
 	CallFunc_Athena_CheckQuestAndObjectiveCompletion_QuestIsValid
 	CallFunc_BooleanAND_ReturnValue
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue
+	CallFunc_EqualEqual_ClassClass_ReturnValue
+	CallFunc_EqualEqual_ClassClass_ReturnValue1
 	CallFunc_GetFortPlayerControllerFromActor_ReturnValue
 	CallFunc_GetGameState_ReturnValue
 	CallFunc_GetGameState_ReturnValue1
 	CallFunc_GetLocalFortPlayerControllers_ReturnValue
+	CallFunc_GetObjectClass_ReturnValue
 	CallFunc_GetQuestManager_ReturnValue
 	CallFunc_HasAuthority_ReturnValue
 	CallFunc_HasAuthority_ReturnValue1
@@ -72,13 +85,19 @@ Name table:
 	CallFunc_SendComplexCustomStatEvent_QuestCompleted
 	Camera
 	CanCharacterStepUpOn
+	CapsuleComponent
 	Channel
 	Class
+	ClassProperty
+	CollisionCapsule0
 	CollisionProfileName
 	CollisionResponse
 	CollisionResponses
 	Color
 	ComponentClass
+	ComponentDelegateBinding
+	ComponentDelegateBindings
+	ComponentPropertyName
 	ComponentTemplate
 	Controller
 	CreateDynamicMaterialInstance
@@ -92,9 +111,13 @@ Name table:
 	DeathSound
 	Default__ArrayProperty
 	Default__AthenaQuestFunctionLibrary_C
+	Default__B_Prj_Arrow_Crossbow_Athena_C
+	Default__B_Prj_Arrow_Valentine_Crossbow_Athena_C
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
 	Default__BuildingProp
+	Default__ClassProperty
+	Default__ComponentDelegateBinding
 	Default__DelegateProperty
 	Default__FloatProperty
 	Default__FortKismetLibrary
@@ -110,6 +133,7 @@ Name table:
 	Default__SceneComponent
 	Default__SCS_Node
 	Default__SimpleConstructionScript
+	Default__SphereComponent
 	Default__StructProperty
 	DefaultSceneRoot
 	DefaultSceneRoot_GEN_VARIABLE
@@ -117,10 +141,14 @@ Name table:
 	Delay
 	DelegateFunction
 	DelegateProperty
+	DelegatePropertyName
+	Destructible
 	DMI_Balloon
+	DynamicBindingObjects
 	EBuildingAttachmentSlot
 	EBuildingAttachmentType
 	ECanBeCharacterBase
+	ECB_No
 	ECB_Yes
 	ECollisionResponse
 	EComponentMobility
@@ -132,6 +160,7 @@ Name table:
 	ENavigationObstacleOverride::ForceEnabled
 	EntryPoint
 	EnumProperty
+	EqualEqual_ClassClass
 	EventInstigator
 	ExecuteUbergraph_Prop_QuestInteractable_GoldBalloon_Parent
 	FCC_Object_PawnAI
@@ -148,11 +177,13 @@ Name table:
 	FloatProperty
 	FortGameStateAthena
 	FortKismetLibrary
+	FortMetaNavArea_Obstacles
 	FortPawn
 	FortPlayerController
 	FortQuestItemDefinition
 	FortQuestManager
 	Function
+	FunctionNameToBind
 	Game
 	GameplayStatics
 	GameplayTag
@@ -162,10 +193,12 @@ Name table:
 	GetFortPlayerControllerFromActor
 	GetGameState
 	GetLocalFortPlayerControllers
+	GetObjectClass
 	GetQuestManager
 	Guid
 	HasAuthority
 	HitLocation
+	HitResult
 	InheritableComponentHandler
 	InstigatedBy
 	InteractingPawn
@@ -173,6 +206,13 @@ Name table:
 	IntProperty
 	IsLocallyValid
 	IsValid
+	K2_DestroyActor
+	K2Node_ComponentBoundEvent_bFromSweep
+	K2Node_ComponentBoundEvent_OtherActor
+	K2Node_ComponentBoundEvent_OtherBodyIndex
+	K2Node_ComponentBoundEvent_OtherComp
+	K2Node_ComponentBoundEvent_OverlappedComponent
+	K2Node_ComponentBoundEvent_SweepResult
 	K2Node_CreateDelegate_OutputDelegate
 	K2Node_CreateDelegate_OutputDelegate1
 	K2Node_CustomEvent_BoneName
@@ -208,29 +248,43 @@ Name table:
 	ObjBackendName
 	Object
 	ObjectProperty
+	OnComponentBeginOverlap
 	OnCurrentPlaylistLoaded
 	OnCurrentPlaylistLoaded__DelegateSignature
 	OnDied
+	OtherActor
+	OtherBodyIndex
+	OtherComp
 	OverallRotationSpeed
+	OverlappedComponent
+	P_Crossbow_Projectile_GEN_VARIABLE
 	P_GoldBalloon_GreyPop
 	P_GoldBalloon_Pop
 	Package
+	ParentComponentOrVariableName
 	ParticleSystem
 	ParticleSystemComponent
+	Pawn
+	PhysicsBody
 	PlaylistContextTags
 	PlaylistLoaded
 	PlaylistName
 	PointerToUberGraphFrame
 	PrimitiveComponent
+	ProjectileComp0
+	ProjectileMovementComponent
 	Prop_QuestInteractable_GoldBalloon_Parent_C
 	Quest_BR_Destroy_GoldBalloons
 	QuestDefinition
 	ReceiveBeginPlay
+	RelativeLocation
+	RelativeScale3D
 	Response
 	ResponseArray
 	ResponseChannel
 	ReturnValue
 	RootComponent
+	RootNodes
 	SceneComponent
 	ScriptStruct
 	SCS_Node
@@ -248,33 +302,43 @@ Name table:
 	SoundCue
 	SpeedBallon
 	SpeedBalloon
+	Sphere
+	Sphere_GEN_VARIABLE
+	SphereComponent
+	SphereRadius
 	StaticGameplayTags
 	StaticMesh
 	StaticMeshComponent
 	StaticMeshComponent0
 	StructProperty
 	StWMaxDrawDistance
+	SweepResult
 	TargetTag
 	UberGraphFrame
 	UberGraphFunction
 	UserConstructionScript
 	VariableGuid
 	Vector
+	Vehicle
+	Visibility
+	WorldDynamic
+	WorldStatic
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Prop_QuestInteractable_GoldBalloon_Parent_C (0-0-0-0): size 355 (cls: Prop_QuestInteractable_GoldBalloon_Parent_C>BlueprintGeneratedClass>/Script/Engine):
+	Prop_QuestInteractable_GoldBalloon_Parent_C (0-0-0-0): size 416 (cls: Prop_QuestInteractable_GoldBalloon_Parent_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
+			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=Prop_QuestInteractable_GoldBalloon_Parent_C 
 			InheritableComponentHandler(ObjectProperty)=InheritableComponentHandler=Prop_QuestInteractable_GoldBalloon_Parent_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Prop_QuestInteractable_GoldBalloon_Parent=Prop_QuestInteractable_GoldBalloon_Parent_C 
 	Default__Prop_QuestInteractable_GoldBalloon_Parent_C (0-0-0-0): size 1017 (cls: Default__Prop_QuestInteractable_GoldBalloon_Parent_C>Prop_QuestInteractable_GoldBalloon_Parent_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			TargetTag(StructProperty)=GameplayTagContainer: 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			TargetTag(StructProperty/GameplayTagContainer)=GameplayTagContainer: 
 			OverallRotationSpeed(FloatProperty)=0.09 
 			QuestDefinition(ObjectProperty)=Quest_BR_Destroy_GoldBalloons=/Game/Athena/Items/Quests/BattlePass/Quest_BR_Destroy_GoldBalloons 
 			ObjBackendName(NameProperty)=battlepass_destroy_goldballoon_01 
-			BalloonScale(StructProperty)=Vector(1.3,1.3,1.3) 
+			BalloonScale(StructProperty/Vector)=Vector(1.3,1.3,1.3) 
 			SpeedBalloon_2(FloatProperty)=0.2 
 			StaticMesh(ObjectProperty)=SM_GoldBalloon=/Game/Athena/Items/QuestInteractables/GoldBalloons/Art/SM_GoldBalloon 
 			bNoCameraCollision(BoolProperty)=True 
@@ -284,7 +348,7 @@ Serialized exports:
 			DeathParticles(ObjectProperty)=P_GoldBalloon_Pop=/Game/Athena/Items/QuestInteractables/GoldBalloons/Art/P_GoldBalloon_Pop 
 			DeathParticleSocketName(NameProperty)=DeathSocket 
 			DeathSound(ObjectProperty)=Balloons_Quest_Pop_Cue=/Game/Sounds/Fort_Gadgets/Balloons/Balloons_Quest_Pop_Cue 
-			BuildingAttachmentPointOffset(StructProperty)=Vector(0,0,-40) 
+			BuildingAttachmentPointOffset(StructProperty/Vector)=Vector(0,0,-40) 
 			BuildingAttachmentSlot(ByteProperty)=SLOT_Floor 
 			BuildingAttachmentType(ByteProperty)=ATTACH_All 
 			LifespanAfterDeath(FloatProperty)=0 
@@ -293,17 +357,19 @@ Serialized exports:
 			bCanExportNavigationCollisions(BoolProperty)=True 
 			bIsMovable(BoolProperty)=True 
 			bAllowInteract(BoolProperty)=False 
-			StaticGameplayTags(StructProperty)=GameplayTagContainer:Building.Type.Prop 
-			BRMaxDrawDistance(FloatProperty)=10000 
-			StWMaxDrawDistance(FloatProperty)=10000 
+			StaticGameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Building.Type.Prop 
+			BRMaxDrawDistance(FloatProperty)=9000 
+			StWMaxDrawDistance(FloatProperty)=9000 
 			bReplicateMovement(BoolProperty)=True 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Default__Prop_QuestInteractable_GoldBalloon_Parent_C 
-	DMI_Balloon (0-0-0-0): size 36 (cls: DMI_Balloon>ObjectProperty>/Script/CoreUObject)
+	Sphere (0-0-0-0): size 36 (cls: Sphere>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_Prop_QuestInteractable_GoldBalloon_Parent (0-0-0-0): size 948 (cls: ExecuteUbergraph_Prop_QuestInteractable_GoldBalloon_Parent>Function>/Script/CoreUObject)
+	ExecuteUbergraph_Prop_QuestInteractable_GoldBalloon_Parent (0-0-0-0): size 1179 (cls: ExecuteUbergraph_Prop_QuestInteractable_GoldBalloon_Parent>Function>/Script/CoreUObject)
 	CallFunc_GetLocalFortPlayerControllers_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLocalFortPlayerControllers_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetLocalFortPlayerControllers_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLocalFortPlayerControllers_ReturnValue>ArrayProperty>/Script/CoreUObject)
 	AttachmentDestroyed (0-0-0-0): size 34 (cls: AttachmentDestroyed>BoolProperty>/Script/CoreUObject)
+	OverlappedComponent (0-0-0-0): size 36 (cls: OverlappedComponent>ObjectProperty>/Script/CoreUObject)
+	BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature (0-0-0-0): size 138 (cls: BndEvt__Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature>Function>/Script/CoreUObject)
 	DamagedActor (0-0-0-0): size 36 (cls: DamagedActor>ObjectProperty>/Script/CoreUObject)
 	BalloonDied (0-0-0-0): size 166 (cls: BalloonDied>Function>/Script/CoreUObject)
 	ReceiveBeginPlay (0-0-0-0): size 54 (cls: ReceiveBeginPlay>Function>/Script/CoreUObject)
@@ -316,23 +382,31 @@ Serialized exports:
 	InteractingPawn (0-0-0-0): size 36 (cls: InteractingPawn>ObjectProperty>/Script/CoreUObject)
 	BlueprintCanInteract (0-0-0-0): size 62 (cls: BlueprintCanInteract>Function>/Script/CoreUObject)
 	ReturnValue (0-0-0-0): size 34 (cls: ReturnValue>BoolProperty>/Script/CoreUObject)
+	bFromSweep (0-0-0-0): size 34 (cls: bFromSweep>BoolProperty>/Script/CoreUObject)
 	CallFunc_Athena_CheckCreativeMode_CanCompleteQuest (0-0-0-0): size 34 (cls: CallFunc_Athena_CheckCreativeMode_CanCompleteQuest>BoolProperty>/Script/CoreUObject)
 	CallFunc_Athena_CheckQuestAndObjectiveCompletion_ObjectiveCompleted (0-0-0-0): size 34 (cls: CallFunc_Athena_CheckQuestAndObjectiveCompletion_ObjectiveCompleted>BoolProperty>/Script/CoreUObject)
 	CallFunc_Athena_CheckQuestAndObjectiveCompletion_QuestCompleted (0-0-0-0): size 34 (cls: CallFunc_Athena_CheckQuestAndObjectiveCompletion_QuestCompleted>BoolProperty>/Script/CoreUObject)
 	CallFunc_Athena_CheckQuestAndObjectiveCompletion_QuestIsValid (0-0-0-0): size 34 (cls: CallFunc_Athena_CheckQuestAndObjectiveCompletion_QuestIsValid>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_EqualEqual_ClassClass_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ClassClass_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_EqualEqual_ClassClass_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ClassClass_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_SendComplexCustomStatEvent_QuestActive (0-0-0-0): size 34 (cls: CallFunc_SendComplexCustomStatEvent_QuestActive>BoolProperty>/Script/CoreUObject)
 	CallFunc_SendComplexCustomStatEvent_QuestCompleted (0-0-0-0): size 34 (cls: CallFunc_SendComplexCustomStatEvent_QuestCompleted>BoolProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_bFromSweep (0-0-0-0): size 34 (cls: K2Node_ComponentBoundEvent_bFromSweep>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	IsLocallyValid (0-0-0-0): size 34 (cls: IsLocallyValid>BoolProperty>/Script/CoreUObject)
 	MatchTypeCanCompleteQuest (0-0-0-0): size 34 (cls: MatchTypeCanCompleteQuest>BoolProperty>/Script/CoreUObject)
 	Damage (0-0-0-0): size 32 (cls: Damage>FloatProperty>/Script/CoreUObject)
 	ShouldDie (0-0-0-0): size 70 (cls: ShouldDie>Function>/Script/CoreUObject)
 	ReturnValue (0-0-0-0): size 34 (cls: ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_GetObjectClass_ReturnValue (0-0-0-0): size 40 (cls: CallFunc_GetObjectClass_ReturnValue>ClassProperty>/Script/CoreUObject)
+	ComponentDelegateBinding_0 (0-0-0-0): size 205 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
+		Tag array:
+			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
 	Damage (0-0-0-0): size 32 (cls: Damage>FloatProperty>/Script/CoreUObject)
@@ -340,6 +414,8 @@ Serialized exports:
 	OverallRotationSpeed (0-0-0-0): size 32 (cls: OverallRotationSpeed>FloatProperty>/Script/CoreUObject)
 	SpeedBalloon_2 (0-0-0-0): size 32 (cls: SpeedBalloon_2>FloatProperty>/Script/CoreUObject)
 	InheritableComponentHandler (0-0-0-0): size 12 (cls: InheritableComponentHandler>InheritableComponentHandler>/Script/Engine)
+	OtherBodyIndex (0-0-0-0): size 32 (cls: OtherBodyIndex>IntProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_OtherBodyIndex (0-0-0-0): size 32 (cls: K2Node_ComponentBoundEvent_OtherBodyIndex>IntProperty>/Script/CoreUObject)
 	BoneName (0-0-0-0): size 32 (cls: BoneName>NameProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_BoneName (0-0-0-0): size 32 (cls: K2Node_CustomEvent_BoneName>NameProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_PlaylistName (0-0-0-0): size 32 (cls: K2Node_CustomEvent_PlaylistName>NameProperty>/Script/CoreUObject)
@@ -347,11 +423,17 @@ Serialized exports:
 	DamageCauser (0-0-0-0): size 36 (cls: DamageCauser>ObjectProperty>/Script/CoreUObject)
 	FHitComponent (0-0-0-0): size 36 (cls: FHitComponent>ObjectProperty>/Script/CoreUObject)
 	InstigatedBy (0-0-0-0): size 36 (cls: InstigatedBy>ObjectProperty>/Script/CoreUObject)
+	OtherActor (0-0-0-0): size 36 (cls: OtherActor>ObjectProperty>/Script/CoreUObject)
+	OtherComp (0-0-0-0): size 36 (cls: OtherComp>ObjectProperty>/Script/CoreUObject)
+	DMI_Balloon (0-0-0-0): size 36 (cls: DMI_Balloon>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetFortPlayerControllerFromActor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetFortPlayerControllerFromActor_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetGameState_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetGameState_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetGameState_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetGameState_ReturnValue1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetQuestManager_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetQuestManager_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_OtherActor (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OtherActor>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_OtherComp (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OtherComp>ObjectProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_OverlappedComponent (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OverlappedComponent>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_DamageCauser (0-0-0-0): size 36 (cls: K2Node_CustomEvent_DamageCauser>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_DamagedActor (0-0-0-0): size 36 (cls: K2Node_CustomEvent_DamagedActor>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_FHitComponent (0-0-0-0): size 36 (cls: K2Node_CustomEvent_FHitComponent>ObjectProperty>/Script/CoreUObject)
@@ -366,23 +448,43 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=Prop_QuestInteractable_GoldBalloon_Parent_C 
-			VariableGuid(StructProperty)=Guid: 889893514-1134582939-241968300-1834684146 
+			VariableGuid(StructProperty/Guid)=Guid: 889893514-1134582939-241968300-1834684146 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
-	SimpleConstructionScript_0 (0-0-0-0): size 41 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
+	SCS_Node_1 (0-0-0-0): size 227 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
+			ComponentClass(ObjectProperty)=SphereComponent=/Script/Engine 
+			ComponentTemplate(ObjectProperty)=Sphere_GEN_VARIABLE=Prop_QuestInteractable_GoldBalloon_Parent_C 
+			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
+			bIsParentComponentNative(BoolProperty)=True 
+			VariableGuid(StructProperty/Guid)=Guid: 3582232594-1074962761-3296477575-85294962 
+			InternalVariableName(NameProperty)=Sphere 
+	SimpleConstructionScript_0 (0-0-0-0): size 123 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
+		Tag array:
+			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
+			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_0=Prop_QuestInteractable_GoldBalloon_Parent_C 
+	Sphere_GEN_VARIABLE (0-0-0-0): size 1286 (cls: Sphere_GEN_VARIABLE>SphereComponent>/Script/Engine):
+		Tag array:
+			SphereRadius(FloatProperty)=25 
+			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
+			CanCharacterStepUpOn(ByteProperty)=ECB_No 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,110.7692) 
+			RelativeScale3D(StructProperty/Vector)=Vector(1.5,1.5,1.5) 
 	StaticMeshComponent0 (0-0-0-0): size 1340 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_GoldBalloon=/Game/Athena/Items/QuestInteractables/GoldBalloons/Art/SM_GoldBalloon 
 			bEnableMaterialParameterCaching(BoolProperty)=True 
 			bAffectDistanceFieldLighting(BoolProperty)=False 
 			CanCharacterStepUpOn(ByteProperty)=ECB_Yes 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 			Mobility(ByteProperty)=EComponentMobility::Movable 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	HitLocation (0-0-0-0): size 36 (cls: HitLocation>StructProperty>/Script/CoreUObject)
 	Momentum (0-0-0-0): size 36 (cls: Momentum>StructProperty>/Script/CoreUObject)
 	BalloonScale (0-0-0-0): size 36 (cls: BalloonScale>StructProperty>/Script/CoreUObject)
+	SweepResult (0-0-0-0): size 36 (cls: SweepResult>StructProperty>/Script/CoreUObject)
+	K2Node_ComponentBoundEvent_SweepResult (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_SweepResult>StructProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_HitLocation (0-0-0-0): size 36 (cls: K2Node_CustomEvent_HitLocation>StructProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Momentum (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Momentum>StructProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_PlaylistContextTags (0-0-0-0): size 36 (cls: K2Node_CustomEvent_PlaylistContextTags>StructProperty>/Script/CoreUObject)

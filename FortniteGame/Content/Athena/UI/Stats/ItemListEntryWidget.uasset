@@ -23,6 +23,7 @@ Name table:
 	ArrayProperty
 	ArriveTangent
 	ArriveTangentWeight
+	AthenaCreativeItemTileButton
 	AthenaProfileStatBox
 	Background
 	bAllowTemplate
@@ -68,12 +69,12 @@ Name table:
 	Content
 	Count
 	CreateTemporaryItemInstanceBP
+	Default__AthenaCreativeItemTileButton
 	Default__AthenaProfileStatBox
 	Default__BoolProperty
 	Default__BorderSlot
 	Default__ButtonStyle-Outline-S-Transparent_C
 	Default__CommonBorder
-	Default__FortItemEntryWidget
 	Default__FortMultiSizeItemCard
 	Default__Function
 	Default__GameplayStatics
@@ -150,7 +151,6 @@ Name table:
 	FortItem
 	FortItemDefinition
 	FortItemEntry
-	FortItemEntryWidget
 	FortItemWidget_NUI
 	FortMultiSizeItemCard
 	FrameNumber
@@ -383,9 +383,9 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_ItemListEntryWidget=ItemListEntryWidget_C 
 	Default__ItemListEntryWidget_C (0-0-0-0): size 1711 (cls: Default__ItemListEntryWidget_C>ItemListEntryWidget_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			SelectedBrush(StructProperty)=System.Byte[] 
-			HoveredBrush(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			SelectedBrush(StructProperty/SlateBrush)=System.Byte[] 
+			HoveredBrush(StructProperty/SlateBrush)=System.Byte[] 
 			HoverSound(ObjectProperty)=Fort_Athena_LeaderboardTab_Pressed_Cue=/Game/Sounds/Fort_UI_Sounds/FrontEnd/Fort_Athena_LeaderboardTab_Pressed_Cue 
 			Style(ObjectProperty)=ButtonStyle-Outline-S-Transparent_C=/Game/UI/Foundation/Buttons/ButtonStyles/TopBar/ButtonStyle-Outline-S-Transparent 
 			bHasScriptImplementedTick(BoolProperty)=False 
@@ -429,21 +429,21 @@ Serialized exports:
 			Content(ObjectProperty)=PurchaseBorder=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=PurchaseBorder=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 	HoverBorder (0-0-0-0): size 300 (cls: HoverBorder>CommonBorder>/Script/CommonUI):
 		Tag array:
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	PurchaseBorder (0-0-0-0): size 646 (cls: PurchaseBorder>CommonBorder>/Script/CommonUI):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -457,7 +457,7 @@ Serialized exports:
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 250 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
@@ -469,30 +469,30 @@ Serialized exports:
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			PurchaseBorder(ObjectProperty)=PurchaseBorder=WidgetArchetype 
 			WeaponCard(ObjectProperty)=WeaponCard=WidgetArchetype 
-			ItemEntry(StructProperty)=System.Byte[] 
+			ItemEntry(StructProperty/FortItemEntry)=System.Byte[] 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 	pulsecardsize (0-0-0-0): size 792 (cls: pulsecardsize>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1247369216-1095479932-2969562498-2153076894 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1247369216-1095479932-2969562498-2153076894 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2829 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Scale(StructProperty)=System.Byte[] 
-			Scale(StructProperty)=System.Byte[] 
-			EvalOptions(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 188259773-1302143546-2967356043-1442077151 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			EvalOptions(StructProperty/MovieSceneSectionEvalOptions)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 188259773-1302143546-2967356043-1442077151 
 	MovieScene2DTransformTrack_0 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_0>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 1496528757-1206653442-630585512-1218197114 
+			Signature(StructProperty/Guid)=Guid: 1496528757-1206653442-630585512-1218197114 
 	EaseInFunction (0-0-0-0): size 12 (cls: EaseInFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	EaseOutFunction (0-0-0-0): size 12 (cls: EaseOutFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	CallFunc_PlayAnimation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_PlayAnimation_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -522,8 +522,8 @@ Serialized exports:
 			MovieScene(ObjectProperty)=pulsecardsize=ItemListEntryWidget_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			DisplayLabel(StrProperty)=pulse card size 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 3373641595-1210026508-2232604094-3478807155 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 3373641595-1210026508-2232604094-3478807155 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=ProfileStatBox=WidgetArchetype 

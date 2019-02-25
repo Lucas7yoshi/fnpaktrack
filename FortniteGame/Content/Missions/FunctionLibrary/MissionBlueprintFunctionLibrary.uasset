@@ -1,4 +1,5 @@
 Name table:
+	/Game/Abilities/Player/Generic/GameplayEffects/GE_Generic_Character_Launch
 	/Game/Balance/DataTables/BuildingMissionRecs
 	/Game/Balance/DataTables/DifficultyOffsets
 	/Game/Characters/Survivors/Struct_SurvivorScriptedAbilities
@@ -72,6 +73,7 @@ Name table:
 	/Game/Missions/Secondary/Events/SatelliteSalvage/EnumEventWorldItemDrop
 	/Game/Missions/Secondary/SurvivorShelters/SurvivorBadgeTypes
 	/Game/Packages/Fortress_SharedMaterials/Stencil_ID_Definitions/Stencil_ID_Definitions
+	/Game/Weapons/ForceFeedback/FF_Generic_LaunchPawn
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
@@ -81,6 +83,7 @@ Name table:
 	__WorldContext
 	AbilitySystemBlueprintLibrary
 	AchievedCount
+	ActiveGameplayEffectHandle
 	Activities.UIEvent.DrawAttention
 	Actor
 	Actor A
@@ -103,6 +106,7 @@ Name table:
 	AnyPawnNearActor
 	AnyPlayerNearActor
 	ApplyDifficultyOffset
+	ApplyGlobalEnvironmentGameplayEffectToActor
 	Array_AddUnique
 	Array_Clear
 	Array_Get
@@ -120,6 +124,7 @@ Name table:
 	Box2D
 	BreakHitResult
 	BreakVector
+	BroadcastAbilityImpactAtLocation
 	BronzeBadges
 	bSuccessfullyFoundStage
 	bTraceComplex
@@ -146,6 +151,7 @@ Name table:
 	CallFunc_Add_VectorVector_ReturnValue3
 	CallFunc_AnyPlayerNearActor_IsPlayerNearActor
 	CallFunc_AnyPlayerNearActor_PlayersNearActor
+	CallFunc_ApplyGlobalEnvironmentGameplayEffectToActor_ReturnValue
 	CallFunc_Array_AddUnique_ReturnValue
 	CallFunc_Array_AddUnique_ReturnValue1
 	CallFunc_Array_AddUnique_ReturnValue2
@@ -209,6 +215,7 @@ Name table:
 	CallFunc_GetCurrentDifficulty_Success
 	CallFunc_GetDisplayName_ReturnValue
 	CallFunc_GetDistanceTo_ReturnValue
+	CallFunc_GetDriver_ReturnValue
 	CallFunc_GetGameDifficulty_ReturnValue
 	CallFunc_GetGameState_ReturnValue
 	CallFunc_GetObjectiveInfo_ReturnValue
@@ -225,6 +232,8 @@ Name table:
 	CallFunc_HasCompletedObjective_ReturnValue
 	CallFunc_HasCompletedObjectiveWithName_ReturnValue
 	CallFunc_HasCompletedQuest_ReturnValue
+	CallFunc_HasMatchingGameplayTag_ReturnValue
+	CallFunc_HasMatchingGameplayTag_self_CastInput
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
 	CallFunc_IsValid_ReturnValue2
@@ -288,6 +297,8 @@ Name table:
 	Default__FortMissionLibrary
 	Default__Function
 	Default__GameplayStatics
+	Default__GE_Generic_Character_Launch_C
+	Default__InterfaceProperty
 	Default__IntProperty
 	Default__KismetArrayLibrary
 	Default__KismetMaterialLibrary
@@ -330,9 +341,14 @@ Name table:
 	EventMagnitude
 	EventTag
 	FClamp
+	FF_Generic_LaunchPawn
 	FlashObjectiveUI
 	FloatProperty
+	ForceFeedbackEffect
+	ForceFeedbackTag
 	FortAIPawn
+	FortAthenaJackalVehicle
+	FortAthenaVehicle
 	FortBadgeItemDefinition
 	FortGameStateZone
 	FortItemDefinition
@@ -354,15 +370,18 @@ Name table:
 	FoundPlayer
 	FTrunc
 	Function
+	Gameplay.Action.Player.Launched
 	GameplayAbilityTargetDataHandle
 	GameplayEffectContextHandle
 	GameplayEventData
 	GameplayStatics
 	GameplayTag
+	GameplayTagAssetInterface
 	GameplayTagContainer
 	GameplayTags
 	GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess
 	GameStateBase
+	GE_Generic_Character_Launch_C
 	GetActorBounds
 	GetAllActorsOfClass
 	GetAllFortPlayerControllers
@@ -376,6 +395,7 @@ Name table:
 	GetCurrentDifficulty
 	GetDisplayName
 	GetDistanceTo
+	GetDriver
 	GetGameDifficulty
 	GetGameState
 	GetObjectiveBadgeIconBrush
@@ -396,6 +416,7 @@ Name table:
 	HasCompletedObjective
 	HasCompletedObjectiveWithName
 	HasCompletedQuest
+	HasMatchingGameplayTag
 	HasPlayerCompletedQuest
 	HasPlayerCompletedQuestObjective
 	HasPlayerCompletedQuestObjectiveHandle
@@ -405,11 +426,14 @@ Name table:
 	HighlightEnabled
 	HighlightQuestActor
 	HitResult
+	Hoverboard
+	HoverboardActor
 	HowManyPoints
 	IconBrush
 	In Line Of Sight
 	Instigator
 	InstigatorTags
+	InterfaceProperty
 	IntProperty
 	IsPawnNearActor
 	IsPlayerNearActor
@@ -423,6 +447,7 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate1
 	K2Node_DynamicCast_AsBuilding_Actor
 	K2Node_DynamicCast_AsBuilding_SMActor
+	K2Node_DynamicCast_AsFort_Athena_Jackal_Vehicle
 	K2Node_DynamicCast_AsFort_Badge_Item_Definition
 	K2Node_DynamicCast_AsFort_Game_State_Zone
 	K2Node_DynamicCast_AsFort_Pawn
@@ -449,6 +474,8 @@ Name table:
 	KismetMathLibrary
 	KismetNodeHelperLibrary
 	KismetSystemLibrary
+	LaunchHoverboard
+	LaunchVelocity
 	Less_IntInt
 	LessEqual_FloatFloat
 	LessEqual_IntInt
@@ -457,6 +484,7 @@ Name table:
 	ListPlayersWhoNeedQuest
 	LocalAchievedCount
 	LocalBackendName
+	LocalPlayForceFeedback
 	LocalQuestItem
 	LocalRequiredCount
 	LockedInPlace
@@ -635,6 +663,7 @@ Name table:
 	SendMissionUIEvent
 	SeperatePlayersWhoNeedQuest
 	SetCustomDepthStencilValue
+	SetIgnoreNextFallingDamage
 	SetQuestHighlight
 	SetRenderCustomDepth
 	SilverBadges
@@ -761,7 +790,9 @@ Serialized exports:
 	CheckBasicVectorToActorLineOfSight (0-0-0-0): size 822 (cls: CheckBasicVectorToActorLineOfSight>Function>/Script/CoreUObject)
 	PawnTag (0-0-0-0): size 36 (cls: PawnTag>StructProperty>/Script/CoreUObject)
 	NPC_ConvertTagToNameText (0-0-0-0): size 2273 (cls: NPC_ConvertTagToNameText>Function>/Script/CoreUObject)
-	MissionBlueprintFunctionLibrary_C (0-0-0-0): size 652 (cls: MissionBlueprintFunctionLibrary_C>BlueprintGeneratedClass>/Script/Engine)
+	HoverboardActor (0-0-0-0): size 36 (cls: HoverboardActor>ObjectProperty>/Script/CoreUObject)
+	LaunchHoverboard (0-0-0-0): size 577 (cls: LaunchHoverboard>Function>/Script/CoreUObject)
+	MissionBlueprintFunctionLibrary_C (0-0-0-0): size 668 (cls: MissionBlueprintFunctionLibrary_C>BlueprintGeneratedClass>/Script/Engine)
 	Default__MissionBlueprintFunctionLibrary_C (0-0-0-0): size 8 (cls: Default__MissionBlueprintFunctionLibrary_C>MissionBlueprintFunctionLibrary_C)
 	CallFunc_GetAllActorsOfClass_OutActors (0-0-0-0): size 36 (cls: CallFunc_GetAllActorsOfClass_OutActors>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetAllActorsOfClass_OutActors (0-0-0-0): size 36 (cls: CallFunc_GetAllActorsOfClass_OutActors>ArrayProperty>/Script/CoreUObject)
@@ -977,6 +1008,11 @@ Serialized exports:
 	HighlightEnabled (0-0-0-0): size 34 (cls: HighlightEnabled>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
+	CallFunc_HasMatchingGameplayTag_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasMatchingGameplayTag_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
+	Success (0-0-0-0): size 34 (cls: Success>BoolProperty>/Script/CoreUObject)
 	CallFunc_GreaterEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GreaterEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_GreaterEqual_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_GreaterEqual_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasCompletedObjectiveWithName_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasCompletedObjectiveWithName_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -1074,6 +1110,7 @@ Serialized exports:
 	CallFunc_RandomFloatInRange_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_RandomFloatInRange_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_RandomFloatInRange_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_RandomFloatInRange_ReturnValue1>FloatProperty>/Script/CoreUObject)
 	MaxDistance (0-0-0-0): size 32 (cls: MaxDistance>FloatProperty>/Script/CoreUObject)
+	CallFunc_HasMatchingGameplayTag_self_CastInput (0-0-0-0): size 36 (cls: CallFunc_HasMatchingGameplayTag_self_CastInput>InterfaceProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_AddUnique_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_AddUnique_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -1175,6 +1212,7 @@ Serialized exports:
 	Quest Objective Backend Name (0-0-0-0): size 32 (cls: Quest Objective Backend Name>NameProperty>/Script/CoreUObject)
 	QuestBackendName (0-0-0-0): size 32 (cls: QuestBackendName>NameProperty>/Script/CoreUObject)
 	QuestBackendObjectiveName (0-0-0-0): size 32 (cls: QuestBackendObjectiveName>NameProperty>/Script/CoreUObject)
+	ForceFeedbackTag (0-0-0-0): size 32 (cls: ForceFeedbackTag>NameProperty>/Script/CoreUObject)
 	Quest Backend Name (0-0-0-0): size 32 (cls: Quest Backend Name>NameProperty>/Script/CoreUObject)
 	QuestObjectiveBackendName (0-0-0-0): size 32 (cls: QuestObjectiveBackendName>NameProperty>/Script/CoreUObject)
 	__WorldContext (0-0-0-0): size 36 (cls: __WorldContext>ObjectProperty>/Script/CoreUObject)
@@ -1275,6 +1313,12 @@ Serialized exports:
 	K2Node_DynamicCast_AsBuilding_Actor (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsBuilding_Actor>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsBuilding_SMActor (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsBuilding_SMActor>ObjectProperty>/Script/CoreUObject)
 	__WorldContext (0-0-0-0): size 36 (cls: __WorldContext>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetController_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetController_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetDriver_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetDriver_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	Hoverboard (0-0-0-0): size 36 (cls: Hoverboard>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Athena_Jackal_Vehicle (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Athena_Jackal_Vehicle>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Controller (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller>ObjectProperty>/Script/CoreUObject)
+	__WorldContext (0-0-0-0): size 36 (cls: __WorldContext>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetQuestManager_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetQuestManager_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	__WorldContext (0-0-0-0): size 36 (cls: __WorldContext>ObjectProperty>/Script/CoreUObject)
@@ -1356,6 +1400,8 @@ Serialized exports:
 	RewardTag (0-0-0-0): size 36 (cls: RewardTag>StructProperty>/Script/CoreUObject)
 	ObjectiveStatEvent (0-0-0-0): size 36 (cls: ObjectiveStatEvent>StructProperty>/Script/CoreUObject)
 	QuestBackendObjectiveHandle (0-0-0-0): size 36 (cls: QuestBackendObjectiveHandle>StructProperty>/Script/CoreUObject)
+	CallFunc_ApplyGlobalEnvironmentGameplayEffectToActor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_ApplyGlobalEnvironmentGameplayEffectToActor_ReturnValue>StructProperty>/Script/CoreUObject)
+	LaunchVelocity (0-0-0-0): size 36 (cls: LaunchVelocity>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_GameplayEventData (0-0-0-0): size 36 (cls: K2Node_MakeStruct_GameplayEventData>StructProperty>/Script/CoreUObject)
 	SurvivorAbilityStruct (0-0-0-0): size 36 (cls: SurvivorAbilityStruct>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_GameplayEventData (0-0-0-0): size 36 (cls: K2Node_MakeStruct_GameplayEventData>StructProperty>/Script/CoreUObject)

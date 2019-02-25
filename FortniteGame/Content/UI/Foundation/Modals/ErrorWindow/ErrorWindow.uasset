@@ -289,6 +289,8 @@ Name table:
 	Easing
 	EEvaluationMethod
 	EEvaluationMethod::Static
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	EMovieSceneBlendType
 	EMovieSceneBlendType::Absolute
@@ -346,6 +348,7 @@ Name table:
 	FloatCurve
 	FloatFunction
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	ForcedTime
@@ -759,9 +762,9 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_ErrorWindow=ErrorWindow_C 
 	Default__ErrorWindow_C (0-0-0-0): size 407 (cls: Default__ErrorWindow_C>ErrorWindow_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			LlamaReverseTimer(StructProperty)=System.Byte[] 
-			AmbientLlamaPlayTimer(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			LlamaReverseTimer(StructProperty/TimerHandle)=System.Byte[] 
+			AmbientLlamaPlayTimer(StructProperty/TimerHandle)=System.Byte[] 
 			MaxOverflowErrors(IntProperty)=5 
 			ErrorEntryClass(ObjectProperty)=ErrorEntry_C=/Game/UI/Foundation/Modals/ErrorWindow/ErrorEntry 
 			bExposeActionsExternally(BoolProperty)=False 
@@ -786,7 +789,7 @@ Serialized exports:
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	BackgroundBlurSlot_2 (0-0-0-0): size 243 (cls: BackgroundBlurSlot_2>BackgroundBlurSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=BackgroundBlurWidget_0=WidgetArchetype 
 			Content(ObjectProperty)=Lightbox=WidgetArchetype 
 	Button (0-0-0-0): size 36 (cls: Button>ObjectProperty>/Script/CoreUObject)
@@ -835,65 +838,65 @@ Serialized exports:
 		Tag array:
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=PanelSlot_0=WidgetArchetype 
 	Border_1 (0-0-0-0): size 348 (cls: Border_1>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	Border_DarkGradient (0-0-0-0): size 192 (cls: Border_DarkGradient>Border>/Script/UMG):
 		Tag array:
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
 	ContentBorder (0-0-0-0): size 350 (cls: ContentBorder>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=True 
 	Border_Darken (0-0-0-0): size 305 (cls: Border_Darken>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Dimmer (0-0-0-0): size 350 (cls: Dimmer>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=True 
 	BorderSlot_781 (0-0-0-0): size 325 (cls: BorderSlot_781>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=[Border[ Dialog Content=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 185 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=Border_1=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_354=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=ContentBorder=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=Dimmer=WidgetArchetype 
 			Content(ObjectProperty)=Overlay_0=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=WIndowButtons=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -901,7 +904,7 @@ Serialized exports:
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	InputActionWidget (0-0-0-0): size 339 (cls: InputActionWidget>CommonActionWidget>/Script/CommonUI):
 		Tag array:
-			ProgressMaterialBrush(StructProperty)=System.Byte[] 
+			ProgressMaterialBrush(StructProperty/SlateBrush)=System.Byte[] 
 			ProgressMaterialParam(NameProperty)=Percentage 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	CenterButtonTextWidget (0-0-0-0): size 453 (cls: CenterButtonTextWidget>CommonTextBlock>/Script/CommonUI):
@@ -909,8 +912,8 @@ Serialized exports:
 			Style(ObjectProperty)=TextStyle-MediumButton_C=/Game/UI/Foundation/Buttons/TextStyles/TextStyle-MediumButton 
 			ScrollStyle(ObjectProperty)=TextScrollStyle-Base_C=/Game/UI/Foundation/Text/TextScrollStyle-Base 
 			Text(TextProperty)={Text} (99357DD44CFC5E3692A9C792F19B30DA) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -918,8 +921,8 @@ Serialized exports:
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Header-L_C=/Game/UI/Foundation/Text/TextStyle-Header-L 
 			Text(TextProperty)=A PROBLEM OCCURRED (1239DD6C4AF569F6E1D2A886F80D152A) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -931,7 +934,7 @@ Serialized exports:
 			bShowForIOS(BoolProperty)=False 
 			bShowForAndroid(BoolProperty)=False 
 			bShowForErebus(BoolProperty)=False 
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -985,7 +988,7 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
 	ErrorLlama_C_0 (0-0-0-0): size 351 (cls: ErrorLlama_C_0>ErrorLlama_C>/Game/UI/Foundation/Modals/ErrorWindow/ErrorLlama):
 		Tag array:
 			Image_0(ObjectProperty)=Image_0=WidgetArchetype 
@@ -993,7 +996,7 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
 	ErrorLlama_C_1 (0-0-0-0): size 351 (cls: ErrorLlama_C_1>ErrorLlama_C>/Game/UI/Foundation/Modals/ErrorWindow/ErrorLlama):
 		Tag array:
 			Image_0(ObjectProperty)=Image_0=WidgetArchetype 
@@ -1001,7 +1004,7 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_5=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
 	WidgetArchetype (0-0-0-0): size 676 (cls: WidgetArchetype>ErrorWindow_C):
 		Tag array:
 			CloseButton(ObjectProperty)=CloseButton=WidgetArchetype 
@@ -1057,10 +1060,11 @@ Serialized exports:
 	Temp_text_Variable (0-0-0-0): size 32 (cls: Temp_text_Variable>TextProperty>/Script/CoreUObject)
 	Temp_int_Variable (0-0-0-0): size 32 (cls: Temp_int_Variable>IntProperty>/Script/CoreUObject)
 	SetupSeverSeverity (0-0-0-0): size 425 (cls: SetupSeverSeverity>Function>/Script/CoreUObject)
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_0 (0-0-0-0): size 53 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1078,28 +1082,28 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 	HorizontalBoxSlot_0 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=CenterButtonTextWidget=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 267 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=InputActionWidget=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 325 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=LeftSideImage=WidgetArchetype 
 	HorizontalBoxSlot_3 (0-0-0-0): size 243 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 111 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
@@ -1136,61 +1140,61 @@ Serialized exports:
 			ButtonText(TextProperty)=Continue (7955FB784D3F1299D32FD6A4414D82BE) 
 			Style(ObjectProperty)=ButtonStyle-Skew_Error_C=/Game/UI/Foundation/Buttons/ButtonStyles/Skew/ButtonStyle-Skew_Error 
 			bHideInputActionWithKeyboard(BoolProperty)=True 
-			TriggeringInputAction(StructProperty)=System.Byte[] 
+			TriggeringInputAction(StructProperty/DataTableRowHandle)=System.Byte[] 
 			InputActionWidget(ObjectProperty)=InputActionWidget=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 	LeftSideImage (0-0-0-0): size 196 (cls: LeftSideImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 	Image_0 (0-0-0-0): size 127 (cls: Image_0>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	Image_0 (0-0-0-0): size 127 (cls: Image_0>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	Image_0 (0-0-0-0): size 127 (cls: Image_0>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	Image_Mild (0-0-0-0): size 249 (cls: Image_Mild>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
 	Image_Severe (0-0-0-0): size 249 (cls: Image_Severe>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
 	Triangles_1 (0-0-0-0): size 576 (cls: Triangles_1>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_4=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			RenderTransformPivot(StructProperty)=Vector2D(0.25,0.5) 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0.25,0.5) 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 			RenderOpacity(FloatProperty)=0.461904 
 	Triangles_2 (0-0-0-0): size 576 (cls: Triangles_2>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			RenderTransformPivot(StructProperty)=Vector2D(0.25,0.5) 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0.25,0.5) 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 			RenderOpacity(FloatProperty)=0.1 
 	Triangles_3 (0-0-0-0): size 519 (cls: Triangles_3>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_6=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 			RenderOpacity(FloatProperty)=0.435715 
 	CallFunc_Array_Add_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Add_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -1225,129 +1229,129 @@ Serialized exports:
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1111398993-1169306966-4216875694-603159436 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1111398993-1169306966-4216875694-603159436 
 	Intro (0-0-0-0): size 1626 (cls: Intro>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 378329837-1096367623-1909700774-2539975337 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 378329837-1096367623-1909700774-2539975337 
 	Intro_New_0 (0-0-0-0): size 4424 (cls: Intro_New_0>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 922808532-1166488077-1907399303-1138836161 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 922808532-1166488077-1907399303-1138836161 
 	Intro_New (0-0-0-0): size 3604 (cls: Intro_New>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2452334474-1106904106-2533926785-2921051646 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2452334474-1106904106-2533926785-2921051646 
 	Llama_1 (0-0-0-0): size 796 (cls: Llama_1>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 3118221653-1309390336-1283019964-2943949167 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 3118221653-1309390336-1283019964-2943949167 
 	Llama_2 (0-0-0-0): size 800 (cls: Llama_2>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 355373727-1081587634-3707146119-3266472864 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 355373727-1081587634-3707146119-3266472864 
 	Llama_3 (0-0-0-0): size 800 (cls: Llama_3>MovieScene>/Script/MovieScene):
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1984832214-1166238774-2872762762-1373951489 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1984832214-1166238774-2872762762-1373951489 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2731 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Scale(StructProperty)=System.Byte[] 
-			Scale(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2352895972-1224111703-1523621306-1834571402 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2352895972-1224111703-1523621306-1834571402 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2731 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Scale(StructProperty)=System.Byte[] 
-			Scale(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2352895972-1224111703-1523621306-1834571402 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2352895972-1224111703-1523621306-1834571402 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2394 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Scale(StructProperty)=System.Byte[] 
-			Scale(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 3002166264-1090130414-3799217568-276717821 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 3002166264-1090130414-3799217568-276717821 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2057 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Translation(StructProperty)=System.Byte[] 
-			Translation(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 3678288618-1135378445-711764133-2243292981 
+			Translation(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Translation(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 3678288618-1135378445-711764133-2243292981 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2057 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Translation(StructProperty)=System.Byte[] 
-			Translation(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 4253640687-1177788178-1949582771-1875239858 
+			Translation(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Translation(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 4253640687-1177788178-1949582771-1875239858 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2057 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Translation(StructProperty)=System.Byte[] 
-			Translation(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2099259295-1180979532-3754160819-2203573084 
+			Translation(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Translation(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2099259295-1180979532-3754160819-2203573084 
 	MovieScene2DTransformTrack_0 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_0>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3405056635-1326000061-3710727604-3738796604 
+			Signature(StructProperty/Guid)=Guid: 3405056635-1326000061-3710727604-3738796604 
 	MovieScene2DTransformTrack_0 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_0>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3405056635-1326000061-3710727604-3738796604 
+			Signature(StructProperty/Guid)=Guid: 3405056635-1326000061-3710727604-3738796604 
 	MovieScene2DTransformTrack_1 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_1>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 4215228348-1106172387-3621004679-612938561 
+			Signature(StructProperty/Guid)=Guid: 4215228348-1106172387-3621004679-612938561 
 	MovieScene2DTransformTrack_0 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_0>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 2809780460-1133380404-3166529674-658818290 
+			Signature(StructProperty/Guid)=Guid: 2809780460-1133380404-3166529674-658818290 
 	MovieScene2DTransformTrack_1 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_1>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3926032285-1176879071-3792437683-2743365348 
+			Signature(StructProperty/Guid)=Guid: 3926032285-1176879071-3792437683-2743365348 
 	MovieScene2DTransformTrack_0 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_0>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 622907118-1341216151-1344755629-3449556484 
+			Signature(StructProperty/Guid)=Guid: 622907118-1341216151-1344755629-3449556484 
 	EaseInFunction (0-0-0-0): size 12 (cls: EaseInFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	EaseOutFunction (0-0-0-0): size 12 (cls: EaseOutFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	EaseInFunction (0-0-0-0): size 12 (cls: EaseInFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
@@ -1402,259 +1406,259 @@ Serialized exports:
 	EaseOutFunction (0-0-0-0): size 12 (cls: EaseOutFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	MovieSceneColorSection_0 (0-0-0-0): size 1491 (cls: MovieSceneColorSection_0>MovieSceneColorSection>/Script/MovieSceneTracks):
 		Tag array:
-			AlphaCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 723246557-1102952881-4172718998-2435341454 
+			AlphaCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 723246557-1102952881-4172718998-2435341454 
 	MovieSceneColorTrack_0 (0-0-0-0): size 191 (cls: MovieSceneColorTrack_0>MovieSceneColorTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=BrushColor 
 			PropertyPath(StrProperty)=BrushColor 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 840147707-1253409224-2233260443-2028687279 
+			Signature(StructProperty/Guid)=Guid: 840147707-1253409224-2233260443-2028687279 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 745856435-1336583495-2320982445-1029877241 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 745856435-1336583495-2320982445-1029877241 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2710996422-1196826059-2074186880-2979480164 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2710996422-1196826059-2074186880-2979480164 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 4281139061-1218161681-2154749062-4158858058 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 4281139061-1218161681-2154749062-4158858058 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 56343290-1104359934-3902900912-2023437098 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 56343290-1104359934-3902900912-2023437098 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1464490857-1212193733-3271765900-3247887715 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1464490857-1212193733-3271765900-3247887715 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 745856435-1336583495-2320982445-1029877241 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 745856435-1336583495-2320982445-1029877241 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2879786942-1330251019-2491492277-1253390919 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2879786942-1330251019-2491492277-1253390919 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2910546754-1191311828-1319938182-1624426511 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2910546754-1191311828-1319938182-1624426511 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 297043925-1215873938-2315503236-2940406376 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 297043925-1215873938-2315503236-2940406376 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2879786942-1330251019-2491492277-1253390919 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2879786942-1330251019-2491492277-1253390919 
 	MovieSceneFloatSection_0 (0-0-0-0): size 1491 (cls: MovieSceneFloatSection_0>MovieSceneFloatSection>/Script/MovieSceneTracks):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2910546754-1191311828-1319938182-1624426511 
+			FloatCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2910546754-1191311828-1319938182-1624426511 
 	MovieSceneFloatTrack_0 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_0>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 1742739179-1313959786-1042299307-4170285145 
+			Signature(StructProperty/Guid)=Guid: 1742739179-1313959786-1042299307-4170285145 
 	MovieSceneFloatTrack_1 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_1>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 2596983578-1121158694-1954337664-1425725070 
+			Signature(StructProperty/Guid)=Guid: 2596983578-1121158694-1954337664-1425725070 
 	MovieSceneFloatTrack_2 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_2>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 2055249490-1142974790-942625685-2757896968 
+			Signature(StructProperty/Guid)=Guid: 2055249490-1142974790-942625685-2757896968 
 	MovieSceneFloatTrack_3 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_3>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3357584170-1112419537-3696555140-1702918175 
+			Signature(StructProperty/Guid)=Guid: 3357584170-1112419537-3696555140-1702918175 
 	MovieSceneFloatTrack_4 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_4>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3445930556-1097085433-4231536792-321110625 
+			Signature(StructProperty/Guid)=Guid: 3445930556-1097085433-4231536792-321110625 
 	MovieSceneFloatTrack_0 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_0>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 1742739179-1313959786-1042299307-4170285145 
+			Signature(StructProperty/Guid)=Guid: 1742739179-1313959786-1042299307-4170285145 
 	MovieSceneFloatTrack_0 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_0>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 23884945-1109906056-346042516-2478860834 
+			Signature(StructProperty/Guid)=Guid: 23884945-1109906056-346042516-2478860834 
 	MovieSceneFloatTrack_1 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_1>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3493070662-1213082453-3548641695-2807248538 
+			Signature(StructProperty/Guid)=Guid: 3493070662-1213082453-3548641695-2807248538 
 	MovieSceneFloatTrack_2 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_2>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 2616203907-1248836602-2016674193-2399581450 
+			Signature(StructProperty/Guid)=Guid: 2616203907-1248836602-2016674193-2399581450 
 	MovieSceneFloatTrack_0 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_0>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 23884945-1109906056-346042516-2478860834 
+			Signature(StructProperty/Guid)=Guid: 23884945-1109906056-346042516-2478860834 
 	MovieSceneFloatTrack_1 (0-0-0-0): size 194 (cls: MovieSceneFloatTrack_1>MovieSceneFloatTrack>/Script/MovieSceneTracks):
 		Tag array:
 			PropertyName(NameProperty)=RenderOpacity 
 			PropertyPath(StrProperty)=RenderOpacity 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3493070662-1213082453-3548641695-2807248538 
+			Signature(StructProperty/Guid)=Guid: 3493070662-1213082453-3548641695-2807248538 
 	MovieSceneMarginSection_0 (0-0-0-0): size 4537 (cls: MovieSceneMarginSection_0>MovieSceneMarginSection>/Script/UMG):
 		Tag array:
-			TopCurve(StructProperty)=System.Byte[] 
-			LeftCurve(StructProperty)=System.Byte[] 
-			RightCurve(StructProperty)=System.Byte[] 
-			BottomCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2526196387-1127877625-966866839-3962201394 
+			TopCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			LeftCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			RightCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			BottomCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2526196387-1127877625-966866839-3962201394 
 	MovieSceneMarginSection_0 (0-0-0-0): size 4537 (cls: MovieSceneMarginSection_0>MovieSceneMarginSection>/Script/UMG):
 		Tag array:
-			TopCurve(StructProperty)=System.Byte[] 
-			LeftCurve(StructProperty)=System.Byte[] 
-			RightCurve(StructProperty)=System.Byte[] 
-			BottomCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2306521177-1084980409-1352445608-2583803379 
+			TopCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			LeftCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			RightCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			BottomCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2306521177-1084980409-1352445608-2583803379 
 	MovieSceneMarginSection_0 (0-0-0-0): size 3526 (cls: MovieSceneMarginSection_0>MovieSceneMarginSection>/Script/UMG):
 		Tag array:
-			TopCurve(StructProperty)=System.Byte[] 
-			LeftCurve(StructProperty)=System.Byte[] 
-			RightCurve(StructProperty)=System.Byte[] 
-			BottomCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1879076895-1152528043-3476568977-3153196934 
+			TopCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			LeftCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			RightCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			BottomCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1879076895-1152528043-3476568977-3153196934 
 	MovieSceneMarginSection_0 (0-0-0-0): size 3526 (cls: MovieSceneMarginSection_0>MovieSceneMarginSection>/Script/UMG):
 		Tag array:
-			TopCurve(StructProperty)=System.Byte[] 
-			LeftCurve(StructProperty)=System.Byte[] 
-			RightCurve(StructProperty)=System.Byte[] 
-			BottomCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2738930036-1308355619-1120156059-1927645497 
+			TopCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			LeftCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			RightCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			BottomCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2738930036-1308355619-1120156059-1927645497 
 	MovieSceneMarginSection_0 (0-0-0-0): size 3863 (cls: MovieSceneMarginSection_0>MovieSceneMarginSection>/Script/UMG):
 		Tag array:
-			TopCurve(StructProperty)=System.Byte[] 
-			LeftCurve(StructProperty)=System.Byte[] 
-			RightCurve(StructProperty)=System.Byte[] 
-			BottomCurve(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2899637385-1282915772-1093729978-1578963863 
+			TopCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			LeftCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			RightCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			BottomCurve(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2899637385-1282915772-1093729978-1578963863 
 	MovieSceneMarginTrack_0 (0-0-0-0): size 188 (cls: MovieSceneMarginTrack_0>MovieSceneMarginTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=Padding 
 			PropertyPath(StrProperty)=Padding 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 2145209463-1206842714-1340629682-2603889538 
+			Signature(StructProperty/Guid)=Guid: 2145209463-1206842714-1340629682-2603889538 
 	MovieSceneMarginTrack_1 (0-0-0-0): size 188 (cls: MovieSceneMarginTrack_1>MovieSceneMarginTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=Padding 
 			PropertyPath(StrProperty)=Padding 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3246591338-1214363597-866273186-1144845882 
+			Signature(StructProperty/Guid)=Guid: 3246591338-1214363597-866273186-1144845882 
 	MovieSceneMarginTrack_2 (0-0-0-0): size 188 (cls: MovieSceneMarginTrack_2>MovieSceneMarginTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=Padding 
 			PropertyPath(StrProperty)=Padding 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3684509455-1125414363-155722167-3788925912 
+			Signature(StructProperty/Guid)=Guid: 3684509455-1125414363-155722167-3788925912 
 	MovieSceneMarginTrack_1 (0-0-0-0): size 188 (cls: MovieSceneMarginTrack_1>MovieSceneMarginTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=Padding 
 			PropertyPath(StrProperty)=Padding 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 4061101587-1271227565-3094386336-1971228851 
+			Signature(StructProperty/Guid)=Guid: 4061101587-1271227565-3094386336-1971228851 
 	MovieSceneMarginTrack_2 (0-0-0-0): size 188 (cls: MovieSceneMarginTrack_2>MovieSceneMarginTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=Padding 
 			PropertyPath(StrProperty)=Padding 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3480834933-1170754318-359127992-491982505 
+			Signature(StructProperty/Guid)=Guid: 3480834933-1170754318-359127992-491982505 
 	MovieSceneParameterSection_0 (0-0-0-0): size 1533 (cls: MovieSceneParameterSection_0>MovieSceneParameterSection>/Script/MovieSceneTracks):
 		Tag array:
 			ScalarParameterNamesAndCurves(ArrayProperty)=[object] (inner: StructProperty)
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2139397860-1173153409-3731472817-2195784010 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2139397860-1173153409-3731472817-2195784010 
 	MovieSceneParameterSection_0 (0-0-0-0): size 2207 (cls: MovieSceneParameterSection_0>MovieSceneParameterSection>/Script/MovieSceneTracks):
 		Tag array:
 			ScalarParameterNamesAndCurves(ArrayProperty)=[object] (inner: StructProperty)
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1446485922-1254661843-1854674325-351367043 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1446485922-1254661843-1854674325-351367043 
 	MovieSceneParameterSection_0 (0-0-0-0): size 1870 (cls: MovieSceneParameterSection_0>MovieSceneParameterSection>/Script/MovieSceneTracks):
 		Tag array:
 			ScalarParameterNamesAndCurves(ArrayProperty)=[object] (inner: StructProperty)
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 4205216240-1289424529-825223871-3398027579 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 4205216240-1289424529-825223871-3398027579 
 	MovieSceneWidgetMaterialTrack_0 (0-0-0-0): size 196 (cls: MovieSceneWidgetMaterialTrack_0>MovieSceneWidgetMaterialTrack>/Script/UMG):
 		Tag array:
 			BrushPropertyNamePath(ArrayProperty)=Background (inner: NameProperty)
 			TrackName(NameProperty)=Background 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 24217563-1270733790-855121079-4113382095 
+			Signature(StructProperty/Guid)=Guid: 24217563-1270733790-855121079-4113382095 
 	MovieSceneWidgetMaterialTrack_0 (0-0-0-0): size 196 (cls: MovieSceneWidgetMaterialTrack_0>MovieSceneWidgetMaterialTrack>/Script/UMG):
 		Tag array:
 			BrushPropertyNamePath(ArrayProperty)=Background (inner: NameProperty)
 			TrackName(NameProperty)=Background 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 3296303598-1242109440-1088577173-2472650920 
+			Signature(StructProperty/Guid)=Guid: 3296303598-1242109440-1088577173-2472650920 
 	MovieSceneWidgetMaterialTrack_0 (0-0-0-0): size 196 (cls: MovieSceneWidgetMaterialTrack_0>MovieSceneWidgetMaterialTrack>/Script/UMG):
 		Tag array:
 			BrushPropertyNamePath(ArrayProperty)=Background (inner: NameProperty)
 			TrackName(NameProperty)=Background 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 785163615-1341609381-4028722312-1095740421 
+			Signature(StructProperty/Guid)=Guid: 785163615-1341609381-4028722312-1095740421 
 	RightExtraContentSlot (0-0-0-0): size 41 (cls: RightExtraContentSlot>NamedSlot>/Script/UMG):
 		Tag array:
 			Slot(ObjectProperty)=HorizontalBoxSlot_3=WidgetArchetype 
@@ -1798,7 +1802,7 @@ Serialized exports:
 			Content(ObjectProperty)=Triangles_1=WidgetArchetype 
 	OverlaySlot_5 (0-0-0-0): size 267 (cls: OverlaySlot_5>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=Overlay_2=WidgetArchetype 
@@ -1911,8 +1915,8 @@ Serialized exports:
 	TextBlock_332 (0-0-0-0): size 533 (cls: TextBlock_332>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=(errors.com.epicgames.common.processing_exception) (14D304BB47E2AD3C66AC72802C59B3EF) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			WrapTextAt(FloatProperty)=800 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -1920,8 +1924,8 @@ Serialized exports:
 	TextBlock_332 (0-0-0-0): size 533 (cls: TextBlock_332>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=(errors.com.epicgames.common.processing_exception) (14D304BB47E2AD3C66AC72802C59B3EF) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			WrapTextAt(FloatProperty)=800 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -1929,8 +1933,8 @@ Serialized exports:
 	TextBlock_332 (0-0-0-0): size 533 (cls: TextBlock_332>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=(errors.com.epicgames.common.processing_exception) (14D304BB47E2AD3C66AC72802C59B3EF) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			WrapTextAt(FloatProperty)=800 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -1938,8 +1942,8 @@ Serialized exports:
 	TextBlock_332 (0-0-0-0): size 533 (cls: TextBlock_332>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=(errors.com.epicgames.common.processing_exception) (14D304BB47E2AD3C66AC72802C59B3EF) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			WrapTextAt(FloatProperty)=800 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -1947,8 +1951,8 @@ Serialized exports:
 	TextBlock_332 (0-0-0-0): size 533 (cls: TextBlock_332>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=(errors.com.epicgames.common.processing_exception) (14D304BB47E2AD3C66AC72802C59B3EF) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			WrapTextAt(FloatProperty)=800 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -1956,8 +1960,8 @@ Serialized exports:
 	MainErrorCodeDisplay (0-0-0-0): size 522 (cls: MainErrorCodeDisplay>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=(errors.com.epicgames.common.processing (3FCD8B6E44C94341DFD12AAE2804E9A3) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			WrapTextAt(FloatProperty)=800 
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -2021,13 +2025,13 @@ Serialized exports:
 			Content(ObjectProperty)=Title=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 254 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 325 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Bottom 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
@@ -2054,7 +2058,7 @@ Serialized exports:
 			Content(ObjectProperty)=WidgetSwitcher_SeverityImage=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 197 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=VerticalBox_354=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_0=WidgetArchetype 
@@ -2063,58 +2067,58 @@ Serialized exports:
 			MovieScene(ObjectProperty)=Intro_1=ErrorWindow_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2858854837-1289703168-857767334-3539021474 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2858854837-1289703168-857767334-3539021474 
 	Intro_INST (0-0-0-0): size 16337 (cls: Intro_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=Intro=ErrorWindow_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1706143407-1255096496-2540423085-3252132743 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1706143407-1255096496-2540423085-3252132743 
 	Intro_New_0_INST (0-0-0-0): size 37585 (cls: Intro_New_0_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=Intro_New_0=ErrorWindow_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2112756963-1168105113-365187994-3348854354 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2112756963-1168105113-365187994-3348854354 
 	Intro_New_INST (0-0-0-0): size 35166 (cls: Intro_New_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=Intro_New=ErrorWindow_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1294870762-1091439863-3114768265-3963576697 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1294870762-1091439863-3114768265-3963576697 
 	Llama_1_INST (0-0-0-0): size 9042 (cls: Llama_1_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=Llama_1=ErrorWindow_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 153351883-1168817098-3051629190-1539399617 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 153351883-1168817098-3051629190-1539399617 
 	Llama_2_INST (0-0-0-0): size 9042 (cls: Llama_2_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=Llama_2=ErrorWindow_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 4052214419-1261835596-3049603460-1489753088 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 4052214419-1261835596-3049603460-1489753088 
 	Llama_3_INST (0-0-0-0): size 9042 (cls: Llama_3_INST>WidgetAnimation>/Script/UMG):
 		Tag array:
 			MovieScene(ObjectProperty)=Llama_3=ErrorWindow_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1394683338-1314299739-840899504-4177534265 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1394683338-1314299739-840899504-4177534265 
 	WidgetNavigation_0 (0-0-0-0): size 600 (cls: WidgetNavigation_0>WidgetNavigation>/Script/UMG):
 		Tag array:
-			Up(StructProperty)=System.Byte[] 
-			Down(StructProperty)=System.Byte[] 
-			Left(StructProperty)=System.Byte[] 
-			Right(StructProperty)=System.Byte[] 
-			Next(StructProperty)=System.Byte[] 
-			Previous(StructProperty)=System.Byte[] 
+			Up(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Down(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Left(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Right(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Next(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Previous(StructProperty/WidgetNavigationData)=System.Byte[] 
 	WidgetSwitcher_SeverityImage (0-0-0-0): size 86 (cls: WidgetSwitcher_SeverityImage>WidgetSwitcher>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)

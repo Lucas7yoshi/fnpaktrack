@@ -236,6 +236,8 @@ Name table:
 	DynamicBindingObjects
 	EEndOfMatchReason
 	EffectMaterial
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortTeamAffiliation
 	EHorizontalAlignment
 	EInputActionState
@@ -273,6 +275,7 @@ Name table:
 	ExecuteUbergraph_AthenaGameOverWidget
 	Feedback_C
 	FloatProperty
+	FlowDirectionPreference
 	FocusPlayerSwitcher
 	FocusWidget
 	FollowNextTeammate
@@ -669,15 +672,15 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_AthenaGameOverWidget=AthenaGameOverWidget_C 
 	Default__AthenaGameOverWidget_C (0-0-0-0): size 1069 (cls: Default__AthenaGameOverWidget_C>AthenaGameOverWidget_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			Input_ReturnToLobby(StructProperty)=System.Byte[] 
-			Input_NextTeammate(StructProperty)=System.Byte[] 
-			Input_PreviousTeammate(StructProperty)=System.Byte[] 
-			Input_ReportPlayer(StructProperty)=System.Byte[] 
-			Input_ViewMatchStats(StructProperty)=System.Byte[] 
-			Input_Matchmake(StructProperty)=System.Byte[] 
-			Input_CancelMatchmaking(StructProperty)=System.Byte[] 
-			Input_FollowSpecialActor(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			Input_ReturnToLobby(StructProperty/DataTableRowHandle)=System.Byte[] 
+			Input_NextTeammate(StructProperty/DataTableRowHandle)=System.Byte[] 
+			Input_PreviousTeammate(StructProperty/DataTableRowHandle)=System.Byte[] 
+			Input_ReportPlayer(StructProperty/DataTableRowHandle)=System.Byte[] 
+			Input_ViewMatchStats(StructProperty/DataTableRowHandle)=System.Byte[] 
+			Input_Matchmake(StructProperty/DataTableRowHandle)=System.Byte[] 
+			Input_CancelMatchmaking(StructProperty/DataTableRowHandle)=System.Byte[] 
+			Input_FollowSpecialActor(StructProperty/DataTableRowHandle)=System.Byte[] 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	WidgetArchetype (0-0-0-0): size 241 (cls: WidgetArchetype>AthenaGameOverWidget_C):
@@ -693,11 +696,11 @@ Serialized exports:
 	Kills (0-0-0-0): size 378 (cls: Kills>AthenaKillsWidget_C>/Game/Athena/HUD/AthenaKillsWidget):
 		Tag array:
 			KillsText(ObjectProperty)=KillsText=WidgetArchetype 
-			HUDElementTag(StructProperty)=GameplayTagContainer: 
+			HUDElementTag(StructProperty/GameplayTagContainer)=GameplayTagContainer: 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
 			RenderOpacity(FloatProperty)=0 
 	AthenaWinnerList (0-0-0-0): size 253 (cls: AthenaWinnerList>AthenaWinnerList_C>/Game/Athena/HUD/EndGame/AthenaWinnerList):
 		Tag array:
@@ -822,13 +825,13 @@ Serialized exports:
 	WinnerAnnounced (0-0-0-0): size 34 (cls: WinnerAnnounced>BoolProperty>/Script/CoreUObject)
 	ContentBorder (0-0-0-0): size 350 (cls: ContentBorder>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=True 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=ContentBorder=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox=WidgetArchetype 
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -855,7 +858,7 @@ Serialized exports:
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	InputActionWidget (0-0-0-0): size 339 (cls: InputActionWidget>CommonActionWidget>/Script/CommonUI):
 		Tag array:
-			ProgressMaterialBrush(StructProperty)=System.Byte[] 
+			ProgressMaterialBrush(StructProperty/SlateBrush)=System.Byte[] 
 			ProgressMaterialParam(NameProperty)=Percentage 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	CommonBorder_0 (0-0-0-0): size 70 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
@@ -892,60 +895,60 @@ Serialized exports:
 		Tag array:
 			ScrollStyle(ObjectProperty)=TextScrollStyle-Base_C=/Game/UI/Foundation/Text/TextScrollStyle-Base 
 			Text(TextProperty)=                    LoremDolor (4 elims), DolorIpsum (4 elims), DolorLorem (0 elims), LoremDolor (4 elims), DolorIpsum (4 elims), DolorLorem (0 elims)                     (38F415E644796C4F00463583B83BA93C) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	CommonTextBlock_WinnersTitle (0-0-0-0): size 575 (cls: CommonTextBlock_WinnersTitle>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Text(TextProperty)=10 WINNERS: (B2C9C3814C6845BEDD00D0B0F53B81B3) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	CommonTextBlock_MultiWinner1 (0-0-0-0): size 932 (cls: CommonTextBlock_MultiWinner1>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Text(TextProperty)=WWWWW (C9CEDBF047E70F1ABC4FFDAFFE17EEF4) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Justification(ByteProperty)=ETextJustify::Right 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			RenderTransformPivot(StructProperty)=Vector2D(0,0.5) 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0,0.5) 
 			bIsVariable(BoolProperty)=True 
 	CommonTextBlock_MultiWinner2 (0-0-0-0): size 938 (cls: CommonTextBlock_MultiWinner2>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Text(TextProperty)=WWWWWinner1 (D4E06E9A474DDF289A0EC2AF0D565D1E) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Justification(ByteProperty)=ETextJustify::Right 
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			RenderTransformPivot(StructProperty)=Vector2D(0,0.5) 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0,0.5) 
 			bIsVariable(BoolProperty)=True 
 	PlaceText (0-0-0-0): size 813 (cls: PlaceText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Text(TextProperty)=#{Place} (F13DAC304D9A2A8D85DB32B392693F63) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
-			RenderTransformPivot(StructProperty)=Vector2D(0,0.5) 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0,0.5) 
 			bIsVariable(BoolProperty)=True 
 	CenterButtonTextWidget (0-0-0-0): size 453 (cls: CenterButtonTextWidget>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-MediumButton_C=/Game/UI/Foundation/Buttons/TextStyles/TextStyle-MediumButton 
 			ScrollStyle(ObjectProperty)=TextScrollStyle-Base_C=/Game/UI/Foundation/Text/TextScrollStyle-Base 
 			Text(TextProperty)={Text} (99357DD44CFC5E3692A9C792F19B30DA) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -1064,10 +1067,11 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::Visible 
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_0 (0-0-0-0): size 111 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
@@ -1085,7 +1089,7 @@ Serialized exports:
 			Content(ObjectProperty)=TextBlock_0=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
@@ -1098,7 +1102,7 @@ Serialized exports:
 			Content(ObjectProperty)=KillsImage=WidgetArchetype 
 	HorizontalBoxSlot_3 (0-0-0-0): size 197 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=KillsText=WidgetArchetype 
@@ -1113,7 +1117,7 @@ Serialized exports:
 			Content(ObjectProperty)=TextBlock_MultiWinnerText=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 226 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Bottom 
 			Parent(ObjectProperty)=MultiWinnernames=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_MultiWinnerContainer=WidgetArchetype 
@@ -1134,28 +1138,28 @@ Serialized exports:
 			Content(ObjectProperty)=WinnerText=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=CenterButtonTextWidget=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 267 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=InputActionWidget=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 325 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=LeftSideImage=WidgetArchetype 
 	HorizontalBoxSlot_3 (0-0-0-0): size 243 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
 	OpenShadowPlayHighlights (0-0-0-0): size 792 (cls: OpenShadowPlayHighlights>IconTextButton_C>/Game/UI/Foundation/Buttons/IconTextButton):
@@ -1165,10 +1169,10 @@ Serialized exports:
 			LeftSideImage(ObjectProperty)=LeftSideImage=WidgetArchetype 
 			RightExtraContentSlot(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
 			ButtonText(TextProperty)= () 
-			IconBrush(StructProperty)=System.Byte[] 
+			IconBrush(StructProperty/SlateBrush)=System.Byte[] 
 			Style(ObjectProperty)=ButtonStyle-Primary-L_C=/Game/UI/Foundation/Buttons/ButtonStyles/Primary/ButtonStyle-Primary-L 
 			bHideInputActionWithKeyboard(BoolProperty)=True 
-			TriggeringInputAction(StructProperty)=System.Byte[] 
+			TriggeringInputAction(StructProperty/DataTableRowHandle)=System.Byte[] 
 			InputActionWidget(ObjectProperty)=InputActionWidget=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1176,37 +1180,37 @@ Serialized exports:
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	ImageSpinner (0-0-0-0): size 210 (cls: ImageSpinner>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
 	KillsImage (0-0-0-0): size 210 (cls: KillsImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
 	BannerImage (0-0-0-0): size 225 (cls: BannerImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=LoadGuardSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	SurroundImage (0-0-0-0): size 225 (cls: SurroundImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=LoadGuardSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	BannerImage (0-0-0-0): size 225 (cls: BannerImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=LoadGuardSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	SurroundImage (0-0-0-0): size 225 (cls: SurroundImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=LoadGuardSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	LeftSideImage (0-0-0-0): size 196 (cls: LeftSideImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 	CallFunc_GetCachedHighlightCount_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetCachedHighlightCount_ReturnValue>IntProperty>/Script/CoreUObject)
 	LoadGuardSlot_0 (0-0-0-0): size 70 (cls: LoadGuardSlot_0>LoadGuardSlot>/Script/CommonUI):
@@ -1300,7 +1304,7 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=ScaleBoxSlot_0=WidgetArchetype 
-			RenderTransformPivot(StructProperty)=Vector2D(1,0.5) 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(1,0.5) 
 	OverlayPlayername (0-0-0-0): size 116 (cls: OverlayPlayername>Overlay>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1330,7 +1334,7 @@ Serialized exports:
 			Content(ObjectProperty)=VerticalBoxWinnerlist=WidgetArchetype 
 	OverlaySlot_0 (0-0-0-0): size 238 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
@@ -1397,13 +1401,13 @@ Serialized exports:
 			Content(ObjectProperty)=OpenShadowPlayHighlights=WidgetArchetype 
 	OverlaySlot_0 (0-0-0-0): size 226 (cls: OverlaySlot_0>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=Overlay_1=WidgetArchetype 
 			Content(ObjectProperty)=SpectatedPlayerSwitcher=WidgetArchetype 
 	OverlaySlot_6 (0-0-0-0): size 296 (cls: OverlaySlot_6>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
 			VerticalAlignment(ByteProperty)=VAlign_Bottom 
 			Parent(ObjectProperty)=Overlay_1=WidgetArchetype 
@@ -1457,11 +1461,11 @@ Serialized exports:
 		Tag array:
 			PlayerBanner(ObjectProperty)=PlayerBanner=WidgetArchetype 
 			BindToLocalPlayerByDefault(BoolProperty)=False 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
 	RetainerBox_Winnerlist (0-0-0-0): size 111 (cls: RetainerBox_Winnerlist>RetainerBox>/Script/UMG):
 		Tag array:
 			EffectMaterial(ObjectProperty)=M_UI_SideFade=/Game/Athena/HUD/Materials/M_UI_SideFade 
@@ -1566,16 +1570,16 @@ DolorIpsum <img id="ElimIcon"/> 3 (902A8CBB41414D422CD4D68A9DBDB88D)
 	EliminatedByText (0-0-0-0): size 634 (cls: EliminatedByText>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=ELIMINATED BY (7F025E0F4550324659AB22AFFCB54D44) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-			RenderTransformPivot(StructProperty)=Vector2D(0.5,1) 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0.5,1) 
 			bIsVariable(BoolProperty)=True 
 	KillsText (0-0-0-0): size 540 (cls: KillsText>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=99 (E3855204471F214115F2629079CE4281) 
-			Font(StructProperty)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			MinDesiredWidth(FloatProperty)=28 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=HorizontalBoxSlot_3=WidgetArchetype 
@@ -1583,61 +1587,61 @@ DolorIpsum <img id="ElimIcon"/> 3 (902A8CBB41414D422CD4D68A9DBDB88D)
 	SpectatorName (0-0-0-0): size 755 (cls: SpectatorName>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)={PlayerName} (59BC87A245974E6D8721F49161CAE213) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
-			RenderTransformPivot(StructProperty)=Vector2D(0,0.5) 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0,0.5) 
 			bIsVariable(BoolProperty)=True 
 	TextBlock_0 (0-0-0-0): size 551 (cls: TextBlock_0>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=Relocating... (6093305C4013F21354A4B89C4444747B) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 	TextBlock_MultiWinnerText (0-0-0-0): size 592 (cls: TextBlock_MultiWinnerText>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=and [x] others won the game! (B18C589D4B3F7CDACF8682969149E3D2) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	TextWinnerPoints (0-0-0-0): size 617 (cls: TextWinnerPoints>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=1,000 points (7925076C49070AFB00E735B95D8BAADC) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	TextYourPoints (0-0-0-0): size 615 (cls: TextYourPoints>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=500 points (C6B64A5D4E7D155E92CBDFB536E54326) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	UserId (0-0-0-0): size 575 (cls: UserId>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=USER ID (A887AB7C4BB3AFF87D6EDB99BEE0A95D) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
 			bIsVariable(BoolProperty)=True 
 	YouPlacedText (0-0-0-0): size 575 (cls: YouPlacedText>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=YOU PLACED  (3F6C84BD4016FC6E444CFCB9E7F78C5D) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	CallFunc_Conv_StringToText_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToText_ReturnValue>TextProperty>/Script/CoreUObject)
@@ -1666,14 +1670,14 @@ DolorIpsum <img id="ElimIcon"/> 3 (902A8CBB41414D422CD4D68A9DBDB88D)
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
-			RenderTransformPivot(StructProperty)=Vector2D(0.5,0.8) 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0.5,0.8) 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	YouPlacedBox (0-0-0-0): size 169 (cls: YouPlacedBox>VerticalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
-			RenderTransformPivot(StructProperty)=Vector2D(0.5,0) 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0.5,0) 
 			bIsVariable(BoolProperty)=True 
 	VerticalBox_0 (0-0-0-0): size 96 (cls: VerticalBox_0>VerticalBox>/Script/UMG):
 		Tag array:
@@ -1705,36 +1709,36 @@ DolorIpsum <img id="ElimIcon"/> 3 (902A8CBB41414D422CD4D68A9DBDB88D)
 			Content(ObjectProperty)=OverlayPlayername=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 197 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			Parent(ObjectProperty)=VerticalBoxEliminatedbySpectating=WidgetArchetype 
 			Content(ObjectProperty)=EliminatedByText=WidgetArchetype 
 	VerticalBoxSlot_4 (0-0-0-0): size 209 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=VerticalBoxEliminatedbySpectating=WidgetArchetype 
 			Content(ObjectProperty)=Spacer_0=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 156 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBoxWinnerPlacementInfo=WidgetArchetype 
 			Content(ObjectProperty)=WinnerBox=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 238 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=VerticalBoxWinnerPlacementInfo=WidgetArchetype 
 			Content(ObjectProperty)=YouPlacedBox=WidgetArchetype 
 	VerticalBoxSlot_3 (0-0-0-0): size 156 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBoxWinnerPlacementInfo=WidgetArchetype 
 			Content(ObjectProperty)=AthenaWinnerList=WidgetArchetype 
 	VerticalBoxSlot_4 (0-0-0-0): size 238 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=VerticalBoxWinnerPlacementInfo=WidgetArchetype 
@@ -1745,7 +1749,7 @@ DolorIpsum <img id="ElimIcon"/> 3 (902A8CBB41414D422CD4D68A9DBDB88D)
 			Content(ObjectProperty)=CommonWidgetSwitcher_MultiWinners=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 197 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			Parent(ObjectProperty)=WinnerBox=WidgetArchetype 
 			Content(ObjectProperty)=TextWinnerPoints=WidgetArchetype 
@@ -1755,18 +1759,18 @@ DolorIpsum <img id="ElimIcon"/> 3 (902A8CBB41414D422CD4D68A9DBDB88D)
 			Content(ObjectProperty)=HorizontalBox=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 197 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			Parent(ObjectProperty)=YouPlacedBox=WidgetArchetype 
 			Content(ObjectProperty)=TextYourPoints=WidgetArchetype 
 	WidgetNavigation_0 (0-0-0-0): size 600 (cls: WidgetNavigation_0>WidgetNavigation>/Script/UMG):
 		Tag array:
-			Up(StructProperty)=System.Byte[] 
-			Down(StructProperty)=System.Byte[] 
-			Left(StructProperty)=System.Byte[] 
-			Right(StructProperty)=System.Byte[] 
-			Next(StructProperty)=System.Byte[] 
-			Previous(StructProperty)=System.Byte[] 
+			Up(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Down(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Left(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Right(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Next(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Previous(StructProperty/WidgetNavigationData)=System.Byte[] 
 	GameOverSwitcher (0-0-0-0): size 86 (cls: GameOverSwitcher>WidgetSwitcher>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1777,7 +1781,7 @@ DolorIpsum <img id="ElimIcon"/> 3 (902A8CBB41414D422CD4D68A9DBDB88D)
 			Content(ObjectProperty)=RetainerBox_Winnerlist=WidgetArchetype 
 	WidgetSwitcherSlot_1 (0-0-0-0): size 238 (cls: WidgetSwitcherSlot_1>WidgetSwitcherSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=CommonWidgetSwitcher_WinnerListStyle=WidgetArchetype 

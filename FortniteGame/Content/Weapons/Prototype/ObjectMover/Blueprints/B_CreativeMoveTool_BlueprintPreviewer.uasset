@@ -2,6 +2,10 @@ Name table:
 	/Game/Athena/WinterArt/Materials/M_BaseSimple_4Layers
 	/Game/Athena/WinterArt/Materials/M_BaseSimple_4Layers.M_BaseSimple_4Layers
 	/Game/Effects/Fort_Effects/Mesh/Splines/SM_Straight_Spline
+	/Game/Playgrounds/Items/EQ/Materials/M_EQ_LandscapeBase_01
+	/Game/Playgrounds/Items/EQ/Materials/M_EQ_LandscapeBase_01.M_EQ_LandscapeBase_01
+	/Game/Playgrounds/Items/EQ/Materials/M_EQ_LandscapeLines_01
+	/Game/Playgrounds/Items/EQ/Materials/M_EQ_LandscapeLines_01.M_EQ_LandscapeLines_01
 	/Game/Tools/Turntable/Mesh/1x1plane
 	/Game/Weapons/Prototype/ObjectMover/Blueprints/B_CreativeMoveTool_Athena
 	/Game/Weapons/Prototype/ObjectMover/Blueprints/B_CreativeMoveTool_BlueprintPreviewer
@@ -16,6 +20,7 @@ Name table:
 	/Game/Weapons/Prototype/ObjectMover/Materials/M_MoveTool_Controlled_LQ
 	/Game/Weapons/Prototype/ObjectMover/Materials/M_MoveTool_Invisible
 	/Game/Weapons/Prototype/ObjectMover/Meshes/SM_CreativeMoveTool_AxisGuide
+	/Game/Weapons/Prototype/ObjectMover/Particles/P_CreativeMoveTool_DropDust
 	/Game/Weapons/Prototype/ObjectMover/Particles/P_CreativeMoveTool_TransitionBlocks
 	/Script/AnimationBudgetAllocator
 	/Script/ClothingSystemRuntime
@@ -35,6 +40,7 @@ Name table:
 	AllNodes
 	Array_Add
 	Array_Clear
+	Array_Contains
 	Array_Get
 	Array_IsValidIndex
 	Array_LastIndex
@@ -48,6 +54,8 @@ Name table:
 	Base Color
 	BaseActor
 	bAutoActivate
+	bCanEverTick
+	bHasSpawnedAnActor
 	bHiddenInGame
 	bIsEditorOnly
 	bIsEventCurve
@@ -67,6 +75,8 @@ Name table:
 	BoolProperty
 	BoundsScaled
 	bPropagateToChildren
+	BreakHitResult
+	BreakTransform
 	BreakVector
 	bReplicateMovement
 	bReplicates
@@ -76,6 +86,7 @@ Name table:
 	BuildingMeshComponent
 	BuildingSMActor
 	BuildPreviewMarkerActor
+	BurstAmount
 	bUseInverseSquaredFalloff
 	bValidatedAsWired
 	bVisible
@@ -89,10 +100,13 @@ Name table:
 	CallFunc_Add_IntInt_ReturnValue6
 	CallFunc_Add_IntInt_ReturnValue7
 	CallFunc_Add_VectorVector_ReturnValue
+	CallFunc_Add_VectorVector_ReturnValue1
+	CallFunc_Add_VectorVector_ReturnValue2
 	CallFunc_AddComponent_ReturnValue
 	CallFunc_Array_Add_ReturnValue
 	CallFunc_Array_Add_ReturnValue1
 	CallFunc_Array_Add_ReturnValue2
+	CallFunc_Array_Contains_ReturnValue
 	CallFunc_Array_Get_Item
 	CallFunc_Array_Get_Item1
 	CallFunc_Array_Get_Item2
@@ -110,8 +124,31 @@ Name table:
 	CallFunc_Array_Length_ReturnValue5
 	CallFunc_BooleanAND_ReturnValue
 	CallFunc_BooleanAND_ReturnValue1
+	CallFunc_BooleanAND_ReturnValue2
 	CallFunc_BooleanOR_ReturnValue
 	CallFunc_BooleanOR_ReturnValue1
+	CallFunc_BreakHitResult_bBlockingHit
+	CallFunc_BreakHitResult_bInitialOverlap
+	CallFunc_BreakHitResult_Distance
+	CallFunc_BreakHitResult_FaceIndex
+	CallFunc_BreakHitResult_HitActor
+	CallFunc_BreakHitResult_HitBoneName
+	CallFunc_BreakHitResult_HitComponent
+	CallFunc_BreakHitResult_HitItem
+	CallFunc_BreakHitResult_ImpactNormal
+	CallFunc_BreakHitResult_ImpactPoint
+	CallFunc_BreakHitResult_Location
+	CallFunc_BreakHitResult_Normal
+	CallFunc_BreakHitResult_PhysMat
+	CallFunc_BreakHitResult_Time
+	CallFunc_BreakHitResult_TraceEnd
+	CallFunc_BreakHitResult_TraceStart
+	CallFunc_BreakTransform_Location
+	CallFunc_BreakTransform_Location1
+	CallFunc_BreakTransform_Rotation
+	CallFunc_BreakTransform_Rotation1
+	CallFunc_BreakTransform_Scale
+	CallFunc_BreakTransform_Scale1
 	CallFunc_BreakVector_X
 	CallFunc_BreakVector_X1
 	CallFunc_BreakVector_Y
@@ -121,20 +158,26 @@ Name table:
 	CallFunc_Conv_ByteToInt_ReturnValue
 	CallFunc_Conv_FloatToVector_ReturnValue
 	CallFunc_Conv_IntToFloat_ReturnValue
+	CallFunc_Conv_ObjectToSoftObjectReference_ReturnValue
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue1
 	CallFunc_Divide_FloatFloat_ReturnValue
 	CallFunc_Divide_FloatFloat_ReturnValue1
 	CallFunc_Divide_VectorFloat_ReturnValue
 	CallFunc_Divide_VectorVector_ReturnValue
+	CallFunc_EqualEqual_ByteByte_ReturnValue
 	CallFunc_EqualEqual_IntInt_ReturnValue
 	CallFunc_EqualEqual_IntInt_ReturnValue1
 	CallFunc_EqualEqual_ObjectObject_ReturnValue
-	CallFunc_EqualEqual_StriStri_ReturnValue
 	CallFunc_FClamp_ReturnValue
+	CallFunc_FindDropStartLocation_DelayAmount
+	CallFunc_FindDropStartLocation_EndTransform
+	CallFunc_FindDropStartLocation_PlayDropAnimation
+	CallFunc_FindDropStartLocation_StartTransform
 	CallFunc_FMax_ReturnValue
 	CallFunc_FMax_ReturnValue1
 	CallFunc_FMax_ReturnValue2
+	CallFunc_FMax_ReturnValue3
 	CallFunc_FTrunc_ReturnValue
 	CallFunc_GetAllowGravityOnPlace_ReturnValue
 	CallFunc_GetAttachParent_ReturnValue
@@ -142,7 +185,6 @@ Name table:
 	CallFunc_GetBlueprintMaterialByPlatform_ReturnValue
 	CallFunc_GetBuildingMeshComponent_ReturnValue
 	CallFunc_GetBuildPreviewMarker_ReturnValue
-	CallFunc_GetClassDisplayName_ReturnValue
 	CallFunc_GetComponentBounds_BoxExtent
 	CallFunc_GetComponentBounds_BoxExtent1
 	CallFunc_GetComponentBounds_Origin
@@ -157,6 +199,8 @@ Name table:
 	CallFunc_GetInstigatorController_ReturnValue
 	CallFunc_GetLocalBounds_Max
 	CallFunc_GetLocalBounds_Min
+	CallFunc_GetLocalPhoneTool_Found
+	CallFunc_GetLocalPhoneTool_PhoneTool
 	CallFunc_GetMaterial_ReturnValue
 	CallFunc_GetMidFromArray_FoundAndValid
 	CallFunc_GetMidFromArray_FoundAndValid1
@@ -173,7 +217,6 @@ Name table:
 	CallFunc_GetMidFromArray_Output5
 	CallFunc_GetMidFromArray_Output6
 	CallFunc_GetNumMaterials_ReturnValue
-	CallFunc_GetObjectClass_ReturnValue
 	CallFunc_GetOwner_ReturnValue
 	CallFunc_GetPlaybackPosition_ReturnValue
 	CallFunc_GetPlayerController_ReturnValue
@@ -186,6 +229,7 @@ Name table:
 	CallFunc_GetSetTextureParameter_Success4
 	CallFunc_GetStaticMeshComponent_Success
 	CallFunc_GetTimelineLength_ReturnValue
+	CallFunc_GetTransform_ReturnValue
 	CallFunc_Greater_IntInt_ReturnValue
 	CallFunc_GreaterEqual_FloatFloat_ReturnValue
 	CallFunc_GridPreviewScale_BoundsScaled
@@ -201,6 +245,7 @@ Name table:
 	CallFunc_IsDedicatedServer_ReturnValue1
 	CallFunc_IsDedicatedServer_ReturnValue2
 	CallFunc_IsDedicatedServer_ReturnValue3
+	CallFunc_IsDedicatedServer_ReturnValue4
 	CallFunc_IsErebus_ReturnValue
 	CallFunc_IsMobileGame_ReturnValue
 	CallFunc_IsRunningOnOwningClient_ReturnValue
@@ -209,6 +254,8 @@ Name table:
 	CallFunc_IsValid_ReturnValue1
 	CallFunc_IsValid_ReturnValue2
 	CallFunc_K2_AttachToComponent_ReturnValue
+	CallFunc_K2_GetComponentLocation_ReturnValue
+	CallFunc_K2_GetComponentLocation_ReturnValue1
 	CallFunc_K2_GetComponentToWorld_ReturnValue
 	CallFunc_K2_GetComponentToWorld_ReturnValue1
 	CallFunc_K2_GetRootComponent_ReturnValue
@@ -216,9 +263,13 @@ Name table:
 	CallFunc_K2_GetTextureParameterValue_ReturnValue
 	CallFunc_K2_GetVectorParameterValue_ReturnValue
 	CallFunc_K2_GetVectorParameterValue_ReturnValue1
+	CallFunc_K2_IsCollisionEnabled_ReturnValue
+	CallFunc_K2_SetActorTransform_ReturnValue
+	CallFunc_K2_SetActorTransform_SweepHitResult
 	CallFunc_K2_SetRelativeLocation_SweepHitResult
 	CallFunc_K2_SetRelativeLocation_SweepHitResult1
 	CallFunc_K2_SetRelativeTransform_SweepHitResult
+	CallFunc_K2_SetWorldLocation_SweepHitResult
 	CallFunc_K2_SetWorldTransform_SweepHitResult
 	CallFunc_Lerp_ReturnValue
 	CallFunc_Lerp_ReturnValue1
@@ -234,36 +285,45 @@ Name table:
 	CallFunc_LessEqual_IntInt_ReturnValue1
 	CallFunc_LinearColorLerp_ReturnValue
 	CallFunc_LinearColorLerp_ReturnValue1
+	CallFunc_LineTraceSingle_OutHit
+	CallFunc_LineTraceSingle_ReturnValue
 	CallFunc_MakeRelativeTransform_ReturnValue
 	CallFunc_MakeTransform_ReturnValue
 	CallFunc_MakeVector_ReturnValue
 	CallFunc_MakeVector_ReturnValue1
 	CallFunc_MakeVector_ReturnValue2
 	CallFunc_MakeVector_ReturnValue3
+	CallFunc_MakeVector_ReturnValue4
+	CallFunc_MakeVector_ReturnValue5
 	CallFunc_Map_Keys_Keys
 	CallFunc_Map_Values_Values
 	CallFunc_Max_ReturnValue
 	CallFunc_Multiply_FloatFloat_ReturnValue
 	CallFunc_Multiply_FloatFloat_ReturnValue1
+	CallFunc_Multiply_FloatFloat_ReturnValue2
 	CallFunc_Multiply_VectorFloat_ReturnValue
 	CallFunc_Multiply_VectorVector_ReturnValue
 	CallFunc_NearlyEqual_FloatFloat_ReturnValue
+	CallFunc_NearlyEqual_TransformTransform_ReturnValue
 	CallFunc_Not_PreBool_ReturnValue
 	CallFunc_Not_PreBool_ReturnValue1
+	CallFunc_Not_PreBool_ReturnValue2
 	CallFunc_SetStaticMesh_ReturnValue
 	CallFunc_ShouldMeshComponentBeRendered_ReturnValue
+	CallFunc_SpawnEmitterAtLocation_ReturnValue
 	CallFunc_Subtract_IntInt_ReturnValue
 	CallFunc_Subtract_VectorVector_ReturnValue
+	CallFunc_Subtract_VectorVector_ReturnValue1
+	CallFunc_TLerp_ReturnValue
+	CallFunc_VSize_ReturnValue
+	CallFunc_VSize_ReturnValue1
 	Camera
 	CanCharacterStepUpOn
 	CastShadows
 	Channel
 	ChildNodes
 	Class
-	ClassName
-	ClassProperty
-	ClearArraysAndVariables
-	ClearComponentVariables
+	ClearComponentVariablesOnLoop
 	ClothingSimulationFactory
 	ClothingSimulationFactoryNv
 	CollisionEnabled
@@ -271,10 +331,8 @@ Name table:
 	CollisionResponse
 	CollisionResponses
 	Color
-	CompareClassName
 	ComponentClass
 	ComponentOrigin
-	ComponentRadius
 	ComponentTemplate
 	ComponentTemplates
 	ComponentTrueCenter
@@ -282,6 +340,7 @@ Name table:
 	Conv_ByteToInt
 	Conv_FloatToVector
 	Conv_IntToFloat
+	Conv_ObjectToSoftObjectReference
 	CopyMeshComponentMaterialParametersToBlueprint
 	CreateBlueprintPreview
 	CreateDynamicMaterialInstance
@@ -301,6 +360,7 @@ Name table:
 	CurrentBlueprintSkeletalMeshComonent
 	CurrentBlueprintStaticMeshComponent
 	CurrentIndex
+	CurrentlyControlledBlueprintPreviewer
 	CurrentMeshComponent
 	CurrentSkeletalMeshComponent
 	CurrentStaticMeshComponent
@@ -316,7 +376,6 @@ Name table:
 	Default__BlueprintMapLibrary
 	Default__BoolProperty
 	Default__ByteProperty
-	Default__ClassProperty
 	Default__CreativeInteraction_Delete_C
 	Default__CreativeInteraction_MoveBuildingsOnGrid_C
 	Default__CreativeInteraction_MoveObjectsFreely_C
@@ -329,7 +388,6 @@ Name table:
 	Default__GameplayStatics
 	Default__IntProperty
 	Default__KismetArrayLibrary
-	Default__KismetStringLibrary
 	Default__KismetSystemLibrary
 	Default__MapProperty
 	Default__MulticastDelegateProperty
@@ -343,13 +401,14 @@ Name table:
 	Default__SkeletalMeshComponent
 	Default__SoftObjectProperty
 	Default__StaticMeshComponent
-	Default__StrProperty
 	Default__StructProperty
 	Default__TimelineTemplate
 	DefaultSceneRoot
 	DefaultSceneRoot_GEN_VARIABLE
 	DefaultSceneRootNode
 	Degraded
+	Delay
+	DelayAmount
 	DelayBeforeReturningToPool
 	DelayBeforeReturningToPoolHandle
 	DelegateProperty
@@ -367,6 +426,7 @@ Name table:
 	DeleteTL_RelativeLocation_C0DFA64042C583D7520F1DB50299A12B
 	DeleteTL_Template
 	DeleteTL_WPOTransition_C0DFA64042C583D7520F1DB50299A12B
+	DeltaSeconds
 	Desaturation
 	DestroyActorOnAnimationFinished
 	DestroyBlueprintComponents
@@ -391,6 +451,16 @@ Name table:
 	DraftColor
 	DraftColorDesaturated
 	DraftColorInvalid
+	DropDistancePerSecond
+	DropParticlesBurstRate
+	DropPropTL
+	DropPropTL__Direction_A760E59A490C2590938E33A5A7181602
+	DropPropTL__FinishedFunc
+	DropPropTL__UpdateFunc
+	DropPropTL_LERP_A760E59A490C2590938E33A5A7181602
+	DropPropTL_Template
+	DropTimelineMax
+	DropTimelineMin
 	DuplicateMaterialFlash
 	DuplicateTL
 	DuplicateTL__Direction_2B6DAC7945A098F9B1600F80A78093FD
@@ -410,18 +480,20 @@ Name table:
 	EDetailMode
 	EEndPlayReason
 	EndPlayReason
+	EndTransform
 	Engine
 	EntryPoint
 	Enum
 	Enum_CreativeMoveTool_PreviewFX
+	EqualEqual_ByteByte
 	EqualEqual_IntInt
 	EqualEqual_ObjectObject
-	EqualEqual_StriStri
 	ETimelineDirection
 	Event Create Blueprint Preview
 	EventTracks
 	ExecuteUbergraph_B_CreativeMoveTool_BlueprintPreviewer
 	FClamp
+	FindDropStartLocation
 	FinishedFunctionName
 	FlareLifetime
 	FlareWidth
@@ -435,6 +507,7 @@ Name table:
 	FortGlobals
 	FortObjectMoverInputComponent
 	FortPlayerController
+	Found
 	FoundAndValid
 	FTrunc
 	Function
@@ -450,7 +523,6 @@ Name table:
 	GetBlueprintStaticMeshComponentFromPool
 	GetBuildingMeshComponent
 	GetBuildPreviewMarker
-	GetClassDisplayName
 	GetComponentBounds
 	GetComponentsByClass
 	GetCurrentBlueprintMeshComponent
@@ -459,11 +531,11 @@ Name table:
 	GetGridPreviewMID
 	GetInstigatorController
 	GetLocalBounds
+	GetLocalPhoneTool
 	GetMaterial
 	GetMaterialsAndCopyParameters
 	GetMidFromArray
 	GetNumMaterials
-	GetObjectClass
 	GetOwner
 	GetPlaybackPosition
 	GetPlayerController
@@ -473,10 +545,12 @@ Name table:
 	GetSkeletalMeshComponent
 	GetStaticMeshComponent
 	GetTimelineLength
+	GetTransform
 	Gravity
 	GravityGuide
 	GravityGuide_GEN_VARIABLE
 	GravityGuideSetup
+	GravityLineTraceBias
 	GravityModeChanged
 	GravityToggleChanged
 	GravityToggleChanged__DelegateSignature
@@ -500,6 +574,7 @@ Name table:
 	HighlightPostProcess_GEN_VARIABLE
 	HitResult
 	Index
+	InitialSetupClearArraysAndVariables
 	Intensity
 	InternalVariableName
 	IntProperty
@@ -517,33 +592,39 @@ Name table:
 	IsValid
 	K2_AttachToActor
 	K2_AttachToComponent
-	K2_ClearAndInvalidateTimerHandle
 	K2_CopyMaterialInstanceParameters
 	K2_DestroyActor
 	K2_DestroyComponent
 	K2_DetachFromActor
+	K2_GetComponentLocation
 	K2_GetComponentToWorld
 	K2_GetRootComponent
 	K2_GetScalarParameterValue
 	K2_GetTextureParameterValue
 	K2_GetVectorParameterValue
+	K2_IsCollisionEnabled
+	K2_SetActorTransform
 	K2_SetRelativeLocation
 	K2_SetRelativeTransform
+	K2_SetWorldLocation
 	K2_SetWorldTransform
 	K2Node_CreateDelegate_OutputDelegate
 	K2Node_CreateDelegate_OutputDelegate1
 	K2Node_CustomEvent_CreativeInteractionTool
 	K2Node_CustomEvent_Direction
+	K2Node_CustomEvent_EndTransform
 	K2Node_CustomEvent_Gravity
 	K2Node_CustomEvent_GridSize
 	K2Node_CustomEvent_IsPlacementValid
 	K2Node_CustomEvent_Preview
 	K2Node_CustomEvent_Prop_Actor
 	K2Node_CustomEvent_PropOwningActor
+	K2Node_CustomEvent_StartTransform
 	K2Node_DynamicCast_AsB_Creative_Move_Tool_Athena
 	K2Node_DynamicCast_AsCreative_Interaction_Delete
 	K2Node_DynamicCast_AsCreative_Interaction_Move_Buildings_on_Grid
 	K2Node_DynamicCast_AsCreative_Interaction_Move_Objects_Freely
+	K2Node_DynamicCast_AsFort_Creative_Move_Tool
 	K2Node_DynamicCast_AsFort_Player_Controller
 	K2Node_DynamicCast_AsMaterial_Instance_Dynamic
 	K2Node_DynamicCast_AsMaterial_Instance_Dynamic1
@@ -553,9 +634,11 @@ Name table:
 	K2Node_DynamicCast_bSuccess
 	K2Node_DynamicCast_bSuccess1
 	K2Node_DynamicCast_bSuccess2
+	K2Node_Event_DeltaSeconds
 	K2Node_Event_EndPlayReason
 	K2Node_Select1_Default
 	K2Node_Select2_Default
+	K2Node_Select3_Default
 	K2Node_Select_Default
 	K2Node_SwitchEnum1_CmpSuccess
 	K2Node_SwitchEnum2_CmpSuccess
@@ -563,9 +646,10 @@ Name table:
 	Keys
 	KismetArrayLibrary
 	KismetMathLibrary
-	KismetStringLibrary
 	KismetSystemLibrary
+	LatentActionInfo
 	Lerp
+	LERP
 	LerpGridTL
 	LerpGridTL__Direction_707BED8C4257FC8D9CE63DB7E73CD878
 	LerpGridTL__FinishedFunc
@@ -582,6 +666,7 @@ Name table:
 	LinearColor
 	LinearColorLerp
 	LinearColorTracks
+	LineTraceSingle
 	LocalLightComponent
 	LocalMID
 	LowAmmo
@@ -608,6 +693,7 @@ Name table:
 	MaterialInterface
 	MaterialTransition
 	Max
+	MaxComponentRadius
 	MaxLocalBoundsXY
 	MaxLocalBoundsXYFudgeFactor
 	MaxLocalBoundsZ
@@ -618,8 +704,11 @@ Name table:
 	MeshComponentRelativeTransform
 	MeshComponents
 	MIDArray
+	MinimumDistanceToSpawnParticlesOnDrop
 	MinimumGridPlacementScale
 	MinPlaybackSpeed
+	Move Tool Scale Down_GEN_VARIABLE
+	Move Tool Scale Up_GEN_VARIABLE
 	MoveBuildingsOnGrid
 	MoveToolInputComponent
 	MoveToolLoopingSoundComponent_GEN_VARIABLE
@@ -630,11 +719,13 @@ Name table:
 	Multiply_VectorVector
 	NameProperty
 	NearlyEqual_FloatFloat
+	NearlyEqual_TransformTransform
 	NetCullDistanceSquared
 	NoCollision
 	NODE_AddSkeletalMeshComponent-0
 	NODE_AddStaticMeshComponent-0
 	None
+	NonOpaqueMaterialsToRender
 	NormalA
 	NormalB
 	Normals
@@ -645,7 +736,6 @@ Name table:
 	ObjectInteractionBehavior
 	ObjectProperty
 	ObjectType
-	OnGridPlacedWorldTransform
 	OnRep_BaseActor
 	OnRep_FXState
 	OpacityMask
@@ -656,6 +746,7 @@ Name table:
 	Output
 	OverrideMaterials
 	OwnerActorProp
+	P_CreativeMoveTool_DropDust
 	P_CreativeMoveTool_TransitionBlocks
 	Package
 	Parent
@@ -663,7 +754,11 @@ Name table:
 	ParticleSystem
 	ParticleSystemComponent
 	PhoneTool
+	PhysicalMaterial
+	PickedUpTransform
 	Play
+	PlayDropAnimation
+	PlayDropTimeline
 	PlayerController
 	PlayFromStart
 	PointerToUberGraphFrame
@@ -681,6 +776,7 @@ Name table:
 	QueryMIDBlendMode
 	Radius
 	ReceiveEndPlay
+	ReceiveTick
 	RelativeLocation
 	RelativeRotation
 	RelativeScale3D
@@ -695,7 +791,6 @@ Name table:
 	RestoreOriginalMeshComponentMaterials
 	Result
 	ReturnActorToPool
-	ReturnActorToPoolTimerHandle
 	ReturnBlueprintPreviewToPoolDispatchEvent
 	ReturnToPoolDispatcher
 	ReturnToPoolDispatcher__DelegateSignature
@@ -726,11 +821,13 @@ Name table:
 	SetActive
 	SetActorEnableCollision
 	SetActorHiddenInGame
+	SetActorTickEnabled
 	SetAttenuationRadius
 	SetBlueprintMeshComponentsVisibility
 	SetBoundsVariables
 	SetCastShadow
 	SetCollisionEnabled
+	SetEndSafetyParameters
 	SetFloatParameter
 	SetHiddenActorCosmetics
 	SetHiddenInGame
@@ -741,7 +838,6 @@ Name table:
 	SetPropVisibilities
 	SetRadius
 	SetRelativeScale3D
-	SetSafetyParameters
 	SetScalarParameterValue
 	SetSkeletalMesh
 	SetStaticMesh
@@ -755,11 +851,13 @@ Name table:
 	SetVectorParameter
 	SetVectorParameterValue
 	SetVisibility
+	SetWorldScale3D
 	ShadowPlane
 	ShadowPlane_GEN_VARIABLE
 	ShadowPlaneLocationOffset
 	ShadowPlaneScaleFudgeFactor
 	ShadowPlaneSetup
+	ShadowPlaneZOffset
 	ShouldMeshComponentBeRendered
 	SimpleConstructionScript
 	SkeletalMesh
@@ -772,16 +870,17 @@ Name table:
 	SM_Straight_Spline
 	SoftObjectProperty
 	SourcePrimitiveComponent
+	SpawnEmitterAtLocation
 	SpawnRateScale
 	SpawnRateScaleBase
 	SpeedScale
+	StartTransform
 	Static Mesh Component
 	StaticMesh
 	StaticMeshComponent
 	StaticMeshComponents
 	Stop
 	StoreOriginalMeshComponentMaterials
-	StrProperty
 	StructProperty
 	Subtract_IntInt
 	Subtract_VectorVector
@@ -794,6 +893,8 @@ Name table:
 	Temp_bool_Variable4
 	Temp_bool_Variable5
 	Temp_bool_Variable6
+	Temp_bool_Variable7
+	Temp_bool_Variable8
 	Temp_byte_Variable
 	Temp_float_Variable
 	Temp_int_Array_Index_Variable
@@ -822,6 +923,7 @@ Name table:
 	Timelines
 	TimelineTemplate
 	TimerHandle
+	TLerp
 	TrackName
 	Transform
 	Transition
@@ -861,52 +963,60 @@ Name table:
 	Velocity
 	Visibility
 	VolumetricScatteringIntensity
+	VSize
 	WeaponMesh0
 	WPOTransition
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	B_CreativeMoveTool_BlueprintPreviewer_C (0-0-0-0): size 1733 (cls: B_CreativeMoveTool_BlueprintPreviewer_C>BlueprintGeneratedClass>/Script/Engine):
+	B_CreativeMoveTool_BlueprintPreviewer_C (0-0-0-0): size 1853 (cls: B_CreativeMoveTool_BlueprintPreviewer_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=6 
 			ComponentTemplates(ArrayProperty)=[object] (inner: ObjectProperty)
 			Timelines(ArrayProperty)=[object] (inner: ObjectProperty)
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=B_CreativeMoveTool_BlueprintPreviewer_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_CreativeMoveTool_BlueprintPreviewer=B_CreativeMoveTool_BlueprintPreviewer_C 
-	Default__B_CreativeMoveTool_BlueprintPreviewer_C (0-0-0-0): size 2161 (cls: Default__B_CreativeMoveTool_BlueprintPreviewer_C>B_CreativeMoveTool_BlueprintPreviewer_C):
+	Default__B_CreativeMoveTool_BlueprintPreviewer_C (0-0-0-0): size 2393 (cls: Default__B_CreativeMoveTool_BlueprintPreviewer_C>B_CreativeMoveTool_BlueprintPreviewer_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			DeleteTL_LightColor_C0DFA64042C583D7520F1DB50299A12B(StructProperty)=UE4.FLinearColor 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			DeleteTL_LightColor_C0DFA64042C583D7520F1DB50299A12B(StructProperty/LinearColor)=UE4.FLinearColor 
 			MaxLocalBoundsZ(FloatProperty)=300 
 			TransitionPlayrateHeightDivisor(FloatProperty)=1024 
-			ComponentOrigin(StructProperty)=Vector(0,0,0) 
-			TransitionParticleVelocity(StructProperty)=Vector(0,0,200) 
+			ComponentOrigin(StructProperty/Vector)=Vector(0,0,0) 
+			TransitionParticleVelocity(StructProperty/Vector)=Vector(0,0,200) 
 			MaxLocalBoundsXYFudgeFactor(FloatProperty)=1.1 
 			SpawnRateScaleBase(FloatProperty)=375 
 			TransitionLengthForward(FloatProperty)=0.325 
 			TransitionLengthBackward(FloatProperty)=0.35 
-			DelayBeforeReturningToPoolHandle(StructProperty)=System.Byte[] 
+			DelayBeforeReturningToPoolHandle(StructProperty/TimerHandle)=System.Byte[] 
 			TransitionLightIntensity(FloatProperty)=3 
-			ReturnActorToPoolTimerHandle(StructProperty)=System.Byte[] 
 			DelayBeforeReturningToPool(FloatProperty)=0.3 
 			TransitionLengthDeleteScale(FloatProperty)=5 
-			DiffuseTint(StructProperty)=UE4.FLinearColor 
-			DiffuseTintColorDesaturated(StructProperty)=UE4.FLinearColor 
-			DestroySelfTimerHandle(StructProperty)=System.Byte[] 
-			DraftColorDesaturated(StructProperty)=UE4.FLinearColor 
-			DraftColor(StructProperty)=UE4.FLinearColor 
-			MeshComponentRelativeTransform(StructProperty)=System.Byte[] 
+			DiffuseTint(StructProperty/LinearColor)=UE4.FLinearColor 
+			DiffuseTintColorDesaturated(StructProperty/LinearColor)=UE4.FLinearColor 
+			DestroySelfTimerHandle(StructProperty/TimerHandle)=System.Byte[] 
+			DraftColorDesaturated(StructProperty/LinearColor)=UE4.FLinearColor 
+			DraftColor(StructProperty/LinearColor)=UE4.FLinearColor 
+			MeshComponentRelativeTransform(StructProperty/Transform)=System.Byte[] 
 			MinPlaybackSpeed(FloatProperty)=1.6 
 			MaxPlaybackSpeed(FloatProperty)=3 
-			OnGridPlacedWorldTransform(StructProperty)=System.Byte[] 
+			PickedUpTransform(StructProperty/Transform)=System.Byte[] 
 			4LayerMaterial(SoftObjectProperty)=/Game/Athena/WinterArt/Materials/M_BaseSimple_4Layers.M_BaseSimple_4Layers 
-			DiffuseTintInvalid(StructProperty)=UE4.FLinearColor 
-			DraftColorInvalid(StructProperty)=UE4.FLinearColor 
-			ComponentTrueCenter(StructProperty)=Vector(0,0,0) 
+			DiffuseTintInvalid(StructProperty/LinearColor)=UE4.FLinearColor 
+			DraftColorInvalid(StructProperty/LinearColor)=UE4.FLinearColor 
+			ComponentTrueCenter(StructProperty/Vector)=Vector(0,0,0) 
 			MinimumGridPlacementScale(FloatProperty)=375 
-			GridPreviewBoundsFudgeFactor(StructProperty)=Vector(2.1,2.1,1) 
+			GridPreviewBoundsFudgeFactor(StructProperty/Vector)=Vector(2.1,2.1,1) 
 			ShadowPlaneScaleFudgeFactor(FloatProperty)=2.3 
-			ShadowPlaneLocationOffset(StructProperty)=Vector(0,0,2) 
-			PrimaryActorTick(StructProperty)=System.Byte[] 
+			ShadowPlaneLocationOffset(StructProperty/Vector)=Vector(0,0,2) 
+			DropDistancePerSecond(FloatProperty)=4500 
+			DropParticlesBurstRate(FloatProperty)=4 
+			GravityLineTraceBias(StructProperty/Vector)=Vector(0,0,-5000) 
+			MinimumDistanceToSpawnParticlesOnDrop(FloatProperty)=250 
+			ShadowPlaneZOffset(FloatProperty)=20 
+			NonOpaqueMaterialsToRender(ArrayProperty)=[object] (inner: SoftObjectProperty)
+			DropTimelineMin(FloatProperty)=0.01 
+			DropTimelineMax(FloatProperty)=2.25 
+			PrimaryActorTick(StructProperty/ActorTickFunction)=System.Byte[] 
 			bReplicateMovement(BoolProperty)=True 
 			bReplicates(BoolProperty)=True 
 			NetCullDistanceSquared(FloatProperty)=3.025E+09 
@@ -919,7 +1029,11 @@ Serialized exports:
 	ReturnToPoolDispatcher__DelegateSignature (0-0-0-0): size 51 (cls: ReturnToPoolDispatcher__DelegateSignature>Function>/Script/CoreUObject)
 	DeleteAnimationFinished__DelegateSignature (0-0-0-0): size 43 (cls: DeleteAnimationFinished__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_B_CreativeMoveTool_BlueprintPreviewer (0-0-0-0): size 6281 (cls: ExecuteUbergraph_B_CreativeMoveTool_BlueprintPreviewer>Function>/Script/CoreUObject)
+	ExecuteUbergraph_B_CreativeMoveTool_BlueprintPreviewer (0-0-0-0): size 8445 (cls: ExecuteUbergraph_B_CreativeMoveTool_BlueprintPreviewer>Function>/Script/CoreUObject)
+	Temp_object_Variable (0-0-0-0): size 36 (cls: Temp_object_Variable>ObjectProperty>/Script/CoreUObject)
+	Temp_object_Variable (0-0-0-0): size 36 (cls: Temp_object_Variable>ArrayProperty>/Script/CoreUObject)
+	StartTransform (0-0-0-0): size 36 (cls: StartTransform>StructProperty>/Script/CoreUObject)
+	PlayDropTimeline (0-0-0-0): size 82 (cls: PlayDropTimeline>Function>/Script/CoreUObject)
 	Gravity (0-0-0-0): size 34 (cls: Gravity>BoolProperty>/Script/CoreUObject)
 	GravityModeChanged (0-0-0-0): size 68 (cls: GravityModeChanged>Function>/Script/CoreUObject)
 	IsPlacementValid (0-0-0-0): size 34 (cls: IsPlacementValid>BoolProperty>/Script/CoreUObject)
@@ -930,6 +1044,8 @@ Serialized exports:
 	DeleteObjectFromWorld (0-0-0-0): size 54 (cls: DeleteObjectFromWorld>Function>/Script/CoreUObject)
 	Direction (0-0-0-0): size 36 (cls: Direction>ByteProperty>/Script/CoreUObject)
 	MaterialTransition (0-0-0-0): size 68 (cls: MaterialTransition>Function>/Script/CoreUObject)
+	DeltaSeconds (0-0-0-0): size 32 (cls: DeltaSeconds>FloatProperty>/Script/CoreUObject)
+	ReceiveTick (0-0-0-0): size 68 (cls: ReceiveTick>Function>/Script/CoreUObject)
 	EndPlayReason (0-0-0-0): size 36 (cls: EndPlayReason>ByteProperty>/Script/CoreUObject)
 	ReceiveEndPlay (0-0-0-0): size 68 (cls: ReceiveEndPlay>Function>/Script/CoreUObject)
 	DestroyPreview (0-0-0-0): size 56 (cls: DestroyPreview>Function>/Script/CoreUObject)
@@ -938,6 +1054,8 @@ Serialized exports:
 	ReturnActorToPool (0-0-0-0): size 54 (cls: ReturnActorToPool>Function>/Script/CoreUObject)
 	CreativeInteractionTool (0-0-0-0): size 36 (cls: CreativeInteractionTool>ObjectProperty>/Script/CoreUObject)
 	Event Create Blueprint Preview (0-0-0-0): size 82 (cls: Event Create Blueprint Preview>Function>/Script/CoreUObject)
+	DropPropTL__UpdateFunc (0-0-0-0): size 54 (cls: DropPropTL__UpdateFunc>Function>/Script/CoreUObject)
+	DropPropTL__FinishedFunc (0-0-0-0): size 54 (cls: DropPropTL__FinishedFunc>Function>/Script/CoreUObject)
 	ScaleGridPreviewTL__UpdateFunc (0-0-0-0): size 54 (cls: ScaleGridPreviewTL__UpdateFunc>Function>/Script/CoreUObject)
 	ScaleGridPreviewTL__FinishedFunc (0-0-0-0): size 54 (cls: ScaleGridPreviewTL__FinishedFunc>Function>/Script/CoreUObject)
 	LerpGridTL__UpdateFunc (0-0-0-0): size 54 (cls: LerpGridTL__UpdateFunc>Function>/Script/CoreUObject)
@@ -952,7 +1070,7 @@ Serialized exports:
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	UserConstructionScript (0-0-0-0): size 165 (cls: UserConstructionScript>Function>/Script/CoreUObject)
 	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
-	CreateBlueprintPreview (0-0-0-0): size 660 (cls: CreateBlueprintPreview>Function>/Script/CoreUObject)
+	CreateBlueprintPreview (0-0-0-0): size 701 (cls: CreateBlueprintPreview>Function>/Script/CoreUObject)
 	BuildingMeshComponent (0-0-0-0): size 36 (cls: BuildingMeshComponent>ObjectProperty>/Script/CoreUObject)
 	IsBuildingPiece (0-0-0-0): size 608 (cls: IsBuildingPiece>Function>/Script/CoreUObject)
 	SourcePrimitiveComponent (0-0-0-0): size 36 (cls: SourcePrimitiveComponent>ObjectProperty>/Script/CoreUObject)
@@ -964,14 +1082,14 @@ Serialized exports:
 	Result (0-0-0-0): size 34 (cls: Result>BoolProperty>/Script/CoreUObject)
 	IsTransitionTimelineAtBeginning (0-0-0-0): size 123 (cls: IsTransitionTimelineAtBeginning>Function>/Script/CoreUObject)
 	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
-	SetSafetyParameters (0-0-0-0): size 323 (cls: SetSafetyParameters>Function>/Script/CoreUObject)
+	SetEndSafetyParameters (0-0-0-0): size 323 (cls: SetEndSafetyParameters>Function>/Script/CoreUObject)
 	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
 	DestroyBlueprintComponents (0-0-0-0): size 288 (cls: DestroyBlueprintComponents>Function>/Script/CoreUObject)
-	ClearArraysAndVariables (0-0-0-0): size 238 (cls: ClearArraysAndVariables>Function>/Script/CoreUObject)
+	InitialSetupClearArraysAndVariables (0-0-0-0): size 238 (cls: InitialSetupClearArraysAndVariables>Function>/Script/CoreUObject)
 	Temp_struct_Variable (0-0-0-0): size 36 (cls: Temp_struct_Variable>StructProperty>/Script/CoreUObject)
 	GetBlueprintStaticMeshComponentFromPool (0-0-0-0): size 669 (cls: GetBlueprintStaticMeshComponentFromPool>Function>/Script/CoreUObject)
 	CallFunc_GetCurrentBlueprintMeshComponent_Output (0-0-0-0): size 36 (cls: CallFunc_GetCurrentBlueprintMeshComponent_Output>ObjectProperty>/Script/CoreUObject)
-	GetMaterialsAndCopyParameters (0-0-0-0): size 1021 (cls: GetMaterialsAndCopyParameters>Function>/Script/CoreUObject)
+	GetMaterialsAndCopyParameters (0-0-0-0): size 1115 (cls: GetMaterialsAndCopyParameters>Function>/Script/CoreUObject)
 	bNewVisibility (0-0-0-0): size 34 (cls: bNewVisibility>BoolProperty>/Script/CoreUObject)
 	SetBlueprintMeshComponentsVisibility (0-0-0-0): size 305 (cls: SetBlueprintMeshComponentsVisibility>Function>/Script/CoreUObject)
 	Timeline (0-0-0-0): size 36 (cls: Timeline>ObjectProperty>/Script/CoreUObject)
@@ -982,7 +1100,7 @@ Serialized exports:
 	GetSkeletalMeshComponent (0-0-0-0): size 455 (cls: GetSkeletalMeshComponent>Function>/Script/CoreUObject)
 	Temp_struct_Variable (0-0-0-0): size 36 (cls: Temp_struct_Variable>StructProperty>/Script/CoreUObject)
 	GetBlueprintSkeletalMeshComponentFromPool (0-0-0-0): size 544 (cls: GetBlueprintSkeletalMeshComponentFromPool>Function>/Script/CoreUObject)
-	ClearComponentVariables (0-0-0-0): size 143 (cls: ClearComponentVariables>Function>/Script/CoreUObject)
+	ClearComponentVariablesOnLoop (0-0-0-0): size 143 (cls: ClearComponentVariablesOnLoop>Function>/Script/CoreUObject)
 	bNewActive (0-0-0-0): size 34 (cls: bNewActive>BoolProperty>/Script/CoreUObject)
 	SetupTransitionParticleParameters (0-0-0-0): size 614 (cls: SetupTransitionParticleParameters>Function>/Script/CoreUObject)
 	Success (0-0-0-0): size 34 (cls: Success>BoolProperty>/Script/CoreUObject)
@@ -995,18 +1113,18 @@ Serialized exports:
 	MeshComponentMIDs (0-0-0-0): size 36 (cls: MeshComponentMIDs>ArrayProperty>/Script/CoreUObject)
 	MeshComponents (0-0-0-0): size 36 (cls: MeshComponents>ObjectProperty>/Script/CoreUObject)
 	MeshComponents (0-0-0-0): size 36 (cls: MeshComponents>ArrayProperty>/Script/CoreUObject)
+	NonOpaqueMaterialsToRender (0-0-0-0): size 36 (cls: NonOpaqueMaterialsToRender>SoftObjectProperty>/Script/CoreUObject)
+	NonOpaqueMaterialsToRender (0-0-0-0): size 36 (cls: NonOpaqueMaterialsToRender>ArrayProperty>/Script/CoreUObject)
 	OriginalMeshComponentMaterialIDs (0-0-0-0): size 32 (cls: OriginalMeshComponentMaterialIDs>IntProperty>/Script/CoreUObject)
 	OriginalMeshComponentMaterialIDs (0-0-0-0): size 36 (cls: OriginalMeshComponentMaterialIDs>ArrayProperty>/Script/CoreUObject)
 	bNewVisibility (0-0-0-0): size 34 (cls: bNewVisibility>BoolProperty>/Script/CoreUObject)
 	SetTransitionLightVisibility (0-0-0-0): size 246 (cls: SetTransitionLightVisibility>Function>/Script/CoreUObject)
 	Scene Component (0-0-0-0): size 36 (cls: Scene Component>ObjectProperty>/Script/CoreUObject)
-	SetBoundsVariables (0-0-0-0): size 1217 (cls: SetBoundsVariables>Function>/Script/CoreUObject)
-	Success (0-0-0-0): size 34 (cls: Success>BoolProperty>/Script/CoreUObject)
-	CompareClassName (0-0-0-0): size 271 (cls: CompareClassName>Function>/Script/CoreUObject)
+	SetBoundsVariables (0-0-0-0): size 1259 (cls: SetBoundsVariables>Function>/Script/CoreUObject)
 	CallFunc_GetOwner_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetOwner_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	OnRep_BaseActor (0-0-0-0): size 134 (cls: OnRep_BaseActor>Function>/Script/CoreUObject)
 	K2Node_SwitchEnum_CmpSuccess (0-0-0-0): size 34 (cls: K2Node_SwitchEnum_CmpSuccess>BoolProperty>/Script/CoreUObject)
-	OnRep_FXState (0-0-0-0): size 255 (cls: OnRep_FXState>Function>/Script/CoreUObject)
+	OnRep_FXState (0-0-0-0): size 301 (cls: OnRep_FXState>Function>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	SetupCreativeInteractionReferences (0-0-0-0): size 405 (cls: SetupCreativeInteractionReferences>Function>/Script/CoreUObject)
 	K2Node_DynamicCast_AsCreative_Interaction_Delete (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsCreative_Interaction_Delete>ObjectProperty>/Script/CoreUObject)
@@ -1043,7 +1161,6 @@ Serialized exports:
 	SkeletalMeshComponents (0-0-0-0): size 36 (cls: SkeletalMeshComponents>ArrayProperty>/Script/CoreUObject)
 	StaticMeshComponents (0-0-0-0): size 36 (cls: StaticMeshComponents>ObjectProperty>/Script/CoreUObject)
 	StaticMeshComponents (0-0-0-0): size 36 (cls: StaticMeshComponents>ArrayProperty>/Script/CoreUObject)
-	CallFunc_EqualEqual_StriStri_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_StriStri_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetSetTextureParameter_Success (0-0-0-0): size 34 (cls: CallFunc_GetSetTextureParameter_Success>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetSetTextureParameter_Success1 (0-0-0-0): size 34 (cls: CallFunc_GetSetTextureParameter_Success1>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetSetTextureParameter_Success2 (0-0-0-0): size 34 (cls: CallFunc_GetSetTextureParameter_Success2>BoolProperty>/Script/CoreUObject)
@@ -1063,9 +1180,13 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_bBlockingHit (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bBlockingHit>BoolProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_bInitialOverlap (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bInitialOverlap>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_FindDropStartLocation_PlayDropAnimation (0-0-0-0): size 34 (cls: CallFunc_FindDropStartLocation_PlayDropAnimation>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_FoundAndValid (0-0-0-0): size 34 (cls: CallFunc_GetMidFromArray_FoundAndValid>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_FoundAndValid1 (0-0-0-0): size 34 (cls: CallFunc_GetMidFromArray_FoundAndValid1>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_FoundAndValid2 (0-0-0-0): size 34 (cls: CallFunc_GetMidFromArray_FoundAndValid2>BoolProperty>/Script/CoreUObject)
@@ -1073,31 +1194,40 @@ Serialized exports:
 	CallFunc_GetMidFromArray_FoundAndValid4 (0-0-0-0): size 34 (cls: CallFunc_GetMidFromArray_FoundAndValid4>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_FoundAndValid5 (0-0-0-0): size 34 (cls: CallFunc_GetMidFromArray_FoundAndValid5>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_FoundAndValid6 (0-0-0-0): size 34 (cls: CallFunc_GetMidFromArray_FoundAndValid6>BoolProperty>/Script/CoreUObject)
+	CallFunc_GreaterEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GreaterEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_Bool (0-0-0-0): size 34 (cls: CallFunc_IsBuildingPiece_Bool>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_Bool1 (0-0-0-0): size 34 (cls: CallFunc_IsBuildingPiece_Bool1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue3>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsDedicatedServer_ReturnValue4 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue4>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsRunningOnOwningClient_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsTransitionTimelineAtBeginning_Result (0-0-0-0): size 34 (cls: CallFunc_IsTransitionTimelineAtBeginning_Result>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_K2_AttachToComponent_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_K2_AttachToComponent_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_K2_SetActorTransform_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_K2_SetActorTransform_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue3>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue4 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue4>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue5 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue5>BoolProperty>/Script/CoreUObject)
+	CallFunc_LessEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LessEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_LessEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LessEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_LessEqual_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_LessEqual_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_LineTraceSingle_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LineTraceSingle_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_NearlyEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_NearlyEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_NearlyEqual_TransformTransform_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_NearlyEqual_TransformTransform_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_Not_PreBool_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Gravity (0-0-0-0): size 34 (cls: K2Node_CustomEvent_Gravity>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_IsPlacementValid (0-0-0-0): size 34 (cls: K2Node_CustomEvent_IsPlacementValid>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
 	K2Node_Select2_Default (0-0-0-0): size 34 (cls: K2Node_Select2_Default>BoolProperty>/Script/CoreUObject)
 	K2Node_SwitchEnum1_CmpSuccess (0-0-0-0): size 34 (cls: K2Node_SwitchEnum1_CmpSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_SwitchEnum2_CmpSuccess (0-0-0-0): size 34 (cls: K2Node_SwitchEnum2_CmpSuccess>BoolProperty>/Script/CoreUObject)
@@ -1109,6 +1239,29 @@ Serialized exports:
 	Temp_bool_Variable4 (0-0-0-0): size 34 (cls: Temp_bool_Variable4>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable5 (0-0-0-0): size 34 (cls: Temp_bool_Variable5>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable6 (0-0-0-0): size 34 (cls: Temp_bool_Variable6>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable7 (0-0-0-0): size 34 (cls: Temp_bool_Variable7>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable8 (0-0-0-0): size 34 (cls: Temp_bool_Variable8>BoolProperty>/Script/CoreUObject)
+	Output (0-0-0-0): size 36 (cls: Output>ObjectProperty>/Script/CoreUObject)
+	GetCurrentBlueprintMeshComponent (0-0-0-0): size 136 (cls: GetCurrentBlueprintMeshComponent>Function>/Script/CoreUObject)
+	Temp_byte_Variable (0-0-0-0): size 36 (cls: Temp_byte_Variable>ByteProperty>/Script/CoreUObject)
+	GridAxisGuideSetup (0-0-0-0): size 455 (cls: GridAxisGuideSetup>Function>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	GravityGuideSetup (0-0-0-0): size 285 (cls: GravityGuideSetup>Function>/Script/CoreUObject)
+	CallFunc_Multiply_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	ShadowPlaneSetup (0-0-0-0): size 193 (cls: ShadowPlaneSetup>Function>/Script/CoreUObject)
+	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
+	SetUpMeshComponentMIDS (0-0-0-0): size 409 (cls: SetUpMeshComponentMIDS>Function>/Script/CoreUObject)
+	Found (0-0-0-0): size 34 (cls: Found>BoolProperty>/Script/CoreUObject)
+	GetLocalPhoneTool (0-0-0-0): size 305 (cls: GetLocalPhoneTool>Function>/Script/CoreUObject)
+	PlayDropAnimation (0-0-0-0): size 34 (cls: PlayDropAnimation>BoolProperty>/Script/CoreUObject)
+	FindDropStartLocation (0-0-0-0): size 1022 (cls: FindDropStartLocation>Function>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_EqualEqual_ByteByte_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_GetAllowGravityOnPlace_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GetAllowGravityOnPlace_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_GetLocalPhoneTool_Found (0-0-0-0): size 34 (cls: CallFunc_GetLocalPhoneTool_Found>BoolProperty>/Script/CoreUObject)
+	CallFunc_GreaterEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GreaterEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -1127,6 +1280,11 @@ Serialized exports:
 	CallFunc_SetStaticMesh_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsRunningOnOwningClient_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	CallFunc_Array_Contains_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Array_Contains_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_LessEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LessEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -1148,24 +1306,17 @@ Serialized exports:
 	CallFunc_ShouldMeshComponentBeRendered_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_ShouldMeshComponentBeRendered_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	Success (0-0-0-0): size 34 (cls: Success>BoolProperty>/Script/CoreUObject)
-	Output (0-0-0-0): size 36 (cls: Output>ObjectProperty>/Script/CoreUObject)
-	GetCurrentBlueprintMeshComponent (0-0-0-0): size 136 (cls: GetCurrentBlueprintMeshComponent>Function>/Script/CoreUObject)
-	Temp_byte_Variable (0-0-0-0): size 36 (cls: Temp_byte_Variable>ByteProperty>/Script/CoreUObject)
-	GridAxisGuideSetup (0-0-0-0): size 562 (cls: GridAxisGuideSetup>Function>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
-	GravityGuideSetup (0-0-0-0): size 253 (cls: GravityGuideSetup>Function>/Script/CoreUObject)
 	CallFunc_GetAllowGravityOnPlace_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GetAllowGravityOnPlace_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsRunningOnOwningClient_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsRunningOnOwningClient_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsRunningOnOwningClient_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	CallFunc_GetLocalPhoneTool_Found (0-0-0-0): size 34 (cls: CallFunc_GetLocalPhoneTool_Found>BoolProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 34 (cls: K2Node_Select_Default>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_Variable2>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable3 (0-0-0-0): size 34 (cls: Temp_bool_Variable3>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable4 (0-0-0-0): size 34 (cls: Temp_bool_Variable4>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable5 (0-0-0-0): size 34 (cls: Temp_bool_Variable5>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	Bool (0-0-0-0): size 34 (cls: Bool>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -1192,7 +1343,9 @@ Serialized exports:
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_K2_IsCollisionEnabled_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_K2_IsCollisionEnabled_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
+	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
@@ -1207,7 +1360,6 @@ Serialized exports:
 	CallFunc_IsBuildingPiece_Bool (0-0-0-0): size 34 (cls: CallFunc_IsBuildingPiece_Bool>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
-	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_GreaterEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GreaterEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	bPropagateToChildren (0-0-0-0): size 34 (cls: bPropagateToChildren>BoolProperty>/Script/CoreUObject)
@@ -1218,10 +1370,6 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
-	CallFunc_Multiply_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
-	ShadowPlaneSetup (0-0-0-0): size 193 (cls: ShadowPlaneSetup>Function>/Script/CoreUObject)
-	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
-	SetUpMeshComponentMIDS (0-0-0-0): size 409 (cls: SetUpMeshComponentMIDS>Function>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -1236,6 +1384,7 @@ Serialized exports:
 	CallFunc_Not_PreBool_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	ReturnValue (0-0-0-0): size 34 (cls: ReturnValue>BoolProperty>/Script/CoreUObject)
 	DeleteTL__Direction_C0DFA64042C583D7520F1DB50299A12B (0-0-0-0): size 36 (cls: DeleteTL__Direction_C0DFA64042C583D7520F1DB50299A12B>ByteProperty>/Script/CoreUObject)
+	DropPropTL__Direction_A760E59A490C2590938E33A5A7181602 (0-0-0-0): size 36 (cls: DropPropTL__Direction_A760E59A490C2590938E33A5A7181602>ByteProperty>/Script/CoreUObject)
 	DuplicateTL__Direction_2B6DAC7945A098F9B1600F80A78093FD (0-0-0-0): size 36 (cls: DuplicateTL__Direction_2B6DAC7945A098F9B1600F80A78093FD>ByteProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Direction (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Direction>ByteProperty>/Script/CoreUObject)
 	K2Node_Event_EndPlayReason (0-0-0-0): size 36 (cls: K2Node_Event_EndPlayReason>ByteProperty>/Script/CoreUObject)
@@ -1244,62 +1393,76 @@ Serialized exports:
 	LerpGridTL__Direction_707BED8C4257FC8D9CE63DB7E73CD878 (0-0-0-0): size 36 (cls: LerpGridTL__Direction_707BED8C4257FC8D9CE63DB7E73CD878>ByteProperty>/Script/CoreUObject)
 	ScaleGridPreviewTL__Direction_BFD3FCEE4CBE08C2F070878F7880947C (0-0-0-0): size 36 (cls: ScaleGridPreviewTL__Direction_BFD3FCEE4CBE08C2F070878F7880947C>ByteProperty>/Script/CoreUObject)
 	TransitionTL__Direction_7D6B23FD408EA93E509FB892C1C0DE89 (0-0-0-0): size 36 (cls: TransitionTL__Direction_7D6B23FD408EA93E509FB892C1C0DE89>ByteProperty>/Script/CoreUObject)
-	CallFunc_GetObjectClass_ReturnValue (0-0-0-0): size 40 (cls: CallFunc_GetObjectClass_ReturnValue>ClassProperty>/Script/CoreUObject)
 	CurveFloat_0 (0-0-0-0): size 209 (cls: CurveFloat_0>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_1 (0-0-0-0): size 209 (cls: CurveFloat_1>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_10 (0-0-0-0): size 209 (cls: CurveFloat_10>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_11 (0-0-0-0): size 209 (cls: CurveFloat_11>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
+	CurveFloat_12 (0-0-0-0): size 209 (cls: CurveFloat_12>CurveFloat>/Script/Engine):
+		Tag array:
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_2 (0-0-0-0): size 263 (cls: CurveFloat_2>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_3 (0-0-0-0): size 236 (cls: CurveFloat_3>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_4 (0-0-0-0): size 236 (cls: CurveFloat_4>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_5 (0-0-0-0): size 209 (cls: CurveFloat_5>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_6 (0-0-0-0): size 236 (cls: CurveFloat_6>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_7 (0-0-0-0): size 208 (cls: CurveFloat_7>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 			bIsEventCurve(BoolProperty)=True 
 	CurveFloat_8 (0-0-0-0): size 209 (cls: CurveFloat_8>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_9 (0-0-0-0): size 236 (cls: CurveFloat_9>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveLinearColor_0 (0-0-0-0): size 822 (cls: CurveLinearColor_0>CurveLinearColor>/Script/Engine):
 		Tag array:
-			FloatCurves(StructProperty)=System.Byte[] 
-			FloatCurves(StructProperty)=System.Byte[] 
-			FloatCurves(StructProperty)=System.Byte[] 
-			FloatCurves(StructProperty)=System.Byte[] 
+			FloatCurves(StructProperty/RichCurve)=System.Byte[] 
+			FloatCurves(StructProperty/RichCurve)=System.Byte[] 
+			FloatCurves(StructProperty/RichCurve)=System.Byte[] 
+			FloatCurves(StructProperty/RichCurve)=System.Byte[] 
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
-	ComponentRadius (0-0-0-0): size 32 (cls: ComponentRadius>FloatProperty>/Script/CoreUObject)
 	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	DelayBeforeReturningToPool (0-0-0-0): size 32 (cls: DelayBeforeReturningToPool>FloatProperty>/Script/CoreUObject)
 	DeleteTL_BlueprintTransition_C0DFA64042C583D7520F1DB50299A12B (0-0-0-0): size 32 (cls: DeleteTL_BlueprintTransition_C0DFA64042C583D7520F1DB50299A12B>FloatProperty>/Script/CoreUObject)
 	DeleteTL_Desaturation_C0DFA64042C583D7520F1DB50299A12B (0-0-0-0): size 32 (cls: DeleteTL_Desaturation_C0DFA64042C583D7520F1DB50299A12B>FloatProperty>/Script/CoreUObject)
 	DeleteTL_RelativeLocation_C0DFA64042C583D7520F1DB50299A12B (0-0-0-0): size 32 (cls: DeleteTL_RelativeLocation_C0DFA64042C583D7520F1DB50299A12B>FloatProperty>/Script/CoreUObject)
 	DeleteTL_WPOTransition_C0DFA64042C583D7520F1DB50299A12B (0-0-0-0): size 32 (cls: DeleteTL_WPOTransition_C0DFA64042C583D7520F1DB50299A12B>FloatProperty>/Script/CoreUObject)
+	DropDistancePerSecond (0-0-0-0): size 32 (cls: DropDistancePerSecond>FloatProperty>/Script/CoreUObject)
+	DropParticlesBurstRate (0-0-0-0): size 32 (cls: DropParticlesBurstRate>FloatProperty>/Script/CoreUObject)
+	DropPropTL_LERP_A760E59A490C2590938E33A5A7181602 (0-0-0-0): size 32 (cls: DropPropTL_LERP_A760E59A490C2590938E33A5A7181602>FloatProperty>/Script/CoreUObject)
+	DropTimelineMax (0-0-0-0): size 32 (cls: DropTimelineMax>FloatProperty>/Script/CoreUObject)
+	DropTimelineMin (0-0-0-0): size 32 (cls: DropTimelineMin>FloatProperty>/Script/CoreUObject)
 	DuplicateTL_DiffuseAdd_2B6DAC7945A098F9B1600F80A78093FD (0-0-0-0): size 32 (cls: DuplicateTL_DiffuseAdd_2B6DAC7945A098F9B1600F80A78093FD>FloatProperty>/Script/CoreUObject)
 	DuplicateTL_GridIntensity_2B6DAC7945A098F9B1600F80A78093FD (0-0-0-0): size 32 (cls: DuplicateTL_GridIntensity_2B6DAC7945A098F9B1600F80A78093FD>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_Distance (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_Distance>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_Time (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_Time>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_X (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Y (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y>FloatProperty>/Script/CoreUObject)
+	CallFunc_BreakVector_Z (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z>FloatProperty>/Script/CoreUObject)
 	CallFunc_Conv_IntToFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_Divide_FloatFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
+	CallFunc_FindDropStartLocation_DelayAmount (0-0-0-0): size 32 (cls: CallFunc_FindDropStartLocation_DelayAmount>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetPlaybackPosition_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetPlaybackPosition_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetTimelineLength_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetTimelineLength_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_K2_GetScalarParameterValue_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_K2_GetScalarParameterValue_ReturnValue>FloatProperty>/Script/CoreUObject)
@@ -1308,16 +1471,31 @@ Serialized exports:
 	CallFunc_Lerp_ReturnValue2 (0-0-0-0): size 32 (cls: CallFunc_Lerp_ReturnValue2>FloatProperty>/Script/CoreUObject)
 	CallFunc_Multiply_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_Multiply_FloatFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
+	CallFunc_Multiply_FloatFloat_ReturnValue2 (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue2>FloatProperty>/Script/CoreUObject)
+	CallFunc_VSize_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_VSize_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_VSize_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_VSize_ReturnValue1>FloatProperty>/Script/CoreUObject)
+	K2Node_Event_DeltaSeconds (0-0-0-0): size 32 (cls: K2Node_Event_DeltaSeconds>FloatProperty>/Script/CoreUObject)
+	K2Node_Select3_Default (0-0-0-0): size 32 (cls: K2Node_Select3_Default>FloatProperty>/Script/CoreUObject)
+	Temp_float_Variable (0-0-0-0): size 32 (cls: Temp_float_Variable>FloatProperty>/Script/CoreUObject)
+	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_Divide_FloatFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
+	CallFunc_FClamp_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_FClamp_ReturnValue>FloatProperty>/Script/CoreUObject)
+	CallFunc_VSize_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_VSize_ReturnValue>FloatProperty>/Script/CoreUObject)
+	DelayAmount (0-0-0-0): size 32 (cls: DelayAmount>FloatProperty>/Script/CoreUObject)
+	K2Node_Select_Default (0-0-0-0): size 32 (cls: K2Node_Select_Default>FloatProperty>/Script/CoreUObject)
+	Temp_float_Variable (0-0-0-0): size 32 (cls: Temp_float_Variable>FloatProperty>/Script/CoreUObject)
 	GetGridIntensity (0-0-0-0): size 32 (cls: GetGridIntensity>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_X (0-0-0-0): size 32 (cls: CallFunc_BreakVector_X>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Y (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Y>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakVector_Z (0-0-0-0): size 32 (cls: CallFunc_BreakVector_Z>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetPlaybackPosition_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetPlaybackPosition_ReturnValue>FloatProperty>/Script/CoreUObject)
 	LerpGridTL_Lerp_707BED8C4257FC8D9CE63DB7E73CD878 (0-0-0-0): size 32 (cls: LerpGridTL_Lerp_707BED8C4257FC8D9CE63DB7E73CD878>FloatProperty>/Script/CoreUObject)
+	MaxComponentRadius (0-0-0-0): size 32 (cls: MaxComponentRadius>FloatProperty>/Script/CoreUObject)
 	MaxLocalBoundsXY (0-0-0-0): size 32 (cls: MaxLocalBoundsXY>FloatProperty>/Script/CoreUObject)
 	MaxLocalBoundsXYFudgeFactor (0-0-0-0): size 32 (cls: MaxLocalBoundsXYFudgeFactor>FloatProperty>/Script/CoreUObject)
 	MaxLocalBoundsZ (0-0-0-0): size 32 (cls: MaxLocalBoundsZ>FloatProperty>/Script/CoreUObject)
 	MaxPlaybackSpeed (0-0-0-0): size 32 (cls: MaxPlaybackSpeed>FloatProperty>/Script/CoreUObject)
+	MinimumDistanceToSpawnParticlesOnDrop (0-0-0-0): size 32 (cls: MinimumDistanceToSpawnParticlesOnDrop>FloatProperty>/Script/CoreUObject)
 	MinimumGridPlacementScale (0-0-0-0): size 32 (cls: MinimumGridPlacementScale>FloatProperty>/Script/CoreUObject)
 	MinPlaybackSpeed (0-0-0-0): size 32 (cls: MinPlaybackSpeed>FloatProperty>/Script/CoreUObject)
 	PreviousGridSize (0-0-0-0): size 32 (cls: PreviousGridSize>FloatProperty>/Script/CoreUObject)
@@ -1331,6 +1509,7 @@ Serialized exports:
 	CallFunc_FMax_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_FMax_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_FMax_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_FMax_ReturnValue1>FloatProperty>/Script/CoreUObject)
 	CallFunc_FMax_ReturnValue2 (0-0-0-0): size 32 (cls: CallFunc_FMax_ReturnValue2>FloatProperty>/Script/CoreUObject)
+	CallFunc_FMax_ReturnValue3 (0-0-0-0): size 32 (cls: CallFunc_FMax_ReturnValue3>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetComponentBounds_SphereRadius (0-0-0-0): size 32 (cls: CallFunc_GetComponentBounds_SphereRadius>FloatProperty>/Script/CoreUObject)
 	CallFunc_GetComponentBounds_SphereRadius1 (0-0-0-0): size 32 (cls: CallFunc_GetComponentBounds_SphereRadius1>FloatProperty>/Script/CoreUObject)
 	CallFunc_Multiply_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
@@ -1349,6 +1528,7 @@ Serialized exports:
 	CallFunc_Multiply_FloatFloat_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue1>FloatProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 32 (cls: K2Node_Select_Default>FloatProperty>/Script/CoreUObject)
 	ShadowPlaneScaleFudgeFactor (0-0-0-0): size 32 (cls: ShadowPlaneScaleFudgeFactor>FloatProperty>/Script/CoreUObject)
+	ShadowPlaneZOffset (0-0-0-0): size 32 (cls: ShadowPlaneZOffset>FloatProperty>/Script/CoreUObject)
 	SpawnRateScaleBase (0-0-0-0): size 32 (cls: SpawnRateScaleBase>FloatProperty>/Script/CoreUObject)
 	TransitionLengthBackward (0-0-0-0): size 32 (cls: TransitionLengthBackward>FloatProperty>/Script/CoreUObject)
 	TransitionLengthDeleteScale (0-0-0-0): size 32 (cls: TransitionLengthDeleteScale>FloatProperty>/Script/CoreUObject)
@@ -1384,6 +1564,8 @@ Serialized exports:
 	CallFunc_Array_Length_ReturnValue3 (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue3>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue4 (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue4>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue5 (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue5>IntProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_FaceIndex (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_FaceIndex>IntProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_HitItem (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_HitItem>IntProperty>/Script/CoreUObject)
 	CallFunc_GetGreatestMIDArrayIndex_GreatestLastIndex (0-0-0-0): size 32 (cls: CallFunc_GetGreatestMIDArrayIndex_GreatestLastIndex>IntProperty>/Script/CoreUObject)
 	CallFunc_GetGreatestMIDArrayIndex_GreatestLastIndex1 (0-0-0-0): size 32 (cls: CallFunc_GetGreatestMIDArrayIndex_GreatestLastIndex1>IntProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_GridSize (0-0-0-0): size 32 (cls: K2Node_CustomEvent_GridSize>IntProperty>/Script/CoreUObject)
@@ -1428,6 +1610,9 @@ Serialized exports:
 	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
 	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
+	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
+	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
+	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue1>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue1>IntProperty>/Script/CoreUObject)
@@ -1442,9 +1627,6 @@ Serialized exports:
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
 	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
-	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
-	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
-	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Add_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Add_ReturnValue>IntProperty>/Script/CoreUObject)
 	MaterialIndex (0-0-0-0): size 32 (cls: MaterialIndex>IntProperty>/Script/CoreUObject)
 	OriginalMeshComponentMaterials_Value (0-0-0-0): size 36 (cls: OriginalMeshComponentMaterials_Value>ObjectProperty>/Script/CoreUObject)
@@ -1452,6 +1634,7 @@ Serialized exports:
 	OriginalMeshComponentMaterials (0-0-0-0): size 40 (cls: OriginalMeshComponentMaterials>MapProperty>/Script/CoreUObject)
 	DeleteAnimationFinished (0-0-0-0): size 36 (cls: DeleteAnimationFinished>MulticastDelegateProperty>/Script/CoreUObject)
 	ReturnToPoolDispatcher (0-0-0-0): size 36 (cls: ReturnToPoolDispatcher>MulticastDelegateProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_HitBoneName (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_HitBoneName>NameProperty>/Script/CoreUObject)
 	Get Parameter Name (0-0-0-0): size 32 (cls: Get Parameter Name>NameProperty>/Script/CoreUObject)
 	Set Parameter Name (0-0-0-0): size 32 (cls: Set Parameter Name>NameProperty>/Script/CoreUObject)
 	BaseActor (0-0-0-0): size 36 (cls: BaseActor>ObjectProperty>/Script/CoreUObject)
@@ -1481,6 +1664,7 @@ Serialized exports:
 	DeleteTL (0-0-0-0): size 36 (cls: DeleteTL>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsMove_Buildings_on_Grid (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsMove_Buildings_on_Grid>ObjectProperty>/Script/CoreUObject)
+	DropPropTL (0-0-0-0): size 36 (cls: DropPropTL>ObjectProperty>/Script/CoreUObject)
 	DuplicateTL (0-0-0-0): size 36 (cls: DuplicateTL>ObjectProperty>/Script/CoreUObject)
 	PropOwningActor (0-0-0-0): size 36 (cls: PropOwningActor>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
@@ -1489,6 +1673,9 @@ Serialized exports:
 	CallFunc_Array_Get_Item3 (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item3>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item4 (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item4>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item5 (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item5>ObjectProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_HitActor (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_HitActor>ObjectProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_HitComponent (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_HitComponent>ObjectProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_PhysMat (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_PhysMat>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_Output (0-0-0-0): size 36 (cls: CallFunc_GetMidFromArray_Output>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_Output1 (0-0-0-0): size 36 (cls: CallFunc_GetMidFromArray_Output1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_Output2 (0-0-0-0): size 36 (cls: CallFunc_GetMidFromArray_Output2>ObjectProperty>/Script/CoreUObject)
@@ -1496,16 +1683,21 @@ Serialized exports:
 	CallFunc_GetMidFromArray_Output4 (0-0-0-0): size 36 (cls: CallFunc_GetMidFromArray_Output4>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_Output5 (0-0-0-0): size 36 (cls: CallFunc_GetMidFromArray_Output5>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetMidFromArray_Output6 (0-0-0-0): size 36 (cls: CallFunc_GetMidFromArray_Output6>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetOwner_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetOwner_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_BuildingMeshComponent (0-0-0-0): size 36 (cls: CallFunc_IsBuildingPiece_BuildingMeshComponent>ObjectProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_BuildingMeshComponent1 (0-0-0-0): size 36 (cls: CallFunc_IsBuildingPiece_BuildingMeshComponent1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_BuildPreviewMarkerActor (0-0-0-0): size 36 (cls: CallFunc_IsBuildingPiece_BuildPreviewMarkerActor>ObjectProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_BuildPreviewMarkerActor1 (0-0-0-0): size 36 (cls: CallFunc_IsBuildingPiece_BuildPreviewMarkerActor1>ObjectProperty>/Script/CoreUObject)
+	CallFunc_SpawnEmitterAtLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_SpawnEmitterAtLocation_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_CreativeInteractionTool (0-0-0-0): size 36 (cls: K2Node_CustomEvent_CreativeInteractionTool>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Preview (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Preview>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Prop_Actor (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Prop_Actor>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_PropOwningActor (0-0-0-0): size 36 (cls: K2Node_CustomEvent_PropOwningActor>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsCreative_Interaction_Move_Buildings_on_Grid (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsCreative_Interaction_Move_Buildings_on_Grid>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsCreative_Interaction_Move_Objects_Freely (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsCreative_Interaction_Move_Objects_Freely>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Creative_Move_Tool (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Creative_Move_Tool>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetLocalPhoneTool_PhoneTool (0-0-0-0): size 36 (cls: CallFunc_GetLocalPhoneTool_PhoneTool>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsMove_Buildings_on_Grid (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsMove_Buildings_on_Grid>ObjectProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable (0-0-0-0): size 36 (cls: Temp_object_Variable>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable1 (0-0-0-0): size 36 (cls: Temp_object_Variable1>ObjectProperty>/Script/CoreUObject)
@@ -1518,6 +1710,9 @@ Serialized exports:
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetMaterial_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetMaterial_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsMaterial_Instance_Dynamic (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsMaterial_Instance_Dynamic>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetOwner_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetOwner_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsB_Creative_Move_Tool_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsB_Creative_Move_Tool_Athena>ObjectProperty>/Script/CoreUObject)
+	PhoneTool (0-0-0-0): size 36 (cls: PhoneTool>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_CreateDynamicMaterialInstance_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetBaseMaterial_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetBaseMaterial_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -1534,8 +1729,7 @@ Serialized exports:
 	K2Node_DynamicCast_AsStatic_Mesh_Component (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsStatic_Mesh_Component>ObjectProperty>/Script/CoreUObject)
 	GravityGuide (0-0-0-0): size 36 (cls: GravityGuide>ObjectProperty>/Script/CoreUObject)
 	GridAxisGuide (0-0-0-0): size 36 (cls: GridAxisGuide>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetOwner_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetOwner_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsB_Creative_Move_Tool_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsB_Creative_Move_Tool_Athena>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetLocalPhoneTool_PhoneTool (0-0-0-0): size 36 (cls: CallFunc_GetLocalPhoneTool_PhoneTool>ObjectProperty>/Script/CoreUObject)
 	GridPreviewMID (0-0-0-0): size 36 (cls: GridPreviewMID>ObjectProperty>/Script/CoreUObject)
 	BuildPreviewMarkerActor (0-0-0-0): size 36 (cls: BuildPreviewMarkerActor>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetBuildingMeshComponent_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetBuildingMeshComponent_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -1562,12 +1756,12 @@ Serialized exports:
 	CallFunc_GetAttachParent_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetAttachParent_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	Static Mesh Component (0-0-0-0): size 36 (cls: Static Mesh Component>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
+	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item1 (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_BuildingMeshComponent (0-0-0-0): size 36 (cls: CallFunc_IsBuildingPiece_BuildingMeshComponent>ObjectProperty>/Script/CoreUObject)
 	CallFunc_IsBuildingPiece_BuildPreviewMarkerActor (0-0-0-0): size 36 (cls: CallFunc_IsBuildingPiece_BuildPreviewMarkerActor>ObjectProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>ObjectProperty>/Script/CoreUObject)
-	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsCreative_Interaction_Delete (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsCreative_Interaction_Delete>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsCreative_Interaction_Move_Buildings_on_Grid (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsCreative_Interaction_Move_Buildings_on_Grid>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsCreative_Interaction_Move_Objects_Freely (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsCreative_Interaction_Move_Objects_Freely>ObjectProperty>/Script/CoreUObject)
@@ -1580,7 +1774,7 @@ Serialized exports:
 	TransitionParticles_GEN_VARIABLE (0-0-0-0): size 150 (cls: TransitionParticles_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_CreativeMoveTool_TransitionBlocks=/Game/Weapons/Prototype/ObjectMover/Particles/P_CreativeMoveTool_TransitionBlocks 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	TransitionLight_GEN_VARIABLE (0-0-0-0): size 300 (cls: TransitionLight_GEN_VARIABLE>PointLightComponent>/Script/Engine):
 		Tag array:
@@ -1588,7 +1782,7 @@ Serialized exports:
 			LightFalloffExponent(FloatProperty)=4 
 			AttenuationRadius(FloatProperty)=500 
 			Intensity(FloatProperty)=0 
-			LightColor(StructProperty)=System.Byte[] 
+			LightColor(StructProperty/Color)=System.Byte[] 
 			CastShadows(BoolProperty)=False 
 			VolumetricScatteringIntensity(FloatProperty)=0 
 			bVisible(BoolProperty)=False 
@@ -1599,37 +1793,37 @@ Serialized exports:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=B_CreativeMoveTool_BlueprintPreviewer_C 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 2799408170-1210168302-3752277653-742261146 
+			VariableGuid(StructProperty/Guid)=Guid: 2799408170-1210168302-3752277653-742261146 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 168 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=TransitionParticles_GEN_VARIABLE=B_CreativeMoveTool_BlueprintPreviewer_C 
-			VariableGuid(StructProperty)=Guid: 1481396627-1126021499-2118936464-2718561777 
+			VariableGuid(StructProperty/Guid)=Guid: 1481396627-1126021499-2118936464-2718561777 
 			InternalVariableName(NameProperty)=TransitionParticles 
 	SCS_Node_2 (0-0-0-0): size 168 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=PointLightComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=TransitionLight_GEN_VARIABLE=B_CreativeMoveTool_BlueprintPreviewer_C 
-			VariableGuid(StructProperty)=Guid: 1674998913-1235578509-3428556163-4136867242 
+			VariableGuid(StructProperty/Guid)=Guid: 1674998913-1235578509-3428556163-4136867242 
 			InternalVariableName(NameProperty)=TransitionLight 
 	SCS_Node_3 (0-0-0-0): size 168 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=GridAxisGuide_GEN_VARIABLE=B_CreativeMoveTool_BlueprintPreviewer_C 
-			VariableGuid(StructProperty)=Guid: 2669393537-1094056660-596191390-1299219058 
+			VariableGuid(StructProperty/Guid)=Guid: 2669393537-1094056660-596191390-1299219058 
 			InternalVariableName(NameProperty)=GridAxisGuide 
 	SCS_Node_4 (0-0-0-0): size 168 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=GravityGuide_GEN_VARIABLE=B_CreativeMoveTool_BlueprintPreviewer_C 
-			VariableGuid(StructProperty)=Guid: 719530891-1216735550-3763724679-2068787420 
+			VariableGuid(StructProperty/Guid)=Guid: 719530891-1216735550-3763724679-2068787420 
 			InternalVariableName(NameProperty)=GravityGuide 
 	SCS_Node_5 (0-0-0-0): size 168 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=ShadowPlane_GEN_VARIABLE=B_CreativeMoveTool_BlueprintPreviewer_C 
-			VariableGuid(StructProperty)=Guid: 3003346707-1131699579-480509613-1475723874 
+			VariableGuid(StructProperty/Guid)=Guid: 3003346707-1131699579-480509613-1475723874 
 			InternalVariableName(NameProperty)=ShadowPlane 
 	SimpleConstructionScript_0 (0-0-0-0): size 143 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -1642,36 +1836,36 @@ Serialized exports:
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
 			TranslucencySortPriority(IntProperty)=1 
 	4LayerMaterial (0-0-0-0): size 36 (cls: 4LayerMaterial>SoftObjectProperty>/Script/CoreUObject)
+	CallFunc_Conv_ObjectToSoftObjectReference_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Conv_ObjectToSoftObjectReference_ReturnValue>SoftObjectProperty>/Script/CoreUObject)
 	GravityGuide_GEN_VARIABLE (0-0-0-0): size 234 (cls: GravityGuide_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Straight_Spline_100=/Game/Effects/Fort_Effects/Mesh/Splines/SM_Straight_Spline_100 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			RelativeRotation(StructProperty)=Rotator(-90,0,0) 
-			RelativeScale3D(StructProperty)=Vector(5,1,1) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(-90,0,0) 
+			RelativeScale3D(StructProperty/Vector)=Vector(5,1,1) 
 			bHiddenInGame(BoolProperty)=True 
 	GridAxisGuide_GEN_VARIABLE (0-0-0-0): size 202 (cls: GridAxisGuide_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_CreativeMoveTool_AxisGuide=/Game/Weapons/Prototype/ObjectMover/Meshes/SM_CreativeMoveTool_AxisGuide 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			TranslucencySortPriority(IntProperty)=-1 
-			RelativeScale3D(StructProperty)=Vector(512,512,512) 
+			RelativeScale3D(StructProperty/Vector)=Vector(512,512,512) 
 			bHiddenInGame(BoolProperty)=True 
 	NODE_AddStaticMeshComponent-0 (0-0-0-0): size 524 (cls: NODE_AddStaticMeshComponent-0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			TranslucencySortPriority(IntProperty)=1 
-			BodyInstance(StructProperty)=System.Byte[] 
-	ShadowPlane_GEN_VARIABLE (0-0-0-0): size 278 (cls: ShadowPlane_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+	ShadowPlane_GEN_VARIABLE (0-0-0-0): size 243 (cls: ShadowPlane_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=1x1plane=/Game/Tools/Turntable/Mesh/1x1plane 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			TranslucencySortPriority(IntProperty)=-2 
-			RelativeLocation(StructProperty)=Vector(0,0,2) 
-			RelativeScale3D(StructProperty)=Vector(50,50,50) 
+			RelativeScale3D(StructProperty/Vector)=Vector(50,50,50) 
+			bHiddenInGame(BoolProperty)=True 
 			DetailMode(ByteProperty)=DM_Medium 
-	ClassName (0-0-0-0): size 32 (cls: ClassName>StrProperty>/Script/CoreUObject)
-	CallFunc_GetClassDisplayName_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetClassDisplayName_ReturnValue>StrProperty>/Script/CoreUObject)
 	ComponentOrigin (0-0-0-0): size 36 (cls: ComponentOrigin>StructProperty>/Script/CoreUObject)
 	ComponentTrueCenter (0-0-0-0): size 36 (cls: ComponentTrueCenter>StructProperty>/Script/CoreUObject)
+	CallFunc_GetTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetTransform_ReturnValue>StructProperty>/Script/CoreUObject)
 	DelayBeforeReturningToPoolHandle (0-0-0-0): size 36 (cls: DelayBeforeReturningToPoolHandle>StructProperty>/Script/CoreUObject)
 	DeleteTL_LightColor_C0DFA64042C583D7520F1DB50299A12B (0-0-0-0): size 36 (cls: DeleteTL_LightColor_C0DFA64042C583D7520F1DB50299A12B>StructProperty>/Script/CoreUObject)
 	DestroySelfTimerHandle (0-0-0-0): size 36 (cls: DestroySelfTimerHandle>StructProperty>/Script/CoreUObject)
@@ -1682,30 +1876,71 @@ Serialized exports:
 	DraftColorDesaturated (0-0-0-0): size 36 (cls: DraftColorDesaturated>StructProperty>/Script/CoreUObject)
 	DraftColorInvalid (0-0-0-0): size 36 (cls: DraftColorInvalid>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Add_VectorVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_Add_VectorVector_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue2>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_ImpactNormal (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_ImpactNormal>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_ImpactPoint (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_ImpactPoint>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_Location (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_Location>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_Normal (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_Normal>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_TraceEnd (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_TraceEnd>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakHitResult_TraceStart (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_TraceStart>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Location (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Location1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location1>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Rotation (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Rotation1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation1>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Scale (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Scale1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale1>StructProperty>/Script/CoreUObject)
+	CallFunc_FindDropStartLocation_EndTransform (0-0-0-0): size 36 (cls: CallFunc_FindDropStartLocation_EndTransform>StructProperty>/Script/CoreUObject)
+	CallFunc_FindDropStartLocation_StartTransform (0-0-0-0): size 36 (cls: CallFunc_FindDropStartLocation_StartTransform>StructProperty>/Script/CoreUObject)
+	CallFunc_GetLocalBounds_Max (0-0-0-0): size 36 (cls: CallFunc_GetLocalBounds_Max>StructProperty>/Script/CoreUObject)
+	CallFunc_GetLocalBounds_Min (0-0-0-0): size 36 (cls: CallFunc_GetLocalBounds_Min>StructProperty>/Script/CoreUObject)
 	CallFunc_GridPreviewScale_BoundsScaled (0-0-0-0): size 36 (cls: CallFunc_GridPreviewScale_BoundsScaled>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_GetComponentLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentLocation_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_GetComponentLocation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentLocation_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetVectorParameterValue_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetVectorParameterValue_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetVectorParameterValue_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_K2_GetVectorParameterValue_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_SetActorTransform_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetActorTransform_SweepHitResult>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetRelativeLocation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeLocation_SweepHitResult>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetRelativeLocation_SweepHitResult1 (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeLocation_SweepHitResult1>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetRelativeTransform_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeTransform_SweepHitResult>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_SetWorldLocation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetWorldLocation_SweepHitResult>StructProperty>/Script/CoreUObject)
 	CallFunc_LinearColorLerp_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_LinearColorLerp_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_LinearColorLerp_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_LinearColorLerp_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_LineTraceSingle_OutHit (0-0-0-0): size 36 (cls: CallFunc_LineTraceSingle_OutHit>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeTransform_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeVector_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue2>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeVector_ReturnValue3 (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue3>StructProperty>/Script/CoreUObject)
+	CallFunc_MakeVector_ReturnValue4 (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue4>StructProperty>/Script/CoreUObject)
+	CallFunc_MakeVector_ReturnValue5 (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue5>StructProperty>/Script/CoreUObject)
 	CallFunc_Multiply_VectorFloat_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Multiply_VectorFloat_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Subtract_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Subtract_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Subtract_VectorVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_Subtract_VectorVector_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_TLerp_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_TLerp_ReturnValue>StructProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_EndTransform (0-0-0-0): size 36 (cls: K2Node_CustomEvent_EndTransform>StructProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_StartTransform (0-0-0-0): size 36 (cls: K2Node_CustomEvent_StartTransform>StructProperty>/Script/CoreUObject)
 	K2Node_Select1_Default (0-0-0-0): size 36 (cls: K2Node_Select1_Default>StructProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Location (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Location1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location1>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Rotation (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Rotation1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation1>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Scale (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale>StructProperty>/Script/CoreUObject)
+	CallFunc_BreakTransform_Scale1 (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale1>StructProperty>/Script/CoreUObject)
+	CallFunc_GetTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetTransform_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Subtract_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Subtract_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	EndTransform (0-0-0-0): size 36 (cls: EndTransform>StructProperty>/Script/CoreUObject)
+	StartTransform (0-0-0-0): size 36 (cls: StartTransform>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetRelativeTransform_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeTransform_SweepHitResult>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetRelativeLocation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeLocation_SweepHitResult>StructProperty>/Script/CoreUObject)
+	GravityLineTraceBias (0-0-0-0): size 36 (cls: GravityLineTraceBias>StructProperty>/Script/CoreUObject)
 	GridPreviewBoundsFudgeFactor (0-0-0-0): size 36 (cls: GridPreviewBoundsFudgeFactor>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Multiply_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Multiply_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	MeshComponentRelativeTransform (0-0-0-0): size 36 (cls: MeshComponentRelativeTransform>StructProperty>/Script/CoreUObject)
-	OnGridPlacedWorldTransform (0-0-0-0): size 36 (cls: OnGridPlacedWorldTransform>StructProperty>/Script/CoreUObject)
-	ReturnActorToPoolTimerHandle (0-0-0-0): size 36 (cls: ReturnActorToPoolTimerHandle>StructProperty>/Script/CoreUObject)
+	PickedUpTransform (0-0-0-0): size 36 (cls: PickedUpTransform>StructProperty>/Script/CoreUObject)
+	EndTransform (0-0-0-0): size 36 (cls: EndTransform>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Divide_VectorFloat_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Divide_VectorFloat_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Divide_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Divide_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
@@ -1740,17 +1975,27 @@ Serialized exports:
 			EventTracks(ArrayProperty)=[object] (inner: StructProperty)
 			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
 			LinearColorTracks(ArrayProperty)=[object] (inner: StructProperty)
-			TimelineGuid(StructProperty)=Guid: 3235882560-1120240599-1376722357-43622699 
+			TimelineGuid(StructProperty/Guid)=Guid: 3235882560-1120240599-1376722357-43622699 
 			VariableName(NameProperty)=DeleteTL 
 			DirectionPropertyName(NameProperty)=DeleteTL__Direction_C0DFA64042C583D7520F1DB50299A12B 
 			UpdateFunctionName(NameProperty)=DeleteTL__UpdateFunc 
 			FinishedFunctionName(NameProperty)=DeleteTL__FinishedFunc 
+	DropPropTL_Template (0-0-0-0): size 479 (cls: DropPropTL_Template>TimelineTemplate>/Script/Engine):
+		Tag array:
+			TimelineLength(FloatProperty)=1 
+			bValidatedAsWired(BoolProperty)=True 
+			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
+			TimelineGuid(StructProperty/Guid)=Guid: 2808145306-1225532816-2475570085-2803373570 
+			VariableName(NameProperty)=DropPropTL 
+			DirectionPropertyName(NameProperty)=DropPropTL__Direction_A760E59A490C2590938E33A5A7181602 
+			UpdateFunctionName(NameProperty)=DropPropTL__UpdateFunc 
+			FinishedFunctionName(NameProperty)=DropPropTL__FinishedFunc 
 	DuplicateTL_Template (0-0-0-0): size 608 (cls: DuplicateTL_Template>TimelineTemplate>/Script/Engine):
 		Tag array:
 			TimelineLength(FloatProperty)=0.2 
 			bValidatedAsWired(BoolProperty)=True 
 			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
-			TimelineGuid(StructProperty)=Guid: 728607865-1168152825-2975862656-2810221565 
+			TimelineGuid(StructProperty/Guid)=Guid: 728607865-1168152825-2975862656-2810221565 
 			VariableName(NameProperty)=DuplicateTL 
 			DirectionPropertyName(NameProperty)=DuplicateTL__Direction_2B6DAC7945A098F9B1600F80A78093FD 
 			UpdateFunctionName(NameProperty)=DuplicateTL__UpdateFunc 
@@ -1760,7 +2005,7 @@ Serialized exports:
 			TimelineLength(FloatProperty)=0.1 
 			bValidatedAsWired(BoolProperty)=True 
 			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
-			TimelineGuid(StructProperty)=Guid: 1887169932-1113062541-2632334775-3879524472 
+			TimelineGuid(StructProperty/Guid)=Guid: 1887169932-1113062541-2632334775-3879524472 
 			VariableName(NameProperty)=LerpGridTL 
 			DirectionPropertyName(NameProperty)=LerpGridTL__Direction_707BED8C4257FC8D9CE63DB7E73CD878 
 			UpdateFunctionName(NameProperty)=LerpGridTL__UpdateFunc 
@@ -1770,7 +2015,7 @@ Serialized exports:
 			TimelineLength(FloatProperty)=0.35 
 			bValidatedAsWired(BoolProperty)=True 
 			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
-			TimelineGuid(StructProperty)=Guid: 3218341102-1287522498-4033906575-2021692540 
+			TimelineGuid(StructProperty/Guid)=Guid: 3218341102-1287522498-4033906575-2021692540 
 			VariableName(NameProperty)=ScaleGridPreviewTL 
 			DirectionPropertyName(NameProperty)=ScaleGridPreviewTL__Direction_BFD3FCEE4CBE08C2F070878F7880947C 
 			UpdateFunctionName(NameProperty)=ScaleGridPreviewTL__UpdateFunc 
@@ -1780,7 +2025,7 @@ Serialized exports:
 			TimelineLength(FloatProperty)=1 
 			bValidatedAsWired(BoolProperty)=True 
 			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
-			TimelineGuid(StructProperty)=Guid: 2104173565-1083091262-1352644754-3250642569 
+			TimelineGuid(StructProperty/Guid)=Guid: 2104173565-1083091262-1352644754-3250642569 
 			VariableName(NameProperty)=TransitionTL 
 			DirectionPropertyName(NameProperty)=TransitionTL__Direction_7D6B23FD408EA93E509FB892C1C0DE89 
 			UpdateFunctionName(NameProperty)=TransitionTL__UpdateFunc 

@@ -9,11 +9,13 @@ Name table:
 	/Script/CommonUI
 	/Script/CoreUObject
 	/Script/Engine
+	/Script/FortniteUI
 	/Script/UMG
 	ArrayProperty
 	AthenaStatsRow_C
 	bAllowTemplate
 	BaseGameplayTag
+	bClassRequiresNativeTick
 	bCookedWidgetTree
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
@@ -31,7 +33,6 @@ Name table:
 	ColorAndOpacity
 	CommonBorder
 	CommonTextBlock
-	CommonUserWidget
 	Content
 	Default__AthenaStatsRow_C
 	Default__BoolProperty
@@ -40,7 +41,7 @@ Name table:
 	Default__BorderSlot
 	Default__CommonBorder
 	Default__CommonTextBlock
-	Default__CommonUserWidget
+	Default__FortProfileStatsRow
 	Default__Function
 	Default__HorizontalBox
 	Default__HorizontalBoxSlot
@@ -56,18 +57,22 @@ Name table:
 	Default__VerticalBoxSlot
 	Default__WidgetBlueprintGeneratedClass
 	Default__WidgetTree
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	Engine
 	EntryPoint
+	EnumProperty
 	ESlateSizeRule
 	ESlateSizeRule::Fill
 	EVerticalAlignment
 	ExecuteUbergraph_AthenaStatsRow
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
+	FortProfileStatsRow
 	Function
-	HAlign_Left
 	HAlign_Right
 	HorizontalAlignment
 	HorizontalBox
@@ -133,16 +138,17 @@ Name table:
 	WidgetTree
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	AthenaStatsRow_C (0-0-0-0): size 291 (cls: AthenaStatsRow_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	AthenaStatsRow_C (0-0-0-0): size 313 (cls: AthenaStatsRow_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
 			bValidTemplate(BoolProperty)=True 
+			bClassRequiresNativeTick(BoolProperty)=True 
 			TemplateAsset(SoftObjectProperty)=/Game/Athena/UI/Frontend/AthenaStatsRow.WidgetArchetype 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_AthenaStatsRow=AthenaStatsRow_C 
 	Default__AthenaStatsRow_C (0-0-0-0): size 202 (cls: Default__AthenaStatsRow_C>AthenaStatsRow_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			StatName(TextProperty)=Stat Name (A26EDAFB4ABD9630F89CD391D57F5EF9) 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
@@ -160,71 +166,70 @@ Serialized exports:
 	IsDesignTime (0-0-0-0): size 34 (cls: IsDesignTime>BoolProperty>/Script/CoreUObject)
 	BorderSlot_0 (0-0-0-0): size 284 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=CommonBorder_1=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 	BorderSlot_2 (0-0-0-0): size 243 (cls: BorderSlot_2>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_3=WidgetArchetype 
 			Content(ObjectProperty)=Spacer_0=WidgetArchetype 
 	CommonBorder_1 (0-0-0-0): size 390 (cls: CommonBorder_1>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_StatRow_WhiteLowOpacity_C=/Game/UI/Foundation/Border/Border_StatRow_WhiteLowOpacity 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
 	CommonBorder_3 (0-0-0-0): size 349 (cls: CommonBorder_3>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Solid_DkBlue_C=/Game/UI/Foundation/Border/Border_Solid_DkBlue 
-			Padding(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 	Name (0-0-0-0): size 504 (cls: Name>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-70pc 
 			Text(TextProperty)=Kills (C8319B8C4949C1C5DDE9D28F96B1E542) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_8=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-B_C=/Game/UI/Foundation/Text/TextStyle-Base-S-B 
 			Text(TextProperty)=N/A (541A990A4FEDF5322771D5B770404461) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
-	Value (0-0-0-0): size 36 (cls: Value>ObjectProperty>/Script/CoreUObject)
 	StatValue (0-0-0-0): size 32 (cls: StatValue>TextProperty>/Script/CoreUObject)
 	SetStatValueAsText (0-0-0-0): size 76 (cls: SetStatValueAsText>Function>/Script/CoreUObject)
-	HorizontalBox_3 (0-0-0-0): size 86 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
+	HorizontalBox_3 (0-0-0-0): size 127 (cls: HorizontalBox_3>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 336 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
+	HorizontalBoxSlot_0 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=Value=WidgetArchetype 
-	HorizontalBoxSlot_8 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_8>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_8 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_8>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			HorizontalAlignment(ByteProperty)=HAlign_Left 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_3=WidgetArchetype 
 			Content(ObjectProperty)=Name=WidgetArchetype 
 	Spacer_0 (0-0-0-0): size 98 (cls: Spacer_0>Spacer>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=Vector2D(1,4) 
+			Size(StructProperty/Vector2D)=Vector2D(1,4) 
 			Slot(ObjectProperty)=BorderSlot_2=WidgetArchetype 
 	BaseGameplayTag (0-0-0-0): size 32 (cls: BaseGameplayTag>StrProperty>/Script/CoreUObject)
 	StatName (0-0-0-0): size 32 (cls: StatName>TextProperty>/Script/CoreUObject)

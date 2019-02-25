@@ -1,6 +1,7 @@
 Name table:
 	/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/SneakySnowman/SneakySnowman_Cook_IntroAnLoop
 	/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/SneakySnowman/SneakySnowman_Cook_Outro
+	/Game/Athena/DrivableVehicles/Golf_Cart/Golf_Cart_Base/Blueprints/GolfCartVehicleSK
 	/Game/Athena/Items/Consumables/Grenade/GA_Athena_Grenade_WithTrajectory
 	/Game/Athena/Items/Consumables/SneakySnowman/Athena_SneakySnowman
 	/Game/Athena/Items/Consumables/SneakySnowman/B_Prj_Athena_SneakySnowman
@@ -16,18 +17,36 @@ Name table:
 	AbilityCosts
 	AbilityTags
 	ActiveGameplayEffectHandle
+	Actor
+	Add_VectorVector
 	AnimMontage
 	ApplicationTag
 	ArrayProperty
 	Athena_SneakySnowman
 	Audio_InAir_GEN_VARIABLE
+	AudioBattery_GEN_VARIABLE
+	AudioBoost_GEN_VARIABLE
 	AudioComponent
+	AudioHandbrakeSkid_GEN_VARIABLE
+	AudioInAir_GEN_VARIABLE
+	AudioMovement_GEN_VARIABLE
+	AudioScrape_GEN_VARIABLE
+	AudioSkid_GEN_VARIABLE
+	AudioWind_GEN_VARIABLE
 	B_Prj_Athena_SneakySnowman_C
 	BlueprintGeneratedClass
 	bOnlyApplyCostOnHit
 	BoolProperty
+	BoxComponent
 	BP_ApplyGameplayEffectToOwner
+	CallFunc_Add_VectorVector_ReturnValue
 	CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue
+	CallFunc_GetActorForwardVector_ReturnValue
+	CallFunc_GetVehicle_ReturnValue
+	CallFunc_IsValid_ReturnValue
+	CallFunc_Multiply_VectorFloat_ReturnValue
+	CallFunc_SpawnLocationAndRotation_OutLoc
+	CallFunc_SpawnLocationAndRotation_OutRot
 	CapsuleComponent
 	Class
 	CollisionCapsule0
@@ -36,16 +55,21 @@ Name table:
 	Curve
 	CurveTable
 	CurveTableRowHandle
+	DamageSet
 	Default__ArrayProperty
 	Default__B_Prj_Athena_SneakySnowman_C
 	Default__BlueprintGeneratedClass
+	Default__BoolProperty
 	Default__Function
 	Default__GA_Athena_Grenade_WithTrajectory_C
 	Default__GA_Athena_Throw_SneakySnowman_C
 	Default__GE_Athena_GrantTracker_SneakySnowman_C
+	Default__GolfCartVehicleSK_C
 	Default__IntProperty
+	Default__KismetSystemLibrary
 	Default__ObjectProperty
 	Default__StructProperty
+	DefaultSceneRoot_GEN_VARIABLE
 	EffectContainers
 	EFortAbilityCostSource
 	EFortAbilityCostSource::AmmoPrimary
@@ -55,11 +79,18 @@ Name table:
 	ExecuteUbergraph_GA_Athena_Throw_SneakySnowman
 	FloatProperty
 	FortAbilityCost
+	FortAthenaVehicle
 	FortCollisionAudio_GEN_VARIABLE
 	FortCollisionAudioComponent
+	FortCollisionAudioImpacts_GEN_VARIABLE
+	FortCollisionAudioSuspension_GEN_VARIABLE
+	FortDamageSet
 	FortGameplayAbilityMontageInfo
 	FortGameplayEffectContainer
+	FortPlayerPawn
 	FortProjectileBase
+	FortVehicleAudioVoice
+	FortVehicleSkelMeshComponent
 	FortWeaponRangedItemDefinition
 	Function
 	FX_Trail_GEN_VARIABLE
@@ -70,64 +101,105 @@ Name table:
 	GameplayTag
 	GameplayTagContainer
 	GE_Athena_GrantTracker_SneakySnowman_C
+	GetActorForwardVector
+	GetVehicle
+	GolfCart_Horn_Cue_GEN_VARIABLE
+	GolfCartVehicleSK_C
 	GrenadeSound
 	IntProperty
+	IsValid
 	ItemDefinition
 	K2_ActivateAbility
+	K2Node_DynamicCast_AsGolf_Cart_Vehicle_SK
+	K2Node_DynamicCast_bSuccess
+	K2Node_Select_Default
+	KismetMathLibrary
+	KismetSystemLibrary
 	MontageInfo
 	MontageToPlay
+	Multiply_VectorFloat
 	NameProperty
 	None
 	Object
 	ObjectProperty
+	OutLoc
+	OutRot
+	OverlapVolume_GEN_VARIABLE
+	P_GolfCart_Boost_Flames_l_GEN_VARIABLE
+	P_GolfCart_Boost_Flames_r_GEN_VARIABLE
+	P_GolfCart_Vehicle_WheelDust_GEN_VARIABLE
+	P_GolfCart_Vehicle_WheelSlide_GEN_VARIABLE
 	Package
 	ParticleSystemComponent
+	PlayerPawn
 	PointerToUberGraphFrame
 	Prj_Grenade
 	ProjectileComp0
 	ProjectileMovementComponent
 	RotatingMovement_GEN_VARIABLE
 	RotatingMovementComponent
+	Rotator
 	RowName
 	ScalableFloat
 	SceneComponent
 	ScriptStruct
 	SK_Sneaky_Snowman_Throw_GEN_VARIABLE
 	SkeletalMeshComponent
+	SM_CollisionBodies_GEN_VARIABLE
 	SneakySnowman_Cook_IntroAnLoop
 	SneakySnowman_Cook_Outro
 	SnowmenActors
 	SoundCue
+	SpawnLocationAndRotation
+	StaticMeshComponent
 	StructProperty
 	TagName
 	TargetGameplayEffectClasses
+	Temp_bool_Variable
 	ThrowWindupMontage
 	Toys_Snowball_Throw_Cue
 	TrackSnowmenTag
+	TrailLeft_GEN_VARIABLE
+	TrailRight_GEN_VARIABLE
 	UberGraphFrame
 	UberGraphFunction
 	Value
+	Vector
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	GA_Athena_Throw_SneakySnowman_C (0-0-0-0): size 149 (cls: GA_Athena_Throw_SneakySnowman_C>BlueprintGeneratedClass>/Script/Engine):
+	GA_Athena_Throw_SneakySnowman_C (0-0-0-0): size 165 (cls: GA_Athena_Throw_SneakySnowman_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_GA_Athena_Throw_SneakySnowman=GA_Athena_Throw_SneakySnowman_C 
 	Default__GA_Athena_Throw_SneakySnowman_C (0-0-0-0): size 1209 (cls: Default__GA_Athena_Throw_SneakySnowman_C>GA_Athena_Throw_SneakySnowman_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			TrackSnowmenTag(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			TrackSnowmenTag(StructProperty/GameplayTag)=System.Byte[] 
 			Prj_Grenade(ObjectProperty)=B_Prj_Athena_SneakySnowman_C=/Game/Athena/Items/Consumables/SneakySnowman/B_Prj_Athena_SneakySnowman 
 			GrenadeSound(ObjectProperty)=Toys_Snowball_Throw_Cue=/Game/Athena/Sounds/Toys/Toys_Snowball_Throw_Cue 
-			ThrowWindupMontage(StructProperty)=System.Byte[] 
-			EffectContainers(StructProperty)=System.Byte[] 
-			EffectContainers(StructProperty)=System.Byte[] 
+			ThrowWindupMontage(StructProperty/FortGameplayAbilityMontageInfo)=System.Byte[] 
+			EffectContainers(StructProperty/FortGameplayEffectContainer)=System.Byte[] 
+			EffectContainers(StructProperty/FortGameplayEffectContainer)=System.Byte[] 
 			AbilityCosts(ArrayProperty)=[object] (inner: StructProperty)
-			MontageInfo(StructProperty)=System.Byte[] 
-			AbilityTags(StructProperty)=GameplayTagContainer:Gameplay.Action.Player.Medium 
+			MontageInfo(StructProperty/FortGameplayAbilityMontageInfo)=System.Byte[] 
+			AbilityTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Gameplay.Action.Player.Medium 
 	SnowmenActors (0-0-0-0): size 36 (cls: SnowmenActors>ObjectProperty>/Script/CoreUObject)
 	SnowmenActors (0-0-0-0): size 36 (cls: SnowmenActors>ArrayProperty>/Script/CoreUObject)
-	CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue>StructProperty>/Script/CoreUObject)
+	TrackSnowmenTag (0-0-0-0): size 36 (cls: TrackSnowmenTag>StructProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
 	ExecuteUbergraph_GA_Athena_Throw_SneakySnowman (0-0-0-0): size 104 (cls: ExecuteUbergraph_GA_Athena_Throw_SneakySnowman>Function>/Script/CoreUObject)
 	K2_ActivateAbility (0-0-0-0): size 54 (cls: K2_ActivateAbility>Function>/Script/CoreUObject)
-	TrackSnowmenTag (0-0-0-0): size 36 (cls: TrackSnowmenTag>StructProperty>/Script/CoreUObject)
+	OutLoc (0-0-0-0): size 36 (cls: OutLoc>StructProperty>/Script/CoreUObject)
+	SpawnLocationAndRotation (0-0-0-0): size 370 (cls: SpawnLocationAndRotation>Function>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
+	CallFunc_GetVehicle_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetVehicle_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsGolf_Cart_Vehicle_SK (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsGolf_Cart_Vehicle_SK>ObjectProperty>/Script/CoreUObject)
+	CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_BP_ApplyGameplayEffectToOwner_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_GetActorForwardVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetActorForwardVector_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_Multiply_VectorFloat_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Multiply_VectorFloat_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_SpawnLocationAndRotation_OutLoc (0-0-0-0): size 36 (cls: CallFunc_SpawnLocationAndRotation_OutLoc>StructProperty>/Script/CoreUObject)
+	CallFunc_SpawnLocationAndRotation_OutRot (0-0-0-0): size 36 (cls: CallFunc_SpawnLocationAndRotation_OutRot>StructProperty>/Script/CoreUObject)
+	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>StructProperty>/Script/CoreUObject)
+	OutRot (0-0-0-0): size 36 (cls: OutRot>StructProperty>/Script/CoreUObject)

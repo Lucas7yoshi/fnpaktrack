@@ -1,7 +1,7 @@
 Name table:
 	/Game/Athena/HUD/Inventory/CreativeInventoryInterface
 	/Game/Playgrounds/VendingMachineData/all_vend_tabs
-	/Game/Playgrounds/VendingMachineData/CreativeItems
+	/Game/Playgrounds/VendingMachineData/CreativeItemDefList
 	/Game/Sounds/Fort_UI_Sounds/FrontEnd/New_FrontEnd/Fortnite_UI_MainMenu_Tab_03_Cue
 	/Game/Sounds/Fort_UI_Sounds/FrontEnd/New_FrontEnd/Fortnite_UI_Options_Menu_01_Cue
 	/Game/UI/Foundation/Border/Border-ModalHeader
@@ -160,7 +160,7 @@ Name table:
 	Count
 	Create
 	CreativeInventoryInterface_C
-	CreativeItems
+	CreativeItemDefList
 	CurrentTab
 	CursorModeChangedEvent
 	CursorModeContentWidget
@@ -555,10 +555,10 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_PlaysetInventory=PlaysetInventory_C 
 	Default__PlaysetInventory_C (0-0-0-0): size 1736 (cls: Default__PlaysetInventory_C>PlaysetInventory_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			TypesThatDontConsumeCharge(ArrayProperty)=[object] (inner: EnumProperty)
-			CloseRowHandle(StructProperty)=System.Byte[] 
-			SelectRowHandle(StructProperty)=System.Byte[] 
+			CloseRowHandle(StructProperty/DataTableRowHandle)=System.Byte[] 
+			SelectRowHandle(StructProperty/DataTableRowHandle)=System.Byte[] 
 			MenuOpenedSound(ObjectProperty)=Fortnite_UI_MainMenu_Tab_03_Cue=/Game/Sounds/Fort_UI_Sounds/FrontEnd/New_FrontEnd/Fortnite_UI_MainMenu_Tab_03_Cue 
 			MenuClosedSound(ObjectProperty)=Fortnite_UI_Options_Menu_01_Cue=/Game/Sounds/Fort_UI_Sounds/FrontEnd/New_FrontEnd/Fortnite_UI_Options_Menu_01_Cue 
 			PurchasedItemEntryList(ArrayProperty)=[object] (inner: StructProperty)
@@ -566,7 +566,7 @@ Serialized exports:
 			Chest Tab Name(TextProperty)=Chest (3F6B07604B724A4BBCCB14A9C9B8C3CC) 
 			MaxNumItemsInChests(IntProperty)=50 
 			PanelDataClass(ObjectProperty)=FortCreativeItemListPanelData=/Script/FortniteUI 
-			ItemListSource(ObjectProperty)=CreativeItems=/Game/Playgrounds/VendingMachineData/CreativeItems 
+			ItemListSource(ObjectProperty)=CreativeItemDefList=/Game/Playgrounds/VendingMachineData/CreativeItemDefList 
 			ItemListCategorySource(ObjectProperty)=all_vend_tabs=/Game/Playgrounds/VendingMachineData/all_vend_tabs 
 			InputPriority(EnumProperty)=EInputPriority::Modal 
 			bExposeActionsExternally(BoolProperty)=False 
@@ -584,7 +584,7 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 	BackgroundBlurSlot_0 (0-0-0-0): size 243 (cls: BackgroundBlurSlot_0>BackgroundBlurSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=BackgroundBlur_1=WidgetArchetype 
 			Content(ObjectProperty)=Lightbox=WidgetArchetype 
 	CategorySwitcher (0-0-0-0): size 36 (cls: CategorySwitcher>ObjectProperty>/Script/CoreUObject)
@@ -669,14 +669,14 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	Border_Darken (0-0-0-0): size 305 (cls: Border_Darken>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Dimmer (0-0-0-0): size 350 (cls: Dimmer>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=True 
 	BorderSlot_0 (0-0-0-0): size 111 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
@@ -686,17 +686,17 @@ Serialized exports:
 			Content(ObjectProperty)=CategoryTabs=WidgetArchetype 
 	BorderSlot_1 (0-0-0-0): size 243 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorderBlueBG=WidgetArchetype 
 			Content(ObjectProperty)=WidgetSwitcherPermission=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=Dimmer=WidgetArchetype 
 			Content(ObjectProperty)=Overlay_0=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=WIndowButtons=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
 	CallFunc_MakeLiteralByte_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeLiteralByte_ReturnValue>ByteProperty>/Script/CoreUObject)
@@ -716,16 +716,16 @@ Serialized exports:
 	CommonBorderBlueBG (0-0-0-0): size 411 (cls: CommonBorderBlueBG>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border-SolidBG-DkBlue_C=/Game/UI/Foundation/Border/Border-SolidBG-DkBlue 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_1=WidgetArchetype 
 	QuantityTextBlock (0-0-0-0): size 493 (cls: QuantityTextBlock>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-L_C=/Game/UI/Foundation/Text/TextStyle-Base-L 
 			Text(TextProperty)=Creative Inventory available where you can build. (33A35E6246642DD0E8E5DEB532F256D6) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Center 
 			AutoWrapText(BoolProperty)=True 
 			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
@@ -738,7 +738,7 @@ Serialized exports:
 			bShowForIOS(BoolProperty)=False 
 			bShowForAndroid(BoolProperty)=False 
 			bShowForErebus(BoolProperty)=False 
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -772,7 +772,7 @@ Serialized exports:
 			Content(ObjectProperty)=PreviousTabActionWrapper=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 185 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=TabButtonBox=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
@@ -786,7 +786,7 @@ Serialized exports:
 			Content(ObjectProperty)=Overlay_Container=WidgetArchetype 
 	HorizontalBoxSlot_5 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_5>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
@@ -801,23 +801,23 @@ Serialized exports:
 			PreviousTabAction(ObjectProperty)=PreviousTabAction=WidgetArchetype 
 			PreviousTabActionWrapper(ObjectProperty)=PreviousTabActionWrapper=WidgetArchetype 
 			TabButtonBox(ObjectProperty)=TabButtonBox=WidgetArchetype 
-			TabButtonPadding(StructProperty)=System.Byte[] 
+			TabButtonPadding(StructProperty/Margin)=System.Byte[] 
 			ButtonStyle(ObjectProperty)=ButtonStyle-Tab-Manage_C=/Game/UI/Foundation/Buttons/ButtonStyles/Tab/ButtonStyle-Tab-Manage 
 			UseButtonStyle(BoolProperty)=True 
-			NextTabInputActionData(StructProperty)=System.Byte[] 
-			PreviousTabInputActionData(StructProperty)=System.Byte[] 
+			NextTabInputActionData(StructProperty/DataTableRowHandle)=System.Byte[] 
+			PreviousTabInputActionData(StructProperty/DataTableRowHandle)=System.Byte[] 
 			bAutoListenForInput(BoolProperty)=True 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 	ImageGamepadKeyPrompt (0-0-0-0): size 168 (cls: ImageGamepadKeyPrompt>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_5=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	ImageHorizRule (0-0-0-0): size 561 (cls: ImageHorizRule>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=OverlaySlot_2=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::Collapsed 
 	K2Node_DynamicCast_AsFort_Initialize_from_Object_Interface (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Initialize_from_Object_Interface>InterfaceProperty>/Script/CoreUObject)
@@ -922,7 +922,7 @@ Serialized exports:
 			Content(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 	OverlaySlot_2 (0-0-0-0): size 267 (cls: OverlaySlot_2>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_Container=WidgetArchetype 
@@ -1034,7 +1034,7 @@ Serialized exports:
 			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 168 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=CategorySwitcher=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 111 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
@@ -1052,7 +1052,7 @@ Serialized exports:
 			Content(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 	WidgetSwitcherSlot_1 (0-0-0-0): size 156 (cls: WidgetSwitcherSlot_1>WidgetSwitcherSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=WidgetSwitcherPermission=WidgetArchetype 
 			Content(ObjectProperty)=QuantityTextBlock=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):

@@ -1,13 +1,16 @@
 Name table:
+	/Game/Sounds/Attenuation/Fort_Ability_Radius
 	/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Cue
 	/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Intro
 	/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Intro.MX_Steel_Wool_Carlos_Bass_Solo_Intro
-	/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Loop
-	/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Loop.MX_Steel_Wool_Carlos_Bass_Solo_Loop
-	/Game/Sounds/FortSoundClassesAndModes/Fort_Explosives_Large_PSM
+	/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Loop_02
+	/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Loop_02.MX_Steel_Wool_Carlos_Bass_Solo_Loop_02
+	/Game/Sounds/FortSoundClassesAndModes/Fort_06_Player_Attacks_Abilities
 	/Script/CoreUObject
 	/Script/Engine
 	ArrayProperty
+	AttenuationSettings
+	bHasDelayNode
 	bLooping
 	BoolProperty
 	ChildNodes
@@ -23,13 +26,14 @@ Name table:
 	EditorCurveData
 	FirstNode
 	FloatProperty
-	Fort_Explosives_Large_PSM
+	Fort_06_Player_Attacks_Abilities
+	Fort_Ability_Radius
 	InputVolume
 	Keys
 	MaxDistance
 	MX_Steel_Wool_Carlos_Bass_Solo_Cue
 	MX_Steel_Wool_Carlos_Bass_Solo_Intro
-	MX_Steel_Wool_Carlos_Bass_Solo_Loop
+	MX_Steel_Wool_Carlos_Bass_Solo_Loop_02
 	None
 	ObjectProperty
 	Package
@@ -38,6 +42,7 @@ Name table:
 	RichCurveKey
 	RuntimeFloatCurve
 	SoftObjectProperty
+	SoundAttenuation
 	SoundClass
 	SoundClassObject
 	SoundCue
@@ -51,22 +56,29 @@ Name table:
 	VolumeCurve
 	VolumeMultiplier
 Serialized exports:
-	MX_Steel_Wool_Carlos_Bass_Solo_Cue (0-0-0-0): size 159 (cls: MX_Steel_Wool_Carlos_Bass_Solo_Cue>SoundCue>/Script/Engine):
+	MX_Steel_Wool_Carlos_Bass_Solo_Cue (0-0-0-0): size 214 (cls: MX_Steel_Wool_Carlos_Bass_Solo_Cue>SoundCue>/Script/Engine):
 		Tag array:
-			FirstNode(ObjectProperty)=SoundNodeMixer_0=MX_Steel_Wool_Carlos_Bass_Solo_Cue 
-			VolumeMultiplier(FloatProperty)=0.9 
-			SoundClassObject(ObjectProperty)=Fort_Explosives_Large_PSM=/Game/Sounds/FortSoundClassesAndModes/Fort_Explosives_Large_PSM 
-			Duration(FloatProperty)=10003.5 
-			MaxDistance(FloatProperty)=2097152 
+			FirstNode(ObjectProperty)=SoundNodeDelay_1=MX_Steel_Wool_Carlos_Bass_Solo_Cue 
+			VolumeMultiplier(FloatProperty)=1.35 
+			SoundClassObject(ObjectProperty)=Fort_06_Player_Attacks_Abilities=/Game/Sounds/FortSoundClassesAndModes/Fort_06_Player_Attacks_Abilities 
+			bHasDelayNode(BoolProperty)=True 
+			Duration(FloatProperty)=10003.95 
+			MaxDistance(FloatProperty)=1200 
+			AttenuationSettings(ObjectProperty)=Fort_Ability_Radius=/Game/Sounds/Attenuation/Fort_Ability_Radius 
 	SoundNodeDelay_0 (0-0-0-0): size 113 (cls: SoundNodeDelay_0>SoundNodeDelay>/Script/Engine):
 		Tag array:
 			DelayMin(FloatProperty)=3.5 
 			DelayMax(FloatProperty)=3.5 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
+	SoundNodeDelay_1 (0-0-0-0): size 113 (cls: SoundNodeDelay_1>SoundNodeDelay>/Script/Engine):
+		Tag array:
+			DelayMin(FloatProperty)=0.45 
+			DelayMax(FloatProperty)=0.45 
+			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 	SoundNodeEnveloper_0 (0-0-0-0): size 536 (cls: SoundNodeEnveloper_0>SoundNodeEnveloper>/Script/Engine):
 		Tag array:
-			VolumeCurve(StructProperty)=System.Byte[] 
-			PitchCurve(StructProperty)=System.Byte[] 
+			VolumeCurve(StructProperty/RuntimeFloatCurve)=System.Byte[] 
+			PitchCurve(StructProperty/RuntimeFloatCurve)=System.Byte[] 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 	SoundNodeMixer_0 (0-0-0-0): size 104 (cls: SoundNodeMixer_0>SoundNodeMixer>/Script/Engine):
 		Tag array:
@@ -75,7 +87,7 @@ Serialized exports:
 	SoundNodeWavePlayer_0 (0-0-0-0): size 55 (cls: SoundNodeWavePlayer_0>SoundNodeWavePlayer>/Script/Engine):
 		Tag array:
 			SoundWaveAssetPtr(SoftObjectProperty)=/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Intro.MX_Steel_Wool_Carlos_Bass_Solo_Intro 
-	SoundNodeWavePlayer_1 (0-0-0-0): size 81 (cls: SoundNodeWavePlayer_1>SoundNodeWavePlayer>/Script/Engine):
+	SoundNodeWavePlayer_2 (0-0-0-0): size 81 (cls: SoundNodeWavePlayer_2>SoundNodeWavePlayer>/Script/Engine):
 		Tag array:
-			SoundWaveAssetPtr(SoftObjectProperty)=/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Loop.MX_Steel_Wool_Carlos_Bass_Solo_Loop 
+			SoundWaveAssetPtr(SoftObjectProperty)=/Game/Sounds/Fort_Gadgets/Carlos_Bass_Solo_Perk/MX_Steel_Wool_Carlos_Bass_Solo_Loop_02.MX_Steel_Wool_Carlos_Bass_Solo_Loop_02 
 			bLooping(BoolProperty)=True 

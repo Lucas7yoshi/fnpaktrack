@@ -4,6 +4,7 @@ Name table:
 	/Game/UI/Foundation/Buttons/IconTextButton
 	/Game/UI/Foundation/Modals/Feedback/PlayerReportingCategoryDropdown
 	/Game/UI/Foundation/Modals/Feedback/PlayerReportingCategoryDropdown.WidgetArchetype
+	/Script/BlueprintContext
 	/Script/CommonUI
 	/Script/CoreUObject
 	/Script/Engine
@@ -21,6 +22,7 @@ Name table:
 	bHasScriptImplementedTick
 	bInteractableWhenSelected
 	bIsVariable
+	BlueprintContextLibrary
 	BlueprintGeneratedClass
 	BoolProperty
 	Border_Navy_VGrad_C
@@ -37,16 +39,22 @@ Name table:
 	CallFunc_Array_Get_Item
 	CallFunc_Array_Length_ReturnValue
 	CallFunc_Create_ReturnValue
+	CallFunc_GetContext_ReturnValue
+	CallFunc_GetInputManager_ReturnValue
 	CallFunc_GetPlayerController_ReturnValue
 	CallFunc_GetPlayerReportingCategoryLabels_ReturnValue
 	CallFunc_Less_IntInt_ReturnValue
 	Class
 	ClearChildren
+	CommonActivatablePanel
 	CommonBorder
+	CommonInputManager
+	CommonUISubsystem
 	Construct
 	Content
 	Create
 	Default__ArrayProperty
+	Default__BlueprintContextLibrary
 	Default__BoolProperty
 	Default__Border_Navy_VGrad_C
 	Default__BorderSlot
@@ -84,6 +92,8 @@ Name table:
 	FortGameFeedbackBase
 	Function
 	GameplayStatics
+	GetContext
+	GetInputManager
 	GetPlayerController
 	GetPlayerReportingCategoryLabels
 	IconTextButton_C
@@ -101,6 +111,7 @@ Name table:
 	None
 	Object
 	ObjectProperty
+	OnActivated
 	Package
 	Padding
 	Parent
@@ -116,6 +127,7 @@ Name table:
 	ScriptStruct
 	SetBoolPropertyByName
 	SetClassPropertyByName
+	SetGlobalInputHandlerPriorityFilter
 	SetTextPropertyByName
 	Slot
 	Slots
@@ -143,7 +155,7 @@ Name table:
 	WidgetTree
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	PlayerReportingCategoryDropdown_C (0-0-0-0): size 305 (cls: PlayerReportingCategoryDropdown_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	PlayerReportingCategoryDropdown_C (0-0-0-0): size 321 (cls: PlayerReportingCategoryDropdown_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -153,37 +165,40 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_PlayerReportingCategoryDropdown=PlayerReportingCategoryDropdown_C 
 	Default__PlayerReportingCategoryDropdown_C (0-0-0-0): size 143 (cls: Default__PlayerReportingCategoryDropdown_C>PlayerReportingCategoryDropdown_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			bUseInputStack(BoolProperty)=False 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	MainButtonVerticalBox (0-0-0-0): size 36 (cls: MainButtonVerticalBox>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_PlayerReportingCategoryDropdown (0-0-0-0): size 657 (cls: ExecuteUbergraph_PlayerReportingCategoryDropdown>Function>/Script/CoreUObject)
+	ExecuteUbergraph_PlayerReportingCategoryDropdown (0-0-0-0): size 744 (cls: ExecuteUbergraph_PlayerReportingCategoryDropdown>Function>/Script/CoreUObject)
 	CallFunc_GetPlayerReportingCategoryLabels_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_GetPlayerReportingCategoryLabels_ReturnValue>TextProperty>/Script/CoreUObject)
 	CallFunc_GetPlayerReportingCategoryLabels_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetPlayerReportingCategoryLabels_ReturnValue>ArrayProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_0=WidgetArchetype 
 			Content(ObjectProperty)=MainButtonVerticalBox=WidgetArchetype 
 	CommonBorder_0 (0-0-0-0): size 418 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_Navy_VGrad_C=/Game/UI/Foundation/Border/Border_Navy_VGrad 
-			Padding(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
-			RenderTransformPivot(StructProperty)=Vector2D(0,0) 
+			RenderTransformPivot(StructProperty/Vector2D)=Vector2D(0,0) 
 			Visibility(EnumProperty)=ESlateVisibility::Visible 
 	Construct (0-0-0-0): size 54 (cls: Construct>Function>/Script/CoreUObject)
 	Destruct (0-0-0-0): size 54 (cls: Destruct>Function>/Script/CoreUObject)
+	OnActivated (0-0-0-0): size 54 (cls: OnActivated>Function>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
 	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
 	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
 	CallFunc_AddChildToVerticalBox_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_AddChildToVerticalBox_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Create_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Create_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetInputManager_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetInputManager_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetPlayerController_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetPlayerController_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	WidgetArchetype (0-0-0-0): size 96 (cls: WidgetArchetype>PlayerReportingCategoryDropdown_C):
 		Tag array:
@@ -198,12 +213,12 @@ Serialized exports:
 			Navigation(ObjectProperty)=WidgetNavigation_0=WidgetArchetype 
 	WidgetNavigation_0 (0-0-0-0): size 600 (cls: WidgetNavigation_0>WidgetNavigation>/Script/UMG):
 		Tag array:
-			Up(StructProperty)=System.Byte[] 
-			Down(StructProperty)=System.Byte[] 
-			Left(StructProperty)=System.Byte[] 
-			Right(StructProperty)=System.Byte[] 
-			Next(StructProperty)=System.Byte[] 
-			Previous(StructProperty)=System.Byte[] 
+			Up(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Down(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Left(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Right(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Next(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Previous(StructProperty/WidgetNavigationData)=System.Byte[] 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=CommonBorder_0=WidgetArchetype 

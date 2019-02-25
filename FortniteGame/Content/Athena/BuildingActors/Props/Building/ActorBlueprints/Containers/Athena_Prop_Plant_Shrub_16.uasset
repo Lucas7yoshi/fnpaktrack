@@ -9,16 +9,23 @@ Name table:
 	/Game/Sounds/Fort_Ambient_Looping/Storm_Trees/storm_foliage_Shrub_Loop_Cue.storm_foliage_Shrub_Loop_Cue
 	/Script/CoreUObject
 	/Script/Engine
+	/Script/NavigationSystem
+	/Script/NavigationSystem.NavArea_Default
 	AltParticleSystems
+	AreaClass
 	ArrayProperty
 	Athena_Prop_ParentBuildingContainerBlueprint_C
 	Athena_Prop_Plant_Shrub_16_C
 	ATTACH_Floor
 	bAutoWeld
+	bCanExportNavigationCollisions
 	bDestroyOnPlayerBuildingPlacement
 	bEnableAutoLODGeneration
+	bIsNavigationRelevant
 	BlueprintGeneratedClass
 	bNeedsDamageOverlay
+	bNoCameraCollision
+	bNoPawnCollision
 	BodyInstance
 	BoolProperty
 	BoxComponent
@@ -29,9 +36,13 @@ Name table:
 	BuildingResourceAmountOverride
 	BuildingType
 	ByteProperty
+	Camera
 	CanCharacterStepUpOn
 	ChanceToSpawnFX
+	Channel
 	Class
+	CollisionResponse
+	CollisionResponses
 	ComponentClass
 	ComponentTemplate
 	CurveTable
@@ -51,6 +62,10 @@ Name table:
 	EBuildingAttachmentType
 	ECanBeCharacterBase
 	ECB_Yes
+	ECollisionResponse
+	ECR_Block
+	ECR_Ignore
+	ECR_Overlap
 	EDetailMode
 	EFortBuildingType
 	EFortBuildingType::Prop
@@ -61,6 +76,16 @@ Name table:
 	ENavigationObstacleOverride
 	ENavigationObstacleOverride::ForceEnabled
 	EnumProperty
+	FCC_Object_PawnAI
+	FCC_Object_Projectile
+	FCC_Object_ProjectileIgnoreAI
+	FCC_Object_ProjectileMesh
+	FCC_Trace_Interaction
+	FCC_Trace_Weapon
+	FCC_Trace_WeaponCapsule
+	FCC_Trace_WeaponMulti
+	FCC_Trace_WeaponPawnAndWorldMulti
+	FCC_Trace_World
 	FloatProperty
 	Game
 	Guid
@@ -76,12 +101,16 @@ Name table:
 	P_DestroyPalmBush1
 	Package
 	ParticleSystem
+	Pawn
 	PropWoodMedium
 	RandomDayphaseFX
 	RandomDayphaseFXList
 	RequiredDayphases
 	ResourceRates
 	ResourceType
+	Response
+	ResponseArray
+	ResponseChannel
 	RootComponent
 	RowName
 	SceneComponent
@@ -95,25 +124,31 @@ Name table:
 	StaticMeshComponent0
 	StructProperty
 	VariableGuid
+	Vehicle
 	WindAudio
 Serialized exports:
 	Athena_Prop_Plant_Shrub_16_C (0-0-0-0): size 105 (cls: Athena_Prop_Plant_Shrub_16_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_169=Athena_Prop_Plant_Shrub_16_C 
-	Default__Athena_Prop_Plant_Shrub_16_C (0-0-0-0): size 912 (cls: Default__Athena_Prop_Plant_Shrub_16_C>Athena_Prop_Plant_Shrub_16_C):
+	Default__Athena_Prop_Plant_Shrub_16_C (0-0-0-0): size 1053 (cls: Default__Athena_Prop_Plant_Shrub_16_C>Athena_Prop_Plant_Shrub_16_C):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_SinkHole_Shrub_03=/Game/Environments/Props/SinkHole/Meshes/SM_SinkHole_Shrub_03 
 			ResourceType(ByteProperty)=EFortResourceType::Wood 
+			bNoCameraCollision(BoolProperty)=True 
+			bNoPawnCollision(BoolProperty)=True 
 			bRandomYawOnPlacement(BoolProperty)=True 
 			bRandomScaleOnPlacement(BoolProperty)=True 
 			bNeedsDamageOverlay(BoolProperty)=False 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Default__Athena_Prop_Plant_Shrub_16_C 
-			BuildingResourceAmountOverride(StructProperty)=System.Byte[] 
+			BuildingResourceAmountOverride(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			WindAudio(SoftObjectProperty)=/Game/Sounds/Fort_Ambient_Looping/Storm_Trees/storm_foliage_Shrub_Loop_Cue.storm_foliage_Shrub_Loop_Cue 
 			DeathParticles(ObjectProperty)=P_DestroyPalmBush1=/Game/Effects/Fort_Effects/World/Destruction/Plants/P_DestroyPalmBush1 
 			RandomDayphaseFXList(ArrayProperty)=[object] (inner: StructProperty)
 			BuildingAttachmentType(ByteProperty)=ATTACH_Floor 
+			AreaClass(SoftObjectProperty)=/Script/NavigationSystem.NavArea_Default 
 			NavigationObstacleOverride(EnumProperty)=ENavigationObstacleOverride::ForceEnabled 
+			bCanExportNavigationCollisions(BoolProperty)=False 
+			bIsNavigationRelevant(BoolProperty)=False 
 			bDestroyOnPlayerBuildingPlacement(BoolProperty)=True 
 			BuildingType(ByteProperty)=EFortBuildingType::Prop 
 			bEnableAutoLODGeneration(BoolProperty)=False 
@@ -123,13 +158,13 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_156=Athena_Prop_Plant_Shrub_16_C 
-			VariableGuid(StructProperty)=Guid: 1295648158-0-0-0 
+			VariableGuid(StructProperty/Guid)=Guid: 1295648158-0-0-0 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SimpleConstructionScript_169 (0-0-0-0): size 41 (cls: SimpleConstructionScript_169>SimpleConstructionScript>/Script/Engine):
 		Tag array:
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_166=Athena_Prop_Plant_Shrub_16_C 
-	StaticMeshComponent0 (0-0-0-0): size 169 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
+	StaticMeshComponent0 (0-0-0-0): size 1378 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_SinkHole_Shrub_03=/Game/Environments/Props/SinkHole/Meshes/SM_SinkHole_Shrub_03 
 			CanCharacterStepUpOn(ByteProperty)=ECB_Yes 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 

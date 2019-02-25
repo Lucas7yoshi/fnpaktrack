@@ -38,6 +38,7 @@ Name table:
 	BlueprintCookedComponentInstancingData
 	BlueprintGeneratedClass
 	BodyInstance
+	BooleanAND
 	BooleanOR
 	BoolProperty
 	Bounciness
@@ -55,6 +56,7 @@ Name table:
 	CallFunc_ActorHasTag_ReturnValue
 	CallFunc_Add_VectorVector_ReturnValue
 	CallFunc_Add_VectorVector_ReturnValue1
+	CallFunc_BooleanAND_ReturnValue
 	CallFunc_BooleanOR_ReturnValue
 	CallFunc_BooleanOR_ReturnValue1
 	CallFunc_BreakHitResult_bBlockingHit
@@ -193,6 +195,7 @@ Name table:
 	FloatProperty
 	FloatTracks
 	FlushNetDormancy
+	FortAthenaVehicle
 	FortKismetLibrary
 	FortPlayerPawn
 	FortProjectileBase
@@ -224,9 +227,11 @@ Name table:
 	K2Node_CustomEvent_PlayerRotation
 	K2Node_CustomEvent_YawOffset
 	K2Node_DynamicCast_AsB_BGA_Fireworks_Mortar_Holder
+	K2Node_DynamicCast_AsFort_Athena_Vehicle
 	K2Node_DynamicCast_AsFort_Player_Pawn
 	K2Node_DynamicCast_bSuccess
 	K2Node_DynamicCast_bSuccess1
+	K2Node_DynamicCast_bSuccess2
 	K2Node_Event_bSelfMoved
 	K2Node_Event_Hit
 	K2Node_Event_Hit1
@@ -357,25 +362,26 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_Prj_FireworksMortar_Holder=B_Prj_FireworksMortar_Holder_C 
 	Default__B_Prj_FireworksMortar_Holder_C (0-0-0-0): size 580 (cls: Default__B_Prj_FireworksMortar_Holder_C>B_Prj_FireworksMortar_Holder_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			BGA_FireworksHolder(ObjectProperty)=B_BGA_FireworksMortar_Holder_C=/Game/Athena/Items/Consumables/FireworksMortar/B_BGA_FireworksMortar_Holder 
-			PlacementRotation(StructProperty)=Rotator(0,0,0) 
-			PlacementZOffset(StructProperty)=Vector(0,0,5) 
+			PlacementRotation(StructProperty/Rotator)=Rotator(0,0,0) 
+			PlacementZOffset(StructProperty/Vector)=Vector(0,0,5) 
 			WorldStopSlop(FloatProperty)=0.71 
-			VehicleStopSlope(FloatProperty)=0.3 
+			VehicleStopSlope(FloatProperty)=0.5 
 			CapsuleComponent(ObjectProperty)=CollisionCapsule0=Default__B_Prj_FireworksMortar_Holder_C 
 			ProjectileMovementComponent(ObjectProperty)=ProjectileComp0=Default__B_Prj_FireworksMortar_Holder_C 
 			bStopSimulatingOnHit(BoolProperty)=False 
 			bExplosionTransformIgnoresRotation(BoolProperty)=True 
 			CollisionComponent(ObjectProperty)=CollisionCapsule0=Default__B_Prj_FireworksMortar_Holder_C 
-			PrimaryActorTick(StructProperty)=System.Byte[] 
+			PrimaryActorTick(StructProperty/ActorTickFunction)=System.Byte[] 
 			bCanBeDamaged(BoolProperty)=False 
 			InitialLifeSpan(FloatProperty)=0 
 			RootComponent(ObjectProperty)=CollisionCapsule0=Default__B_Prj_FireworksMortar_Holder_C 
 	Base (0-0-0-0): size 36 (cls: Base>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_B_Prj_FireworksMortar_Holder (0-0-0-0): size 2048 (cls: ExecuteUbergraph_B_Prj_FireworksMortar_Holder>Function>/Script/CoreUObject)
+	ExecuteUbergraph_B_Prj_FireworksMortar_Holder (0-0-0-0): size 2365 (cls: ExecuteUbergraph_B_Prj_FireworksMortar_Holder>Function>/Script/CoreUObject)
 	CallFunc_ActorHasTag_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_ActorHasTag_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bBlockingHit (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bBlockingHit>BoolProperty>/Script/CoreUObject)
@@ -389,6 +395,7 @@ Serialized exports:
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bSelfMoved (0-0-0-0): size 34 (cls: K2Node_Event_bSelfMoved>BoolProperty>/Script/CoreUObject)
 	FlashShield (0-0-0-0): size 54 (cls: FlashShield>Function>/Script/CoreUObject)
 	ReceiveBeginPlay (0-0-0-0): size 54 (cls: ReceiveBeginPlay>Function>/Script/CoreUObject)
@@ -402,13 +409,13 @@ Serialized exports:
 		Tag array:
 			CapsuleHalfHeight(FloatProperty)=12 
 			CapsuleRadius(FloatProperty)=12 
-			ShapeColor(StructProperty)=System.Byte[] 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeRotation(StructProperty)=Rotator(0,0,90) 
+			ShapeColor(StructProperty/Color)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,90) 
 	BGA_FireworksHolder (0-0-0-0): size 40 (cls: BGA_FireworksHolder>ClassProperty>/Script/CoreUObject)
 	CurveFloat_0 (0-0-0-0): size 209 (cls: CurveFloat_0>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CallFunc_BreakHitResult_Distance (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_Distance>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_Distance1 (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_Distance1>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_Time (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_Time>FloatProperty>/Script/CoreUObject)
@@ -452,6 +459,7 @@ Serialized exports:
 	CallFunc_GetInstigator_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetInstigator_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_SpawnBuildingGameplayActor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_SpawnBuildingGameplayActor_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsB_BGA_Fireworks_Mortar_Holder (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsB_BGA_Fireworks_Mortar_Holder>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Athena_Vehicle (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Athena_Vehicle>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Player_Pawn (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn>ObjectProperty>/Script/CoreUObject)
 	K2Node_Event_MyComp (0-0-0-0): size 36 (cls: K2Node_Event_MyComp>ObjectProperty>/Script/CoreUObject)
 	K2Node_Event_Other (0-0-0-0): size 36 (cls: K2Node_Event_Other>ObjectProperty>/Script/CoreUObject)
@@ -469,24 +477,24 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Top_GEN_VARIABLE=B_Prj_FireworksMortar_Holder_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 1589564272-1074115532-454337712-2852117229 
+			VariableGuid(StructProperty/Guid)=Guid: 1589564272-1074115532-454337712-2852117229 
 			InternalVariableName(NameProperty)=Top 
 	SCS_Node_101 (0-0-0-0): size 168 (cls: SCS_Node_101>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_88=B_Prj_FireworksMortar_Holder_C 
-			VariableGuid(StructProperty)=Guid: 1295648158-0-0-0 
+			VariableGuid(StructProperty/Guid)=Guid: 1295648158-0-0-0 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_3 (0-0-0-0): size 2020 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Base_GEN_VARIABLE=B_Prj_FireworksMortar_Holder_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 2101593008-1174348399-3834195632-3383156958 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 2101593008-1174348399-3834195632-3383156958 
 			InternalVariableName(NameProperty)=Base 
 	SimpleConstructionScript_226 (0-0-0-0): size 127 (cls: SimpleConstructionScript_226>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -496,15 +504,15 @@ Serialized exports:
 	Base_GEN_VARIABLE (0-0-0-0): size 585 (cls: Base_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=Firework_Mortar_Base=/Game/Athena/Items/Consumables/FireworksMortar/Mesh/Firework_Mortar_Base 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(6.48015E-12,-6.48015E-12,-19) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(6.48015E-12,-6.48015E-12,-19) 
 	Top_GEN_VARIABLE (0-0-0-0): size 707 (cls: Top_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=Firework_Mortar_Top=/Game/Athena/Items/Consumables/FireworksMortar/Mesh/Firework_Mortar_Top 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-2.521866E-05,-9.000001,3.397465E-06) 
-			RelativeRotation(StructProperty)=Rotator(29.99966,630,-180) 
-			RelativeScale3D(StructProperty)=Vector(0.65,0.65,0.65) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(-2.521866E-05,-9.000001,3.397465E-06) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(29.99966,630,-180) 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.65,0.65,0.65) 
 	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_ImpactNormal (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_ImpactNormal>StructProperty>/Script/CoreUObject)
@@ -545,7 +553,7 @@ Serialized exports:
 			TimelineLength(FloatProperty)=0.5 
 			bValidatedAsWired(BoolProperty)=True 
 			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
-			TimelineGuid(StructProperty)=Guid: 1399990522-1295501515-1302922686-1154830953 
+			TimelineGuid(StructProperty/Guid)=Guid: 1399990522-1295501515-1302922686-1154830953 
 			VariableName(NameProperty)=Rotate 
 			DirectionPropertyName(NameProperty)=Rotate__Direction_537228FA4D37C8CB4DA905BE44D55269 
 			UpdateFunctionName(NameProperty)=Rotate__UpdateFunc 

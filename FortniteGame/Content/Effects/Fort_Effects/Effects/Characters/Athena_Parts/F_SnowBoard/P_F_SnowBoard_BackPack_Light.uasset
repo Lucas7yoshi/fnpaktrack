@@ -46,6 +46,9 @@ Name table:
 	Emitters
 	EntryCount
 	EntryStride
+	EnumProperty
+	EParticleSignificanceLevel
+	EParticleSignificanceLevel::Low
 	ERM_LightsOnly
 	FixedRelativeBoundingBox
 	FloatProperty
@@ -90,6 +93,7 @@ Name table:
 	RawDistributionVector
 	RequiredDistributionSpawnRate
 	RequiredModule
+	SignificanceLevel
 	SpawnModule
 	SpawnRate
 	StartAlpha
@@ -125,29 +129,29 @@ Serialized exports:
 			PeakActiveParticles(IntProperty)=2 
 	ParticleModuleColor_0 (0-0-0-0): size 864 (cls: ParticleModuleColor_0>ParticleModuleColor>/Script/Engine):
 		Tag array:
-			StartColor(StructProperty)=System.Byte[] 
-			StartAlpha(StructProperty)=System.Byte[] 
+			StartColor(StructProperty/RawDistributionVector)=System.Byte[] 
+			StartAlpha(StructProperty/RawDistributionFloat)=System.Byte[] 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleColorScaleOverLife_0 (0-0-0-0): size 924 (cls: ParticleModuleColorScaleOverLife_0>ParticleModuleColorScaleOverLife>/Script/Engine):
 		Tag array:
-			ColorScaleOverLife(StructProperty)=System.Byte[] 
-			AlphaScaleOverLife(StructProperty)=System.Byte[] 
+			ColorScaleOverLife(StructProperty/RawDistributionVector)=System.Byte[] 
+			AlphaScaleOverLife(StructProperty/RawDistributionFloat)=System.Byte[] 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleLifetime_0 (0-0-0-0): size 390 (cls: ParticleModuleLifetime_0>ParticleModuleLifetime>/Script/Engine):
 		Tag array:
-			Lifetime(StructProperty)=System.Byte[] 
+			Lifetime(StructProperty/RawDistributionFloat)=System.Byte[] 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleLight_0 (0-0-0-0): size 1578 (cls: ParticleModuleLight_0>ParticleModuleLight>/Script/Engine):
 		Tag array:
 			bUseInverseSquaredFalloff(BoolProperty)=False 
-			ColorScaleOverLife(StructProperty)=System.Byte[] 
-			BrightnessOverLife(StructProperty)=System.Byte[] 
-			RadiusScale(StructProperty)=System.Byte[] 
-			LightExponent(StructProperty)=System.Byte[] 
+			ColorScaleOverLife(StructProperty/RawDistributionVector)=System.Byte[] 
+			BrightnessOverLife(StructProperty/RawDistributionFloat)=System.Byte[] 
+			RadiusScale(StructProperty/RawDistributionFloat)=System.Byte[] 
+			LightExponent(StructProperty/RawDistributionFloat)=System.Byte[] 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleLocation_0 (0-0-0-0): size 520 (cls: ParticleModuleLocation_0>ParticleModuleLocation>/Script/Engine):
 		Tag array:
-			StartLocation(StructProperty)=System.Byte[] 
+			StartLocation(StructProperty/RawDistributionVector)=System.Byte[] 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleRequired_0 (0-0-0-0): size 302 (cls: ParticleModuleRequired_0>ParticleModuleRequired>/Script/Engine):
 		Tag array:
@@ -156,30 +160,31 @@ Serialized exports:
 			bKillOnDeactivate(BoolProperty)=True 
 			bKillOnCompleted(BoolProperty)=True 
 			bUseLegacyEmitterTime(BoolProperty)=False 
-			SpawnRate(StructProperty)=System.Byte[] 
+			SpawnRate(StructProperty/RawDistributionFloat)=System.Byte[] 
 			RandomImageTime(FloatProperty)=1 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleSize_0 (0-0-0-0): size 554 (cls: ParticleModuleSize_0>ParticleModuleSize>/Script/Engine):
 		Tag array:
-			StartSize(StructProperty)=System.Byte[] 
+			StartSize(StructProperty/RawDistributionVector)=System.Byte[] 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleSpawn_0 (0-0-0-0): size 846 (cls: ParticleModuleSpawn_0>ParticleModuleSpawn>/Script/Engine):
 		Tag array:
-			Rate(StructProperty)=System.Byte[] 
-			RateScale(StructProperty)=System.Byte[] 
-			BurstScale(StructProperty)=System.Byte[] 
+			Rate(StructProperty/RawDistributionFloat)=System.Byte[] 
+			RateScale(StructProperty/RawDistributionFloat)=System.Byte[] 
+			BurstScale(StructProperty/RawDistributionFloat)=System.Byte[] 
 			bApplyGlobalSpawnRateScale(BoolProperty)=False 
 			LODValidity(ByteProperty)=[object] 
 	ParticleModuleSpawn_1 (0-0-0-0): size 788 (cls: ParticleModuleSpawn_1>ParticleModuleSpawn>/Script/Engine):
 		Tag array:
-			Rate(StructProperty)=System.Byte[] 
-			RateScale(StructProperty)=System.Byte[] 
-			BurstScale(StructProperty)=System.Byte[] 
+			Rate(StructProperty/RawDistributionFloat)=System.Byte[] 
+			RateScale(StructProperty/RawDistributionFloat)=System.Byte[] 
+			BurstScale(StructProperty/RawDistributionFloat)=System.Byte[] 
 			bApplyGlobalSpawnRateScale(BoolProperty)=False 
 			LODValidity(ByteProperty)=[object] 
-	ParticleSpriteEmitter_0 (0-0-0-0): size 127 (cls: ParticleSpriteEmitter_0>ParticleSpriteEmitter>/Script/Engine):
+	ParticleSpriteEmitter_0 (0-0-0-0): size 168 (cls: ParticleSpriteEmitter_0>ParticleSpriteEmitter>/Script/Engine):
 		Tag array:
 			EmitterRenderMode(ByteProperty)=ERM_LightsOnly 
+			SignificanceLevel(EnumProperty)=EParticleSignificanceLevel::Low 
 			LODLevels(ArrayProperty)=[object] (inner: ObjectProperty)
 			DetailModeBitmask(UInt32Property)=[object] 
 	P_F_SnowBoard_BackPack_Light (0-0-0-0): size 429 (cls: P_F_SnowBoard_BackPack_Light>ParticleSystem>/Script/Engine):
@@ -189,6 +194,6 @@ Serialized exports:
 			LODDistances(ArrayProperty)=0.000,2500.000 (inner: FloatProperty)
 			LODSettings(ArrayProperty)=[object] (inner: StructProperty)
 			bUseFixedRelativeBoundingBox(BoolProperty)=True 
-			FixedRelativeBoundingBox(StructProperty)=Box(Min(Vector(-250,-250,-250)) Max(Vector(250,250,250)),3073) 
+			FixedRelativeBoundingBox(StructProperty/Box)=Box(Min(Vector(-250,-250,-250)) Max(Vector(250,250,250)),3073) 
 			bShouldResetPeakCounts(BoolProperty)=True 
-			CustomOcclusionBounds(StructProperty)=Box(Min(Vector(0,0,0)) Max(Vector(0,0,0)),16641) 
+			CustomOcclusionBounds(StructProperty/Box)=Box(Min(Vector(0,0,0)) Max(Vector(0,0,0)),17409) 

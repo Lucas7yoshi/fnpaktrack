@@ -1,55 +1,83 @@
 Name table:
 	/Game/Abilities/Player/Generic/GameplayEffects/GE_Generic_StaminaRegenLockout
 	/Game/Abilities/Player/Parents/GAT_TriggeredAbility
+	/Game/Athena/Items/Consumables/Bush/Athena_Bush
+	/Game/Athena/Items/Consumables/Bush/Athena_Player_Bush
 	/Game/Athena/Items/Consumables/Bush/GAT_Athena_Bush
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
 	/Script/GameplayAbilities
 	/Script/GameplayTags
+	Abilities.Generic.Athena.Bush.Destroyed
 	AbilitySystemBlueprintLibrary
 	AbilityTargetDataFromActor
 	AbilityTriggerData
 	AbilityTriggers
 	ActiveGameplayEffectHandle
+	Actor
+	Add_IntInt
+	Array_Get
+	Array_Length
 	ArrayProperty
 	Athena.Item.Bush
+	Athena_Bush
+	Athena_Player_Bush_C
 	AvatarActor
 	BlueprintGeneratedClass
 	BoolProperty
 	BP_ApplyGameplayEffectToTarget
 	BP_RemoveGameplayEffectFromOwnerWithGrantedTags
+	BushItemDef
 	ByteProperty
 	CallFunc_AbilityTargetDataFromActor_ReturnValue
+	CallFunc_Add_IntInt_ReturnValue
+	CallFunc_Array_Get_Item
+	CallFunc_Array_Length_ReturnValue
 	CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue
+	CallFunc_EqualEqual_IntInt_ReturnValue
 	CallFunc_GetActorInfo_ReturnValue
+	CallFunc_GetAttachedActors_OutActors
+	CallFunc_GetController_ReturnValue
+	CallFunc_IsValid_ReturnValue
 	CallFunc_K2_CommitAbility_ReturnValue
+	CallFunc_K2_GetItemQuantityOnPlayer_ReturnValue
+	CallFunc_K2_RemoveItemFromPlayer_ReturnValue
+	CallFunc_Less_IntInt_ReturnValue
 	Class
+	Controller
 	Default__AbilitySystemBlueprintLibrary
 	Default__ArrayProperty
+	Default__Athena_Player_Bush_C
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
+	Default__FortKismetLibrary
 	Default__Function
 	Default__GAT_Athena_Bush_C
 	Default__GAT_TriggeredAbility_C
 	Default__GE_Generic_StaminaRegenLockout_C
 	Default__IntProperty
+	Default__KismetArrayLibrary
+	Default__KismetSystemLibrary
 	Default__ObjectProperty
 	Default__StructProperty
 	EGameplayAbilityTriggerSource
 	EGameplayAbilityTriggerSource::GameplayEvent
 	Engine
 	EntryPoint
-	Event.Aircraft.Exited
-	Event.Damage.Received
-	Event.Damage.Shielded
-	Event.DBNOAthena
+	EqualEqual_IntInt
 	ExecuteUbergraph_GAT_Athena_Bush
+	ForceNetUpdate
+	FortKismetLibrary
+	FortPlayerController
 	FortPlayerPawn
+	FortWeaponRangedItemDefinition
+	FortWorldItemDefinition
 	Function
 	GameplayAbility
 	GameplayAbilityActorInfo
 	GameplayAbilityTargetDataHandle
+	GameplayCue.Athena.Applied.Item.Bush
 	GameplayTag
 	GameplayTagContainer
 	GameplayTags
@@ -57,22 +85,44 @@ Name table:
 	GAT_TriggeredAbility_C
 	GE_Generic_StaminaRegenLockout_C
 	GetActorInfo
+	GetAttachedActors
+	GetController
 	IntProperty
+	IsValid
 	K2_ActivateAbility
 	K2_CommitAbility
+	K2_DestroyActor
 	K2_EndAbility
+	K2_GetItemQuantityOnPlayer
+	K2_RemoveGameplayCue
+	K2_RemoveItemFromPlayer
+	K2Node_DynamicCast_AsAthena_Player_Bush
+	K2Node_DynamicCast_AsFort_Player_Controller
 	K2Node_DynamicCast_AsFort_Player_Pawn
 	K2Node_DynamicCast_bSuccess
+	K2Node_DynamicCast_bSuccess1
+	KismetArrayLibrary
+	KismetMathLibrary
+	KismetSystemLibrary
+	Less_IntInt
 	NameProperty
 	None
 	Object
 	ObjectProperty
 	Package
+	Pawn
 	PlayerPawn
 	PointerToUberGraphFrame
+	RemoveBush
+	Scene_GEN_VARIABLE
+	SceneComponent
 	ScriptStruct
+	SM_Bush_GEN_VARIABLE
+	StaticMeshComponent
 	StructProperty
 	TagName
+	Temp_int_Array_Index_Variable
+	Temp_int_Loop_Counter_Variable
 	TriggerSource
 	TriggerTag
 	UberGraphFrame
@@ -80,21 +130,43 @@ Name table:
 	WeakObjectProperty
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	GAT_Athena_Bush_C (0-0-0-0): size 145 (cls: GAT_Athena_Bush_C>BlueprintGeneratedClass>/Script/Engine):
+	GAT_Athena_Bush_C (0-0-0-0): size 165 (cls: GAT_Athena_Bush_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_GAT_Athena_Bush=GAT_Athena_Bush_C 
-	Default__GAT_Athena_Bush_C (0-0-0-0): size 707 (cls: Default__GAT_Athena_Bush_C>GAT_Athena_Bush_C):
+	Default__GAT_Athena_Bush_C (0-0-0-0): size 319 (cls: Default__GAT_Athena_Bush_C>GAT_Athena_Bush_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			BushItemDef(ObjectProperty)=Athena_Bush=/Game/Athena/Items/Consumables/Bush/Athena_Bush 
 			AbilityTriggers(ArrayProperty)=[object] (inner: StructProperty)
 	PlayerPawn (0-0-0-0): size 36 (cls: PlayerPawn>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_GAT_Athena_Bush (0-0-0-0): size 371 (cls: ExecuteUbergraph_GAT_Athena_Bush>Function>/Script/CoreUObject)
+	ExecuteUbergraph_GAT_Athena_Bush (0-0-0-0): size 684 (cls: ExecuteUbergraph_GAT_Athena_Bush>Function>/Script/CoreUObject)
 	CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue>ArrayProperty>/Script/CoreUObject)
+	K2_ActivateAbility (0-0-0-0): size 54 (cls: K2_ActivateAbility>Function>/Script/CoreUObject)
+	PlayerPawn (0-0-0-0): size 36 (cls: PlayerPawn>ObjectProperty>/Script/CoreUObject)
+	RemoveBush (0-0-0-0): size 470 (cls: RemoveBush>Function>/Script/CoreUObject)
+	CallFunc_GetAttachedActors_OutActors (0-0-0-0): size 36 (cls: CallFunc_GetAttachedActors_OutActors>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetAttachedActors_OutActors (0-0-0-0): size 36 (cls: CallFunc_GetAttachedActors_OutActors>ArrayProperty>/Script/CoreUObject)
+	CallFunc_EqualEqual_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_K2_CommitAbility_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_K2_CommitAbility_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
-	K2_ActivateAbility (0-0-0-0): size 54 (cls: K2_ActivateAbility>Function>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	CallFunc_K2_GetItemQuantityOnPlayer_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_K2_GetItemQuantityOnPlayer_ReturnValue>IntProperty>/Script/CoreUObject)
+	CallFunc_K2_RemoveItemFromPlayer_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_K2_RemoveItemFromPlayer_ReturnValue>IntProperty>/Script/CoreUObject)
+	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
+	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
+	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
+	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
+	BushItemDef (0-0-0-0): size 36 (cls: BushItemDef>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetController_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetController_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Controller (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Player_Pawn (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn>ObjectProperty>/Script/CoreUObject)
+	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsAthena_Player_Bush (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsAthena_Player_Bush>ObjectProperty>/Script/CoreUObject)
 	CallFunc_AbilityTargetDataFromActor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_AbilityTargetDataFromActor_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetActorInfo_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetActorInfo_ReturnValue>StructProperty>/Script/CoreUObject)

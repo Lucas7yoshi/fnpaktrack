@@ -108,6 +108,9 @@ Name table:
 	DeltaSeconds
 	Drone
 	EntryPoint
+	EnumProperty
+	EVisibilityBasedAnimTickOption
+	EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones
 	ExecuteUbergraph_BP_VictoryDrone
 	eye
 	FloatProperty
@@ -230,6 +233,7 @@ Name table:
 	UserConstructionScript
 	VariableGuid
 	Vector
+	VisibilityBasedAnimTickOption
 	X
 	Y
 	Yaw
@@ -243,7 +247,7 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_BP_VictoryDrone=BP_VictoryDrone_C 
 	Default__BP_VictoryDrone_C (0-0-0-0): size 94 (cls: Default__BP_VictoryDrone_C>BP_VictoryDrone_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			AnimPlayRate(FloatProperty)=1 
 	SkeletalMeshComponentBudgeted (0-0-0-0): size 36 (cls: SkeletalMeshComponentBudgeted>ObjectProperty>/Script/CoreUObject)
 	Drone (0-0-0-0): size 36 (cls: Drone>ObjectProperty>/Script/CoreUObject)
@@ -310,57 +314,58 @@ Serialized exports:
 	SpawnEffect_GEN_VARIABLE (0-0-0-0): size 211 (cls: SpawnEffect_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Spawn_Effect=/Game/Effects/Fort_Effects/Gameplay/Spawn/P_Spawn_Effect 
-			RelativeScale3D(StructProperty)=Vector(0.5,0.5,0.5) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.5,0.5,0.5) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	DefaultSceneRoot_REMOVED_605089CD4BD1BF066333ECAC6987223D (0-0-0-0): size 12 (cls: DefaultSceneRoot_REMOVED_605089CD4BD1BF066333ECAC6987223D>SceneComponent>/Script/Engine)
-	SCS_Node_0 (0-0-0-0): size 976 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
+	SCS_Node_0 (0-0-0-0): size 1075 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SkeletalMeshComponentBudgeted=/Script/AnimationBudgetAllocator 
 			ComponentTemplate(ObjectProperty)=SkeletalMeshComponentBudgeted_GEN_VARIABLE=BP_VictoryDrone_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 277564380-1206769404-2645757613-3983042211 
+			VariableGuid(StructProperty/Guid)=Guid: 277564380-1206769404-2645757613-3983042211 
 			InternalVariableName(NameProperty)=SkeletalMeshComponentBudgeted 
 	SCS_Node_1 (0-0-0-0): size 1129 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SpawnEffect_GEN_VARIABLE=BP_VictoryDrone_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 1965743262-1211850118-1410128798-2194962120 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 1965743262-1211850118-1410128798-2194962120 
 			InternalVariableName(NameProperty)=SpawnEffect 
 	SCS_Node_3 (0-0-0-0): size 1723 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=StaticMesh_GEN_VARIABLE=BP_VictoryDrone_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 263177502-1214937838-2048232845-4269072510 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 263177502-1214937838-2048232845-4269072510 
 			InternalVariableName(NameProperty)=StaticMesh 
 	SCS_Node_5 (0-0-0-0): size 168 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_REMOVED_605089CD4BD1BF066333ECAC6987223D=BP_VictoryDrone_C 
-			VariableGuid(StructProperty)=Guid: 1792595508-1099756653-873340299-1205636126 
+			VariableGuid(StructProperty/Guid)=Guid: 1792595508-1099756653-873340299-1205636126 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SimpleConstructionScript_3 (0-0-0-0): size 131 (cls: SimpleConstructionScript_3>SimpleConstructionScript>/Script/Engine):
 		Tag array:
 			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_5=BP_VictoryDrone_C 
-	SkeletalMeshComponentBudgeted_GEN_VARIABLE (0-0-0-0): size 202 (cls: SkeletalMeshComponentBudgeted_GEN_VARIABLE>SkeletalMeshComponentBudgeted>/Script/AnimationBudgetAllocator):
+	SkeletalMeshComponentBudgeted_GEN_VARIABLE (0-0-0-0): size 243 (cls: SkeletalMeshComponentBudgeted_GEN_VARIABLE>SkeletalMeshComponentBudgeted>/Script/AnimationBudgetAllocator):
 		Tag array:
 			bAutoCalculateSignificance(BoolProperty)=True 
 			SkeletalMesh(ObjectProperty)=SK_Bot_Turret=/Game/Gadgets/Assets/Bot_Turret/Meshes/SK_Bot_Turret 
+			VisibilityBasedAnimTickOption(EnumProperty)=EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones 
 			bApplyImpulseOnDamage(BoolProperty)=False 
 			bReplicatePhysicsToAutonomousProxy(BoolProperty)=False 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	StaticMesh_GEN_VARIABLE (0-0-0-0): size 347 (cls: StaticMesh_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=BaseBotGame=/Game/Weapons/FORT_TRAPS/BaseDevice/MeshGame/BaseBotGame 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-3.911055E-05,2.102215,-28.65532) 
-			RelativeRotation(StructProperty)=Rotator(0,89.99998,0) 
-			RelativeScale3D(StructProperty)=Vector(0.4,0.3,0.3) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(-3.911055E-05,2.102215,-28.65532) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,89.99998,0) 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.4,0.3,0.3) 
 	CallFunc_Conv_BoolToString_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_BoolToString_ReturnValue>StrProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorRotation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorRotation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetComponentLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentLocation_ReturnValue>StructProperty>/Script/CoreUObject)

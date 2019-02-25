@@ -3,7 +3,6 @@ Name table:
 	/Game/AI/Blackboards/RangedAIBB
 	/Game/AI/EQS/EQS_AdvanceToMinPreferredRange
 	/Game/AI/EQS/EQS_MoveToPreferredRange
-	/Game/AI/EQS/EQS_MoveToPreferredRangeWithVisibility
 	/Game/AI/EQS/EQS_RetreatToMaxPreferredRange
 	/Script/AIModule
 	/Script/CoreUObject
@@ -17,7 +16,6 @@ Name table:
 	bActivatesCooldown
 	bAddToExistingDuration
 	BehaviorTree
-	bInfiniteLoop
 	bInverseCondition
 	BlackboardAsset
 	BlackboardData
@@ -25,7 +23,6 @@ Name table:
 	BlackboardKeySelector
 	bNoneIsAllowedValue
 	BoolProperty
-	bReachTestIncludesGoalRadius
 	bStopOnOverlapNeedsUpdate
 	BT_Flinger
 	BTComposite_Selector
@@ -35,9 +32,9 @@ Name table:
 	BTDecorator_CheckGameplayTagsOnActor
 	BTDecorator_ForceSuccess
 	BTDecorator_IsAtLocation
-	BTDecorator_Loop
 	BTDecorator_SetTagCooldown
 	BTDecorator_TagCooldown
+	BTDecorator_TimeLimit
 	BTDecoratorLogic
 	BTTask_RotateToFaceBBEntry
 	BTTask_RunEQSQuery
@@ -62,9 +59,9 @@ Name table:
 	Default__BTDecorator_CheckGameplayTagsOnActor
 	Default__BTDecorator_ForceSuccess
 	Default__BTDecorator_IsAtLocation
-	Default__BTDecorator_Loop
 	Default__BTDecorator_SetTagCooldown
 	Default__BTDecorator_TagCooldown
+	Default__BTDecorator_TimeLimit
 	Default__BTTask_RotateToFaceBBEntry
 	Default__BTTask_RunEQSQuery
 	Default__BTTask_SetTagCooldown
@@ -78,6 +75,8 @@ Name table:
 	Default__FortBTDecorator_IsGoalPawn
 	Default__FortBTTask_ExecuteGameplayAbility
 	Default__FortBTTask_GameMoveTo
+	Default__FortBTTask_SetFrustrationDiscouragement
+	DiscouragementDuration
 	DistanceComparisons
 	DistanceDataTags
 	DistanceToTargetComparison
@@ -100,7 +99,6 @@ Name table:
 	EPathObstacleAction::FinishMoveAsSucceeded
 	EQS_AdvanceToMinPreferredRange
 	EQS_MoveToPreferredRange
-	EQS_MoveToPreferredRangeWithVisibility
 	EQS_RetreatToMaxPreferredRange
 	EQSParametrizedQueryExecutionRequest
 	EQSQueryBlackboardKey
@@ -120,6 +118,7 @@ Name table:
 	FortBTDecorator_IsGoalPawn
 	FortBTTask_ExecuteGameplayAbility
 	FortBTTask_GameMoveTo
+	FortBTTask_SetFrustrationDiscouragement
 	FortPawn
 	GameplayAbilityTag
 	GameplayTag
@@ -157,7 +156,6 @@ Name table:
 	NPC.Cooldown.Behavior.Advances
 	NPC.Cooldown.Behavior.ApproachToMaxPreferredRange
 	NPC.Cooldown.Behavior.ApproachToMinPreferredRange
-	NPC.Cooldown.Behavior.RepositionForVisibility
 	NPC.Cooldown.Behavior.RepositionWithinPreferredRange
 	NPC.Cooldown.Behavior.Retreats
 	Number
@@ -182,6 +180,7 @@ Name table:
 	StructProperty
 	TagName
 	Target
+	TimeLimit
 	TreeAsset
 	UInt16Property
 	UseIdealYawRotationToTarget
@@ -202,7 +201,7 @@ Serialized exports:
 			NodeName(StrProperty)=Move or Wait WITHIN PreferredRanges 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
-	BTComposite_Selector_446 (0-0-0-0): size 1086 (cls: BTComposite_Selector_446>BTComposite_Selector>/Script/AIModule):
+	BTComposite_Selector_446 (0-0-0-0): size 747 (cls: BTComposite_Selector_446>BTComposite_Selector>/Script/AIModule):
 		Tag array:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
 			TreeAsset(ObjectProperty)=BT_Flinger= 
@@ -219,26 +218,15 @@ Serialized exports:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
 			NodeName(StrProperty)=Root 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
-	BTComposite_Selector_69 (0-0-0-0): size 930 (cls: BTComposite_Selector_69>BTComposite_Selector>/Script/AIModule):
-		Tag array:
-			Children(ArrayProperty)=[object] (inner: StructProperty)
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_862=BT_Flinger 
 	BTComposite_Selector_76 (0-0-0-0): size 952 (cls: BTComposite_Selector_76>BTComposite_Selector>/Script/AIModule):
 		Tag array:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_862=BT_Flinger 
-	BTComposite_Selector_862 (0-0-0-0): size 987 (cls: BTComposite_Selector_862>BTComposite_Selector>/Script/AIModule):
+	BTComposite_Selector_862 (0-0-0-0): size 634 (cls: BTComposite_Selector_862>BTComposite_Selector>/Script/AIModule):
 		Tag array:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
 			NodeName(StrProperty)=Ranged Attack Behaviors 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
-	BTComposite_Selector_878 (0-0-0-0): size 405 (cls: BTComposite_Selector_878>BTComposite_Selector>/Script/AIModule):
-		Tag array:
-			Children(ArrayProperty)=[object] (inner: StructProperty)
-			NodeName(StrProperty)=Melee Attack Behaviors 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
 	BTComposite_Selector_880 (0-0-0-0): size 778 (cls: BTComposite_Selector_880>BTComposite_Selector>/Script/AIModule):
@@ -256,22 +244,17 @@ Serialized exports:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_7=BT_Flinger 
-	BTComposite_Selector_920 (0-0-0-0): size 534 (cls: BTComposite_Selector_920>BTComposite_Selector>/Script/AIModule):
-		Tag array:
-			Children(ArrayProperty)=[object] (inner: StructProperty)
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
-	BTComposite_Selector_93 (0-0-0-0): size 1117 (cls: BTComposite_Selector_93>BTComposite_Selector>/Script/AIModule):
+	BTComposite_Selector_93 (0-0-0-0): size 1125 (cls: BTComposite_Selector_93>BTComposite_Selector>/Script/AIModule):
 		Tag array:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_46=BT_Flinger 
-	BTComposite_Sequence_112 (0-0-0-0): size 805 (cls: BTComposite_Sequence_112>BTComposite_Sequence>/Script/AIModule):
+	BTComposite_Sequence_0 (0-0-0-0): size 594 (cls: BTComposite_Sequence_0>BTComposite_Sequence>/Script/AIModule):
 		Tag array:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
-			NodeName(StrProperty)=Adjust within PreferredRange 
+			NodeName(StrProperty)=Melee Attack Behaviors 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_69=BT_Flinger 
+			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
 	BTComposite_Sequence_14 (0-0-0-0): size 793 (cls: BTComposite_Sequence_14>BTComposite_Sequence>/Script/AIModule):
 		Tag array:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
@@ -340,56 +323,39 @@ Serialized exports:
 			Children(ArrayProperty)=[object] (inner: StructProperty)
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_885=BT_Flinger 
-	BTDecorator_Blackboard_0 (0-0-0-0): size 265 (cls: BTDecorator_Blackboard_0>BTDecorator_Blackboard>/Script/AIModule):
+	BTDecorator_Blackboard_0 (0-0-0-0): size 268 (cls: BTDecorator_Blackboard_0>BTDecorator_Blackboard>/Script/AIModule):
 		Tag array:
-			CachedDescription(StrProperty)=GoalActorIsVisible is Set 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			CachedDescription(StrProperty)=GoalActorIsVisible is Is Set 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=GoalActor IS Visible 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_880=BT_Flinger 
-	BTDecorator_Blackboard_1 (0-0-0-0): size 280 (cls: BTDecorator_Blackboard_1>BTDecorator_Blackboard>/Script/AIModule):
+	BTDecorator_Blackboard_1 (0-0-0-0): size 283 (cls: BTDecorator_Blackboard_1>BTDecorator_Blackboard>/Script/AIModule):
 		Tag array:
-			CachedDescription(StrProperty)=GoalActorAlwaysPerceived is Set 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			CachedDescription(StrProperty)=GoalActorAlwaysPerceived is Is Set 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=GoalActor IS Always Perceived 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_880=BT_Flinger 
-	BTDecorator_Blackboard_131 (0-0-0-0): size 297 (cls: BTDecorator_Blackboard_131>BTDecorator_Blackboard>/Script/AIModule):
+	BTDecorator_Blackboard_131 (0-0-0-0): size 301 (cls: BTDecorator_Blackboard_131>BTDecorator_Blackboard>/Script/AIModule):
 		Tag array:
-			CachedDescription(StrProperty)=GoalLocation is NotSet 
+			CachedDescription(StrProperty)=GoalLocation is Is Not Set 
 			OperationType(ByteProperty)=[object] 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Has NO Goal Location? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
-	BTDecorator_Blackboard_2 (0-0-0-0): size 308 (cls: BTDecorator_Blackboard_2>BTDecorator_Blackboard>/Script/AIModule):
+	BTDecorator_Blackboard_46 (0-0-0-0): size 283 (cls: BTDecorator_Blackboard_46>BTDecorator_Blackboard>/Script/AIModule):
 		Tag array:
-			CachedDescription(StrProperty)=GoalActorAlwaysPerceived is NotSet 
-			OperationType(ByteProperty)=[object] 
-			BlackboardKey(StructProperty)=System.Byte[] 
-			NodeName(StrProperty)=NOT Always Perceived 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_69=BT_Flinger 
-	BTDecorator_Blackboard_3 (0-0-0-0): size 334 (cls: BTDecorator_Blackboard_3>BTDecorator_Blackboard>/Script/AIModule):
-		Tag array:
-			CachedDescription(StrProperty)=GoalActorIsVisible is NotSet 
-			OperationType(ByteProperty)=[object] 
-			BlackboardKey(StructProperty)=System.Byte[] 
-			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
-			NodeName(StrProperty)=NOT Visible 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_69=BT_Flinger 
-	BTDecorator_Blackboard_46 (0-0-0-0): size 280 (cls: BTDecorator_Blackboard_46>BTDecorator_Blackboard>/Script/AIModule):
-		Tag array:
-			CachedDescription(StrProperty)=GoalActorAlwaysPerceived is Set 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			CachedDescription(StrProperty)=GoalActorAlwaysPerceived is Is Set 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=GoalActor IS Always Perceived 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_862=BT_Flinger 
-	BTDecorator_Blackboard_47 (0-0-0-0): size 306 (cls: BTDecorator_Blackboard_47>BTDecorator_Blackboard>/Script/AIModule):
+	BTDecorator_Blackboard_47 (0-0-0-0): size 309 (cls: BTDecorator_Blackboard_47>BTDecorator_Blackboard>/Script/AIModule):
 		Tag array:
-			CachedDescription(StrProperty)=GoalActorIsVisible is Set 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			CachedDescription(StrProperty)=GoalActorIsVisible is Is Set 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=GoalActor IS Visible 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
@@ -397,44 +363,44 @@ Serialized exports:
 	BTDecorator_Blackboard_714 (0-0-0-0): size 238 (cls: BTDecorator_Blackboard_714>BTDecorator_Blackboard>/Script/AIModule):
 		Tag array:
 			CachedDescription(StrProperty)=invalid 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_882=BT_Flinger 
-	BTDecorator_Blackboard_94 (0-0-0-0): size 257 (cls: BTDecorator_Blackboard_94>BTDecorator_Blackboard>/Script/AIModule):
+	BTDecorator_Blackboard_94 (0-0-0-0): size 260 (cls: BTDecorator_Blackboard_94>BTDecorator_Blackboard>/Script/AIModule):
 		Tag array:
-			CachedDescription(StrProperty)=GoalLocation is Set 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			CachedDescription(StrProperty)=GoalLocation is Is Set 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Has Goal Location? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
-	BTDecorator_Blackboard_95 (0-0-0-0): size 332 (cls: BTDecorator_Blackboard_95>BTDecorator_Blackboard>/Script/AIModule):
+	BTDecorator_Blackboard_95 (0-0-0-0): size 335 (cls: BTDecorator_Blackboard_95>BTDecorator_Blackboard>/Script/AIModule):
 		Tag array:
-			CachedDescription(StrProperty)=GoalActor is Set 
+			CachedDescription(StrProperty)=GoalActor is Is Set 
 			NotifyObserver(ByteProperty)=EBTBlackboardRestart::ValueChange 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Has GoalActor? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_46=BT_Flinger 
 	BTDecorator_CheckGameplayTagsOnActor_14 (0-0-0-0): size 289 (cls: BTDecorator_CheckGameplayTagsOnActor_14>BTDecorator_CheckGameplayTagsOnActor>/Script/AIModule):
 		Tag array:
-			ActorToCheck(StructProperty)=System.Byte[] 
-			GameplayTags(StructProperty)=GameplayTagContainer:NPC.Behavior.Advances 
+			ActorToCheck(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			GameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Behavior.Advances 
 			CachedDescription(StrProperty)=Has any tags in set: (GameplayTags=((TagName="NPC.Behavior.Advances"))) 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_4=BT_Flinger 
 	BTDecorator_CheckGameplayTagsOnActor_15 (0-0-0-0): size 289 (cls: BTDecorator_CheckGameplayTagsOnActor_15>BTDecorator_CheckGameplayTagsOnActor>/Script/AIModule):
 		Tag array:
-			ActorToCheck(StructProperty)=System.Byte[] 
-			GameplayTags(StructProperty)=GameplayTagContainer:NPC.Behavior.Retreats 
+			ActorToCheck(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			GameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Behavior.Retreats 
 			CachedDescription(StrProperty)=Has any tags in set: (GameplayTags=((TagName="NPC.Behavior.Retreats"))) 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_4=BT_Flinger 
 	BTDecorator_CheckGameplayTagsOnActor_208 (0-0-0-0): size 533 (cls: BTDecorator_CheckGameplayTagsOnActor_208>BTDecorator_CheckGameplayTagsOnActor>/Script/AIModule):
 		Tag array:
-			ActorToCheck(StructProperty)=System.Byte[] 
-			GameplayTags(StructProperty)=GameplayTagContainer:NPC.Behavior.Prohibits.Ability.Attack.Any,NPC.Behavior.Prohibits.Ability.Attack.Ranged.Any 
+			ActorToCheck(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			GameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Behavior.Prohibits.Ability.Attack.Any,NPC.Behavior.Prohibits.Ability.Attack.Ranged.Any 
 			CachedDescription(StrProperty)=Does not have any tags in set: (GameplayTags=((TagName="NPC.Behavior.Prohibits.Ability.Attack.Any"),(TagName="NPC.Behavior.Prohibits.Ability.Attack.Ranged.Any"))) 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Does GoalActor NOT have Prohibited tags? (Goal specific) 
@@ -442,8 +408,8 @@ Serialized exports:
 			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
 	BTDecorator_CheckGameplayTagsOnActor_215 (0-0-0-0): size 532 (cls: BTDecorator_CheckGameplayTagsOnActor_215>BTDecorator_CheckGameplayTagsOnActor>/Script/AIModule):
 		Tag array:
-			ActorToCheck(StructProperty)=System.Byte[] 
-			GameplayTags(StructProperty)=GameplayTagContainer:NPC.Behavior.Prohibits.Ability.Attack.Any,NPC.Behavior.Prohibits.Ability.Attack.Melee.Any 
+			ActorToCheck(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			GameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Behavior.Prohibits.Ability.Attack.Any,NPC.Behavior.Prohibits.Ability.Attack.Melee.Any 
 			CachedDescription(StrProperty)=Does not have any tags in set: (GameplayTags=((TagName="NPC.Behavior.Prohibits.Ability.Attack.Any"),(TagName="NPC.Behavior.Prohibits.Ability.Attack.Melee.Any"))) 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Does GoalActor NOT have Prohibited tags? (Goal specific) 
@@ -473,239 +439,184 @@ Serialized exports:
 		Tag array:
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_155=BT_Flinger 
-	BTDecorator_ForceSuccess_75 (0-0-0-0): size 70 (cls: BTDecorator_ForceSuccess_75>BTDecorator_ForceSuccess>/Script/AIModule):
-		Tag array:
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
 	BTDecorator_ForceSuccess_8 (0-0-0-0): size 70 (cls: BTDecorator_ForceSuccess_8>BTDecorator_ForceSuccess>/Script/AIModule):
 		Tag array:
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_857=BT_Flinger 
 	BTDecorator_IsAtLocation_54 (0-0-0-0): size 242 (cls: BTDecorator_IsAtLocation_54>BTDecorator_IsAtLocation>/Script/AIModule):
 		Tag array:
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Is NOT At InterestLocation 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_861=BT_Flinger 
 	BTDecorator_IsAtLocation_55 (0-0-0-0): size 242 (cls: BTDecorator_IsAtLocation_55>BTDecorator_IsAtLocation>/Script/AIModule):
 		Tag array:
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Is NOT At InterestLocation 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_860=BT_Flinger 
 	BTDecorator_IsAtLocation_59 (0-0-0-0): size 242 (cls: BTDecorator_IsAtLocation_59>BTDecorator_IsAtLocation>/Script/AIModule):
 		Tag array:
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Is NOT At InterestLocation 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_156=BT_Flinger 
 	BTDecorator_IsAtLocation_63 (0-0-0-0): size 242 (cls: BTDecorator_IsAtLocation_63>BTDecorator_IsAtLocation>/Script/AIModule):
 		Tag array:
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Is NOT At InterestLocation 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_15=BT_Flinger 
 	BTDecorator_IsAtLocation_64 (0-0-0-0): size 242 (cls: BTDecorator_IsAtLocation_64>BTDecorator_IsAtLocation>/Script/AIModule):
 		Tag array:
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Is NOT At InterestLocation 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_14=BT_Flinger 
 	BTDecorator_IsAtLocation_90 (0-0-0-0): size 242 (cls: BTDecorator_IsAtLocation_90>BTDecorator_IsAtLocation>/Script/AIModule):
 		Tag array:
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Is NOT At InterestLocation 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_155=BT_Flinger 
-	BTDecorator_IsAtLocation_91 (0-0-0-0): size 242 (cls: BTDecorator_IsAtLocation_91>BTDecorator_IsAtLocation>/Script/AIModule):
-		Tag array:
-			BlackboardKey(StructProperty)=System.Byte[] 
-			bInverseCondition(BoolProperty)=True 
-			NodeName(StrProperty)=Is NOT At InterestLocation 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
-	BTDecorator_Loop_3 (0-0-0-0): size 96 (cls: BTDecorator_Loop_3>BTDecorator_Loop>/Script/AIModule):
-		Tag array:
-			bInfiniteLoop(BoolProperty)=True 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_862=BT_Flinger 
 	BTDecorator_SetTagCooldown_426 (0-0-0-0): size 160 (cls: BTDecorator_SetTagCooldown_426>BTDecorator_SetTagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_7=BT_Flinger 
 	BTDecorator_SetTagCooldown_58 (0-0-0-0): size 189 (cls: BTDecorator_SetTagCooldown_58>BTDecorator_SetTagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=0 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_7=BT_Flinger 
 	BTDecorator_SetTagCooldown_59 (0-0-0-0): size 160 (cls: BTDecorator_SetTagCooldown_59>BTDecorator_SetTagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_5=BT_Flinger 
 	BTDecorator_SetTagCooldown_60 (0-0-0-0): size 189 (cls: BTDecorator_SetTagCooldown_60>BTDecorator_SetTagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=10 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_8=BT_Flinger 
-	BTDecorator_SetTagCooldown_75 (0-0-0-0): size 189 (cls: BTDecorator_SetTagCooldown_75>BTDecorator_SetTagCooldown>/Script/AIModule):
-		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
-			CooldownDuration(FloatProperty)=0 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
-	BTDecorator_SetTagCooldown_76 (0-0-0-0): size 189 (cls: BTDecorator_SetTagCooldown_76>BTDecorator_SetTagCooldown>/Script/AIModule):
-		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
-			CooldownDuration(FloatProperty)=0 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
 	BTDecorator_TagCooldown_16 (0-0-0-0): size 189 (cls: BTDecorator_TagCooldown_16>BTDecorator_TagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=10 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_4=BT_Flinger 
 	BTDecorator_TagCooldown_17 (0-0-0-0): size 189 (cls: BTDecorator_TagCooldown_17>BTDecorator_TagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=10 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_4=BT_Flinger 
 	BTDecorator_TagCooldown_2 (0-0-0-0): size 189 (cls: BTDecorator_TagCooldown_2>BTDecorator_TagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=3 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
 	BTDecorator_TagCooldown_28 (0-0-0-0): size 189 (cls: BTDecorator_TagCooldown_28>BTDecorator_TagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=3 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_857=BT_Flinger 
-	BTDecorator_TagCooldown_41 (0-0-0-0): size 282 (cls: BTDecorator_TagCooldown_41>BTDecorator_TagCooldown>/Script/AIModule):
-		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
-			CooldownDuration(FloatProperty)=0 
-			bAddToExistingDuration(BoolProperty)=True 
-			bActivatesCooldown(BoolProperty)=False 
-			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_862=BT_Flinger 
-	BTDecorator_TagCooldown_42 (0-0-0-0): size 160 (cls: BTDecorator_TagCooldown_42>BTDecorator_TagCooldown>/Script/AIModule):
-		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
 	BTDecorator_TagCooldown_5 (0-0-0-0): size 189 (cls: BTDecorator_TagCooldown_5>BTDecorator_TagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=3 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
 	BTDecorator_TagCooldown_6 (0-0-0-0): size 282 (cls: BTDecorator_TagCooldown_6>BTDecorator_TagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=0 
 			bAddToExistingDuration(BoolProperty)=True 
 			bActivatesCooldown(BoolProperty)=False 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_448=BT_Flinger 
-	BTTask_RotateToFaceBBEntry_19 (0-0-0-0): size 189 (cls: BTTask_RotateToFaceBBEntry_19>BTTask_RotateToFaceBBEntry>/Script/AIModule):
+	BTDecorator_TimeLimit_0 (0-0-0-0): size 99 (cls: BTDecorator_TimeLimit_0>BTDecorator_TimeLimit>/Script/AIModule):
 		Tag array:
-			Precision(FloatProperty)=1 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			TimeLimit(FloatProperty)=2 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_69=BT_Flinger 
+			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
 	BTTask_RotateToFaceBBEntry_50 (0-0-0-0): size 189 (cls: BTTask_RotateToFaceBBEntry_50>BTTask_RotateToFaceBBEntry>/Script/AIModule):
 		Tag array:
 			Precision(FloatProperty)=1 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_880=BT_Flinger 
 	BTTask_RunEQSQuery_14 (0-0-0-0): size 373 (cls: BTTask_RunEQSQuery_14>BTTask_RunEQSQuery>/Script/AIModule):
 		Tag array:
 			QueryTemplate(ObjectProperty)=EQS_AdvanceToMinPreferredRange=/Game/AI/EQS/EQS_AdvanceToMinPreferredRange 
-			EQSQueryBlackboardKey(StructProperty)=System.Byte[] 
-			EQSRequest(StructProperty)=System.Byte[] 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			EQSQueryBlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			EQSRequest(StructProperty/EQSParametrizedQueryExecutionRequest)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=EQS Advance 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_14=BT_Flinger 
 	BTTask_RunEQSQuery_15 (0-0-0-0): size 373 (cls: BTTask_RunEQSQuery_15>BTTask_RunEQSQuery>/Script/AIModule):
 		Tag array:
 			QueryTemplate(ObjectProperty)=EQS_RetreatToMaxPreferredRange=/Game/AI/EQS/EQS_RetreatToMaxPreferredRange 
-			EQSQueryBlackboardKey(StructProperty)=System.Byte[] 
-			EQSRequest(StructProperty)=System.Byte[] 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			EQSQueryBlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			EQSRequest(StructProperty/EQSParametrizedQueryExecutionRequest)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=EQS Retreat 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_15=BT_Flinger 
 	BTTask_RunEQSQuery_431 (0-0-0-0): size 383 (cls: BTTask_RunEQSQuery_431>BTTask_RunEQSQuery>/Script/AIModule):
 		Tag array:
 			QueryTemplate(ObjectProperty)=EQS_MoveToPreferredRange=/Game/AI/EQS/EQS_MoveToPreferredRange 
-			EQSQueryBlackboardKey(StructProperty)=System.Byte[] 
-			EQSRequest(StructProperty)=System.Byte[] 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			EQSQueryBlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			EQSRequest(StructProperty/EQSParametrizedQueryExecutionRequest)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=EQS to PreferredRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_7=BT_Flinger 
-	BTTask_RunEQSQuery_432 (0-0-0-0): size 383 (cls: BTTask_RunEQSQuery_432>BTTask_RunEQSQuery>/Script/AIModule):
-		Tag array:
-			QueryTemplate(ObjectProperty)=EQS_MoveToPreferredRange=/Game/AI/EQS/EQS_MoveToPreferredRange 
-			EQSQueryBlackboardKey(StructProperty)=System.Byte[] 
-			EQSRequest(StructProperty)=System.Byte[] 
-			BlackboardKey(StructProperty)=System.Byte[] 
-			NodeName(StrProperty)=EQS to PreferredRange 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_920=BT_Flinger 
 	BTTask_RunEQSQuery_5 (0-0-0-0): size 386 (cls: BTTask_RunEQSQuery_5>BTTask_RunEQSQuery>/Script/AIModule):
 		Tag array:
 			QueryTemplate(ObjectProperty)=EQS_MoveToPreferredRange=/Game/AI/EQS/EQS_MoveToPreferredRange 
-			EQSQueryBlackboardKey(StructProperty)=System.Byte[] 
-			EQSRequest(StructProperty)=System.Byte[] 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			EQSQueryBlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			EQSRequest(StructProperty/EQSParametrizedQueryExecutionRequest)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=EQS to MaxPreferredRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_5=BT_Flinger 
-	BTTask_RunEQSQuery_8 (0-0-0-0): size 396 (cls: BTTask_RunEQSQuery_8>BTTask_RunEQSQuery>/Script/AIModule):
-		Tag array:
-			QueryTemplate(ObjectProperty)=EQS_MoveToPreferredRangeWithVisibility=/Game/AI/EQS/EQS_MoveToPreferredRangeWithVisibility 
-			EQSQueryBlackboardKey(StructProperty)=System.Byte[] 
-			EQSRequest(StructProperty)=System.Byte[] 
-			BlackboardKey(StructProperty)=System.Byte[] 
-			NodeName(StrProperty)=EQS to PreferredRange w/Visibility 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_920=BT_Flinger 
 	BTTask_RunEQSQuery_9 (0-0-0-0): size 386 (cls: BTTask_RunEQSQuery_9>BTTask_RunEQSQuery>/Script/AIModule):
 		Tag array:
 			QueryTemplate(ObjectProperty)=EQS_MoveToPreferredRange=/Game/AI/EQS/EQS_MoveToPreferredRange 
-			EQSQueryBlackboardKey(StructProperty)=System.Byte[] 
-			EQSRequest(StructProperty)=System.Byte[] 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			EQSQueryBlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			EQSRequest(StructProperty/EQSParametrizedQueryExecutionRequest)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=EQS to MinPreferredRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_8=BT_Flinger 
+	BTTask_SetTagCooldown_0 (0-0-0-0): size 189 (cls: BTTask_SetTagCooldown_0>BTTask_SetTagCooldown>/Script/AIModule):
+		Tag array:
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
+			CooldownDuration(FloatProperty)=3 
+			TreeAsset(ObjectProperty)=BT_Flinger= 
+			ParentNode(ObjectProperty)=BTComposite_Sequence_0=BT_Flinger 
 	BTTask_SetTagCooldown_30 (0-0-0-0): size 189 (cls: BTTask_SetTagCooldown_30>BTTask_SetTagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=3 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_63=BT_Flinger 
 	BTTask_SetTagCooldown_31 (0-0-0-0): size 189 (cls: BTTask_SetTagCooldown_31>BTTask_SetTagCooldown>/Script/AIModule):
 		Tag array:
-			CooldownTag(StructProperty)=System.Byte[] 
+			CooldownTag(StructProperty/GameplayTag)=System.Byte[] 
 			CooldownDuration(FloatProperty)=3 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_3=BT_Flinger 
@@ -730,76 +641,73 @@ Serialized exports:
 			ParentNode(ObjectProperty)=BTComposite_Selector_448=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanActivate_18 (0-0-0-0): size 322 (cls: FortBTDecorator_GameplayAbility_CanActivate_18>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Can Use Primary Ranged Attack? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_18=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanActivate_19 (0-0-0-0): size 307 (cls: FortBTDecorator_GameplayAbility_CanActivate_19>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Can Throw Husk? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_18=BT_Flinger 
-	FortBTDecorator_GameplayAbility_CanActivate_309 (0-0-0-0): size 302 (cls: FortBTDecorator_GameplayAbility_CanActivate_309>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
-		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
-			Target(StructProperty)=System.Byte[] 
-			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
-			NodeName(StrProperty)=Can Melee? 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanActivate_317 (0-0-0-0): size 262 (cls: FortBTDecorator_GameplayAbility_CanActivate_317>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_882=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanActivate_318 (0-0-0-0): size 262 (cls: FortBTDecorator_GameplayAbility_CanActivate_318>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_882=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanActivate_321 (0-0-0-0): size 247 (cls: FortBTDecorator_GameplayAbility_CanActivate_321>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_882=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanActivate_322 (0-0-0-0): size 247 (cls: FortBTDecorator_GameplayAbility_CanActivate_322>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_882=BT_Flinger 
-	FortBTDecorator_GameplayAbility_CanActivate_4 (0-0-0-0): size 262 (cls: FortBTDecorator_GameplayAbility_CanActivate_4>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
+	FortBTDecorator_GameplayAbility_CanActivate_4 (0-0-0-0): size 221 (cls: FortBTDecorator_GameplayAbility_CanActivate_4>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
-			Target(StructProperty)=System.Byte[] 
-			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_878=BT_Flinger 
+			ParentNode(ObjectProperty)=BTComposite_Sequence_0=BT_Flinger 
+	FortBTDecorator_GameplayAbility_CanActivate_5 (0-0-0-0): size 221 (cls: FortBTDecorator_GameplayAbility_CanActivate_5>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
+		Tag array:
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			TreeAsset(ObjectProperty)=BT_Flinger= 
+			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanActivate_53 (0-0-0-0): size 290 (cls: FortBTDecorator_GameplayAbility_CanActivate_53>FortBTDecorator_GameplayAbility_CanActivate>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.NonAttack.Roar 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary,NPC.Ability.Attack.Ranged.Primary 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.NonAttack.Roar 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary,NPC.Ability.Attack.Ranged.Primary 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_857=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanHitTarget_1 (0-0-0-0): size 417 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_1>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Can NOT Hit with Gameplay Ability if Rotated? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
@@ -807,57 +715,45 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CanHitTarget_10 (0-0-0-0): size 469 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_10>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
 			bInverseCondition(BoolProperty)=True 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
 			NodeName(StrProperty)=Can NOT Hit with Gameplay Ability if Rotated? ABORT SELF 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_14=BT_Flinger 
-	FortBTDecorator_GameplayAbility_CanHitTarget_11 (0-0-0-0): size 469 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_11>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
-		Tag array:
-			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
-			bInverseCondition(BoolProperty)=True 
-			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
-			NodeName(StrProperty)=Can NOT Hit with Gameplay Ability if Rotated? ABORT SELF 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanHitTarget_19 (0-0-0-0): size 388 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_19>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Can Hit with Primary Ranged Attack? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_18=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanHitTarget_20 (0-0-0-0): size 386 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_20>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary,NPC.Ability.Attack.Ranged.Primary 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary,NPC.Ability.Attack.Ranged.Primary 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Can Hit with Thrown Husk? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_18=BT_Flinger 
-	FortBTDecorator_GameplayAbility_CanHitTarget_4 (0-0-0-0): size 331 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_4>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
+	FortBTDecorator_GameplayAbility_CanHitTarget_4 (0-0-0-0): size 290 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_4>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary,NPC.Ability.Attack.Ranged.Primary 
-			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary,NPC.Ability.Attack.Ranged.Primary 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_878=BT_Flinger 
+			ParentNode(ObjectProperty)=BTComposite_Sequence_0=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CanHitTarget_444 (0-0-0-0): size 408 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_444>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee,NPC.Ability.Attack.Ranged 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee,NPC.Ability.Attack.Ranged 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Could Hit if Rotated? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
@@ -865,9 +761,9 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CanHitTarget_445 (0-0-0-0): size 408 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_445>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee,NPC.Ability.Attack.Ranged 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee,NPC.Ability.Attack.Ranged 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Could Hit if Rotated? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
@@ -875,9 +771,9 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CanHitTarget_5 (0-0-0-0): size 469 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_5>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
 			bInverseCondition(BoolProperty)=True 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
 			NodeName(StrProperty)=Can NOT Hit with Gameplay Ability if Rotated? ABORT SELF 
@@ -886,9 +782,9 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CanHitTarget_6 (0-0-0-0): size 469 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_6>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
 			bInverseCondition(BoolProperty)=True 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
 			NodeName(StrProperty)=Can NOT Hit with Gameplay Ability if Rotated? ABORT SELF 
@@ -897,9 +793,9 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CanHitTarget_7 (0-0-0-0): size 469 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_7>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
 			bInverseCondition(BoolProperty)=True 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
 			NodeName(StrProperty)=Can NOT Hit with Gameplay Ability if Rotated? ABORT SELF 
@@ -908,9 +804,9 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CanHitTarget_8 (0-0-0-0): size 469 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_8>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
 			bInverseCondition(BoolProperty)=True 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
 			NodeName(StrProperty)=Can NOT Hit with Gameplay Ability if Rotated? ABORT SELF 
@@ -919,9 +815,9 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CanHitTarget_9 (0-0-0-0): size 469 (cls: FortBTDecorator_GameplayAbility_CanHitTarget_9>FortBTDecorator_GameplayAbility_CanHitTarget>/Script/FortniteGame):
 		Tag array:
 			UseIdealYawRotationToTarget(BoolProperty)=True 
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			ActiveAbilityTagsToSkipTesting(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			ActiveAbilityTagsToSkipTesting(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged,NPC.Ability.Attack.Melee 
 			bInverseCondition(BoolProperty)=True 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
 			NodeName(StrProperty)=Can NOT Hit with Gameplay Ability if Rotated? ABORT SELF 
@@ -930,41 +826,41 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CompareDistance_128 (0-0-0-0): size 608 (cls: FortBTDecorator_GameplayAbility_CompareDistance_128>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
 		Tag array:
 			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Is Within MinActualRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
-	FortBTDecorator_GameplayAbility_CompareDistance_130 (0-0-0-0): size 312 (cls: FortBTDecorator_GameplayAbility_CompareDistance_130>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
-		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
-			NodeName(StrProperty)=Too close to attack? 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CompareDistance_23 (0-0-0-0): size 570 (cls: FortBTDecorator_GameplayAbility_CompareDistance_23>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
 		Tag array:
 			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Is Within MaxPreferredRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CompareDistance_24 (0-0-0-0): size 570 (cls: FortBTDecorator_GameplayAbility_CompareDistance_24>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
 		Tag array:
 			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Is Within MinPreferredRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
+	FortBTDecorator_GameplayAbility_CompareDistance_3 (0-0-0-0): size 569 (cls: FortBTDecorator_GameplayAbility_CompareDistance_3>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
+		Tag array:
+			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
+			NodeName(StrProperty)=Is Within MaxApproachRange 
+			TreeAsset(ObjectProperty)=BT_Flinger= 
+			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CompareDistance_5 (0-0-0-0): size 610 (cls: FortBTDecorator_GameplayAbility_CompareDistance_5>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
 		Tag array:
 			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Is Within MinApproachRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
@@ -972,8 +868,8 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CompareDistance_556 (0-0-0-0): size 644 (cls: FortBTDecorator_GameplayAbility_CompareDistance_556>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
 		Tag array:
 			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
 			NodeName(StrProperty)=Is Greater Than MinPreferredRangeEQS - Cancel when too close 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
@@ -981,16 +877,16 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CompareDistance_6 (0-0-0-0): size 573 (cls: FortBTDecorator_GameplayAbility_CompareDistance_6>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
 		Tag array:
 			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Is Less Than MinPreferredRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
 	FortBTDecorator_GameplayAbility_CompareDistance_7 (0-0-0-0): size 610 (cls: FortBTDecorator_GameplayAbility_CompareDistance_7>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
 		Tag array:
 			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Is Within MaxApproachRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
@@ -998,268 +894,226 @@ Serialized exports:
 	FortBTDecorator_GameplayAbility_CompareDistance_8 (0-0-0-0): size 576 (cls: FortBTDecorator_GameplayAbility_CompareDistance_8>FortBTDecorator_GameplayAbility_CompareDistance>/Script/FortniteGame):
 		Tag array:
 			DistanceComparisons(ArrayProperty)=[object] (inner: StructProperty)
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Is Greater Than MaxPreferredRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
-	FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget_20 (0-0-0-0): size 306 (cls: FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget_20>FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget>/Script/FortniteGame):
-		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			bInverseCondition(BoolProperty)=True 
-			NodeName(StrProperty)=Not Rotated To Attack Target? 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_69=BT_Flinger 
-	FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget_28 (0-0-0-0): size 276 (cls: FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget_28>FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget>/Script/FortniteGame):
-		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			NodeName(StrProperty)=Rotated To Attack Target? 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_69=BT_Flinger 
 	FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget_51 (0-0-0-0): size 347 (cls: FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget_51>FortBTDecorator_GameplayAbility_IsRotatedToAttackTarget>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bInverseCondition(BoolProperty)=True 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Not Rotated To Attack Target? 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_880=BT_Flinger 
-	FortBTDecorator_GameplayAbility_IsWithinMaxTargetSelectionRange_11 (0-0-0-0): size 336 (cls: FortBTDecorator_GameplayAbility_IsWithinMaxTargetSelectionRange_11>FortBTDecorator_GameplayAbility_IsWithinMaxTargetSelectionRange>/Script/FortniteGame):
-		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
-			bInverseCondition(BoolProperty)=True 
-			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
-			NodeName(StrProperty)=Too far to attack? 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
 	FortBTDecorator_GameplayAbility_IsWithinMaxTargetSelectionRange_9 (0-0-0-0): size 316 (cls: FortBTDecorator_GameplayAbility_IsWithinMaxTargetSelectionRange_9>FortBTDecorator_GameplayAbility_IsWithinMaxTargetSelectionRange>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
-			Target(StructProperty)=System.Byte[] 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			Target(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
 			NodeName(StrProperty)=Is Within MaxActualRange 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_76=BT_Flinger 
-	FortBTDecorator_IsGoalPawn_0 (0-0-0-0): size 70 (cls: FortBTDecorator_IsGoalPawn_0>FortBTDecorator_IsGoalPawn>/Script/FortniteGame):
-		Tag array:
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_862=BT_Flinger 
 	FortBTDecorator_IsGoalPawn_1 (0-0-0-0): size 142 (cls: FortBTDecorator_IsGoalPawn_1>FortBTDecorator_IsGoalPawn>/Script/FortniteGame):
 		Tag array:
 			bInverseCondition(BoolProperty)=True 
 			NodeName(StrProperty)=Is Goal NOT Pawn 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
-	FortBTDecorator_IsGoalPawn_2 (0-0-0-0): size 70 (cls: FortBTDecorator_IsGoalPawn_2>FortBTDecorator_IsGoalPawn>/Script/FortniteGame):
+	FortBTDecorator_IsGoalPawn_3 (0-0-0-0): size 183 (cls: FortBTDecorator_IsGoalPawn_3>FortBTDecorator_IsGoalPawn>/Script/FortniteGame):
+		Tag array:
+			bInverseCondition(BoolProperty)=True 
+			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::Self 
+			NodeName(StrProperty)=Is Goal NOT Pawn 
+			TreeAsset(ObjectProperty)=BT_Flinger= 
+			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
+	FortBTDecorator_IsGoalPawn_4 (0-0-0-0): size 70 (cls: FortBTDecorator_IsGoalPawn_4>FortBTDecorator_IsGoalPawn>/Script/FortniteGame):
 		Tag array:
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
+	FortBTDecorator_IsGoalPawn_5 (0-0-0-0): size 70 (cls: FortBTDecorator_IsGoalPawn_5>FortBTDecorator_IsGoalPawn>/Script/FortniteGame):
+		Tag array:
+			TreeAsset(ObjectProperty)=BT_Flinger= 
+			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
+	FortBTDecorator_IsGoalPawn_6 (0-0-0-0): size 111 (cls: FortBTDecorator_IsGoalPawn_6>FortBTDecorator_IsGoalPawn>/Script/FortniteGame):
+		Tag array:
+			FlowAbortMode(ByteProperty)=EBTFlowAbortMode::LowerPriority 
+			TreeAsset(ObjectProperty)=BT_Flinger= 
+			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
 	FortBTTask_ExecuteGameplayAbility_12 (0-0-0-0): size 165 (cls: FortBTTask_ExecuteGameplayAbility_12>FortBTTask_ExecuteGameplayAbility>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.NonAttack.Roar 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.NonAttack.Roar 
 			NodeName(StrProperty)=Roar 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_857=BT_Flinger 
 	FortBTTask_ExecuteGameplayAbility_13 (0-0-0-0): size 186 (cls: FortBTTask_ExecuteGameplayAbility_13>FortBTTask_ExecuteGameplayAbility>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.Primary 
 			NodeName(StrProperty)=Use Primary Ranged Attack 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_3=BT_Flinger 
 	FortBTTask_ExecuteGameplayAbility_14 (0-0-0-0): size 171 (cls: FortBTTask_ExecuteGameplayAbility_14>FortBTTask_ExecuteGameplayAbility>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Ranged.ThrowNPC 
 			NodeName(StrProperty)=Throw Husk 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_63=BT_Flinger 
 	FortBTTask_ExecuteGameplayAbility_4 (0-0-0-0): size 178 (cls: FortBTTask_ExecuteGameplayAbility_4>FortBTTask_ExecuteGameplayAbility>/Script/FortniteGame):
 		Tag array:
-			GameplayAbilityTag(StructProperty)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
+			GameplayAbilityTag(StructProperty/GameplayTagContainer)=GameplayTagContainer:NPC.Ability.Attack.Melee.Primary 
 			NodeName(StrProperty)=Use Primary Melee 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Selector_878=BT_Flinger 
-	FortBTTask_GameMoveTo_1007 (0-0-0-0): size 456 (cls: FortBTTask_GameMoveTo_1007>FortBTTask_GameMoveTo>/Script/FortniteGame):
+			ParentNode(ObjectProperty)=BTComposite_Sequence_0=BT_Flinger 
+	FortBTTask_GameMoveTo_1007 (0-0-0-0): size 430 (cls: FortBTTask_GameMoveTo_1007>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PathObstacleAction(ByteProperty)=EPathObstacleAction::FinishMoveAsSucceeded 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
 			FilterClass(ObjectProperty)=RecastFilter_UseDefaultArea=/Script/NavigationSystem 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_860=BT_Flinger 
-	FortBTTask_GameMoveTo_1009 (0-0-0-0): size 456 (cls: FortBTTask_GameMoveTo_1009>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_1009 (0-0-0-0): size 430 (cls: FortBTTask_GameMoveTo_1009>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PathObstacleAction(ByteProperty)=EPathObstacleAction::FinishMoveAsSucceeded 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
 			FilterClass(ObjectProperty)=RecastFilter_UseDefaultArea=/Script/NavigationSystem 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_861=BT_Flinger 
-	FortBTTask_GameMoveTo_120 (0-0-0-0): size 386 (cls: FortBTTask_GameMoveTo_120>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_120 (0-0-0-0): size 360 (cls: FortBTTask_GameMoveTo_120>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_155=BT_Flinger 
-	FortBTTask_GameMoveTo_121 (0-0-0-0): size 357 (cls: FortBTTask_GameMoveTo_121>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_15 (0-0-0-0): size 397 (cls: FortBTTask_GameMoveTo_15>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
-			AcceptableRadius(FloatProperty)=0 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
-			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
-	FortBTTask_GameMoveTo_15 (0-0-0-0): size 423 (cls: FortBTTask_GameMoveTo_15>FortBTTask_GameMoveTo>/Script/FortniteGame):
-		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PathObstacleAction(ByteProperty)=EPathObstacleAction::FinishMoveAsSucceeded 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
 			FilterClass(ObjectProperty)=RecastFilter_UseDefaultArea=/Script/NavigationSystem 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_155=BT_Flinger 
-	FortBTTask_GameMoveTo_17 (0-0-0-0): size 427 (cls: FortBTTask_GameMoveTo_17>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_18 (0-0-0-0): size 390 (cls: FortBTTask_GameMoveTo_18>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
-			PathObstacleAction(ByteProperty)=EPathObstacleAction::FinishMoveAsSucceeded 
-			AcceptableRadius(FloatProperty)=0 
-			FilterClass(ObjectProperty)=RecastFilter_UseDefaultArea=/Script/NavigationSystem 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
-			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
-			TreeAsset(ObjectProperty)=BT_Flinger= 
-			ParentNode(ObjectProperty)=BTComposite_Sequence_112=BT_Flinger 
-	FortBTTask_GameMoveTo_18 (0-0-0-0): size 416 (cls: FortBTTask_GameMoveTo_18>FortBTTask_GameMoveTo>/Script/FortniteGame):
-		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PathObstacleAction(ByteProperty)=EPathObstacleAction::FinishMoveAsSucceeded 
 			FilterClass(ObjectProperty)=RecastFilter_UseDefaultArea=/Script/NavigationSystem 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Move to Goal Location 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_93=BT_Flinger 
-	FortBTTask_GameMoveTo_21 (0-0-0-0): size 423 (cls: FortBTTask_GameMoveTo_21>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_21 (0-0-0-0): size 397 (cls: FortBTTask_GameMoveTo_21>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PathObstacleAction(ByteProperty)=EPathObstacleAction::FinishMoveAsSucceeded 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
 			FilterClass(ObjectProperty)=RecastFilter_UseDefaultArea=/Script/NavigationSystem 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_156=BT_Flinger 
-	FortBTTask_GameMoveTo_247 (0-0-0-0): size 343 (cls: FortBTTask_GameMoveTo_247>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_247 (0-0-0-0): size 317 (cls: FortBTTask_GameMoveTo_247>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Move to Goal Actor 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
-	FortBTTask_GameMoveTo_248 (0-0-0-0): size 343 (cls: FortBTTask_GameMoveTo_248>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_248 (0-0-0-0): size 317 (cls: FortBTTask_GameMoveTo_248>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			NodeName(StrProperty)=Move to Goal Actor 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 
-	FortBTTask_GameMoveTo_31 (0-0-0-0): size 423 (cls: FortBTTask_GameMoveTo_31>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_31 (0-0-0-0): size 397 (cls: FortBTTask_GameMoveTo_31>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PathObstacleAction(ByteProperty)=EPathObstacleAction::FinishMoveAsSucceeded 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
 			FilterClass(ObjectProperty)=RecastFilter_UseDefaultArea=/Script/NavigationSystem 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_15=BT_Flinger 
-	FortBTTask_GameMoveTo_33 (0-0-0-0): size 423 (cls: FortBTTask_GameMoveTo_33>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_33 (0-0-0-0): size 397 (cls: FortBTTask_GameMoveTo_33>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PathObstacleAction(ByteProperty)=EPathObstacleAction::FinishMoveAsSucceeded 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
 			FilterClass(ObjectProperty)=RecastFilter_UseDefaultArea=/Script/NavigationSystem 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_14=BT_Flinger 
-	FortBTTask_GameMoveTo_69 (0-0-0-0): size 386 (cls: FortBTTask_GameMoveTo_69>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_69 (0-0-0-0): size 360 (cls: FortBTTask_GameMoveTo_69>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_861=BT_Flinger 
-	FortBTTask_GameMoveTo_70 (0-0-0-0): size 386 (cls: FortBTTask_GameMoveTo_70>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_70 (0-0-0-0): size 360 (cls: FortBTTask_GameMoveTo_70>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_860=BT_Flinger 
-	FortBTTask_GameMoveTo_74 (0-0-0-0): size 386 (cls: FortBTTask_GameMoveTo_74>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_74 (0-0-0-0): size 360 (cls: FortBTTask_GameMoveTo_74>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_156=BT_Flinger 
-	FortBTTask_GameMoveTo_77 (0-0-0-0): size 386 (cls: FortBTTask_GameMoveTo_77>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_77 (0-0-0-0): size 360 (cls: FortBTTask_GameMoveTo_77>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_15=BT_Flinger 
-	FortBTTask_GameMoveTo_78 (0-0-0-0): size 386 (cls: FortBTTask_GameMoveTo_78>FortBTTask_GameMoveTo>/Script/FortniteGame):
+	FortBTTask_GameMoveTo_78 (0-0-0-0): size 360 (cls: FortBTTask_GameMoveTo_78>FortBTTask_GameMoveTo>/Script/FortniteGame):
 		Tag array:
-			FocalPointWhileMoving(StructProperty)=System.Byte[] 
+			FocalPointWhileMoving(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			PushBumpedPawnClass(ObjectProperty)=FortPawn=/Script/FortniteGame 
 			AcceptableRadius(FloatProperty)=0 
-			bReachTestIncludesGoalRadius(BoolProperty)=False 
 			bStopOnOverlapNeedsUpdate(BoolProperty)=False 
-			BlackboardKey(StructProperty)=System.Byte[] 
+			BlackboardKey(StructProperty/BlackboardKeySelector)=System.Byte[] 
 			TreeAsset(ObjectProperty)=BT_Flinger= 
 			ParentNode(ObjectProperty)=BTComposite_Sequence_14=BT_Flinger 
+	FortBTTask_SetFrustrationDiscouragement_0 (0-0-0-0): size 99 (cls: FortBTTask_SetFrustrationDiscouragement_0>FortBTTask_SetFrustrationDiscouragement>/Script/FortniteGame):
+		Tag array:
+			DiscouragementDuration(FloatProperty)=10 
+			TreeAsset(ObjectProperty)=BT_Flinger= 
+			ParentNode(ObjectProperty)=BTComposite_Selector_446=BT_Flinger 

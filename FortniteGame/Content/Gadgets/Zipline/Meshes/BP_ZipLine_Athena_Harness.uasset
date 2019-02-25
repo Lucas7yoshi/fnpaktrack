@@ -11,6 +11,7 @@ Name table:
 	/Game/Sounds/Fort_GamePlay_Sounds/Zipline/Zipline_Destroy_Cue
 	/Game/Sounds/Fort_GamePlay_Sounds/Zipline/Zipline_Detach_Cue
 	/Game/Sounds/Fort_GamePlay_Sounds/Zipline/Zipline_Travel_Cue
+	/Game/UI/Foundation/Textures/Icons/Navigation/zipline_visualizer_icon
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
@@ -44,14 +45,17 @@ Name table:
 	CallFunc_BreakTransform_Location
 	CallFunc_BreakTransform_Rotation
 	CallFunc_BreakTransform_Scale
+	CallFunc_GetActorTeam_ReturnValue
 	CallFunc_HasAuthority_ReturnValue
 	CallFunc_IsDedicatedServer_ReturnValue
 	CallFunc_IsDedicatedServer_ReturnValue1
 	CallFunc_IsLocallyControlled_ReturnValue
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
+	CallFunc_K2_GetActorLocation_ReturnValue
 	CallFunc_K2_GetComponentRotation_ReturnValue
 	CallFunc_K2_GetComponentToWorld_ReturnValue
+	CallFunc_K2_SetTimerDelegate_ReturnValue
 	CallFunc_K2_SetWorldRotation_SweepHitResult
 	CallFunc_MakeRotator_ReturnValue
 	CallFunc_SpawnEmitterAtLocation_ReturnValue
@@ -61,6 +65,8 @@ Name table:
 	Camera
 	Channel
 	ChildNodes
+	Chime Visual
+	ChimeTimer
 	Class
 	CollideDestroyVFX
 	CollisionEnabled
@@ -81,8 +87,10 @@ Name table:
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
 	Default__BP_ZipLine_Athena_Harness_C
+	Default__ByteProperty
 	Default__DelegateProperty
 	Default__FloatProperty
+	Default__FortKismetLibrary
 	Default__Function
 	Default__GameplayStatics
 	Default__IntProperty
@@ -109,17 +117,22 @@ Name table:
 	ECollisionEnabled::NoCollision
 	ECollisionResponse
 	ECR_Ignore
+	EFortTeamAffiliation
 	Engine
 	EntryPoint
+	Enum
 	ExecuteUbergraph_BP_ZipLine_Athena_Harness
 	FadeOut
 	FHitComponent
 	FloatProperty
+	FortKismetLibrary
 	FortPawn
 	FortPlayerPawn
 	Function
 	GameplayStatics
+	GetActorTeam
 	Guid
+	Handle
 	HandleOnDied
 	HasAuthority
 	HasHitAnotherPlayer
@@ -133,10 +146,13 @@ Name table:
 	IsLocal
 	IsLocallyControlled
 	IsValid
+	K2_GetActorLocation
 	K2_GetComponentRotation
 	K2_GetComponentToWorld
+	K2_SetTimerDelegate
 	K2_SetWorldRotation
 	K2Node_CreateDelegate_OutputDelegate
+	K2Node_CreateDelegate_OutputDelegate1
 	K2Node_CustomEvent_BoneName
 	K2Node_CustomEvent_Damage
 	K2Node_CustomEvent_DamageCauser
@@ -145,11 +161,14 @@ Name table:
 	K2Node_CustomEvent_HitLocation
 	K2Node_CustomEvent_InstigatedBy
 	K2Node_CustomEvent_Momentum
+	K2Node_MakeArray_Array
 	K2Node_Select1_Default
 	K2Node_Select_Default
 	KismetMathLibrary
 	KismetSystemLibrary
+	LinearColor
 	MakeRotator
+	MaxDistance
 	Momentum
 	MulticastDelegateProperty
 	NameProperty
@@ -194,6 +213,7 @@ Name table:
 	SetIntParameter
 	SetLifeSpan
 	SetTranslucentSortPriority
+	ShowSoundIndicatorLocalForTeam
 	SimpleConstructionScript
 	SM_Zipline_Magnet
 	SM_Zipline_Magnet_GEN_VARIABLE
@@ -219,12 +239,16 @@ Name table:
 	Temp_int_Variable
 	Temp_int_Variable1
 	Template
+	Texture2D
+	TimerDynamicDelegate__DelegateSignature
+	TimerHandle
 	Transform
 	TranslucencySortPriority
 	TravelAudio
 	TravelAudio_GEN_VARIABLE
 	UberGraphFrame
 	UberGraphFunction
+	UInt64Property
 	UnSpawnSound
 	UserConstructionScript
 	VariableGuid
@@ -234,16 +258,18 @@ Name table:
 	Zipline_Destroy_Cue
 	Zipline_Detach_Cue
 	Zipline_Travel_Cue
+	zipline_visualizer_icon
+	ZiplineChimeVisualUpdate
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	BP_ZipLine_Athena_Harness_C (0-0-0-0): size 351 (cls: BP_ZipLine_Athena_Harness_C>BlueprintGeneratedClass>/Script/Engine):
+	BP_ZipLine_Athena_Harness_C (0-0-0-0): size 375 (cls: BP_ZipLine_Athena_Harness_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
-			NumReplicatedProperties(IntProperty)=1 
+			NumReplicatedProperties(IntProperty)=2 
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=BP_ZipLine_Athena_Harness_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_BP_ZipLine_Athena_Harness=BP_ZipLine_Athena_Harness_C 
-	Default__BP_ZipLine_Athena_Harness_C (0-0-0-0): size 378 (cls: Default__BP_ZipLine_Athena_Harness_C>BP_ZipLine_Athena_Harness_C):
+	Default__BP_ZipLine_Athena_Harness_C (0-0-0-0): size 497 (cls: Default__BP_ZipLine_Athena_Harness_C>BP_ZipLine_Athena_Harness_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			SpawnFX(ObjectProperty)=P_Zipline_Pulley_Spawn=/Game/Athena/Effects/Particles/Zipline/P_Zipline_Pulley_Spawn 
 			DestroyFX(ObjectProperty)=P_Zipline_Pulley_Unspawn=/Game/Athena/Effects/Particles/Zipline/P_Zipline_Pulley_Unspawn 
 			CollideDestroyVFX(ObjectProperty)=P_Zipline_Pulley_Destroy=/Game/Athena/Effects/Particles/Zipline/P_Zipline_Pulley_Destroy 
@@ -251,24 +277,28 @@ Serialized exports:
 			SpawnSound(ObjectProperty)=Zipline_Attach_Cue=/Game/Sounds/Fort_GamePlay_Sounds/Zipline/Zipline_Attach_Cue 
 			UnSpawnSound(ObjectProperty)=Zipline_Detach_Cue=/Game/Sounds/Fort_GamePlay_Sounds/Zipline/Zipline_Detach_Cue 
 			DestroySound(ObjectProperty)=Zipline_Destroy_Cue=/Game/Sounds/Fort_GamePlay_Sounds/Zipline/Zipline_Destroy_Cue 
+			ZiplineChimeVisualUpdate(FloatProperty)=0.2 
+			ChimeTimer(StructProperty/TimerHandle)=System.Byte[] 
 			bReplicateMovement(BoolProperty)=True 
 			bReplicates(BoolProperty)=True 
 			InitialLifeSpan(FloatProperty)=1E+08 
 			NetCullDistanceSquared(FloatProperty)=9E+08 
+	TravelAudio (0-0-0-0): size 36 (cls: TravelAudio>ObjectProperty>/Script/CoreUObject)
+	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
+	ExecuteUbergraph_BP_ZipLine_Athena_Harness (0-0-0-0): size 1628 (cls: ExecuteUbergraph_BP_ZipLine_Athena_Harness>Function>/Script/CoreUObject)
+	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ByteProperty>/Script/CoreUObject)
+	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ArrayProperty>/Script/CoreUObject)
 	OtherMotors (0-0-0-0): size 36 (cls: OtherMotors>ObjectProperty>/Script/CoreUObject)
 	OtherMotors (0-0-0-0): size 36 (cls: OtherMotors>ArrayProperty>/Script/CoreUObject)
 	Arrow_GEN_VARIABLE (0-0-0-0): size 73 (cls: Arrow_GEN_VARIABLE>ArrowComponent>/Script/Engine):
 		Tag array:
-			RelativeRotation(StructProperty)=Rotator(0,90.00051,0) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,90.00051,0) 
 	TravelAudio_GEN_VARIABLE (0-0-0-0): size 189 (cls: TravelAudio_GEN_VARIABLE>AudioComponent>/Script/Engine):
 		Tag array:
 			Sound(ObjectProperty)=Zipline_Travel_Cue=/Game/Sounds/Fort_GamePlay_Sounds/Zipline/Zipline_Travel_Cue 
-			RelativeLocation(StructProperty)=Vector(-1.705303E-13,4.768371E-07,12) 
-			RelativeRotation(StructProperty)=Rotator(0,-89.99999,0) 
+			RelativeLocation(StructProperty/Vector)=Vector(-1.705303E-13,4.768371E-07,12) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-89.99999,0) 
 			bAutoActivate(BoolProperty)=False 
-	TravelAudio (0-0-0-0): size 36 (cls: TravelAudio>ObjectProperty>/Script/CoreUObject)
-	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_BP_ZipLine_Athena_Harness (0-0-0-0): size 1368 (cls: ExecuteUbergraph_BP_ZipLine_Athena_Harness>Function>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue1>BoolProperty>/Script/CoreUObject)
@@ -279,15 +309,19 @@ Serialized exports:
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
 	HasHitAnotherPlayer (0-0-0-0): size 34 (cls: HasHitAnotherPlayer>BoolProperty>/Script/CoreUObject)
+	CallFunc_GetActorTeam_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetActorTeam_ReturnValue>ByteProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
 	DegreesPerUpdate (0-0-0-0): size 32 (cls: DegreesPerUpdate>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakRotator_Pitch (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Pitch>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakRotator_Roll (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Roll>FloatProperty>/Script/CoreUObject)
 	CallFunc_BreakRotator_Yaw (0-0-0-0): size 32 (cls: CallFunc_BreakRotator_Yaw>FloatProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Damage (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Damage>FloatProperty>/Script/CoreUObject)
+	Chime Visual (0-0-0-0): size 54 (cls: Chime Visual>Function>/Script/CoreUObject)
 	DamagedActor (0-0-0-0): size 36 (cls: DamagedActor>ObjectProperty>/Script/CoreUObject)
 	HandleOnDied (0-0-0-0): size 166 (cls: HandleOnDied>Function>/Script/CoreUObject)
 	Damage (0-0-0-0): size 32 (cls: Damage>FloatProperty>/Script/CoreUObject)
+	ZiplineChimeVisualUpdate (0-0-0-0): size 32 (cls: ZiplineChimeVisualUpdate>FloatProperty>/Script/CoreUObject)
 	ReceiveBeginPlay (0-0-0-0): size 54 (cls: ReceiveBeginPlay>Function>/Script/CoreUObject)
 	ReceiveDestroyed (0-0-0-0): size 54 (cls: ReceiveDestroyed>Function>/Script/CoreUObject)
 	Start Travel Audio (0-0-0-0): size 54 (cls: Start Travel Audio>Function>/Script/CoreUObject)
@@ -328,16 +362,16 @@ Serialized exports:
 		Tag array:
 			Template(ObjectProperty)=P_Zipline_AttachedToPlayer=/Game/Athena/Effects/Particles/Zipline/P_Zipline_AttachedToPlayer 
 			TranslucencySortPriority(IntProperty)=-1 
-			RelativeLocation(StructProperty)=Vector(0,0,-16) 
-			RelativeRotation(StructProperty)=Rotator(0,90.00002,0) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-16) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,90.00002,0) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bReplicates(BoolProperty)=True 
 	P_Zipline_Pulley_SpeedLines_GEN_VARIABLE (0-0-0-0): size 272 (cls: P_Zipline_Pulley_SpeedLines_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Zipline_Pulley_SpeedLines=/Game/Athena/Effects/Particles/Zipline/P_Zipline_Pulley_SpeedLines 
-			RelativeLocation(StructProperty)=Vector(-5.245209E-06,7.999999,0) 
-			RelativeRotation(StructProperty)=Rotator(0,-89.99996,0) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(-5.245209E-06,7.999999,0) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-89.99996,0) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bReplicates(BoolProperty)=True 
 	DefaultSceneRoot_GEN_VARIABLE (0-0-0-0): size 38 (cls: DefaultSceneRoot_GEN_VARIABLE>SceneComponent>/Script/Engine):
 		Tag array:
@@ -347,52 +381,52 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=BP_ZipLine_Athena_Harness_C 
-			VariableGuid(StructProperty)=Guid: 3115039973-1172609913-10215581-1360413698 
+			VariableGuid(StructProperty/Guid)=Guid: 3115039973-1172609913-10215581-1360413698 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 168 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Zipline_AttachedToPlayer_GEN_VARIABLE=BP_ZipLine_Athena_Harness_C 
-			VariableGuid(StructProperty)=Guid: 369861285-1252289575-3735807382-394434578 
+			VariableGuid(StructProperty/Guid)=Guid: 369861285-1252289575-3735807382-394434578 
 			InternalVariableName(NameProperty)=P_Zipline_AttachedToPlayer 
 	SCS_Node_2 (0-0-0-0): size 217 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SM_Zipline_Motor_GEN_VARIABLE=BP_ZipLine_Athena_Harness_C 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 3782431301-1104766018-4142186388-1329126711 
+			VariableGuid(StructProperty/Guid)=Guid: 3782431301-1104766018-4142186388-1329126711 
 			InternalVariableName(NameProperty)=SM_Zipline_Motor 
 	SCS_Node_3 (0-0-0-0): size 209 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Scene_GEN_VARIABLE=BP_ZipLine_Athena_Harness_C 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 1845172098-1098213064-4033278888-533721165 
+			VariableGuid(StructProperty/Guid)=Guid: 1845172098-1098213064-4033278888-533721165 
 			InternalVariableName(NameProperty)=Scene 
 	SCS_Node_4 (0-0-0-0): size 168 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Zipline_Pulley_SpeedLines_GEN_VARIABLE=BP_ZipLine_Athena_Harness_C 
-			VariableGuid(StructProperty)=Guid: 1301353330-1122004626-2856336573-879103828 
+			VariableGuid(StructProperty/Guid)=Guid: 1301353330-1122004626-2856336573-879103828 
 			InternalVariableName(NameProperty)=P_Zipline_Pulley_SpeedLines 
 	SCS_Node_5 (0-0-0-0): size 168 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ArrowComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Arrow_GEN_VARIABLE=BP_ZipLine_Athena_Harness_C 
-			VariableGuid(StructProperty)=Guid: 2919894765-1248650884-279755676-166688091 
+			VariableGuid(StructProperty/Guid)=Guid: 2919894765-1248650884-279755676-166688091 
 			InternalVariableName(NameProperty)=Arrow 
 	SCS_Node_6 (0-0-0-0): size 213 (cls: SCS_Node_6>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SM_Zipline_Magnet_GEN_VARIABLE=BP_ZipLine_Athena_Harness_C 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 3645139204-1244891957-2662181258-3611748792 
+			VariableGuid(StructProperty/Guid)=Guid: 3645139204-1244891957-2662181258-3611748792 
 			InternalVariableName(NameProperty)=SM_Zipline_Magnet 
 	SCS_Node_8 (0-0-0-0): size 168 (cls: SCS_Node_8>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=TravelAudio_GEN_VARIABLE=BP_ZipLine_Athena_Harness_C 
-			VariableGuid(StructProperty)=Guid: 2611289320-1282988366-3871917212-2293641122 
+			VariableGuid(StructProperty/Guid)=Guid: 2611289320-1282988366-3871917212-2293641122 
 			InternalVariableName(NameProperty)=TravelAudio 
 	SimpleConstructionScript_0 (0-0-0-0): size 147 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -402,21 +436,24 @@ Serialized exports:
 	SM_Zipline_Magnet_GEN_VARIABLE (0-0-0-0): size 611 (cls: SM_Zipline_Magnet_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Zipline_Magnet=/Game/Gadgets/Zipline/Meshes/SM_Zipline_Magnet 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(2.273737E-13,-4.768372E-07,-12) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(2.273737E-13,-4.768372E-07,-12) 
 			bAbsoluteRotation(BoolProperty)=True 
 	SM_Zipline_Motor_GEN_VARIABLE (0-0-0-0): size 628 (cls: SM_Zipline_Motor_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Zipline_Motor=/Game/Gadgets/Zipline/Meshes/SM_Zipline_Motor 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 			bAbsoluteRotation(BoolProperty)=True 
 			bShouldUpdatePhysicsVolume(BoolProperty)=True 
 			bReplicates(BoolProperty)=True 
+	ChimeTimer (0-0-0-0): size 36 (cls: ChimeTimer>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Location (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Rotation (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Rotation>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Scale (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Scale>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_GetActorLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetComponentRotation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentRotation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetComponentToWorld_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentToWorld_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_SetTimerDelegate_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_SetTimerDelegate_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetWorldRotation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetWorldRotation_SweepHitResult>StructProperty>/Script/CoreUObject)
 	CallFunc_MakeRotator_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeRotator_ReturnValue>StructProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_HitLocation (0-0-0-0): size 36 (cls: K2Node_CustomEvent_HitLocation>StructProperty>/Script/CoreUObject)

@@ -95,10 +95,12 @@ Name table:
 	K2Node_Event_InstigatedBy1
 	K2Node_Event_Momentum
 	K2Node_Event_Momentum1
+	LeafPlacement_GEN_VARIABLE
 	Mission_FarmsteadFort
 	MissionTreeDestroyed
 	Momentum
 	NameProperty
+	NODE_AddParticleSystemComponent-1
 	NODE_AddStaticMeshComponent-0
 	None
 	OB_Tree_Special_03_C
@@ -130,12 +132,14 @@ Name table:
 	SimpleConstructionScript
 	SoftObjectProperty
 	SoundCue
+	SphereComponent
 	StaticGameplayTags
 	StaticMeshComponent
 	StaticMeshComponent0
 	StructProperty
 	Tags
 	Team
+	TeamIndex
 	Temp_bool_Has_Been_Initd_Variable
 	Temp_bool_IsClosed_Variable
 	Template
@@ -153,16 +157,17 @@ Serialized exports:
 		Tag array:
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_885=OB_Tree_Special_03_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_OB_Tree_Special_03=OB_Tree_Special_03_C 
-	Default__OB_Tree_Special_03_C (0-0-0-0): size 528 (cls: Default__OB_Tree_Special_03_C>OB_Tree_Special_03_C):
+	Default__OB_Tree_Special_03_C (0-0-0-0): size 562 (cls: Default__OB_Tree_Special_03_C>OB_Tree_Special_03_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Default__OB_Tree_Special_03_C 
 			DestructionLootTierGroup(NameProperty)=Destruction_TreeLow 
 			WindAudio(SoftObjectProperty)=/Game/Sounds/Fort_Ambient_Looping/Storm_Trees/storm_foliage_BigTree_Loop_Cue.storm_foliage_BigTree_Loop_Cue 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
 			Team(ByteProperty)=EFortTeam::HumanCampaign 
-			StaticGameplayTags(StructProperty)=GameplayTagContainer:Activities.Placement.LocationOverride,Building.Type.Prop 
+			TeamIndex(ByteProperty)=[object] 
+			StaticGameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Activities.Placement.LocationOverride,Building.Type.Prop 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Default__OB_Tree_Special_03_C 
 			Tags(ArrayProperty)=tutorialcar (inner: NameProperty)
 	ParticleSystem (0-0-0-0): size 36 (cls: ParticleSystem>ObjectProperty>/Script/CoreUObject)
@@ -190,14 +195,14 @@ Serialized exports:
 	P_StormSystem_Leaves_Spherical_Translucent_GEN_VARIABLE (0-0-0-0): size 185 (cls: P_StormSystem_Leaves_Spherical_Translucent_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_StormSystem_Leaves_Spherical_Translucent=/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/Particles/P_StormSystem_Leaves_Spherical_Translucent 
-			RelativeLocation(StructProperty)=Vector(64,-120,496) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(64,-120,496) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	ParticleSystem_GEN_VARIABLE (0-0-0-0): size 246 (cls: ParticleSystem_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_StormSystem_Leaves_Spherical_Translucent=/Game/Effects/Fort_Effects/World/Enviroment/Falling_Leaf/Particles/P_StormSystem_Leaves_Spherical_Translucent 
-			RelativeLocation(StructProperty)=Vector(-320,96,416) 
-			RelativeRotation(StructProperty)=Rotator(0,30.00012,0) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(-320,96,416) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,30.00012,0) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	SceneComponent_1065 (0-0-0-0): size 12 (cls: SceneComponent_1065>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 227 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
@@ -205,7 +210,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=P_StormSystem_Leaves_Spherical_Translucent_GEN_VARIABLE=OB_Tree_Special_03_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2954605296-1132576091-2150549938-497905831 
+			VariableGuid(StructProperty/Guid)=Guid: 2954605296-1132576091-2150549938-497905831 
 			InternalVariableName(NameProperty)=P_StormSystem_Leaves_Spherical_Translucent 
 	SCS_Node_1 (0-0-0-0): size 227 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
@@ -213,13 +218,13 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=ParticleSystem_GEN_VARIABLE=OB_Tree_Special_03_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 84849300-1080790952-1395660205-182823396 
+			VariableGuid(StructProperty/Guid)=Guid: 84849300-1080790952-1395660205-182823396 
 			InternalVariableName(NameProperty)=ParticleSystem 
 	SCS_Node_1075 (0-0-0-0): size 168 (cls: SCS_Node_1075>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_1065=OB_Tree_Special_03_C 
-			VariableGuid(StructProperty)=Guid: 1455200153-3298092774-840778389-2103358230 
+			VariableGuid(StructProperty/Guid)=Guid: 1455200153-3298092774-840778389-2103358230 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SimpleConstructionScript_885 (0-0-0-0): size 131 (cls: SimpleConstructionScript_885>SimpleConstructionScript>/Script/Engine):
 		Tag array:

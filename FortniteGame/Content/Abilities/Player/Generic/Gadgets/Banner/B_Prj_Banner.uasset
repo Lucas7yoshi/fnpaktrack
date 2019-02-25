@@ -17,13 +17,13 @@ Name table:
 	/Game/Sounds/Fort_Gadgets/Technician/Technician_Mortar_Explode_Cue
 	/Game/Sounds/Fort_GamePlay_Sounds/Explosives/BottleRocket_Explosion_Cue
 	/Game/UI/Fort_HUD/Radar/UI_Radar_SpawnPoint
-	/Game/UI/Foundation/Banner/Banner-SquareLobbyFrame
 	/Game/UI/HomeBase/BannerWidget/HB-Banner-Base
 	/Script/BlueprintContext
 	/Script/ClothingSystemRuntime
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
+	/Script/FortniteUI
 	/Script/GameplayAbilities
 	/Script/GameplayTags
 	Abilities.generic.Banner.RespawnPoint
@@ -44,6 +44,7 @@ Name table:
 	Array_Length
 	ArrayIndex
 	ArrayProperty
+	AsyncLoadBannerAsset
 	Audio1
 	AudioComponent
 	B_Post_Banner_Impact_C
@@ -51,13 +52,19 @@ Name table:
 	bAddOwnerVelocity
 	Banner Glow Color
 	Banner MID
-	Banner-SquareLobbyFrame
 	BannerAnimationCompleted
 	BannerAnimationCompletedTimerHandle
+	BannerAssetLoadComplete
+	BannerAssetLoadComplete_41BACB904C480CAD4AB0EB8E88D819C9
+	BannerAssetLoadComplete_41BACB904C480CAD4AB0EB8ED913EFC7
+	BannerAssetLoadComplete__DelegateSignature
 	BannerBeginPlayFX
+	BannerColor
 	BannerColorId
+	BannerColorName
 	BannerDestroyed
 	BannerHasRespawn
+	BannerIcon
 	BannerIconId
 	BannerLibrary_C
 	BannerPlantedAnimation
@@ -90,6 +97,7 @@ Name table:
 	BlueprintGeneratedClass
 	BodyInstance
 	BoneName
+	BooleanAND
 	BoolProperty
 	BottleRocket_Explosion_Cue
 	Bottom
@@ -115,7 +123,11 @@ Name table:
 	CallFunc_Add_IntInt_ReturnValue
 	CallFunc_Array_Get_Item
 	CallFunc_Array_Length_ReturnValue
+	CallFunc_AsyncLoadBannerAsset_ReturnValue
+	CallFunc_AsyncLoadBannerAsset_ReturnValue1
 	CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue
+	CallFunc_BooleanAND_ReturnValue
+	CallFunc_BooleanAND_ReturnValue1
 	CallFunc_BreakGameplayTagContainer_GameplayTags
 	CallFunc_BreakHitResult_bBlockingHit
 	CallFunc_BreakHitResult_bBlockingHit1
@@ -179,32 +191,18 @@ Name table:
 	CallFunc_Conv_StringToName_ReturnValue1
 	CallFunc_Conv_StringToName_ReturnValue2
 	CallFunc_Conv_StringToName_ReturnValue3
-	CallFunc_Conv_StringToName_ReturnValue4
-	CallFunc_Conv_StringToName_ReturnValue5
-	CallFunc_Conv_StringToName_ReturnValue6
-	CallFunc_Conv_StringToName_ReturnValue7
 	CallFunc_Conv_VectorToLinearColor_ReturnValue
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue
 	CallFunc_DegAcos_ReturnValue
 	CallFunc_Divide_FloatFloat_ReturnValue
 	CallFunc_Dot_VectorVector_ReturnValue
-	CallFunc_EqualEqual_StrStr_ReturnValue
-	CallFunc_EqualEqual_StrStr_ReturnValue1
-	CallFunc_EqualEqual_StrStr_ReturnValue2
-	CallFunc_EqualEqual_StrStr_ReturnValue3
 	CallFunc_FinishSpawningActor_ReturnValue
 	CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue
 	CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue1
-	CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue2
-	CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue3
 	CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue
 	CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue1
-	CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue2
-	CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue3
 	CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue
 	CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue1
-	CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue2
-	CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue3
 	CallFunc_GetContext_ReturnValue
 	CallFunc_GetContext_ReturnValue1
 	CallFunc_GetGameTimeInSeconds_ReturnValue
@@ -212,8 +210,6 @@ Name table:
 	CallFunc_GetHomeBaseInfoForPlayer_Result1
 	CallFunc_GetInstigator_ReturnValue
 	CallFunc_GetInstigator_ReturnValue1
-	CallFunc_GetLoadoutForPlayer_ReturnValue
-	CallFunc_GetLoadoutForPlayer_ReturnValue1
 	CallFunc_GetMIDForSkeletalMeshComponent_ReturnValue
 	CallFunc_GetMIDForSkeletalMeshComponent_ReturnValue1
 	CallFunc_GetTransform_ReturnValue
@@ -228,6 +224,8 @@ Name table:
 	CallFunc_IsDedicatedServer_ReturnValue2
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
+	CallFunc_IsValid_ReturnValue2
+	CallFunc_IsValid_ReturnValue3
 	CallFunc_K2_GetActorLocation_ReturnValue
 	CallFunc_K2_GetActorLocation_ReturnValue1
 	CallFunc_K2_GetActorRotation_ReturnValue
@@ -244,12 +242,14 @@ Name table:
 	CallFunc_Less_IntInt_ReturnValue
 	CallFunc_LineTraceSingle_OutHit
 	CallFunc_LineTraceSingle_ReturnValue
-	CallFunc_MakeLiteralByte_ReturnValue
-	CallFunc_MakeLiteralByte_ReturnValue1
 	CallFunc_MakeRotator_ReturnValue
 	CallFunc_MakeVector_ReturnValue
 	CallFunc_MakeVector_ReturnValue1
 	CallFunc_Multiply_FloatFloat_ReturnValue
+	CallFunc_NotEqual_NameName_ReturnValue
+	CallFunc_NotEqual_NameName_ReturnValue1
+	CallFunc_NotEqual_NameName_ReturnValue2
+	CallFunc_NotEqual_NameName_ReturnValue3
 	CallFunc_PlayerYaw_ReturnValue
 	CallFunc_SpawnEmitterAtLocation_ReturnValue
 	CallFunc_Subtract_FloatFloat_ReturnValue
@@ -257,6 +257,7 @@ Name table:
 	CapsuleHalfHeight
 	CapsuleRadius
 	ChangedPropertyList
+	CheckInstigatorValidHandle
 	Class
 	ClassProperty
 	ClearAndInvalidateSweepTimer
@@ -293,10 +294,10 @@ Name table:
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
 	Default__BPI_ShieldFlash_C
-	Default__ByteProperty
 	Default__ClassProperty
 	Default__DelegateProperty
 	Default__FloatProperty
+	Default__FortAsyncAction_LoadBannerAsset
 	Default__FortBannerUtilities
 	Default__FortKismetLibrary
 	Default__FortMiniMapComponent
@@ -332,12 +333,9 @@ Name table:
 	DoExplosion
 	Dot_VectorVector
 	DrawAs
-	EFortTeam
-	EFortTeam::MAX
 	Emissive Multiplier
 	Engine
 	EntryPoint
-	EqualEqual_StrStr
 	ESlateBrushDrawType
 	ESlateBrushDrawType::Image
 	ESlateBrushImageType
@@ -358,7 +356,7 @@ Name table:
 	FloatProperty
 	FloorHitActor
 	FlushNetDormancy
-	FortAthenaLoadout
+	FortAsyncAction_LoadBannerAsset
 	FortBannerUtilities
 	FortHomeBaseInfo
 	FortKismetLibrary
@@ -384,7 +382,6 @@ Name table:
 	GetGameTimeInSeconds
 	GetHomeBaseInfoForPlayer
 	GetInstigator
-	GetLoadoutForPlayer
 	GetMIDForSkeletalMeshComponent
 	GetTransform
 	GetUniqueID
@@ -440,8 +437,10 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate5
 	K2Node_CreateDelegate_OutputDelegate6
 	K2Node_CreateDelegate_OutputDelegate7
-	K2Node_CreateDelegate_OutputDelegate8
-	K2Node_CreateDelegate_OutputDelegate9
+	K2Node_CustomEvent_BannerColor
+	K2Node_CustomEvent_BannerColorName
+	K2Node_CustomEvent_BannerColorName1
+	K2Node_CustomEvent_BannerIcon
 	K2Node_CustomEvent_BoneName
 	K2Node_CustomEvent_Damage
 	K2Node_CustomEvent_DamageCauser
@@ -454,10 +453,10 @@ Name table:
 	K2Node_CustomEvent_HitLocation1
 	K2Node_CustomEvent_InEffect
 	K2Node_CustomEvent_InstigatedBy
-	K2Node_CustomEvent_Loaded
-	K2Node_CustomEvent_Loaded1
-	K2Node_CustomEvent_Loaded2
-	K2Node_CustomEvent_Loaded3
+	K2Node_CustomEvent_LoadedAsset
+	K2Node_CustomEvent_LoadedAsset1
+	K2Node_CustomEvent_MIDRef
+	K2Node_CustomEvent_MIDRef1
 	K2Node_CustomEvent_Momentum
 	K2Node_CustomEvent_PlayerRotation
 	K2Node_CustomEvent_Radius
@@ -471,8 +470,6 @@ Name table:
 	K2Node_DynamicCast_AsFort_Player_State1
 	K2Node_DynamicCast_AsTexture_2D
 	K2Node_DynamicCast_AsTexture_2D1
-	K2Node_DynamicCast_AsTexture_2D2
-	K2Node_DynamicCast_AsTexture_2D3
 	K2Node_DynamicCast_bSuccess
 	K2Node_DynamicCast_bSuccess1
 	K2Node_DynamicCast_bSuccess2
@@ -481,8 +478,6 @@ Name table:
 	K2Node_DynamicCast_bSuccess5
 	K2Node_DynamicCast_bSuccess6
 	K2Node_DynamicCast_bSuccess7
-	K2Node_DynamicCast_bSuccess8
-	K2Node_DynamicCast_bSuccess9
 	K2Node_Event_bSelfMoved
 	K2Node_Event_Hit
 	K2Node_Event_Hit1
@@ -492,8 +487,6 @@ Name table:
 	K2Node_Event_NormalImpulse
 	K2Node_Event_Other
 	K2Node_Event_OtherComp
-	K2Node_Select1_Default
-	K2Node_Select_Default
 	KismetArrayLibrary
 	KismetMaterialLibrary
 	KismetMathLibrary
@@ -505,10 +498,8 @@ Name table:
 	Less_IntInt
 	LinearColor
 	LineTraceSingle
-	LoadAsset
-	Loaded
+	LoadedAsset
 	Location
-	MakeLiteralByte
 	MakeRotator
 	MakeVector
 	Margin
@@ -518,6 +509,7 @@ Name table:
 	MaxSlope
 	MaxSpeed
 	MemberUniqueId
+	MIDRef
 	MiniMapData
 	MiniMapIcon
 	Mirroring
@@ -533,20 +525,16 @@ Name table:
 	None
 	Normal
 	NormalImpulse
+	NotEqual_NameName
 	NumPlayersInParty
 	NumReplicatedProperties
 	Object
 	ObjectProperty
-	OnAssetLoaded__DelegateSignature
 	OnBaseDestroyed
 	OnBaseDied
 	OnDestroyed
 	OnDied
 	OnDurationCompleted
-	OnLoaded_192496DB41CC2100CC1C729D9C44D4ED
-	OnLoaded_192496DB41CC2100CC1C729DBDEE8D9B
-	OnLoaded_192496DB41CC2100CC1C729DCD8F22E3
-	OnLoaded_192496DB41CC2100CC1C729DEC257B95
 	OnRep_TeamMemberInfo
 	OnStop
 	Other
@@ -653,6 +641,9 @@ Name table:
 	SphereSize
 	StartBannerAnimation
 	StopSimulating
+	StoreBannerInfoOnServer
+	StoredBannerColorName
+	StoredBannerIconName
 	StrProperty
 	StructProperty
 	Subtract_FloatFloat
@@ -665,22 +656,17 @@ Name table:
 	Technician_Mortar_Explode_Cue
 	Temp_bool_Has_Been_Initd_Variable
 	Temp_bool_IsClosed_Variable
-	Temp_bool_Variable
-	Temp_bool_Variable1
 	Temp_int_Array_Index_Variable
 	Temp_int_Loop_Counter_Variable
+	Temp_name_Variable
+	Temp_name_Variable1
 	Temp_object_Variable
 	Temp_object_Variable1
 	Temp_object_Variable2
 	Temp_object_Variable3
 	Temp_object_Variable4
-	Temp_object_Variable5
-	Temp_object_Variable6
-	Temp_object_Variable7
-	Temp_object_Variable8
 	Template
 	TextProperty
-	Texture
 	Texture2D
 	Tiling
 	Time
@@ -691,6 +677,7 @@ Name table:
 	TraceEnd
 	TraceStart
 	Transform
+	TryStoreBannerInfo
 	UberGraphFrame
 	UberGraphFunction
 	UI_Radar_SpawnPoint
@@ -714,15 +701,15 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	B_Prj_Banner_C (0-0-0-0): size 845 (cls: B_Prj_Banner_C>BlueprintGeneratedClass>/Script/Engine):
+	B_Prj_Banner_C (0-0-0-0): size 857 (cls: B_Prj_Banner_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
-			NumReplicatedProperties(IntProperty)=6 
+			NumReplicatedProperties(IntProperty)=8 
 			bHasCookedComponentInstancingData(BoolProperty)=True 
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_226=B_Prj_Banner_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_Prj_Banner=B_Prj_Banner_C 
-	Default__B_Prj_Banner_C (0-0-0-0): size 4310 (cls: Default__B_Prj_Banner_C>B_Prj_Banner_C):
+	Default__B_Prj_Banner_C (0-0-0-0): size 4393 (cls: Default__B_Prj_Banner_C>B_Prj_Banner_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			Initial Delay(FloatProperty)=1 
 			PlacementCue(ObjectProperty)=supply_drop_land2_Cue=/Game/Sounds/Fort_Gadgets/Supply_Drop/supply_drop_land2_Cue 
 			ExplosionCue(ObjectProperty)=BottleRocket_Explosion_Cue=/Game/Sounds/Fort_GamePlay_Sounds/Explosives/BottleRocket_Explosion_Cue 
@@ -732,19 +719,20 @@ Serialized exports:
 			RepairRadius(FloatProperty)=2048 
 			RepairWaveIncrement(FloatProperty)=512 
 			RepairWaveDelay(FloatProperty)=1 
-			PlayerRotation(StructProperty)=Rotator(0,0,0) 
-			TeamMemberInfo(StructProperty)=System.Byte[] 
+			PlayerRotation(StructProperty/Rotator)=Rotator(0,0,0) 
+			TeamMemberInfo(StructProperty/FortTeamMemberInfo)=System.Byte[] 
 			IsFirstPlacement(BoolProperty)=True 
-			Impact Point(StructProperty)=Vector(0,0,0) 
+			Impact Point(StructProperty/Vector)=Vector(0,0,0) 
 			SweepTimer(FloatProperty)=2 
-			SweepTimerHandle(StructProperty)=System.Byte[] 
-			Banner Glow Color(StructProperty)=UE4.FLinearColor 
+			SweepTimerHandle(StructProperty/TimerHandle)=System.Byte[] 
+			Banner Glow Color(StructProperty/LinearColor)=UE4.FLinearColor 
 			Radius Multiplier(FloatProperty)=1.5 
-			BannerAnimationCompletedTimerHandle(StructProperty)=System.Byte[] 
+			BannerAnimationCompletedTimerHandle(StructProperty/TimerHandle)=System.Byte[] 
 			BannerPlantedAnimation(ObjectProperty)=Justice_banner_deploy_WMM=/Game/Animation/Game/MainPlayer/Gadgets/Justice_banner_deploy_WMM 
-			DestroyedActorHit(StructProperty)=System.Byte[] 
-			InitialSpeed(StructProperty)=System.Byte[] 
-			MaxSpeed(StructProperty)=System.Byte[] 
+			DestroyedActorHit(StructProperty/HitResult)=System.Byte[] 
+			CheckInstigatorValidHandle(StructProperty/TimerHandle)=System.Byte[] 
+			InitialSpeed(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			MaxSpeed(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			bAddOwnerVelocity(BoolProperty)=False 
 			bSpawnPointCanBeUsedByOtherPlayers(BoolProperty)=True 
 			PlayerSpawnOffset(FloatProperty)=-40 
@@ -756,12 +744,14 @@ Serialized exports:
 			RootComponent(ObjectProperty)=CollisionCapsule0=Default__B_Prj_Banner_C 
 	P_Banner_Rings_01 (0-0-0-0): size 36 (cls: P_Banner_Rings_01>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_B_Prj_Banner (0-0-0-0): size 8783 (cls: ExecuteUbergraph_B_Prj_Banner>Function>/Script/CoreUObject)
+	ExecuteUbergraph_B_Prj_Banner (0-0-0-0): size 6573 (cls: ExecuteUbergraph_B_Prj_Banner>Function>/Script/CoreUObject)
 	CallFunc_BreakGameplayTagContainer_GameplayTags (0-0-0-0): size 36 (cls: CallFunc_BreakGameplayTagContainer_GameplayTags>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakGameplayTagContainer_GameplayTags (0-0-0-0): size 36 (cls: CallFunc_BreakGameplayTagContainer_GameplayTags>ArrayProperty>/Script/CoreUObject)
-	Temp_object_Variable4 (0-0-0-0): size 36 (cls: Temp_object_Variable4>ObjectProperty>/Script/CoreUObject)
-	Temp_object_Variable4 (0-0-0-0): size 36 (cls: Temp_object_Variable4>ArrayProperty>/Script/CoreUObject)
+	Temp_object_Variable1 (0-0-0-0): size 36 (cls: Temp_object_Variable1>ObjectProperty>/Script/CoreUObject)
+	Temp_object_Variable1 (0-0-0-0): size 36 (cls: Temp_object_Variable1>ArrayProperty>/Script/CoreUObject)
 	AudioComponent_33 (0-0-0-0): size 12 (cls: AudioComponent_33>AudioComponent>/Script/Engine)
+	BannerColor (0-0-0-0): size 32 (cls: BannerColor>NameProperty>/Script/CoreUObject)
+	StoreBannerInfoOnServer (0-0-0-0): size 84 (cls: StoreBannerInfoOnServer>Function>/Script/CoreUObject)
 	HitLocation (0-0-0-0): size 36 (cls: HitLocation>StructProperty>/Script/CoreUObject)
 	RebindToFloor (0-0-0-0): size 82 (cls: RebindToFloor>Function>/Script/CoreUObject)
 	ResetBannerState (0-0-0-0): size 56 (cls: ResetBannerState>Function>/Script/CoreUObject)
@@ -789,14 +779,10 @@ Serialized exports:
 	Hit (0-0-0-0): size 36 (cls: Hit>StructProperty>/Script/CoreUObject)
 	OnStop (0-0-0-0): size 68 (cls: OnStop>Function>/Script/CoreUObject)
 	FlashShield (0-0-0-0): size 54 (cls: FlashShield>Function>/Script/CoreUObject)
-	Loaded (0-0-0-0): size 36 (cls: Loaded>ObjectProperty>/Script/CoreUObject)
-	OnLoaded_192496DB41CC2100CC1C729DBDEE8D9B (0-0-0-0): size 68 (cls: OnLoaded_192496DB41CC2100CC1C729DBDEE8D9B>Function>/Script/CoreUObject)
-	Loaded (0-0-0-0): size 36 (cls: Loaded>ObjectProperty>/Script/CoreUObject)
-	OnLoaded_192496DB41CC2100CC1C729DCD8F22E3 (0-0-0-0): size 68 (cls: OnLoaded_192496DB41CC2100CC1C729DCD8F22E3>Function>/Script/CoreUObject)
-	Loaded (0-0-0-0): size 36 (cls: Loaded>ObjectProperty>/Script/CoreUObject)
-	OnLoaded_192496DB41CC2100CC1C729DEC257B95 (0-0-0-0): size 68 (cls: OnLoaded_192496DB41CC2100CC1C729DEC257B95>Function>/Script/CoreUObject)
-	Loaded (0-0-0-0): size 36 (cls: Loaded>ObjectProperty>/Script/CoreUObject)
-	OnLoaded_192496DB41CC2100CC1C729D9C44D4ED (0-0-0-0): size 68 (cls: OnLoaded_192496DB41CC2100CC1C729D9C44D4ED>Function>/Script/CoreUObject)
+	LoadedAsset (0-0-0-0): size 36 (cls: LoadedAsset>ObjectProperty>/Script/CoreUObject)
+	BannerAssetLoadComplete_41BACB904C480CAD4AB0EB8E88D819C9 (0-0-0-0): size 96 (cls: BannerAssetLoadComplete_41BACB904C480CAD4AB0EB8E88D819C9>Function>/Script/CoreUObject)
+	LoadedAsset (0-0-0-0): size 36 (cls: LoadedAsset>ObjectProperty>/Script/CoreUObject)
+	BannerAssetLoadComplete_41BACB904C480CAD4AB0EB8ED913EFC7 (0-0-0-0): size 96 (cls: BannerAssetLoadComplete_41BACB904C480CAD4AB0EB8ED913EFC7>Function>/Script/CoreUObject)
 	CallFunc_CreateDynamicMaterialInstance_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_CreateDynamicMaterialInstance_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	UserConstructionScript (0-0-0-0): size 103 (cls: UserConstructionScript>Function>/Script/CoreUObject)
 	OnRep_TeamMemberInfo (0-0-0-0): size 43 (cls: OnRep_TeamMemberInfo>Function>/Script/CoreUObject)
@@ -811,16 +797,14 @@ Serialized exports:
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasTag_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasTag_ReturnValue>BoolProperty>/Script/CoreUObject)
 	bHasShockwave (0-0-0-0): size 34 (cls: bHasShockwave>BoolProperty>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bBlockingHit (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bBlockingHit>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bBlockingHit1 (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bBlockingHit1>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bBlockingHit2 (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bBlockingHit2>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bInitialOverlap (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bInitialOverlap>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bInitialOverlap1 (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bInitialOverlap1>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bInitialOverlap2 (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bInitialOverlap2>BoolProperty>/Script/CoreUObject)
-	CallFunc_EqualEqual_StrStr_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_StrStr_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_EqualEqual_StrStr_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_StrStr_ReturnValue1>BoolProperty>/Script/CoreUObject)
-	CallFunc_EqualEqual_StrStr_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_StrStr_ReturnValue2>BoolProperty>/Script/CoreUObject)
-	CallFunc_EqualEqual_StrStr_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_StrStr_ReturnValue3>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasMatchingGameplayTag_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasMatchingGameplayTag_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -829,12 +813,18 @@ Serialized exports:
 	CallFunc_IsDedicatedServer_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue2>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue3>BoolProperty>/Script/CoreUObject)
 	CallFunc_K2_SetActorLocation_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_K2_SetActorLocation_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_K2_SetActorLocation_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_K2_SetActorLocation_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_K2_SetActorRotation_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_K2_SetActorRotation_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_LineTraceSingle_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LineTraceSingle_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_NotEqual_NameName_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_NotEqual_NameName_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_NotEqual_NameName_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_NotEqual_NameName_ReturnValue1>BoolProperty>/Script/CoreUObject)
+	CallFunc_NotEqual_NameName_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_NotEqual_NameName_ReturnValue2>BoolProperty>/Script/CoreUObject)
+	CallFunc_NotEqual_NameName_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_NotEqual_NameName_ReturnValue3>BoolProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Shockwave (0-0-0-0): size 34 (cls: K2Node_CustomEvent_Shockwave>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
@@ -844,25 +834,24 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess5 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess5>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess6 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess6>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess7 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess7>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess8 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess8>BoolProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_bSuccess9 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess9>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bSelfMoved (0-0-0-0): size 34 (cls: K2Node_Event_bSelfMoved>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Has_Been_Initd_Variable (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_IsClosed_Variable (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
 	IsFirstPlacement (0-0-0-0): size 34 (cls: IsFirstPlacement>BoolProperty>/Script/CoreUObject)
 	bSelfMoved (0-0-0-0): size 34 (cls: bSelfMoved>BoolProperty>/Script/CoreUObject)
+	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	TryStoreBannerInfo (0-0-0-0): size 693 (cls: TryStoreBannerInfo>Function>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	UpdatedBannerMeshMaterial (0-0-0-0): size 34 (cls: UpdatedBannerMeshMaterial>BoolProperty>/Script/CoreUObject)
-	CallFunc_MakeLiteralByte_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeLiteralByte_ReturnValue>ByteProperty>/Script/CoreUObject)
-	CallFunc_MakeLiteralByte_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_MakeLiteralByte_ReturnValue1>ByteProperty>/Script/CoreUObject)
 	CollisionCapsule0 (0-0-0-0): size 270 (cls: CollisionCapsule0>CapsuleComponent>/Script/Engine):
 		Tag array:
 			CapsuleHalfHeight(FloatProperty)=2 
 			CapsuleRadius(FloatProperty)=2 
-			ShapeColor(StructProperty)=System.Byte[] 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeRotation(StructProperty)=Rotator(0,0,90) 
+			ShapeColor(StructProperty/Color)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,90) 
 	K2Node_CustomEvent_InEffect (0-0-0-0): size 40 (cls: K2Node_CustomEvent_InEffect>ClassProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
@@ -872,8 +861,6 @@ Serialized exports:
 	K2Node_CreateDelegate_OutputDelegate5 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate5>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate6 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate6>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate7 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate7>DelegateProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate8 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate8>DelegateProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate9 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate9>DelegateProperty>/Script/CoreUObject)
 	CallFunc_Divide_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Divide_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_Multiply_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	CallFunc_Add_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
@@ -913,7 +900,7 @@ Serialized exports:
 	Wallbuff Duration (0-0-0-0): size 32 (cls: Wallbuff Duration>FloatProperty>/Script/CoreUObject)
 	FortMiniMap_GEN_VARIABLE (0-0-0-0): size 98 (cls: FortMiniMap_GEN_VARIABLE>FortMiniMapComponent>/Script/FortniteGame):
 		Tag array:
-			MiniMapData(StructProperty)=System.Byte[] 
+			MiniMapData(StructProperty/FortMiniMapData)=System.Byte[] 
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_FaceIndex (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_FaceIndex>IntProperty>/Script/CoreUObject)
@@ -926,6 +913,8 @@ Serialized exports:
 	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
 	MuzzleFlashCounter (0-0-0-0): size 32 (cls: MuzzleFlashCounter>IntProperty>/Script/CoreUObject)
 	RepairWaveCounter (0-0-0-0): size 32 (cls: RepairWaveCounter>IntProperty>/Script/CoreUObject)
+	BannerColorName (0-0-0-0): size 32 (cls: BannerColorName>NameProperty>/Script/CoreUObject)
+	BannerColorName (0-0-0-0): size 32 (cls: BannerColorName>NameProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitBoneName (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_HitBoneName>NameProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitBoneName1 (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_HitBoneName1>NameProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitBoneName2 (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_HitBoneName2>NameProperty>/Script/CoreUObject)
@@ -933,15 +922,26 @@ Serialized exports:
 	CallFunc_Conv_StringToName_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue1>NameProperty>/Script/CoreUObject)
 	CallFunc_Conv_StringToName_ReturnValue2 (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue2>NameProperty>/Script/CoreUObject)
 	CallFunc_Conv_StringToName_ReturnValue3 (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue3>NameProperty>/Script/CoreUObject)
-	CallFunc_Conv_StringToName_ReturnValue4 (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue4>NameProperty>/Script/CoreUObject)
-	CallFunc_Conv_StringToName_ReturnValue5 (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue5>NameProperty>/Script/CoreUObject)
-	CallFunc_Conv_StringToName_ReturnValue6 (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue6>NameProperty>/Script/CoreUObject)
-	CallFunc_Conv_StringToName_ReturnValue7 (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue7>NameProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_BannerColor (0-0-0-0): size 32 (cls: K2Node_CustomEvent_BannerColor>NameProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_BannerColorName (0-0-0-0): size 32 (cls: K2Node_CustomEvent_BannerColorName>NameProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_BannerColorName1 (0-0-0-0): size 32 (cls: K2Node_CustomEvent_BannerColorName1>NameProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_BannerIcon (0-0-0-0): size 32 (cls: K2Node_CustomEvent_BannerIcon>NameProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_BoneName (0-0-0-0): size 32 (cls: K2Node_CustomEvent_BoneName>NameProperty>/Script/CoreUObject)
+	Temp_name_Variable (0-0-0-0): size 32 (cls: Temp_name_Variable>NameProperty>/Script/CoreUObject)
+	Temp_name_Variable1 (0-0-0-0): size 32 (cls: Temp_name_Variable1>NameProperty>/Script/CoreUObject)
 	BoneName (0-0-0-0): size 32 (cls: BoneName>NameProperty>/Script/CoreUObject)
+	BannerIcon (0-0-0-0): size 32 (cls: BannerIcon>NameProperty>/Script/CoreUObject)
+	StoredBannerColorName (0-0-0-0): size 32 (cls: StoredBannerColorName>NameProperty>/Script/CoreUObject)
+	StoredBannerIconName (0-0-0-0): size 32 (cls: StoredBannerIconName>NameProperty>/Script/CoreUObject)
+	CallFunc_Conv_StringToName_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue>NameProperty>/Script/CoreUObject)
+	CallFunc_Conv_StringToName_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Conv_StringToName_ReturnValue1>NameProperty>/Script/CoreUObject)
 	Audio1 (0-0-0-0): size 36 (cls: Audio1>ObjectProperty>/Script/CoreUObject)
 	Banner MID (0-0-0-0): size 36 (cls: Banner MID>ObjectProperty>/Script/CoreUObject)
+	MIDRef (0-0-0-0): size 36 (cls: MIDRef>ObjectProperty>/Script/CoreUObject)
+	MIDRef (0-0-0-0): size 36 (cls: MIDRef>ObjectProperty>/Script/CoreUObject)
 	BannerPlantedAnimation (0-0-0-0): size 36 (cls: BannerPlantedAnimation>ObjectProperty>/Script/CoreUObject)
+	CallFunc_AsyncLoadBannerAsset_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_AsyncLoadBannerAsset_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_AsyncLoadBannerAsset_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_AsyncLoadBannerAsset_ReturnValue1>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitActor (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_HitActor>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitActor1 (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_HitActor1>ObjectProperty>/Script/CoreUObject)
@@ -967,10 +967,10 @@ Serialized exports:
 	K2Node_CustomEvent_FHitComponent (0-0-0-0): size 36 (cls: K2Node_CustomEvent_FHitComponent>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_HitActor (0-0-0-0): size 36 (cls: K2Node_CustomEvent_HitActor>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_InstigatedBy (0-0-0-0): size 36 (cls: K2Node_CustomEvent_InstigatedBy>ObjectProperty>/Script/CoreUObject)
-	K2Node_CustomEvent_Loaded (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Loaded>ObjectProperty>/Script/CoreUObject)
-	K2Node_CustomEvent_Loaded1 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Loaded1>ObjectProperty>/Script/CoreUObject)
-	K2Node_CustomEvent_Loaded2 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Loaded2>ObjectProperty>/Script/CoreUObject)
-	K2Node_CustomEvent_Loaded3 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Loaded3>ObjectProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_LoadedAsset (0-0-0-0): size 36 (cls: K2Node_CustomEvent_LoadedAsset>ObjectProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_LoadedAsset1 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_LoadedAsset1>ObjectProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_MIDRef (0-0-0-0): size 36 (cls: K2Node_CustomEvent_MIDRef>ObjectProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_MIDRef1 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_MIDRef1>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsBuilding_Actor (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsBuilding_Actor>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Pawn (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Pawn>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Pawn1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Pawn1>ObjectProperty>/Script/CoreUObject)
@@ -979,21 +979,13 @@ Serialized exports:
 	K2Node_DynamicCast_AsFort_Player_State1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_State1>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTexture_2D (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTexture_2D>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsTexture_2D1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTexture_2D1>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsTexture_2D2 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTexture_2D2>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsTexture_2D3 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsTexture_2D3>ObjectProperty>/Script/CoreUObject)
 	K2Node_Event_MyComp (0-0-0-0): size 36 (cls: K2Node_Event_MyComp>ObjectProperty>/Script/CoreUObject)
 	K2Node_Event_Other (0-0-0-0): size 36 (cls: K2Node_Event_Other>ObjectProperty>/Script/CoreUObject)
 	K2Node_Event_OtherComp (0-0-0-0): size 36 (cls: K2Node_Event_OtherComp>ObjectProperty>/Script/CoreUObject)
-	K2Node_Select1_Default (0-0-0-0): size 36 (cls: K2Node_Select1_Default>ObjectProperty>/Script/CoreUObject)
-	K2Node_Select_Default (0-0-0-0): size 36 (cls: K2Node_Select_Default>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable (0-0-0-0): size 36 (cls: Temp_object_Variable>ObjectProperty>/Script/CoreUObject)
-	Temp_object_Variable1 (0-0-0-0): size 36 (cls: Temp_object_Variable1>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable2 (0-0-0-0): size 36 (cls: Temp_object_Variable2>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable3 (0-0-0-0): size 36 (cls: Temp_object_Variable3>ObjectProperty>/Script/CoreUObject)
-	Temp_object_Variable5 (0-0-0-0): size 36 (cls: Temp_object_Variable5>ObjectProperty>/Script/CoreUObject)
-	Temp_object_Variable6 (0-0-0-0): size 36 (cls: Temp_object_Variable6>ObjectProperty>/Script/CoreUObject)
-	Temp_object_Variable7 (0-0-0-0): size 36 (cls: Temp_object_Variable7>ObjectProperty>/Script/CoreUObject)
-	Temp_object_Variable8 (0-0-0-0): size 36 (cls: Temp_object_Variable8>ObjectProperty>/Script/CoreUObject)
+	Temp_object_Variable4 (0-0-0-0): size 36 (cls: Temp_object_Variable4>ObjectProperty>/Script/CoreUObject)
 	ExplosionCue (0-0-0-0): size 36 (cls: ExplosionCue>ObjectProperty>/Script/CoreUObject)
 	FloorHitActor (0-0-0-0): size 36 (cls: FloorHitActor>ObjectProperty>/Script/CoreUObject)
 	FortMiniMap (0-0-0-0): size 36 (cls: FortMiniMap>ObjectProperty>/Script/CoreUObject)
@@ -1011,38 +1003,41 @@ Serialized exports:
 	OtherComp (0-0-0-0): size 36 (cls: OtherComp>ObjectProperty>/Script/CoreUObject)
 	SecondExplosionCue (0-0-0-0): size 36 (cls: SecondExplosionCue>ObjectProperty>/Script/CoreUObject)
 	SK_Banner (0-0-0-0): size 36 (cls: SK_Banner>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetInstigator_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetInstigator_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Pawn (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Pawn>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_State (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_State>ObjectProperty>/Script/CoreUObject)
 	P_Banner_Active_01_GEN_VARIABLE (0-0-0-0): size 211 (cls: P_Banner_Active_01_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Banner_Active_01=/Game/Gadgets/Assets/Banner/Effects/P_Banner_Active_01 
-			RelativeLocation(StructProperty)=Vector(0,0,-20) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-20) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	P_Banner_Rings_01_GEN_VARIABLE (0-0-0-0): size 211 (cls: P_Banner_Rings_01_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Banner_BubbleRings_01=/Game/Gadgets/Assets/Banner/Effects/P_Banner_BubbleRings_01 
-			RelativeRotation(StructProperty)=Rotator(0,-20,0) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-20,0) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	P_Banner_Shockwave6AFF1E78494CEC164B9A848379709671 (0-0-0-0): size 240 (cls: P_Banner_Shockwave6AFF1E78494CEC164B9A848379709671>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Commando_Shockwave_01=/Game/CharClasses/Soldier/Traits/AdvancedTactics/Abilities/Shockwave/P_Commando_Shockwave_01 
 			CustomTimeDilation(FloatProperty)=0.7 
-			RelativeLocation(StructProperty)=Vector(2.976421E-05,1.722574E-05,-10.40431) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(2.976421E-05,1.722574E-05,-10.40431) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	P_FlagGroundSymbol3981C79C43E96364A903238CA725D21A (0-0-0-0): size 358 (cls: P_FlagGroundSymbol3981C79C43E96364A903238CA725D21A>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_FlagGroundSymbol=/Game/Gadgets/Assets/Banner/Effects/P_FlagGroundSymbol 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,7E-06,18.54322) 
-			RelativeRotation(StructProperty)=Rotator(90,0,0) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,7E-06,18.54322) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(90,0,0) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	Placement FX_GEN_VARIABLE (0-0-0-0): size 211 (cls: Placement FX_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Banner_Placement_Impact=/Game/Gadgets/Assets/Banner/Effects/P_Banner_Placement_Impact 
-			RelativeLocation(StructProperty)=Vector(-1.32497,2.288818E-05,2.712258) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(-1.32497,2.288818E-05,2.712258) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	ProjectileComp0 (0-0-0-0): size 154 (cls: ProjectileComp0>ProjectileMovementComponent>/Script/Engine):
 		Tag array:
@@ -1056,77 +1051,77 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=FortMiniMapComponent=/Script/FortniteGame 
 			ComponentTemplate(ObjectProperty)=FortMiniMap_GEN_VARIABLE=B_Prj_Banner_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 1087000708-1106711891-19022988-1640848158 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 1087000708-1106711891-19022988-1640848158 
 			InternalVariableName(NameProperty)=FortMiniMap 
 	SCS_Node_1 (0-0-0-0): size 1188 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Placement FX_GEN_VARIABLE=B_Prj_Banner_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 586934827-1190832240-2474045600-3893869998 
+			VariableGuid(StructProperty/Guid)=Guid: 586934827-1190832240-2474045600-3893869998 
 			InternalVariableName(NameProperty)=Placement FX 
 	SCS_Node_101 (0-0-0-0): size 168 (cls: SCS_Node_101>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_88=B_Prj_Banner_C 
-			VariableGuid(StructProperty)=Guid: 1295648158-0-0-0 
+			VariableGuid(StructProperty/Guid)=Guid: 1295648158-0-0-0 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_11 (0-0-0-0): size 310 (cls: SCS_Node_11>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=AudioComponent_33=B_Prj_Banner_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 4188497119-0-0-0 
+			VariableGuid(StructProperty/Guid)=Guid: 4188497119-0-0-0 
 			InternalVariableName(NameProperty)=Audio1 
 	SCS_Node_2 (0-0-0-0): size 1287 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SkeletalMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SK_BannerC1979E0D4993146AED7430B9A28BE9D8=B_Prj_Banner_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2581687947-1286404959-2562426246-3060963966 
+			VariableGuid(StructProperty/Guid)=Guid: 2581687947-1286404959-2562426246-3060963966 
 			InternalVariableName(NameProperty)=SK_Banner 
 	SCS_Node_3 (0-0-0-0): size 1287 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Banner_Shockwave6AFF1E78494CEC164B9A848379709671=B_Prj_Banner_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1850286272-1227735942-366039483-440998339 
+			VariableGuid(StructProperty/Guid)=Guid: 1850286272-1227735942-366039483-440998339 
 			InternalVariableName(NameProperty)=P_Banner_Shockwave 
 	SCS_Node_4 (0-0-0-0): size 1485 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_FlagGroundSymbol3981C79C43E96364A903238CA725D21A=B_Prj_Banner_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2615806021-1138923615-3553431170-3121808151 
+			VariableGuid(StructProperty/Guid)=Guid: 2615806021-1138923615-3553431170-3121808151 
 			InternalVariableName(NameProperty)=P_FlagGroundSymbol 
 	SCS_Node_5 (0-0-0-0): size 990 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Banner_Active_01_GEN_VARIABLE=B_Prj_Banner_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1596038981-1186341487-3882373783-3345502201 
+			VariableGuid(StructProperty/Guid)=Guid: 1596038981-1186341487-3882373783-3345502201 
 			InternalVariableName(NameProperty)=P_Banner_Active_01 
 	SCS_Node_6 (0-0-0-0): size 990 (cls: SCS_Node_6>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Banner_Rings_01_GEN_VARIABLE=B_Prj_Banner_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 4052698110-1171881492-1208481-210171330 
+			VariableGuid(StructProperty/Guid)=Guid: 4052698110-1171881492-1208481-210171330 
 			InternalVariableName(NameProperty)=P_Banner_Rings_01 
 	SimpleConstructionScript_226 (0-0-0-0): size 179 (cls: SimpleConstructionScript_226>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -1138,17 +1133,16 @@ Serialized exports:
 			ClothingSimulationFactory(ObjectProperty)=ClothingSimulationFactoryNv=/Script/ClothingSystemRuntime 
 			SkeletalMesh(ObjectProperty)=SK_Banner=/Game/Gadgets/Assets/Banner/Mesh/SK_Banner 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeRotation(StructProperty)=Rotator(0,-90,0) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-90,0) 
 			bHiddenInGame(BoolProperty)=True 
 	CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue>SoftObjectProperty>/Script/CoreUObject)
 	CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue1>SoftObjectProperty>/Script/CoreUObject)
-	CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue2>SoftObjectProperty>/Script/CoreUObject)
-	CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue3 (0-0-0-0): size 36 (cls: CallFunc_GetBannerLargeIconAssetFromRowName_ReturnValue3>SoftObjectProperty>/Script/CoreUObject)
 	Banner Glow Color (0-0-0-0): size 36 (cls: Banner Glow Color>StructProperty>/Script/CoreUObject)
 	BannerAnimationCompletedTimerHandle (0-0-0-0): size 36 (cls: BannerAnimationCompletedTimerHandle>StructProperty>/Script/CoreUObject)
 	CallFunc_Conv_FloatToVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Conv_FloatToVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Conv_VectorToLinearColor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Conv_VectorToLinearColor_ReturnValue>StructProperty>/Script/CoreUObject)
+	CheckInstigatorValidHandle (0-0-0-0): size 36 (cls: CheckInstigatorValidHandle>StructProperty>/Script/CoreUObject)
 	DestroyedActorHit (0-0-0-0): size 36 (cls: DestroyedActorHit>StructProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_ImpactNormal (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_ImpactNormal>StructProperty>/Script/CoreUObject)
@@ -1171,16 +1165,10 @@ Serialized exports:
 	CallFunc_BreakHitResult_TraceStart2 (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_TraceStart2>StructProperty>/Script/CoreUObject)
 	CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue1>StructProperty>/Script/CoreUObject)
-	CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue2>StructProperty>/Script/CoreUObject)
-	CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue3 (0-0-0-0): size 36 (cls: CallFunc_GetBannerColorPrimaryColorFromRowName_ReturnValue3>StructProperty>/Script/CoreUObject)
 	CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue1>StructProperty>/Script/CoreUObject)
-	CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue2>StructProperty>/Script/CoreUObject)
-	CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue3 (0-0-0-0): size 36 (cls: CallFunc_GetBannerColorSecondaryColorFromRowName_ReturnValue3>StructProperty>/Script/CoreUObject)
 	CallFunc_GetHomeBaseInfoForPlayer_Result (0-0-0-0): size 36 (cls: CallFunc_GetHomeBaseInfoForPlayer_Result>StructProperty>/Script/CoreUObject)
 	CallFunc_GetHomeBaseInfoForPlayer_Result1 (0-0-0-0): size 36 (cls: CallFunc_GetHomeBaseInfoForPlayer_Result1>StructProperty>/Script/CoreUObject)
-	CallFunc_GetLoadoutForPlayer_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLoadoutForPlayer_ReturnValue>StructProperty>/Script/CoreUObject)
-	CallFunc_GetLoadoutForPlayer_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetLoadoutForPlayer_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_GetTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetTransform_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetUniqueID_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetUniqueID_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_GetUniqueID_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetUniqueID_ReturnValue1>StructProperty>/Script/CoreUObject)
@@ -1217,3 +1205,5 @@ Serialized exports:
 	NormalImpulse (0-0-0-0): size 36 (cls: NormalImpulse>StructProperty>/Script/CoreUObject)
 	SweepTimerHandle (0-0-0-0): size 36 (cls: SweepTimerHandle>StructProperty>/Script/CoreUObject)
 	TeamMemberInfo (0-0-0-0): size 36 (cls: TeamMemberInfo>StructProperty>/Script/CoreUObject)
+	CallFunc_GetHomeBaseInfoForPlayer_Result (0-0-0-0): size 36 (cls: CallFunc_GetHomeBaseInfoForPlayer_Result>StructProperty>/Script/CoreUObject)
+	CallFunc_GetUniqueID_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetUniqueID_ReturnValue>StructProperty>/Script/CoreUObject)

@@ -388,8 +388,8 @@ Name table:
 	/Game/Missions/SurvivorData/CommonSurvivorData.CommonSurvivorData
 	/Game/Packages/Fortress_SharedMaterials/Stencil_ID_Definitions/Stencil_ID_Definitions
 	/Game/Packages/Fortress_SharedMaterials/Stencil_ID_Definitions/Stencil_ID_Definitions.Stencil_ID_Definitions
-	/Game/Playgrounds/VendingMachineData/CreativeItems
-	/Game/Playgrounds/VendingMachineData/CreativeItems.CreativeItems
+	/Game/Playgrounds/VendingMachineData/CreativeItemDefList
+	/Game/Playgrounds/VendingMachineData/CreativeItemDefList.CreativeItemDefList
 	/Game/Quests/Achievements/Achievement_CraftFirstWeapon
 	/Game/Quests/Achievements/Achievement_CraftFirstWeapon.Achievement_CraftFirstWeapon
 	/Game/Quests/Achievements/Achievement_ProtectTheSurvivors
@@ -406,6 +406,8 @@ Name table:
 	/Game/Sounds/DefaultAppActivationSoundMixManager.DefaultAppActivationSoundMixManager_C
 	/Game/Sounds/Fort_GamePlay_Sounds/Loot/Collect_Loot
 	/Game/Sounds/Fort_GamePlay_Sounds/Loot/Collect_Loot.Collect_Loot
+	/Game/Sounds/Fort_GamePlay_Sounds/Missions/AFK_Warning_Alert_Cue
+	/Game/Sounds/Fort_GamePlay_Sounds/Missions/AFK_Warning_Alert_Cue.AFK_Warning_Alert_Cue
 	/Game/Sounds/Fort_Human_VO/RaY/Ray_FRND_FriendAccepted_Cue
 	/Game/Sounds/Fort_Human_VO/RaY/Ray_FRND_FriendAccepted_Cue.Ray_FRND_FriendAccepted_Cue
 	/Game/Sounds/Fort_Human_VO/RaY/Ray_FRND_FriendIncoming_Cue
@@ -466,6 +468,7 @@ Name table:
 	/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_X
 	/Game/UI/Foundation/Textures/Icons/XboxOneButtons/T_XB1_Y
 	/Game/UI/Foundation/Textures/Icons/XboxOneButtons/XB1_ControllerConfig
+	/Game/UI/Frontend/Campaign/Materials/M-UI-Event-Quest-Backing-Master
 	/Game/UI/Frontend/Expeditions/BP_FortExpeditionMasterWidget
 	/Game/UI/Frontend/Expeditions/BP_FortExpeditionMasterWidget.BP_FortExpeditionMasterWidget_C
 	/Game/UI/Frontend/QuestMap/QuestMap2/MainCampaignCosmetics
@@ -723,6 +726,7 @@ Name table:
 	EStatCategory::Combat
 	EStatCategory::Utility
 	EventCalloutDescription
+	EventCalloutImage
 	EventCalloutTitle
 	EventQuestMapData
 	Evolution
@@ -885,10 +889,12 @@ Name table:
 	LootTierDataTables
 	LowXpConningMsg
 	LowXpConningValue
+	M-UI-Event-Quest-Backing-Master
 	MainCampaignCosmetics
 	MainCampaignQuestMapData
 	ManualSurvivorSlottingQuestItemDefinition
 	Margin
+	Material
 	MaxActiveDailyQuests
 	MaxFoundations
 	MaxRerollsPerDay
@@ -945,6 +951,7 @@ Name table:
 	PlayerBuildingDeconCostMult_Stone
 	PlayerBuildingDeconCostMult_Wood
 	PlayerBuildingDeconCostMultHandles
+	PlayerIdleWarningSound
 	PlayerSpawnPadPlacementQuery
 	PlayerStatClampingData
 	PlaylistManagerClass
@@ -1100,18 +1107,18 @@ Name table:
 	XpPerAccountLevel
 	ZoneModifiersAnnouncementClass
 Serialized exports:
-	DefaultGameData (0-0-0-0): size 409961 (cls: DefaultGameData>FortGameData>/Script/FortniteGame):
+	DefaultGameData (0-0-0-0): size 410027 (cls: DefaultGameData>FortGameData>/Script/FortniteGame):
 		Tag array:
 			DefaultHeroName(TextProperty)=Ramirez (CC965FF64D98D8889089D5926FFE259C) 
 			PickupSplineOffsetRange(FloatProperty)=118 
 			PickupSplineOffsetRange(FloatProperty)=175 
 			PickupSplineRandomMax(FloatProperty)=1.05 
-			QuickBarDefinitions(StructProperty)=System.Byte[] 
-			QuickBarDefinitions(StructProperty)=System.Byte[] 
-			AutoEquipTagContainer(StructProperty)=GameplayTagContainer:Weapon,supplies.consumable.healing,trap.floor,trap.wall,trap.ceiling 
-			BuildingFullHealthFlashColor(StructProperty)=UE4.FLinearColor 
-			HighlightColors(StructProperty)=System.Byte[] 
-			HighlightColors(StructProperty)=System.Byte[] 
+			QuickBarDefinitions(StructProperty/QuickBarData)=System.Byte[] 
+			QuickBarDefinitions(StructProperty/QuickBarData)=System.Byte[] 
+			AutoEquipTagContainer(StructProperty/GameplayTagContainer)=GameplayTagContainer:Weapon,supplies.consumable.healing,trap.floor,trap.wall,trap.ceiling 
+			BuildingFullHealthFlashColor(StructProperty/LinearColor)=UE4.FLinearColor 
+			HighlightColors(StructProperty/FortHighlightColorsContainer)=System.Byte[] 
+			HighlightColors(StructProperty/FortHighlightColorsContainer)=System.Byte[] 
 			StatMappings(ArrayProperty)=[object] (inner: StructProperty)
 			ScoreDivisor(IntProperty)=1 
 			XPMult(IntProperty)=1 
@@ -1125,8 +1132,8 @@ Serialized exports:
 			IconKeyList(ArrayProperty)=[object] (inner: StructProperty)
 			IconKeyListPS4(ArrayProperty)=[object] (inner: StructProperty)
 			IconKeyListXboxOne(ArrayProperty)=[object] (inner: StructProperty)
-			CritRatingTable(StructProperty)=System.Byte[] 
-			ArmorToDamageResistanceTable(StructProperty)=System.Byte[] 
+			CritRatingTable(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			ArmorToDamageResistanceTable(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			LowXpConningValue(FloatProperty)=1.3 
 			VeryLowXpConningValue(FloatProperty)=0.99 
 			NoXpConningValue(FloatProperty)=0.39 
@@ -1135,25 +1142,26 @@ Serialized exports:
 			VeryLowXpConningMsg(TextProperty)=Earn Commander XP at a slower rate. (5ABFED70430CF7C2FA947DA6B6A8165E) 
 			NoXpConningMsg(TextProperty)=No Commander XP will be earned. (F2D4E37541F5926A6F709BBF4E41A608) 
 			QuestPackInfos(ArrayProperty)=[object] (inner: StructProperty)
-			OnboardingCompleteZoneObjective(StructProperty)=System.Byte[] 
-			DamageDoneTargetQuest_AllowedTags(StructProperty)=GameplayTagContainer:Homebase.Class,Building.Resource,NPC.CharacterType,Deimos.Spawner 
-			DamageDoneQuest_AllowedTags(StructProperty)=GameplayTagContainer:Weapon,Gameplay.Damage,Building.Resource,Gameplay.Action.Player.AthenaInVehicle,Item.Consumable.TNT 
-			ConditionalFoundationQuota(StructProperty)=System.Byte[] 
-			PowerPointToRatingConversion(StructProperty)=System.Byte[] 
-			CampaignQuestMapData(StructProperty)=System.Byte[] 
-			EventQuestMapData(StructProperty)=System.Byte[] 
+			OnboardingCompleteZoneObjective(StructProperty/DataTableRowHandle)=System.Byte[] 
+			DamageDoneTargetQuest_AllowedTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Homebase.Class,Building.Resource,NPC.CharacterType,Deimos.Spawner 
+			DamageDoneQuest_AllowedTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Weapon,Gameplay.Damage,Building.Resource,Gameplay.Action.Player.AthenaInVehicle,Item.Consumable.TNT 
+			ConditionalFoundationQuota(StructProperty/ConditionalFoundationQuota)=System.Byte[] 
+			PowerPointToRatingConversion(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			CampaignQuestMapData(StructProperty/FortQuestMapDataEntry)=System.Byte[] 
+			EventQuestMapData(StructProperty/FortEventQuestMapDataEntry)=System.Byte[] 
 			bUseSpecialEventsCamera(BoolProperty)=True 
 			HUDVisibilityGameplayTags(ArrayProperty)=[object] (inner: StructProperty)
-			GameDifficultyRowPIE(StructProperty)=System.Byte[] 
+			GameDifficultyRowPIE(StructProperty/DataTableRowHandle)=System.Byte[] 
 			AlternateBalanceAIDirectorIndex(IntProperty)=1 
 			DefaultInventoryList(ArrayProperty)=[object] (inner: StructProperty)
 			FastLoadDefaultInventoryList(ArrayProperty)=[object] (inner: StructProperty)
 			SquadMemberStatBonusMultiplier(FloatProperty)=0.2 
-			FriendFeedbackSounds(StructProperty)=System.Byte[] 
-			FriendFeedbackSounds(StructProperty)=System.Byte[] 
-			FriendFeedbackSounds(StructProperty)=System.Byte[] 
+			FriendFeedbackSounds(StructProperty/UISoundFeedback)=System.Byte[] 
+			FriendFeedbackSounds(StructProperty/UISoundFeedback)=System.Byte[] 
+			FriendFeedbackSounds(StructProperty/UISoundFeedback)=System.Byte[] 
+			PlayerIdleWarningSound(SoftObjectProperty)=/Game/Sounds/Fort_GamePlay_Sounds/Missions/AFK_Warning_Alert_Cue.AFK_Warning_Alert_Cue 
 			DailyMissionAlertQuota(IntProperty)=3 
-			OnlineAccountTexts(StructProperty)=System.Byte[] 
+			OnlineAccountTexts(StructProperty/OnlineAccountTexts)=System.Byte[] 
 			ServerOnlyAssetTypes(ArrayProperty)=CollectionBookPage,HomebaseNode (inner: NameProperty)
 			LoadingConfig(SoftObjectProperty)=/Game/Balance/Loading/DefaultLoadingConfig.DefaultLoadingConfig 
 			GameModeAthenaClass(SoftObjectProperty)=/Game/Athena/Athena_GameMode.Athena_GameMode_C 
@@ -1188,62 +1196,62 @@ Serialized exports:
 			BaseSoundMix(SoftObjectProperty)=/Game/Sounds/FortSoundClassesAndModes/Fort_Default_Mix.Fort_Default_Mix 
 			AbilityTargetingActorBlueprintClass(SoftObjectProperty)=/Game/Abilities/B_FortGlobalAbilityTargetingActor.B_FortGlobalAbilityTargetingActor_C 
 			HarvestingTools(ArrayProperty)=[object] (inner: SoftObjectProperty)
-			SubGameInfo(StructProperty)=System.Byte[] 
-			SubGameInfo(StructProperty)=System.Byte[] 
-			DefaultPlayerSpawnPadPlacementData(StructProperty)=System.Byte[] 
+			SubGameInfo(StructProperty/SubGameInfo)=System.Byte[] 
+			SubGameInfo(StructProperty/SubGameInfo)=System.Byte[] 
+			DefaultPlayerSpawnPadPlacementData(StructProperty/FortPlayerSpawnPadPlacementData)=System.Byte[] 
 			DefaultBackpackCharacterPart(SoftObjectProperty)=/Game/Characters/CharacterParts/Backpacks/NoBackpack.NoBackpack 
 			DefaultCharacterParts(ArrayProperty)=[object] (inner: SoftObjectProperty)
 			DefaultCharacterPartOverridesPerPawnClass(ArrayProperty)=[object] (inner: StructProperty)
 			AIGoalManagerClass(SoftObjectProperty)=/Game/AI/GoalSelection/AIGoalManager.AIGoalManager_C 
 			SharedMissionListsClass(SoftObjectProperty)=/Game/Missions/SharedMissionLists.SharedMissionLists_C 
-			BuildingExcessDamageRewardTimeoutHandle(StructProperty)=System.Byte[] 
-			BuildingCostHandles(StructProperty)=System.Byte[] 
-			BuildingCostHandles(StructProperty)=System.Byte[] 
-			BuildingCostHandles(StructProperty)=System.Byte[] 
-			BuildingCostHandles(StructProperty)=System.Byte[] 
-			BuildingDeconCostMultHandles(StructProperty)=System.Byte[] 
-			BuildingDeconCostMultHandles(StructProperty)=System.Byte[] 
-			BuildingDeconCostMultHandles(StructProperty)=System.Byte[] 
-			BuildingDeconCostMultHandles(StructProperty)=System.Byte[] 
-			PlayerBuildingDeconCostMultHandles(StructProperty)=System.Byte[] 
-			PlayerBuildingDeconCostMultHandles(StructProperty)=System.Byte[] 
-			PlayerBuildingDeconCostMultHandles(StructProperty)=System.Byte[] 
-			PlayerBuildingDeconCostMultHandles(StructProperty)=System.Byte[] 
-			BuildingInitialHealthPercentHandles(StructProperty)=System.Byte[] 
-			BuildingInitialHealthPercentHandles(StructProperty)=System.Byte[] 
-			BuildingInitialHealthPercentHandles(StructProperty)=System.Byte[] 
-			BuildingInitialHealthPercentHandles(StructProperty)=System.Byte[] 
-			AthenaBuildingInitialHealthPercentHandles(StructProperty)=System.Byte[] 
-			AthenaBuildingInitialHealthPercentHandles(StructProperty)=System.Byte[] 
-			AthenaBuildingInitialHealthPercentHandles(StructProperty)=System.Byte[] 
-			AthenaBuildingDropPercentHandles(StructProperty)=System.Byte[] 
-			AthenaBuildingDropPercentHandles(StructProperty)=System.Byte[] 
-			AthenaBuildingDropPercentHandles(StructProperty)=System.Byte[] 
-			BuildingRepairCostMultiplierHandles(StructProperty)=System.Byte[] 
-			BuildingRepairCostMultiplierHandles(StructProperty)=System.Byte[] 
-			BuildingRepairCostMultiplierHandles(StructProperty)=System.Byte[] 
-			BuildingRepairCostMultiplierHandles(StructProperty)=System.Byte[] 
+			BuildingExcessDamageRewardTimeoutHandle(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCostHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCostHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCostHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCostHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingDeconCostMultHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingDeconCostMultHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingDeconCostMultHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingDeconCostMultHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			PlayerBuildingDeconCostMultHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			PlayerBuildingDeconCostMultHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			PlayerBuildingDeconCostMultHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			PlayerBuildingDeconCostMultHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingInitialHealthPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingInitialHealthPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingInitialHealthPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingInitialHealthPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			AthenaBuildingInitialHealthPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			AthenaBuildingInitialHealthPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			AthenaBuildingInitialHealthPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			AthenaBuildingDropPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			AthenaBuildingDropPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			AthenaBuildingDropPercentHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingRepairCostMultiplierHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingRepairCostMultiplierHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingRepairCostMultiplierHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingRepairCostMultiplierHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			FORTAttributeToPowerMultiplier(FloatProperty)=4 
-			BuildingBreakAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingBreakAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingBreakAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingBreakAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingDestroyAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingDestroyAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingDestroyAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingDestroyAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingPlacementAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingPlacementAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingPlacementAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingPlacementAnimDurationHandles(StructProperty)=System.Byte[] 
-			BuildingCritDamagePctHandles(StructProperty)=System.Byte[] 
-			BuildingCritDamagePctHandles(StructProperty)=System.Byte[] 
-			BuildingCritDamagePctHandles(StructProperty)=System.Byte[] 
-			BuildingCritDamagePctHandles(StructProperty)=System.Byte[] 
-			BuildingCritDestroyAnimScaleCapHandles(StructProperty)=System.Byte[] 
-			BuildingCritDestroyAnimScaleCapHandles(StructProperty)=System.Byte[] 
-			BuildingCritDestroyAnimScaleCapHandles(StructProperty)=System.Byte[] 
-			BuildingCritDestroyAnimScaleCapHandles(StructProperty)=System.Byte[] 
+			BuildingBreakAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingBreakAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingBreakAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingBreakAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingDestroyAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingDestroyAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingDestroyAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingDestroyAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingPlacementAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingPlacementAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingPlacementAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingPlacementAnimDurationHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCritDamagePctHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCritDamagePctHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCritDamagePctHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCritDamagePctHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCritDestroyAnimScaleCapHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCritDestroyAnimScaleCapHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCritDestroyAnimScaleCapHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			BuildingCritDestroyAnimScaleCapHandles(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			StencilDefinitionCollection(SoftObjectProperty)=/Game/Packages/Fortress_SharedMaterials/Stencil_ID_Definitions/Stencil_ID_Definitions.Stencil_ID_Definitions 
 			BuildingAudioBank(SoftObjectProperty)=/Game/Sounds/Banks/DefaultBuildingAudioBank.DefaultBuildingAudioBank 
 			StoneItemDefinition(SoftObjectProperty)=/Game/Items/ResourcePickups/StoneItemData.StoneItemData 
@@ -1284,7 +1292,7 @@ Serialized exports:
 			ModifierSetData(SoftObjectProperty)=/Game/Balance/DataTables/TieredModifierSets.TieredModifierSets 
 			WaveSetCollectionLootData(SoftObjectProperty)=/Game/Balance/DataTables/TieredLootSets.TieredLootSets 
 			PlayerStatClampingData(SoftObjectProperty)=/Game/Balance/DataTables/CombatStatClampsPerTheater.CombatStatClampsPerTheater 
-			NonGameplayRelevantTags(StructProperty)=GameplayTagContainer:Evolution,Unlocks.Neighborhood,Unlocks.DirectedAcquisition,Unlocks.Class,Unlocks.Recycler,Unlocks.Horde,Expedition,ExpeditionSquadFive,ExpeditionSquadFour,ExpeditionSquadOne,ExpeditionSquadSix,ExpeditionSquadThree,ExpeditionSquadTwo,Unlocks.CollectionBook,Unlocks.Expeditions 
+			NonGameplayRelevantTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Evolution,Unlocks.Neighborhood,Unlocks.DirectedAcquisition,Unlocks.Class,Unlocks.Recycler,Unlocks.Horde,Expedition,ExpeditionSquadFive,ExpeditionSquadFour,ExpeditionSquadOne,ExpeditionSquadSix,ExpeditionSquadThree,ExpeditionSquadTwo,Unlocks.CollectionBook,Unlocks.Expeditions 
 			CraftingTimeTable(SoftObjectProperty)=/Game/Items/Datatables/CraftTime.CraftTime 
 			DefaultCraftingSuccessSound(SoftObjectProperty)=/Game/Sounds/Fort_GamePlay_Sounds/Loot/Collect_Loot.Collect_Loot 
 			TeamStatsGameplayEffect(SoftObjectProperty)=/Game/Abilities/CommandConsole/CCTeamStatsGameplayEffect.CCTeamStatsGameplayEffect_C 
@@ -1469,4 +1477,4 @@ Serialized exports:
 			BannerColorCategoryData(SoftObjectProperty)=/Game/Banners/BannerColorCategories.BannerColorCategories 
 			BannerColorMap(SoftObjectProperty)=/Game/Banners/BannerColorMap.BannerColorMap 
 			BannerIconItemDefinition(SoftObjectProperty)=/Game/Items/BannerIcons/BID_DefaultBannerIcon.BID_DefaultBannerIcon 
-			CreativeInventoryTable(SoftObjectProperty)=/Game/Playgrounds/VendingMachineData/CreativeItems.CreativeItems 
+			CreativeInventoryTable(SoftObjectProperty)=/Game/Playgrounds/VendingMachineData/CreativeItemDefList.CreativeItemDefList 

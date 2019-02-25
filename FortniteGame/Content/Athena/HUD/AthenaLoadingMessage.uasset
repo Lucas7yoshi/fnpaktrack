@@ -2,6 +2,7 @@ Name table:
 	/Game/Athena/HUD/AthenaLoadingMessage
 	/Game/Athena/HUD/AthenaLoadingMessage.WidgetArchetype
 	/Game/Sounds/Fort_GamePlay_Sounds/Player/RiftPortal/RiftPortal_Creative_Teleport_Relocate_Cue
+	/Game/Sounds/FortSoundClassesAndModes/Fort_RespawnTimer_MixMod
 	/Game/UI/Foundation/Fonts/Burbank
 	/Game/UI/Foundation/Materials/Throbber_Material-Monochrome
 	/Script/CoreUObject
@@ -17,14 +18,19 @@ Name table:
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
 	bIsVariable
+	BooleanAND
 	BoolProperty
 	bOverride_HeightOverride
 	Brush
+	bSoundMixIsPushed
 	Burbank
 	Burbank-Black
 	bValidTemplate
 	ByteProperty
+	CallFunc_BooleanAND_ReturnValue
 	CallFunc_Conv_TextToString_ReturnValue
+	CallFunc_Conv_TextToString_ReturnValue1
+	CallFunc_EqualEqual_StrStr_ReturnValue
 	CallFunc_GetOwningPlayer_ReturnValue
 	CallFunc_NotEqual_StrStr_ReturnValue
 	Class
@@ -60,6 +66,7 @@ Name table:
 	Engine
 	EntryPoint
 	EnumProperty
+	EqualEqual_StrStr
 	ESlateVisibility
 	ESlateVisibility::Collapsed
 	ESlateVisibility::SelfHitTestInvisible
@@ -69,6 +76,7 @@ Name table:
 	Font
 	FontObject
 	FontOutlineSettings
+	Fort_RespawnTimer_MixMod
 	FortHUDElementWidget
 	FortPlayerControllerAthena
 	Function
@@ -93,10 +101,12 @@ Name table:
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena1
 	K2Node_DynamicCast_bSuccess
 	K2Node_DynamicCast_bSuccess1
+	KismetMathLibrary
 	KismetStringLibrary
 	KismetTextLibrary
 	LinearColor
 	LoadingBox
+	LocalEnabled
 	Margin
 	Material
 	MulticastDelegateProperty
@@ -115,8 +125,11 @@ Name table:
 	PlayerController
 	PlaySound2D
 	PointerToUberGraphFrame
+	PopSoundMixModifier
+	PushSoundMixModifier
 	RelocatingTextBlock
 	ResourceObject
+	RespawnSoundMix
 	RiftPortal_Creative_Teleport_Relocate_Cue
 	Right
 	RootWidget
@@ -135,6 +148,7 @@ Name table:
 	SoftObjectProperty
 	SoundBase
 	SoundCue
+	SoundMix
 	StrProperty
 	StructProperty
 	TemplateAsset
@@ -155,17 +169,18 @@ Name table:
 	WidgetTree
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	AthenaLoadingMessage_C (0-0-0-0): size 303 (cls: AthenaLoadingMessage_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	AthenaLoadingMessage_C (0-0-0-0): size 311 (cls: AthenaLoadingMessage_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
 			bValidTemplate(BoolProperty)=True 
 			TemplateAsset(SoftObjectProperty)=/Game/Athena/HUD/AthenaLoadingMessage.WidgetArchetype 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_AthenaLoadingMessage=AthenaLoadingMessage_C 
-	Default__AthenaLoadingMessage_C (0-0-0-0): size 146 (cls: Default__AthenaLoadingMessage_C>AthenaLoadingMessage_C):
+	Default__AthenaLoadingMessage_C (0-0-0-0): size 175 (cls: Default__AthenaLoadingMessage_C>AthenaLoadingMessage_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			CreativeRiftTeleport_Sound(ObjectProperty)=RiftPortal_Creative_Teleport_Relocate_Cue=/Game/Sounds/Fort_GamePlay_Sounds/Player/RiftPortal/RiftPortal_Creative_Teleport_Relocate_Cue 
+			RespawnSoundMix(ObjectProperty)=Fort_RespawnTimer_MixMod=/Game/Sounds/FortSoundClassesAndModes/Fort_RespawnTimer_MixMod 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	WidgetArchetype (0-0-0-0): size 125 (cls: WidgetArchetype>AthenaLoadingMessage_C):
@@ -174,6 +189,7 @@ Serialized exports:
 			RelocatingTextBlock(ObjectProperty)=RelocatingTextBlock=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
+	bSoundMixIsPushed (0-0-0-0): size 34 (cls: bSoundMixIsPushed>BoolProperty>/Script/CoreUObject)
 	LoadingBox (0-0-0-0): size 36 (cls: LoadingBox>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
 	ExecuteUbergraph_AthenaLoadingMessage (0-0-0-0): size 288 (cls: ExecuteUbergraph_AthenaLoadingMessage>Function>/Script/CoreUObject)
@@ -181,9 +197,12 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	Destruct (0-0-0-0): size 54 (cls: Destruct>Function>/Script/CoreUObject)
 	Construct (0-0-0-0): size 54 (cls: Construct>Function>/Script/CoreUObject)
-	HandleLoadingScreenChanged (0-0-0-0): size 286 (cls: HandleLoadingScreenChanged>Function>/Script/CoreUObject)
+	HandleLoadingScreenChanged (0-0-0-0): size 500 (cls: HandleLoadingScreenChanged>Function>/Script/CoreUObject)
 	bEnabled (0-0-0-0): size 34 (cls: bEnabled>BoolProperty>/Script/CoreUObject)
+	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_EqualEqual_StrStr_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_StrStr_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_NotEqual_StrStr_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_NotEqual_StrStr_ReturnValue>BoolProperty>/Script/CoreUObject)
+	LocalEnabled (0-0-0-0): size 34 (cls: LocalEnabled>BoolProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
@@ -201,7 +220,7 @@ Serialized exports:
 			Content(ObjectProperty)=RelocatingTextBlock=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
@@ -213,7 +232,7 @@ Serialized exports:
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
 	ImageSpinner (0-0-0-0): size 251 (cls: ImageSpinner>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
@@ -222,6 +241,7 @@ Serialized exports:
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller_Athena>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller_Athena1>ObjectProperty>/Script/CoreUObject)
 	RelocatingTextBlock (0-0-0-0): size 36 (cls: RelocatingTextBlock>ObjectProperty>/Script/CoreUObject)
+	RespawnSoundMix (0-0-0-0): size 36 (cls: RespawnSoundMix>ObjectProperty>/Script/CoreUObject)
 	SizeBox_0 (0-0-0-0): size 137 (cls: SizeBox_0>SizeBox>/Script/UMG):
 		Tag array:
 			bOverride_HeightOverride(BoolProperty)=True 
@@ -233,12 +253,13 @@ Serialized exports:
 			Parent(ObjectProperty)=SizeBox_0=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 	CallFunc_Conv_TextToString_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_TextToString_ReturnValue>StrProperty>/Script/CoreUObject)
+	CallFunc_Conv_TextToString_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Conv_TextToString_ReturnValue1>StrProperty>/Script/CoreUObject)
 	RelocatingTextBlock (0-0-0-0): size 618 (cls: RelocatingTextBlock>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=Relocating... (8033825545F7E4C35912A9AEC1B6209F) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(3,3) 
-			ShadowColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(3,3) 
+			ShadowColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 

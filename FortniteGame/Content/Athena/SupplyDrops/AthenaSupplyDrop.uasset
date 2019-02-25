@@ -60,6 +60,7 @@ Name table:
 	BarrelGlowR_GEN_VARIABLE
 	bAutoManageAttachment
 	bCanBeDamaged
+	BeginDeferredActorSpawnFromClass
 	BeginFallAudioTimeline
 	bGenerateOverlapEvents
 	bGroundLocationInitialized
@@ -102,6 +103,7 @@ Name table:
 	CallFunc_Add_VectorVector_ReturnValue1
 	CallFunc_Array_Get_Item
 	CallFunc_Array_Length_ReturnValue
+	CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue
 	CallFunc_BooleanAND_ReturnValue
 	CallFunc_BooleanOR_ReturnValue
 	CallFunc_BreakHitResult_bBlockingHit
@@ -139,6 +141,7 @@ Name table:
 	CallFunc_EvaluateCurveTableRow_OutXY1
 	CallFunc_EvaluateCurveTableRow_ReturnValue
 	CallFunc_EvaluateCurveTableRow_ReturnValue1
+	CallFunc_FinishSpawningActor_ReturnValue
 	CallFunc_GetController_ReturnValue
 	CallFunc_GetLootLevel_ReturnValue
 	CallFunc_GetLootSpawnLocation_LootSpawnLocation
@@ -173,6 +176,7 @@ Name table:
 	CallFunc_K2_TeleportTo_ReturnValue
 	CallFunc_K2_TeleportTo_ReturnValue1
 	CallFunc_Less_IntInt_ReturnValue
+	CallFunc_MakeTransform_ReturnValue
 	CallFunc_MakeVector_ReturnValue
 	CallFunc_MakeVector_ReturnValue1
 	CallFunc_Multiply_FloatFloat_ReturnValue
@@ -209,6 +213,7 @@ Name table:
 	ChildActorTemplate
 	ChildNodes
 	Class
+	ClassProperty
 	CollisionEnabled
 	CollisionProfileName
 	CollisionResponse
@@ -247,6 +252,7 @@ Name table:
 	Default__BoolProperty
 	Default__BoxComponent
 	Default__ChildActorComponent
+	Default__ClassProperty
 	Default__ComponentDelegateBinding
 	Default__DelegateProperty
 	Default__FloatProperty
@@ -321,6 +327,7 @@ Name table:
 	FCC_Trace_WeaponMulti
 	FCC_Trace_World
 	FHitComponent
+	FinishSpawningActor
 	FlareAudio
 	FlareAudio_GEN_VARIABLE
 	FlarePSC
@@ -339,6 +346,7 @@ Name table:
 	Fort_SupplyDrop_Reticle_Loop_Athena_Cue
 	Fort_SupplyDrop_Wave_Appear_Athena_Cue
 	FortAthenaSupplyDrop
+	FortAthenaVehicle
 	FortAttributeInitializationKey
 	FortDamageSet
 	FortHealthBar_GEN_VARIABLE
@@ -458,6 +466,7 @@ Name table:
 	LootTableNameToUse
 	MagazineGlowL_GEN_VARIABLE
 	MagazineGlowR_GEN_VARIABLE
+	MakeTransform
 	MakeVector
 	MaxSpeed
 	MinSpeed
@@ -515,6 +524,7 @@ Name table:
 	ParticleSystem
 	ParticleSystemComponent
 	Pawn
+	PawnCollision_GEN_VARIABLE
 	PhysicalMaterial
 	PhysicsBody
 	PickLootDrops
@@ -589,6 +599,7 @@ Name table:
 	SpawnPickup
 	SpawnSoundAtLocation
 	SpawnSoundAttached
+	SpawnVehicle
 	SpectatorMapIcon
 	SpectatorMapIndicatorBrush
 	StaticGameplayTags
@@ -613,7 +624,6 @@ Name table:
 	TimerHandle
 	TraceDistance
 	Transform
-	TurretCollision_GEN_VARIABLE
 	UberGraphFrame
 	UberGraphFunction
 	UInt64Property
@@ -622,6 +632,7 @@ Name table:
 	VariableGuid
 	Vector
 	Vector2D
+	VehicleType
 	Velocity
 	VertSnapGridSize
 	Visibility
@@ -631,7 +642,7 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	AthenaSupplyDrop_C (0-0-0-0): size 926 (cls: AthenaSupplyDrop_C>BlueprintGeneratedClass>/Script/Engine):
+	AthenaSupplyDrop_C (0-0-0-0): size 946 (cls: AthenaSupplyDrop_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=5 
 			bHasCookedComponentInstancingData(BoolProperty)=True 
@@ -640,9 +651,9 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_AthenaSupplyDrop=AthenaSupplyDrop_C 
 	Default__AthenaSupplyDrop_C (0-0-0-0): size 2057 (cls: Default__AthenaSupplyDrop_C>AthenaSupplyDrop_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			LootTableName(NameProperty)=Loot_AthenaSupplyDrop 
-			LootSpawnOffset(StructProperty)=Vector(0,0,40) 
+			LootSpawnOffset(StructProperty/Vector)=Vector(0,0,40) 
 			Sound_Looted(ObjectProperty)=Fort_SupplyDrop_Open_Athena_Cue=/Game/Athena/Sounds/SupplyDrops/Fort_SupplyDrop_Open_Athena_Cue 
 			Sound_Destroyed(ObjectProperty)=Fort_SupplyDrop_Open_Athena_Cue=/Game/Athena/Sounds/SupplyDrops/Fort_SupplyDrop_Open_Athena_Cue 
 			Sound_Landing(ObjectProperty)=Fort_SupplyDrop_Land_Athena_Cue=/Game/Athena/Sounds/SupplyDrops/Fort_SupplyDrop_Land_Athena_Cue 
@@ -652,29 +663,29 @@ Serialized exports:
 			FallSpeed(FloatProperty)=-40 
 			ReticleUpdateInterval(FloatProperty)=1 
 			InitialFallDelay(FloatProperty)=0.5 
-			CurveTable_FallTime(StructProperty)=System.Byte[] 
+			CurveTable_FallTime(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			FallTrailFX(ObjectProperty)=P_SupplyDrop_Trail=/Game/Gadgets/Assets/SupplyDrop/Effects/P_SupplyDrop_Trail 
 			Sound_Appear(ObjectProperty)=Fort_SupplyDrop_Appear_Athena_Cue=/Game/Athena/Sounds/SupplyDrops/Fort_SupplyDrop_Appear_Athena_Cue 
 			Sound_AlmostLanded(ObjectProperty)=Fort_SupplyDrop_LastSecond_Athena_Cue=/Game/Athena/Sounds/SupplyDrops/Fort_SupplyDrop_LastSecond_Athena_Cue 
-			LandingLocation(StructProperty)=Vector(0,0,0) 
-			MinSpeed(StructProperty)=System.Byte[] 
-			MaxSpeed(StructProperty)=System.Byte[] 
+			LandingLocation(StructProperty/Vector)=Vector(0,0,0) 
+			MinSpeed(StructProperty/CurveTableRowHandle)=System.Byte[] 
+			MaxSpeed(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			FallHeight(FloatProperty)=80000 
-			FallDirection(StructProperty)=Vector(0,0,0) 
-			GroundLocation(StructProperty)=Vector(0,0,0) 
-			OverrideRotation(StructProperty)=Rotator(0,0,0) 
-			NewVar_0(StructProperty)=System.Byte[] 
+			FallDirection(StructProperty/Vector)=Vector(0,0,0) 
+			GroundLocation(StructProperty/Vector)=Vector(0,0,0) 
+			OverrideRotation(StructProperty/Rotator)=Rotator(0,0,0) 
+			NewVar_0(StructProperty/TimerHandle)=System.Byte[] 
 			WaveSpawnSoundCue(ObjectProperty)=Fort_SupplyDrop_Wave_Appear_Athena_Cue=/Game/Athena/Sounds/SupplyDrops/Fort_SupplyDrop_Wave_Appear_Athena_Cue 
 			SpawnOffsetZ(FloatProperty)=87 
 			SearchingSoundCueLoop(ObjectProperty)=Tiered_Chest_Search_cue=/Game/Sounds/Foley_Loot/Containers/Treasure_Chest/Tiered_Chest_Search_cue 
 			SpectatorMapIcon(ObjectProperty)=FortSpectateClickableMapIcon=Default__AthenaSupplyDrop_C 
 			InteractionText(TextProperty)=Search (0951AC4C43CB8D30DC8FF692266CD55E) 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
 			PrimarySurfaceType(ByteProperty)=SurfaceType1 
 			bIsMovable(BoolProperty)=True 
-			StaticGameplayTags(StructProperty)=GameplayTagContainer:Building.Type.Container.SupplyDrop 
-			InteractionSpeed(StructProperty)=System.Byte[] 
+			StaticGameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Building.Type.Container.SupplyDrop 
+			InteractionSpeed(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			SnapGridSize(FloatProperty)=0 
 			VertSnapGridSize(FloatProperty)=0 
 			bReplicateMovement(BoolProperty)=True 
@@ -702,7 +713,7 @@ Serialized exports:
 	InteractingPawn (0-0-0-0): size 36 (cls: InteractingPawn>ObjectProperty>/Script/CoreUObject)
 	BlueprintCanInteract (0-0-0-0): size 152 (cls: BlueprintCanInteract>Function>/Script/CoreUObject)
 	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
-	SpawnLoot (0-0-0-0): size 711 (cls: SpawnLoot>Function>/Script/CoreUObject)
+	SpawnLoot (0-0-0-0): size 721 (cls: SpawnLoot>Function>/Script/CoreUObject)
 	LootSpawnLocation (0-0-0-0): size 36 (cls: LootSpawnLocation>StructProperty>/Script/CoreUObject)
 	GetLootSpawnLocation (0-0-0-0): size 236 (cls: GetLootSpawnLocation>Function>/Script/CoreUObject)
 	InteractingPawn (0-0-0-0): size 36 (cls: InteractingPawn>ObjectProperty>/Script/CoreUObject)
@@ -745,14 +756,14 @@ Serialized exports:
 	ChildActor_GEN_VARIABLE_AthenaSupplyDropBalloon_C_CAT (0-0-0-0): size 164 (cls: ChildActor_GEN_VARIABLE_AthenaSupplyDropBalloon_C_CAT>AthenaSupplyDropBalloon_C>/Game/Athena/SupplyDrops/AthenaSupplyDropBalloon):
 		Tag array:
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=AthenaSupplyDrop_C 
-			MyGuid(StructProperty)=Guid: 3394004858-1339835980-1821441928-3765803820 
+			MyGuid(StructProperty/Guid)=Guid: 3394004858-1339835980-1821441928-3765803820 
 			DataVersion(IntProperty)=1 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=AthenaSupplyDrop_C 
 	FallingAudio_GEN_VARIABLE (0-0-0-0): size 128 (cls: FallingAudio_GEN_VARIABLE>AudioComponent>/Script/Engine):
 		Tag array:
 			Sound(ObjectProperty)=Fort_SupplyDrop_Falling_Loop_Athena_Cue=/Game/Athena/Sounds/SupplyDrops/Fort_SupplyDrop_Falling_Loop_Athena_Cue 
 			bAutoManageAttachment(BoolProperty)=True 
-			RelativeLocation(StructProperty)=Vector(0,0,112) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,112) 
 	FlareAudio_GEN_VARIABLE (0-0-0-0): size 67 (cls: FlareAudio_GEN_VARIABLE>AudioComponent>/Script/Engine):
 		Tag array:
 			Sound(ObjectProperty)=Fort_SupplyDrop_Flare_Loop_Athena_Cue=/Game/Athena/Sounds/SupplyDrops/Fort_SupplyDrop_Flare_Loop_Athena_Cue 
@@ -819,6 +830,9 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Has_Been_Initd_Variable (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_IsClosed_Variable (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable>BoolProperty>/Script/CoreUObject)
+	SpawnVehicle (0-0-0-0): size 326 (cls: SpawnVehicle>Function>/Script/CoreUObject)
+	Temp_bool_Has_Been_Initd_Variable (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable>BoolProperty>/Script/CoreUObject)
+	Temp_bool_IsClosed_Variable (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bBlockingHit (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bBlockingHit>BoolProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_bInitialOverlap (0-0-0-0): size 34 (cls: CallFunc_BreakHitResult_bInitialOverlap>BoolProperty>/Script/CoreUObject)
@@ -830,15 +844,16 @@ Serialized exports:
 	CallFunc_Not_PreBool_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CrateCollision_GEN_VARIABLE (0-0-0-0): size 1222 (cls: CrateCollision_GEN_VARIABLE>BoxComponent>/Script/Engine):
 		Tag array:
-			BoxExtent(StructProperty)=Vector(56,56,56) 
+			BoxExtent(StructProperty/Vector)=Vector(56,56,56) 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			bGenerateOverlapEvents(BoolProperty)=False 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	ChildActor_GEN_VARIABLE (0-0-0-0): size 131 (cls: ChildActor_GEN_VARIABLE>ChildActorComponent>/Script/Engine):
 		Tag array:
 			ChildActorClass(ObjectProperty)=AthenaSupplyDropBalloon_C=/Game/Athena/SupplyDrops/AthenaSupplyDropBalloon 
 			ChildActorTemplate(ObjectProperty)=ChildActor_GEN_VARIABLE_AthenaSupplyDropBalloon_C_CAT=AthenaSupplyDrop_C 
-			RelativeScale3D(StructProperty)=Vector(0.9,0.9,0.9) 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.9,0.9,0.9) 
+	VehicleType (0-0-0-0): size 40 (cls: VehicleType>ClassProperty>/Script/CoreUObject)
 	ComponentDelegateBinding_0 (0-0-0-0): size 205 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
 		Tag array:
 			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
@@ -893,7 +908,7 @@ Serialized exports:
 	CallFunc_Multiply_FloatFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Multiply_FloatFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
 	FortSpectateClickableMapIcon (0-0-0-0): size 155 (cls: FortSpectateClickableMapIcon>FortSpectateClickableMapIcon>/Script/FortniteGame):
 		Tag array:
-			SpectatorMapIndicatorBrush(StructProperty)=System.Byte[] 
+			SpectatorMapIndicatorBrush(StructProperty/SlateBrush)=System.Byte[] 
 	CallFunc_BreakHitResult_FaceIndex (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_FaceIndex>IntProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitItem (0-0-0-0): size 32 (cls: CallFunc_BreakHitResult_HitItem>IntProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -968,6 +983,8 @@ Serialized exports:
 	Sound_ReticleAppear (0-0-0-0): size 36 (cls: Sound_ReticleAppear>ObjectProperty>/Script/CoreUObject)
 	CallFunc_SpawnPickup_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_SpawnPickup_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_World_Item_Definition (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_World_Item_Definition>ObjectProperty>/Script/CoreUObject)
+	CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_FinishSpawningActor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_FinishSpawningActor_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitActor (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_HitActor>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_HitComponent (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_HitComponent>ObjectProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_PhysMat (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_PhysMat>ObjectProperty>/Script/CoreUObject)
@@ -975,87 +992,87 @@ Serialized exports:
 		Tag array:
 			Template(ObjectProperty)=P_SupplyDropFlare_Athena_V2=/Game/Athena/SupplyDrops/P_SupplyDropFlare_Athena_V2 
 			bAutoManageAttachment(BoolProperty)=True 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	ReticlePSC_GEN_VARIABLE (0-0-0-0): size 124 (cls: ReticlePSC_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_SupplyDrop_Active=/Game/Gadgets/Assets/SupplyDrop/Effects/P_SupplyDrop_Active 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	ProjectileMovement_GEN_VARIABLE (0-0-0-0): size 102 (cls: ProjectileMovement_GEN_VARIABLE>ProjectileMovementComponent>/Script/Engine):
 		Tag array:
 			ProjectileGravityScale(FloatProperty)=0 
-			Velocity(StructProperty)=Vector(0,0,0) 
+			Velocity(StructProperty/Vector)=Vector(0,0,0) 
 	DefaultSceneRoot_GEN_VARIABLE (0-0-0-0): size 12 (cls: DefaultSceneRoot_GEN_VARIABLE>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 168 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=AthenaSupplyDrop_C 
-			VariableGuid(StructProperty)=Guid: 4071506846-1217527530-1893813688-618904013 
+			VariableGuid(StructProperty/Guid)=Guid: 4071506846-1217527530-1893813688-618904013 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 832 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ChildActorComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=ChildActor_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 4185661467-1134353323-1040457392-2793849127 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 4185661467-1134353323-1040457392-2793849127 
 			InternalVariableName(NameProperty)=ChildActor 
 	SCS_Node_2 (0-0-0-0): size 4441 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=BoxComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=CrateCollision_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 274934438-1187149137-3327624077-4197354323 
+			VariableGuid(StructProperty/Guid)=Guid: 274934438-1187149137-3327624077-4197354323 
 			InternalVariableName(NameProperty)=CrateCollision 
 	SCS_Node_3 (0-0-0-0): size 2461 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=CrateStaticMesh_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 2834357678-1254278900-2976814222-2828166206 
+			VariableGuid(StructProperty/Guid)=Guid: 2834357678-1254278900-2976814222-2828166206 
 			InternalVariableName(NameProperty)=CrateStaticMesh 
 	SCS_Node_4 (0-0-0-0): size 634 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ProjectileMovementComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=ProjectileMovement_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 2503441303-1203721733-718592660-3714572516 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 2503441303-1203721733-718592660-3714572516 
 			InternalVariableName(NameProperty)=ProjectileMovement 
 	SCS_Node_5 (0-0-0-0): size 535 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=ReticleAudio_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 3725855437-1183307253-3294569384-364063907 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 3725855437-1183307253-3294569384-364063907 
 			InternalVariableName(NameProperty)=ReticleAudio 
 	SCS_Node_6 (0-0-0-0): size 733 (cls: SCS_Node_6>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=FallingAudio_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 2641161991-1279489165-2596993934-2135572278 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 2641161991-1279489165-2596993934-2135572278 
 			InternalVariableName(NameProperty)=FallingAudio 
 	SCS_Node_7 (0-0-0-0): size 683 (cls: SCS_Node_7>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=ReticlePSC_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 990861839-1242279441-4133474485-4253122239 
+			VariableGuid(StructProperty/Guid)=Guid: 990861839-1242279441-4133474485-4253122239 
 			InternalVariableName(NameProperty)=ReticlePSC 
 	SCS_Node_8 (0-0-0-0): size 733 (cls: SCS_Node_8>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=FlarePSC_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 3133324086-1322803452-3382771105-2158763608 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 3133324086-1322803452-3382771105-2158763608 
 			InternalVariableName(NameProperty)=FlarePSC 
 	SCS_Node_9 (0-0-0-0): size 535 (cls: SCS_Node_9>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=FlareAudio_GEN_VARIABLE=AthenaSupplyDrop_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 2739178101-1337251746-634282385-2806566442 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 2739178101-1337251746-634282385-2806566442 
 			InternalVariableName(NameProperty)=FlareAudio 
 	SimpleConstructionScript_0 (0-0-0-0): size 159 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -1074,8 +1091,8 @@ Serialized exports:
 			bAllowCullDistanceVolume(BoolProperty)=False 
 			bRenderCustomDepth(BoolProperty)=True 
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,-56) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-56) 
 	CurveTable_FallTime (0-0-0-0): size 36 (cls: CurveTable_FallTime>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakTransform_Location (0-0-0-0): size 36 (cls: CallFunc_BreakTransform_Location>StructProperty>/Script/CoreUObject)
@@ -1156,6 +1173,8 @@ Serialized exports:
 	CallFunc_MakeVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>StructProperty>/Script/CoreUObject)
 	CallFunc_GetLootSpawnLocation_LootSpawnLocation (0-0-0-0): size 36 (cls: CallFunc_GetLootSpawnLocation_LootSpawnLocation>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_GetActorLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue>StructProperty>/Script/CoreUObject)
+	CallFunc_MakeTransform_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeTransform_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_ImpactNormal (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_ImpactNormal>StructProperty>/Script/CoreUObject)
 	CallFunc_BreakHitResult_ImpactPoint (0-0-0-0): size 36 (cls: CallFunc_BreakHitResult_ImpactPoint>StructProperty>/Script/CoreUObject)

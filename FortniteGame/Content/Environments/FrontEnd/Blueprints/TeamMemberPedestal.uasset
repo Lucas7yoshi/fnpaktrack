@@ -1,5 +1,6 @@
 Name table:
 	/Game/Athena/PlayerPawn_Athena
+	/Game/Athena/PlayerPawn_Athena_Generic
 	/Game/Effects/Fort_Effects/Effects/Characters/Outlander/InTheZone/P_Outlander_Teleport
 	/Game/Effects/Fort_Effects/Materials/Flares/M_FakeLightCone_FE
 	/Game/Effects/Fort_Effects/Materials/Flares/M_FakeLightCone_FE_Inst
@@ -34,9 +35,9 @@ Name table:
 	ActorComponentTickFunction
 	AllNodes
 	Animation.FrontEnd.Lobby
+	AnimTrailPS_GEN_VARIABLE
 	ApplyUniformOverrideMaterial
 	Array_Get
-	Array_IsValidIndex
 	ArrayProperty
 	AssignedMemberIndex
 	AttachParent
@@ -53,6 +54,7 @@ Name table:
 	bGenerateOverlapEvents
 	bHiddenInGame
 	bIsHovered
+	bIsInFrontendHologram
 	bIsInMatch
 	bIsParentComponentNative
 	bIsPlayerSelected
@@ -74,7 +76,6 @@ Name table:
 	bVisible
 	ByteProperty
 	CallFunc_Array_Get_Item
-	CallFunc_Array_IsValidIndex_ReturnValue
 	CallFunc_BooleanAND_ReturnValue
 	CallFunc_BooleanAND_ReturnValue1
 	CallFunc_BooleanAND_ReturnValue2
@@ -108,6 +109,8 @@ Name table:
 	CallFunc_IsInLobby_ReturnValue
 	CallFunc_IsLocalPlayersUniqueID_ReturnValue
 	CallFunc_IsValid_ReturnValue
+	CallFunc_IsValidTeamMember_ReturnValue
+	CallFunc_IsValidTeamMember_ReturnValue1
 	CallFunc_K2_SetRelativeLocation_SweepHitResult
 	CallFunc_MakeGameplayTagQuery_ReturnValue
 	CallFunc_MakeGameplayTagQuery_ReturnValue1
@@ -177,6 +180,7 @@ Name table:
 	Default__ObjectProperty
 	Default__ParticleSystemComponent
 	Default__PlayerPawn_Athena_C
+	Default__PlayerPawn_Athena_Generic_C
 	Default__PointLightComponent
 	Default__SceneComponent
 	Default__SCS_Node
@@ -200,6 +204,7 @@ Name table:
 	ECollisionResponse
 	ECR_Ignore
 	EDetailMode
+	Effect_WaterInteraction_FX_GEN_VARIABLE
 	EFortStoreState
 	EFrontEndCamera
 	Engine
@@ -251,8 +256,8 @@ Name table:
 	HandleClientEvent_StoreTabClosed
 	HandleClientEvent_StoreTabSelected
 	HandleHoverInputActions
-	Has Player
 	HasCompletedQuest
+	HitDamageParticles_GEN_VARIABLE
 	HitResult
 	HoloMaterial
 	Homebase.Class.IsCommando.Athena
@@ -273,6 +278,7 @@ Name table:
 	IsInLobby
 	IsLocalPlayersUniqueID
 	IsValid
+	IsValidTeamMember
 	K2_DestroyActor
 	K2_SetRelativeLocation
 	K2Node_CreateDelegate_OutputDelegate
@@ -284,10 +290,14 @@ Name table:
 	K2Node_DynamicCast_AsLobby_Player_Pad_Gadgets
 	K2Node_DynamicCast_AsPlayer_Pawn_Athena
 	K2Node_DynamicCast_AsPlayer_Pawn_Athena1
+	K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic
+	K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic1
 	K2Node_DynamicCast_AsTeam_Member_Pedestal_Nameplate
 	K2Node_DynamicCast_bSuccess
 	K2Node_DynamicCast_bSuccess1
 	K2Node_DynamicCast_bSuccess2
+	K2Node_DynamicCast_bSuccess3
+	K2Node_DynamicCast_bSuccess4
 	K2Node_Event_bIsInMatch
 	K2Node_Event_bIsPopulated
 	K2Node_Event_bOwnsBattlePass
@@ -346,7 +356,9 @@ Name table:
 	NoCollision
 	NODE_AddPointLightComponent-1
 	NODE_AddPointLightComponent-2
+	NODE_AddPoseableMeshComponent-1
 	NODE_AddPostProcessComponent-2
+	NODE_AddSkeletalMeshComponent-13
 	None
 	NotEqual_IntInt
 	NotEqual_ObjectObject
@@ -387,14 +399,15 @@ Name table:
 	ParentComponentOrVariableName
 	ParticleSystem
 	ParticleSystemComponent
-	Pass
 	pass
+	Pass
 	Pivot
 	PlayAnimationsMatchingQuery
 	PlayerAdd
 	PlayerIndex
 	PlayerInWaterFX
 	PlayerPawn_Athena_C
+	PlayerPawn_Athena_Generic_C
 	PlayerRunLandFX
 	PlayerSlideLandFX
 	PlayerWalkLandFX
@@ -402,6 +415,7 @@ Name table:
 	PlayResOut
 	PointerToUberGraphFrame
 	PointLightComponent
+	PoseableMeshComponent
 	PostProcessComponent
 	PreviewMesh
 	PrimaryComponentTick
@@ -416,6 +430,7 @@ Name table:
 	Refresh
 	RefreshBattlePassOwnerVisuals
 	RefreshWidgets
+	ReInitFrontendPetDisplay
 	RelativeLocation
 	RelativeRotation
 	RelativeScale3D
@@ -450,6 +465,7 @@ Name table:
 	ShadowBias
 	SimpleConstructionScript
 	SizeBox
+	SkeletalMeshComponent
 	SkeletalMeshComponentBudgeted
 	SlateBrush
 	SlateColor
@@ -474,8 +490,6 @@ Name table:
 	Temp_bool_IsClosed_Variable
 	Temp_bool_Variable
 	Temp_bool_Variable1
-	Temp_bool_Variable2
-	Temp_bool_Variable3
 	Temp_byte_Variable
 	Temp_byte_Variable1
 	Temp_byte_Variable2
@@ -527,7 +541,7 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_TeamMemberPedestal=TeamMemberPedestal_C 
 	Default__TeamMemberPedestal_C (0-0-0-0): size 471 (cls: Default__TeamMemberPedestal_C>TeamMemberPedestal_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			HoloMaterial(ObjectProperty)=M_CharacterShader_Holo=/Game/UI/Frontend/Lobby/HeroSquad/M_CharacterShader_Holo 
 			LightBrightnessScale(FloatProperty)=1 
 			TopSpotLight_Brightness(FloatProperty)=1500 
@@ -546,7 +560,7 @@ Serialized exports:
 	PlayerIndex (0-0-0-0): size 32 (cls: PlayerIndex>IntProperty>/Script/CoreUObject)
 	Debug_OnFriendLFGRequest__DelegateSignature (0-0-0-0): size 47 (cls: Debug_OnFriendLFGRequest__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_TeamMemberPedestal (0-0-0-0): size 4466 (cls: ExecuteUbergraph_TeamMemberPedestal>Function>/Script/CoreUObject)
+	ExecuteUbergraph_TeamMemberPedestal (0-0-0-0): size 4634 (cls: ExecuteUbergraph_TeamMemberPedestal>Function>/Script/CoreUObject)
 	OnItemClicked (0-0-0-0): size 54 (cls: OnItemClicked>Function>/Script/CoreUObject)
 	bIsPopulated (0-0-0-0): size 34 (cls: bIsPopulated>BoolProperty>/Script/CoreUObject)
 	OnPedestalIsPopulatedChanged (0-0-0-0): size 68 (cls: OnPedestalIsPopulatedChanged>Function>/Script/CoreUObject)
@@ -572,7 +586,7 @@ Serialized exports:
 	TeamMemberInfo (0-0-0-0): size 36 (cls: TeamMemberInfo>StructProperty>/Script/CoreUObject)
 	OnTeamMemberStateChanged (0-0-0-0): size 98 (cls: OnTeamMemberStateChanged>Function>/Script/CoreUObject)
 	TeamMemberInfo (0-0-0-0): size 36 (cls: TeamMemberInfo>StructProperty>/Script/CoreUObject)
-	RefreshWidgets (0-0-0-0): size 1371 (cls: RefreshWidgets>Function>/Script/CoreUObject)
+	RefreshWidgets (0-0-0-0): size 1249 (cls: RefreshWidgets>Function>/Script/CoreUObject)
 	CallFunc_GetTeamMembers_TeamMembers (0-0-0-0): size 36 (cls: CallFunc_GetTeamMembers_TeamMembers>StructProperty>/Script/CoreUObject)
 	CallFunc_GetTeamMembers_TeamMembers (0-0-0-0): size 36 (cls: CallFunc_GetTeamMembers_TeamMembers>ArrayProperty>/Script/CoreUObject)
 	bAllowPartySuggestions (0-0-0-0): size 34 (cls: bAllowPartySuggestions>BoolProperty>/Script/CoreUObject)
@@ -594,6 +608,8 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess3 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess3>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess4 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess4>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bIsInMatch (0-0-0-0): size 34 (cls: K2Node_Event_bIsInMatch>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bIsPopulated (0-0-0-0): size 34 (cls: K2Node_Event_bIsPopulated>BoolProperty>/Script/CoreUObject)
 	K2Node_Event_bOwnsBattlePass (0-0-0-0): size 34 (cls: K2Node_Event_bOwnsBattlePass>BoolProperty>/Script/CoreUObject)
@@ -628,7 +644,6 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	PreviewMesh (0-0-0-0): size 34 (cls: PreviewMesh>BoolProperty>/Script/CoreUObject)
-	CallFunc_Array_IsValidIndex_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Array_IsValidIndex_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue2>BoolProperty>/Script/CoreUObject)
@@ -638,12 +653,9 @@ Serialized exports:
 	CallFunc_EqualEqual_ByteByte_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsInLobby_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsInLobby_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsLocalPlayersUniqueID_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsLocalPlayersUniqueID_ReturnValue>BoolProperty>/Script/CoreUObject)
-	Has Player (0-0-0-0): size 34 (cls: Has Player>BoolProperty>/Script/CoreUObject)
-	K2Node_Select1_Default (0-0-0-0): size 34 (cls: K2Node_Select1_Default>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValidTeamMember_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValidTeamMember_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_IsValidTeamMember_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValidTeamMember_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_Variable2>BoolProperty>/Script/CoreUObject)
-	Temp_bool_Variable3 (0-0-0-0): size 34 (cls: Temp_bool_Variable3>BoolProperty>/Script/CoreUObject)
 	CallFunc_SetStaticMesh_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_SetStaticMesh_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_SetStaticMesh_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -714,6 +726,8 @@ Serialized exports:
 	K2Node_DynamicCast_AsLobby_Player_Pad_Gadgets (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsLobby_Player_Pad_Gadgets>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsPlayer_Pawn_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsPlayer_Pawn_Athena>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsPlayer_Pawn_Athena1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsPlayer_Pawn_Athena1>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsPlayer_Pawn_Athena_Generic1>ObjectProperty>/Script/CoreUObject)
 	K2Node_HandleClientEvent_EventFocus (0-0-0-0): size 36 (cls: K2Node_HandleClientEvent_EventFocus>ObjectProperty>/Script/CoreUObject)
 	K2Node_HandleClientEvent_EventFocus1 (0-0-0-0): size 36 (cls: K2Node_HandleClientEvent_EventFocus1>ObjectProperty>/Script/CoreUObject)
 	K2Node_HandleClientEvent_EventSource (0-0-0-0): size 36 (cls: K2Node_HandleClientEvent_EventSource>ObjectProperty>/Script/CoreUObject)
@@ -763,45 +777,45 @@ Serialized exports:
 	P_FE_Smoke_GEN_VARIABLE (0-0-0-0): size 211 (cls: P_FE_Smoke_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_FE_Smoke=/Game/Environments/FrontEnd/Misc/P_FE_Smoke 
-			RelativeLocation(StructProperty)=Vector(4,0,8) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(4,0,8) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	PS-NoPlayer-Sparkle_GEN_VARIABLE (0-0-0-0): size 214 (cls: PS-NoPlayer-Sparkle_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Outlander_Teleport=/Game/Effects/Fort_Effects/Effects/Characters/Outlander/InTheZone/P_Outlander_Teleport 
 			CustomTimeDilation(FloatProperty)=0.3 
-			RelativeScale3D(StructProperty)=Vector(0.4,0.5,1) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.4,0.5,1) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	PS-NoPlayer-Swirl01_GEN_VARIABLE (0-0-0-0): size 397 (cls: PS-NoPlayer-Swirl01_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_LobbySpawnSpin=/Game/UI/Foundation/Lobby/materials/P_LobbySpawnSpin 
-			OldPosition(StructProperty)=Vector(-210,125371,78) 
+			OldPosition(StructProperty/Vector)=Vector(-210,125371,78) 
 			CustomTimeDilation(FloatProperty)=0.4 
-			RelativeLocation(StructProperty)=Vector(0,0,49) 
-			RelativeRotation(StructProperty)=Rotator(90,0,0) 
-			RelativeScale3D(StructProperty)=Vector(5,5,5) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,49) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(90,0,0) 
+			RelativeScale3D(StructProperty/Vector)=Vector(5,5,5) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	PS-NoPlayer-Swirl02_GEN_VARIABLE (0-0-0-0): size 368 (cls: PS-NoPlayer-Swirl02_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_LobbySpawnSpin=/Game/UI/Foundation/Lobby/materials/P_LobbySpawnSpin 
-			OldPosition(StructProperty)=Vector(-210,125371,78) 
-			RelativeLocation(StructProperty)=Vector(0,0,51) 
-			RelativeRotation(StructProperty)=Rotator(-90,0,0) 
-			RelativeScale3D(StructProperty)=Vector(4,4,4) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			OldPosition(StructProperty/Vector)=Vector(-210,125371,78) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,51) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(-90,0,0) 
+			RelativeScale3D(StructProperty/Vector)=Vector(4,4,4) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	UnderlightBluePoint01_GEN_VARIABLE (0-0-0-0): size 437 (cls: UnderlightBluePoint01_GEN_VARIABLE>PointLightComponent>/Script/Engine):
 		Tag array:
 			bUseInverseSquaredFalloff(BoolProperty)=False 
 			AttenuationRadius(FloatProperty)=50 
 			Temperature(FloatProperty)=7500 
 			bForceCachedShadowsForMovablePrimitives(BoolProperty)=True 
-			LightGuid(StructProperty)=Guid: 1389525186-1157485568-1929919890-3280209711 
+			LightGuid(StructProperty/Guid)=Guid: 1389525186-1157485568-1929919890-3280209711 
 			Intensity(FloatProperty)=250 
-			LightColor(StructProperty)=System.Byte[] 
+			LightColor(StructProperty/Color)=System.Byte[] 
 			CastShadows(BoolProperty)=False 
 			CastStaticShadows(BoolProperty)=False 
 			VolumetricScatteringIntensity(FloatProperty)=0 
-			RelativeLocation(StructProperty)=Vector(-1.525879E-05,0,2.962193) 
+			RelativeLocation(StructProperty/Vector)=Vector(-1.525879E-05,0,2.962193) 
 			bVisible(BoolProperty)=False 
 	UnderlightBluePoint02_GEN_VARIABLE (0-0-0-0): size 437 (cls: UnderlightBluePoint02_GEN_VARIABLE>PointLightComponent>/Script/Engine):
 		Tag array:
@@ -809,13 +823,13 @@ Serialized exports:
 			AttenuationRadius(FloatProperty)=50 
 			Temperature(FloatProperty)=7500 
 			bForceCachedShadowsForMovablePrimitives(BoolProperty)=True 
-			LightGuid(StructProperty)=Guid: 3622669516-1315619420-1110289810-894677431 
+			LightGuid(StructProperty/Guid)=Guid: 3622669516-1315619420-1110289810-894677431 
 			Intensity(FloatProperty)=250 
-			LightColor(StructProperty)=System.Byte[] 
+			LightColor(StructProperty/Color)=System.Byte[] 
 			CastShadows(BoolProperty)=False 
 			CastStaticShadows(BoolProperty)=False 
 			VolumetricScatteringIntensity(FloatProperty)=0 
-			RelativeLocation(StructProperty)=Vector(0,-32,28.29475) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,-32,28.29475) 
 			bVisible(BoolProperty)=False 
 	Root (0-0-0-0): size 12 (cls: Root>SceneComponent>/Script/Engine)
 	WidgetComponentsRoot (0-0-0-0): size 41 (cls: WidgetComponentsRoot>SceneComponent>/Script/Engine):
@@ -829,19 +843,19 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=SM_Lobby_Character_Pad_GEN_VARIABLE=TeamMemberPedestal_C 
 			ParentComponentOrVariableName(NameProperty)=Root 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2959727119-1137118249-3186520736-7404649 
+			VariableGuid(StructProperty/Guid)=Guid: 2959727119-1137118249-3186520736-7404649 
 			InternalVariableName(NameProperty)=SM_Lobby_Character_Pad 
 	SCS_Node_10 (0-0-0-0): size 168 (cls: SCS_Node_10>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=PointLightComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=UnderlightBluePoint01_GEN_VARIABLE=TeamMemberPedestal_C 
-			VariableGuid(StructProperty)=Guid: 3970986478-1135946772-3937843372-2709431064 
+			VariableGuid(StructProperty/Guid)=Guid: 3970986478-1135946772-3937843372-2709431064 
 			InternalVariableName(NameProperty)=UnderlightBluePoint01 
 	SCS_Node_11 (0-0-0-0): size 168 (cls: SCS_Node_11>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=PointLightComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=UnderlightBluePoint02_GEN_VARIABLE=TeamMemberPedestal_C 
-			VariableGuid(StructProperty)=Guid: 2568370088-1298198183-3123006862-3717740563 
+			VariableGuid(StructProperty/Guid)=Guid: 2568370088-1298198183-3123006862-3717740563 
 			InternalVariableName(NameProperty)=UnderlightBluePoint02 
 	SCS_Node_12 (0-0-0-0): size 288 (cls: SCS_Node_12>SCS_Node>/Script/Engine):
 		Tag array:
@@ -850,13 +864,13 @@ Serialized exports:
 			ParentComponentOrVariableName(NameProperty)=Root 
 			bIsParentComponentNative(BoolProperty)=True 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 564098281-1223870461-1334746302-3352495714 
+			VariableGuid(StructProperty/Guid)=Guid: 564098281-1223870461-1334746302-3352495714 
 			InternalVariableName(NameProperty)=LightsParent 
 	SCS_Node_14 (0-0-0-0): size 168 (cls: SCS_Node_14>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SpotLightComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=RimSpotLight_GEN_VARIABLE=TeamMemberPedestal_C 
-			VariableGuid(StructProperty)=Guid: 549015642-1177532212-2257293476-1182307394 
+			VariableGuid(StructProperty/Guid)=Guid: 549015642-1177532212-2257293476-1182307394 
 			InternalVariableName(NameProperty)=RimSpotLight 
 	SCS_Node_16 (0-0-0-0): size 227 (cls: SCS_Node_16>SCS_Node>/Script/Engine):
 		Tag array:
@@ -864,7 +878,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=SM_Lobby_Character_TopSpot_GEN_VARIABLE=TeamMemberPedestal_C 
 			ParentComponentOrVariableName(NameProperty)=WidgetComponent_BattlePassInfo 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 172570036-1194908868-1192227515-1879294623 
+			VariableGuid(StructProperty/Guid)=Guid: 172570036-1194908868-1192227515-1879294623 
 			InternalVariableName(NameProperty)=SM_Lobby_Character_TopSpot 
 	SCS_Node_17 (0-0-0-0): size 227 (cls: SCS_Node_17>SCS_Node>/Script/Engine):
 		Tag array:
@@ -872,7 +886,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=P_FE_Smoke_GEN_VARIABLE=TeamMemberPedestal_C 
 			ParentComponentOrVariableName(NameProperty)=Root 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2044150395-1336124922-3732350603-212368212 
+			VariableGuid(StructProperty/Guid)=Guid: 2044150395-1336124922-3732350603-212368212 
 			InternalVariableName(NameProperty)=P_FE_Smoke 
 	SCS_Node_19 (0-0-0-0): size 227 (cls: SCS_Node_19>SCS_Node>/Script/Engine):
 		Tag array:
@@ -880,7 +894,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=PS-NoPlayer-Swirl01_GEN_VARIABLE=TeamMemberPedestal_C 
 			ParentComponentOrVariableName(NameProperty)=Root 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1616665740-1307267069-421092753-1697021418 
+			VariableGuid(StructProperty/Guid)=Guid: 1616665740-1307267069-421092753-1697021418 
 			InternalVariableName(NameProperty)=PS-NoPlayer-Swirl01 
 	SCS_Node_2 (0-0-0-0): size 227 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
@@ -888,7 +902,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=SM_Lobby_Character_Pad_Light_Ring_GEN_VARIABLE=TeamMemberPedestal_C 
 			ParentComponentOrVariableName(NameProperty)=Root 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 4160528037-1271287411-2860661165-462430789 
+			VariableGuid(StructProperty/Guid)=Guid: 4160528037-1271287411-2860661165-462430789 
 			InternalVariableName(NameProperty)=SM_Lobby_Character_Pad_Light_Ring 
 	SCS_Node_22 (0-0-0-0): size 227 (cls: SCS_Node_22>SCS_Node>/Script/Engine):
 		Tag array:
@@ -896,7 +910,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=PS-NoPlayer-Swirl02_GEN_VARIABLE=TeamMemberPedestal_C 
 			ParentComponentOrVariableName(NameProperty)=Root 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3935643500-1110242103-3895365798-1154534856 
+			VariableGuid(StructProperty/Guid)=Guid: 3935643500-1110242103-3895365798-1154534856 
 			InternalVariableName(NameProperty)=PS-NoPlayer-Swirl02 
 	SCS_Node_24 (0-0-0-0): size 227 (cls: SCS_Node_24>SCS_Node>/Script/Engine):
 		Tag array:
@@ -904,13 +918,13 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=PS-NoPlayer-Sparkle_GEN_VARIABLE=TeamMemberPedestal_C 
 			ParentComponentOrVariableName(NameProperty)=Root 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2412891811-1177520325-1593793202-2928600942 
+			VariableGuid(StructProperty/Guid)=Guid: 2412891811-1177520325-1593793202-2928600942 
 			InternalVariableName(NameProperty)=PS-NoPlayer-Sparkle 
 	SCS_Node_3 (0-0-0-0): size 168 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_3=TeamMemberPedestal_C 
-			VariableGuid(StructProperty)=Guid: 3197129106-1281040967-584055977-3253823948 
+			VariableGuid(StructProperty/Guid)=Guid: 3197129106-1281040967-584055977-3253823948 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_4 (0-0-0-0): size 227 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
@@ -918,25 +932,25 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=StaticMeshComponent_231=TeamMemberPedestal_C 
 			ParentComponentOrVariableName(NameProperty)=Root 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3053638391-1208196068-2057552314-56190049 
+			VariableGuid(StructProperty/Guid)=Guid: 3053638391-1208196068-2057552314-56190049 
 			InternalVariableName(NameProperty)=CharacterPlacement 
 	SCS_Node_6 (0-0-0-0): size 168 (cls: SCS_Node_6>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SpotLightComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=UnderlightBlue01_GEN_VARIABLE=TeamMemberPedestal_C 
-			VariableGuid(StructProperty)=Guid: 3333108471-1129246657-3844541323-3720420418 
+			VariableGuid(StructProperty/Guid)=Guid: 3333108471-1129246657-3844541323-3720420418 
 			InternalVariableName(NameProperty)=UnderlightBlue01 
 	SCS_Node_8 (0-0-0-0): size 168 (cls: SCS_Node_8>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SpotLightComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=UnderlightBlue02_GEN_VARIABLE=TeamMemberPedestal_C 
-			VariableGuid(StructProperty)=Guid: 3362129706-1275080818-1551749012-3209653184 
+			VariableGuid(StructProperty/Guid)=Guid: 3362129706-1275080818-1551749012-3209653184 
 			InternalVariableName(NameProperty)=UnderlightBlue02 
 	SCS_Node_9 (0-0-0-0): size 168 (cls: SCS_Node_9>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SpotLightComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=TopSpotLight_GEN_VARIABLE=TeamMemberPedestal_C 
-			VariableGuid(StructProperty)=Guid: 4028588099-1090753308-1073057682-2223496930 
+			VariableGuid(StructProperty/Guid)=Guid: 4028588099-1090753308-1073057682-2223496930 
 			InternalVariableName(NameProperty)=TopSpotLight 
 	SimpleConstructionScript_2 (0-0-0-0): size 211 (cls: SimpleConstructionScript_2>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -952,15 +966,15 @@ Serialized exports:
 			AttenuationRadius(FloatProperty)=350 
 			Temperature(FloatProperty)=5500 
 			bForceCachedShadowsForMovablePrimitives(BoolProperty)=True 
-			LightGuid(StructProperty)=Guid: 2934163069-1183830894-3858739126-715708655 
+			LightGuid(StructProperty/Guid)=Guid: 2934163069-1183830894-3858739126-715708655 
 			Intensity(FloatProperty)=50 
-			LightColor(StructProperty)=System.Byte[] 
+			LightColor(StructProperty/Color)=System.Byte[] 
 			CastShadows(BoolProperty)=False 
 			CastStaticShadows(BoolProperty)=False 
 			IndirectLightingIntensity(FloatProperty)=0 
 			VolumetricScatteringIntensity(FloatProperty)=0 
-			RelativeLocation(StructProperty)=Vector(-119.237,144.8993,208) 
-			RelativeRotation(StructProperty)=Rotator(-22.49986,-49.10086,5.544703E-06) 
+			RelativeLocation(StructProperty/Vector)=Vector(-119.237,144.8993,208) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(-22.49986,-49.10086,5.544703E-06) 
 	TopSpotLight_GEN_VARIABLE (0-0-0-0): size 614 (cls: TopSpotLight_GEN_VARIABLE>SpotLightComponent>/Script/Engine):
 		Tag array:
 			InnerConeAngle(FloatProperty)=12 
@@ -970,15 +984,15 @@ Serialized exports:
 			bUseTemperature(BoolProperty)=True 
 			ShadowBias(FloatProperty)=0.2 
 			bForceCachedShadowsForMovablePrimitives(BoolProperty)=True 
-			LightGuid(StructProperty)=Guid: 3929084375-1089616717-151669919-3258523556 
+			LightGuid(StructProperty/Guid)=Guid: 3929084375-1089616717-151669919-3258523556 
 			Intensity(FloatProperty)=18000 
-			LightColor(StructProperty)=System.Byte[] 
+			LightColor(StructProperty/Color)=System.Byte[] 
 			CastShadows(BoolProperty)=False 
 			CastStaticShadows(BoolProperty)=False 
 			IndirectLightingIntensity(FloatProperty)=0 
 			VolumetricScatteringIntensity(FloatProperty)=0 
-			RelativeLocation(StructProperty)=Vector(118.3681,-4.147302E-07,349.7588) 
-			RelativeRotation(StructProperty)=Rotator(-70.30856,-179.9999,-180) 
+			RelativeLocation(StructProperty/Vector)=Vector(118.3681,-4.147302E-07,349.7588) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(-70.30856,-179.9999,-180) 
 			bVisible(BoolProperty)=False 
 	UnderlightBlue01_GEN_VARIABLE (0-0-0-0): size 556 (cls: UnderlightBlue01_GEN_VARIABLE>SpotLightComponent>/Script/Engine):
 		Tag array:
@@ -988,14 +1002,14 @@ Serialized exports:
 			AttenuationRadius(FloatProperty)=300 
 			ShadowBias(FloatProperty)=0.2 
 			bForceCachedShadowsForMovablePrimitives(BoolProperty)=True 
-			LightGuid(StructProperty)=Guid: 2908986933-1251282925-756375948-3362244266 
+			LightGuid(StructProperty/Guid)=Guid: 2908986933-1251282925-756375948-3362244266 
 			Intensity(FloatProperty)=10 
-			LightColor(StructProperty)=System.Byte[] 
+			LightColor(StructProperty/Color)=System.Byte[] 
 			CastShadows(BoolProperty)=False 
 			CastStaticShadows(BoolProperty)=False 
 			VolumetricScatteringIntensity(FloatProperty)=0 
-			RelativeLocation(StructProperty)=Vector(19.74132,31.99901,-69.48604) 
-			RelativeRotation(StructProperty)=Rotator(63.92283,-128.9941,-133.0167) 
+			RelativeLocation(StructProperty/Vector)=Vector(19.74132,31.99901,-69.48604) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(63.92283,-128.9941,-133.0167) 
 			bVisible(BoolProperty)=False 
 	UnderlightBlue02_GEN_VARIABLE (0-0-0-0): size 556 (cls: UnderlightBlue02_GEN_VARIABLE>SpotLightComponent>/Script/Engine):
 		Tag array:
@@ -1005,14 +1019,14 @@ Serialized exports:
 			AttenuationRadius(FloatProperty)=300 
 			ShadowBias(FloatProperty)=0.2 
 			bForceCachedShadowsForMovablePrimitives(BoolProperty)=True 
-			LightGuid(StructProperty)=Guid: 1598575414-1225797631-1409908368-2902824432 
+			LightGuid(StructProperty/Guid)=Guid: 1598575414-1225797631-1409908368-2902824432 
 			Intensity(FloatProperty)=10 
-			LightColor(StructProperty)=System.Byte[] 
+			LightColor(StructProperty/Color)=System.Byte[] 
 			CastShadows(BoolProperty)=False 
 			CastStaticShadows(BoolProperty)=False 
 			VolumetricScatteringIntensity(FloatProperty)=0 
-			RelativeLocation(StructProperty)=Vector(3.009127,-42.6546,-72.07254) 
-			RelativeRotation(StructProperty)=Rotator(67.25626,117.1283,108.6476) 
+			RelativeLocation(StructProperty/Vector)=Vector(3.009127,-42.6546,-72.07254) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(67.25626,117.1283,108.6476) 
 			bVisible(BoolProperty)=False 
 	SM_Lobby_Character_Pad_GEN_VARIABLE (0-0-0-0): size 260 (cls: SM_Lobby_Character_Pad_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
@@ -1020,8 +1034,8 @@ Serialized exports:
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CastShadow(BoolProperty)=False 
 			bCastStaticShadow(BoolProperty)=False 
-			RelativeLocation(StructProperty)=Vector(0,0,-3) 
-			RelativeRotation(StructProperty)=Rotator(0,-89.99998,0) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-3) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-89.99998,0) 
 	SM_Lobby_Character_Pad_Light_Ring_GEN_VARIABLE (0-0-0-0): size 898 (cls: SM_Lobby_Character_Pad_Light_Ring_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Lobby_Character_Pad_Light_Ring=/Game/UI/Foundation/Lobby/meshes/SM_Lobby_Character_Pad_Light_Ring 
@@ -1033,9 +1047,9 @@ Serialized exports:
 			bCastDynamicShadow(BoolProperty)=False 
 			bCastStaticShadow(BoolProperty)=False 
 			TranslucencySortPriority(IntProperty)=1 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,-2) 
-			RelativeScale3D(StructProperty)=Vector(0.95,0.95,3) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-2) 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.95,0.95,3) 
 			bVisible(BoolProperty)=False 
 	SM_Lobby_Character_TopSpot_GEN_VARIABLE (0-0-0-0): size 974 (cls: SM_Lobby_Character_TopSpot_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
@@ -1048,18 +1062,18 @@ Serialized exports:
 			bCastDynamicShadow(BoolProperty)=False 
 			bCastStaticShadow(BoolProperty)=False 
 			TranslucencySortPriority(IntProperty)=1 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(130.6807,-4.147303E-06,383.5879) 
-			RelativeRotation(StructProperty)=Rotator(19.99977,-179.9999,-180) 
-			RelativeScale3D(StructProperty)=Vector(3,3,5.8) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(130.6807,-4.147303E-06,383.5879) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(19.99977,-179.9999,-180) 
+			RelativeScale3D(StructProperty/Vector)=Vector(3,3,5.8) 
 			DetailMode(ByteProperty)=DM_Medium 
 	StaticMeshComponent_231 (0-0-0-0): size 753 (cls: StaticMeshComponent_231>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=S_FE_CharacterPlacementHelper=/Game/Environments/FrontEnd/Meshes/S_FE_CharacterPlacementHelper 
 			CastShadow(BoolProperty)=False 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(20,4.768372E-07,0) 
-			RelativeRotation(StructProperty)=Rotator(0,-89.99998,0) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(20,4.768372E-07,0) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-89.99998,0) 
 			bVisible(BoolProperty)=False 
 			bHiddenInGame(BoolProperty)=True 
 	CallFunc_K2_SetRelativeLocation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetRelativeLocation_SweepHitResult>StructProperty>/Script/CoreUObject)
@@ -1077,7 +1091,7 @@ Serialized exports:
 	WidgetComponent_BattlePassInfo (0-0-0-0): size 127 (cls: WidgetComponent_BattlePassInfo>WidgetComponent>/Script/UMG):
 		Tag array:
 			WidgetClass(ObjectProperty)=TeamMemberPedestal_XPBoostInfo_C=/Game/UI/Frontend/Lobby/PlayerPad/TeamMemberPedestal_XPBoostInfo 
-			Pivot(StructProperty)=Vector2D(0.5,1) 
+			Pivot(StructProperty/Vector2D)=Vector2D(0.5,1) 
 			AttachParent(ObjectProperty)=WidgetComponentsRoot=Default__TeamMemberPedestal_C 
 	WidgetComponent_EquippedGadgets (0-0-0-0): size 70 (cls: WidgetComponent_EquippedGadgets>WidgetComponent>/Script/UMG):
 		Tag array:
@@ -1090,5 +1104,5 @@ Serialized exports:
 	WidgetComponent_MemberInfo (0-0-0-0): size 127 (cls: WidgetComponent_MemberInfo>WidgetComponent>/Script/UMG):
 		Tag array:
 			WidgetClass(ObjectProperty)=TeamMemberPedestal_Nameplate_C=/Game/UI/Frontend/Lobby/PlayerPad/TeamMemberPedestal_Nameplate 
-			Pivot(StructProperty)=Vector2D(0.5,1) 
+			Pivot(StructProperty/Vector2D)=Vector2D(0.5,1) 
 			AttachParent(ObjectProperty)=WidgetComponentsRoot=Default__TeamMemberPedestal_C 

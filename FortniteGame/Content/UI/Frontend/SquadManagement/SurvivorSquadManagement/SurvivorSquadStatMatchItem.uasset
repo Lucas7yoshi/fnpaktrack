@@ -123,6 +123,8 @@ Name table:
 	Default__WidgetTree
 	DeltaBorder
 	DrawAs
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortBrushSize
 	EFortBrushSize::Small
 	EFortBrushSize::VerySmall
@@ -155,6 +157,7 @@ Name table:
 	ExecuteUbergraph_SurvivorSquadStatMatchItem
 	ExpandStats
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	Format
@@ -316,14 +319,14 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_SurvivorSquadStatMatchItem=SurvivorSquadStatMatchItem_C 
 	Default__SurvivorSquadStatMatchItem_C (0-0-0-0): size 6881 (cls: Default__SurvivorSquadStatMatchItem_C>SurvivorSquadStatMatchItem_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			BonusIconTag(StructProperty)=System.Byte[] 
-			CheckIcon(StructProperty)=System.Byte[] 
-			EmptyIcon(StructProperty)=System.Byte[] 
-			NoChange(StructProperty)=UE4.FLinearColor 
-			Better(StructProperty)=UE4.FLinearColor 
-			CurrentStatMatch(StructProperty)=System.Byte[] 
-			Padding(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			BonusIconTag(StructProperty/GameplayTag)=System.Byte[] 
+			CheckIcon(StructProperty/SlateBrush)=System.Byte[] 
+			EmptyIcon(StructProperty/SlateBrush)=System.Byte[] 
+			NoChange(StructProperty/LinearColor)=UE4.FLinearColor 
+			Better(StructProperty/LinearColor)=UE4.FLinearColor 
+			CurrentStatMatch(StructProperty/FortUISurvivorSquadStatMatch)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	Contents (0-0-0-0): size 36 (cls: Contents>ObjectProperty>/Script/CoreUObject)
@@ -357,24 +360,24 @@ Serialized exports:
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=CommonBorder_0=WidgetArchetype 
 			Content(ObjectProperty)=DeltaBorder=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=DeltaBorder=WidgetArchetype 
 			Content(ObjectProperty)=Contents=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 325 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=MultiMembersBorder=WidgetArchetype 
 			Content(ObjectProperty)=WidgetNumMembers=WidgetArchetype 
 	BorderSlot_1 (0-0-0-0): size 325 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=SingleBorder=WidgetArchetype 
@@ -391,11 +394,11 @@ Serialized exports:
 	CommonBorder_0 (0-0-0-0): size 255 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=Border_StatRow_WhiteLowOpacity_C=/Game/UI/Foundation/Border/Border_StatRow_WhiteLowOpacity 
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 	DeltaBorder (0-0-0-0): size 281 (cls: DeltaBorder>CommonBorder>/Script/CommonUI):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -404,7 +407,7 @@ Serialized exports:
 			Style(ObjectProperty)=Border-SolidBG-StatItemEmpty_C=/Game/UI/Foundation/Border/Border-SolidBG-StatItemEmpty 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -413,7 +416,7 @@ Serialized exports:
 			Style(ObjectProperty)=Border-SolidBG-StatItemEmpty_C=/Game/UI/Foundation/Border/Border-SolidBG-StatItemEmpty 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=WidgetSwitcherSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -421,16 +424,16 @@ Serialized exports:
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS_C=/Game/UI/Foundation/Text/TextStyle-Base-XS 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	WidgetNumMembers (0-0-0-0): size 421 (cls: WidgetNumMembers>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS_C=/Game/UI/Foundation/Text/TextStyle-Base-XS 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -439,8 +442,8 @@ Serialized exports:
 			Style(ObjectProperty)=TextStyle-Base-XS_C=/Game/UI/Foundation/Text/TextStyle-Base-XS 
 			ScrollStyle(ObjectProperty)=TextScrollStyle-Base_C=/Game/UI/Foundation/Text/TextScrollStyle-Base 
 			Text(TextProperty)={Attribute} (472C4DD34B4102085481DAA72A746436) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_4=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	MatchType (0-0-0-0): size 40 (cls: MatchType>EnumProperty>/Script/CoreUObject)
@@ -454,11 +457,12 @@ Serialized exports:
 		Tag array:
 			BrushSize(ByteProperty)=EFortBrushSize::Small 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
-	Contents (0-0-0-0): size 116 (cls: Contents>HorizontalBox>/Script/UMG):
+	Contents (0-0-0-0): size 157 (cls: Contents>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_1 (0-0-0-0): size 94 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -470,7 +474,7 @@ Serialized exports:
 			bIsVariable(BoolProperty)=True 
 	HorizontalBoxSlot_1 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Contents=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
@@ -481,7 +485,7 @@ Serialized exports:
 			Content(ObjectProperty)=WidgetMatchContent=WidgetArchetype 
 	HorizontalBoxSlot_4 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_4>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Contents=WidgetArchetype 
@@ -503,8 +507,8 @@ Serialized exports:
 			Content(ObjectProperty)=Magnitude=WidgetArchetype 
 	HorizontalBoxSlot_4 (0-0-0-0): size 336 (cls: HorizontalBoxSlot_4>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
@@ -515,7 +519,7 @@ Serialized exports:
 			Content(ObjectProperty)=SingleMultiSwitcher=WidgetArchetype 
 	SingleFullfilmentIcon (0-0-0-0): size 127 (cls: SingleFullfilmentIcon>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=BorderSlot_1=WidgetArchetype 
 	NewLocalVar_0 (0-0-0-0): size 32 (cls: NewLocalVar_0>IntProperty>/Script/CoreUObject)
 	NumMeetingCriteria (0-0-0-0): size 32 (cls: NumMeetingCriteria>IntProperty>/Script/CoreUObject)
@@ -535,7 +539,7 @@ Serialized exports:
 	WidgetNumMembers (0-0-0-0): size 36 (cls: WidgetNumMembers>ObjectProperty>/Script/CoreUObject)
 	Spacer_0 (0-0-0-0): size 98 (cls: Spacer_0>Spacer>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=Vector2D(6,1) 
+			Size(StructProperty/Vector2D)=Vector2D(6,1) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	CallFunc_Conv_TextToString_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_TextToString_ReturnValue>StrProperty>/Script/CoreUObject)
 	Better (0-0-0-0): size 36 (cls: Better>StructProperty>/Script/CoreUObject)

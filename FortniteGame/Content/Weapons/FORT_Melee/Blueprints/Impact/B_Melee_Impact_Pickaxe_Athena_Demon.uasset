@@ -23,7 +23,7 @@ Name table:
 	AnimMontage
 	AnimToPlay
 	AnimTrailsParticles
-	AnimTrialCompOverride_GEN_VARIABLE
+	AnimTrial_GEN_VARIABLE
 	ArrayIndex
 	ArrayProperty
 	Athena_PlayerCameraModeMelee_C
@@ -83,6 +83,7 @@ Name table:
 	Function
 	Guid
 	Has_Swing_Effect
+	IdleFX_GEN_VARIABLE
 	ImpactPhysicalSurfaceEffects
 	ImpactPhysicalSurfaceSounds
 	InheritableComponentHandler
@@ -138,10 +139,10 @@ Name table:
 	SoundCue
 	StructProperty
 	Swing_Effect
+	SwingFX_GEN_VARIABLE
 	Template
 	UberGraphFrame
 	UberGraphFunction
-	Use_Effect_Color_Override
 	UserConstructionScript
 	VariableGuid
 	WeaponMesh
@@ -154,14 +155,13 @@ Serialized exports:
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_9=B_Melee_Impact_Pickaxe_Athena_Demon_C 
 			InheritableComponentHandler(ObjectProperty)=InheritableComponentHandler=B_Melee_Impact_Pickaxe_Athena_Demon_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_Melee_Impact_Pickaxe_Athena_Demon=B_Melee_Impact_Pickaxe_Athena_Demon_C 
-	Default__B_Melee_Impact_Pickaxe_Athena_Demon_C (0-0-0-0): size 955 (cls: Default__B_Melee_Impact_Pickaxe_Athena_Demon_C>B_Melee_Impact_Pickaxe_Athena_Demon_C):
+	Default__B_Melee_Impact_Pickaxe_Athena_Demon_C (0-0-0-0): size 929 (cls: Default__B_Melee_Impact_Pickaxe_Athena_Demon_C>B_Melee_Impact_Pickaxe_Athena_Demon_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			Has_Swing_Effect(BoolProperty)=True 
 			Swing_Effect(ObjectProperty)=P_Melee_Demon_Pickaxe_trail=/Game/Weapons/FORT_Melee/Pickaxe_Deamon_Edge/FX/P_Melee_Demon_Pickaxe_trail 
-			Use_Effect_Color_Override(BoolProperty)=True 
-			MeleeHeavy_ParticleSystem(ObjectProperty)=[object] 
 			AnimTrailsParticles(ObjectProperty)=P_Melee_Demon_Pickaxe_Anim_trail=/Game/Weapons/FORT_Melee/Pickaxe_Deamon_Edge/FX/P_Melee_Demon_Pickaxe_Anim_trail 
+			MeleeHeavy_ParticleSystem(ObjectProperty)=[object] 
 			bSupportsAutofireAtReticleTarget(BoolProperty)=False 
 			CameraBase3PClass(ObjectProperty)=Athena_PlayerCameraModeMelee_C=/Game/Blueprints/Camera/Athena/Athena_PlayerCameraModeMelee 
 			CameraBase1PClass(ObjectProperty)=[object] 
@@ -208,23 +208,23 @@ Serialized exports:
 	P_Melee_Demon_Pickaxe_Weapon_GEN_VARIABLE (0-0-0-0): size 124 (cls: P_Melee_Demon_Pickaxe_Weapon_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Melee_Demon_Pickaxe_Weapon=/Game/Weapons/FORT_Melee/Pickaxe_Deamon_Edge/FX/P_Melee_Demon_Pickaxe_Weapon 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	SceneComponent_9 (0-0-0-0): size 12 (cls: SceneComponent_9>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 726 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Melee_Demon_Pickaxe_Weapon_GEN_VARIABLE=B_Melee_Impact_Pickaxe_Athena_Demon_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			AttachToName(NameProperty)=b_AR_Root 
 			ParentComponentOrVariableName(NameProperty)=WeaponMesh0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3918242822-1265227481-1928221829-2375298410 
+			VariableGuid(StructProperty/Guid)=Guid: 3918242822-1265227481-1928221829-2375298410 
 			InternalVariableName(NameProperty)=P_Melee_Demon_Pickaxe_Weapon 
 	SCS_Node_9 (0-0-0-0): size 168 (cls: SCS_Node_9>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_9=B_Melee_Impact_Pickaxe_Athena_Demon_C 
-			VariableGuid(StructProperty)=Guid: 1455200153-3298092774-840778389-2103358230 
+			VariableGuid(StructProperty/Guid)=Guid: 1455200153-3298092774-840778389-2103358230 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SimpleConstructionScript_9 (0-0-0-0): size 123 (cls: SimpleConstructionScript_9>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -233,6 +233,6 @@ Serialized exports:
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_9=B_Melee_Impact_Pickaxe_Athena_Demon_C 
 	WeaponMesh0 (0-0-0-0): size 194 (cls: WeaponMesh0>SkeletalMeshComponentBudgeted>/Script/AnimationBudgetAllocator):
 		Tag array:
-			AnimationData(StructProperty)=System.Byte[] 
+			AnimationData(StructProperty/SingleAnimationPlayData)=System.Byte[] 
 			AnimationMode(ByteProperty)=EAnimationMode::AnimationSingleNode 
 			SkeletalMesh(ObjectProperty)=SK_Pickaxe_Deamon_Edge=/Game/Weapons/FORT_Melee/Pickaxe_Deamon_Edge/Meshes/SK_Pickaxe_Deamon_Edge 

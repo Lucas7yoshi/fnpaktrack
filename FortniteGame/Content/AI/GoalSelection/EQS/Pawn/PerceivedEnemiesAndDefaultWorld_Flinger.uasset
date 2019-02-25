@@ -11,7 +11,6 @@ Name table:
 	bPerceivedEnemiesOnly
 	bScoreEncounterGoals
 	bScoreEnemies
-	bScoreWorldGoals
 	ByteProperty
 	ClampMaxType
 	ClampMinType
@@ -19,12 +18,12 @@ Name table:
 	Default__EnvQuery
 	Default__EnvQueryGenerator_Composite
 	Default__EnvQueryOption
+	Default__EnvQueryTest_Distance
 	Default__FortQueryGenerator_Enemies
 	Default__FortQueryGenerator_SpecificAssignmentGoals
 	Default__FortQueryTest_CanBeDamaged
 	Default__FortQueryTest_GoalDistance
 	Default__FortQueryTest_GoalFrustrationDiscouragement
-	Default__FortQueryTest_GoalOverallDamageCaused
 	Default__FortQueryTest_GoalStickiness
 	Default__FortQueryTest_PerceptionAll
 	DefaultValue
@@ -32,8 +31,6 @@ Name table:
 	EAssignmentType::World
 	EEnvQueryTestClamping
 	EEnvQueryTestClamping::SpecifiedValue
-	EEnvTestDistance
-	EEnvTestDistance::DistanceZ
 	EEnvTestFilterType
 	EEnvTestFilterType::Maximum
 	EEnvTestPurpose
@@ -41,11 +38,13 @@ Name table:
 	EEnvTestPurpose::Score
 	EEnvTestScoreEquation
 	EEnvTestScoreEquation::Constant
+	EEnvTestScoreEquation::InverseLinear
 	EndValueForGoal
 	EnumProperty
 	EnvQuery
 	EnvQueryGenerator_Composite
 	EnvQueryOption
+	EnvQueryTest_Distance
 	FilterType
 	FloatProperty
 	FloatValueMax
@@ -56,7 +55,6 @@ Name table:
 	FortQueryTest_CanBeDamaged
 	FortQueryTest_GoalDistance
 	FortQueryTest_GoalFrustrationDiscouragement
-	FortQueryTest_GoalOverallDamageCaused
 	FortQueryTest_GoalStickiness
 	FortQueryTest_PerceptionAll
 	Generator
@@ -80,7 +78,7 @@ Name table:
 	SenseScores
 	StrProperty
 	StructProperty
-	TestMode
+	TestComment
 	TestOrder
 	TestPurpose
 	Tests
@@ -91,16 +89,27 @@ Serialized exports:
 		Tag array:
 			QueryName(NameProperty)=PerceivedEnemiesAndDefaultWorld_Flinger 
 			Options(ArrayProperty)=[object] (inner: ObjectProperty)
-	EnvQueryGenerator_Composite_50 (0-0-0-0): size 186 (cls: EnvQueryGenerator_Composite_50>EnvQueryGenerator_Composite>/Script/AIModule):
+	EnvQueryGenerator_Composite_0 (0-0-0-0): size 186 (cls: EnvQueryGenerator_Composite_0>EnvQueryGenerator_Composite>/Script/AIModule):
 		Tag array:
 			Generators(ArrayProperty)=[object] (inner: ObjectProperty)
 			OptionName(StrProperty)=Perceived Enemies and Default World Goals 
 			ItemType(ObjectProperty)=FortQueryItemType_Goal=/Script/FortniteGame 
 			VerNum(IntProperty)=1 
-	EnvQueryOption_46 (0-0-0-0): size 114 (cls: EnvQueryOption_46>EnvQueryOption>/Script/AIModule):
+	EnvQueryOption_0 (0-0-0-0): size 106 (cls: EnvQueryOption_0>EnvQueryOption>/Script/AIModule):
 		Tag array:
-			Generator(ObjectProperty)=EnvQueryGenerator_Composite_50=PerceivedEnemiesAndDefaultWorld_Flinger 
+			Generator(ObjectProperty)=EnvQueryGenerator_Composite_0=PerceivedEnemiesAndDefaultWorld_Flinger 
 			Tests(ArrayProperty)=[object] (inner: ObjectProperty)
+	EnvQueryTest_Distance_0 (0-0-0-0): size 552 (cls: EnvQueryTest_Distance_0>EnvQueryTest_Distance>/Script/AIModule):
+		Tag array:
+			TestOrder(IntProperty)=2 
+			TestPurpose(ByteProperty)=EEnvTestPurpose::Score 
+			TestComment(StrProperty)=Give value to nearby players who are in melee range. The flinger may move a short time/distance to melee the player. 
+			ScoringEquation(ByteProperty)=EEnvTestScoreEquation::InverseLinear 
+			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
+			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
+			ScoreClampMin(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			ScoreClampMax(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			VerNum(IntProperty)=1 
 	FortQueryGenerator_Enemies_6 (0-0-0-0): size 114 (cls: FortQueryGenerator_Enemies_6>FortQueryGenerator_Enemies>/Script/FortniteGame):
 		Tag array:
 			bPerceivedEnemiesOnly(BoolProperty)=True 
@@ -108,41 +117,16 @@ Serialized exports:
 			VerNum(IntProperty)=1 
 	FortQueryGenerator_SpecificAssignmentGoals_0 (0-0-0-0): size 188 (cls: FortQueryGenerator_SpecificAssignmentGoals_0>FortQueryGenerator_SpecificAssignmentGoals>/Script/FortniteGame):
 		Tag array:
-			AssignmentIdentifier(StructProperty)=System.Byte[] 
+			AssignmentIdentifier(StructProperty/FortAIAssignmentIdentifier)=System.Byte[] 
 			OptionName(StrProperty)=Default World Goals 
 			VerNum(IntProperty)=1 
 	FortQueryTest_CanBeDamaged_43 (0-0-0-0): size 194 (cls: FortQueryTest_CanBeDamaged_43>FortQueryTest_CanBeDamaged>/Script/FortniteGame):
 		Tag array:
 			bScoreEncounterGoals(BoolProperty)=False 
 			TestPurpose(ByteProperty)=EEnvTestPurpose::Filter 
-			ScoringFactor(StructProperty)=System.Byte[] 
-			VerNum(IntProperty)=1 
-	FortQueryTest_GoalDistance_109 (0-0-0-0): size 499 (cls: FortQueryTest_GoalDistance_109>FortQueryTest_GoalDistance>/Script/FortniteGame):
-		Tag array:
-			TestMode(ByteProperty)=EEnvTestDistance::DistanceZ 
-			bScoreEncounterGoals(BoolProperty)=False 
-			bScoreWorldGoals(BoolProperty)=False 
-			TestOrder(IntProperty)=1 
-			TestPurpose(ByteProperty)=EEnvTestPurpose::Score 
-			ScoringEquation(ByteProperty)=EEnvTestScoreEquation::Constant 
-			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ScoreClampMin(StructProperty)=System.Byte[] 
-			ScoringFactor(StructProperty)=System.Byte[] 
+			ScoringFactor(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
 			VerNum(IntProperty)=1 
 	FortQueryTest_GoalDistance_27 (0-0-0-0): size 458 (cls: FortQueryTest_GoalDistance_27>FortQueryTest_GoalDistance>/Script/FortniteGame):
-		Tag array:
-			bScoreEnemies(BoolProperty)=False 
-			bScoreEncounterGoals(BoolProperty)=False 
-			TestOrder(IntProperty)=5 
-			TestPurpose(ByteProperty)=EEnvTestPurpose::Score 
-			ScoringEquation(ByteProperty)=EEnvTestScoreEquation::Constant 
-			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ScoreClampMax(StructProperty)=System.Byte[] 
-			ScoringFactor(StructProperty)=System.Byte[] 
-			VerNum(IntProperty)=1 
-	FortQueryTest_GoalDistance_28 (0-0-0-0): size 544 (cls: FortQueryTest_GoalDistance_28>FortQueryTest_GoalDistance>/Script/FortniteGame):
 		Tag array:
 			bScoreEnemies(BoolProperty)=False 
 			bScoreEncounterGoals(BoolProperty)=False 
@@ -151,67 +135,56 @@ Serialized exports:
 			ScoringEquation(ByteProperty)=EEnvTestScoreEquation::Constant 
 			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
 			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ScoreClampMin(StructProperty)=System.Byte[] 
-			ScoreClampMax(StructProperty)=System.Byte[] 
-			ScoringFactor(StructProperty)=System.Byte[] 
+			ScoreClampMax(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			ScoringFactor(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
 			VerNum(IntProperty)=1 
-	FortQueryTest_GoalFrustrationDiscouragement_17 (0-0-0-0): size 492 (cls: FortQueryTest_GoalFrustrationDiscouragement_17>FortQueryTest_GoalFrustrationDiscouragement>/Script/FortniteGame):
+	FortQueryTest_GoalDistance_28 (0-0-0-0): size 544 (cls: FortQueryTest_GoalDistance_28>FortQueryTest_GoalDistance>/Script/FortniteGame):
 		Tag array:
-			TestOrder(IntProperty)=8 
-			FilterType(ByteProperty)=EEnvTestFilterType::Maximum 
-			FloatValueMax(StructProperty)=System.Byte[] 
-			ScoringEquation(ByteProperty)=EEnvTestScoreEquation::Constant 
-			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ScoreClampMax(StructProperty)=System.Byte[] 
-			ScoringFactor(StructProperty)=System.Byte[] 
-			VerNum(IntProperty)=1 
-	FortQueryTest_GoalOverallDamageCaused_5 (0-0-0-0): size 503 (cls: FortQueryTest_GoalOverallDamageCaused_5>FortQueryTest_GoalOverallDamageCaused>/Script/FortniteGame):
-		Tag array:
-			bScoreEncounterGoals(BoolProperty)=False 
-			bScoreWorldGoals(BoolProperty)=False 
-			TestOrder(IntProperty)=2 
-			TestPurpose(ByteProperty)=EEnvTestPurpose::Score 
-			FloatValueMax(StructProperty)=System.Byte[] 
-			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ScoreClampMax(StructProperty)=System.Byte[] 
-			ScoringFactor(StructProperty)=System.Byte[] 
-			VerNum(IntProperty)=1 
-	FortQueryTest_GoalStickiness_15 (0-0-0-0): size 589 (cls: FortQueryTest_GoalStickiness_15>FortQueryTest_GoalStickiness>/Script/FortniteGame):
-		Tag array:
-			EndValueForGoal(StructProperty)=System.Byte[] 
-			ValueLerpDuration(StructProperty)=System.Byte[] 
 			bScoreEnemies(BoolProperty)=False 
 			bScoreEncounterGoals(BoolProperty)=False 
 			TestOrder(IntProperty)=7 
 			TestPurpose(ByteProperty)=EEnvTestPurpose::Score 
+			ScoringEquation(ByteProperty)=EEnvTestScoreEquation::Constant 
 			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
 			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ScoreClampMax(StructProperty)=System.Byte[] 
-			ScoringFactor(StructProperty)=System.Byte[] 
-			VerNum(IntProperty)=11 
-	FortQueryTest_PerceptionAll_66 (0-0-0-0): size 709 (cls: FortQueryTest_PerceptionAll_66>FortQueryTest_PerceptionAll>/Script/FortniteGame):
+			ScoreClampMin(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			ScoreClampMax(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			ScoringFactor(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			VerNum(IntProperty)=1 
+	FortQueryTest_GoalFrustrationDiscouragement_17 (0-0-0-0): size 492 (cls: FortQueryTest_GoalFrustrationDiscouragement_17>FortQueryTest_GoalFrustrationDiscouragement>/Script/FortniteGame):
 		Tag array:
-			SenseScores(StructProperty)=System.Byte[] 
-			SenseScores(StructProperty)=System.Byte[] 
-			SenseScores(StructProperty)=System.Byte[] 
-			MinSenseAge(StructProperty)=System.Byte[] 
-			MaxSenseAge(StructProperty)=System.Byte[] 
+			TestOrder(IntProperty)=9 
+			FilterType(ByteProperty)=EEnvTestFilterType::Maximum 
+			FloatValueMax(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			ScoringEquation(ByteProperty)=EEnvTestScoreEquation::Constant 
+			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
+			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
+			ScoreClampMax(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			ScoringFactor(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			VerNum(IntProperty)=1 
+	FortQueryTest_GoalStickiness_15 (0-0-0-0): size 589 (cls: FortQueryTest_GoalStickiness_15>FortQueryTest_GoalStickiness>/Script/FortniteGame):
+		Tag array:
+			EndValueForGoal(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			ValueLerpDuration(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			bScoreEnemies(BoolProperty)=False 
+			bScoreEncounterGoals(BoolProperty)=False 
+			TestOrder(IntProperty)=8 
+			TestPurpose(ByteProperty)=EEnvTestPurpose::Score 
+			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
+			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
+			ScoreClampMax(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			ScoringFactor(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			VerNum(IntProperty)=11 
+	FortQueryTest_PerceptionAll_67 (0-0-0-0): size 753 (cls: FortQueryTest_PerceptionAll_67>FortQueryTest_PerceptionAll>/Script/FortniteGame):
+		Tag array:
+			SenseScores(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			SenseScores(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			MinSenseAge(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
+			MaxSenseAge(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
 			TestOrder(IntProperty)=4 
 			TestPurpose(ByteProperty)=EEnvTestPurpose::Score 
+			TestComment(StrProperty)=Definitely choose and melee players who touch you. Swat them away and return to what you were doing. 
 			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
 			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ScoreClampMax(StructProperty)=System.Byte[] 
-			VerNum(IntProperty)=11 
-	FortQueryTest_PerceptionAll_67 (0-0-0-0): size 537 (cls: FortQueryTest_PerceptionAll_67>FortQueryTest_PerceptionAll>/Script/FortniteGame):
-		Tag array:
-			SenseScores(StructProperty)=System.Byte[] 
-			MinSenseAge(StructProperty)=System.Byte[] 
-			MaxSenseAge(StructProperty)=System.Byte[] 
-			TestOrder(IntProperty)=3 
-			TestPurpose(ByteProperty)=EEnvTestPurpose::Score 
-			ClampMinType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ClampMaxType(ByteProperty)=EEnvQueryTestClamping::SpecifiedValue 
-			ScoreClampMax(StructProperty)=System.Byte[] 
+			ScoreClampMax(StructProperty/AIDataProviderFloatValue)=System.Byte[] 
 			VerNum(IntProperty)=11 

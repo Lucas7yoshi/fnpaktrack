@@ -6,6 +6,7 @@ Name table:
 	/Script/Engine
 	/Script/FortniteGame
 	/Script/FortniteUI
+	/Script/GameplayTags
 	/Script/MovieScene
 	/Script/UMG
 	ActiveEntities
@@ -71,6 +72,7 @@ Name table:
 	DelegateFunction
 	DelegateProperty
 	DisplayRate
+	ElementTag
 	End_Watcher
 	Engine
 	EntryPoint
@@ -84,12 +86,14 @@ Name table:
 	FortPlayerStateZone
 	FrameRate
 	Function
+	GameplayTag
 	GetContext
 	GetOwningPlayer
 	Greater_IntInt
 	GreaterEqual_IntInt
 	Groups
 	Guid
+	HUD.WatcherEye
 	IntProperty
 	IsShowViewerCountEnabled
 	IsValid
@@ -120,6 +124,7 @@ Name table:
 	MovieSceneOrderedEvaluationKey
 	MovieSceneSequenceID
 	MulticastDelegateProperty
+	NameProperty
 	NewCount
 	NewSpectatorCount
 	None
@@ -154,6 +159,7 @@ Name table:
 	StructProperty
 	SubTemplateSerialNumbers
 	Subtract_IntInt
+	TagName
 	Temp_bool_Variable
 	Temp_bool_Variable1
 	Temp_byte_Variable
@@ -185,10 +191,11 @@ Serialized exports:
 			bAllowDynamicCreation(BoolProperty)=False 
 			Animations(ArrayProperty)=[object] (inner: ObjectProperty)
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_AthenaWatchers=AthenaWatchers_C 
-	Default__AthenaWatchers_C (0-0-0-0): size 146 (cls: Default__AthenaWatchers_C>AthenaWatchers_C):
+	Default__AthenaWatchers_C (0-0-0-0): size 236 (cls: Default__AthenaWatchers_C>AthenaWatchers_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			ManySpectatorAmount(IntProperty)=5 
+			ElementTag(StructProperty/GameplayTag)=System.Byte[] 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	bRequestDisplayWatcher (0-0-0-0): size 34 (cls: bRequestDisplayWatcher>BoolProperty>/Script/CoreUObject)
@@ -237,9 +244,9 @@ Serialized exports:
 	NewSpectatorCount (0-0-0-0): size 32 (cls: NewSpectatorCount>IntProperty>/Script/CoreUObject)
 	OnValueChanged (0-0-0-0): size 222 (cls: OnValueChanged>MovieScene>/Script/MovieScene):
 		Tag array:
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 2115286732-1156244599-3230109354-3810440420 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 2115286732-1156244599-3230109354-3810440420 
 	AthenaWatcherEye (0-0-0-0): size 36 (cls: AthenaWatcherEye>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetContext_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue1>ObjectProperty>/Script/CoreUObject)
@@ -255,5 +262,5 @@ Serialized exports:
 		Tag array:
 			MovieScene(ObjectProperty)=OnValueChanged=AthenaWatchers_C 
 			bLegacyFinishOnStop(BoolProperty)=False 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1335020226-1259864580-1902820752-3608497010 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1335020226-1259864580-1902820752-3608497010 

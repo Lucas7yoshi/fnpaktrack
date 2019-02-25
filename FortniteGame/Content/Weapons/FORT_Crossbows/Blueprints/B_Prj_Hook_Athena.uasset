@@ -4,6 +4,7 @@ Name table:
 	/Game/Animation/Game/MainPlayer/Combat/Guns/GrapplingHook/GrapplingHook_Travel_Hoverboard_M
 	/Game/Animation/Game/MainPlayer/Combat/Guns/GrapplingHook/GrapplingHook_Travel_M
 	/Game/Athena/Items/Weapons/Abilities/HookGun/CamerShake_HookGunHitImpact
+	/Game/Athena/Items/Weapons/Abilities/HookGun/GE_Athena_HoverboardMontagePlaying
 	/Game/Athena/Items/Weapons/Abilities/HookGun/GE_Athena_RopeActive
 	/Game/Athena/Sounds/Events/Cube/Cube_LaunchPlayer_Cue
 	/Game/Athena/SupplyDrops/AthenaSupplyDrop
@@ -22,8 +23,8 @@ Name table:
 	/Game/Weapons/FORT_Crossbows/Blueprints/B_Hookgun_Athena
 	/Game/Weapons/FORT_Crossbows/Blueprints/B_HookGunRope
 	/Game/Weapons/FORT_Crossbows/Blueprints/B_Prj_Hook_Athena
-	/Game/Weapons/FORT_Crossbows/Effects/BP_Hook_Camera_LensEffect
-	/Game/Weapons/FORT_Crossbows/Effects/P_Hook_Impact_Break
+	/Game/Weapons/FORT_Crossbows/Crossbow/Effects/BP_Hook_Camera_LensEffect
+	/Game/Weapons/FORT_Crossbows/Crossbow/Effects/P_Hook_Impact_Break
 	/Script/AnimationBudgetAllocator
 	/Script/AnimGraphRuntime
 	/Script/CoreUObject
@@ -98,7 +99,6 @@ Name table:
 	CallFunc_Add_VectorVector_ReturnValue
 	CallFunc_Add_VectorVector_ReturnValue1
 	CallFunc_Add_VectorVector_ReturnValue2
-	CallFunc_Add_VectorVector_ReturnValue3
 	CallFunc_Array_Get_Item
 	CallFunc_Array_Length_ReturnValue
 	CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue
@@ -268,6 +268,7 @@ Name table:
 	Default__FortKismetLibrary
 	Default__Function
 	Default__GameplayStatics
+	Default__GE_Athena_HoverboardMontagePlaying_C
 	Default__GE_Athena_RopeActive_C
 	Default__InheritableComponentHandler
 	Default__IntProperty
@@ -356,6 +357,7 @@ Name table:
 	GameplayTag
 	GameplayTagContainer
 	GameplayTags
+	GE_Athena_HoverboardMontagePlaying_C
 	GE_Athena_RopeActive_C
 	GetAbilitySystemComponent
 	GetActorEyesViewPoint
@@ -420,6 +422,7 @@ Name table:
 	IsValid
 	IsZiplining
 	JackalArc
+	JackalCheck
 	JackalForceMultiplier
 	JumpPadding?
 	K2_AttachToComponent
@@ -725,7 +728,7 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	B_Prj_Hook_Athena_C (0-0-0-0): size 1660 (cls: B_Prj_Hook_Athena_C>BlueprintGeneratedClass>/Script/Engine):
+	B_Prj_Hook_Athena_C (0-0-0-0): size 1676 (cls: B_Prj_Hook_Athena_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=4 
 			bHasCookedComponentInstancingData(BoolProperty)=True 
@@ -736,41 +739,41 @@ Serialized exports:
 			CookedComponentInstancingData(MapProperty)=[object] (inner: NameProperty)
 	Default__B_Prj_Hook_Athena_C (0-0-0-0): size 1961 (cls: Default__B_Prj_Hook_Athena_C>B_Prj_Hook_Athena_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			HitLocation(StructProperty)=Vector(0,0,0) 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			HitLocation(StructProperty/Vector)=Vector(0,0,0) 
 			AirControl(BoolProperty)=True 
 			StickSound(ObjectProperty)=Grappling_Impact_Cue=/Game/Sounds/Fort_Weapons/GrapplingHook/Grappling_Impact_Cue 
 			StuckToPlayerSound(ObjectProperty)=Grappling_Impact_Cue=/Game/Sounds/Fort_Weapons/GrapplingHook/Grappling_Impact_Cue 
 			DistanceFromInstigator(FloatProperty)=300 
 			TravelSound(ObjectProperty)=Grappling_BodySwing_Cue=/Game/Sounds/Fort_Weapons/GrapplingHook/Grappling_BodySwing_Cue 
 			LaunchAngleVariations(ArrayProperty)=[object] (inner: StructProperty)
-			PreLaunchVelocity(StructProperty)=Vector(0,0,0) 
+			PreLaunchVelocity(StructProperty/Vector)=Vector(0,0,0) 
 			DownPitchMin(FloatProperty)=268 
 			DownPitchMax(FloatProperty)=320 
 			AdditionalZ(FloatProperty)=250 
 			YankBackSound(ObjectProperty)=Grappling_Yank_Cue=/Game/Sounds/Fort_Weapons/GrapplingHook/Grappling_Yank_Cue 
 			RopeDestroySound(ObjectProperty)=Grappling_RopeDestroy_Cue=/Game/Sounds/Fort_Weapons/GrapplingHook/Grappling_RopeDestroy_Cue 
-			RopeActiveTag(StructProperty)=System.Byte[] 
-			BlockIncomingPickups(StructProperty)=System.Byte[] 
-			ImpactNormal(StructProperty)=Vector(0,0,0) 
+			RopeActiveTag(StructProperty/GameplayTag)=System.Byte[] 
+			BlockIncomingPickups(StructProperty/GameplayTag)=System.Byte[] 
+			ImpactNormal(StructProperty/Vector)=Vector(0,0,0) 
 			StickSound2D(ObjectProperty)=Grappling_Impact_Player_Cue=/Game/Sounds/Fort_Weapons/GrapplingHook/Grappling_Impact_Player_Cue 
 			Offset Distance from Physics Mesh(FloatProperty)=9 
 			OffsetDistanceFromBone(FloatProperty)=15 
-			Momentum(StructProperty)=Vector(0,0,0) 
-			VehicleVelocity(StructProperty)=Vector(0,0,0) 
+			Momentum(StructProperty/Vector)=Vector(0,0,0) 
+			VehicleVelocity(StructProperty/Vector)=Vector(0,0,0) 
 			ConsumesAmmo(BoolProperty)=True 
 			VehicleArc(FloatProperty)=0.9 
 			JackalArc(FloatProperty)=0.5 
 			VehicleForceMultiplier(FloatProperty)=0.4 
 			JackalForceMultiplier(FloatProperty)=0.7 
-			VerticleFireOffset(StructProperty)=System.Byte[] 
+			VerticleFireOffset(StructProperty/CurveTableRowHandle)=System.Byte[] 
 			bAddOwnerVelocity(BoolProperty)=False 
 			CapsuleComponent(ObjectProperty)=CollisionCapsule0=Default__B_Prj_Hook_Athena_C 
 			ProjectileMovementComponent(ObjectProperty)=ProjectileComp0=Default__B_Prj_Hook_Athena_C 
 			bKillOnExplode(BoolProperty)=False 
 			bSetHiddenOnKill(BoolProperty)=False 
 			CollisionComponent(ObjectProperty)=CollisionCapsule0=Default__B_Prj_Hook_Athena_C 
-			PrimaryActorTick(StructProperty)=System.Byte[] 
+			PrimaryActorTick(StructProperty/ActorTickFunction)=System.Byte[] 
 			InitialLifeSpan(FloatProperty)=0.6 
 			RootComponent(ObjectProperty)=CollisionCapsule0=Default__B_Prj_Hook_Athena_C 
 	LaunchAngleVariations (0-0-0-0): size 36 (cls: LaunchAngleVariations>StructProperty>/Script/CoreUObject)
@@ -779,7 +782,7 @@ Serialized exports:
 	bInHoverboard (0-0-0-0): size 34 (cls: bInHoverboard>BoolProperty>/Script/CoreUObject)
 	ParticleSystem (0-0-0-0): size 36 (cls: ParticleSystem>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_B_Prj_Hook_Athena (0-0-0-0): size 6267 (cls: ExecuteUbergraph_B_Prj_Hook_Athena>Function>/Script/CoreUObject)
+	ExecuteUbergraph_B_Prj_Hook_Athena (0-0-0-0): size 6277 (cls: ExecuteUbergraph_B_Prj_Hook_Athena>Function>/Script/CoreUObject)
 	LaunchCheck (0-0-0-0): size 56 (cls: LaunchCheck>Function>/Script/CoreUObject)
 	GrappleVehicle (0-0-0-0): size 54 (cls: GrappleVehicle>Function>/Script/CoreUObject)
 	MyComp (0-0-0-0): size 36 (cls: MyComp>ObjectProperty>/Script/CoreUObject)
@@ -870,7 +873,7 @@ Serialized exports:
 	Temp_bool_Variable4 (0-0-0-0): size 34 (cls: Temp_bool_Variable4>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable5 (0-0-0-0): size 34 (cls: Temp_bool_Variable5>BoolProperty>/Script/CoreUObject)
 	Mo' (0-0-0-0): size 36 (cls: Mo'>StructProperty>/Script/CoreUObject)
-	Grapple (0-0-0-0): size 1525 (cls: Grapple>Function>/Script/CoreUObject)
+	Grapple (0-0-0-0): size 1495 (cls: Grapple>Function>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Greater_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Greater_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_InRange_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_InRange_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -923,6 +926,10 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	HookStopped (0-0-0-0): size 34 (cls: HookStopped>BoolProperty>/Script/CoreUObject)
+	CallFunc_GetAbilitySystemComponent_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetAbilitySystemComponent_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	JackalCheck (0-0-0-0): size 302 (cls: JackalCheck>Function>/Script/CoreUObject)
+	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	LaunchPad (0-0-0-0): size 34 (cls: LaunchPad>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_GreaterEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_GreaterEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -948,17 +955,17 @@ Serialized exports:
 			CapsuleRadius(FloatProperty)=9 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-4,-3.814697E-06,-1.430512E-06) 
-			RelativeRotation(StructProperty)=Rotator(-90,180,540) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(-4,-3.814697E-06,-1.430512E-06) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(-90,180,540) 
 	CollisionCapsule0 (0-0-0-0): size 429 (cls: CollisionCapsule0>CapsuleComponent>/Script/Engine):
 		Tag array:
 			CapsuleHalfHeight(FloatProperty)=6 
 			CapsuleRadius(FloatProperty)=6 
-			ShapeColor(StructProperty)=System.Byte[] 
+			ShapeColor(StructProperty/Color)=System.Byte[] 
 			bReturnMaterialOnMove(BoolProperty)=True 
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate10 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate10>DelegateProperty>/Script/CoreUObject)
@@ -1102,6 +1109,8 @@ Serialized exports:
 	Component (0-0-0-0): size 36 (cls: Component>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Athena_Vehicle (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Athena_Vehicle>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetController_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetController_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetVehicle_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetVehicle_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Athena_Jackal_Vehicle (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Athena_Jackal_Vehicle>ObjectProperty>/Script/CoreUObject)
 	PlayerPawn (0-0-0-0): size 36 (cls: PlayerPawn>ObjectProperty>/Script/CoreUObject)
 	HitActor (0-0-0-0): size 36 (cls: HitActor>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Player_Pawn (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn>ObjectProperty>/Script/CoreUObject)
@@ -1120,9 +1129,9 @@ Serialized exports:
 	YankBackSound (0-0-0-0): size 36 (cls: YankBackSound>ObjectProperty>/Script/CoreUObject)
 	ParticleSystem_GEN_VARIABLE (0-0-0-0): size 150 (cls: ParticleSystem_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
-			Template(ObjectProperty)=P_Hook_Impact_Break=/Game/Weapons/FORT_Crossbows/Effects/P_Hook_Impact_Break 
+			Template(ObjectProperty)=P_Hook_Impact_Break=/Game/Weapons/FORT_Crossbows/Crossbow/Effects/P_Hook_Impact_Break 
 			bVisible(BoolProperty)=False 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	ProjectileComp0 (0-0-0-0): size 157 (cls: ProjectileComp0>ProjectileMovementComponent>/Script/Engine):
 		Tag array:
 			InitialSpeed(FloatProperty)=5000 
@@ -1135,34 +1144,34 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=B_Prj_Hook_Athena_C 
-			VariableGuid(StructProperty)=Guid: 2461783251-1206601779-1813325704-509376628 
+			VariableGuid(StructProperty/Guid)=Guid: 2461783251-1206601779-1813325704-509376628 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 2574 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=StaticMesh3_GEN_VARIABLE=B_Prj_Hook_Athena_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2305244092-1216420596-2035677580-3345331424 
+			VariableGuid(StructProperty/Guid)=Guid: 2305244092-1216420596-2035677580-3345331424 
 			InternalVariableName(NameProperty)=StaticMesh3 
 	SCS_Node_2 (0-0-0-0): size 3465 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=CapsuleComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Capsule_GEN_VARIABLE=B_Prj_Hook_Athena_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2031845047-1268686486-1460097727-2726499532 
+			VariableGuid(StructProperty/Guid)=Guid: 2031845047-1268686486-1460097727-2726499532 
 			InternalVariableName(NameProperty)=Capsule 
 	SCS_Node_3 (0-0-0-0): size 792 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=ParticleSystem_GEN_VARIABLE=B_Prj_Hook_Athena_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 384174853-1289119203-3838468227-1180272359 
+			VariableGuid(StructProperty/Guid)=Guid: 384174853-1289119203-3838468227-1180272359 
 			InternalVariableName(NameProperty)=ParticleSystem 
 	SimpleConstructionScript_0 (0-0-0-0): size 139 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -1178,9 +1187,9 @@ Serialized exports:
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Grappling_Hook_Projectile_Final=/Game/Gadgets/Assets/Grappling_Hook/Meshes/SM_Grappling_Hook_Projectile_Final 
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-8.000076,0.0001404234,3.004074E-05) 
-			RelativeScale3D(StructProperty)=Vector(1.5,1.5,1.5) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(-8.000076,0.0001404234,3.004074E-05) 
+			RelativeScale3D(StructProperty/Vector)=Vector(1.5,1.5,1.5) 
 	BlockIncomingPickups (0-0-0-0): size 36 (cls: BlockIncomingPickups>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue1>StructProperty>/Script/CoreUObject)
@@ -1226,7 +1235,6 @@ Serialized exports:
 	CallFunc_Add_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_Add_VectorVector_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue2>StructProperty>/Script/CoreUObject)
-	CallFunc_Add_VectorVector_ReturnValue3 (0-0-0-0): size 36 (cls: CallFunc_Add_VectorVector_ReturnValue3>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue1>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue2>StructProperty>/Script/CoreUObject)
@@ -1250,6 +1258,8 @@ Serialized exports:
 	ImpactNormal (0-0-0-0): size 36 (cls: ImpactNormal>StructProperty>/Script/CoreUObject)
 	CallFunc_FindLookAtRotation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_FindLookAtRotation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_BP_ApplyGameplayEffectToTarget_ReturnValue>StructProperty>/Script/CoreUObject)
+	K2Node_MakeStruct_GameplayEffectContextHandle (0-0-0-0): size 36 (cls: K2Node_MakeStruct_GameplayEffectContextHandle>StructProperty>/Script/CoreUObject)
 	Momentum (0-0-0-0): size 36 (cls: Momentum>StructProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>StructProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>StructProperty>/Script/CoreUObject)

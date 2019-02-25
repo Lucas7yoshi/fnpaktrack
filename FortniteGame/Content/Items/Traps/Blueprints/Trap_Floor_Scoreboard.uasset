@@ -102,6 +102,7 @@ Name table:
 	FortBounceData
 	FortMetaNavArea_Obstacles
 	FortMovementComp_Character
+	FortPlayerPawn
 	Function
 	FunctionNameToBind
 	Game
@@ -145,6 +146,12 @@ Name table:
 	K2Node_ComponentBoundEvent_SweepResult
 	K2Node_ComponentBoundEvent_SweepResult1
 	K2Node_ComponentBoundEvent_SweepResult2
+	K2Node_DynamicCast_AsFort_Player_Pawn
+	K2Node_DynamicCast_AsFort_Player_Pawn1
+	K2Node_DynamicCast_AsFort_Player_Pawn2
+	K2Node_DynamicCast_bSuccess
+	K2Node_DynamicCast_bSuccess1
+	K2Node_DynamicCast_bSuccess2
 	K2Node_Event_Data
 	KismetMathLibrary
 	LinearColor
@@ -252,14 +259,14 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Trap_Floor_Scoreboard=Trap_Floor_Scoreboard_C 
 	Default__Trap_Floor_Scoreboard_C (0-0-0-0): size 785 (cls: Default__Trap_Floor_Scoreboard_C>Trap_Floor_Scoreboard_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			ImpulseModifier(FloatProperty)=1000 
 			ScoreUpSound_A(ObjectProperty)=Player_Scoreboard_ScoreLeft_Cue=/Game/Sounds/Creative/Toys/Scoreboard/Player_Scoreboard_ScoreLeft_Cue 
 			ResetScoreSound(ObjectProperty)=Player_Scoreboard_ScoreReset_Cue=/Game/Sounds/Creative/Toys/Scoreboard/Player_Scoreboard_ScoreReset_Cue 
 			TeamAScoreMatIndex(IntProperty)=1 
 			TeamBScoreMatIndex(IntProperty)=2 
-			TeamAScoreColor(StructProperty)=UE4.FLinearColor 
-			TeamBScoreColor(StructProperty)=UE4.FLinearColor 
+			TeamAScoreColor(StructProperty/LinearColor)=UE4.FLinearColor 
+			TeamBScoreColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			ScoreUpSound_B(ObjectProperty)=Player_Scoreboard_ScoreRight_Cue=/Game/Sounds/Creative/Toys/Scoreboard/Player_Scoreboard_ScoreRight_Cue 
 			TraceLocation(ObjectProperty)=Trace Location=Default__Trap_Floor_Scoreboard_C 
 			TrapPreviewMesh(ObjectProperty)=Cage_Trap_Floor_Base=/Game/Weapons/FORT_TRAPS/Cage_Trap/Cage_Trap_Floor_Base 
@@ -269,13 +276,13 @@ Serialized exports:
 			bClearMIDWhenReturningToUndamagedState(BoolProperty)=False 
 			bPropagatesBounceEffects(BoolProperty)=True 
 			StaticMeshComponent(ObjectProperty)=StaticMeshComponent0=Default__Trap_Floor_Scoreboard_C 
-			SnapOffset(StructProperty)=Vector(0,10,0) 
-			CentroidOffset(StructProperty)=Vector(0,0,192) 
+			SnapOffset(StructProperty/Vector)=Vector(0,10,0) 
+			CentroidOffset(StructProperty/Vector)=Vector(0,0,192) 
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Default__Trap_Floor_Scoreboard_C 
 			Tags(ArrayProperty)=CreativeDevice (inner: NameProperty)
 	ResetBox (0-0-0-0): size 36 (cls: ResetBox>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_Trap_Floor_Scoreboard (0-0-0-0): size 691 (cls: ExecuteUbergraph_Trap_Floor_Scoreboard>Function>/Script/CoreUObject)
+	ExecuteUbergraph_Trap_Floor_Scoreboard (0-0-0-0): size 856 (cls: ExecuteUbergraph_Trap_Floor_Scoreboard>Function>/Script/CoreUObject)
 	Data (0-0-0-0): size 36 (cls: Data>StructProperty>/Script/CoreUObject)
 	OnBounceAnimationUpdate (0-0-0-0): size 68 (cls: OnBounceAnimationUpdate>Function>/Script/CoreUObject)
 	OverlappedComponent (0-0-0-0): size 36 (cls: OverlappedComponent>ObjectProperty>/Script/CoreUObject)
@@ -300,26 +307,29 @@ Serialized exports:
 	K2Node_ComponentBoundEvent_bFromSweep (0-0-0-0): size 34 (cls: K2Node_ComponentBoundEvent_bFromSweep>BoolProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_bFromSweep1 (0-0-0-0): size 34 (cls: K2Node_ComponentBoundEvent_bFromSweep1>BoolProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_bFromSweep2 (0-0-0-0): size 34 (cls: K2Node_ComponentBoundEvent_bFromSweep2>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess2 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess2>BoolProperty>/Script/CoreUObject)
 	IsResetOverlapped (0-0-0-0): size 34 (cls: IsResetOverlapped>BoolProperty>/Script/CoreUObject)
 	CallFunc_NotEqual_ObjectObject_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_NotEqual_ObjectObject_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	ResetBox_GEN_VARIABLE (0-0-0-0): size 224 (cls: ResetBox_GEN_VARIABLE>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
-			RelativeLocation(StructProperty)=Vector(0,185,140) 
-			RelativeRotation(StructProperty)=Rotator(0,0,30) 
-			RelativeScale3D(StructProperty)=Vector(2,2,1) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,185,140) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,30) 
+			RelativeScale3D(StructProperty/Vector)=Vector(2,2,1) 
 	TeamABox_GEN_VARIABLE (0-0-0-0): size 224 (cls: TeamABox_GEN_VARIABLE>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
-			RelativeLocation(StructProperty)=Vector(161.7317,184.9999,140) 
-			RelativeRotation(StructProperty)=Rotator(0,0,30) 
-			RelativeScale3D(StructProperty)=Vector(2,2,1) 
+			RelativeLocation(StructProperty/Vector)=Vector(161.7317,184.9999,140) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,30) 
+			RelativeScale3D(StructProperty/Vector)=Vector(2,2,1) 
 	TeamBBox_GEN_VARIABLE (0-0-0-0): size 224 (cls: TeamBBox_GEN_VARIABLE>BoxComponent>/Script/Engine):
 		Tag array:
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
-			RelativeLocation(StructProperty)=Vector(-160.6937,185,140) 
-			RelativeRotation(StructProperty)=Rotator(0,0,30) 
-			RelativeScale3D(StructProperty)=Vector(2,2,1) 
+			RelativeLocation(StructProperty/Vector)=Vector(-160.6937,185,140) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,30) 
+			RelativeScale3D(StructProperty/Vector)=Vector(2,2,1) 
 	ComponentDelegateBinding_0 (0-0-0-0): size 419 (cls: ComponentDelegateBinding_0>ComponentDelegateBinding>/Script/Engine):
 		Tag array:
 			ComponentDelegateBindings(ArrayProperty)=[object] (inner: StructProperty)
@@ -364,6 +374,9 @@ Serialized exports:
 	K2Node_ComponentBoundEvent_OverlappedComponent (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OverlappedComponent>ObjectProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_OverlappedComponent1 (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OverlappedComponent1>ObjectProperty>/Script/CoreUObject)
 	K2Node_ComponentBoundEvent_OverlappedComponent2 (0-0-0-0): size 36 (cls: K2Node_ComponentBoundEvent_OverlappedComponent2>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Pawn (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Pawn1 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn1>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsFort_Player_Pawn2 (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn2>ObjectProperty>/Script/CoreUObject)
 	ResetPad (0-0-0-0): size 36 (cls: ResetPad>ObjectProperty>/Script/CoreUObject)
 	ResetScoreSound (0-0-0-0): size 36 (cls: ResetScoreSound>ObjectProperty>/Script/CoreUObject)
 	ScorePadA (0-0-0-0): size 36 (cls: ScorePadA>ObjectProperty>/Script/CoreUObject)
@@ -379,13 +392,13 @@ Serialized exports:
 	Trace Location (0-0-0-0): size 102 (cls: Trace Location>SceneComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Default__Trap_Floor_Scoreboard_C 
-			RelativeLocation(StructProperty)=Vector(0,196,108) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,196,108) 
 	DefaultSceneRoot_GEN_VARIABLE (0-0-0-0): size 12 (cls: DefaultSceneRoot_GEN_VARIABLE>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 168 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=Trap_Floor_Scoreboard_C 
-			VariableGuid(StructProperty)=Guid: 1635817193-1079415437-209772206-1412763704 
+			VariableGuid(StructProperty/Guid)=Guid: 1635817193-1079415437-209772206-1412763704 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_2 (0-0-0-0): size 227 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
@@ -393,7 +406,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=ScoreSign_GEN_VARIABLE=Trap_Floor_Scoreboard_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 214910310-1328243608-3275180219-2322981891 
+			VariableGuid(StructProperty/Guid)=Guid: 214910310-1328243608-3275180219-2322981891 
 			InternalVariableName(NameProperty)=ScoreSign 
 	SCS_Node_4 (0-0-0-0): size 227 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
@@ -401,7 +414,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=ScorePadB_GEN_VARIABLE=Trap_Floor_Scoreboard_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2022149952-1300563058-2391642812-963269853 
+			VariableGuid(StructProperty/Guid)=Guid: 2022149952-1300563058-2391642812-963269853 
 			InternalVariableName(NameProperty)=ScorePadB 
 	SCS_Node_5 (0-0-0-0): size 227 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
@@ -409,7 +422,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=ScorePadA_GEN_VARIABLE=Trap_Floor_Scoreboard_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 4240619437-1228450728-338594721-1367683436 
+			VariableGuid(StructProperty/Guid)=Guid: 4240619437-1228450728-338594721-1367683436 
 			InternalVariableName(NameProperty)=ScorePadA 
 	SCS_Node_6 (0-0-0-0): size 227 (cls: SCS_Node_6>SCS_Node>/Script/Engine):
 		Tag array:
@@ -417,7 +430,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=ResetPad_GEN_VARIABLE=Trap_Floor_Scoreboard_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1552896449-1340707144-3096552608-3798758730 
+			VariableGuid(StructProperty/Guid)=Guid: 1552896449-1340707144-3096552608-3798758730 
 			InternalVariableName(NameProperty)=ResetPad 
 	SCS_Node_7 (0-0-0-0): size 227 (cls: SCS_Node_7>SCS_Node>/Script/Engine):
 		Tag array:
@@ -425,7 +438,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=TeamBBox_GEN_VARIABLE=Trap_Floor_Scoreboard_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1936364489-1096042925-1158632111-2878925282 
+			VariableGuid(StructProperty/Guid)=Guid: 1936364489-1096042925-1158632111-2878925282 
 			InternalVariableName(NameProperty)=TeamBBox 
 	SCS_Node_8 (0-0-0-0): size 227 (cls: SCS_Node_8>SCS_Node>/Script/Engine):
 		Tag array:
@@ -433,7 +446,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=TeamABox_GEN_VARIABLE=Trap_Floor_Scoreboard_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 462846375-1330213722-3913523864-803877049 
+			VariableGuid(StructProperty/Guid)=Guid: 462846375-1330213722-3913523864-803877049 
 			InternalVariableName(NameProperty)=TeamABox 
 	SCS_Node_9 (0-0-0-0): size 227 (cls: SCS_Node_9>SCS_Node>/Script/Engine):
 		Tag array:
@@ -441,7 +454,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=ResetBox_GEN_VARIABLE=Trap_Floor_Scoreboard_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 520837128-1123372385-1519958923-2599912537 
+			VariableGuid(StructProperty/Guid)=Guid: 520837128-1123372385-1519958923-2599912537 
 			InternalVariableName(NameProperty)=ResetBox 
 	SimpleConstructionScript_0 (0-0-0-0): size 171 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -450,33 +463,33 @@ Serialized exports:
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_0=Trap_Floor_Scoreboard_C 
 	StaticMeshComponent0 (0-0-0-0): size 173 (cls: StaticMeshComponent0>StaticMeshComponent>/Script/Engine):
 		Tag array:
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	ResetPad_GEN_VARIABLE (0-0-0-0): size 273 (cls: ResetPad_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=S_Launchpad_Base_Adjusted=/Game/Environments/Props/Creative/Meshes/S_Launchpad_Base_Adjusted 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			RelativeLocation(StructProperty)=Vector(0,-85.99976,159.8232) 
-			RelativeRotation(StructProperty)=Rotator(0,0,30) 
-			RelativeScale3D(StructProperty)=Vector(0.95,0.95,0.95) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,-85.99976,159.8232) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,30) 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.95,0.95,0.95) 
 	ScorePadA_GEN_VARIABLE (0-0-0-0): size 228 (cls: ScorePadA_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=S_Launchpad_Base_Adjusted=/Game/Environments/Props/Creative/Meshes/S_Launchpad_Base_Adjusted 
-			RelativeLocation(StructProperty)=Vector(165,-86,159.8232) 
-			RelativeRotation(StructProperty)=Rotator(0,0,30) 
-			RelativeScale3D(StructProperty)=Vector(-0.95,0.95,0.95) 
+			RelativeLocation(StructProperty/Vector)=Vector(165,-86,159.8232) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,30) 
+			RelativeScale3D(StructProperty/Vector)=Vector(-0.95,0.95,0.95) 
 	ScorePadB_GEN_VARIABLE (0-0-0-0): size 273 (cls: ScorePadB_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=S_Launchpad_Base_Adjusted=/Game/Environments/Props/Creative/Meshes/S_Launchpad_Base_Adjusted 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
-			RelativeLocation(StructProperty)=Vector(-165,-86.00202,159.8232) 
-			RelativeRotation(StructProperty)=Rotator(0,0,30) 
-			RelativeScale3D(StructProperty)=Vector(0.95,0.95,0.95) 
+			RelativeLocation(StructProperty/Vector)=Vector(-165,-86.00202,159.8232) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,30) 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.95,0.95,0.95) 
 	ScoreSign_GEN_VARIABLE (0-0-0-0): size 212 (cls: ScoreSign_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=S_ScoreBoard_Stand=/Game/Environments/Props/Creative/Meshes/S_ScoreBoard_Stand 
-			RelativeLocation(StructProperty)=Vector(0,48,172.2949) 
-			RelativeScale3D(StructProperty)=Vector(2.669992,1,2.777451) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,48,172.2949) 
+			RelativeScale3D(StructProperty/Vector)=Vector(2.669992,1,2.777451) 
 			ComponentTags(ArrayProperty)=IconCapture (inner: NameProperty)
 	NewParam1 (0-0-0-0): size 36 (cls: NewParam1>StructProperty>/Script/CoreUObject)
 	SweepResult (0-0-0-0): size 36 (cls: SweepResult>StructProperty>/Script/CoreUObject)

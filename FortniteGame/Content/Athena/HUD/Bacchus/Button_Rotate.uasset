@@ -1,20 +1,21 @@
 Name table:
-	/Game/Athena/HUD/Atlas/Bacchus/PickUp_Normal_Sprite
+	/Game/Athena/HUD/Atlas/Bacchus/Confirm_Normal_L_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/Rotate_Normal_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/T_ButtonsBG_01_Sprite
+	/Game/Athena/HUD/Bacchus/BacchusActionButton
 	/Game/Athena/HUD/Bacchus/Button_Rotate
 	/Game/Athena/HUD/Bacchus/Button_Rotate.WidgetArchetype
-	/Game/Athena/HUD/Bacchus/CommonBacchusButton
 	/Script/BlueprintContext
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteUI
 	/Script/GameplayTags
 	/Script/Paper2D
-	/Script/SlateCore
 	/Script/UMG
+	ActionMapping
 	ArrayProperty
 	AthenaHUDContext
+	BacchusActionButton_C
 	bAllowTemplate
 	bCookedWidgetTree
 	bIsVariable
@@ -35,15 +36,14 @@ Name table:
 	bValidTemplate
 	ByteProperty
 	CallFunc_GetContext_ReturnValue
-	CallFunc_Handled_ReturnValue
 	Class
 	ColorAndOpacity
-	CommonBacchusButton_C
+	Confirm_Normal_L_Sprite
 	Content
+	Default__BacchusActionButton_C
 	Default__BlueprintContextLibrary
 	Default__Button
 	Default__Button_Rotate_C
-	Default__CommonBacchusButton_C
 	Default__Function
 	Default__Image
 	Default__IntProperty
@@ -56,7 +56,6 @@ Name table:
 	Default__SizeBoxSlot
 	Default__StructProperty
 	Default__WidgetBlueprintGeneratedClass
-	Default__WidgetBlueprintLibrary
 	Default__WidgetTree
 	DefaultIcon
 	Disabled
@@ -70,18 +69,15 @@ Name table:
 	ESlateVisibility
 	ESlateVisibility::HitTestInvisible
 	ESlateVisibility::Visible
-	EventReply
 	EVerticalAlignment
 	ExecuteActionNameFromHUD
 	ExecuteUbergraph_Button_Rotate
 	FloatProperty
 	Function
 	GameplayTag
-	Geometry
 	GetContext
 	HAlign_Center
 	HAlign_Fill
-	Handled
 	HeightOverride
 	HorizontalAlignment
 	Hovered
@@ -92,7 +88,6 @@ Name table:
 	ImageSizeBox
 	InLockedBus
 	InternalButton
-	InTouchEvent
 	IntProperty
 	InUnlockedBus
 	IsFreeFalling
@@ -106,7 +101,6 @@ Name table:
 	MinDesiredHeight
 	MinDesiredWidth
 	MobileHUD.Button.Rotate
-	MyGeometry
 	NameProperty
 	None
 	Normal
@@ -122,7 +116,6 @@ Name table:
 	OnInEditMode
 	OnTargeting
 	OnTouched
-	OnTouchStarted
 	OnUsingScopeTargeting
 	Overlay
 	OverlaySlot
@@ -130,12 +123,9 @@ Name table:
 	Padding
 	PaperSprite
 	Parent
-	PickUp_Normal_Sprite
-	PointerEvent
 	PointerToUberGraphFrame
 	Pressed
 	ResourceObject
-	ReturnValue
 	Right
 	RootWidget
 	Rotate_Normal_Sprite
@@ -160,7 +150,6 @@ Name table:
 	Top
 	UberGraphFrame
 	UberGraphFunction
-	UserWidget
 	VAlign_Center
 	VAlign_Fill
 	Vector2D
@@ -169,25 +158,25 @@ Name table:
 	VisualType
 	WidgetArchetype
 	WidgetBlueprintGeneratedClass
-	WidgetBlueprintLibrary
 	WidgetName
 	WidgetStyle
 	WidgetTree
 	WidthOverride
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Button_Rotate_C (0-0-0-0): size 275 (cls: Button_Rotate_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	Button_Rotate_C (0-0-0-0): size 259 (cls: Button_Rotate_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
 			bValidTemplate(BoolProperty)=True 
 			TemplateAsset(SoftObjectProperty)=/Game/Athena/HUD/Bacchus/Button_Rotate.WidgetArchetype 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Button_Rotate=Button_Rotate_C 
-	Default__Button_Rotate_C (0-0-0-0): size 881 (cls: Default__Button_Rotate_C>Button_Rotate_C):
+	Default__Button_Rotate_C (0-0-0-0): size 914 (cls: Default__Button_Rotate_C>Button_Rotate_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			ActionMapping(NameProperty)=RotatePrimitiveClockwise 
 			DefaultIcon(ObjectProperty)=Rotate_Normal_Sprite=/Game/Athena/HUD/Atlas/Bacchus/Rotate_Normal_Sprite 
-			VisualType(StructProperty)=System.Byte[] 
+			VisualType(StructProperty/GameplayTag)=System.Byte[] 
 			WidgetName(TextProperty)=Rotate (DD28AD3D45670B71C1CDDA968684CDCB) 
 			OnInBuildMode(EnumProperty)=EBacchusHUDStateType::Show 
 			OnInCombatMode(EnumProperty)=EBacchusHUDStateType::Hide 
@@ -206,7 +195,7 @@ Serialized exports:
 			Visibility(EnumProperty)=ESlateVisibility::Visible 
 	InternalButton (0-0-0-0): size 855 (cls: InternalButton>Button>/Script/UMG):
 		Tag array:
-			WidgetStyle(StructProperty)=System.Byte[] 
+			WidgetStyle(StructProperty/ButtonStyle)=System.Byte[] 
 			Slot(ObjectProperty)=OverlaySlot_9=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
 	WidgetArchetype (0-0-0-0): size 212 (cls: WidgetArchetype>Button_Rotate_C):
@@ -222,21 +211,15 @@ Serialized exports:
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
 	ExecuteUbergraph_Button_Rotate (0-0-0-0): size 118 (cls: ExecuteUbergraph_Button_Rotate>Function>/Script/CoreUObject)
 	OnTouched_1 (0-0-0-0): size 54 (cls: OnTouched_1>Function>/Script/CoreUObject)
-	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	CallFunc_Handled_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Handled_ReturnValue>StructProperty>/Script/CoreUObject)
-	ReturnValue (0-0-0-0): size 36 (cls: ReturnValue>StructProperty>/Script/CoreUObject)
-	InTouchEvent (0-0-0-0): size 36 (cls: InTouchEvent>StructProperty>/Script/CoreUObject)
-	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
-	OnTouchStarted (0-0-0-0): size 173 (cls: OnTouchStarted>Function>/Script/CoreUObject)
 	Image_Background (0-0-0-0): size 249 (cls: Image_Background>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
 	Image_Icon (0-0-0-0): size 290 (cls: Image_Icon>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
 	Overlay_0 (0-0-0-0): size 57 (cls: Overlay_0>Overlay>/Script/UMG):
@@ -248,7 +231,7 @@ Serialized exports:
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	OverlaySlot_10 (0-0-0-0): size 325 (cls: OverlaySlot_10>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 

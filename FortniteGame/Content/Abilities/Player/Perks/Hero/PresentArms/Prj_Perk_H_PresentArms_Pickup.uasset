@@ -6,6 +6,8 @@ Name table:
 	/Game/Abilities/Player/Perks/Hero/PresentArms/GE_Perk_H_PresentArms_StaminaRegen
 	/Game/Abilities/Player/Perks/Hero/PresentArms/Prj_Perk_H_PresentArms_Pickup
 	/Game/Balance/DataTables/CombatEffects_HeroAbilities
+	/Game/Sounds/Fort_Gadgets/Present_Perk/Present_Perk_Spawn_Jingle_Cue
+	/Game/Sounds/Fort_Gadgets/Present_Perk/Presnt_Perk_Drop_Drop_Land_Cue
 	/Script/CoreUObject
 	/Script/Engine
 	/Script/FortniteGame
@@ -186,6 +188,8 @@ Name table:
 	Perk.PresentArms.T01.PickupLifespan
 	PhysicsBody
 	PointerToUberGraphFrame
+	Present_Perk_Spawn_Jingle_Cue
+	Presnt_Perk_Drop_Drop_Land_Cue
 	PrimaryComponentTick
 	PrimitiveComponent
 	Prj_Perk_H_PresentArms_Pickup_C
@@ -212,6 +216,7 @@ Name table:
 	SetLifeSpan
 	SimpleConstructionScript
 	SoundBase
+	SoundCue
 	SpawnEmitterAtLocation
 	SpawnSound
 	SpawnSoundAtLocation
@@ -238,11 +243,13 @@ Serialized exports:
 			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=Prj_Perk_H_PresentArms_Pickup_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Prj_Perk_H_PresentArms_Pickup=Prj_Perk_H_PresentArms_Pickup_C 
-	Default__Prj_Perk_H_PresentArms_Pickup_C (0-0-0-0): size 516 (cls: Default__Prj_Perk_H_PresentArms_Pickup_C>Prj_Perk_H_PresentArms_Pickup_C):
+	Default__Prj_Perk_H_PresentArms_Pickup_C (0-0-0-0): size 574 (cls: Default__Prj_Perk_H_PresentArms_Pickup_C>Prj_Perk_H_PresentArms_Pickup_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			GE_Buffs(ArrayProperty)=[object] (inner: ObjectProperty)
-			Lifespan(StructProperty)=System.Byte[] 
+			Lifespan(StructProperty/ScalableFloat)=System.Byte[] 
+			SpawnSound(ObjectProperty)=Present_Perk_Spawn_Jingle_Cue=/Game/Sounds/Fort_Gadgets/Present_Perk/Present_Perk_Spawn_Jingle_Cue 
+			DestroySound(ObjectProperty)=Presnt_Perk_Drop_Drop_Land_Cue=/Game/Sounds/Fort_Gadgets/Present_Perk/Presnt_Perk_Drop_Drop_Land_Cue 
 			CapsuleComponent(ObjectProperty)=CollisionCapsule0=Default__Prj_Perk_H_PresentArms_Pickup_C 
 			ProjectileMovementComponent(ObjectProperty)=ProjectileComp0=Default__Prj_Perk_H_PresentArms_Pickup_C 
 			bStopSimulatingOnHit(BoolProperty)=False 
@@ -278,7 +285,7 @@ Serialized exports:
 		Tag array:
 			CapsuleHalfHeight(FloatProperty)=40 
 			CapsuleRadius(FloatProperty)=40 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	CallFunc_GetRandomBuff_Random_Buff (0-0-0-0): size 40 (cls: CallFunc_GetRandomBuff_Random_Buff>ClassProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 40 (cls: CallFunc_Array_Get_Item>ClassProperty>/Script/CoreUObject)
 	Random Buff (0-0-0-0): size 40 (cls: Random Buff>ClassProperty>/Script/CoreUObject)
@@ -308,8 +315,8 @@ Serialized exports:
 	P_Pickup_Present_Loop_GEN_VARIABLE (0-0-0-0): size 185 (cls: P_Pickup_Present_Loop_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
 			Template(ObjectProperty)=P_Pickup_Present_Loop=/Game/Abilities/Player/Perks/Hero/PresentArms/FX/P_Pickup_Present_Loop 
-			RelativeLocation(StructProperty)=Vector(0,0,-24) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-24) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	ProjectileComp0 (0-0-0-0): size 209 (cls: ProjectileComp0>ProjectileMovementComponent>/Script/Engine):
 		Tag array:
 			InitialSpeed(FloatProperty)=800 
@@ -324,16 +331,16 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=Prj_Perk_H_PresentArms_Pickup_C 
-			VariableGuid(StructProperty)=Guid: 968239972-1176156167-4002742959-2781599933 
+			VariableGuid(StructProperty/Guid)=Guid: 968239972-1176156167-4002742959-2781599933 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_2 (0-0-0-0): size 891 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Pickup_Present_Loop_GEN_VARIABLE=Prj_Perk_H_PresentArms_Pickup_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionCapsule0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3207165895-1092938587-3333916811-292565898 
+			VariableGuid(StructProperty/Guid)=Guid: 3207165895-1092938587-3333916811-292565898 
 			InternalVariableName(NameProperty)=P_Pickup_Present_Loop 
 	SimpleConstructionScript_0 (0-0-0-0): size 123 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:

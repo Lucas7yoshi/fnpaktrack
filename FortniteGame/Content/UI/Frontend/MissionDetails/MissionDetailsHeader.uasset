@@ -118,6 +118,8 @@ Name table:
 	DelegateFunction
 	DelegateProperty
 	DifficultyLevel
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EFortTheaterMapTileType
 	EHorizontalAlignment
 	Engine
@@ -130,6 +132,7 @@ Name table:
 	EVerticalAlignment
 	ExecuteUbergraph_MissionDetailsHeader
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	FontOutlineSettings
@@ -259,7 +262,6 @@ Name table:
 	Tile Type
 	TileType
 	Timespan
-	Top
 	Translation
 	TypefaceFontName
 	UberGraphFrame
@@ -293,8 +295,8 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_MissionDetailsHeader=MissionDetailsHeader_C 
 	Default__MissionDetailsHeader_C (0-0-0-0): size 174 (cls: Default__MissionDetailsHeader_C>MissionDetailsHeader_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			AvailableTime(StructProperty)=0 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			AvailableTime(StructProperty/Timespan)=0 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	MissionDetailsExpireCountdown (0-0-0-0): size 36 (cls: MissionDetailsExpireCountdown>ObjectProperty>/Script/CoreUObject)
@@ -333,34 +335,35 @@ Serialized exports:
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-B-S_Gorse_C=/Game/UI/Foundation/Text/TextStyle-Base-S-B-S_Gorse 
 			Text(TextProperty)=00:00:00 (25854DBB4B8F0AA462EA08AF934FE1A7) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_5=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	MissionLocationText (0-0-0-0): size 620 (cls: MissionLocationText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S-S 
 			Text(TextProperty)=The Suburbs (AB646D3B46E436415DCBFFA615089497) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=VerticalBoxSlot_3=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	MissionNameText (0-0-0-0): size 394 (cls: MissionNameText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Header-M_C=/Game/UI/Foundation/Text/TextStyle-Header-M 
 			Text(TextProperty)=RETRIEVE THE DATA (8DD587884EA31EC5BE6F4F8389AB530E) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	Tile Type (0-0-0-0): size 40 (cls: Tile Type>EnumProperty>/Script/CoreUObject)
 	CallFunc_Conv_IntToFloat_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_IntToFloat_ReturnValue>FloatProperty>/Script/CoreUObject)
-	HorizontalBox_0 (0-0-0-0): size 86 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+	HorizontalBox_0 (0-0-0-0): size 127 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	ContentBox (0-0-0-0): size 79 (cls: ContentBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -371,7 +374,7 @@ Serialized exports:
 			Slot(ObjectProperty)=HorizontalBoxSlot_249=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 250 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
@@ -394,19 +397,20 @@ Serialized exports:
 			Content(ObjectProperty)=MissionRemainTime=WidgetArchetype 
 	MissionIconImage (0-0-0-0): size 249 (cls: MissionIconImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	DifficultyLevel (0-0-0-0): size 32 (cls: DifficultyLevel>IntProperty>/Script/CoreUObject)
 	CallFunc_Get_Conning_Color_From_Difficulty_Value_DifficultyValue (0-0-0-0): size 32 (cls: CallFunc_Get_Conning_Color_From_Difficulty_Value_DifficultyValue>IntProperty>/Script/CoreUObject)
-	MissionDetailsExpireCountdown (0-0-0-0): size 268 (cls: MissionDetailsExpireCountdown>MissionDetailsExpireCountdown_C>/Game/UI/Frontend/MissionDetails/MissionDetailsExpireCountdown):
+	MissionDetailsExpireCountdown (0-0-0-0): size 309 (cls: MissionDetailsExpireCountdown>MissionDetailsExpireCountdown_C>/Game/UI/Frontend/MissionDetails/MissionDetailsExpireCountdown):
 		Tag array:
 			ContentBox(ObjectProperty)=ContentBox=WidgetArchetype 
 			MissionRemainTime(ObjectProperty)=MissionRemainTime=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=VerticalBoxSlot_2=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	WidgetArchetype (0-0-0-0): size 183 (cls: WidgetArchetype>MissionDetailsHeader_C):
 		Tag array:
 			MissionDetailsExpireCountdown(ObjectProperty)=MissionDetailsExpireCountdown=WidgetArchetype 
@@ -469,12 +473,12 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 	VerticalBoxSlot_2 (0-0-0-0): size 156 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=MissionNameText=WidgetArchetype 
-	VerticalBoxSlot_3 (0-0-0-0): size 185 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
+	VerticalBoxSlot_3 (0-0-0-0): size 156 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=MissionLocationText=WidgetArchetype 
 	VerticalBoxSlot_0 (0-0-0-0): size 70 (cls: VerticalBoxSlot_0>VerticalBoxSlot>/Script/UMG):
@@ -483,7 +487,7 @@ Serialized exports:
 			Content(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 156 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=MissionDetailsExpireCountdown=WidgetArchetype 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):

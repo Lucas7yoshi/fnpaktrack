@@ -24,6 +24,7 @@ Name table:
 	ArrayProperty
 	ArriveTangent
 	ArriveTangentWeight
+	AthenaCreativeItemTileButton
 	bAllowTemplate
 	bClassRequiresNativeTick
 	bCookedWidgetTree
@@ -63,11 +64,11 @@ Name table:
 	CustomEvent
 	DataTable
 	DataTableRowHandle
+	Default__AthenaCreativeItemTileButton
 	Default__BoolProperty
 	Default__ButtonStyle-Skew-IslandOptions_C
 	Default__CommonActionWidget
 	Default__CommonTextBlock
-	Default__FortItemEntryWidget
 	Default__Function
 	Default__GameplayStatics
 	Default__HorizontalBox
@@ -140,7 +141,6 @@ Name table:
 	FortCreativeRealEstatePlotItem
 	FortCreativeRealEstatePlotItemDefinition
 	FortItemEntry
-	FortItemEntryWidget
 	FrameNumber
 	FrameRate
 	Function
@@ -362,7 +362,7 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_IslandOptionEntry=IslandOptionEntry_C 
 	Default__IslandOptionEntry_C (0-0-0-0): size 146 (cls: Default__IslandOptionEntry_C>IslandOptionEntry_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			Style(ObjectProperty)=ButtonStyle-Skew-IslandOptions_C=/Game/UI/Foundation/Buttons/ButtonStyles/Skew/ButtonStyle-Skew-IslandOptions 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
@@ -374,17 +374,17 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	InputActionWidget (0-0-0-0): size 315 (cls: InputActionWidget>CommonActionWidget>/Script/CommonUI):
 		Tag array:
-			InputActionDataRow(StructProperty)=System.Byte[] 
+			InputActionDataRow(StructProperty/DataTableRowHandle)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
-			RenderTransform(StructProperty)=System.Byte[] 
+			RenderTransform(StructProperty/WidgetTransform)=System.Byte[] 
 			Visibility(EnumProperty)=ESlateVisibility::Hidden 
 	PlotName (0-0-0-0): size 520 (cls: PlotName>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			ScrollStyle(ObjectProperty)=TextScrollStyle-Base_C=/Game/UI/Foundation/Text/TextScrollStyle-Base 
 			Text(TextProperty)={Island Name} (053C84D740CA74E05019D38CF6F7238D) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			MinDesiredWidth(FloatProperty)=440 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
@@ -412,7 +412,7 @@ Serialized exports:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 	HorizontalBoxSlot_0 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_0=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 152 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
@@ -424,7 +424,7 @@ Serialized exports:
 	WidgetArchetype (0-0-0-0): size 247 (cls: WidgetArchetype>IslandOptionEntry_C):
 		Tag array:
 			PlotName(ObjectProperty)=PlotName=WidgetArchetype 
-			ItemEntry(StructProperty)=System.Byte[] 
+			ItemEntry(StructProperty/FortItemEntry)=System.Byte[] 
 			InputActionWidget(ObjectProperty)=InputActionWidget=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -432,22 +432,22 @@ Serialized exports:
 		Tag array:
 			Possessables(ArrayProperty)=[object] (inner: StructProperty)
 			ObjectBindings(ArrayProperty)=[object] (inner: StructProperty)
-			PlaybackRange(StructProperty)=System.Byte[] 
-			DisplayRate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 1030999872-1316231878-270478727-1448827729 
+			PlaybackRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			DisplayRate(StructProperty/FrameRate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 1030999872-1316231878-270478727-1448827729 
 	MovieScene2DTransformSection_0 (0-0-0-0): size 2057 (cls: MovieScene2DTransformSection_0>MovieScene2DTransformSection>/Script/UMG):
 		Tag array:
-			Scale(StructProperty)=System.Byte[] 
-			Scale(StructProperty)=System.Byte[] 
-			Easing(StructProperty)=System.Byte[] 
-			SectionRange(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 573553645-1296416977-3181862074-944389240 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Scale(StructProperty/MovieSceneFloatChannel)=System.Byte[] 
+			Easing(StructProperty/MovieSceneEasingSettings)=System.Byte[] 
+			SectionRange(StructProperty/MovieSceneFrameRange)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 573553645-1296416977-3181862074-944389240 
 	MovieScene2DTransformTrack_0 (0-0-0-0): size 196 (cls: MovieScene2DTransformTrack_0>MovieScene2DTransformTrack>/Script/UMG):
 		Tag array:
 			PropertyName(NameProperty)=RenderTransform 
 			PropertyPath(StrProperty)=RenderTransform 
 			Sections(ArrayProperty)=[object] (inner: ObjectProperty)
-			Signature(StructProperty)=Guid: 1002610535-1183296110-3314016667-3443375571 
+			Signature(StructProperty/Guid)=Guid: 1002610535-1183296110-3314016667-3443375571 
 	EaseInFunction (0-0-0-0): size 12 (cls: EaseInFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	EaseOutFunction (0-0-0-0): size 12 (cls: EaseOutFunction>MovieSceneBuiltInEasingFunction>/Script/MovieScene)
 	CallFunc_PlayAnimationForward_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_PlayAnimationForward_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -476,8 +476,8 @@ Serialized exports:
 			MovieScene(ObjectProperty)=Hovered=IslandOptionEntry_C 
 			AnimationBindings(ArrayProperty)=[object] (inner: StructProperty)
 			DisplayLabel(StrProperty)=Hovered 
-			PrecompiledEvaluationTemplate(StructProperty)=System.Byte[] 
-			Signature(StructProperty)=Guid: 3057227166-1167229306-179889563-4245090240 
+			PrecompiledEvaluationTemplate(StructProperty/MovieSceneEvaluationTemplate)=System.Byte[] 
+			Signature(StructProperty/Guid)=Guid: 3057227166-1167229306-179889563-4245090240 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=HorizontalBox_0=WidgetArchetype 

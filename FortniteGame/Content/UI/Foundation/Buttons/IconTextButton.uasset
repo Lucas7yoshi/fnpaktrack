@@ -15,6 +15,7 @@ Name table:
 	/Script/Engine
 	/Script/FortniteGame
 	/Script/FortniteUI
+	/Script/Slate
 	/Script/SlateCore
 	/Script/UMG
 	ArrayProperty
@@ -42,6 +43,7 @@ Name table:
 	bUsingGamepad
 	ButtonStyle-Primary-M_C
 	ButtonText
+	ButtonTextJustification
 	bValidTemplate
 	ByteProperty
 	CallFunc_BooleanOR_ReturnValue
@@ -122,6 +124,8 @@ Name table:
 	DrawAs
 	DynamicBindingObjects
 	ECommonInputType
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	Engine
 	EntryPoint
@@ -147,6 +151,7 @@ Name table:
 	EVerticalAlignment
 	ExecuteUbergraph_IconTextButton
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontObject
 	FortGlobals
@@ -248,6 +253,7 @@ Name table:
 	SetControllerStyle
 	SetHorizontalAlignment
 	SetInitialMouseKeyboardStyle
+	SetJustification
 	SetMouseKeyboardStyle
 	SetStyle
 	SetTabLabelInfo
@@ -280,6 +286,7 @@ Name table:
 	Temp_byte_Variable3
 	TemplateAsset
 	Text
+	TextBlock
 	TextIsEmpty
 	TextProperty
 	TextScrollStyle-Base_C
@@ -308,7 +315,7 @@ Name table:
 	WidgetTree
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	IconTextButton_C (0-0-0-0): size 769 (cls: IconTextButton_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	IconTextButton_C (0-0-0-0): size 773 (cls: IconTextButton_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -317,15 +324,16 @@ Serialized exports:
 			TemplateAsset(SoftObjectProperty)=/Game/UI/Foundation/Buttons/IconTextButton.WidgetArchetype 
 			DynamicBindingObjects(ArrayProperty)=[object] (inner: ObjectProperty)
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_IconTextButton=IconTextButton_C 
-	Default__IconTextButton_C (0-0-0-0): size 1223 (cls: Default__IconTextButton_C>IconTextButton_C):
+	Default__IconTextButton_C (0-0-0-0): size 1264 (cls: Default__IconTextButton_C>IconTextButton_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			ButtonText(TextProperty)={Text} (8FD167904D666ED5AFBE9088E1AC6C8C) 
-			IconBrush(StructProperty)=System.Byte[] 
+			IconBrush(StructProperty/SlateBrush)=System.Byte[] 
 			MouseKeyboardStyle(ObjectProperty)=ButtonStyle-Primary-M_C=/Game/UI/Foundation/Buttons/ButtonStyles/Primary/ButtonStyle-Primary-M 
+			ButtonTextJustification(ByteProperty)=ETextJustify::Center 
 			Style(ObjectProperty)=ButtonStyle-Primary-M_C=/Game/UI/Foundation/Buttons/ButtonStyles/Primary/ButtonStyle-Primary-M 
-			PressedSlateSoundOverride(StructProperty)=System.Byte[] 
-			HoveredSlateSoundOverride(StructProperty)=System.Byte[] 
+			PressedSlateSoundOverride(StructProperty/SlateSound)=System.Byte[] 
+			HoveredSlateSoundOverride(StructProperty/SlateSound)=System.Byte[] 
 			bApplyAlphaOnDisable(BoolProperty)=False 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
@@ -376,7 +384,7 @@ Serialized exports:
 	SetMouseKeyboardStyle (0-0-0-0): size 166 (cls: SetMouseKeyboardStyle>Function>/Script/CoreUObject)
 	CallFunc_EqualEqual_ByteByte_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ByteByte_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_GetContentSlot_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContentSlot_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	UpdateContentAlignment (0-0-0-0): size 153 (cls: UpdateContentAlignment>Function>/Script/CoreUObject)
+	UpdateContentAlignment (0-0-0-0): size 178 (cls: UpdateContentAlignment>Function>/Script/CoreUObject)
 	ContentAlignment (0-0-0-0): size 36 (cls: ContentAlignment>ByteProperty>/Script/CoreUObject)
 	SetContentAlignment (0-0-0-0): size 72 (cls: SetContentAlignment>Function>/Script/CoreUObject)
 	CallFunc_GetCurrentTextStyleClass_ReturnValue (0-0-0-0): size 40 (cls: CallFunc_GetCurrentTextStyleClass_ReturnValue>ClassProperty>/Script/CoreUObject)
@@ -397,15 +405,16 @@ Serialized exports:
 	Temp_bool_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Variable1>BoolProperty>/Script/CoreUObject)
 	ContentBorder (0-0-0-0): size 350 (cls: ContentBorder>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=True 
 	BorderSlot_0 (0-0-0-0): size 243 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=ContentBorder=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox=WidgetArchetype 
+	ButtonTextJustification (0-0-0-0): size 36 (cls: ButtonTextJustification>ByteProperty>/Script/CoreUObject)
 	ContentAlignment (0-0-0-0): size 36 (cls: ContentAlignment>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
@@ -424,7 +433,7 @@ Serialized exports:
 	MouseKeyboardStyle (0-0-0-0): size 40 (cls: MouseKeyboardStyle>ClassProperty>/Script/CoreUObject)
 	InputActionWidget (0-0-0-0): size 339 (cls: InputActionWidget>CommonActionWidget>/Script/CommonUI):
 		Tag array:
-			ProgressMaterialBrush(StructProperty)=System.Byte[] 
+			ProgressMaterialBrush(StructProperty/SlateBrush)=System.Byte[] 
 			ProgressMaterialParam(NameProperty)=Percentage 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	CenterButtonTextWidget (0-0-0-0): size 453 (cls: CenterButtonTextWidget>CommonTextBlock>/Script/CommonUI):
@@ -432,8 +441,8 @@ Serialized exports:
 			Style(ObjectProperty)=TextStyle-MediumButton_C=/Game/UI/Foundation/Buttons/TextStyles/TextStyle-MediumButton 
 			ScrollStyle(ObjectProperty)=TextScrollStyle-Base_C=/Game/UI/Foundation/Text/TextScrollStyle-Base 
 			Text(TextProperty)={Text} (99357DD44CFC5E3692A9C792F19B30DA) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Center 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -458,34 +467,35 @@ Serialized exports:
 	CallFunc_GetDynamicMaterial_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetDynamicMaterial_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	Ret Material (0-0-0-0): size 36 (cls: Ret Material>ObjectProperty>/Script/CoreUObject)
 	Get Dynamic Material (0-0-0-0): size 88 (cls: Get Dynamic Material>Function>/Script/CoreUObject)
-	HorizontalBox (0-0-0-0): size 94 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
+	HorizontalBox (0-0-0-0): size 135 (cls: HorizontalBox>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_0=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBoxSlot_0 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=CenterButtonTextWidget=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 267 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=InputActionWidget=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 325 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=LeftSideImage=WidgetArchetype 
 	HorizontalBoxSlot_3 (0-0-0-0): size 243 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox=WidgetArchetype 
 			Content(ObjectProperty)=RightExtraContentSlot=WidgetArchetype 
 	WidgetArchetype (0-0-0-0): size 212 (cls: WidgetArchetype>IconTextButton_C):
@@ -499,7 +509,7 @@ Serialized exports:
 			bCookedWidgetTree(BoolProperty)=True 
 	LeftSideImage (0-0-0-0): size 196 (cls: LeftSideImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 	RightExtraContentSlot (0-0-0-0): size 41 (cls: RightExtraContentSlot>NamedSlot>/Script/UMG):
 		Tag array:

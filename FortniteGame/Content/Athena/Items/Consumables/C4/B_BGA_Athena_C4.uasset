@@ -247,7 +247,6 @@ Name table:
 	DelegateFunction
 	DelegateProperty
 	DestroyedActor
-	DisplayName
 	ECC_GameTraceChannel8
 	ECC_WorldStatic
 	ECollisionChannel
@@ -334,6 +333,7 @@ Name table:
 	GetServerWorldTimeSeconds
 	Gravity
 	Guid
+	HandleHitBuildingActor
 	HandleHitBuildingWall
 	HandleHitPassed
 	HandleHits
@@ -361,6 +361,7 @@ Name table:
 	IsDoorComponent
 	IsValid
 	K2_AddRelativeRotation
+	K2_AttachToActor
 	K2_AttachToComponent
 	K2_DestroyActor
 	K2_GetActorLocation
@@ -498,6 +499,7 @@ Name table:
 	NotEqual_ByteByte
 	NotEqual_ObjectObject
 	NumReplicatedProperties
+	object
 	Object
 	ObjectProperty
 	ObjectType
@@ -572,6 +574,7 @@ Name table:
 	SetExplosion
 	SetProjectile
 	SetRenderCustomDepth
+	SetTeam
 	SetUpdatedComponent
 	SetVectorParameterValueOnMaterials
 	SetVisibility
@@ -604,6 +607,7 @@ Name table:
 	TargetTags
 	Team
 	TeamColor
+	TeamIndex
 	Temp_bool_Has_Been_Initd_Variable
 	Temp_bool_Has_Been_Initd_Variable1
 	Temp_bool_Has_Been_Initd_Variable2
@@ -630,20 +634,20 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	B_BGA_Athena_C4_C (0-0-0-0): size 713 (cls: B_BGA_Athena_C4_C>BlueprintGeneratedClass>/Script/Engine):
+	B_BGA_Athena_C4_C (0-0-0-0): size 729 (cls: B_BGA_Athena_C4_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=8 
 			bHasCookedComponentInstancingData(BoolProperty)=True 
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_1=B_BGA_Athena_C4_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_BGA_Athena_C4=B_BGA_Athena_C4_C 
-	Default__B_BGA_Athena_C4_C (0-0-0-0): size 1303 (cls: Default__B_BGA_Athena_C4_C>B_BGA_Athena_C4_C):
+	Default__B_BGA_Athena_C4_C (0-0-0-0): size 1307 (cls: Default__B_BGA_Athena_C4_C>B_BGA_Athena_C4_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			Land_Sound(ObjectProperty)=C4_PlaceAndPrime_Athena_Cue=/Game/Athena/Sounds/Items/C4/C4_PlaceAndPrime_Athena_Cue 
-			Impact_Loc(StructProperty)=Vector(0,0,0) 
-			HitNormal(StructProperty)=Vector(1,0,0) 
-			EventExplosion(StructProperty)=System.Byte[] 
-			ExplosionRangeDefaultTag(StructProperty)=System.Byte[] 
+			Impact_Loc(StructProperty/Vector)=Vector(0,0,0) 
+			HitNormal(StructProperty/Vector)=Vector(1,0,0) 
+			EventExplosion(StructProperty/GameplayTag)=System.Byte[] 
+			ExplosionRangeDefaultTag(StructProperty/GameplayTag)=System.Byte[] 
 			Activation_Radius(FloatProperty)=500 
 			Activation_Delay(FloatProperty)=0.5 
 			PostThrowEndDelay(FloatProperty)=1.175 
@@ -652,23 +656,23 @@ Serialized exports:
 			ExplosionForceFeedbackFar(ObjectProperty)=FF_Generic_Explosion_Far=/Game/Weapons/ForceFeedback/FF_Generic_Explosion_Far 
 			Explosion_Sound(ObjectProperty)=C4_Explosion_Athena_Cue=/Game/Sounds/Fort_GamePlay_Sounds/Explosives/C4_Explosion_Athena_Cue 
 			PreExplosion_Sound(ObjectProperty)=C4_PreExplode_Athena_Cue=/Game/Athena/Sounds/Items/C4/C4_PreExplode_Athena_Cue 
-			RotationInAir(StructProperty)=Rotator(0,0,0) 
+			RotationInAir(StructProperty/Rotator)=Rotator(0,0,0) 
 			SphereOverlapRadius(FloatProperty)=400 
 			DelayBetweenStructureDestruction(FloatProperty)=0.03 
 			InherentAbilitySets(ObjectProperty)=GAS_Athena_C4=/Game/Athena/Items/Consumables/C4/GAS_Athena_C4 
 			InteractionText(TextProperty)= () 
-			DisplayName(TextProperty)= () 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
 			PrimarySurfaceType(ByteProperty)=SurfaceType11 
 			bSurpressHealthBar(BoolProperty)=True 
 			bAlwaysUseNetCullDistanceSquaredForRelevancy(BoolProperty)=True 
 			Team(ByteProperty)=EFortTeam::HumanCampaign 
-			StaticGameplayTags(StructProperty)=GameplayTagContainer:Weapon.Ranged.Heavy.C4 
+			TeamIndex(ByteProperty)=[object] 
+			StaticGameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Weapon.Ranged.Heavy.C4 
 			bReplicateMovement(BoolProperty)=True 
 	P_ProximityMine_Beacon_01 (0-0-0-0): size 36 (cls: P_ProximityMine_Beacon_01>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_B_BGA_Athena_C4 (0-0-0-0): size 5670 (cls: ExecuteUbergraph_B_BGA_Athena_C4>Function>/Script/CoreUObject)
+	ExecuteUbergraph_B_BGA_Athena_C4 (0-0-0-0): size 5664 (cls: ExecuteUbergraph_B_BGA_Athena_C4>Function>/Script/CoreUObject)
 	CallFunc_SphereOverlapActors_OutActors (0-0-0-0): size 36 (cls: CallFunc_SphereOverlapActors_OutActors>ObjectProperty>/Script/CoreUObject)
 	CallFunc_SphereOverlapActors_OutActors (0-0-0-0): size 36 (cls: CallFunc_SphereOverlapActors_OutActors>ArrayProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ByteProperty>/Script/CoreUObject)
@@ -706,7 +710,7 @@ Serialized exports:
 	UserConstructionScript (0-0-0-0): size 726 (cls: UserConstructionScript>Function>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	OnRep_IsDead? (0-0-0-0): size 94 (cls: OnRep_IsDead?>Function>/Script/CoreUObject)
-	Object (0-0-0-0): size 36 (cls: Object>ObjectProperty>/Script/CoreUObject)
+	object (0-0-0-0): size 36 (cls: object>ObjectProperty>/Script/CoreUObject)
 	HandleHitBuildingWall (0-0-0-0): size 255 (cls: HandleHitBuildingWall>Function>/Script/CoreUObject)
 	Object (0-0-0-0): size 36 (cls: Object>ObjectProperty>/Script/CoreUObject)
 	HandleWasAttachedToWall (0-0-0-0): size 233 (cls: HandleWasAttachedToWall>Function>/Script/CoreUObject)
@@ -723,7 +727,7 @@ Serialized exports:
 	Object (0-0-0-0): size 36 (cls: Object>ObjectProperty>/Script/CoreUObject)
 	HandleHitSupplyDrop (0-0-0-0): size 233 (cls: HandleHitSupplyDrop>Function>/Script/CoreUObject)
 	Object (0-0-0-0): size 36 (cls: Object>ObjectProperty>/Script/CoreUObject)
-	HandleHits (0-0-0-0): size 129 (cls: HandleHits>Function>/Script/CoreUObject)
+	HandleHits (0-0-0-0): size 150 (cls: HandleHits>Function>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue>BoolProperty>/Script/CoreUObject)
 	OnRep_LandedTime (0-0-0-0): size 547 (cls: OnRep_LandedTime>Function>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ByteProperty>/Script/CoreUObject)
@@ -768,6 +772,11 @@ Serialized exports:
 	Temp_bool_IsClosed_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_IsClosed_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable2>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
+	CallFunc_MakeHitResult_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeHitResult_ReturnValue>StructProperty>/Script/CoreUObject)
+	OnRep_Impact_Loc (0-0-0-0): size 234 (cls: OnRep_Impact_Loc>Function>/Script/CoreUObject)
+	Object (0-0-0-0): size 36 (cls: Object>ObjectProperty>/Script/CoreUObject)
+	HandleHitBuildingActor (0-0-0-0): size 136 (cls: HandleHitBuildingActor>Function>/Script/CoreUObject)
+	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDoorComponent_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDoorComponent_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
@@ -778,8 +787,6 @@ Serialized exports:
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
 	CallFunc_SphereOverlapComponents_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_SphereOverlapComponents_ReturnValue>BoolProperty>/Script/CoreUObject)
 	IsDead? (0-0-0-0): size 34 (cls: IsDead?>BoolProperty>/Script/CoreUObject)
-	CallFunc_MakeHitResult_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_MakeHitResult_ReturnValue>StructProperty>/Script/CoreUObject)
-	OnRep_Impact_Loc (0-0-0-0): size 234 (cls: OnRep_Impact_Loc>Function>/Script/CoreUObject)
 	CallFunc_K2_SetActorLocation_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_K2_SetActorLocation_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_LessEqual_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_LessEqual_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -898,6 +905,7 @@ Serialized exports:
 	Explosion_Sound (0-0-0-0): size 36 (cls: Explosion_Sound>ObjectProperty>/Script/CoreUObject)
 	ExplosionForceFeedbackFar (0-0-0-0): size 36 (cls: ExplosionForceFeedbackFar>ObjectProperty>/Script/CoreUObject)
 	ExplosionForceFeedbackNear (0-0-0-0): size 36 (cls: ExplosionForceFeedbackNear>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsBuilding_Actor (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsBuilding_Actor>ObjectProperty>/Script/CoreUObject)
 	Comp (0-0-0-0): size 36 (cls: Comp>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsBuilding_Wall (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsBuilding_Wall>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsStatic_Mesh_Component (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsStatic_Mesh_Component>ObjectProperty>/Script/CoreUObject)
@@ -931,9 +939,9 @@ Serialized exports:
 		Tag array:
 			Template(ObjectProperty)=P_C4_Light_TeamColored=/Game/Athena/Items/Consumables/C4/P_C4_Light_TeamColored 
 			bRenderCustomDepth(BoolProperty)=True 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(3.011181,-0.9613253,12.41432) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(3.011181,-0.9613253,12.41432) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	ProjectileMovementComponent_7 (0-0-0-0): size 154 (cls: ProjectileMovementComponent_7>ProjectileMovementComponent>/Script/Engine):
 		Tag array:
@@ -947,37 +955,37 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_7=B_BGA_Athena_C4_C 
-			VariableGuid(StructProperty)=Guid: 1936454195-1075374130-360597671-1253880230 
+			VariableGuid(StructProperty/Guid)=Guid: 1936454195-1075374130-360597671-1253880230 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_16 (0-0-0-0): size 2457 (cls: SCS_Node_16>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SphereComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Root_Sphere_Collision_GEN_VARIABLE=B_BGA_Athena_C4_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 1627426916-1145607841-802120114-19264401 
+			VariableGuid(StructProperty/Guid)=Guid: 1627426916-1145607841-802120114-19264401 
 			InternalVariableName(NameProperty)=Root_Sphere_Collision 
 	SCS_Node_18 (0-0-0-0): size 3645 (cls: SCS_Node_18>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SM_C4_Explosive_GEN_VARIABLE=B_BGA_Athena_C4_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 3798373215-1188693904-465763496-550943335 
+			VariableGuid(StructProperty/Guid)=Guid: 3798373215-1188693904-465763496-550943335 
 			InternalVariableName(NameProperty)=SM_C4_Explosive 
 	SCS_Node_5 (0-0-0-0): size 832 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ProjectileMovementComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=ProjectileMovementComponent_7=B_BGA_Athena_C4_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 3062162747-1185896043-3400980642-2705816074 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 3062162747-1185896043-3400980642-2705816074 
 			InternalVariableName(NameProperty)=ProjectileMovement1 
 	SCS_Node_6 (0-0-0-0): size 1426 (cls: SCS_Node_6>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_ProximityMine_Beacon_01DDFE60AF41B5CBEA7AF7609E860176FD=B_BGA_Athena_C4_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 1154995117-1096844355-796166534-1429555349 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 1154995117-1096844355-796166534-1429555349 
 			InternalVariableName(NameProperty)=P_ProximityMine_Beacon_01 
 	SimpleConstructionScript_1 (0-0-0-0): size 139 (cls: SimpleConstructionScript_1>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -989,7 +997,7 @@ Serialized exports:
 			SphereRadius(FloatProperty)=8 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			bTraceComplexOnMove(BoolProperty)=True 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	SM_C4_Explosive_GEN_VARIABLE (0-0-0-0): size 1418 (cls: SM_C4_Explosive_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_C4_Explosive=/Game/Weapons/Grenades/C4_Explosive/Meshes/SM_C4_Explosive 
@@ -998,8 +1006,8 @@ Serialized exports:
 			bTraceComplexOnMove(BoolProperty)=True 
 			bReceivesDecals(BoolProperty)=False 
 			bRenderCustomDepth(BoolProperty)=True 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeScale3D(StructProperty)=Vector(1.25,1.25,1.25) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeScale3D(StructProperty/Vector)=Vector(1.25,1.25,1.25) 
 	CallFunc_Conv_FloatToString_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Conv_FloatToString_ReturnValue>StrProperty>/Script/CoreUObject)
 	HitLocation (0-0-0-0): size 36 (cls: HitLocation>StructProperty>/Script/CoreUObject)
 	Momentum (0-0-0-0): size 36 (cls: Momentum>StructProperty>/Script/CoreUObject)

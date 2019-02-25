@@ -60,6 +60,7 @@ Name table:
 	BannerImage
 	bApplyOutlineToDropShadows
 	bCookedWidgetTree
+	bFlipForRightToLeftFlowDirection
 	bHasScriptImplementedPaint
 	bHasScriptImplementedTick
 	Bindings
@@ -187,6 +188,8 @@ Name table:
 	EBindingKind::Function
 	EDynamicBoxType
 	EDynamicBoxType::Vertical
+	EFlowDirectionPreference
+	EFlowDirectionPreference::Culture
 	EHorizontalAlignment
 	Engine
 	EntryBoxType
@@ -213,6 +216,7 @@ Name table:
 	ExtraContentArea
 	ExtraContentArea2
 	FloatProperty
+	FlowDirectionPreference
 	Font
 	FontMaterial
 	FontObject
@@ -456,7 +460,7 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_AthenaMatchStatsScreen=AthenaMatchStatsScreen_C 
 	Default__AthenaMatchStatsScreen_C (0-0-0-0): size 117 (cls: Default__AthenaMatchStatsScreen_C>AthenaMatchStatsScreen_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
 	AthenaMatchStatsPartial (0-0-0-0): size 299 (cls: AthenaMatchStatsPartial>AthenaMatchStatsPartial_C>/Game/Athena/HUD/EndGame/AthenaMatchStatsPartial):
@@ -545,13 +549,13 @@ Serialized exports:
 			bIsVariable(BoolProperty)=True 
 	BackgroundBlur_0 (0-0-0-0): size 255 (cls: BackgroundBlur_0>BackgroundBlur>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			BlurStrength(FloatProperty)=15 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=BorderSlot_1=WidgetArchetype 
 	BackgroundBlurSlot_0 (0-0-0-0): size 243 (cls: BackgroundBlurSlot_0>BackgroundBlurSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=BackgroundBlur_0=WidgetArchetype 
 			Content(ObjectProperty)=SafeZone_0=WidgetArchetype 
 	AthenaMatchStatsPartial (0-0-0-0): size 36 (cls: AthenaMatchStatsPartial>ObjectProperty>/Script/CoreUObject)
@@ -578,13 +582,13 @@ Serialized exports:
 	Temp_bool_Variable (0-0-0-0): size 34 (cls: Temp_bool_Variable>BoolProperty>/Script/CoreUObject)
 	Border_0 (0-0-0-0): size 475 (cls: Border_0>Border>/Script/UMG):
 		Tag array:
-			Background(StructProperty)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=VerticalBoxSlot_4=WidgetArchetype 
 	Border_6 (0-0-0-0): size 434 (cls: Border_6>Border>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 70 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
@@ -593,26 +597,26 @@ Serialized exports:
 			Content(ObjectProperty)=SizeBox_4=WidgetArchetype 
 	BorderSlot_0 (0-0-0-0): size 284 (cls: BorderSlot_0>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=CommonBorder_0=WidgetArchetype 
 			Content(ObjectProperty)=Overlay_0=WidgetArchetype 
 	BorderSlot_1 (0-0-0-0): size 243 (cls: BorderSlot_1>BorderSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=Border_6=WidgetArchetype 
 			Content(ObjectProperty)=BackgroundBlur_0=WidgetArchetype 
 	CommonBorder_0 (0-0-0-0): size 677 (cls: CommonBorder_0>CommonBorder>/Script/CommonUI):
 		Tag array:
 			VerticalAlignment(ByteProperty)=VAlign_Center 
-			Padding(StructProperty)=System.Byte[] 
-			Background(StructProperty)=System.Byte[] 
-			BrushColor(StructProperty)=UE4.FLinearColor 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Background(StructProperty/SlateBrush)=System.Byte[] 
+			BrushColor(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	BorderTouchZone (0-0-0-0): size 318 (cls: BorderTouchZone>CommonBorder>/Script/CommonUI):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			OnMouseButtonDownEvent(DelegateProperty)=[object] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -634,259 +638,259 @@ Serialized exports:
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	Value (0-0-0-0): size 380 (cls: Value>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	TotalScore (0-0-0-0): size 377 (cls: TotalScore>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			Slot(ObjectProperty)=GridSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	TotalXp (0-0-0-0): size 377 (cls: TotalXp>CommonNumericTextBlock>/Script/CommonUI):
 		Tag array:
 			Text(TextProperty)=Text Block (TextBlockDefaultValue) 
-			Font(StructProperty)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			Slot(ObjectProperty)=GridSlot_4=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	CommonTextBlock_0 (0-0-0-0): size 363 (cls: CommonTextBlock_0>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Header-M_C=/Game/UI/Foundation/Text/TextStyle-Header-M 
 			Text(TextProperty)=Your Results (B3A54A464EF37CA54D1990A23DB2981C) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=VerticalBoxSlot_1=WidgetArchetype 
 	CommonTextBlock_1 (0-0-0-0): size 338 (cls: CommonTextBlock_1>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-M-B_C=/Game/UI/Foundation/Text/TextStyle-Base-M-B 
 			Text(TextProperty)=Team Still Alive (47D5C2E84B699981DCD83FA34AABA512) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 	PlacementText (0-0-0-0): size 410 (cls: PlacementText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S_C=/Game/UI/Foundation/Text/TextStyle-Base-S 
 			Text(TextProperty)=You Placed 1st out of 100 Players (9ACC63004D86614D1FF8289226AC0623) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	CommonTextBlock_2 (0-0-0-0): size 490 (cls: CommonTextBlock_2>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Damage To Players (E8D8FC084211D53E7CFD09A4DAA4E66A) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_16=WidgetArchetype 
 	CommonTextBlock_23 (0-0-0-0): size 485 (cls: CommonTextBlock_23>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Eliminations (9CD23CDA46B54735955091A61AA682EF) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_0=WidgetArchetype 
 	CommonTextBlock_25 (0-0-0-0): size 490 (cls: CommonTextBlock_25>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Distance Traveled (560CF92548F46017942BD88A636E1BA8) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_2=WidgetArchetype 
 	CommonTextBlock_27 (0-0-0-0): size 480 (cls: CommonTextBlock_27>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Assists (76013A334A6C8AF69B2FB1B03C5B9C37) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_4=WidgetArchetype 
 	CommonTextBlock_29 (0-0-0-0): size 483 (cls: CommonTextBlock_29>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Head Shots (131751034B5A476C60EDA38B92D98C35) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_6=WidgetArchetype 
 	CommonTextBlock_3 (0-0-0-0): size 485 (cls: CommonTextBlock_3>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Damage Taken (E1F092DC41EBAB61837ED1B0DA904346) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_18=WidgetArchetype 
 	CommonTextBlock_31 (0-0-0-0): size 480 (cls: CommonTextBlock_31>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Revives (3470A20249C6F12BB502DDA61BDF1806) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_8=WidgetArchetype 
 	CommonTextBlock_33 (0-0-0-0): size 491 (cls: CommonTextBlock_33>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Materials Gathered (F973345642B0137C977BEAB31CBC3B62) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_10=WidgetArchetype 
 	CommonTextBlock_35 (0-0-0-0): size 481 (cls: CommonTextBlock_35>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Accuracy (11888089496BAECB50C8A7B27FF9CC54) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_12=WidgetArchetype 
 	CommonTextBlock_37 (0-0-0-0): size 487 (cls: CommonTextBlock_37>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Materials Used (804D9A0F4056DAC5D998198D8A02BC24) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_14=WidgetArchetype 
 	CommonTextBlock_5 (0-0-0-0): size 477 (cls: CommonTextBlock_5>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Hits (1CADC1C644A903F056B563947D5642BE) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_22=WidgetArchetype 
 	StructuralDamage (0-0-0-0): size 493 (cls: StructuralDamage>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-S-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-S-70pc 
 			Text(TextProperty)=Damage To Structures (E13A9C0B478A14826B9C5BB8928D72E3) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=GridSlot_20=WidgetArchetype 
 	MiniReward1CountTB (0-0-0-0): size 502 (cls: MiniReward1CountTB>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS-B-70pc_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-B-70pc 
 			Text(TextProperty)=500 (0D1A24494EC7520C2B0083A3030CFCAC) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	CommonTextBlock_1 (0-0-0-0): size 478 (cls: CommonTextBlock_1>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Header-M-70pc_C=/Game/UI/Foundation/Text/TextStyle-Header-M-70pc 
 			Text(TextProperty)=LEVEL (C6346F7E40C144128D51BCAE052AD427) 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 	LevelText (0-0-0-0): size 585 (cls: LevelText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Header-L-Horizon_C=/Game/UI/Foundation/Text/TextStyle-Header-L-Horizon 
 			Text(TextProperty)=25 (AE89FF0B4CD5EE356094AB9A910A2301) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Slot(ObjectProperty)=HorizontalBoxSlot_0=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
 	XpText (0-0-0-0): size 603 (cls: XpText>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-AthenaQuestProgress_C=/Game/UI/Foundation/Text/TextStyle-Base-AthenaQuestProgress 
 			Text(TextProperty)=0/123456 (4C6D5F2B4A539FFCFAD882BE35EBB20A) 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			Justification(ByteProperty)=ETextJustify::Right 
 			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -906,65 +910,65 @@ Serialized exports:
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	GridSlot_0 (0-0-0-0): size 156 (cls: GridSlot_0>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_23=WidgetArchetype 
 	GridSlot_10 (0-0-0-0): size 214 (cls: GridSlot_10>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=1 
 			Column(IntProperty)=2 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_33=WidgetArchetype 
 	GridSlot_12 (0-0-0-0): size 185 (cls: GridSlot_12>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=3 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_35=WidgetArchetype 
 	GridSlot_14 (0-0-0-0): size 214 (cls: GridSlot_14>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=2 
 			Column(IntProperty)=2 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_37=WidgetArchetype 
 	GridSlot_16 (0-0-0-0): size 214 (cls: GridSlot_16>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=4 
 			Column(IntProperty)=2 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_2=WidgetArchetype 
 	GridSlot_18 (0-0-0-0): size 214 (cls: GridSlot_18>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=3 
 			Column(IntProperty)=2 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_3=WidgetArchetype 
 	GridSlot_2 (0-0-0-0): size 185 (cls: GridSlot_2>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Column(IntProperty)=2 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_25=WidgetArchetype 
 	GridSlot_20 (0-0-0-0): size 214 (cls: GridSlot_20>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=5 
 			Column(IntProperty)=2 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=StructuralDamage=WidgetArchetype 
 	GridSlot_22 (0-0-0-0): size 185 (cls: GridSlot_22>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=4 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_5=WidgetArchetype 
 	GridSlot_24 (0-0-0-0): size 185 (cls: GridSlot_24>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Column(IntProperty)=1 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=KillStat=WidgetArchetype 
@@ -975,35 +979,35 @@ Serialized exports:
 			Content(ObjectProperty)=DistanceStat=WidgetArchetype 
 	GridSlot_28 (0-0-0-0): size 214 (cls: GridSlot_28>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=1 
 			Column(IntProperty)=1 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=AssistsStat=WidgetArchetype 
 	GridSlot_30 (0-0-0-0): size 214 (cls: GridSlot_30>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=5 
 			Column(IntProperty)=1 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=HeadshotsStat=WidgetArchetype 
 	GridSlot_32 (0-0-0-0): size 214 (cls: GridSlot_32>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=2 
 			Column(IntProperty)=1 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=RevivesStat=WidgetArchetype 
 	GridSlot_39 (0-0-0-0): size 214 (cls: GridSlot_39>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=4 
 			Column(IntProperty)=1 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=HitsStat=WidgetArchetype 
 	GridSlot_4 (0-0-0-0): size 185 (cls: GridSlot_4>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=1 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_27=WidgetArchetype 
@@ -1015,7 +1019,7 @@ Serialized exports:
 			Content(ObjectProperty)=MaterialsGatheredStat=WidgetArchetype 
 	GridSlot_41 (0-0-0-0): size 214 (cls: GridSlot_41>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=3 
 			Column(IntProperty)=1 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
@@ -1046,13 +1050,13 @@ Serialized exports:
 			Content(ObjectProperty)=StructuralDamageStat=WidgetArchetype 
 	GridSlot_6 (0-0-0-0): size 185 (cls: GridSlot_6>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=5 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_29=WidgetArchetype 
 	GridSlot_8 (0-0-0-0): size 185 (cls: GridSlot_8>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=2 
 			Parent(ObjectProperty)=StatGrid=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_31=WidgetArchetype 
@@ -1063,7 +1067,7 @@ Serialized exports:
 			Content(ObjectProperty)=TextBlock_0=WidgetArchetype 
 	GridSlot_2 (0-0-0-0): size 185 (cls: GridSlot_2>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Column(IntProperty)=1 
 			Parent(ObjectProperty)=GridPanel_0=WidgetArchetype 
 			Content(ObjectProperty)=TotalScore=WidgetArchetype 
@@ -1075,7 +1079,7 @@ Serialized exports:
 			Content(ObjectProperty)=TextBlock_1=WidgetArchetype 
 	GridSlot_4 (0-0-0-0): size 214 (cls: GridSlot_4>GridSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Row(IntProperty)=1 
 			Column(IntProperty)=1 
 			Parent(ObjectProperty)=GridPanel_0=WidgetArchetype 
@@ -1094,9 +1098,10 @@ Serialized exports:
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 			bIsVariable(BoolProperty)=True 
-	HorizontalBox_0 (0-0-0-0): size 57 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
+	HorizontalBox_0 (0-0-0-0): size 98 (cls: HorizontalBox_0>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	HorizontalBox_1 (0-0-0-0): size 86 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
@@ -1126,36 +1131,37 @@ Serialized exports:
 			Content(ObjectProperty)=PlacementText=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 238 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=PlacementLine=WidgetArchetype 
 			Content(ObjectProperty)=Image_0=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 156 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=RewardContainer=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_1=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 70 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
 			Parent(ObjectProperty)=RewardContainer=WidgetArchetype 
 			Content(ObjectProperty)=MiniReward1CountTB=WidgetArchetype 
-	HorizontalBoxSlot_0 (0-0-0-0): size 312 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
+	HorizontalBoxSlot_0 (0-0-0-0): size 353 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 325 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			HorizontalAlignment(ByteProperty)=HAlign_Center 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			HorizontalAlignment(ByteProperty)=HAlign_Left 
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=PlayerBanner=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=VerticalBox_2=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 111 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
@@ -1165,18 +1171,18 @@ Serialized exports:
 			Content(ObjectProperty)=VerticalBox_1=WidgetArchetype 
 	HorizontalBoxSlot_0 (0-0-0-0): size 156 (cls: HorizontalBoxSlot_0>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=LevelText=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 226 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Bottom 
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=CommonTextBlock_1=WidgetArchetype 
 	HorizontalBoxSlot_2 (0-0-0-0): size 209 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Right 
 			Parent(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=TotalContentSlot=WidgetArchetype 
@@ -1187,36 +1193,37 @@ Serialized exports:
 			Content(ObjectProperty)=Border_6=WidgetArchetype 
 	HorizontalBoxSlot_1 (0-0-0-0): size 168 (cls: HorizontalBoxSlot_1>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=BorderTouchZone=WidgetArchetype 
 	Image_0 (0-0-0-0): size 210 (cls: Image_0>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
 			bIsVariable(BoolProperty)=False 
 	ProgressSpinner (0-0-0-0): size 184 (cls: ProgressSpinner>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	MiniReward1Image (0-0-0-0): size 168 (cls: MiniReward1Image>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	BannerImage (0-0-0-0): size 225 (cls: BannerImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=LoadGuardSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	SurroundImage (0-0-0-0): size 225 (cls: SurroundImage>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
 			Slot(ObjectProperty)=LoadGuardSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
-	XpBar (0-0-0-0): size 184 (cls: XpBar>Image>/Script/UMG):
+	XpBar (0-0-0-0): size 210 (cls: XpBar>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			bFlipForRightToLeftFlowDirection(BoolProperty)=True 
 			Slot(ObjectProperty)=OverlaySlot_0=WidgetArchetype 
 	LoadGuardSlot_0 (0-0-0-0): size 70 (cls: LoadGuardSlot_0>LoadGuardSlot>/Script/CommonUI):
 		Tag array:
@@ -1293,7 +1300,7 @@ Serialized exports:
 			Content(ObjectProperty)=XpBar=WidgetArchetype 
 	OverlaySlot_3 (0-0-0-0): size 296 (cls: OverlaySlot_3>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Fill 
 			VerticalAlignment(ByteProperty)=VAlign_Fill 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 
@@ -1343,12 +1350,13 @@ Serialized exports:
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=ScaleBoxSlot_0=WidgetArchetype 
-	PlayerBanner (0-0-0-0): size 125 (cls: PlayerBanner>PlayerRankEmblem_C>/Game/Athena/UI/Progression/PlayerRankEmblem):
+	PlayerBanner (0-0-0-0): size 166 (cls: PlayerBanner>PlayerRankEmblem_C>/Game/Athena/UI/Progression/PlayerRankEmblem):
 		Tag array:
 			PlayerBanner(ObjectProperty)=PlayerBanner=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_1=WidgetArchetype 
+			FlowDirectionPreference(EnumProperty)=EFlowDirectionPreference::Culture 
 	SafeZone_0 (0-0-0-0): size 160 (cls: SafeZone_0>SafeZone>/Script/UMG):
 		Tag array:
 			PadLeft(BoolProperty)=False 
@@ -1523,7 +1531,7 @@ Serialized exports:
 			Content(ObjectProperty)=ExtraContentArea=WidgetArchetype 
 	SizeBoxSlot_0 (0-0-0-0): size 197 (cls: SizeBoxSlot_0>SizeBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=SizeBox_0=WidgetArchetype 
 			Content(ObjectProperty)=GridPanel_0=WidgetArchetype 
@@ -1542,7 +1550,7 @@ Serialized exports:
 	AccuracyStat (0-0-0-0): size 270 (cls: AccuracyStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1551,7 +1559,7 @@ Serialized exports:
 	AssistsStat (0-0-0-0): size 270 (cls: AssistsStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1560,7 +1568,7 @@ Serialized exports:
 	DamageReceivedStat (0-0-0-0): size 270 (cls: DamageReceivedStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1569,7 +1577,7 @@ Serialized exports:
 	DamageToPlayersStat (0-0-0-0): size 270 (cls: DamageToPlayersStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1578,7 +1586,7 @@ Serialized exports:
 	DistanceStat (0-0-0-0): size 270 (cls: DistanceStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1587,7 +1595,7 @@ Serialized exports:
 	HeadshotsStat (0-0-0-0): size 270 (cls: HeadshotsStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1596,7 +1604,7 @@ Serialized exports:
 	HitsStat (0-0-0-0): size 270 (cls: HitsStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1605,7 +1613,7 @@ Serialized exports:
 	KillStat (0-0-0-0): size 270 (cls: KillStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1614,7 +1622,7 @@ Serialized exports:
 	MaterialsGatheredStat (0-0-0-0): size 270 (cls: MaterialsGatheredStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1623,7 +1631,7 @@ Serialized exports:
 	MaterialsUsedStat (0-0-0-0): size 270 (cls: MaterialsUsedStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1632,7 +1640,7 @@ Serialized exports:
 	RevivesStat (0-0-0-0): size 270 (cls: RevivesStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1641,7 +1649,7 @@ Serialized exports:
 	StructuralDamageStat (0-0-0-0): size 270 (cls: StructuralDamageStat>StatValueWidget_C>/Game/Athena/UI/Stats/StatValueWidget):
 		Tag array:
 			Value(ObjectProperty)=Value=WidgetArchetype 
-			Stat(StructProperty)=System.Byte[] 
+			Stat(StructProperty/GameplayTag)=System.Byte[] 
 			ProfileStatBox(ObjectProperty)=ProfileStatBox=WidgetArchetype 
 			WidgetTree(ObjectProperty)=WidgetTree_0=WidgetArchetype 
 			bCookedWidgetTree(BoolProperty)=True 
@@ -1658,12 +1666,12 @@ Serialized exports:
 	TextBlock_0 (0-0-0-0): size 359 (cls: TextBlock_0>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=Total Score (70AD0DD843BC80FAA5208AA8EA006529) 
-			Font(StructProperty)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			Slot(ObjectProperty)=GridSlot_1=WidgetArchetype 
 	TextBlock_1 (0-0-0-0): size 356 (cls: TextBlock_1>TextBlock>/Script/UMG):
 		Tag array:
 			Text(TextProperty)=Total XP (C30DC8F0418F424A644D6688E818E54D) 
-			Font(StructProperty)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
 			Slot(ObjectProperty)=GridSlot_3=WidgetArchetype 
 	VerticalBox_0 (0-0-0-0): size 94 (cls: VerticalBox_0>VerticalBox>/Script/UMG):
 		Tag array:
@@ -1687,17 +1695,17 @@ Serialized exports:
 			Content(ObjectProperty)=CommonTextBlock_0=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 156 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=PlacementLine=WidgetArchetype 
 	VerticalBoxSlot_3 (0-0-0-0): size 156 (cls: VerticalBoxSlot_3>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=StatsGrid=WidgetArchetype 
 	VerticalBoxSlot_8 (0-0-0-0): size 156 (cls: VerticalBoxSlot_8>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=RewardsSwitcher=WidgetArchetype 
 	VerticalBoxSlot_1 (0-0-0-0): size 111 (cls: VerticalBoxSlot_1>VerticalBoxSlot>/Script/UMG):
@@ -1707,7 +1715,7 @@ Serialized exports:
 			Content(ObjectProperty)=SizeBox_3=WidgetArchetype 
 	VerticalBoxSlot_2 (0-0-0-0): size 197 (cls: VerticalBoxSlot_2>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Bottom 
 			Parent(ObjectProperty)=VerticalBox_0=WidgetArchetype 
 			Content(ObjectProperty)=HorizontalBox_2=WidgetArchetype 
@@ -1725,7 +1733,7 @@ Serialized exports:
 			Content(ObjectProperty)=SizeBox_2=WidgetArchetype 
 	VerticalBoxSlot_4 (0-0-0-0): size 168 (cls: VerticalBoxSlot_4>VerticalBoxSlot>/Script/UMG):
 		Tag array:
-			Size(StructProperty)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			Parent(ObjectProperty)=VerticalBox_2=WidgetArchetype 
 			Content(ObjectProperty)=Border_0=WidgetArchetype 
 	RewardsSwitcher (0-0-0-0): size 86 (cls: RewardsSwitcher>WidgetSwitcher>/Script/UMG):

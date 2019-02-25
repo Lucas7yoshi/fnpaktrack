@@ -417,8 +417,8 @@ Name table:
 	Guid
 	gun_base
 	gun_body_l
-	gun_body_r
 	gun_body_R
+	gun_body_r
 	Hand
 	Handle
 	Handle Rotation Audio
@@ -666,6 +666,8 @@ Name table:
 	ParticleSystem
 	ParticleSystemComponent
 	Pawn
+	PawnCollision
+	PawnCollision_GEN_VARIABLE
 	PhysicalMaterial
 	PhysicsBody
 	PhysMaterialOverride
@@ -777,8 +779,6 @@ Name table:
 	Turret_Ballistic_GetOut_Cue
 	Turret_Ballistic_Rotate_Cue
 	Turret_Gun
-	TurretCollision
-	TurretCollision_GEN_VARIABLE
 	TurretEnterAnimation
 	TurretExitAnimation
 	TurretFireAnimation
@@ -827,21 +827,21 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_MountedTurret=MountedTurret_C 
 	Default__MountedTurret_C (0-0-0-0): size 2849 (cls: Default__MountedTurret_C>MountedTurret_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			OnDeathSound(ObjectProperty)=Turret_Ballistic_Explode_Cue=/Game/Sounds/Fort_Traps/MountedTurret/Turret_Ballistic_Explode_Cue 
 			GE_BlockWeaponFire(ObjectProperty)=GE_Trap_MountedTurret_BlockPrimaryFire_C=/Game/Athena/Items/Traps/MountedTurret/GE_Trap_MountedTurret_BlockPrimaryFire 
 			GE_GrantWeapon(ObjectProperty)=GE_Trap_MountedTurret_Enter_C=/Game/Athena/Items/Traps/MountedTurret/GE_Trap_MountedTurret_Enter 
-			GE_EnterTurret(StructProperty)=System.Byte[] 
+			GE_EnterTurret(StructProperty/ActiveGameplayEffectHandle)=System.Byte[] 
 			PlayerEnterAnimation(ObjectProperty)=MT_Enter_CMM_M=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MT_Enter_CMM_M 
 			TurretEnterAnimation(ObjectProperty)=MT_Enter_CMM_Weapon_M=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MT_Enter_CMM_Weapon_M 
 			TurretFireAnimation(ObjectProperty)=MT_Fire_CMM_Weapon_M=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MT_Fire_CMM_Weapon_M 
 			PlayerFireAnimation(ObjectProperty)=MT_Fire_CMM_M=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MT_Fire_CMM_M 
-			GetWeaponTimer(StructProperty)=System.Byte[] 
-			OverheatCostmeticTimer(StructProperty)=System.Byte[] 
+			GetWeaponTimer(StructProperty/TimerHandle)=System.Byte[] 
+			OverheatCostmeticTimer(StructProperty/TimerHandle)=System.Byte[] 
 			TurretFireLeftAnimation(ObjectProperty)=MT_Fire_CMM_Left_Weapon_M=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MT_Fire_CMM_Left_Weapon_M 
 			TurretFireRightAnimation(ObjectProperty)=MT_Fire_CMM_Right_Weapon_M=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MT_Fire_CMM_Right_Weapon_M 
 			OverheatAudioCurve(ObjectProperty)=C_MountedTurret_Overheat=/Game/Sounds/Fort_Traps/MountedTurret/C_MountedTurret_Overheat 
-			TurretRotation(StructProperty)=Rotator(0,0,0) 
+			TurretRotation(StructProperty/Rotator)=Rotator(0,0,0) 
 			TurretStartAnimation(ObjectProperty)=MT_Transform_Weapon_M=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MT_Transform_Weapon_M 
 			TurretExitAnimation(ObjectProperty)=MT_Exit_CMM_Weapon_M=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MT_Exit_CMM_Weapon_M 
 			fInteractionDelay(FloatProperty)=0.4 
@@ -854,20 +854,20 @@ Serialized exports:
 			WheelOffsetLimitB(FloatProperty)=15 
 			SeatSwitchCooldown(FloatProperty)=0.33 
 			bPlayDamageAudio(BoolProperty)=True 
-			VehicleTags(StructProperty)=GameplayTagContainer:Vehicle.MountedTurret 
+			VehicleTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Vehicle.MountedTurret 
 			BrakeAboveTopSpeedDelta(FloatProperty)=99999 
 			DragCoefficient(FloatProperty)=0 
 			DefaultHitNotifyAudioBank(ObjectProperty)=HitNotifyAudioBank_VehicleDefault=/Game/Athena/Sounds/HitNotifications/HitNotifyAudioBank_VehicleDefault 
 			LifespanAfterDeath(FloatProperty)=0.1 
 			PlayerSlots(ArrayProperty)=[object] (inner: StructProperty)
 			DrivingAnimClass(ObjectProperty)=MountedTurret_Gunner_AnimBP_C=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/MountedTurret_Gunner_AnimBP 
-			AttributeInitKey(StructProperty)=System.Byte[] 
+			AttributeInitKey(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
 			DamageSet(ObjectProperty)=DamageSet=Default__MountedTurret_C 
-			GameplayTags(StructProperty)=GameplayTagContainer:Athena.Vehicle.MountedTurret 
-			ReplicatedMovement(StructProperty)=System.Byte[] 
+			GameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Athena.Vehicle.MountedTurret 
+			ReplicatedMovement(StructProperty/RepMovement)=System.Byte[] 
 			SpawnCollisionHandlingMethod(EnumProperty)=ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn 
 			RootComponent(ObjectProperty)=SkeletalMeshComponent=Default__MountedTurret_C 
-	TurretCollision (0-0-0-0): size 36 (cls: TurretCollision>ObjectProperty>/Script/CoreUObject)
+	PawnCollision (0-0-0-0): size 36 (cls: PawnCollision>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
 	ExecuteUbergraph_MountedTurret (0-0-0-0): size 7102 (cls: ExecuteUbergraph_MountedTurret>Function>/Script/CoreUObject)
 	Start FX And Audio Timer (0-0-0-0): size 54 (cls: Start FX And Audio Timer>Function>/Script/CoreUObject)
@@ -1032,24 +1032,24 @@ Serialized exports:
 	bOutOverriderExitSocket (0-0-0-0): size 34 (cls: bOutOverriderExitSocket>BoolProperty>/Script/CoreUObject)
 	OverlapVolume_GEN_VARIABLE (0-0-0-0): size 1160 (cls: OverlapVolume_GEN_VARIABLE>BoxComponent>/Script/Engine):
 		Tag array:
-			BoxExtent(StructProperty)=Vector(60,50,30) 
+			BoxExtent(StructProperty/Vector)=Vector(60,50,30) 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,139) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,139) 
 			bCanEverAffectNavigation(BoolProperty)=False 
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	K2Node_Event_EndPlayReason (0-0-0-0): size 36 (cls: K2Node_Event_EndPlayReason>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
-	TurretCollision_GEN_VARIABLE (0-0-0-0): size 1008 (cls: TurretCollision_GEN_VARIABLE>CapsuleComponent>/Script/Engine):
+	PawnCollision_GEN_VARIABLE (0-0-0-0): size 1008 (cls: PawnCollision_GEN_VARIABLE>CapsuleComponent>/Script/Engine):
 		Tag array:
-			CapsuleHalfHeight(FloatProperty)=130 
+			CapsuleHalfHeight(FloatProperty)=110 
 			CapsuleRadius(FloatProperty)=90 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,105) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,122) 
 	GE_BlockWeaponFire (0-0-0-0): size 40 (cls: GE_BlockWeaponFire>ClassProperty>/Script/CoreUObject)
 	GE_GrantWeapon (0-0-0-0): size 40 (cls: GE_GrantWeapon>ClassProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
@@ -1115,9 +1115,9 @@ Serialized exports:
 	ServoAudio_GEN_VARIABLE (0-0-0-0): size 386 (cls: ServoAudio_GEN_VARIABLE>FortVehicleAudioVoice>/Script/FortniteGame):
 		Tag array:
 			LoopingSound(ObjectProperty)=Turret_Ballistic_Rotate_Cue=/Game/Sounds/Fort_Traps/MountedTurret/Turret_Ballistic_Rotate_Cue 
-			VolumeParam(StructProperty)=System.Byte[] 
-			PitchParam(StructProperty)=System.Byte[] 
-			ParamRange(StructProperty)=Vector2D(0,1) 
+			VolumeParam(StructProperty/FortVehicleAudioParam)=System.Byte[] 
+			PitchParam(StructProperty/FortVehicleAudioParam)=System.Byte[] 
+			ParamRange(StructProperty/Vector2D)=Vector2D(0,1) 
 	SkeletalMeshComponent (0-0-0-0): size 1737 (cls: SkeletalMeshComponent>FortVehicleSkelMeshComponent>/Script/FortniteGame):
 		Tag array:
 			AnimClass(ObjectProperty)=AnimBP_MountedTurret_C=/Game/Animation/Game/MainPlayer/Combat/Gadgets/Medium/Male/MountedTurret/AnimBP_MountedTurret 
@@ -1126,7 +1126,7 @@ Serialized exports:
 			VisibilityBasedAnimTickOption(EnumProperty)=EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones 
 			OverrideMaterials(ArrayProperty)=[object] (inner: ObjectProperty)
 			CanCharacterStepUpOn(ByteProperty)=ECB_Yes 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 			bShouldUpdatePhysicsVolume(BoolProperty)=True 
 	K2Node_Event_SeatIdx (0-0-0-0): size 32 (cls: K2Node_Event_SeatIdx>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Add_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Add_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -1241,7 +1241,7 @@ Serialized exports:
 			AutoAttachLocationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachScaleRule(EnumProperty)=EAttachmentRule::SnapToTarget 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	BarrelGlowR_GEN_VARIABLE (0-0-0-0): size 332 (cls: BarrelGlowR_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
@@ -1251,7 +1251,7 @@ Serialized exports:
 			AutoAttachLocationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachScaleRule(EnumProperty)=EAttachmentRule::SnapToTarget 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	MagazineGlowL_GEN_VARIABLE (0-0-0-0): size 393 (cls: MagazineGlowL_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
@@ -1261,8 +1261,8 @@ Serialized exports:
 			AutoAttachLocationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachScaleRule(EnumProperty)=EAttachmentRule::SnapToTarget 
-			RelativeLocation(StructProperty)=Vector(87,30,177) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(87,30,177) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	MagazineGlowR_GEN_VARIABLE (0-0-0-0): size 332 (cls: MagazineGlowR_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
@@ -1272,7 +1272,7 @@ Serialized exports:
 			AutoAttachLocationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachScaleRule(EnumProperty)=EAttachmentRule::SnapToTarget 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	OverHeatScreen_L_GEN_VARIABLE (0-0-0-0): size 393 (cls: OverHeatScreen_L_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
@@ -1282,8 +1282,8 @@ Serialized exports:
 			AutoAttachLocationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachScaleRule(EnumProperty)=EAttachmentRule::SnapToTarget 
-			RelativeRotation(StructProperty)=Rotator(0,0,1.96346E-22) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,1.96346E-22) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	OverHeatScreen_R_GEN_VARIABLE (0-0-0-0): size 393 (cls: OverHeatScreen_R_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
@@ -1293,8 +1293,8 @@ Serialized exports:
 			AutoAttachLocationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachScaleRule(EnumProperty)=EAttachmentRule::SnapToTarget 
-			RelativeRotation(StructProperty)=Rotator(0,0,1.96346E-22) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,0,1.96346E-22) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	OverheatSmoke_GEN_VARIABLE (0-0-0-0): size 352 (cls: OverheatSmoke_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
@@ -1303,123 +1303,123 @@ Serialized exports:
 			AutoAttachSocketName(NameProperty)=gun_base 
 			AutoAttachLocationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
-			RelativeLocation(StructProperty)=Vector(0,0,1559) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,1559) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	DefaultSceneRoot_GEN_VARIABLE (0-0-0-0): size 12 (cls: DefaultSceneRoot_GEN_VARIABLE>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 168 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=MountedTurret_C 
-			VariableGuid(StructProperty)=Guid: 789038546-1256625961-1147780011-478826494 
+			VariableGuid(StructProperty/Guid)=Guid: 789038546-1256625961-1147780011-478826494 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 1485 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=FortVehicleAudioVoice=/Script/FortniteGame 
 			ComponentTemplate(ObjectProperty)=ServoAudio_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3617725488-1099381834-215018664-3949178948 
+			VariableGuid(StructProperty/Guid)=Guid: 3617725488-1099381834-215018664-3949178948 
 			InternalVariableName(NameProperty)=ServoAudio 
 	SCS_Node_10 (0-0-0-0): size 1485 (cls: SCS_Node_10>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=OverHeatScreen_L_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1396570115-1147838550-2470914234-2228952840 
+			VariableGuid(StructProperty/Guid)=Guid: 1396570115-1147838550-2470914234-2228952840 
 			InternalVariableName(NameProperty)=OverHeatScreen_L 
 	SCS_Node_11 (0-0-0-0): size 1485 (cls: SCS_Node_11>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=OverHeatScreen_R_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2500729359-1244479405-3818463125-617911469 
+			VariableGuid(StructProperty/Guid)=Guid: 2500729359-1244479405-3818463125-617911469 
 			InternalVariableName(NameProperty)=OverHeatScreen_R 
 	SCS_Node_2 (0-0-0-0): size 3168 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=CapsuleComponent=/Script/Engine 
-			ComponentTemplate(ObjectProperty)=TurretCollision_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			ComponentTemplate(ObjectProperty)=PawnCollision_GEN_VARIABLE=MountedTurret_C 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1067882579-1280424838-1657751211-28620954 
-			InternalVariableName(NameProperty)=TurretCollision 
+			VariableGuid(StructProperty/Guid)=Guid: 1067882579-1280424838-1657751211-28620954 
+			InternalVariableName(NameProperty)=PawnCollision 
 	SCS_Node_25 (0-0-0-0): size 3762 (cls: SCS_Node_25>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=BoxComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=OverlapVolume_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3934754413-1278817284-2249266568-2244796024 
+			VariableGuid(StructProperty/Guid)=Guid: 3934754413-1278817284-2249266568-2244796024 
 			InternalVariableName(NameProperty)=OverlapVolume 
 	SCS_Node_3 (0-0-0-0): size 1287 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=BarrelGlowR_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3919086734-1281494791-2653784238-90052813 
+			VariableGuid(StructProperty/Guid)=Guid: 3919086734-1281494791-2653784238-90052813 
 			InternalVariableName(NameProperty)=BarrelGlowR 
 	SCS_Node_4 (0-0-0-0): size 1287 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=BarrelGlowL_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3975168451-1332646320-1808318650-2459153599 
+			VariableGuid(StructProperty/Guid)=Guid: 3975168451-1332646320-1808318650-2459153599 
 			InternalVariableName(NameProperty)=BarrelGlowL 
 	SCS_Node_5 (0-0-0-0): size 1683 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=MagazineGlowL_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 49399185-1261436135-1741066662-458595247 
+			VariableGuid(StructProperty/Guid)=Guid: 49399185-1261436135-1741066662-458595247 
 			InternalVariableName(NameProperty)=MagazineGlowL 
 	SCS_Node_6 (0-0-0-0): size 1287 (cls: SCS_Node_6>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=MagazineGlowR_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3355859873-1292401071-2697063061-735998425 
+			VariableGuid(StructProperty/Guid)=Guid: 3355859873-1292401071-2697063061-735998425 
 			InternalVariableName(NameProperty)=MagazineGlowR 
 	SCS_Node_7 (0-0-0-0): size 1386 (cls: SCS_Node_7>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=OverheatSmoke_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 985567833-1278948431-969229958-246855882 
+			VariableGuid(StructProperty/Guid)=Guid: 985567833-1278948431-969229958-246855882 
 			InternalVariableName(NameProperty)=OverheatSmoke 
 	SCS_Node_8 (0-0-0-0): size 495 (cls: SCS_Node_8>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=AudioOverheat_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1215315767-1299305842-2863936959-187955586 
+			VariableGuid(StructProperty/Guid)=Guid: 1215315767-1299305842-2863936959-187955586 
 			InternalVariableName(NameProperty)=AudioOverheat 
 	SCS_Node_9 (0-0-0-0): size 594 (cls: SCS_Node_9>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=AudioOnOverheat_GEN_VARIABLE=MountedTurret_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=SkeletalMeshComponent 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1351507453-1266468418-98807449-516364352 
+			VariableGuid(StructProperty/Guid)=Guid: 1351507453-1266468418-98807449-516364352 
 			InternalVariableName(NameProperty)=AudioOnOverheat 
 	SimpleConstructionScript_0 (0-0-0-0): size 211 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:

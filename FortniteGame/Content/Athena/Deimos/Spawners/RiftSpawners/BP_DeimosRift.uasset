@@ -491,6 +491,7 @@ Name table:
 	TagName
 	TargetAttachComponent
 	Team
+	TeamIndex
 	Template
 	TestDynamicRiftSpawn
 	Texture2D
@@ -523,15 +524,15 @@ Serialized exports:
 			bHasCookedComponentInstancingData(BoolProperty)=True 
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=BP_DeimosRift_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_BP_DeimosRift=BP_DeimosRift_C 
-	Default__BP_DeimosRift_C (0-0-0-0): size 6131 (cls: Default__BP_DeimosRift_C>BP_DeimosRift_C):
+	Default__BP_DeimosRift_C (0-0-0-0): size 6165 (cls: Default__BP_DeimosRift_C>BP_DeimosRift_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			BaseMaterial(ObjectProperty)=M_RiftSpawner_CubeGrowth_Static=/Game/Athena/Deimos/Spawners/RiftSpawners/Assets/CubeGrowth/M_RiftSpawner_CubeGrowth_Static 
 			GE_Destroyed(ObjectProperty)=GE_RiftSpawnerDestroyed_C=/Game/Athena/Deimos/Spawners/RiftSpawners/GE/GE_RiftSpawnerDestroyed 
-			CueParamsCreate(StructProperty)=System.Byte[] 
-			CueParamsChargeUp(StructProperty)=System.Byte[] 
-			CueParamsSpawnFiend(StructProperty)=System.Byte[] 
-			CueParamsRiftSpawn(StructProperty)=System.Byte[] 
+			CueParamsCreate(StructProperty/GameplayCueParameters)=System.Byte[] 
+			CueParamsChargeUp(StructProperty/GameplayCueParameters)=System.Byte[] 
+			CueParamsSpawnFiend(StructProperty/GameplayCueParameters)=System.Byte[] 
+			CueParamsRiftSpawn(StructProperty/GameplayCueParameters)=System.Byte[] 
 			DamageState(IntProperty)=-1 
 			BaseLODMaterial(ObjectProperty)=M_RiftSpawner_CubeGrowth_Static_LOD1=/Game/Athena/Deimos/Spawners/RiftSpawners/Assets/CubeGrowth/M_RiftSpawner_CubeGrowth_Static_LOD1 
 			Sound_StageOneExplode(ObjectProperty)=DeimosSpawner_Stage1Explosion_Cue=/Game/Sounds/Fort_Monster_Deimos/Spawner/DeimosSpawner_Stage1Explosion_Cue 
@@ -541,9 +542,9 @@ Serialized exports:
 			GE_DamagePerSpawn(ObjectProperty)=GE_RiftSpawnerDamgePerSpawn_Static_C=/Game/Athena/Deimos/Spawners/RiftSpawners/GE/GE_RiftSpawnerDamgePerSpawn_Static 
 			GE_DamageReduction(ObjectProperty)=GE_RiftSpawnerDamageResistances_C=/Game/Athena/Deimos/Spawners/RiftSpawners/GE/GE_RiftSpawnerDamageResistances 
 			SpawnAnimDuration(FloatProperty)=0.9 
-			FiendSpawnFXGC(StructProperty)=System.Byte[] 
-			ChargeUpFXGC(StructProperty)=System.Byte[] 
-			SpawnFXGC(StructProperty)=System.Byte[] 
+			FiendSpawnFXGC(StructProperty/GameplayTag)=System.Byte[] 
+			ChargeUpFXGC(StructProperty/GameplayTag)=System.Byte[] 
+			SpawnFXGC(StructProperty/GameplayTag)=System.Byte[] 
 			bSendMissionEvents(BoolProperty)=True 
 			bDelayDeath(BoolProperty)=True 
 			MinSpawnDelay(FloatProperty)=0.1 
@@ -553,14 +554,14 @@ Serialized exports:
 			QueryParams(ArrayProperty)=[object] (inner: StructProperty)
 			QueryRadius(FloatProperty)=768 
 			bCreateOverlapSphere(BoolProperty)=True 
-			OverlapSphereRadius(StructProperty)=System.Byte[] 
+			OverlapSphereRadius(StructProperty/ScalableFloat)=System.Byte[] 
 			DestructionLootTierGroup(NameProperty)=Loot_AthenaSupplyDrop 
-			LootDropTossDirection(StructProperty)=Rotator(90,0,0) 
+			LootDropTossDirection(StructProperty/Rotator)=Rotator(90,0,0) 
 			LootDropConeHalfAngle(FloatProperty)=180 
 			LootDropSpeed(FloatProperty)=700 
 			SpectatorMapIcon(ObjectProperty)=FortSpectateClickableMapIcon=Default__BP_DeimosRift_C 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
 			AbilitySystemComponentCreationPolicy(EnumProperty)=EAbilitySystemComponentCreationPolicy::Lazy 
 			PrimarySurfaceType(ByteProperty)=SurfaceType2 
 			WeaponResponseType(ByteProperty)=EFortBaseWeaponDamage::Environmental 
@@ -571,17 +572,18 @@ Serialized exports:
 			bForceBlockBuildings(BoolProperty)=True 
 			bUseCentroidForBlockBuildingsCheck(BoolProperty)=False 
 			Team(ByteProperty)=EFortTeam::Monster 
+			TeamIndex(ByteProperty)=[object] 
 			bIgnoreAffiliationInteractHighlight(BoolProperty)=True 
-			StaticGameplayTags(StructProperty)=GameplayTagContainer:Deimos.Spawner.Static 
+			StaticGameplayTags(StructProperty/GameplayTagContainer)=GameplayTagContainer:Deimos.Spawner.Static 
 			SnapGridSize(FloatProperty)=0 
 			VertSnapGridSize(FloatProperty)=0 
-			CentroidOffset(StructProperty)=Vector(0,0,700) 
+			CentroidOffset(StructProperty/Vector)=Vector(0,0,700) 
 			bCanBeDamaged(BoolProperty)=True 
 			RootComponent(ObjectProperty)=CollisionSphere=Default__BP_DeimosRift_C 
 	Deimos_Spawner_Loop_Sound_GEN_VARIABLE (0-0-0-0): size 128 (cls: Deimos_Spawner_Loop_Sound_GEN_VARIABLE>AudioComponent>/Script/Engine):
 		Tag array:
 			Sound(ObjectProperty)=Deimos_Spawner_Loop1_Cue=/Game/Sounds/Fort_Monster_Deimos/Spawner/Deimos_Spawner_Loop1_Cue 
-			RelativeLocation(StructProperty)=Vector(0,0,200) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,200) 
 			bAutoActivate(BoolProperty)=False 
 	DoSpawnEffects (0-0-0-0): size 34 (cls: DoSpawnEffects>BoolProperty>/Script/CoreUObject)
 	P_Rift_IdleFog (0-0-0-0): size 36 (cls: P_Rift_IdleFog>ObjectProperty>/Script/CoreUObject)
@@ -618,10 +620,10 @@ Serialized exports:
 	K2Node_SwitchInteger_CmpSuccess (0-0-0-0): size 34 (cls: K2Node_SwitchInteger_CmpSuccess>BoolProperty>/Script/CoreUObject)
 	NoBuildZone_GEN_VARIABLE (0-0-0-0): size 1179 (cls: NoBuildZone_GEN_VARIABLE>BoxComponent>/Script/Engine):
 		Tag array:
-			BoxExtent(StructProperty)=Vector(235,200,450) 
+			BoxExtent(StructProperty/Vector)=Vector(235,200,450) 
 			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,187) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,187) 
 			ComponentTags(ArrayProperty)=Component.Block.Building (inner: NameProperty)
 	GE_DamagePerSpawn (0-0-0-0): size 40 (cls: GE_DamagePerSpawn>ClassProperty>/Script/CoreUObject)
 	GE_DamageReduction (0-0-0-0): size 40 (cls: GE_DamageReduction>ClassProperty>/Script/CoreUObject)
@@ -645,7 +647,7 @@ Serialized exports:
 	SpawnAnimDuration (0-0-0-0): size 32 (cls: SpawnAnimDuration>FloatProperty>/Script/CoreUObject)
 	FortSpectateClickableMapIcon (0-0-0-0): size 155 (cls: FortSpectateClickableMapIcon>FortSpectateClickableMapIcon>/Script/FortniteGame):
 		Tag array:
-			SpectatorMapIndicatorBrush(StructProperty)=System.Byte[] 
+			SpectatorMapIndicatorBrush(StructProperty/SlateBrush)=System.Byte[] 
 	DamageState (0-0-0-0): size 32 (cls: DamageState>IntProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_BoneName (0-0-0-0): size 32 (cls: K2Node_CustomEvent_BoneName>NameProperty>/Script/CoreUObject)
 	BoneName (0-0-0-0): size 32 (cls: BoneName>NameProperty>/Script/CoreUObject)
@@ -701,7 +703,7 @@ Serialized exports:
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachScaleRule(EnumProperty)=EAttachmentRule::KeepWorld 
 			bAbsoluteScale(BoolProperty)=True 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	P_Deimos_RiftSpawn_DamageState_GEN_VARIABLE (0-0-0-0): size 329 (cls: P_Deimos_RiftSpawn_DamageState_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
@@ -711,7 +713,7 @@ Serialized exports:
 			AutoAttachRotationRule(EnumProperty)=EAttachmentRule::SnapToTarget 
 			AutoAttachScaleRule(EnumProperty)=EAttachmentRule::KeepWorld 
 			bAbsoluteScale(BoolProperty)=True 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 			bAutoActivate(BoolProperty)=False 
 	P_Rift_IdleFog_GEN_VARIABLE (0-0-0-0): size 223 (cls: P_Rift_IdleFog_GEN_VARIABLE>ParticleSystemComponent>/Script/Engine):
 		Tag array:
@@ -719,17 +721,17 @@ Serialized exports:
 			LDMaxDrawDistance(FloatProperty)=5500 
 			CachedMaxDrawDistance(FloatProperty)=5500 
 			DetailMode(ByteProperty)=DM_High 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	PointLight_GEN_VARIABLE (0-0-0-0): size 358 (cls: PointLight_GEN_VARIABLE>PointLightComponent>/Script/Engine):
 		Tag array:
 			bUseInverseSquaredFalloff(BoolProperty)=False 
 			LightFalloffExponent(FloatProperty)=8.666667 
 			Intensity(FloatProperty)=10 
-			LightColor(StructProperty)=System.Byte[] 
+			LightColor(StructProperty/Color)=System.Byte[] 
 			CastShadows(BoolProperty)=False 
-			RelativeLocation(StructProperty)=Vector(0.7241821,0.009021231,235.3568) 
-			RelativeRotation(StructProperty)=Rotator(0,-89.99998,0) 
-			RelativeScale3D(StructProperty)=Vector(4.2,4.2,2) 
+			RelativeLocation(StructProperty/Vector)=Vector(0.7241821,0.009021231,235.3568) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-89.99998,0) 
+			RelativeScale3D(StructProperty/Vector)=Vector(4.2,4.2,2) 
 	DefaultSceneRoot_GEN_VARIABLE (0-0-0-0): size 53 (cls: DefaultSceneRoot_GEN_VARIABLE>SceneComponent>/Script/Engine):
 		Tag array:
 			Mobility(ByteProperty)=EComponentMobility::Static 
@@ -737,110 +739,112 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=BP_DeimosRift_C 
-			VariableGuid(StructProperty)=Guid: 3316445101-1241643621-1083178160-3409378475 
+			VariableGuid(StructProperty/Guid)=Guid: 3316445101-1241643621-1083178160-3409378475 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 1637 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=CubeMesh_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionSphere 
 			bIsParentComponentNative(BoolProperty)=True 
 			ChildNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			VariableGuid(StructProperty)=Guid: 932447026-1183020966-3866287550-1337421476 
+			VariableGuid(StructProperty/Guid)=Guid: 932447026-1183020966-3866287550-1337421476 
 			InternalVariableName(NameProperty)=CubeMesh 
 	SCS_Node_13 (0-0-0-0): size 2079 (cls: SCS_Node_13>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=PointLightComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=PointLight_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionSphere 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2757758436-1230109117-449892003-2172448332 
+			VariableGuid(StructProperty/Guid)=Guid: 2757758436-1230109117-449892003-2172448332 
 			InternalVariableName(NameProperty)=PointLight 
 	SCS_Node_2 (0-0-0-0): size 1261 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Deimos_RiftSpawn_DamageState_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			AttachToName(NameProperty)=FX_Center 
-			VariableGuid(StructProperty)=Guid: 4189958289-1287144765-600228262-1138945151 
+			VariableGuid(StructProperty/Guid)=Guid: 4189958289-1287144765-600228262-1138945151 
 			InternalVariableName(NameProperty)=P_Deimos_RiftSpawn_DamageState 
 	SCS_Node_3 (0-0-0-0): size 733 (cls: SCS_Node_3>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=CosmeticBaseMesh_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 3783619774-1115757683-2264744070-2938526445 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 3783619774-1115757683-2264744070-2938526445 
 			InternalVariableName(NameProperty)=CosmeticBaseMesh 
 	SCS_Node_4 (0-0-0-0): size 1261 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Deimos_Rift_Dying_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			AttachToName(NameProperty)=FX_Center 
-			VariableGuid(StructProperty)=Guid: 4003537545-1157620808-3189968006-1569200493 
+			VariableGuid(StructProperty/Guid)=Guid: 4003537545-1157620808-3189968006-1569200493 
 			InternalVariableName(NameProperty)=P_Deimos_Rift_Dying 
 	SCS_Node_5 (0-0-0-0): size 3069 (cls: SCS_Node_5>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=BoxComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=NoBuildZone_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionSphere 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3604216365-1314141728-3101653386-3812382300 
+			VariableGuid(StructProperty/Guid)=Guid: 3604216365-1314141728-3101653386-3812382300 
 			InternalVariableName(NameProperty)=NoBuildZone 
 	SCS_Node_6 (0-0-0-0): size 3168 (cls: SCS_Node_6>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=FogMesh_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionSphere 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 891967661-1226578688-2134534289-3405487666 
+			VariableGuid(StructProperty/Guid)=Guid: 891967661-1226578688-2134534289-3405487666 
 			InternalVariableName(NameProperty)=FogMesh 
 	SCS_Node_7 (0-0-0-0): size 792 (cls: SCS_Node_7>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=Deimos_Spawner_Loop_Sound_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionSphere 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3490884122-1082953822-529360822-3625777331 
+			VariableGuid(StructProperty/Guid)=Guid: 3490884122-1082953822-529360822-3625777331 
 			InternalVariableName(NameProperty)=Deimos_Spawner_Loop_Sound 
 	SCS_Node_8 (0-0-0-0): size 2515 (cls: SCS_Node_8>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SM_CubeRunes_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
-			VariableGuid(StructProperty)=Guid: 4091025727-1284010660-462528172-3778919875 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
+			VariableGuid(StructProperty/Guid)=Guid: 4091025727-1284010660-462528172-3778919875 
 			InternalVariableName(NameProperty)=SM_CubeRunes 
 	SCS_Node_9 (0-0-0-0): size 990 (cls: SCS_Node_9>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=P_Rift_IdleFog_GEN_VARIABLE=BP_DeimosRift_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=CollisionSphere 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 3565018370-1325962981-1616914048-2290892722 
+			VariableGuid(StructProperty/Guid)=Guid: 3565018370-1325962981-1616914048-2290892722 
 			InternalVariableName(NameProperty)=P_Rift_IdleFog 
 	SimpleConstructionScript_0 (0-0-0-0): size 179 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
 			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_0=BP_DeimosRift_C 
-	CollisionSphere (0-0-0-0): size 12 (cls: CollisionSphere>SphereComponent>/Script/Engine)
+	CollisionSphere (0-0-0-0): size 41 (cls: CollisionSphere>SphereComponent>/Script/Engine):
+		Tag array:
+			AreaClass(ObjectProperty)=FortMetaNavArea_Obstacles=/Script/FortniteGame 
 	CosmeticBaseMesh_GEN_VARIABLE (0-0-0-0): size 173 (cls: CosmeticBaseMesh_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			bGenerateOverlapEvents(BoolProperty)=False 
-			BodyInstance(StructProperty)=System.Byte[] 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
 	CubeMesh_GEN_VARIABLE (0-0-0-0): size 347 (cls: CubeMesh_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			bGenerateOverlapEvents(BoolProperty)=False 
 			bReceivesDecals(BoolProperty)=False 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,-30) 
-			RelativeScale3D(StructProperty)=Vector(1.5,1.5,1.5) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-30) 
+			RelativeScale3D(StructProperty/Vector)=Vector(1.5,1.5,1.5) 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	FogMesh_GEN_VARIABLE (0-0-0-0): size 899 (cls: FogMesh_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
@@ -852,9 +856,9 @@ Serialized exports:
 			bCastDynamicShadow(BoolProperty)=False 
 			bCastStaticShadow(BoolProperty)=False 
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,70) 
-			RelativeScale3D(StructProperty)=Vector(35,35,10) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,70) 
+			RelativeScale3D(StructProperty/Vector)=Vector(35,35,10) 
 			DetailMode(ByteProperty)=DM_High 
 	SM_CubeRunes_GEN_VARIABLE (0-0-0-0): size 727 (cls: SM_CubeRunes_GEN_VARIABLE>StaticMeshComponent>/Script/Engine):
 		Tag array:
@@ -863,8 +867,8 @@ Serialized exports:
 			bCastDynamicShadow(BoolProperty)=False 
 			bCastStaticShadow(BoolProperty)=False 
 			CanCharacterStepUpOn(ByteProperty)=ECB_No 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(-57.95242,-9.86699,381.0749) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(-57.95242,-9.86699,381.0749) 
 			bUseAttachParentBound(BoolProperty)=True 
 	ChargeUpFXGC (0-0-0-0): size 36 (cls: ChargeUpFXGC>StructProperty>/Script/CoreUObject)
 	CueParamsChargeUp (0-0-0-0): size 36 (cls: CueParamsChargeUp>StructProperty>/Script/CoreUObject)

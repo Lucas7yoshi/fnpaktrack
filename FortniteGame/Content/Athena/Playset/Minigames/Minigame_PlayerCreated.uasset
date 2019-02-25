@@ -6,9 +6,12 @@ Name table:
 	/Game/Athena/HUD/LTM/Playground/MinigameHUD_PreGame
 	/Game/Athena/HUD/LTM/Playground/MinigameHUD_PreGame.MinigameHUD_PreGame_C
 	/Game/Athena/Playset/Minigames/Minigame_PlayerCreated
+	/Game/Athena/Playset/Minigames/StatFilters/MinigameStat_Challenge_All
 	/Game/Athena/Playset/Minigames/StatFilters/MinigameStat_PlayerAssists
 	/Game/Athena/Playset/Minigames/StatFilters/MinigameStat_PlayerDeaths
 	/Game/Athena/Playset/Minigames/StatFilters/MinigameStat_PlayerKills
+	/Game/Items/Traps/Blueprints/Toys/ScoreboardPanel
+	/Script/BlueprintContext
 	/Script/CommonUI
 	/Script/CoreUObject
 	/Script/Engine
@@ -18,27 +21,22 @@ Name table:
 	Activate
 	Actor
 	Add_IntInt
-	AllNodes
+	Array_Add
 	Array_Get
 	Array_Length
+	Array_Remove
 	ArrayProperty
 	AssignTeams
-	AudioComponent
-	bAutoActivate
-	BeginSkydiving
 	BillboardComponent
 	BindVolumeDelegates
-	bIsParentComponentNative
 	bIsRelevant
+	BlueprintContextLibrary
 	BlueprintGeneratedClass
 	BooleanAND
 	BoolProperty
 	bResult
-	bShouldPlayMusic
 	bShouldShow
 	bTeamMinigame
-	bTeleportedToSky
-	bToSky
 	ByteProperty
 	CallFunc_Add_IntInt_ReturnValue
 	CallFunc_Add_IntInt_ReturnValue1
@@ -46,6 +44,7 @@ Name table:
 	CallFunc_Add_IntInt_ReturnValue3
 	CallFunc_Add_IntInt_ReturnValue4
 	CallFunc_Add_IntInt_ReturnValue5
+	CallFunc_Array_Add_ReturnValue
 	CallFunc_Array_Get_Item
 	CallFunc_Array_Get_Item1
 	CallFunc_Array_Get_Item2
@@ -57,49 +56,42 @@ Name table:
 	CallFunc_CreateWidgetAsync_ReturnValue
 	CallFunc_EqualEqual_ObjectObject_ReturnValue
 	CallFunc_GetActorTeam_ReturnValue
+	CallFunc_GetContext_ReturnValue
 	CallFunc_GetFortPlayerControllerFromActor_ReturnValue
-	CallFunc_GetLocalFortPlayerControllers_ReturnValue
-	CallFunc_GetLocalFortPlayerControllers_ReturnValue1
 	CallFunc_GetMinigameForVolume_ReturnValue
 	CallFunc_GetOwningPlayer_ReturnValue
 	CallFunc_GetParticipatingPlayers_OutPlayers
-	CallFunc_GetParticipatingPlayers_OutPlayers1
+	CallFunc_GetRandomlyOrderedParticipatingPlayers_RandomizedPlayers
 	CallFunc_GetUIManagerWidget_ReturnValue
-	CallFunc_GetUIManagerWidget_ReturnValue1
 	CallFunc_GetVolumeManager_OutIsValid
 	CallFunc_GetVolumeManager_OutVolumeManager
 	CallFunc_Greater_IntInt_ReturnValue
 	CallFunc_Greater_IntInt_ReturnValue1
 	CallFunc_GreaterEqual_IntInt_ReturnValue
 	CallFunc_HasAuthority_ReturnValue
-	CallFunc_HasAuthority_ReturnValue1
 	CallFunc_IsActivated_ReturnValue
 	CallFunc_IsDedicatedServer_ReturnValue
 	CallFunc_IsDedicatedServer_ReturnValue1
 	CallFunc_IsDedicatedServer_ReturnValue2
 	CallFunc_IsDedicatedServer_ReturnValue3
-	CallFunc_IsDedicatedServer_ReturnValue4
-	CallFunc_IsDedicatedServer_ReturnValue5
-	CallFunc_IsLocalPlayerController_ReturnValue
 	CallFunc_IsPlayerInMinigame_ReturnValue
 	CallFunc_IsValid_ReturnValue
 	CallFunc_IsValid_ReturnValue1
-	CallFunc_IsValid_ReturnValue2
-	CallFunc_IsValid_ReturnValue3
 	CallFunc_IsVolumeEventRelevant_bResult
 	CallFunc_IsVolumeEventRelevant_bResult1
-	CallFunc_K2_HasStarted_OutExec
 	CallFunc_Less_IntInt_ReturnValue
 	CallFunc_Less_IntInt_ReturnValue1
 	CallFunc_Less_IntInt_ReturnValue2
 	CallFunc_MakeLiteralByte_ReturnValue
 	CallFunc_Not_PreBool_ReturnValue
+	CallFunc_RandomIntegerInRange_ReturnValue
 	CallFunc_ShouldShowScoreboard_bResult
 	CallFunc_Subtract_ByteByte_ReturnValue
 	CallFunc_Subtract_IntInt_ReturnValue
 	Class
 	ClientMinigameEndedText
 	ClientMinigameStartedText
+	Close
 	CommonActivatablePanel
 	ComponentClass
 	ComponentTemplate
@@ -109,9 +101,8 @@ Name table:
 	CreateWidgetAsyncDelegate__DelegateSignature
 	CurrentState
 	CurrentTeam
-	Deactivate
 	Default__ArrayProperty
-	Default__AudioComponent
+	Default__BlueprintContextLibrary
 	Default__BlueprintGeneratedClass
 	Default__BoolProperty
 	Default__ByteProperty
@@ -127,11 +118,13 @@ Name table:
 	Default__KismetArrayLibrary
 	Default__KismetSystemLibrary
 	Default__Minigame_PlayerCreated_C
+	Default__MinigameStat_Challenge_All_C
 	Default__MinigameStat_PlayerAssists_C
 	Default__MinigameStat_PlayerDeaths_C
 	Default__MinigameStat_PlayerKills_C
 	Default__ObjectProperty
 	Default__SceneComponent
+	Default__ScoreboardPanel_C
 	Default__SCS_Node
 	Default__SimpleConstructionScript
 	Default__StructProperty
@@ -141,14 +134,13 @@ Name table:
 	DelegateFunction
 	DelegateProperty
 	EEndPlayReason
-	EFortMinigameExec
 	EFortMinigameState
 	EFortMinigameWarmupType
 	EFortMinigameWarmupType::Respawn
-	EFortTeam
 	EndPlayReason
 	ENetRole
 	Engine
+	EnterCameraMode
 	EntryPoint
 	Enum
 	EnumProperty
@@ -162,30 +154,28 @@ Name table:
 	FloatProperty
 	FlushNetDormancy
 	FortAsyncAction_CreateWidgetAsync
+	FortHUDContext
 	FortKismetLibrary
 	FortMinigame
 	FortPlayerController
 	FortPlayerControllerAthena
-	FortPlayerPawn
-	FortPlayerPawnAthena
 	FortPlayerState
 	FortUIManagerWidget_NUI
 	FortVolume
 	FortVolumeManager
 	Function
 	GetActorTeam
+	GetContext
 	GetFortPlayerControllerFromActor
-	GetLocalFortPlayerControllers
 	GetMinigameForVolume
 	GetOwningPlayer
 	GetParticipatingPlayers
+	GetRandomlyOrderedParticipatingPlayers
 	GetUIManagerWidget
 	GetVolumeManager
 	Greater_IntInt
 	GreaterEqual_IntInt
 	Guid
-	HandleMinigameEnded
-	HandleMinigameStarted
 	HandleMinigameWarmup
 	HandleStateChanged
 	HasAuthority
@@ -194,34 +184,24 @@ Name table:
 	IntProperty
 	IsActivated
 	IsDedicatedServer
-	IsLocalPlayerController
 	IsPlayerInMinigame
 	IsValid
 	IsVolumeEventRelevant
-	K2_HasStarted
 	K2Node_CreateDelegate_OutputDelegate
 	K2Node_CreateDelegate_OutputDelegate1
-	K2Node_CreateDelegate_OutputDelegate2
-	K2Node_CreateDelegate_OutputDelegate3
-	K2Node_CustomEvent_bToSky
 	K2Node_CustomEvent_MinigameState
-	K2Node_CustomEvent_PlayerPawn
 	K2Node_CustomEvent_PlayerState
 	K2Node_CustomEvent_PlayerState1
-	K2Node_CustomEvent_PlayerState2
-	K2Node_CustomEvent_PlayerState3
 	K2Node_CustomEvent_UserWidget
 	K2Node_CustomEvent_Volume
 	K2Node_CustomEvent_Volume1
 	K2Node_DynamicCast_AsCommon_Activatable_Panel
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena
-	K2Node_DynamicCast_AsFort_Player_Pawn_Athena
 	K2Node_DynamicCast_AsFort_Player_State
+	K2Node_DynamicCast_AsScoreboard_Panel
 	K2Node_DynamicCast_bSuccess
 	K2Node_DynamicCast_bSuccess1
-	K2Node_Event_bTeleportedToSky
 	K2Node_Event_EndPlayReason
-	K2Node_Event_PlayerState
 	K2Node_MakeArray_Array
 	K2Node_SwitchEnum_CmpSuccess
 	KismetArrayLibrary
@@ -231,13 +211,12 @@ Name table:
 	MakeLiteralByte
 	MaxTeams
 	Minigame_PlayerCreated_C
+	MinigameStat_Challenge_All_C
 	MinigameStat_PlayerAssists_C
 	MinigameStat_PlayerDeaths_C
 	MinigameStat_PlayerKills_C
 	MinigameState
 	MulticastDelegateProperty
-	Music Loop
-	Music Loop_GEN_VARIABLE
 	NameProperty
 	None
 	Not_PreBool
@@ -251,44 +230,37 @@ Name table:
 	OnClientExitVolume__DelegateSignature
 	OnComplete
 	OnComplete_D9496DB6400ADA561B9C749CD6D8B5BC
-	OnPlayerAdded
-	OnPlayerChanged__DelegateSignature
-	OnPlayerRemoved
-	OnPlayerTeleportedForMinigameStart
 	OnStateChanged__DelegateSignature
 	Package
-	ParentComponentOrVariableName
-	PawnPrivate
-	PlayerAddedDelegate
+	ParticipatingPlayersCopy
 	PlayerController
 	PlayerDeathsStatFilter
-	PlayerPawn
-	PlayerRemovedDelegate
 	PlayerState
-	PlayerTeleportedFX
 	PlaylistUIExtension
 	PointerToUberGraphFrame
-	PopActivatablePanelInModalLayer
 	QueueActivatablePanelIntoModalLayer
+	RandomIntegerInRange
+	RandomizedParticipatingPlayers
+	RandomizedPlayers
+	RandomlyOrderedPlayers
+	RandomPlayerIndex
 	ReceiveBeginPlay
 	ReceiveEndPlay
 	RemoteRole
 	ROLE_None
 	RootComponent
-	RootNodes
 	SceneComponent
 	ScoreboardPanel
+	ScoreboardPanel_C
 	ScoreboardStats
 	ScriptStruct
 	SCS_Node
-	SetMusicActive
 	SetPvPTeamForPlayer
 	ShouldShowScoreboard
 	ShowScoreboardPanel
 	SimpleConstructionScript
 	Slot
 	SoftObjectProperty
-	Sprite
 	StateChangedDelegate
 	StructProperty
 	Subtract_ByteByte
@@ -319,17 +291,17 @@ Name table:
 	Volume
 	WarmupDuration
 	WarmupType
+	WidgetBlueprintGeneratedClass
 	WidgetClass
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	Minigame_PlayerCreated_C (0-0-0-0): size 522 (cls: Minigame_PlayerCreated_C>BlueprintGeneratedClass>/Script/Engine):
+	Minigame_PlayerCreated_C (0-0-0-0): size 418 (cls: Minigame_PlayerCreated_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=Minigame_PlayerCreated_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Minigame_PlayerCreated=Minigame_PlayerCreated_C 
-	Default__Minigame_PlayerCreated_C (0-0-0-0): size 944 (cls: Default__Minigame_PlayerCreated_C>Minigame_PlayerCreated_C):
+	Default__Minigame_PlayerCreated_C (0-0-0-0): size 919 (cls: Default__Minigame_PlayerCreated_C>Minigame_PlayerCreated_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			NumTeams(IntProperty)=16 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			MaxTeams(IntProperty)=16 
 			UIExtensions(ArrayProperty)=[object] (inner: StructProperty)
 			TimeLimit(FloatProperty)=300 
@@ -342,9 +314,9 @@ Serialized exports:
 			ClientMinigameEndedText(TextProperty)=Restoring Island (34D5E4EA416ABFB8A1BE2EBD51BE9C83) 
 			RemoteRole(ByteProperty)=ROLE_None 
 			RootComponent(ObjectProperty)=[object] 
-	Music Loop (0-0-0-0): size 36 (cls: Music Loop>ObjectProperty>/Script/CoreUObject)
+	MaxTeams (0-0-0-0): size 32 (cls: MaxTeams>IntProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_Minigame_PlayerCreated (0-0-0-0): size 2386 (cls: ExecuteUbergraph_Minigame_PlayerCreated>Function>/Script/CoreUObject)
+	ExecuteUbergraph_Minigame_PlayerCreated (0-0-0-0): size 1389 (cls: ExecuteUbergraph_Minigame_PlayerCreated>Function>/Script/CoreUObject)
 	EndPlayReason (0-0-0-0): size 36 (cls: EndPlayReason>ByteProperty>/Script/CoreUObject)
 	ReceiveEndPlay (0-0-0-0): size 68 (cls: ReceiveEndPlay>Function>/Script/CoreUObject)
 	PlayerState (0-0-0-0): size 36 (cls: PlayerState>ObjectProperty>/Script/CoreUObject)
@@ -357,38 +329,38 @@ Serialized exports:
 	HandleStateChanged (0-0-0-0): size 68 (cls: HandleStateChanged>Function>/Script/CoreUObject)
 	HideScoreboardPanel (0-0-0-0): size 54 (cls: HideScoreboardPanel>Function>/Script/CoreUObject)
 	ShowScoreboardPanel (0-0-0-0): size 54 (cls: ShowScoreboardPanel>Function>/Script/CoreUObject)
-	PlayerState (0-0-0-0): size 36 (cls: PlayerState>ObjectProperty>/Script/CoreUObject)
-	OnPlayerTeleportedForMinigameStart (0-0-0-0): size 82 (cls: OnPlayerTeleportedForMinigameStart>Function>/Script/CoreUObject)
-	HandleMinigameEnded (0-0-0-0): size 54 (cls: HandleMinigameEnded>Function>/Script/CoreUObject)
-	HandleMinigameStarted (0-0-0-0): size 54 (cls: HandleMinigameStarted>Function>/Script/CoreUObject)
 	HandleMinigameWarmup (0-0-0-0): size 54 (cls: HandleMinigameWarmup>Function>/Script/CoreUObject)
-	PlayerState (0-0-0-0): size 36 (cls: PlayerState>ObjectProperty>/Script/CoreUObject)
-	OnPlayerRemoved (0-0-0-0): size 68 (cls: OnPlayerRemoved>Function>/Script/CoreUObject)
-	PlayerState (0-0-0-0): size 36 (cls: PlayerState>ObjectProperty>/Script/CoreUObject)
-	OnPlayerAdded (0-0-0-0): size 68 (cls: OnPlayerAdded>Function>/Script/CoreUObject)
-	PlayerPawn (0-0-0-0): size 36 (cls: PlayerPawn>ObjectProperty>/Script/CoreUObject)
-	PlayerTeleportedFX (0-0-0-0): size 84 (cls: PlayerTeleportedFX>Function>/Script/CoreUObject)
 	UserWidget (0-0-0-0): size 36 (cls: UserWidget>ObjectProperty>/Script/CoreUObject)
 	OnComplete_D9496DB6400ADA561B9C749CD6D8B5BC (0-0-0-0): size 68 (cls: OnComplete_D9496DB6400ADA561B9C749CD6D8B5BC>Function>/Script/CoreUObject)
 	UserConstructionScript (0-0-0-0): size 43 (cls: UserConstructionScript>Function>/Script/CoreUObject)
-	bShouldPlayMusic (0-0-0-0): size 34 (cls: bShouldPlayMusic>BoolProperty>/Script/CoreUObject)
-	SetMusicActive (0-0-0-0): size 423 (cls: SetMusicActive>Function>/Script/CoreUObject)
-	TeamSizes (0-0-0-0): size 32 (cls: TeamSizes>IntProperty>/Script/CoreUObject)
-	TeamSizes (0-0-0-0): size 36 (cls: TeamSizes>ArrayProperty>/Script/CoreUObject)
-	AssignTeams (0-0-0-0): size 1750 (cls: AssignTeams>Function>/Script/CoreUObject)
+	RandomlyOrderedPlayers (0-0-0-0): size 36 (cls: RandomlyOrderedPlayers>ObjectProperty>/Script/CoreUObject)
+	RandomlyOrderedPlayers (0-0-0-0): size 36 (cls: RandomlyOrderedPlayers>ArrayProperty>/Script/CoreUObject)
+	AssignTeams (0-0-0-0): size 1748 (cls: AssignTeams>Function>/Script/CoreUObject)
 	CallFunc_GetParticipatingPlayers_OutPlayers (0-0-0-0): size 36 (cls: CallFunc_GetParticipatingPlayers_OutPlayers>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetParticipatingPlayers_OutPlayers (0-0-0-0): size 36 (cls: CallFunc_GetParticipatingPlayers_OutPlayers>ArrayProperty>/Script/CoreUObject)
-	CallFunc_GetParticipatingPlayers_OutPlayers1 (0-0-0-0): size 36 (cls: CallFunc_GetParticipatingPlayers_OutPlayers1>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetParticipatingPlayers_OutPlayers1 (0-0-0-0): size 36 (cls: CallFunc_GetParticipatingPlayers_OutPlayers1>ArrayProperty>/Script/CoreUObject)
+	CallFunc_GetRandomlyOrderedParticipatingPlayers_RandomizedPlayers (0-0-0-0): size 36 (cls: CallFunc_GetRandomlyOrderedParticipatingPlayers_RandomizedPlayers>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetRandomlyOrderedParticipatingPlayers_RandomizedPlayers (0-0-0-0): size 36 (cls: CallFunc_GetRandomlyOrderedParticipatingPlayers_RandomizedPlayers>ArrayProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 32 (cls: K2Node_MakeArray_Array>IntProperty>/Script/CoreUObject)
 	K2Node_MakeArray_Array (0-0-0-0): size 36 (cls: K2Node_MakeArray_Array>ArrayProperty>/Script/CoreUObject)
-	CallFunc_GetLocalFortPlayerControllers_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLocalFortPlayerControllers_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetLocalFortPlayerControllers_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetLocalFortPlayerControllers_ReturnValue>ArrayProperty>/Script/CoreUObject)
-	CallFunc_GetLocalFortPlayerControllers_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetLocalFortPlayerControllers_ReturnValue1>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetLocalFortPlayerControllers_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetLocalFortPlayerControllers_ReturnValue1>ArrayProperty>/Script/CoreUObject)
-	Music Loop_GEN_VARIABLE (0-0-0-0): size 38 (cls: Music Loop_GEN_VARIABLE>AudioComponent>/Script/Engine):
-		Tag array:
-			bAutoActivate(BoolProperty)=False 
+	TeamSizes (0-0-0-0): size 32 (cls: TeamSizes>IntProperty>/Script/CoreUObject)
+	TeamSizes (0-0-0-0): size 36 (cls: TeamSizes>ArrayProperty>/Script/CoreUObject)
+	PlayerController (0-0-0-0): size 36 (cls: PlayerController>ObjectProperty>/Script/CoreUObject)
+	ShouldShowScoreboard (0-0-0-0): size 272 (cls: ShouldShowScoreboard>Function>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	BindVolumeDelegates (0-0-0-0): size 208 (cls: BindVolumeDelegates>Function>/Script/CoreUObject)
+	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
+	UnbindVolumeDelegates (0-0-0-0): size 208 (cls: UnbindVolumeDelegates>Function>/Script/CoreUObject)
+	PlayerState (0-0-0-0): size 36 (cls: PlayerState>ObjectProperty>/Script/CoreUObject)
+	IsVolumeEventRelevant (0-0-0-0): size 273 (cls: IsVolumeEventRelevant>Function>/Script/CoreUObject)
+	RandomizedPlayers (0-0-0-0): size 36 (cls: RandomizedPlayers>ObjectProperty>/Script/CoreUObject)
+	RandomizedPlayers (0-0-0-0): size 36 (cls: RandomizedPlayers>ArrayProperty>/Script/CoreUObject)
+	GetRandomlyOrderedParticipatingPlayers (0-0-0-0): size 420 (cls: GetRandomlyOrderedParticipatingPlayers>Function>/Script/CoreUObject)
+	CallFunc_GetParticipatingPlayers_OutPlayers (0-0-0-0): size 36 (cls: CallFunc_GetParticipatingPlayers_OutPlayers>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetParticipatingPlayers_OutPlayers (0-0-0-0): size 36 (cls: CallFunc_GetParticipatingPlayers_OutPlayers>ArrayProperty>/Script/CoreUObject)
+	ParticipatingPlayersCopy (0-0-0-0): size 36 (cls: ParticipatingPlayersCopy>ObjectProperty>/Script/CoreUObject)
+	ParticipatingPlayersCopy (0-0-0-0): size 36 (cls: ParticipatingPlayersCopy>ArrayProperty>/Script/CoreUObject)
+	RandomizedParticipatingPlayers (0-0-0-0): size 36 (cls: RandomizedParticipatingPlayers>ObjectProperty>/Script/CoreUObject)
+	RandomizedParticipatingPlayers (0-0-0-0): size 36 (cls: RandomizedParticipatingPlayers>ArrayProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Greater_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Greater_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Greater_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Greater_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
@@ -399,49 +371,27 @@ Serialized exports:
 	CallFunc_Less_IntInt_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
 	Temp_bool_True_if_break_was_hit_Variable (0-0-0-0): size 34 (cls: Temp_bool_True_if_break_was_hit_Variable>BoolProperty>/Script/CoreUObject)
-	PlayerController (0-0-0-0): size 36 (cls: PlayerController>ObjectProperty>/Script/CoreUObject)
-	ShouldShowScoreboard (0-0-0-0): size 271 (cls: ShouldShowScoreboard>Function>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
-	BindVolumeDelegates (0-0-0-0): size 208 (cls: BindVolumeDelegates>Function>/Script/CoreUObject)
 	K2Node_SwitchEnum_CmpSuccess (0-0-0-0): size 34 (cls: K2Node_SwitchEnum_CmpSuccess>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_HasAuthority_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsActivated_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsActivated_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue2>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue3>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsDedicatedServer_ReturnValue4 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue4>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsDedicatedServer_ReturnValue5 (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue5>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue2 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue2>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue3 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue3>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsVolumeEventRelevant_bResult (0-0-0-0): size 34 (cls: CallFunc_IsVolumeEventRelevant_bResult>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsVolumeEventRelevant_bResult1 (0-0-0-0): size 34 (cls: CallFunc_IsVolumeEventRelevant_bResult1>BoolProperty>/Script/CoreUObject)
-	CallFunc_Less_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_Less_IntInt_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Less_IntInt_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_ShouldShowScoreboard_bResult (0-0-0-0): size 34 (cls: CallFunc_ShouldShowScoreboard_bResult>BoolProperty>/Script/CoreUObject)
-	K2Node_CustomEvent_bToSky (0-0-0-0): size 34 (cls: K2Node_CustomEvent_bToSky>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
-	K2Node_Event_bTeleportedToSky (0-0-0-0): size 34 (cls: K2Node_Event_bTeleportedToSky>BoolProperty>/Script/CoreUObject)
 	K2Node_SwitchEnum_CmpSuccess (0-0-0-0): size 34 (cls: K2Node_SwitchEnum_CmpSuccess>BoolProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
-	UnbindVolumeDelegates (0-0-0-0): size 208 (cls: UnbindVolumeDelegates>Function>/Script/CoreUObject)
-	PlayerState (0-0-0-0): size 36 (cls: PlayerState>ObjectProperty>/Script/CoreUObject)
-	IsVolumeEventRelevant (0-0-0-0): size 273 (cls: IsVolumeEventRelevant>Function>/Script/CoreUObject)
+	CallFunc_Greater_IntInt_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Greater_IntInt_ReturnValue>BoolProperty>/Script/CoreUObject)
 	bIsRelevant (0-0-0-0): size 34 (cls: bIsRelevant>BoolProperty>/Script/CoreUObject)
 	bResult (0-0-0-0): size 34 (cls: bResult>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_ObjectObject_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ObjectObject_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsValid_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue1>BoolProperty>/Script/CoreUObject)
-	bTeleportedToSky (0-0-0-0): size 34 (cls: bTeleportedToSky>BoolProperty>/Script/CoreUObject)
-	bToSky (0-0-0-0): size 34 (cls: bToSky>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsLocalPlayerController_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsLocalPlayerController_ReturnValue>BoolProperty>/Script/CoreUObject)
-	CallFunc_IsValid_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsValid_ReturnValue>BoolProperty>/Script/CoreUObject)
-	K2Node_SwitchEnum_CmpSuccess (0-0-0-0): size 34 (cls: K2Node_SwitchEnum_CmpSuccess>BoolProperty>/Script/CoreUObject)
 	bResult (0-0-0-0): size 34 (cls: bResult>BoolProperty>/Script/CoreUObject)
 	bShouldShow (0-0-0-0): size 34 (cls: bShouldShow>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsPlayerInMinigame_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsPlayerInMinigame_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -456,16 +406,12 @@ Serialized exports:
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	K2Node_Event_EndPlayReason (0-0-0-0): size 36 (cls: K2Node_Event_EndPlayReason>ByteProperty>/Script/CoreUObject)
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
-	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate2 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate2>DelegateProperty>/Script/CoreUObject)
-	K2Node_CreateDelegate_OutputDelegate3 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate3>DelegateProperty>/Script/CoreUObject)
 	K2Node_CreateDelegate_OutputDelegate1 (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate1>DelegateProperty>/Script/CoreUObject)
 	CallFunc_GetVolumeManager_OutIsValid (0-0-0-0): size 40 (cls: CallFunc_GetVolumeManager_OutIsValid>EnumProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_MinigameState (0-0-0-0): size 40 (cls: K2Node_CustomEvent_MinigameState>EnumProperty>/Script/CoreUObject)
-	CallFunc_K2_HasStarted_OutExec (0-0-0-0): size 40 (cls: CallFunc_K2_HasStarted_OutExec>EnumProperty>/Script/CoreUObject)
 	CallFunc_GetVolumeManager_OutIsValid (0-0-0-0): size 40 (cls: CallFunc_GetVolumeManager_OutIsValid>EnumProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue1>IntProperty>/Script/CoreUObject)
@@ -473,7 +419,7 @@ Serialized exports:
 	CallFunc_Add_IntInt_ReturnValue3 (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue3>IntProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue4 (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue4>IntProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue5 (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue5>IntProperty>/Script/CoreUObject)
-	CallFunc_Array_Get_Item1 (0-0-0-0): size 32 (cls: CallFunc_Array_Get_Item1>IntProperty>/Script/CoreUObject)
+	CallFunc_Array_Get_Item2 (0-0-0-0): size 32 (cls: CallFunc_Array_Get_Item2>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue1>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue2 (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue2>IntProperty>/Script/CoreUObject)
@@ -489,45 +435,33 @@ Serialized exports:
 	Temp_int_Variable (0-0-0-0): size 32 (cls: Temp_int_Variable>IntProperty>/Script/CoreUObject)
 	Temp_int_Variable1 (0-0-0-0): size 32 (cls: Temp_int_Variable1>IntProperty>/Script/CoreUObject)
 	Temp_int_Variable2 (0-0-0-0): size 32 (cls: Temp_int_Variable2>IntProperty>/Script/CoreUObject)
-	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
-	CallFunc_Add_IntInt_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue1>IntProperty>/Script/CoreUObject)
+	CallFunc_Array_Add_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Add_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
-	CallFunc_Array_Length_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue1>IntProperty>/Script/CoreUObject)
-	Temp_int_Array_Index_Variable (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable>IntProperty>/Script/CoreUObject)
-	Temp_int_Array_Index_Variable1 (0-0-0-0): size 32 (cls: Temp_int_Array_Index_Variable1>IntProperty>/Script/CoreUObject)
-	Temp_int_Loop_Counter_Variable (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable>IntProperty>/Script/CoreUObject)
-	Temp_int_Loop_Counter_Variable1 (0-0-0-0): size 32 (cls: Temp_int_Loop_Counter_Variable1>IntProperty>/Script/CoreUObject)
-	MaxTeams (0-0-0-0): size 32 (cls: MaxTeams>IntProperty>/Script/CoreUObject)
-	NumTeams (0-0-0-0): size 32 (cls: NumTeams>IntProperty>/Script/CoreUObject)
-	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
-	CallFunc_Array_Get_Item2 (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item2>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetVolumeManager_OutVolumeManager (0-0-0-0): size 36 (cls: CallFunc_GetVolumeManager_OutVolumeManager>ObjectProperty>/Script/CoreUObject)
+	CallFunc_RandomIntegerInRange_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_RandomIntegerInRange_ReturnValue>IntProperty>/Script/CoreUObject)
+	CallFunc_Subtract_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Subtract_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
+	RandomPlayerIndex (0-0-0-0): size 32 (cls: RandomPlayerIndex>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Array_Get_Item1 (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item1>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetVolumeManager_OutVolumeManager (0-0-0-0): size 36 (cls: CallFunc_GetVolumeManager_OutVolumeManager>ObjectProperty>/Script/CoreUObject)
 	CallFunc_CreateWidgetAsync_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_CreateWidgetAsync_ReturnValue>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetOwningPlayer_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetOwningPlayer_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetUIManagerWidget_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetUIManagerWidget_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetUIManagerWidget_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_GetUIManagerWidget_ReturnValue1>ObjectProperty>/Script/CoreUObject)
-	K2Node_CustomEvent_PlayerPawn (0-0-0-0): size 36 (cls: K2Node_CustomEvent_PlayerPawn>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_PlayerState (0-0-0-0): size 36 (cls: K2Node_CustomEvent_PlayerState>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_PlayerState1 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_PlayerState1>ObjectProperty>/Script/CoreUObject)
-	K2Node_CustomEvent_PlayerState2 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_PlayerState2>ObjectProperty>/Script/CoreUObject)
-	K2Node_CustomEvent_PlayerState3 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_PlayerState3>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_UserWidget (0-0-0-0): size 36 (cls: K2Node_CustomEvent_UserWidget>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Volume (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Volume>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_Volume1 (0-0-0-0): size 36 (cls: K2Node_CustomEvent_Volume1>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsCommon_Activatable_Panel (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsCommon_Activatable_Panel>ObjectProperty>/Script/CoreUObject)
-	K2Node_DynamicCast_AsFort_Player_Pawn_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Pawn_Athena>ObjectProperty>/Script/CoreUObject)
-	K2Node_Event_PlayerState (0-0-0-0): size 36 (cls: K2Node_Event_PlayerState>ObjectProperty>/Script/CoreUObject)
+	K2Node_DynamicCast_AsScoreboard_Panel (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsScoreboard_Panel>ObjectProperty>/Script/CoreUObject)
 	Temp_object_Variable (0-0-0-0): size 36 (cls: Temp_object_Variable>ObjectProperty>/Script/CoreUObject)
+	CallFunc_Array_Get_Item (0-0-0-0): size 36 (cls: CallFunc_Array_Get_Item>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetFortPlayerControllerFromActor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetFortPlayerControllerFromActor_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetMinigameForVolume_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetMinigameForVolume_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	EventVolume (0-0-0-0): size 36 (cls: EventVolume>ObjectProperty>/Script/CoreUObject)
 	Volume (0-0-0-0): size 36 (cls: Volume>ObjectProperty>/Script/CoreUObject)
 	Volume (0-0-0-0): size 36 (cls: Volume>ObjectProperty>/Script/CoreUObject)
 	ScoreboardPanel (0-0-0-0): size 36 (cls: ScoreboardPanel>ObjectProperty>/Script/CoreUObject)
-	CallFunc_GetFortPlayerControllerFromActor_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetFortPlayerControllerFromActor_ReturnValue>ObjectProperty>/Script/CoreUObject)
-	PlayerState (0-0-0-0): size 36 (cls: PlayerState>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Player_Controller_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_Controller_Athena>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsFort_Player_State (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsFort_Player_State>ObjectProperty>/Script/CoreUObject)
 	CallFunc_GetVolumeManager_OutVolumeManager (0-0-0-0): size 36 (cls: CallFunc_GetVolumeManager_OutVolumeManager>ObjectProperty>/Script/CoreUObject)
@@ -536,18 +470,8 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=Minigame_PlayerCreated_C 
-			VariableGuid(StructProperty)=Guid: 3350852873-1127987546-902424489-537529522 
+			VariableGuid(StructProperty/Guid)=Guid: 3350852873-1127987546-902424489-537529522 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
-	SCS_Node_1 (0-0-0-0): size 227 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
+	SimpleConstructionScript_0 (0-0-0-0): size 41 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
-			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
-			ComponentTemplate(ObjectProperty)=Music Loop_GEN_VARIABLE=Minigame_PlayerCreated_C 
-			ParentComponentOrVariableName(NameProperty)=Sprite 
-			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1066526197-1104166500-2632294060-3754438909 
-			InternalVariableName(NameProperty)=Music Loop 
-	SimpleConstructionScript_0 (0-0-0-0): size 123 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
-		Tag array:
-			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
-			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_0=Minigame_PlayerCreated_C 

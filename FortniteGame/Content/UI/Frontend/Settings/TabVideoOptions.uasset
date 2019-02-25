@@ -80,6 +80,7 @@ Name table:
 	Default__ComponentDelegateBinding
 	Default__DelegateProperty
 	Default__EnumProperty
+	Default__FloatProperty
 	Default__FortVideoOptions
 	Default__Function
 	Default__GameUserSettings
@@ -157,6 +158,8 @@ Name table:
 	K2Node_CreateDelegate_OutputDelegate2
 	K2Node_CreateDelegate_OutputDelegate3
 	K2Node_CustomEvent_IsWindowedFullscreen
+	K2Node_CustomEvent_Value
+	K2Node_CustomEvent_Value1
 	K2Node_DynamicCast_AsFort_Options_Menu_Setting
 	K2Node_DynamicCast_AsFort_Options_Menu_Setting1
 	K2Node_DynamicCast_AsOptions_Menu_Rotator
@@ -255,6 +258,7 @@ Name table:
 	UpdateSetting
 	UserWidget
 	VAlign_Top
+	Value
 	Vector2D
 	VerticalAlignment
 	Widget
@@ -280,7 +284,7 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_TabVideoOptions=TabVideoOptions_C 
 	Default__TabVideoOptions_C (0-0-0-0): size 143 (cls: Default__TabVideoOptions_C>TabVideoOptions_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			bIsFocusable(BoolProperty)=True 
 			bHasScriptImplementedTick(BoolProperty)=False 
 			bHasScriptImplementedPaint(BoolProperty)=False 
@@ -289,11 +293,13 @@ Serialized exports:
 	Enable Overlay__DelegateSignature (0-0-0-0): size 47 (cls: Enable Overlay__DelegateSignature>Function>/Script/CoreUObject)
 	Disable Overlay__DelegateSignature (0-0-0-0): size 43 (cls: Disable Overlay__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_TabVideoOptions (0-0-0-0): size 1708 (cls: ExecuteUbergraph_TabVideoOptions>Function>/Script/CoreUObject)
+	ExecuteUbergraph_TabVideoOptions (0-0-0-0): size 1716 (cls: ExecuteUbergraph_TabVideoOptions>Function>/Script/CoreUObject)
 	CallFunc_Map_Values_Values (0-0-0-0): size 36 (cls: CallFunc_Map_Values_Values>ObjectProperty>/Script/CoreUObject)
 	CallFunc_Map_Values_Values (0-0-0-0): size 36 (cls: CallFunc_Map_Values_Values>ArrayProperty>/Script/CoreUObject)
-	Setting Value Changed (0-0-0-0): size 54 (cls: Setting Value Changed>Function>/Script/CoreUObject)
-	Quality Changed (0-0-0-0): size 54 (cls: Quality Changed>Function>/Script/CoreUObject)
+	Value (0-0-0-0): size 32 (cls: Value>FloatProperty>/Script/CoreUObject)
+	Setting Value Changed (0-0-0-0): size 68 (cls: Setting Value Changed>Function>/Script/CoreUObject)
+	Value (0-0-0-0): size 32 (cls: Value>FloatProperty>/Script/CoreUObject)
+	Quality Changed (0-0-0-0): size 68 (cls: Quality Changed>Function>/Script/CoreUObject)
 	IsWindowedFullscreen (0-0-0-0): size 34 (cls: IsWindowedFullscreen>BoolProperty>/Script/CoreUObject)
 	Window Mode Changed (0-0-0-0): size 68 (cls: Window Mode Changed>Function>/Script/CoreUObject)
 	Item (0-0-0-0): size 36 (cls: Item>ObjectProperty>/Script/CoreUObject)
@@ -337,9 +343,9 @@ Serialized exports:
 	TooltipDisplay (0-0-0-0): size 449 (cls: TooltipDisplay>CommonTextBlock>/Script/CommonUI):
 		Tag array:
 			Style(ObjectProperty)=TextStyle-Base-XS-Blue_C=/Game/UI/Foundation/Text/TextStyle-Base-XS-Blue 
-			ColorAndOpacity(StructProperty)=System.Byte[] 
-			Font(StructProperty)=System.Byte[] 
-			ShadowOffset(StructProperty)=Vector2D(0,0) 
+			ColorAndOpacity(StructProperty/SlateColor)=System.Byte[] 
+			Font(StructProperty/SlateFontInfo)=System.Byte[] 
+			ShadowOffset(StructProperty/Vector2D)=Vector2D(0,0) 
 			AutoWrapText(BoolProperty)=True 
 			Slot(ObjectProperty)=HorizontalBoxSlot_2=WidgetArchetype 
 			bIsVariable(BoolProperty)=True 
@@ -355,19 +361,21 @@ Serialized exports:
 	Temp_byte_Variable1 (0-0-0-0): size 40 (cls: Temp_byte_Variable1>EnumProperty>/Script/CoreUObject)
 	ForceUpdateSettings (0-0-0-0): size 40 (cls: ForceUpdateSettings>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_Value (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Value>FloatProperty>/Script/CoreUObject)
+	K2Node_CustomEvent_Value1 (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Value1>FloatProperty>/Script/CoreUObject)
 	HorizontalBox_1 (0-0-0-0): size 57 (cls: HorizontalBox_1>HorizontalBox>/Script/UMG):
 		Tag array:
 			Slots(ArrayProperty)=[object] (inner: ObjectProperty)
 	HorizontalBoxSlot_2 (0-0-0-0): size 382 (cls: HorizontalBoxSlot_2>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
-			Size(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
+			Size(StructProperty/SlateChildSize)=System.Byte[] 
 			VerticalAlignment(ByteProperty)=VAlign_Top 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=TooltipDisplay=WidgetArchetype 
 	HorizontalBoxSlot_3 (0-0-0-0): size 156 (cls: HorizontalBoxSlot_3>HorizontalBoxSlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			Parent(ObjectProperty)=HorizontalBox_1=WidgetArchetype 
 			Content(ObjectProperty)=SizeBox_1=WidgetArchetype 
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -417,12 +425,12 @@ Serialized exports:
 			bCookedWidgetTree(BoolProperty)=True 
 	WidgetNavigation_0 (0-0-0-0): size 600 (cls: WidgetNavigation_0>WidgetNavigation>/Script/UMG):
 		Tag array:
-			Up(StructProperty)=System.Byte[] 
-			Down(StructProperty)=System.Byte[] 
-			Left(StructProperty)=System.Byte[] 
-			Right(StructProperty)=System.Byte[] 
-			Next(StructProperty)=System.Byte[] 
-			Previous(StructProperty)=System.Byte[] 
+			Up(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Down(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Left(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Right(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Next(StructProperty/WidgetNavigationData)=System.Byte[] 
+			Previous(StructProperty/WidgetNavigationData)=System.Byte[] 
 	WidgetTree_0 (0-0-0-0): size 41 (cls: WidgetTree_0>WidgetTree>/Script/UMG):
 		Tag array:
 			RootWidget(ObjectProperty)=HorizontalBox_1=WidgetArchetype 

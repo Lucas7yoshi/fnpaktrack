@@ -1,5 +1,5 @@
 Name table:
-	/Game/Athena/HUD/Atlas/Bacchus/PickUp_Normal_Sprite
+	/Game/Athena/HUD/Atlas/Bacchus/Confirm_Normal_L_Sprite
 	/Game/Athena/HUD/Atlas/Bacchus/T_ButtonsBG_01_Sprite
 	/Game/Athena/HUD/Bacchus/BacchusActionButton
 	/Game/Athena/HUD/Bacchus/BacchusActionButton.WidgetArchetype
@@ -51,6 +51,7 @@ Name table:
 	Class
 	ColorAndOpacity
 	CommonBacchusButton_C
+	Confirm_Normal_L_Sprite
 	Content
 	Default__BacchusActionButton_C
 	Default__BlueprintContextLibrary
@@ -124,6 +125,7 @@ Name table:
 	Object
 	ObjectProperty
 	OnHUDStateUpdate
+	OnMouseCaptureLost
 	OnTouchEnded
 	OnTouchStarted
 	Overlay
@@ -132,7 +134,6 @@ Name table:
 	Padding
 	PaperSprite
 	Parent
-	PickUp_Normal_Sprite
 	PointerEvent
 	PointerToUberGraphFrame
 	Pressed
@@ -144,6 +145,7 @@ Name table:
 	ScaleBox
 	ScaleBoxSlot
 	ScriptStruct
+	SetIconPressed
 	SetVisibility
 	SizeBox
 	SizeBoxSlot
@@ -176,7 +178,7 @@ Name table:
 	WidthOverride
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	BacchusActionButton_C (0-0-0-0): size 295 (cls: BacchusActionButton_C>WidgetBlueprintGeneratedClass>/Script/UMG):
+	BacchusActionButton_C (0-0-0-0): size 311 (cls: BacchusActionButton_C>WidgetBlueprintGeneratedClass>/Script/UMG):
 		Tag array:
 			WidgetTree(ObjectProperty)=[object] 
 			bAllowTemplate(BoolProperty)=True 
@@ -185,7 +187,7 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_BacchusActionButton=BacchusActionButton_C 
 	Default__BacchusActionButton_C (0-0-0-0): size 106 (cls: Default__BacchusActionButton_C>BacchusActionButton_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			Visibility(EnumProperty)=ESlateVisibility::SelfHitTestInvisible 
 	WidgetArchetype (0-0-0-0): size 212 (cls: WidgetArchetype>BacchusActionButton_C):
 		Tag array:
@@ -198,32 +200,33 @@ Serialized exports:
 			bCookedWidgetTree(BoolProperty)=True 
 	ActionMapping (0-0-0-0): size 32 (cls: ActionMapping>NameProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_BacchusActionButton (0-0-0-0): size 248 (cls: ExecuteUbergraph_BacchusActionButton>Function>/Script/CoreUObject)
+	ExecuteUbergraph_BacchusActionButton (0-0-0-0): size 274 (cls: ExecuteUbergraph_BacchusActionButton>Function>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanOR_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanOR_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsActionBound_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsActionBound_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_NotEqual_NameName_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_NotEqual_NameName_ReturnValue>BoolProperty>/Script/CoreUObject)
+	OnMouseCaptureLost (0-0-0-0): size 54 (cls: OnMouseCaptureLost>Function>/Script/CoreUObject)
 	NewState (0-0-0-0): size 36 (cls: NewState>StructProperty>/Script/CoreUObject)
 	OnHUDStateUpdate (0-0-0-0): size 68 (cls: OnHUDStateUpdate>Function>/Script/CoreUObject)
 	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
-	OnTouchStarted (0-0-0-0): size 211 (cls: OnTouchStarted>Function>/Script/CoreUObject)
+	OnTouchStarted (0-0-0-0): size 222 (cls: OnTouchStarted>Function>/Script/CoreUObject)
 	MyGeometry (0-0-0-0): size 36 (cls: MyGeometry>StructProperty>/Script/CoreUObject)
-	OnTouchEnded (0-0-0-0): size 290 (cls: OnTouchEnded>Function>/Script/CoreUObject)
+	OnTouchEnded (0-0-0-0): size 301 (cls: OnTouchEnded>Function>/Script/CoreUObject)
 	CallFunc_HasMouseCapture_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasMouseCapture_ReturnValue>BoolProperty>/Script/CoreUObject)
 	InternalButton (0-0-0-0): size 855 (cls: InternalButton>Button>/Script/UMG):
 		Tag array:
-			WidgetStyle(StructProperty)=System.Byte[] 
+			WidgetStyle(StructProperty/ButtonStyle)=System.Byte[] 
 			Slot(ObjectProperty)=OverlaySlot_9=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
 	Image_Background (0-0-0-0): size 249 (cls: Image_Background>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=OverlaySlot_3=WidgetArchetype 
 	Image_Icon (0-0-0-0): size 290 (cls: Image_Icon>Image>/Script/UMG):
 		Tag array:
-			Brush(StructProperty)=System.Byte[] 
-			ColorAndOpacity(StructProperty)=UE4.FLinearColor 
+			Brush(StructProperty/SlateBrush)=System.Byte[] 
+			ColorAndOpacity(StructProperty/LinearColor)=UE4.FLinearColor 
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 			Visibility(EnumProperty)=ESlateVisibility::HitTestInvisible 
 	CallFunc_GetContext_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetContext_ReturnValue>ObjectProperty>/Script/CoreUObject)
@@ -238,7 +241,7 @@ Serialized exports:
 			Slot(ObjectProperty)=SizeBoxSlot_0=WidgetArchetype 
 	OverlaySlot_10 (0-0-0-0): size 325 (cls: OverlaySlot_10>OverlaySlot>/Script/UMG):
 		Tag array:
-			Padding(StructProperty)=System.Byte[] 
+			Padding(StructProperty/Margin)=System.Byte[] 
 			HorizontalAlignment(ByteProperty)=HAlign_Center 
 			VerticalAlignment(ByteProperty)=VAlign_Center 
 			Parent(ObjectProperty)=Overlay_0=WidgetArchetype 

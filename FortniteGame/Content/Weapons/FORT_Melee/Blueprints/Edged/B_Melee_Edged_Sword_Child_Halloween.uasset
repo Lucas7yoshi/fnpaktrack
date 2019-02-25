@@ -12,7 +12,7 @@ Name table:
 	/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Impact_Purple_Cue
 	/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Ready_Cue
 	/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Swing_Cue
-	/Game/Sounds/Fort_Weapons/Spectral_Blade/Weapon_Melee_Spectral_Blade_Swing_04
+	/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Swing_Degraded_Cue
 	/Game/Weapons/FORT_Melee/Blueprints/B_Melee_Generic
 	/Game/Weapons/FORT_Melee/Blueprints/Edged/B_Melee_Edged_Sword
 	/Game/Weapons/FORT_Melee/Blueprints/Edged/B_Melee_Edged_Sword_Child_Halloween
@@ -29,7 +29,7 @@ Name table:
 	AllNodes
 	AnimMontage
 	AnimTrailsParticles
-	AnimTrialCompOverride_GEN_VARIABLE
+	AnimTrial_GEN_VARIABLE
 	ArrayIndex
 	ArrayProperty
 	AthenaBlade_Equip_M
@@ -126,6 +126,7 @@ Name table:
 	HeavySword_AnimAsset
 	HitResult
 	Idle_Effect
+	IdleFX_GEN_VARIABLE
 	ImpactPhysicalSurface
 	ImpactPhysicalSurfaceEffects
 	ImpactPhysicalSurfaceSounds
@@ -191,7 +192,6 @@ Name table:
 	SkeletalMesh
 	SkeletalMeshComponentBudgeted
 	SoundCue
-	SoundWave
 	SpawnedPSC
 	SpawnEmitterAtLocation
 	Spectral_Blade_Destroyed_Cue
@@ -199,17 +199,18 @@ Name table:
 	Spectral_Blade_Impact_Purple_Cue
 	Spectral_Blade_Ready_Cue
 	Spectral_Blade_Swing_Cue
+	Spectral_Blade_Swing_Degraded_Cue
 	StaticMesh
 	StaticMeshComponent
 	StructProperty
 	Subtract_VectorVector
+	SwingFX_GEN_VARIABLE
 	TagName
 	UberGraphFrame
 	UberGraphFunction
 	UserConstructionScript
 	VariableGuid
 	Vector
-	Weapon_Melee_Spectral_Blade_Swing_04
 	WeaponCoreAnimation
 	WeaponMesh
 	WeaponMesh0
@@ -228,20 +229,20 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_Melee_Edged_Sword_Child_Halloween=B_Melee_Edged_Sword_Child_Halloween_C 
 	Default__B_Melee_Edged_Sword_Child_Halloween_C (0-0-0-0): size 1567 (cls: Default__B_Melee_Edged_Sword_Child_Halloween_C>B_Melee_Edged_Sword_Child_Halloween_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			Has_Idle_Effect(BoolProperty)=True 
 			Idle_Effect(ObjectProperty)=P_IdleFX=/Game/Weapons/FORT_Melee/Effects/GhostBlade/P_IdleFX 
 			AnimTrailsParticles(ObjectProperty)=P_Melee_Trail_Ghost=/Game/Weapons/FORT_Melee/Effects/GhostBlade/P_Melee_Trail_Ghost 
 			Second Socket Name(NameProperty)=Melee_RSword_Upper 
-			Width(FloatProperty)=3 
 			OverrideSecond Socket Name(NameProperty)=Melee_RSword_Upper 
-			Melee Heavy Launch Gameplay Cue Tag Override(StructProperty)=System.Byte[] 
-			Melee Heavy Impact Gameplay Cue Tag Override(StructProperty)=System.Byte[] 
+			Width(FloatProperty)=3 
+			Melee Heavy Launch Gameplay Cue Tag Override(StructProperty/GameplayTag)=System.Byte[] 
+			Melee Heavy Impact Gameplay Cue Tag Override(StructProperty/GameplayTag)=System.Byte[] 
 			DestroyedSound(ObjectProperty)=Spectral_Blade_Destroyed_Cue=/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Destroyed_Cue 
 			ReloadSounds(ObjectProperty)=Spectral_Blade_Ready_Cue=/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Ready_Cue 
 			PrimaryFireSound(ObjectProperty)=Spectral_Blade_Swing_Cue=/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Swing_Cue 
 			PrimaryFireSound(ObjectProperty)=Spectral_Blade_Swing_Cue=/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Swing_Cue 
-			PrimaryFireSound(ObjectProperty)=Weapon_Melee_Spectral_Blade_Swing_04=/Game/Sounds/Fort_Weapons/Spectral_Blade/Weapon_Melee_Spectral_Blade_Swing_04 
+			PrimaryFireSound(ObjectProperty)=Spectral_Blade_Swing_Degraded_Cue=/Game/Sounds/Fort_Weapons/Spectral_Blade/Spectral_Blade_Swing_Degraded_Cue 
 			SecondaryFireSound(ObjectProperty)=GreatSword_SuperAttack_Cue=/Game/Sounds/Fort_Weapons/GreatSword/GreatSword_SuperAttack_Cue 
 			ImpactPhysicalSurfaceSounds(ObjectProperty)=GreatSword_WorldImpact_Cue=/Game/Sounds/Fort_Weapons/GreatSword/GreatSword_WorldImpact_Cue 
 			ImpactPhysicalSurfaceSounds(ObjectProperty)=GreatSword_WorldImpact_Wood_Cue=/Game/Sounds/Fort_Weapons/GreatSword/GreatSword_WorldImpact_Wood_Cue 
@@ -311,31 +312,31 @@ Serialized exports:
 	DefaultSceneRoot_GEN_VARIABLE (0-0-0-0): size 12 (cls: DefaultSceneRoot_GEN_VARIABLE>SceneComponent>/Script/Engine)
 	RotationFix_GEN_VARIABLE (0-0-0-0): size 134 (cls: RotationFix_GEN_VARIABLE>SceneComponent>/Script/Engine):
 		Tag array:
-			RelativeLocation(StructProperty)=Vector(-1.588784E-05,0,144.4912) 
-			RelativeRotation(StructProperty)=Rotator(0,90,0) 
+			RelativeLocation(StructProperty/Vector)=Vector(-1.588784E-05,0,144.4912) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,90,0) 
 	SCS_Node_0 (0-0-0-0): size 168 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=B_Melee_Edged_Sword_Child_Halloween_C 
-			VariableGuid(StructProperty)=Guid: 1735242759-1124119722-2673442962-3122211668 
+			VariableGuid(StructProperty/Guid)=Guid: 1735242759-1124119722-2673442962-3122211668 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 891 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=RotationFix_GEN_VARIABLE=B_Melee_Edged_Sword_Child_Halloween_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=WeaponMesh0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 1453399162-1180744774-1909975474-4131908806 
+			VariableGuid(StructProperty/Guid)=Guid: 1453399162-1180744774-1909975474-4131908806 
 			InternalVariableName(NameProperty)=RotationFix 
 	SCS_Node_4 (0-0-0-0): size 495 (cls: SCS_Node_4>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=StaticMeshComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SK_Sword_Ghost_FX_GEN_VARIABLE=B_Melee_Edged_Sword_Child_Halloween_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=WeaponMesh0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2315827983-1176335542-1117949853-1924122182 
+			VariableGuid(StructProperty/Guid)=Guid: 2315827983-1176335542-1117949853-1924122182 
 			InternalVariableName(NameProperty)=SK_Sword_Ghost_FX 
 	SimpleConstructionScript_0 (0-0-0-0): size 131 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:

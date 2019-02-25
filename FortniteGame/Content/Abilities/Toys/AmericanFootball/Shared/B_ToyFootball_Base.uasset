@@ -99,6 +99,7 @@ Name table:
 	CallFunc_K2_AddLocalRotation_SweepHitResult
 	CallFunc_K2_GetActorLocation_ReturnValue
 	CallFunc_K2_GetActorLocation_ReturnValue1
+	CallFunc_K2_GetActorLocation_ReturnValue2
 	CallFunc_K2_GetComponentToWorld_ReturnValue
 	CallFunc_K2_SetTimerDelegate_ReturnValue
 	CallFunc_K2_SetWorldTransform_SweepHitResult
@@ -108,6 +109,7 @@ Name table:
 	CallFunc_Multiply_VectorFloat_ReturnValue
 	CallFunc_Multiply_VectorFloat_ReturnValue1
 	CallFunc_Not_PreBool_ReturnValue
+	CallFunc_Not_PreBool_ReturnValue1
 	CallFunc_NotEqual_ObjectObject_ReturnValue
 	CallFunc_PickFormatString_FormatString
 	CallFunc_RandomUnitVector_ReturnValue
@@ -155,6 +157,7 @@ Name table:
 	Default__FloatProperty
 	Default__FortRuntimeOptions
 	Default__Function
+	Default__GameplayStatics
 	Default__InheritableComponentHandler
 	Default__IntProperty
 	Default__KismetSystemLibrary
@@ -187,6 +190,7 @@ Name table:
 	EVehicleAudioInterpolationType::None
 	ExecuteUbergraph_B_ToyFootball_Base
 	FadeIn
+	FadeOut
 	FinishedFunctionName
 	FirstDownMessage
 	FloatCurve
@@ -215,6 +219,7 @@ Name table:
 	Game
 	GameplayCue.Abilities.Toys.Football.Score
 	GameplayCue.Abilities.Toys.Football.TeleportAway
+	GameplayStatics
 	GameplayTag
 	GetActorUpVector
 	GetContext
@@ -228,6 +233,7 @@ Name table:
 	HasAuthority
 	HasFinishedSpawning
 	Hit
+	Hit Player/Vehicle Bounce Sound
 	HitLocation
 	HitNormal
 	HitResult
@@ -246,6 +252,7 @@ Name table:
 	InternalVariableName
 	InterpType
 	IntProperty
+	Is Throwing
 	IsDedicatedServer
 	IsValid
 	K2_AddLocalRotation
@@ -355,6 +362,7 @@ Name table:
 	PlayFromStart
 	PlayScoringAnim
 	PlayScoringCueAndDestruct
+	PlaySoundAtLocation
 	PointerToUberGraphFrame
 	Position
 	PrimaryComponentTick
@@ -404,11 +412,9 @@ Name table:
 	SoundCue
 	SphereCollision
 	SphereComponent
-	SphereRadius
 	StaticMesh
 	StaticMesh892E2D7F4D5BDF47A8E2048AC5843E20
 	StaticMeshComponent
-	Stop
 	StrProperty
 	Struct_FootballMinigame_Message
 	StructProperty
@@ -419,9 +425,11 @@ Name table:
 	Temp_bool_Has_Been_Initd_Variable
 	Temp_bool_Has_Been_Initd_Variable1
 	Temp_bool_Has_Been_Initd_Variable2
+	Temp_bool_Has_Been_Initd_Variable3
 	Temp_bool_IsClosed_Variable
 	Temp_bool_IsClosed_Variable1
 	Temp_bool_IsClosed_Variable2
+	Temp_bool_IsClosed_Variable3
 	Temp_bool_Variable
 	Temp_byte_Variable
 	Temp_byte_Variable1
@@ -463,7 +471,7 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	B_ToyFootball_Base_C (0-0-0-0): size 683 (cls: B_ToyFootball_Base_C>BlueprintGeneratedClass>/Script/Engine):
+	B_ToyFootball_Base_C (0-0-0-0): size 703 (cls: B_ToyFootball_Base_C>BlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			NumReplicatedProperties(IntProperty)=3 
 			bHasCookedComponentInstancingData(BoolProperty)=True 
@@ -471,27 +479,29 @@ Serialized exports:
 			SimpleConstructionScript(ObjectProperty)=SimpleConstructionScript_0=B_ToyFootball_Base_C 
 			InheritableComponentHandler(ObjectProperty)=InheritableComponentHandler=B_ToyFootball_Base_C 
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_B_ToyFootball_Base=B_ToyFootball_Base_C 
-	Default__B_ToyFootball_Base_C (0-0-0-0): size 1341 (cls: Default__B_ToyFootball_Base_C>B_ToyFootball_Base_C):
+	Default__B_ToyFootball_Base_C (0-0-0-0): size 1367 (cls: Default__B_ToyFootball_Base_C>B_ToyFootball_Base_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			HitLocation(StructProperty)=Vector(0,0,0) 
-			IdealLerpStartPos(StructProperty)=Vector(0,0,0) 
-			IdealLerpEndPos(StructProperty)=Vector(0,0,0) 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			HitLocation(StructProperty/Vector)=Vector(0,0,0) 
+			IdealLerpStartPos(StructProperty/Vector)=Vector(0,0,0) 
+			IdealLerpEndPos(StructProperty/Vector)=Vector(0,0,0) 
 			LerpDuration(FloatProperty)=0.4 
-			DisplayMessage(StructProperty)=System.Byte[] 
+			DisplayMessage(StructProperty/Struct_FootballMinigame_Message)=System.Byte[] 
 			MinimumDistanceMessage(TextProperty)={ThrowingPlayer} threw a {Distance} yard dump pass to {CatchingPlayer} (E47A9D624D4B46C255F9538FE5D888EF) 
 			FirstDownMessage(TextProperty)={ThrowingPlayer} threw a {Distance} yard first down to {CatchingPlayer} (B7AD97A4459C98E02F5B07A2E7DABD48) 
 			TouchdownMessage(TextProperty)={ThrowingPlayer} threw a {Distance} yard TOUCHDOWN! to {CatchingPlayer} (575EF69F4E20CFF151DF82A07D37E889) 
 			HailMaryMessage(TextProperty)={ThrowingPlayer} threw a {Distance} yard HAILLL MARYYY to {CatchingPlayer} (B083843F4904DCDC142BC49E7C7B03EB) 
-			CueToPlayWhenReused(StructProperty)=System.Byte[] 
-			CueToPlayWhenExpired(StructProperty)=System.Byte[] 
+			Is Throwing(BoolProperty)=True 
+			CueToPlayWhenReused(StructProperty/GameplayTag)=System.Byte[] 
+			CueToPlayWhenExpired(StructProperty/GameplayTag)=System.Byte[] 
 			SphereCollision(ObjectProperty)=SphereCollision=Default__B_ToyFootball_Base_C 
 			InitialLifeSpan(FloatProperty)=20 
 			NetCullDistanceSquared(FloatProperty)=4E+08 
 			RootComponent(ObjectProperty)=SphereCollision=Default__B_ToyFootball_Base_C 
 	InAirAudio (0-0-0-0): size 36 (cls: InAirAudio>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_B_ToyFootball_Base (0-0-0-0): size 2037 (cls: ExecuteUbergraph_B_ToyFootball_Base>Function>/Script/CoreUObject)
+	ExecuteUbergraph_B_ToyFootball_Base (0-0-0-0): size 2331 (cls: ExecuteUbergraph_B_ToyFootball_Base>Function>/Script/CoreUObject)
+	Hit Player/Vehicle Bounce Sound (0-0-0-0): size 56 (cls: Hit Player/Vehicle Bounce Sound>Function>/Script/CoreUObject)
 	Client On Thrown (0-0-0-0): size 56 (cls: Client On Thrown>Function>/Script/CoreUObject)
 	NewVelocity (0-0-0-0): size 36 (cls: NewVelocity>StructProperty>/Script/CoreUObject)
 	SetBallVelocityAndStartTicking (0-0-0-0): size 68 (cls: SetBallVelocityAndStartTicking>Function>/Script/CoreUObject)
@@ -526,8 +536,8 @@ Serialized exports:
 	InAirAudio_GEN_VARIABLE (0-0-0-0): size 189 (cls: InAirAudio_GEN_VARIABLE>AudioComponent>/Script/Engine):
 		Tag array:
 			Sound(ObjectProperty)=Toy_Football_InAirLoop_Cue=/Game/Athena/Sounds/Toys/Football/Toy_Football_InAirLoop_Cue 
-			RelativeRotation(StructProperty)=Rotator(0,-89.99998,-180) 
-			RelativeScale3D(StructProperty)=Vector(0.7692308,0.7692308,0.7692308) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-89.99998,-180) 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.7692308,0.7692308,0.7692308) 
 			bAutoActivate(BoolProperty)=False 
 	Bounce (0-0-0-0): size 34 (cls: Bounce>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -537,6 +547,7 @@ Serialized exports:
 	CallFunc_HasAuthority_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_IsDedicatedServer_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_IsDedicatedServer_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Not_PreBool_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue>BoolProperty>/Script/CoreUObject)
+	CallFunc_Not_PreBool_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_Not_PreBool_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_NotEqual_ObjectObject_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_NotEqual_ObjectObject_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess1 (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess1>BoolProperty>/Script/CoreUObject)
@@ -545,11 +556,14 @@ Serialized exports:
 	Temp_bool_Has_Been_Initd_Variable (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Has_Been_Initd_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_Has_Been_Initd_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable2>BoolProperty>/Script/CoreUObject)
+	Temp_bool_Has_Been_Initd_Variable3 (0-0-0-0): size 34 (cls: Temp_bool_Has_Been_Initd_Variable3>BoolProperty>/Script/CoreUObject)
 	Temp_bool_IsClosed_Variable (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable>BoolProperty>/Script/CoreUObject)
 	Temp_bool_IsClosed_Variable1 (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable1>BoolProperty>/Script/CoreUObject)
 	Temp_bool_IsClosed_Variable2 (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable2>BoolProperty>/Script/CoreUObject)
+	Temp_bool_IsClosed_Variable3 (0-0-0-0): size 34 (cls: Temp_bool_IsClosed_Variable3>BoolProperty>/Script/CoreUObject)
 	HasFinishedSpawning (0-0-0-0): size 34 (cls: HasFinishedSpawning>BoolProperty>/Script/CoreUObject)
 	Hit (0-0-0-0): size 34 (cls: Hit>BoolProperty>/Script/CoreUObject)
+	Is Throwing (0-0-0-0): size 34 (cls: Is Throwing>BoolProperty>/Script/CoreUObject)
 	CallFunc_ConditionalPrintToMessageFeed_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_ConditionalPrintToMessageFeed_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_Greater_FloatFloat_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_Greater_FloatFloat_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_HasAuthority_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_HasAuthority_ReturnValue>BoolProperty>/Script/CoreUObject)
@@ -571,10 +585,10 @@ Serialized exports:
 	UnderlyingType (0-0-0-0): size 36 (cls: UnderlyingType>ByteProperty>/Script/CoreUObject)
 	CurveFloat_0 (0-0-0-0): size 317 (cls: CurveFloat_0>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	CurveFloat_1 (0-0-0-0): size 263 (cls: CurveFloat_1>CurveFloat>/Script/Engine):
 		Tag array:
-			FloatCurve(StructProperty)=System.Byte[] 
+			FloatCurve(StructProperty/RichCurve)=System.Byte[] 
 	K2Node_CreateDelegate_OutputDelegate (0-0-0-0): size 36 (cls: K2Node_CreateDelegate_OutputDelegate>DelegateProperty>/Script/CoreUObject)
 	K2Node_Select_Default (0-0-0-0): size 40 (cls: K2Node_Select_Default>EnumProperty>/Script/CoreUObject)
 	Temp_byte_Variable (0-0-0-0): size 40 (cls: Temp_byte_Variable>EnumProperty>/Script/CoreUObject)
@@ -598,7 +612,7 @@ Serialized exports:
 	RollingAudio_GEN_VARIABLE (0-0-0-0): size 139 (cls: RollingAudio_GEN_VARIABLE>FortVehicleAudioVoice>/Script/FortniteGame):
 		Tag array:
 			LoopingSound(ObjectProperty)=[object] 
-			VolumeParam(StructProperty)=System.Byte[] 
+			VolumeParam(StructProperty/FortVehicleAudioParam)=System.Byte[] 
 	InheritableComponentHandler (0-0-0-0): size 6823 (cls: InheritableComponentHandler>InheritableComponentHandler>/Script/Engine):
 		Tag array:
 			Records(ArrayProperty)=[object] (inner: StructProperty)
@@ -628,9 +642,9 @@ Serialized exports:
 		Tag array:
 			Template(ObjectProperty)=P_Emote_FootballTrail=/Game/Effects/Fort_Effects/Emotes/P_Emote_FootballTrail 
 			bAutoManageAttachment(BoolProperty)=True 
-			RelativeRotation(StructProperty)=Rotator(0,-89.99998,-180) 
-			RelativeScale3D(StructProperty)=Vector(0.7692308,0.7692308,0.7692308) 
-			PrimaryComponentTick(StructProperty)=System.Byte[] 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-89.99998,-180) 
+			RelativeScale3D(StructProperty/Vector)=Vector(0.7692308,0.7692308,0.7692308) 
+			PrimaryComponentTick(StructProperty/ActorComponentTickFunction)=System.Byte[] 
 	ProjectileMovement5C27E20C46A6F8C1BBA48E9C35C6D44D (0-0-0-0): size 41 (cls: ProjectileMovement5C27E20C46A6F8C1BBA48E9C35C6D44D>ProjectileMovementComponent>/Script/Engine):
 		Tag array:
 			ProjectileGravityScale(FloatProperty)=0.5 
@@ -639,39 +653,37 @@ Serialized exports:
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=DefaultSceneRoot_GEN_VARIABLE=B_ToyFootball_Base_C 
-			VariableGuid(StructProperty)=Guid: 1193546364-1268406889-2151648136-1047125554 
+			VariableGuid(StructProperty/Guid)=Guid: 1193546364-1268406889-2151648136-1047125554 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SCS_Node_1 (0-0-0-0): size 1492 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=ParticleSystemComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=FootballTrail_GEN_VARIABLE=B_ToyFootball_Base_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=Ball 
 			ParentComponentOwnerClassName(NameProperty)=PhysicsBall_Master_C 
-			VariableGuid(StructProperty)=Guid: 1157744482-1117741052-3634477243-2815752538 
+			VariableGuid(StructProperty/Guid)=Guid: 1157744482-1117741052-3634477243-2815752538 
 			InternalVariableName(NameProperty)=FootballTrail 
 	SCS_Node_2 (0-0-0-0): size 1294 (cls: SCS_Node_2>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=AudioComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=InAirAudio_GEN_VARIABLE=B_ToyFootball_Base_C 
-			CookedComponentInstancingData(StructProperty)=System.Byte[] 
+			CookedComponentInstancingData(StructProperty/BlueprintCookedComponentInstancingData)=System.Byte[] 
 			ParentComponentOrVariableName(NameProperty)=Ball 
 			ParentComponentOwnerClassName(NameProperty)=PhysicsBall_Master_C 
-			VariableGuid(StructProperty)=Guid: 3911189280-1141722978-97081774-2990222709 
+			VariableGuid(StructProperty/Guid)=Guid: 3911189280-1141722978-97081774-2990222709 
 			InternalVariableName(NameProperty)=InAirAudio 
 	SimpleConstructionScript_0 (0-0-0-0): size 131 (cls: SimpleConstructionScript_0>SimpleConstructionScript>/Script/Engine):
 		Tag array:
 			RootNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			AllNodes(ArrayProperty)=[object] (inner: ObjectProperty)
 			DefaultSceneRootNode(ObjectProperty)=SCS_Node_0=B_ToyFootball_Base_C 
-	SphereCollision (0-0-0-0): size 41 (cls: SphereCollision>SphereComponent>/Script/Engine):
-		Tag array:
-			SphereRadius(FloatProperty)=19 
+	SphereCollision (0-0-0-0): size 12 (cls: SphereCollision>SphereComponent>/Script/Engine)
 	StaticMesh892E2D7F4D5BDF47A8E2048AC5843E20 (0-0-0-0): size 167 (cls: StaticMesh892E2D7F4D5BDF47A8E2048AC5843E20>StaticMeshComponent>/Script/Engine):
 		Tag array:
 			StaticMesh(ObjectProperty)=SM_Football=/Game/Animation/Props/Football/Meshes/SM_Football 
-			RelativeRotation(StructProperty)=Rotator(180,90,0) 
-			RelativeScale3D(StructProperty)=Vector(1.3,1.3,1.3) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(180,90,0) 
+			RelativeScale3D(StructProperty/Vector)=Vector(1.3,1.3,1.3) 
 	CallFunc_Subtract_VectorVector_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_Subtract_VectorVector_ReturnValue>StructProperty>/Script/CoreUObject)
 	K2Node_MakeStruct_Struct_FootballMinigame_Message (0-0-0-0): size 36 (cls: K2Node_MakeStruct_Struct_FootballMinigame_Message>StructProperty>/Script/CoreUObject)
 	DisplayMessage (0-0-0-0): size 36 (cls: DisplayMessage>StructProperty>/Script/CoreUObject)
@@ -686,6 +698,7 @@ Serialized exports:
 	CallFunc_K2_AddLocalRotation_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_AddLocalRotation_SweepHitResult>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetActorLocation_ReturnValue1 (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue1>StructProperty>/Script/CoreUObject)
+	CallFunc_K2_GetActorLocation_ReturnValue2 (0-0-0-0): size 36 (cls: CallFunc_K2_GetActorLocation_ReturnValue2>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_GetComponentToWorld_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_GetComponentToWorld_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetTimerDelegate_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_K2_SetTimerDelegate_ReturnValue>StructProperty>/Script/CoreUObject)
 	CallFunc_K2_SetWorldTransform_SweepHitResult (0-0-0-0): size 36 (cls: CallFunc_K2_SetWorldTransform_SweepHitResult>StructProperty>/Script/CoreUObject)
@@ -725,7 +738,7 @@ Serialized exports:
 			TimelineLength(FloatProperty)=1 
 			bValidatedAsWired(BoolProperty)=True 
 			FloatTracks(ArrayProperty)=[object] (inner: StructProperty)
-			TimelineGuid(StructProperty)=Guid: 3411201711-1117813888-4164891562-3184957624 
+			TimelineGuid(StructProperty/Guid)=Guid: 3411201711-1117813888-4164891562-3184957624 
 			VariableName(NameProperty)=LerpIntoTouchdown 
 			DirectionPropertyName(NameProperty)=LerpIntoTouchdown__Direction_CB52CEAF42A07C80F83F33AABDD698B8 
 			UpdateFunctionName(NameProperty)=LerpIntoTouchdown__UpdateFunc 

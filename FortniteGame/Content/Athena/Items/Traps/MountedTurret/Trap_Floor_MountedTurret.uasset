@@ -52,6 +52,7 @@ Name table:
 	BeginDeferredActorSpawnFromClass
 	bForceBlockBuildings
 	bHidden
+	bHiddenDueToTrapPlacement
 	bIncludeCenterCell
 	bIncludeFloorInTop
 	bIncludeFloors
@@ -109,6 +110,8 @@ Name table:
 	CallFunc_GetCameraLocation_ReturnValue
 	CallFunc_GetDriver_ReturnValue
 	CallFunc_GetDriver_ReturnValue1
+	CallFunc_GetHostVehicleCached_ReturnValue
+	CallFunc_GetHostVehicleCached_self_CastInput
 	CallFunc_GetInstigator_ReturnValue
 	CallFunc_GetOwningPlayerState_ReturnValue
 	CallFunc_GetPlayerCameraManager_ReturnValue
@@ -182,6 +185,7 @@ Name table:
 	Default__FortScalableFloatUtils
 	Default__Function
 	Default__GameplayStatics
+	Default__InterfaceProperty
 	Default__IntProperty
 	Default__KismetArrayLibrary
 	Default__KismetSystemLibrary
@@ -209,7 +213,6 @@ Name table:
 	EFortBuildingType::Floor
 	EFortResourceType
 	EFortResourceType::Metal
-	EFortTeam
 	EndPlayReason
 	EntryPoint
 	Enum
@@ -227,13 +230,13 @@ Name table:
 	FortDamageSet
 	FortKismetLibrary
 	FortMountedTurret
+	FortMountedWeaponInterface
 	FortPawn
 	FortPlayerPawn
 	FortPlayerState
 	FortScalableFloatUtils
 	FortVehicleAudioVoice
 	FortVehicleSkelMeshComponent
-	FortWeaponRangedDualForVehicle
 	Function
 	Game
 	Gameplay.Action.Player.AthenaInVehicle
@@ -248,6 +251,7 @@ Name table:
 	GetBuildingStructuralSupportSystem
 	GetCameraLocation
 	GetDriver
+	GetHostVehicleCached
 	GetInstigator
 	GetOwningPlayerState
 	GetPlayerCameraManager
@@ -258,10 +262,10 @@ Name table:
 	HasDriver
 	HideAttachedFloor
 	HitLocation
-	HostVehicleCached
 	InstanceParameters
 	InstigatedBy
 	Instigator
+	InterfaceProperty
 	InternalVariableName
 	IntProperty
 	IsDedicatedServer
@@ -363,6 +367,7 @@ Name table:
 	ParticleSystem
 	ParticleSystemComponent
 	Pawn
+	PawnCollision_GEN_VARIABLE
 	Place_Trap_Sound
 	PlacedFX
 	PlacementSkeletalMesh
@@ -447,7 +452,6 @@ Name table:
 	Turret_Ballistic_Appear_Cue
 	Turret_Ballistic_Explode_Cue
 	Turret_Gun
-	TurretCollision_GEN_VARIABLE
 	UberGraphFrame
 	UberGraphFunction
 	UserConstructionScript
@@ -470,17 +474,17 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_Trap_Floor_MountedTurret=Trap_Floor_MountedTurret_C 
 	Default__Trap_Floor_MountedTurret_C (0-0-0-0): size 1394 (cls: Default__Trap_Floor_MountedTurret_C>Trap_Floor_MountedTurret_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
 			Place_Trap_Sound(ObjectProperty)=Turret_Ballistic_Appear_Cue=/Game/Sounds/Fort_Traps/MountedTurret/Turret_Ballistic_Appear_Cue 
 			Trap_Explode_Sound(ObjectProperty)=Turret_Ballistic_Explode_Cue=/Game/Sounds/Fort_Traps/MountedTurret/Turret_Ballistic_Explode_Cue 
 			Trap_Fire_Sound(ObjectProperty)=Weapon_RFL_TripleShot_T04_Triple_Tap_Cue=/Game/Sounds/Fort_Weapons/Rifle/Weapon_RFL_TripleShot_T04_Triple_Tap_Cue 
 			ShouldTick(BoolProperty)=True 
 			ShouldBumpPlayer?(BoolProperty)=True 
-			ShouldBump?(StructProperty)=System.Byte[] 
+			ShouldBump?(StructProperty/ScalableFloat)=System.Byte[] 
 			TraceLocation(ObjectProperty)=Trace Location=Default__Trap_Floor_MountedTurret_C 
 			PlacementSkeletalMesh(ObjectProperty)=Turret_Gun=/Game/Gadgets/Assets/Turret_Gun/Meshes/Turret_Gun 
-			PlacementSkeletalMeshRelativeLocation(StructProperty)=Vector(0,256,0) 
-			PlacementSkeletalMeshRelativeRotation(StructProperty)=Rotator(0,-90,0) 
+			PlacementSkeletalMeshRelativeLocation(StructProperty/Vector)=Vector(0,256,0) 
+			PlacementSkeletalMeshRelativeRotation(StructProperty/Rotator)=Rotator(0,-90,0) 
 			TrapPreviewMesh(ObjectProperty)=Static_Turret_Floor=/Game/Gadgets/Assets/Turret_Gun/Meshes/Static_Turret_Floor 
 			AbilitySet(ObjectProperty)=GAS_Trap_Floor_MountedTurret=/Game/Abilities/Traps/MountedTurret/GAS_Trap_Floor_MountedTurret 
 			bTargetWithAttachedTo(BoolProperty)=False 
@@ -492,8 +496,8 @@ Serialized exports:
 			PlayerGridSnapSize(FloatProperty)=512 
 			NavigationLinksClass(SoftObjectProperty)=/Game/Building/ActorBlueprints/Navigation/NavLink_Floor.NavLink_Floor_C 
 			MaximumBuildingLevel(IntProperty)=1 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
-			AttributeInitKeys(StructProperty)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
+			AttributeInitKeys(StructProperty/FortAttributeInitializationKey)=System.Byte[] 
 			LifespanAfterDeath(FloatProperty)=0.2 
 			bIsNavigationModifier(BoolProperty)=True 
 			bCanExportNavigationCollisions(BoolProperty)=True 
@@ -504,7 +508,7 @@ Serialized exports:
 			RootComponent(ObjectProperty)=StaticMeshComponent0=Default__Trap_Floor_MountedTurret_C 
 	Center (0-0-0-0): size 36 (cls: Center>ObjectProperty>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_Trap_Floor_MountedTurret (0-0-0-0): size 4152 (cls: ExecuteUbergraph_Trap_Floor_MountedTurret>Function>/Script/CoreUObject)
+	ExecuteUbergraph_Trap_Floor_MountedTurret (0-0-0-0): size 4217 (cls: ExecuteUbergraph_Trap_Floor_MountedTurret>Function>/Script/CoreUObject)
 	EndPlayReason (0-0-0-0): size 36 (cls: EndPlayReason>ByteProperty>/Script/CoreUObject)
 	ReceiveEndPlay (0-0-0-0): size 68 (cls: ReceiveEndPlay>Function>/Script/CoreUObject)
 	BuildingSMActor (0-0-0-0): size 36 (cls: BuildingSMActor>ObjectProperty>/Script/CoreUObject)
@@ -554,7 +558,7 @@ Serialized exports:
 	Player (0-0-0-0): size 36 (cls: Player>ObjectProperty>/Script/CoreUObject)
 	CalculateLaunch (0-0-0-0): size 292 (cls: CalculateLaunch>Function>/Script/CoreUObject)
 	Damage (0-0-0-0): size 32 (cls: Damage>FloatProperty>/Script/CoreUObject)
-	OnModifyTrapIncomingDamage (0-0-0-0): size 217 (cls: OnModifyTrapIncomingDamage>Function>/Script/CoreUObject)
+	OnModifyTrapIncomingDamage (0-0-0-0): size 242 (cls: OnModifyTrapIncomingDamage>Function>/Script/CoreUObject)
 	bOutConsumeEvent (0-0-0-0): size 34 (cls: bOutConsumeEvent>BoolProperty>/Script/CoreUObject)
 	CallFunc_EqualEqual_ObjectObject_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_EqualEqual_ObjectObject_ReturnValue>BoolProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_bSuccess (0-0-0-0): size 34 (cls: K2Node_DynamicCast_bSuccess>BoolProperty>/Script/CoreUObject)
@@ -580,6 +584,7 @@ Serialized exports:
 	K2Node_CustomEvent_Damage (0-0-0-0): size 32 (cls: K2Node_CustomEvent_Damage>FloatProperty>/Script/CoreUObject)
 	Temp_float_Variable (0-0-0-0): size 32 (cls: Temp_float_Variable>FloatProperty>/Script/CoreUObject)
 	OutDamage (0-0-0-0): size 32 (cls: OutDamage>FloatProperty>/Script/CoreUObject)
+	CallFunc_GetHostVehicleCached_self_CastInput (0-0-0-0): size 36 (cls: CallFunc_GetHostVehicleCached_self_CastInput>InterfaceProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue>IntProperty>/Script/CoreUObject)
 	CallFunc_Add_IntInt_ReturnValue1 (0-0-0-0): size 32 (cls: CallFunc_Add_IntInt_ReturnValue1>IntProperty>/Script/CoreUObject)
 	CallFunc_Array_Length_ReturnValue (0-0-0-0): size 32 (cls: CallFunc_Array_Length_ReturnValue>IntProperty>/Script/CoreUObject)
@@ -618,6 +623,7 @@ Serialized exports:
 	K2Node_CustomEvent_FHitComponent (0-0-0-0): size 36 (cls: K2Node_CustomEvent_FHitComponent>ObjectProperty>/Script/CoreUObject)
 	K2Node_CustomEvent_InstigatedBy (0-0-0-0): size 36 (cls: K2Node_CustomEvent_InstigatedBy>ObjectProperty>/Script/CoreUObject)
 	MountedTurret (0-0-0-0): size 36 (cls: MountedTurret>ObjectProperty>/Script/CoreUObject)
+	CallFunc_GetHostVehicleCached_ReturnValue (0-0-0-0): size 36 (cls: CallFunc_GetHostVehicleCached_ReturnValue>ObjectProperty>/Script/CoreUObject)
 	DamageCauser (0-0-0-0): size 36 (cls: DamageCauser>ObjectProperty>/Script/CoreUObject)
 	EventInstigator (0-0-0-0): size 36 (cls: EventInstigator>ObjectProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsB_Mounted_Turret_Athena (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsB_Mounted_Turret_Athena>ObjectProperty>/Script/CoreUObject)
@@ -629,14 +635,14 @@ Serialized exports:
 	Trace Location (0-0-0-0): size 102 (cls: Trace Location>SceneComponent>/Script/Engine):
 		Tag array:
 			AttachParent(ObjectProperty)=StaticMeshComponent0=Default__Trap_Floor_MountedTurret_C 
-			RelativeLocation(StructProperty)=Vector(0,256,128) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,256,128) 
 	Center_GEN_VARIABLE (0-0-0-0): size 73 (cls: Center_GEN_VARIABLE>SceneComponent>/Script/Engine):
 		Tag array:
-			RelativeLocation(StructProperty)=Vector(0,256,100) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,256,100) 
 	Root_GEN_VARIABLE (0-0-0-0): size 134 (cls: Root_GEN_VARIABLE>SceneComponent>/Script/Engine):
 		Tag array:
-			RelativeLocation(StructProperty)=Vector(0,256,0) 
-			RelativeRotation(StructProperty)=Rotator(0,-90,0) 
+			RelativeLocation(StructProperty/Vector)=Vector(0,256,0) 
+			RelativeRotation(StructProperty/Rotator)=Rotator(0,-90,0) 
 	SceneComponent_2400 (0-0-0-0): size 12 (cls: SceneComponent_2400>SceneComponent>/Script/Engine)
 	SCS_Node_0 (0-0-0-0): size 227 (cls: SCS_Node_0>SCS_Node>/Script/Engine):
 		Tag array:
@@ -644,7 +650,7 @@ Serialized exports:
 			ComponentTemplate(ObjectProperty)=Center_GEN_VARIABLE=Trap_Floor_MountedTurret_C 
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
-			VariableGuid(StructProperty)=Guid: 2318199672-1302671748-2164051343-3435403558 
+			VariableGuid(StructProperty/Guid)=Guid: 2318199672-1302671748-2164051343-3435403558 
 			InternalVariableName(NameProperty)=Center 
 	SCS_Node_1 (0-0-0-0): size 455 (cls: SCS_Node_1>SCS_Node>/Script/Engine):
 		Tag array:
@@ -653,13 +659,13 @@ Serialized exports:
 			ParentComponentOrVariableName(NameProperty)=StaticMeshComponent0 
 			bIsParentComponentNative(BoolProperty)=True 
 			MetaDataArray(ArrayProperty)=[object] (inner: StructProperty)
-			VariableGuid(StructProperty)=Guid: 1194711744-1241431728-3609091506-3824895745 
+			VariableGuid(StructProperty/Guid)=Guid: 1194711744-1241431728-3609091506-3824895745 
 			InternalVariableName(NameProperty)=Root 
 	SCS_Node_2404 (0-0-0-0): size 168 (cls: SCS_Node_2404>SCS_Node>/Script/Engine):
 		Tag array:
 			ComponentClass(ObjectProperty)=SceneComponent=/Script/Engine 
 			ComponentTemplate(ObjectProperty)=SceneComponent_2400=Trap_Floor_MountedTurret_C 
-			VariableGuid(StructProperty)=Guid: 1295648158-0-0-0 
+			VariableGuid(StructProperty/Guid)=Guid: 1295648158-0-0-0 
 			InternalVariableName(NameProperty)=DefaultSceneRoot 
 	SimpleConstructionScript_44 (0-0-0-0): size 131 (cls: SimpleConstructionScript_44>SimpleConstructionScript>/Script/Engine):
 		Tag array:
@@ -671,8 +677,8 @@ Serialized exports:
 			StaticMesh(ObjectProperty)=Static_Turret_Floor=/Game/Gadgets/Assets/Turret_Gun/Meshes/Static_Turret_Floor 
 			bReceivesDecals(BoolProperty)=False 
 			CanCharacterStepUpOn(ByteProperty)=ECB_Yes 
-			BodyInstance(StructProperty)=System.Byte[] 
-			RelativeLocation(StructProperty)=Vector(0,0,-5) 
+			BodyInstance(StructProperty/BodyInstance)=System.Byte[] 
+			RelativeLocation(StructProperty/Vector)=Vector(0,0,-5) 
 			bCanEverAffectNavigation(BoolProperty)=True 
 	HitLocation (0-0-0-0): size 36 (cls: HitLocation>StructProperty>/Script/CoreUObject)
 	Momentum (0-0-0-0): size 36 (cls: Momentum>StructProperty>/Script/CoreUObject)

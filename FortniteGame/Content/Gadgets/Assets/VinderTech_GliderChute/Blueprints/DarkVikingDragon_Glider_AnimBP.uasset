@@ -264,6 +264,7 @@ Name table:
 	Default__Function
 	Default__IntProperty
 	Default__KismetSystemLibrary
+	Default__MulticastDelegateProperty
 	Default__ObjectProperty
 	Default__StructProperty
 	DefaultSceneRoot_GEN_VARIABLE
@@ -371,6 +372,7 @@ Name table:
 	Max
 	MaxTransitionsPerFrame
 	Min
+	MulticastDelegateProperty
 	NameProperty
 	NextState
 	None
@@ -406,6 +408,10 @@ Name table:
 	Result
 	Right
 	Roar
+	RoarEvent
+	RoarEvent__DelegateSignature
+	RoarEventEnd
+	RoarEventEnd__DelegateSignature
 	Roaring
 	RootComponent0
 	S_DarkViking_Glider_FlameSpline_GEN_VARIABLE
@@ -464,7 +470,7 @@ Name table:
 	Z
 Serialized exports:
 	UberGraphFrame (0-0-0-0): size 36 (cls: UberGraphFrame>StructProperty>/Script/CoreUObject)
-	DarkVikingDragon_Glider_AnimBP_C (0-0-0-0): size 27085 (cls: DarkVikingDragon_Glider_AnimBP_C>AnimBlueprintGeneratedClass>/Script/Engine):
+	DarkVikingDragon_Glider_AnimBP_C (0-0-0-0): size 27125 (cls: DarkVikingDragon_Glider_AnimBP_C>AnimBlueprintGeneratedClass>/Script/Engine):
 		Tag array:
 			BakedStateMachines(ArrayProperty)=[object] (inner: StructProperty)
 			TargetSkeleton(ObjectProperty)=SK_Dark_Viking_Glider_Skeleton=/Game/Gadgets/Assets/VinderTech_GliderChute/Glider_Dark_Viking/Meshes/SK_Dark_Viking_Glider_Skeleton 
@@ -474,71 +480,73 @@ Serialized exports:
 			UberGraphFunction(ObjectProperty)=ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP=DarkVikingDragon_Glider_AnimBP_C 
 	Default__DarkVikingDragon_Glider_AnimBP_C (0-0-0-0): size 31081 (cls: Default__DarkVikingDragon_Glider_AnimBP_C>DarkVikingDragon_Glider_AnimBP_C):
 		Tag array:
-			UberGraphFrame(StructProperty)=System.Byte[] 
-			AnimGraphNode_Root_1166927A41414D739EAD769DA6742C69(StructProperty)=System.Byte[] 
-			AnimGraphNode_Slot_F09481534D28B735EE42A499E9102141(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_E0812F464034515180A88088AA6E21C2(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_6B95489A4B2C0BE6AB72D6826CF9929D(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_581DBB5C4328C9D39EAC559508C0B42D(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_18C6677743AEB7A026C439B7A3CE51D4(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_FD716BBC4CBD2A65DFBAE185064FEE7A(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_744D821B4DD8259394EB058406692F2F(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_1C4BBFB5404ED18F911F36B59015AB19(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_7F8294CA49B5EA27A760A48C7F3E29C5(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_4CB9573E430846E84B6D58AF13C24236(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_CB885DD54E70583101C26B8951B5C7BE(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_597E0AF041A9B92145C8CBBFF44690CD(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_20054A3743391D2BCB31A5BFD767FFC5(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_6413CB1640777EBA4381D79018C29000(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_1854E228469DCE8E32FB15AB78246D0C(StructProperty)=System.Byte[] 
-			AnimGraphNode_TransitionResult_BABB9FFE48568243E5999B899C624798(StructProperty)=System.Byte[] 
-			AnimGraphNode_SequencePlayer_5C3ACDD240104A31C8CD308F195C93AA(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_8285322A42C790A9AA10E8A38702104C(StructProperty)=System.Byte[] 
-			AnimGraphNode_SequencePlayer_4DE945564FCAC64A29048289A84018A8(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_FA9249D641C2371CF2CF5BA9715813D0(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_58AEA3F544CA0E9C1B7F05AD8C10BCE6(StructProperty)=System.Byte[] 
-			AnimGraphNode_SequencePlayer_E16EFBE64B945D2B7D99B79259276222(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_5794AF1741B7B386FBC83D9ACD6221FF(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_FFFCCCFC4A5E2BA2A8F20AA145A06441(StructProperty)=System.Byte[] 
-			AnimGraphNode_SequencePlayer_BEBED5CD45C9DAE3AB189A88A586B409(StructProperty)=System.Byte[] 
-			AnimGraphNode_StateResult_759D17904E61026145030CB250988C0F(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_F9105D9145D7BF6A0C92DF95B5B51707(StructProperty)=System.Byte[] 
-			AnimGraphNode_StateResult_0763673D473AB4CCED95A1B459E87D75(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_16FF29024B1D3DB8DC3E24B7D31EBF7E(StructProperty)=System.Byte[] 
-			AnimGraphNode_StateResult_AB6E6CA6486540EC91823BB3695A0C9A(StructProperty)=System.Byte[] 
-			AnimGraphNode_SequencePlayer_CB61467D4474760E311C468F9623A7B8(StructProperty)=System.Byte[] 
-			AnimGraphNode_SequencePlayer_48174D7141549AFC64D1CD99A3C9A8A5(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendListByBool_8F7E278C4999EE6F8806568D1A68BB98(StructProperty)=System.Byte[] 
-			AnimGraphNode_StateResult_F8AF1E7B43227B23AC7CB0B1471446BB(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_60ABC2294DFA8568BE9419968DBF8A44(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_5307C04B4BB1511A6EFDAA88D8A43ED2(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_91BB07A348C89EB0D7549F83CF793FC6(StructProperty)=System.Byte[] 
-			AnimGraphNode_SequencePlayer_12711F7B497F240F6822C48BCF3BDF77(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_1DA68C5745A9DDEC23A12080DB74C9C9(StructProperty)=System.Byte[] 
-			AnimGraphNode_StateResult_CAEB33A74513D0601C7D54B5715BEDE3(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_5AFEF3D34F0E49409FB080A3FA4D88CF(StructProperty)=System.Byte[] 
-			AnimGraphNode_SequencePlayer_CDC568364FA27A9C3E41F5A3E8723E19(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_5050CE1E4C60C6536A66D8926E6AC659(StructProperty)=System.Byte[] 
-			AnimGraphNode_StateResult_D65A3D584BFB2A166A8392877D3528B7(StructProperty)=System.Byte[] 
-			AnimGraphNode_StateMachine_EE9631A641A6C5F724FAA784AB7AD1A0(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_8E76089E4824871B365FB98879278CB9(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_0E09F2C2407E3ED19A5CC793BDEDBD33(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_16B3010A4E7E524E088CD890E8BE9ACF(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_5A0684B74B0B3356D60C8FB1D6278E7E(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_87E6BC9645EBB59E52EF8B910130423F(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_F9CBC8F24698AFAFC9474EB3E0B44679(StructProperty)=System.Byte[] 
-			AnimGraphNode_SaveCachedPose_A548ED3C40DBCDEDF7706FB91E0968B0(StructProperty)=System.Byte[] 
-			AnimGraphNode_UseCachedPose_8858BBAD4800587E8BC20E9F3CEC7D1A(StructProperty)=System.Byte[] 
-			AnimGraphNode_ApplyAdditive_CAB422014D0ABB9BC0A1D496F7263B52(StructProperty)=System.Byte[] 
-			AnimGraphNode_BlendSpacePlayer_BFF90C2B4EF0146E5971E7BD495826E7(StructProperty)=System.Byte[] 
-			AnimGraphNode_SaveCachedPose_728C2CA04AEE4615F27BACB71CF12224(StructProperty)=System.Byte[] 
-			AnimGraphNode_UseCachedPose_BB7312394A207B38AA203E81D6865AC3(StructProperty)=System.Byte[] 
+			UberGraphFrame(StructProperty/PointerToUberGraphFrame)=System.Byte[] 
+			AnimGraphNode_Root_1166927A41414D739EAD769DA6742C69(StructProperty/AnimNode_Root)=System.Byte[] 
+			AnimGraphNode_Slot_F09481534D28B735EE42A499E9102141(StructProperty/AnimNode_Slot)=System.Byte[] 
+			AnimGraphNode_TransitionResult_E0812F464034515180A88088AA6E21C2(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_6B95489A4B2C0BE6AB72D6826CF9929D(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_581DBB5C4328C9D39EAC559508C0B42D(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_18C6677743AEB7A026C439B7A3CE51D4(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_FD716BBC4CBD2A65DFBAE185064FEE7A(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_744D821B4DD8259394EB058406692F2F(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_1C4BBFB5404ED18F911F36B59015AB19(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_7F8294CA49B5EA27A760A48C7F3E29C5(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_4CB9573E430846E84B6D58AF13C24236(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_CB885DD54E70583101C26B8951B5C7BE(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_597E0AF041A9B92145C8CBBFF44690CD(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_20054A3743391D2BCB31A5BFD767FFC5(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_6413CB1640777EBA4381D79018C29000(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_1854E228469DCE8E32FB15AB78246D0C(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_TransitionResult_BABB9FFE48568243E5999B899C624798(StructProperty/AnimNode_TransitionResult)=System.Byte[] 
+			AnimGraphNode_SequencePlayer_5C3ACDD240104A31C8CD308F195C93AA(StructProperty/AnimNode_SequencePlayer)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_8285322A42C790A9AA10E8A38702104C(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_SequencePlayer_4DE945564FCAC64A29048289A84018A8(StructProperty/AnimNode_SequencePlayer)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_FA9249D641C2371CF2CF5BA9715813D0(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_58AEA3F544CA0E9C1B7F05AD8C10BCE6(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_SequencePlayer_E16EFBE64B945D2B7D99B79259276222(StructProperty/AnimNode_SequencePlayer)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_5794AF1741B7B386FBC83D9ACD6221FF(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_FFFCCCFC4A5E2BA2A8F20AA145A06441(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_SequencePlayer_BEBED5CD45C9DAE3AB189A88A586B409(StructProperty/AnimNode_SequencePlayer)=System.Byte[] 
+			AnimGraphNode_StateResult_759D17904E61026145030CB250988C0F(StructProperty/AnimNode_StateResult)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_F9105D9145D7BF6A0C92DF95B5B51707(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_StateResult_0763673D473AB4CCED95A1B459E87D75(StructProperty/AnimNode_StateResult)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_16FF29024B1D3DB8DC3E24B7D31EBF7E(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_StateResult_AB6E6CA6486540EC91823BB3695A0C9A(StructProperty/AnimNode_StateResult)=System.Byte[] 
+			AnimGraphNode_SequencePlayer_CB61467D4474760E311C468F9623A7B8(StructProperty/AnimNode_SequencePlayer)=System.Byte[] 
+			AnimGraphNode_SequencePlayer_48174D7141549AFC64D1CD99A3C9A8A5(StructProperty/AnimNode_SequencePlayer)=System.Byte[] 
+			AnimGraphNode_BlendListByBool_8F7E278C4999EE6F8806568D1A68BB98(StructProperty/AnimNode_BlendListByBool)=System.Byte[] 
+			AnimGraphNode_StateResult_F8AF1E7B43227B23AC7CB0B1471446BB(StructProperty/AnimNode_StateResult)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_60ABC2294DFA8568BE9419968DBF8A44(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_5307C04B4BB1511A6EFDAA88D8A43ED2(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_91BB07A348C89EB0D7549F83CF793FC6(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_SequencePlayer_12711F7B497F240F6822C48BCF3BDF77(StructProperty/AnimNode_SequencePlayer)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_1DA68C5745A9DDEC23A12080DB74C9C9(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_StateResult_CAEB33A74513D0601C7D54B5715BEDE3(StructProperty/AnimNode_StateResult)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_5AFEF3D34F0E49409FB080A3FA4D88CF(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_SequencePlayer_CDC568364FA27A9C3E41F5A3E8723E19(StructProperty/AnimNode_SequencePlayer)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_5050CE1E4C60C6536A66D8926E6AC659(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_StateResult_D65A3D584BFB2A166A8392877D3528B7(StructProperty/AnimNode_StateResult)=System.Byte[] 
+			AnimGraphNode_StateMachine_EE9631A641A6C5F724FAA784AB7AD1A0(StructProperty/AnimNode_StateMachine)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_8E76089E4824871B365FB98879278CB9(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_0E09F2C2407E3ED19A5CC793BDEDBD33(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_16B3010A4E7E524E088CD890E8BE9ACF(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_5A0684B74B0B3356D60C8FB1D6278E7E(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_87E6BC9645EBB59E52EF8B910130423F(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_F9CBC8F24698AFAFC9474EB3E0B44679(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_SaveCachedPose_A548ED3C40DBCDEDF7706FB91E0968B0(StructProperty/AnimNode_SaveCachedPose)=System.Byte[] 
+			AnimGraphNode_UseCachedPose_8858BBAD4800587E8BC20E9F3CEC7D1A(StructProperty/AnimNode_UseCachedPose)=System.Byte[] 
+			AnimGraphNode_ApplyAdditive_CAB422014D0ABB9BC0A1D496F7263B52(StructProperty/AnimNode_ApplyAdditive)=System.Byte[] 
+			AnimGraphNode_BlendSpacePlayer_BFF90C2B4EF0146E5971E7BD495826E7(StructProperty/AnimNode_BlendSpacePlayer)=System.Byte[] 
+			AnimGraphNode_SaveCachedPose_728C2CA04AEE4615F27BACB71CF12224(StructProperty/AnimNode_SaveCachedPose)=System.Byte[] 
+			AnimGraphNode_UseCachedPose_BB7312394A207B38AA203E81D6865AC3(StructProperty/AnimNode_UseCachedPose)=System.Byte[] 
 	BlockAnimRule (0-0-0-0): size 34 (cls: BlockAnimRule>BoolProperty>/Script/CoreUObject)
 	canFlap (0-0-0-0): size 34 (cls: canFlap>BoolProperty>/Script/CoreUObject)
 	canRoar (0-0-0-0): size 34 (cls: canRoar>BoolProperty>/Script/CoreUObject)
 	AnimGraphNode_Root_1166927A41414D739EAD769DA6742C69 (0-0-0-0): size 36 (cls: AnimGraphNode_Root_1166927A41414D739EAD769DA6742C69>StructProperty>/Script/CoreUObject)
+	RoarEvent__DelegateSignature (0-0-0-0): size 43 (cls: RoarEvent__DelegateSignature>Function>/Script/CoreUObject)
+	RoarEventEnd__DelegateSignature (0-0-0-0): size 43 (cls: RoarEventEnd__DelegateSignature>Function>/Script/CoreUObject)
 	EntryPoint (0-0-0-0): size 32 (cls: EntryPoint>IntProperty>/Script/CoreUObject)
-	ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP (0-0-0-0): size 3119 (cls: ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP>Function>/Script/CoreUObject)
+	ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP (0-0-0-0): size 3141 (cls: ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP>Function>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue1 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue1>BoolProperty>/Script/CoreUObject)
 	CallFunc_BooleanAND_ReturnValue10 (0-0-0-0): size 34 (cls: CallFunc_BooleanAND_ReturnValue10>BoolProperty>/Script/CoreUObject)
@@ -651,6 +659,8 @@ Serialized exports:
 	EvaluateGraphExposedInputs_ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP_AnimGraphNode_TransitionResult_1854E228469DCE8E32FB15AB78246D0C (0-0-0-0): size 54 (cls: EvaluateGraphExposedInputs_ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP_AnimGraphNode_TransitionResult_1854E228469DCE8E32FB15AB78246D0C>Function>/Script/CoreUObject)
 	EvaluateGraphExposedInputs_ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP_AnimGraphNode_TransitionResult_1C4BBFB5404ED18F911F36B59015AB19 (0-0-0-0): size 54 (cls: EvaluateGraphExposedInputs_ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP_AnimGraphNode_TransitionResult_1C4BBFB5404ED18F911F36B59015AB19>Function>/Script/CoreUObject)
 	EvaluateGraphExposedInputs_ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP_AnimGraphNode_TransitionResult_597E0AF041A9B92145C8CBBFF44690CD (0-0-0-0): size 54 (cls: EvaluateGraphExposedInputs_ExecuteUbergraph_DarkVikingDragon_Glider_AnimBP_AnimGraphNode_TransitionResult_597E0AF041A9B92145C8CBBFF44690CD>Function>/Script/CoreUObject)
+	RoarEvent (0-0-0-0): size 36 (cls: RoarEvent>MulticastDelegateProperty>/Script/CoreUObject)
+	RoarEventEnd (0-0-0-0): size 36 (cls: RoarEventEnd>MulticastDelegateProperty>/Script/CoreUObject)
 	K2Node_DynamicCast_AsB_Glider_Dark_Viking (0-0-0-0): size 36 (cls: K2Node_DynamicCast_AsB_Glider_Dark_Viking>ObjectProperty>/Script/CoreUObject)
 	AnimGraphNode_ApplyAdditive_16B3010A4E7E524E088CD890E8BE9ACF (0-0-0-0): size 36 (cls: AnimGraphNode_ApplyAdditive_16B3010A4E7E524E088CD890E8BE9ACF>StructProperty>/Script/CoreUObject)
 	AnimGraphNode_ApplyAdditive_5794AF1741B7B386FBC83D9ACD6221FF (0-0-0-0): size 36 (cls: AnimGraphNode_ApplyAdditive_5794AF1741B7B386FBC83D9ACD6221FF>StructProperty>/Script/CoreUObject)
